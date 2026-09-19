@@ -32,7 +32,7 @@ High/Low 概率校准图。横轴为留出记录的平均预测 High 概率，�
 
 训练资料上的后验预测检查。点为观测摘要，误差线为后验预测重复的 95% 范围；橙色表示该摘要落在范围外，需要人工复核。interval coverage 没有单个观测摘要，因此没有画入该点范围图，而在 CSV 中标为描述性检查。
 
-## F06_species_binary、F06_species_joint_bb、F06_species_schemeA_tobit
+## F06_species_binary_corrected、F06_species_joint_bb_corrected、F06_species_schemeA_tobit_corrected
 
 三组分页图参照第一版 F06 的布局，按 42 个物种一页展示 365 个面板物种和 5 个模型。High/Low 分区画 High 概率和 95% 后验可信区间；联合定量和 Scheme A 分区分别画 expected exact-report ratio、95% 后验可信区间和 95% 后验预测区间。红色边框或空心点表示外推或缺失状态，但仍保留数值。
 

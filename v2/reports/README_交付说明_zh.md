@@ -27,9 +27,11 @@ High/Low 的 `binary` 行中，`Point` 是 High 概率，`CrI_lower/upper` 是�
 - `F05B_full_panel_ratio_heatmap`：365 个物种联合路线 expected ratio 热图；
 - `F06_prediction_interval_widths`：全物种可信区间/预测区间宽度；
 - `F07_training_PPC_checks`：训练资料后验预测检查。
-- `F06_species_binary_p01–p09`：High/Low 每个物种/模型的 High 概率和 95% 可信区间；
-- `F06_species_joint_bb_p01–p09`：联合定量每个物种/模型的点值、95% 可信区间和 95% 预测区间；
-- `F06_species_schemeA_tobit_p01–p09`：Scheme A 每个物种/模型的点值、95% 可信区间和 95% 预测区间；
+- `F06_species_binary_corrected_p01–p09`：High/Low 每个物种/模型的 High 概率和 95% 可信区间；
+- `F06_species_joint_bb_corrected_p01–p09`：联合定量每个物种/模型的点值、95% 可信区间和 95% 预测区间；
+- `F06_species_schemeA_tobit_corrected_p01–p09`：Scheme A 每个物种/模型的点值、95% 可信区间和 95% 预测区间；
+
+每页的 PNG、来源 CSV 和中文图注也保留在 `figures/`；同一批 81 个文件另打包为 `../archive/v2_f06_corrected_pages.tar.gz`。没有 `corrected` 后缀的旧 F06 图不属于最终交付。
 - `F08_paired_ELPD_comparisons`：按物种聚合后的 paired SE、95% 近似区间和模型对 Null/Site315 的比较。
 
 图注在 `FIGURE_CAPTIONS_zh.md`，结果和中文分析在 `RESULTS_ANALYSIS_SUMMARY_zh.md`。F01 的曲线为留出记录合并可视化，图例中的 AUC 是不加权折均值；F03 没有 paired SE，因此不能从图中宣称统计学显著差异；F07 的橙色检查必须结合原始资料复核。
