@@ -1,0 +1,33 @@
+{
+  "version": "ratio_analysis_v2_joint_bb_vs_schemeA_20260918",
+  "status": "PREPARED_NOT_FIT",
+  "input_hashes": {
+    "observations.csv": "3c886f7f2c11012463296b350a931543542b4e1c0d128ad3c408fda9ae824d79",
+    "sites.csv": "0a99692b060f13d1faaa870d06ea7dca9a4f16bc289636bcc88f5d105ebdacb5"
+  },
+  "records": 153,
+  "response_species": 51,
+  "panel_species": 365,
+  "types": {
+    "count": 105,
+    "exact": 40,
+    "interval": 8
+  },
+  "routes": {
+    "binary": "standard_brms_binomial",
+    "joint_bb": "shared_m_beta_binomial_exact_interval",
+    "schemeA": "standard_brms_censored_gaussian_report_level"
+  },
+  "models": [
+    "Null",
+    "Site315",
+    "M1",
+    "M2",
+    "M3"
+  ],
+  "tree_used": false,
+  "prediction_interface": "exact_report_ratio_mean_CrI_exact_report_PI_no_future_denominator",
+  "point_rule": "posterior_mean_expected_report_ratio",
+  "cv_primary": "species_grouped_5fold",
+  "cv_tenfold_gate": "precomputed_binary_test_folds_must_contain_HIGH_and_LOW"
+}
