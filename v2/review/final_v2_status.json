@@ -1,0 +1,20 @@
+{
+  "status": "COMPLETE_WITH_REVIEW_FLAGS",
+  "version": "ratio_analysis_v2_joint_bb_vs_schemeA_site151_excluded_20260918",
+  "diagnostics": "PASS_ALL_FULL_MODELS",
+  "model_fit_checks": {
+    "status": "COMPLETE_WITH_REVIEW_FLAGS",
+    "route_models": 10,
+    "rows": 70,
+    "review_flags": 20,
+    "descriptive_only_rows": 10,
+    "note": "Training-data posterior predictive checks; not independent validation"
+  },
+  "outputs": {
+    "full_panel": "results/full_panel_predictions_v2.csv",
+    "cv_fold_scores": "results/cv_fold_scores_v2.csv",
+    "cv_scores": "results/cv_record_scores_v2.csv",
+    "comparisons": "results/cv_comparisons_v2.csv"
+  },
+  "created_at": "2026-09-19 11:09:05.66986"
+}

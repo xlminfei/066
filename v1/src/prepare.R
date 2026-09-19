@@ -1,0 +1,29 @@
+source("/project/work/ratio_analysis_20260914/scripts/common.R",local=.GlobalEnv)
+initialize_manual(create=TRUE)
+if(RUN_MODE=="new") {
+  run_block("01_输入与编码.md","01_PREPARE")
+  run_block("01_输入与编码.md","01_SAVE")
+}
+stopifnot(nrow(prepared$species)==365L,nrow(prepared$observations)==153L)
+stopifnot(identical(prepared$rare_min,4L))
+stopifnot(ape::is.rooted(prepared$tree),length(prepared$tree$tip.label)==365L)
+stopifnot(identical(rownames(prepared$A),prepared$species$Species),all(is.finite(prepared$A)))
+stopifnot(all(diag(chol(prepared$A))>0))
+stopifnot(sum(prepared$binary_counts$HighCount)==116L,sum(prepared$binary_counts$LowCount)==36L)
+stopifnot(sum(prepared$binary_counts$Trials)==152L)
+stopifnot(sum(prepared$binary_counts$Trials>0)==50L)
+stopifnot(length(unique(prepared$observations$Species))==51L)
+blueprint_summary <- do.call(rbind,lapply(names(prepared$blueprints),function(name) {
+  b<-prepared$blueprints[[name]]
+  data.frame(Blueprint=name,Rows=nrow(b$X),Columns=ncol(b$X),Rank=b$rank,ParameterColumns=b$parameter_columns)
+}))
+write.csv(blueprint_summary,file.path(analysis_root,"provenance","blueprint_summary.csv"),row.names=FALSE)
+writeLines(capture.output(sessionInfo()),file.path(analysis_root,"environment","R_session_info.txt"))
+write.csv(data.frame(Package=names(package_versions),Version=unname(package_versions)),file.path(analysis_root,"environment","R_package_versions.csv"),row.names=FALSE)
+atomic_json(list(status="PASS",rows=nrow(prepared$observations),panel_species=nrow(prepared$species),
+  observed_species=51L,binary_species=50L,high=116L,low=36L,unclassified=1L,
+  rooted_tree=TRUE,tree_species_set_matches=TRUE,phylo_matrix_positive_definite=TRUE,
+  rare_min=4L,version=prepared$version,input_hashes=prepared$input_hashes),
+  file.path(analysis_root,"provenance","R_input_check.json"))
+print(blueprint_summary)
+cat("FORMAL_INPUT_CHECK_PASS\n")

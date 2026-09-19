@@ -1,0 +1,6 @@
+{
+  "status": "PASS",
+  "complete_dummy_columns": true,
+  "unseen_categories_are_numeric_capable": true,
+  "tenfold_gate": [true, true, true, true, true, true, true, true, true, true]
+}

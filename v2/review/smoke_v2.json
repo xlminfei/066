@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "version": "ratio_analysis_v2_joint_bb_vs_schemeA_site151_excluded_20260918",
+  "binary": "NEEDS_REVIEW",
+  "joint": "NEEDS_REVIEW",
+  "schemeA": "NEEDS_REVIEW",
+  "posterior_dimensions": {
+    "binary": [300, 365],
+    "joint_expected": [300, 365],
+    "schemeA_expected": [300, 365]
+  }
+}

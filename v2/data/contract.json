@@ -1,0 +1,32 @@
+{
+  "version": "ratio_analysis_v2_joint_bb_vs_schemeA_site151_excluded_20260918",
+  "status": "PREPARED_NOT_FIT",
+  "input_hashes": {
+    "observations.csv": "3c886f7f2c11012463296b350a931543542b4e1c0d128ad3c408fda9ae824d79",
+    "sites.csv": "0a99692b060f13d1faaa870d06ea7dca9a4f16bc289636bcc88f5d105ebdacb5"
+  },
+  "records": 153,
+  "response_species": 51,
+  "panel_species": 365,
+  "types": {
+    "count": 105,
+    "exact": 40,
+    "interval": 8
+  },
+  "all_input_sites": ["Site3", "Site20", "Site117", "Site151", "Site196", "Site315"],
+  "model_sites": ["Site3", "Site20", "Site117", "Site196", "Site315"],
+  "excluded_from_predictors": ["Site151"],
+  "routes": {
+    "binary": "standard_brms_binomial",
+    "joint_bb": "shared_m_beta_binomial_exact_interval",
+    "schemeA": "standard_brms_censored_gaussian_report_level"
+  },
+  "models": ["Null", "Site315", "M1", "M2", "M3"],
+  "tree_used": false,
+  "m3_rare_rule": "frequency >= 4 retained; 1-3 mapped to OTHER; MISSING separate",
+  "prediction_interface": "external fixed six-site table; Site151 retained for audit but ignored by model predictors",
+  "quantitative_output": "expected exact-report ratio, 95% posterior credible interval, 95% exact-report posterior predictive interval; no future denominator",
+  "point_rule": "posterior_mean_expected_report_ratio",
+  "cv_primary": "species_grouped_5fold",
+  "cv_tenfold_gate": "precomputed binary test folds must contain HIGH and LOW"
+}

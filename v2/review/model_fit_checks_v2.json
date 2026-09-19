@@ -1,0 +1,8 @@
+{
+  "status": "COMPLETE_WITH_REVIEW_FLAGS",
+  "route_models": 10,
+  "rows": 70,
+  "review_flags": 20,
+  "descriptive_only_rows": 10,
+  "note": "Training-data posterior predictive checks; not independent validation"
+}

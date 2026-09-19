@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "full": 15,
+  "cv": 225,
+  "failures": 0,
+  "diagnosis_pass": 240,
+  "maximum_Rhat": 1.0043,
+  "minimum_bulk_ESS": 1800.5239,
+  "minimum_tail_ESS": 1456.3081,
+  "divergences": 0,
+  "treedepth_hits": 0,
+  "current_joint_code_hash": "e58d54bbf3fe38d46b088270a705ce595599f9412821f38e2c1b027ea99c98cb",
+  "created_at": "2026-09-19 07:44:11.620826"
+}

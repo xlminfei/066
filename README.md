@@ -1,0 +1,58 @@
+# STING 跨物种响应比率模型：v1 与 v2 可复现项目
+
+这是一个把同一蛋白的六个位点序列特征与实验响应资料联系起来的研究计算项目。项目同时保留原始的 **v1** 工作流和当前采用的 **v2** 工作流。v2 是正式推荐版本；v1 作为历史版本、结果对照和方法演变记录保留。
+
+## 研究问题
+
+对 365 个物种的蛋白序列，在固定多重比对中提取 Site3、Site20、Site117、Site151、Site196、Site315 六个位点。实验资料包含三种形式：有真实分母的 count、报告精确比例但未知分母的 exact，以及只给上下界的 interval。目标有两条：
+
+1. 预测一个物种属于 High/Low 的概率，并用分组留出 ROC/AUC 与逐条留出 ELPD 评价分类路线。
+2. 预测一个物种的 expected exact-report ratio，同时给出 95% 后验可信区间（CrI）和一个未来 exact 报告的 95% 后验预测区间（PI），并用逐条留出 ELPD、MAE 作为定量路线的主要与辅助评价。
+
+预测新物种时，输入必须已经按照冻结参考比对提取好六个位点。程序不会把新物种加入多重比对，也不会重新统计 M3 的类别频数，因此后来增加物种不会改变已经发布的编码字典和模型参数。
+
+## 从哪里开始
+
+- [v2/README.md](v2/README.md)：当前正式版本的完整方法、参数、公式、输出列和复现步骤。
+- [v1/README.md](v1/README.md)：历史版本的模型网格、进化树路线、手册执行顺序和已知限制。
+- [docs/v1_vs_v2_改进说明_zh.md](docs/v1_vs_v2_改进说明_zh.md)：逐项解释 v2 改了什么以及为什么改。
+- [docs/algorithm_details_zh.md](docs/algorithm_details_zh.md)：用不依赖编程背景的语言说明模型、区间和评价指标。
+- [docs/reproduction_ubuntu.md](docs/reproduction_ubuntu.md)：Ubuntu/Docker 的可复制命令和检查点。
+- [docs/limitations_zh.md](docs/limitations_zh.md)：结果可以支持什么、不能支持什么。
+
+## 目录结构
+
+```text
+v2/
+  data/          输入 CSV 与输入合同
+  src/           v2 R 源码，包括拟合、留出、审计、后处理和绘图
+  results/       全面板预测、留出分数、折表和编码结果
+  results/derived/  AUC、ELPD、MAE、校准、状态和配对比较表
+  figures/       PDF/PNG 结果图；F06 使用 corrected 版本
+  reports/       中文结果、图注、ELPD 配对 SE 和修正说明
+  review/        preflight、smoke、十折门控和最终状态 JSON
+  examples/      新物种外部预测输入与宽表输出示例
+  provenance/    正式运行日志和输入追踪
+v1/
+  data/          v1 的 observations.csv、sites.csv、tree.nwk
+  src/           原始 v1 分段脚本
+  docs/          原始 v1 操作手册与验证说明
+  results/       v1 全面板/预处理结果
+  archive/       精简后的 v1 图件与关键衍生结果压缩包
+  provenance/    v1 图注、清单和省略大文件说明
+docs/            版本差异、算法解释、复现和限制
+```
+
+## v2 已完成的正式运行
+
+正式版本标识为 `ratio_analysis_v2_joint_bb_vs_schemeA_site151_excluded_20260918`，随机种子为 `20260918`。共完成 15 个全资料模型（5 个模型 × 3 条输出路线）和 225 个分组留出重拟合（5 个模型 × 3 条路线 × 5/10 折设置）。每个拟合使用 4 链、每链 4000 次迭代、2000 次预热、`adapt_delta=0.99`、`max_treedepth=12`。所有全模型和留出模型的 HMC 诊断通过：无发散、无树深度上限命中，R-hat、bulk/tail ESS 均达到门槛。
+
+最终状态是 `COMPLETE_WITH_REVIEW_FLAGS`。这表示计算完成且抽样诊断通过；训练资料的 Scheme A 后验预测检查有 20 项需要结合原始资料人工复核，另有 10 项只作描述性记录。这些标志不是程序崩溃，也不是独立测试集失败。
+
+## 版本和公开内容
+
+用户明确要求把项目推送到公开 GitHub 仓库。仓库中包括本项目提供的输入表、代码、结果表、图件和方法说明；发布前没有把原始输入悄悄替换为模拟数据。后验 RDS 和编译缓存总量很大，不适合放入普通 Git 历史，已在两个版本的 `provenance/omitted_large_artifacts.md` 中列明省略原则；它们可以由相同代码、输入、随机种子和参数重新生成。
+
+本仓库没有替代用户或期刊指定的数据/代码许可。若要把代码用于商业用途、重新分发原始实验表或把预测作为新的生物学结论，需先按项目作者和数据来源的许可要求处理。
+
+根目录的 `MANIFEST.csv` 给出每个交付文件的相对路径、字节数和 SHA256；`MANIFEST.sha256` 校验清单本身。它们不包含省略的后验 RDS，不能替代方法和诊断报告。
