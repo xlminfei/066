@@ -16,6 +16,7 @@ if (length(args)) {
 }
 root <- normalizePath(root, winslash = "/", mustWork = TRUE)
 input_dir <- file.path(root, "input")
+if (!dir.exists(input_dir)) input_dir <- file.path(root, "data")
 run_dir <- file.path(root, "runs", "formal_v2")
 result_dir <- file.path(root, "results")
 log_dir <- file.path(root, "logs")
@@ -1296,7 +1297,9 @@ run_cv <- function(st) {
 run_preflight <- function() {
   st <- prepare()
   stopifnot(file.exists(file.path(run_dir, "prepared_v2.rds")))
-  src <- readLines(file.path(root, "scripts", "v2_pipeline.R"), warn = FALSE)
+  script_path <- file.path(root, "scripts", "v2_pipeline.R")
+  if (!file.exists(script_path)) script_path <- file.path(root, "src", "v2_pipeline.R")
+  src <- readLines(script_path, warn = FALSE)
   if (any(grepl("^\\s*Phylogeny_only|^\\s*tree\\.nwk|^\\s*L_A", src)))
     stop("v2 source contains a forbidden tree/P-model data symbol")
   ten_gate_folds <- make_stratified_tenfold(st)
