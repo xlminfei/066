@@ -92,6 +92,7 @@ log(phi) prior    Normal(log(10), 1)
 - `figures/F01`–`F08`：ROC、校准、ELPD、预测/观测、全物种热图、区间宽度、PPC、配对 ELPD。
 - `figures/F06_*_corrected`：每页 42 个物种、5 个模型的最终物种图；High/Low 显示点和 CrI，joint_bb/Scheme A 显示点、CrI 和 PI。没有 `corrected` 后缀的 F06 图不属于最终交付。
 - `reports/FIGURE_CAPTIONS_zh.md`、`reports/RESULTS_ANALYSIS_SUMMARY_zh.md`：图注和结果解读。
+- `provenance/v2_run_logs.tar.gz`：正式 preflight、smoke 和 full-run 日志；`provenance/postprocess_omissions.csv`：被 corrected F06 替代的旧图件清单。
 
 最终状态见 `review/final_v2_status.json`。当前状态 `COMPLETE_WITH_REVIEW_FLAGS` 的含义是 HMC 和留出计算完成，但 Scheme A 训练内 PPC 有 20 项需人工结合原始资料查看；不能把它简化成所有路线都已被数据充分证明。
 
@@ -112,4 +113,3 @@ Rscript src/write_v2_reports.R
 ```
 
 完整 Docker、包安装和外部预测命令见仓库根目录 [docs/reproduction_ubuntu.md](../docs/reproduction_ubuntu.md)。
-

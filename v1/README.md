@@ -42,9 +42,8 @@ v1 的分类模型使用 `brms` 的二项/ beta-binomial 接口，以 `HighCount
 
 ## v1 结果包
 
-`results/` 保存预处理和物种预测表。较大的图件和关键衍生表被压缩到 `archive/v1_figures_model_descriptive.tar.gz` 与 `archive/v1_derived_key.tar.gz`，解压后包含 PDF/SVG/PNG、图注和来源 CSV。图件清单与 SHA256 在 `provenance/` 中。后验 RDS、编译对象、运行时缓存和重复的视觉审查文件没有进入压缩包，省略原因见 `provenance/omitted_large_artifacts.md`。
+`results/` 保存预处理和物种预测表。`docs/` 现在包含原始手册下的验证证据、`blank_input`、`demo_input` 和 `validation_input`，因此 v1 的小规模接口验证材料也能随仓库复现。图件和衍生结果分别压缩到 `archive/v1_figures_model_descriptive.tar.gz`、`archive/v1_derived_key.tar.gz`、`archive/v1_derived_all_nonrds.tar.gz` 和 `archive/v1_runs_nonrds.tar.gz`，解压后包含 PDF/SVG/PNG、图注、来源 CSV、非 RDS 结果和运行产物。v1 的全部运行日志在 `provenance/v1_run_logs.tar.gz`。图件清单与 SHA256 在 `provenance/` 中。后验 RDS、编译对象、运行时缓存和重复的视觉审查文件没有进入压缩包，省略原因见 `provenance/omitted_large_artifacts.md`。
 
 ## 与 v2 的关系
 
 v1 的 U/P 树模型是历史参考。v2 去掉进化树，固定完整类别列，明确排除 Site151，修复 beta-binomial 计数精度公式和 F06 分页标签问题，并让未见类别仍有数值输出。逐项差异和修改原因见仓库根目录 [docs/v1_vs_v2_改进说明_zh.md](../docs/v1_vs_v2_改进说明_zh.md)。
-

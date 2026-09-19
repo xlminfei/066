@@ -1,0 +1,48 @@
+{
+  "boundary_results": {
+    "status": "PASS",
+    "mode": "boundary",
+    "eight_examples_matched": true,
+    "raw_intervals_unchanged": true,
+    "Low": 3,
+    "High": 3,
+    "Trials": 6,
+    "Unclassified": 2,
+    "unknown_zero_joint_guard": false
+  },
+  "unknown_zero_results": {
+    "status": "PASS",
+    "unknown_denominator_zero_remains_out_of_contract": true
+  },
+  "brms_version_results": {
+    "status": "PASS",
+    "actual_brms_labels_correct": true,
+    "actual_brms_trials_correct": true,
+    "zero_of_twenty_is_one_LOW_experiment": true,
+    "old_preparation_version_rejected": true
+  },
+  "extra_edges_results": {
+    "status": "PASS",
+    "zero_to_50_LOW": true,
+    "strictly_above_50_upper_is_crossing": true,
+    "just_below_50_point_LOW": true,
+    "zero_width_interval_rejected": true
+  },
+  "static_results": {
+    "status": "PASS",
+    "blocks": 42,
+    "lines": 1568,
+    "no_user_functions_or_script_loaders": true
+  },
+  "changed_R_blocks": [
+    "00_SETTINGS",
+    "01_PREPARE",
+    "04_COMPARE_SENSITIVITY",
+    "05_LOAD",
+    "07_PREDICT"
+  ],
+  "quantitative_Stan_unchanged": true,
+  "ROC_algorithm_unchanged": true,
+  "ELPD_reference_algorithm_unchanged": true,
+  "v1_and_v2_preserved": true
+}

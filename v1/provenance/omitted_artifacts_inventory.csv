@@ -1,0 +1,6 @@
+Area,Files,Bytes,Reason
+runs/**/*.rds,225,75080493923,"Posterior samples and fit objects; regenerate from v1 manual and source code"
+derived/**/*.rds,40,323498312,"Cached CV/extension objects; regenerate from v1 source code"
+provenance/**/*.rds,2,1348157440,"Large provenance-side cached objects; summarized manifests retained"
+figures runtime and visual-review trees,">5000","large and platform-specific","Python environments, compiled libraries, render caches and duplicate visual QA outputs excluded"
+figures publication outputs,"selected","see v1_figures_model_descriptive.tar.gz","PDF/SVG/PNG/source tables/captions retained in the publication archive"

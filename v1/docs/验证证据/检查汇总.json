@@ -1,0 +1,272 @@
+{
+  "main": {
+    "rows": 20,
+    "max_rhat": 1.0096736592143,
+    "min_bulk_ess": 622.863657144669,
+    "min_tail_ess": 620.830691961753,
+    "divergences": 0,
+    "treedepth_hits": 0,
+    "min_ebfmi": 0.655657357942106
+  },
+  "selected_cv_fits": {
+    "rows": 40,
+    "max_rhat": 1.00500819535484,
+    "min_bulk_ess": 942.840035873366,
+    "min_tail_ess": 863.824183704632,
+    "divergences": 0,
+    "treedepth_hits": 0,
+    "min_ebfmi": 0.792255198753717
+  },
+  "representative_sensitivity": {
+    "rows": 5,
+    "max_rhat": 1.00706703245826,
+    "min_bulk_ess": 972.459363059796,
+    "min_tail_ess": 1396.27539586548,
+    "divergences": 0,
+    "treedepth_hits": 0,
+    "min_ebfmi": 0.693723548473029
+  },
+  "contract_test_results": {
+    "visible preparation code is provided": true,
+    "preparation runs on mixed synthetic observations": true,
+    "20/20 contributes one High experiment, not 20": true,
+    "threshold equality and lower side are exact": true,
+    "crossing interval excluded from Trials": true,
+    "unclassified source count remains visible": true,
+    "all 8 target species are retained": true,
+    "all gaps and old indels use MISSING": true,
+    "zero known count is valid": true,
+    "unknown denominators remain missing": true,
+    "full tree covariance is retained": true,
+    "prepared object has all four raw boundary values unchanged": true,
+    "duplicate experimental units are rejected": true,
+    "unknown-N exact0 is rejected rather than epsilon-adjusted": true,
+    "fractional individual counts are rejected": true,
+    "joint Stan model is visible in the R console guide": true,
+    "native Stan parser accepts complete joint model": true,
+    "no user-defined density or sampler function": true
+  },
+  "binary_prepare_results": {
+    "visible preparation code is provided": true,
+    "preparation runs on mixed synthetic observations": true,
+    "20/20 contributes one High experiment, not 20": true,
+    "threshold equality and lower side are exact": true,
+    "crossing interval excluded from Trials": true,
+    "unclassified source count remains visible": true,
+    "all 8 target species are retained": true,
+    "all gaps and old indels use MISSING": true,
+    "zero known count is valid": true,
+    "unknown denominators remain missing": true,
+    "full tree covariance is retained": true,
+    "prepared object has all four raw boundary values unchanged": true,
+    "duplicate experimental units are rejected": true,
+    "unknown-N exact0 is rejected rather than epsilon-adjusted": true,
+    "fractional individual counts are rejected": true,
+    "joint Stan model is visible in the R console guide": true,
+    "native Stan parser accepts complete joint model": true,
+    "no user-defined density or sampler function": true,
+    "binary preparation code exists": true,
+    "M3 rank-deficient design retained by actual brms": true,
+    "full species random-effect levels retained by actual brms": true,
+    "real trials passed to brms": true,
+    "family change invalidates fit cache": true,
+    "beta-binomial is native brms family": true,
+    "invalid aggregated Trials are rejected": true
+  },
+  "joint_oracle_results": {
+    "all exact mixed-observation likelihood oracles": true,
+    "expected ratio is overall m=.52": true,
+    "interior mean is separately .4": true,
+    "endpoint mass is .2": true,
+    "count probabilities normalize": true,
+    "count expected ratio shares m": true,
+    "beta-binomial independent count precision oracle": true,
+    "ratio precision does not alter count likelihood": true,
+    "heldout responses cannot change training log posterior": true,
+    "heldout responses cannot change training gradient": true,
+    "heldout log likelihood responds to changed test data": true,
+    "full range interval contributes no posterior information": true,
+    "full range interval contributes zero gradient": true
+  },
+  "extreme_holdout_result": {
+    "finite_training_value_and_gradient": true
+  },
+  "integration_afterfits_results": {
+    "binary_diagnostics": true,
+    "binary_loo_comparison": false,
+    "binary_ppc": true,
+    "joint_diagnostics": true,
+    "joint_loo_comparison": false,
+    "joint_ppc": true,
+    "predictions": true
+  },
+  "panel365_results": {
+    "binary": {
+      "species_levels": 365,
+      "observed_species": 6,
+      "columns": 8,
+      "rank": 5,
+      "unsupported": 357
+    },
+    "joint": {
+      "S": 365,
+      "N": 60,
+      "columns": 7,
+      "generated_mean_columns": 365,
+      "max_error": 0
+    },
+    "phylo_distance_folds": 5,
+    "scope": "365-species preparation, actual brms Stan data, native fixed-parameter execution; not 365-species HMC"
+  },
+  "postfit_math_results": {
+    "unreliable_actual_psis_comparison_rejected": true,
+    "likelihood_fixture_models": 10,
+    "comparison_model_labels_verified": true,
+    "paired_comparisons": 26,
+    "paired_se_max_error": 5.5511e-17,
+    "paired_delta_max_error": 0,
+    "covariance_marginal_max_error": 0,
+    "fixed_parameter_cases": 4,
+    "shared_expected_max_error": 0,
+    "shared_loglik_max_error": 0
+  },
+  "prediction_value_results": {
+    "published_quantile_max_error": 5.5511e-16,
+    "native_expected_draws_max_error": 0,
+    "binary_probability_formula_max_error": 3.3307e-16,
+    "species": 8,
+    "long_rows": 48,
+    "six_models_per_species": true
+  },
+  "csv_character_results": {
+    "all_F_preserved": true,
+    "all_T_preserved": true,
+    "leading_zero_IDs_preserved": true,
+    "current_HMC_fixture_inputs_identical": true
+  },
+  "original_file_recheck_summary": {
+    "checked": 143,
+    "unchanged": 143,
+    "changed": 0,
+    "unreadable": 0
+  },
+  "integration_matrix_results": {
+    "binary": {
+      "status": "EXECUTED",
+      "key": "e338bcadb606707e6cf17045ffe1b074f95620027b6b8287f5b3dfa6b085a9ee",
+      "full_species": 8,
+      "submatrix_species": 6,
+      "quantities": 14,
+      "within_2_MCSE": 14,
+      "review_difference": 0
+    },
+    "joint": {
+      "status": "EXECUTED",
+      "key": "2a4e831466bb5c875797e251eb32158b914ec11a5967d51cf087ca6cbed8bc70",
+      "full_species": 8,
+      "submatrix_species": 6,
+      "quantities": 16,
+      "within_2_MCSE": 12,
+      "review_difference": 4
+    }
+  },
+  "integration_sensitivity_results": {
+    "binary_b_sd_025_M3_P": {
+      "status": "PASS",
+      "key": "bb279a72f22bfbf68f518c2a25c630b2e203b811f0b815617b0ed2d821ee22a3",
+      "rows": 8,
+      "max_median_shift": 0.2358
+    },
+    "joint_b_sd_025_M3_P": {
+      "status": "PASS",
+      "key": "f0c9f0a0bc6c467e9bceca79b042e88e33250e558abe19590c491ff6e500bc9f",
+      "rows": 8,
+      "max_median_shift": 0.0345
+    },
+    "joint_rho_beta22_M1_P": {
+      "status": "PASS",
+      "key": "546752ac8a17e0fb0adeace993e7a4a213970e76ff5f80374123476789622114",
+      "rows": 8,
+      "max_median_shift": 0.0014
+    },
+    "binary_beta_binomial_M1_P": {
+      "status": "PASS",
+      "key": "bba93bd3a699dea9154cd164c5cf25c20c18de60e8f3e6e5b511a480243680ac",
+      "rows": 8,
+      "max_median_shift": 0.0929
+    },
+    "joint_beta_binomial_M1_P": {
+      "status": "PASS",
+      "key": "6d99aaa5af788a82f920db8aab37c2785c50723d7f921a7abfbfa62d4b2377e5",
+      "rows": 8,
+      "max_median_shift": 0.0093
+    }
+  },
+  "verification_environment": {
+    "verified_at_utc": "2026-09-09 21:19:46 UTC",
+    "R": "R version 4.6.1 (2026-06-24)",
+    "platform": "x86_64-pc-linux-gnu",
+    "os": [
+      "PRETTY_NAME=\"Ubuntu 24.04.4 LTS\"",
+      "NAME=\"Ubuntu\"",
+      "VERSION_ID=\"24.04\"",
+      "VERSION=\"24.04.4 LTS (Noble Numbat)\"",
+      "VERSION_CODENAME=noble",
+      "ID=ubuntu",
+      "ID_LIKE=debian",
+      "HOME_URL=\"https://www.ubuntu.com/\"",
+      "SUPPORT_URL=\"https://help.ubuntu.com/\"",
+      "BUG_REPORT_URL=\"https://bugs.launchpad.net/ubuntu/\"",
+      "PRIVACY_POLICY_URL=\"https://www.ubuntu.com/legal/terms-and-policies/privacy-policy\"",
+      "UBUNTU_CODENAME=noble",
+      "LOGO=ubuntu-logo"
+    ],
+    "packages": {
+      "brms": "2.23.0",
+      "rstan": "2.32.7",
+      "StanHeaders": "2.39.1",
+      "ape": "5.8.1",
+      "loo": "2.10.1",
+      "posterior": "1.7.0",
+      "Matrix": "1.7.6",
+      "matrixStats": "1.5.0",
+      "estimability": "2.0.0",
+      "digest": "0.6.39",
+      "jsonlite": "2.0.0",
+      "bayesplot": "1.16.0"
+    },
+    "joint_model_sha256": "cf64dd984c3df8f531bfa347db27117409e0b929610b4721aec4002b48ddd7bf",
+    "current_primary_identity_checks": true
+  },
+  "delivery_file_checks": {
+    "manual_r_blocks": 36,
+    "unique_block_ids": true,
+    "local_links_checked": 22,
+    "bash_blocks": 2,
+    "no_delivered_scripts": true,
+    "no_user_R_functions_or_script_loaders": true,
+    "template_and_example_rows": {
+      "blank_input/sites.csv": 0,
+      "blank_input/observations.csv": 0,
+      "demo_input/sites.csv": 8,
+      "demo_input/observations.csv": 18,
+      "validation_input/sites.csv": 8,
+      "validation_input/observations.csv": 60
+    },
+    "validation_inputs_identical": true
+  },
+  "delivered_examples_results": {
+    "demo_input": {
+      "species": 8,
+      "records": 18,
+      "status": "PASS"
+    },
+    "validation_input": {
+      "species": 8,
+      "records": 60,
+      "status": "PASS"
+    }
+  },
+  "verification_scope": "Synthetic data implementation validation; no real study data HMC or predictive-validity claim.",
+  "matrix_review_note": "Four finite-simulation differences beyond 2 combined MCSE retained; same observed covariance, expected values and likelihood verified by independent fixed-parameter checks."
+}

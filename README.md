@@ -35,11 +35,11 @@ v2/
   provenance/    正式运行日志和输入追踪
 v1/
   data/          v1 的 observations.csv、sites.csv、tree.nwk
-  src/           原始 v1 分段脚本
-  docs/          原始 v1 操作手册与验证说明
+  src/           原始 v1 分段脚本（含状态辅助脚本）
+  docs/          原始 v1 操作手册、验证证据、demo/blank/validation 输入
   results/       v1 全面板/预处理结果
-  archive/       精简后的 v1 图件与关键衍生结果压缩包
-  provenance/    v1 图注、清单和省略大文件说明
+  archive/       v1 图件、全部非 RDS 衍生结果和运行产物压缩包
+  provenance/    v1 图注、清单、完整日志和省略大文件说明
 docs/            版本差异、算法解释、复现和限制
 ```
 
@@ -56,3 +56,5 @@ docs/            版本差异、算法解释、复现和限制
 本仓库没有替代用户或期刊指定的数据/代码许可。若要把代码用于商业用途、重新分发原始实验表或把预测作为新的生物学结论，需先按项目作者和数据来源的许可要求处理。
 
 根目录的 `MANIFEST.csv` 给出每个交付文件的相对路径、字节数和 SHA256；`MANIFEST.sha256` 校验清单本身。它们不包含省略的后验 RDS，不能替代方法和诊断报告。
+
+v2 postprocess 中唯一未直接放入 `figures/`、`reports/` 或 `results/derived/` 的文件，是没有 `corrected` 后缀的旧 F06 图件；它们与分页标签错配的旧版本对应，已经被 corrected F06 替代，完整清单在 `v2/provenance/postprocess_omissions.csv`。

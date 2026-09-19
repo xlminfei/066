@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "R_version": "R version 4.6.1 (2026-06-24)",
+  "validation_scope": "Delivered encoding, count boundary, missing handling, version guard and R syntax; no model refits",
+  "reference_species_count": 365,
+  "rare_min": 4,
+  "percent_cutoff": 0.01,
+  "real_cells_checked": 2190,
+  "changed_cells": 15,
+  "changed_species": 15,
+  "changed_states": ["Site3:L", "Site20:G", "Site196:S", "Site315:C", "Site315:S"],
+  "boundary_1_2_3_merged_and_4_retained": true,
+  "old_threshold_failure_detected": true,
+  "missing_separate": true,
+  "M1_M2_encoding_unchanged": true,
+  "raw_site_values_preserved": true,
+  "old_version_rejected_by_existing_guard": true,
+  "new_version_accepted_by_existing_guard": true,
+  "parsed_R_blocks": 42,
+  "model_refits_run": false
+}

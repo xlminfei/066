@@ -1,0 +1,53 @@
+{
+  "contract_results": {
+    "known_auc_075": true,
+    "direction_not_auto_flipped": true,
+    "ties_count_half": true,
+    "uses_within_fold_auc_not_pooled_auc": true,
+    "one_class_fold_not_silently_dropped": true,
+    "unseen_levels_retained": true,
+    "missing_score": true,
+    "out_of_range": true,
+    "duplicate_record": true,
+    "split_species": true,
+    "uncertain_labels_not_imputed": true,
+    "exported_roc_area_matches_auc": true
+  },
+  "loading_guard_results": {
+    "changed_fold_assignment_rejected": true,
+    "changed_parent_fit_rejected": true,
+    "changed_experiment_labels_rejected": true
+  },
+  "integration_results": {
+    "status": "PASS",
+    "models": 10,
+    "folds": 2,
+    "evaluated_experiments_per_model": 57,
+    "score_rows": 570,
+    "roc_coordinate_rows": 72,
+    "auc_oracle_max_error": 1.1102e-16,
+    "null_auc_exactly_half": true,
+    "auc_range": [
+      0.0941,
+      0.9059
+    ],
+    "output_directory": "/project/work/verification/integration_run/results/roc_auc_v2/primary_c8e5ede366794934",
+    "pROC": "1.19.1",
+    "auc_request_key": "c8e5ede3667949344d87bd360068b4eff0bdd71bd1d2969efce17daca640962e"
+  },
+  "pdf_checks": {
+    "pages": 10,
+    "all_model_labels_present": true,
+    "both_fold_labels_present": true,
+    "text_within_page": true
+  },
+  "static_results": {
+    "blocks": 42,
+    "lines": 1560,
+    "namespace_references": 74,
+    "all_parsed": true,
+    "no_user_defined_functions_or_script_loaders": true
+  },
+  "base_36_R_blocks_unchanged": true,
+  "v1_manifest_and_archive_verified": true
+}
