@@ -22,9 +22,9 @@ M1 将各建模位点按预先规定的参考氨基酸、`other`、`MISSING` 编
 运行主流程：
 
 ```bash
-Rscript scripts/v2_pipeline.R --stage preflight --root /project/work/ratio_analysis_20260914_v2_site151_excluded
-Rscript scripts/v2_pipeline.R --stage smoke --root /project/work/ratio_analysis_20260914_v2_site151_excluded
-Rscript scripts/v2_pipeline.R --stage all --root /project/work/ratio_analysis_20260914_v2_site151_excluded
+Rscript src/v2_pipeline.R --stage preflight --root /project/work/066/v2
+Rscript src/v2_pipeline.R --stage smoke --root /project/work/066/v2
+Rscript src/v2_pipeline.R --stage all --root /project/work/066/v2
 ```
 
 五折物种分组验证是主结果。分类路线只使用有至少一条可分类记录的 50 个物种；联合比率和 Scheme A 路线使用有定量资料的 51 个物种。两套折表独立生成，不能混用。十折先检查每个分类测试折同时含 HIGH 和 LOW；若任一折缺少一类，整套十折不运行。Null 只作为 ELPD 差值的零点，Null 的实际预测概率不会被改成 0；不输出 ΔAUC。MAE 只作为定量路线的辅助解释。`cv_fold_scores_v2.csv` 保存逐折汇总，`cv_record_scores_v2.csv` 保存每条留出记录的 log predictive score。
@@ -32,10 +32,10 @@ Rscript scripts/v2_pipeline.R --stage all --root /project/work/ratio_analysis_20
 新增物种预测要求一个 CSV，列为 `Species` 和六个位点列。六个位点必须已经按冻结参考比对提取，程序不会把新序列加入多重比对，也不会重新统计 M3 频数。示例命令：
 
 ```bash
-Rscript scripts/v2_pipeline.R --stage external \
-  --root /project/work/ratio_analysis_20260914_v2_site151_excluded \
+Rscript src/v2_pipeline.R --stage external \
+  --root /project/work/066/v2 \
   --new-data /project/work/new_species_sites.csv \
-  --out /project/work/ratio_analysis_20260914_v2_site151_excluded/results/external_predictions_v2.csv
+  --out /project/work/066/v2/results/external_predictions_v2.csv
 ```
 
 定量路线输出整体 expected exact-report ratio、95% 后验可信区间和一个未来 exact-type 报告的 95% 后验预测区间；调用者不需要提供未来实验的分母。区间和点值均应落在 `[0,1]`。
