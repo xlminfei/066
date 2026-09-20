@@ -1,0 +1,10 @@
+PASS: swapped actual fit object refused 
+PASS: wrong cache key refused 
+PASS: corrupt RDS refused
+PASS: forged PASS diagnostic is recomputed and refused 
+PASS: payload fingerprint survives RDS roundtrip
+PASS: invalid configuration overwrites stale COMPLETE with FAILED
+PASS: same-length wrong task grid refused 
+PASS: invalid plan cannot retain stale audit PASS
+PASS: changed output cannot reuse receipt 
+ARTIFACT_GUARD_PASS

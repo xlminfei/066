@@ -1,0 +1,4 @@
+Error in validate_fitted_bundle_v3(b, spec, require_pass = FALSE) : 
+  Actual fitted Stan code mismatch
+Calls: run_cv_v3 ... fit_joint_model_v3 -> fit_from_spec_v3 -> validate_fitted_bundle_v3
+Execution halted

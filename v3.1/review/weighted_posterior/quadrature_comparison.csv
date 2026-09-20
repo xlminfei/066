@@ -1,0 +1,3 @@
+"TrainWeighting","QuadratureMean","StanPosteriorMean","AbsoluteError","Status","MaxRhat","MinBulkESS","MinTailESS","Divergences","TreeDepthHits","MinEBFMI","ParametersChecked","DiagnosticScope"
+"record_equal",0.131608887596394,0.132740761701549,0.00113187410515464,"PASS",1.0028246089426,2028.60579784955,1871.40014544881,0,0,0.914236167706778,2,"sampled_parameters_and_lp; deterministic_outputs_checked_separately"
+"species_equal",0.5,0.502277847985793,0.00227784798579322,"PASS",1.00401864905721,1814.5632582684,1748.23137238061,0,0,0.824966535250721,2,"sampled_parameters_and_lp; deterministic_outputs_checked_separately"

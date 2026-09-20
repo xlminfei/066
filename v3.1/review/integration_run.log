@@ -1,0 +1,249 @@
+FIT_START binary Null record_equal seed 20260922 
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 1).
+Chain 1: 
+Chain 1: Gradient evaluation took 3.5e-05 seconds
+Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 0.35 seconds.
+Chain 1: Adjust your expectations accordingly!
+Chain 1: 
+Chain 1: 
+Chain 1: Iteration:   1 / 600 [  0%]  (Warmup)
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 2).
+Chain 2: 
+Chain 2: Gradient evaluation took 3.5e-05 seconds
+Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 0.35 seconds.
+Chain 2: Adjust your expectations accordingly!
+Chain 2: 
+Chain 2: 
+Chain 2: Iteration:   1 / 600 [  0%]  (Warmup)
+Chain 1: Iteration:  50 / 600 [  8%]  (Warmup)
+Chain 1: Iteration: 100 / 600 [ 16%]  (Warmup)
+Chain 2: Iteration:  50 / 600 [  8%]  (Warmup)
+Chain 2: Iteration: 100 / 600 [ 16%]  (Warmup)
+Chain 1: Iteration: 150 / 600 [ 25%]  (Warmup)
+Chain 2: Iteration: 150 / 600 [ 25%]  (Warmup)
+Chain 1: Iteration: 200 / 600 [ 33%]  (Warmup)
+Chain 2: Iteration: 200 / 600 [ 33%]  (Warmup)
+Chain Chain 2: Iteration: 250 / 600 [ 41%]  (Warmup)
+1: Iteration: 250 / 600 [ 41%]  (Warmup)
+Chain 2: Iteration: 300 / 600 [ 50%]  (Warmup)
+Chain 2: Iteration: 301 / 600 [ 50%]  (Sampling)
+Chain 1: Iteration: 300 / 600 [ 50%]  (Warmup)
+Chain 1: Iteration: 301 / 600 [ 50%]  (Sampling)
+Chain 2: Iteration: 350 / 600 [ 58%]  (Sampling)
+Chain 1: Iteration: 350 / 600 [ 58%]  (Sampling)
+Chain 2: Iteration: 400 / 600 [ 66%]  (Sampling)
+Chain 1: Iteration: 400 / 600 [ 66%]  (Sampling)
+Chain 2: Iteration: 450 / 600 [ 75%]  (Sampling)
+Chain 1: Iteration: 450 / 600 [ 75%]  (Sampling)
+Chain 2: Iteration: 500 / 600 [ 83%]  (Sampling)
+Chain 1: Iteration: 500 / 600 [ 83%]  (Sampling)
+Chain 2: Iteration: 550 / 600 [ 91%]  (Sampling)
+Chain 1: Iteration: 550 / 600 [ 91%]  (Sampling)
+Chain 2: Iteration: 600 / 600 [100%]  (Sampling)
+Chain 2: 
+Chain 2:  Elapsed Time: 0.013 seconds (Warm-up)
+Chain 2:                0.013 seconds (Sampling)
+Chain 2:                0.026 seconds (Total)
+Chain 2: 
+Chain 1: Iteration: 600 / 600 [100%]  (Sampling)
+Chain 1: 
+Chain 1:  Elapsed Time: 0.018 seconds (Warm-up)
+Chain 1:                0.014 seconds (Sampling)
+Chain 1:                0.032 seconds (Total)
+Chain 1: 
+Warning: Bulk Effective Samples Size (ESS) is too low, indicating posterior means and medians may be unreliable.
+Running the chains for more iterations may help. See
+https://mc-stan.org/misc/warnings.html#bulk-ess
+Warning: Tail Effective Samples Size (ESS) is too low, indicating posterior variances and tail quantiles may be unreliable.
+Running the chains for more iterations may help. See
+https://mc-stan.org/misc/warnings.html#tail-ess
+FIT_END binary Null FAILED_DIAGNOSTICS 
+FIT_START binary Null record_equal seed 20260923 
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 1).
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 2).
+Chain 1: 
+Chain 1: Gradient evaluation took 2.7e-05 seconds
+Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 0.27 seconds.
+Chain 1: Adjust your expectations accordingly!
+Chain 1: 
+Chain 1: 
+Chain Chain 1: Iteration:   1 / 600 [  0%]  (Warmup)
+2: 
+Chain 2: Gradient evaluation took 2.3e-05 seconds
+Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 0.23 seconds.
+Chain 2: Adjust your expectations accordingly!
+Chain 2: 
+Chain 2: 
+Chain 2: Iteration:   1 / 600 [  0%]  (Warmup)
+Chain 1: Iteration:  50 / 600 [  8%]  (Warmup)
+Chain 1: Iteration: 100 / 600 [ 16%]  (Warmup)
+Chain 2: Iteration:  50 / 600 [  8%]  (Warmup)
+Chain 2: Iteration: 100 / 600 [ 16%]  (Warmup)
+Chain 1: Iteration: 150 / 600 [ 25%]  (Warmup)
+Chain 1: Iteration: 200 / 600 [ 33%]  (Warmup)
+Chain 2: Iteration: 150 / 600 [ 25%]  (Warmup)
+Chain 1: Iteration: 250 / 600 [ 41%]  (Warmup)
+Chain 2: Iteration: 200 / 600 [ 33%]  (Warmup)
+Chain 2: Iteration: 250 / 600 [ 41%]  (Warmup)
+Chain 1: Iteration: 300 / 600 [ 50%]  (Warmup)
+Chain 1: Iteration: 301 / 600 [ 50%]  (Sampling)
+Chain 2: Iteration: 300 / 600 [ 50%]  (Warmup)
+Chain 2: Iteration: 301 / 600 [ 50%]  (Sampling)
+Chain 2: Iteration: 350 / 600 [ 58%]  (Sampling)
+Chain 1: Iteration: 350 / 600 [ 58%]  (Sampling)
+Chain 2: Iteration: 400 / 600 [ 66%]  (Sampling)
+Chain 1: Iteration: 400 / 600 [ 66%]  (Sampling)
+Chain 2: Iteration: 450 / 600 [ 75%]  (Sampling)
+Chain 2: Iteration: 500 / 600 [ 83%]  (Sampling)
+Chain 1: Iteration: 450 / 600 [ 75%]  (Sampling)
+Chain 2: Iteration: 550 / 600 [ 91%]  (Sampling)
+Chain 2: Iteration: 600 / 600 [100%]  (Sampling)
+Chain 2: 
+Chain 2:  Elapsed Time: 0.013 seconds (Warm-up)
+Chain 2:                0.008 seconds (Sampling)
+Chain 2:                0.021 seconds (Total)
+Chain 2: 
+Chain 1: Iteration: 500 / 600 [ 83%]  (Sampling)
+Chain 1: Iteration: 550 / 600 [ 91%]  (Sampling)
+Chain 1: Iteration: 600 / 600 [100%]  (Sampling)
+Chain 1: 
+Chain 1:  Elapsed Time: 0.012 seconds (Warm-up)
+Chain 1:                0.013 seconds (Sampling)
+Chain 1:                0.025 seconds (Total)
+Chain 1: 
+Warning: Bulk Effective Samples Size (ESS) is too low, indicating posterior means and medians may be unreliable.
+Running the chains for more iterations may help. See
+https://mc-stan.org/misc/warnings.html#bulk-ess
+Warning: Tail Effective Samples Size (ESS) is too low, indicating posterior variances and tail quantiles may be unreliable.
+Running the chains for more iterations may help. See
+https://mc-stan.org/misc/warnings.html#tail-ess
+FIT_END binary Null FAILED_DIAGNOSTICS 
+FIT_START binary Null species_equal seed 20260922 
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 1).
+Chain 1: 
+Chain 1: Gradient evaluation took 3e-05 seconds
+Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 0.3 seconds.
+Chain 1: Adjust your expectations accordingly!
+Chain 1: 
+Chain 1: 
+Chain 1: Iteration:   1 / 600 [  0%]  (Warmup)
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 2).
+Chain 2: 
+Chain 2: Gradient evaluation took 2.5e-05 seconds
+Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 0.25 seconds.
+Chain 2: Adjust your expectations accordingly!
+Chain 2: 
+Chain 2: 
+Chain 2: Iteration:   1 / 600 [  0%]  (Warmup)
+Chain 1: Iteration:  50 / 600 [  8%]  (Warmup)
+Chain 2: Iteration:  50 / 600 [  8%]  (Warmup)
+Chain 1: Iteration: 100 / 600 [ 16%]  (Warmup)
+Chain 2: Iteration: 100 / 600 [ 16%]  (Warmup)
+Chain 2: Iteration: 150 / 600 [ 25%]  (Warmup)
+Chain 1: Iteration: 150 / 600 [ 25%]  (Warmup)
+Chain 2: Iteration: 200 / 600 [ 33%]  (Warmup)
+Chain 1: Iteration: 200 / 600 [ 33%]  (Warmup)
+Chain 2: Iteration: 250 / 600 [ 41%]  (Warmup)
+Chain 1: Iteration: 250 / 600 [ 41%]  (Warmup)
+Chain 2: Iteration: 300 / 600 [ 50%]  (Warmup)
+Chain 2: Iteration: 301 / 600 [ 50%]  (Sampling)
+Chain 1: Iteration: 300 / 600 [ 50%]  (Warmup)
+Chain 1: Iteration: 301 / 600 [ 50%]  (Sampling)
+Chain 2: Iteration: 350 / 600 [ 58%]  (Sampling)
+Chain 2: Iteration: 400 / 600 [ 66%]  (Sampling)
+Chain 1: Iteration: 350 / 600 [ 58%]  (Sampling)
+Chain Chain 1: Iteration: 400 / 600 [ 66%]  (Sampling)
+2: Iteration: 450 / 600 [ 75%]  (Sampling)
+Chain 1: Iteration: 450 / 600 [ 75%]  (Sampling)
+Chain 2: Iteration: 500 / 600 [ 83%]  (Sampling)
+Chain 2: Iteration: 550 / 600 [ 91%]  (Sampling)
+Chain 1: Iteration: 500 / 600 [ 83%]  (Sampling)
+Chain Chain 1: Iteration: 550 / 600 [ 91%]  (Sampling)
+2: Iteration: 600 / 600 [100%]  (Sampling)
+Chain 2: 
+Chain 2:  Elapsed Time: 0.014 seconds (Warm-up)
+Chain 2:                0.013 seconds (Sampling)
+Chain 2:                0.027 seconds (Total)
+Chain 2: 
+Chain 1: Iteration: 600 / 600 [100%]  (Sampling)
+Chain 1: 
+Chain 1:  Elapsed Time: 0.02 seconds (Warm-up)
+Chain 1:                0.014 seconds (Sampling)
+Chain 1:                0.034 seconds (Total)
+Chain 1: 
+Warning: Bulk Effective Samples Size (ESS) is too low, indicating posterior means and medians may be unreliable.
+Running the chains for more iterations may help. See
+https://mc-stan.org/misc/warnings.html#bulk-ess
+Warning: Tail Effective Samples Size (ESS) is too low, indicating posterior variances and tail quantiles may be unreliable.
+Running the chains for more iterations may help. See
+https://mc-stan.org/misc/warnings.html#tail-ess
+FIT_END binary Null FAILED_DIAGNOSTICS 
+FIT_START binary Null species_equal seed 20260923 
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 1).
+Chain 1: 
+Chain 1: Gradient evaluation took 2.7e-05 seconds
+Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 0.27 seconds.
+Chain 1: Adjust your expectations accordingly!
+Chain 1: 
+Chain 1: 
+Chain 1: Iteration:   1 / 600 [  0%]  (Warmup)
+Chain 1: Iteration:  50 / 600 [  8%]  (Warmup)
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 2).
+Chain 1: Iteration: 100 / 600 [ 16%]  (Warmup)
+Chain 2: 
+Chain 2: Gradient evaluation took 2.3e-05 seconds
+Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 0.23 seconds.
+Chain 2: Adjust your expectations accordingly!
+Chain 2: 
+Chain 2: 
+Chain 2: Iteration:   1 / 600 [  0%]  (Warmup)
+Chain 1: Iteration: 150 / 600 [ 25%]  (Warmup)
+Chain Chain 1: Iteration: 200 / 600 [ 33%]  (Warmup)
+2: Iteration:  50 / 600 [  8%]  (Warmup)
+Chain 2: Iteration: 100 / 600 [ 16%]  (Warmup)
+Chain 1: Iteration: 250 / 600 [ 41%]  (Warmup)
+Chain 2: Iteration: 150 / 600 [ 25%]  (Warmup)
+Chain 1: Iteration: 300 / 600 [ 50%]  (Warmup)
+Chain 1: Iteration: 301 / 600 [ 50%]  (Sampling)
+Chain 2: Iteration: 200 / 600 [ 33%]  (Warmup)
+Chain 1: Iteration: 350 / 600 [ 58%]  (Sampling)
+Chain 2: Iteration: 250 / 600 [ 41%]  (Warmup)
+Chain 1: Iteration: 400 / 600 [ 66%]  (Sampling)
+Chain 2: Iteration: 300 / 600 [ 50%]  (Warmup)
+Chain 2: Iteration: 301 / 600 [ 50%]  (Sampling)
+Chain 2: Iteration: 350 / 600 [ 58%]  (Sampling)
+Chain 1: Iteration: 450 / 600 [ 75%]  (Sampling)
+Chain 2: Iteration: 400 / 600 [ 66%]  (Sampling)
+Chain 1: Iteration: 500 / 600 [ 83%]  (Sampling)
+Chain 2: Iteration: 450 / 600 [ 75%]  (Sampling)
+Chain 2: Iteration: 500 / 600 [ 83%]  (Sampling)
+Chain 1: Iteration: 550 / 600 [ 91%]  (Sampling)
+Chain 2: Iteration: 550 / 600 [ 91%]  (Sampling)
+Chain 2: Iteration: 600 / 600 [100%]  (Sampling)
+Chain 2: 
+Chain 2:  Elapsed Time: 0.013 seconds (Warm-up)
+Chain 2:                0.008 seconds (Sampling)
+Chain 2:                0.021 seconds (Total)
+Chain 2: 
+Chain 1: Iteration: 600 / 600 [100%]  (Sampling)
+Chain 1: 
+Chain 1:  Elapsed Time: 0.012 seconds (Warm-up)
+Chain 1:                0.013 seconds (Sampling)
+Chain 1:                0.025 seconds (Total)
+Chain 1: 
+Warning: Bulk Effective Samples Size (ESS) is too low, indicating posterior means and medians may be unreliable.
+Running the chains for more iterations may help. See
+https://mc-stan.org/misc/warnings.html#bulk-ess
+Warning: Tail Effective Samples Size (ESS) is too low, indicating posterior variances and tail quantiles may be unreliable.
+Running the chains for more iterations may help. See
+https://mc-stan.org/misc/warnings.html#tail-ess
+FIT_END binary Null FAILED_DIAGNOSTICS 
+FIT_START binary M1 record_equal seed 20260923 

@@ -1,0 +1,924 @@
+FIT_START binary Null record_equal seed 20260922 
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 1).
+Chain 1: 
+Chain 1: Gradient evaluation took 2.8e-05 seconds
+Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 0.28 seconds.
+Chain 1: Adjust your expectations accordingly!
+Chain 1: 
+Chain 1: 
+Chain 1: Iteration:   1 / 600 [  0%]  (Warmup)
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 2).
+Chain 2: 
+Chain 2: Gradient evaluation took 2.5e-05 seconds
+Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 0.25 seconds.
+Chain 2: Adjust your expectations accordingly!
+Chain 2: 
+Chain 2: 
+Chain 2: Iteration:   1 / 600 [  0%]  (Warmup)
+Chain 1: Iteration:  50 / 600 [  8%]  (Warmup)
+Chain 2: Iteration:  50 / 600 [  8%]  (Warmup)
+Chain 1: Iteration: 100 / 600 [ 16%]  (Warmup)
+Chain 2: Iteration: 100 / 600 [ 16%]  (Warmup)
+Chain 2: Iteration: 150 / 600 [ 25%]  (Warmup)
+Chain 1: Iteration: 150 / 600 [ 25%]  (Warmup)
+Chain 2: Iteration: 200 / 600 [ 33%]  (Warmup)
+Chain 1: Iteration: 200 / 600 [ 33%]  (Warmup)
+Chain 2: Iteration: 250 / 600 [ 41%]  (Warmup)
+Chain 1: Iteration: 250 / 600 [ 41%]  (Warmup)
+Chain 2: Iteration: 300 / 600 [ 50%]  (Warmup)
+Chain 2: Iteration: 301 / 600 [ 50%]  (Sampling)
+Chain 1: Iteration: 300 / 600 [ 50%]  (Warmup)
+Chain 1: Iteration: 301 / 600 [ 50%]  (Sampling)
+Chain 2: Iteration: 350 / 600 [ 58%]  (Sampling)
+Chain 1: Iteration: 350 / 600 [ 58%]  (Sampling)
+Chain 2: Iteration: 400 / 600 [ 66%]  (Sampling)
+Chain 1: Iteration: 400 / 600 [ 66%]  (Sampling)
+Chain 2: Iteration: 450 / 600 [ 75%]  (Sampling)
+Chain 1: Iteration: 450 / 600 [ 75%]  (Sampling)
+Chain 2: Iteration: 500 / 600 [ 83%]  (Sampling)
+Chain 1: Iteration: 500 / 600 [ 83%]  (Sampling)
+Chain 2: Iteration: 550 / 600 [ 91%]  (Sampling)
+Chain 1: Iteration: 550 / 600 [ 91%]  (Sampling)
+Chain 2: Iteration: 600 / 600 [100%]  (Sampling)
+Chain 2: 
+Chain 2:  Elapsed Time: 0.013 seconds (Warm-up)
+Chain 2:                0.013 seconds (Sampling)
+Chain 2:                0.026 seconds (Total)
+Chain 2: 
+Chain 1: Iteration: 600 / 600 [100%]  (Sampling)
+Chain 1: 
+Chain 1:  Elapsed Time: 0.018 seconds (Warm-up)
+Chain 1:                0.014 seconds (Sampling)
+Chain 1:                0.032 seconds (Total)
+Chain 1: 
+Warning: Bulk Effective Samples Size (ESS) is too low, indicating posterior means and medians may be unreliable.
+Running the chains for more iterations may help. See
+https://mc-stan.org/misc/warnings.html#bulk-ess
+Warning: Tail Effective Samples Size (ESS) is too low, indicating posterior variances and tail quantiles may be unreliable.
+Running the chains for more iterations may help. See
+https://mc-stan.org/misc/warnings.html#tail-ess
+FIT_END binary Null FAILED_DIAGNOSTICS 
+FIT_START binary Null record_equal seed 20260923 
+
+
+SAMPLING FOR MODEL 'anon_modelSAMPLING' NOW (CHAIN  FOR MODEL 'anon_model' NOW (CHAIN 2).
+1).
+Chain Chain 2: 
+1: 
+Chain Chain 21: : Gradient evaluation took 3.1e-05 secondsGradient evaluation took 3e-05 seconds
+
+Chain Chain 21: : 1000 transitions using 10 leapfrog steps per transition would take 0.31 seconds.1000 transitions using 10 leapfrog steps per transition would take 0.3 seconds.
+
+Chain Chain 21: : Adjust your expectations accordingly!Adjust your expectations accordingly!
+
+Chain Chain 21: : 
+
+Chain Chain 21: : 
+
+Chain Chain 2: Iteration:   1 / 600 [  0%]  (Warmup)
+1: Iteration:   1 / 600 [  0%]  (Warmup)
+Chain 1: Iteration:  50 / 600 [  8%]  (Warmup)
+Chain 1: Iteration: 100 / 600 [ 16%]  (Warmup)
+Chain 2: Iteration:  50 / 600 [  8%]  (Warmup)
+Chain 2: Iteration: 100 / 600 [ 16%]  (Warmup)
+Chain 1: Iteration: 150 / 600 [ 25%]  (Warmup)
+Chain Chain 12: : Iteration: 150 / 600 [ 25%]  (Warmup)Iteration: 200 / 600 [ 33%]  (Warmup)
+
+Chain 1: Iteration: 250 / 600 [ 41%]  (Warmup)
+Chain 2: Iteration: 200 / 600 [ 33%]  (Warmup)
+Chain 2: Iteration: 250 / 600 [ 41%]  (Warmup)
+Chain 1: Iteration: 300 / 600 [ 50%]  (Warmup)
+Chain 1: Iteration: 301 / 600 [ 50%]  (Sampling)
+Chain 2: Iteration: 300 / 600 [ 50%]  (Warmup)
+Chain 2: Iteration: 301 / 600 [ 50%]  (Sampling)
+Chain 2: Iteration: 350 / 600 [ 58%]  (Sampling)
+Chain 1: Iteration: 350 / 600 [ 58%]  (Sampling)
+Chain 2: Iteration: 400 / 600 [ 66%]  (Sampling)
+Chain 1: Iteration: 400 / 600 [ 66%]  (Sampling)
+Chain 2: Iteration: 450 / 600 [ 75%]  (Sampling)
+Chain 2: Iteration: 500 / 600 [ 83%]  (Sampling)
+Chain 1: Iteration: 450 / 600 [ 75%]  (Sampling)
+Chain 2: Iteration: 550 / 600 [ 91%]  (Sampling)
+Chain 2: Iteration: 600 / 600 [100%]  (Sampling)
+Chain 2: 
+Chain 2:  Elapsed Time: 0.013 seconds (Warm-up)
+Chain 2:                0.008 seconds (Sampling)
+Chain 2:                0.021 seconds (Total)
+Chain 2: 
+Chain 1: Iteration: 500 / 600 [ 83%]  (Sampling)
+Chain 1: Iteration: 550 / 600 [ 91%]  (Sampling)
+Chain 1: Iteration: 600 / 600 [100%]  (Sampling)
+Chain 1: 
+Chain 1:  Elapsed Time: 0.013 seconds (Warm-up)
+Chain 1:                0.013 seconds (Sampling)
+Chain 1:                0.026 seconds (Total)
+Chain 1: 
+Warning: Bulk Effective Samples Size (ESS) is too low, indicating posterior means and medians may be unreliable.
+Running the chains for more iterations may help. See
+https://mc-stan.org/misc/warnings.html#bulk-ess
+Warning: Tail Effective Samples Size (ESS) is too low, indicating posterior variances and tail quantiles may be unreliable.
+Running the chains for more iterations may help. See
+https://mc-stan.org/misc/warnings.html#tail-ess
+FIT_END binary Null FAILED_DIAGNOSTICS 
+FIT_START binary Null species_equal seed 20260922 
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 1).
+Chain 1: 
+Chain 1: Gradient evaluation took 7.1e-05 seconds
+Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 0.71 seconds.
+Chain 1: Adjust your expectations accordingly!
+Chain 1: 
+Chain 1: 
+Chain 1: Iteration:   1 / 600 [  0%]  (Warmup)
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 2).
+Chain 2: 
+Chain 2: Gradient evaluation took 2.4e-05 seconds
+Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 0.24 seconds.
+Chain 2: Adjust your expectations accordingly!
+Chain 2: 
+Chain 2: 
+Chain 2: Iteration:   1 / 600 [  0%]  (Warmup)
+Chain 1: Iteration:  50 / 600 [  8%]  (Warmup)
+Chain 1: Iteration: 100 / 600 [ 16%]  (Warmup)
+Chain 2: Iteration:  50 / 600 [  8%]  (Warmup)
+Chain 2: Iteration: 100 / 600 [ 16%]  (Warmup)
+Chain 1: Iteration: 150 / 600 [ 25%]  (Warmup)
+Chain 2: Iteration: 150 / 600 [ 25%]  (Warmup)
+Chain 1: Iteration: 200 / 600 [ 33%]  (Warmup)
+Chain 2: Iteration: 200 / 600 [ 33%]  (Warmup)
+Chain 1: Iteration: 250 / 600 [ 41%]  (Warmup)
+Chain 2: Iteration: 250 / 600 [ 41%]  (Warmup)
+Chain 2: Iteration: 300 / 600 [ 50%]  (Warmup)
+Chain 2: Iteration: 301 / 600 [ 50%]  (Sampling)
+Chain 1: Iteration: 300 / 600 [ 50%]  (Warmup)
+Chain 1: Iteration: 301 / 600 [ 50%]  (Sampling)
+Chain 2: Iteration: 350 / 600 [ 58%]  (Sampling)
+Chain 1: Iteration: 350 / 600 [ 58%]  (Sampling)
+Chain 2: Iteration: 400 / 600 [ 66%]  (Sampling)
+Chain 1: Iteration: 400 / 600 [ 66%]  (Sampling)
+Chain 2: Iteration: 450 / 600 [ 75%]  (Sampling)
+Chain 1: Iteration: 450 / 600 [ 75%]  (Sampling)
+Chain 2: Iteration: 500 / 600 [ 83%]  (Sampling)
+Chain 1: Iteration: 500 / 600 [ 83%]  (Sampling)
+Chain 2: Iteration: 550 / 600 [ 91%]  (Sampling)
+Chain 1: Iteration: 550 / 600 [ 91%]  (Sampling)
+Chain 2: Iteration: 600 / 600 [100%]  (Sampling)
+Chain 2: 
+Chain 2:  Elapsed Time: 0.012 seconds (Warm-up)
+Chain 2:                0.013 seconds (Sampling)
+Chain 2:                0.025 seconds (Total)
+Chain 2: 
+Chain 1: Iteration: 600 / 600 [100%]  (Sampling)
+Chain 1: 
+Chain 1:  Elapsed Time: 0.017 seconds (Warm-up)
+Chain 1:                0.014 seconds (Sampling)
+Chain 1:                0.031 seconds (Total)
+Chain 1: 
+Warning: Bulk Effective Samples Size (ESS) is too low, indicating posterior means and medians may be unreliable.
+Running the chains for more iterations may help. See
+https://mc-stan.org/misc/warnings.html#bulk-ess
+Warning: Tail Effective Samples Size (ESS) is too low, indicating posterior variances and tail quantiles may be unreliable.
+Running the chains for more iterations may help. See
+https://mc-stan.org/misc/warnings.html#tail-ess
+FIT_END binary Null FAILED_DIAGNOSTICS 
+FIT_START binary Null species_equal seed 20260923 
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 1).
+Chain 1: 
+Chain 1: Gradient evaluation took 2.9e-05 seconds
+Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 0.29 seconds.
+Chain 1: Adjust your expectations accordingly!
+Chain 1: 
+Chain 1: 
+Chain 1: Iteration:   1 / 600 [  0%]  (Warmup)
+Chain 1: Iteration:  50 / 600 [  8%]  (Warmup)
+Chain 1: Iteration: 100 / 600 [ 16%]  (Warmup)
+Chain 1: Iteration: 150 / 600 [ 25%]  (Warmup)
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 2).
+Chain 1: Iteration: 200 / 600 [ 33%]  (Warmup)
+Chain 2: 
+Chain 2: Gradient evaluation took 2.7e-05 seconds
+Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 0.27 seconds.
+Chain 2: Adjust your expectations accordingly!
+Chain 2: 
+Chain 2: 
+Chain 2: Iteration:   1 / 600 [  0%]  (Warmup)
+Chain 1: Iteration: 250 / 600 [ 41%]  (Warmup)
+Chain 2: Iteration:  50 / 600 [  8%]  (Warmup)
+Chain 1: Iteration: 300 / 600 [ 50%]  (Warmup)
+Chain 1: Iteration: 301 / 600 [ 50%]  (Sampling)
+Chain 2: Iteration: 100 / 600 [ 16%]  (Warmup)
+Chain 1: Iteration: 350 / 600 [ 58%]  (Sampling)
+Chain 2: Iteration: 150 / 600 [ 25%]  (Warmup)
+Chain 1: Iteration: 400 / 600 [ 66%]  (Sampling)
+Chain 2: Iteration: 200 / 600 [ 33%]  (Warmup)
+Chain 1: Iteration: 450 / 600 [ 75%]  (Sampling)
+Chain 2: Iteration: 250 / 600 [ 41%]  (Warmup)
+Chain 1: Iteration: 500 / 600 [ 83%]  (Sampling)
+Chain 2: Iteration: 300 / 600 [ 50%]  (Warmup)
+Chain 2: Iteration: 301 / 600 [ 50%]  (Sampling)
+Chain 1: Iteration: 550 / 600 [ 91%]  (Sampling)
+Chain 2: Iteration: 350 / 600 [ 58%]  (Sampling)
+Chain 2: Iteration: 400 / 600 [ 66%]  (Sampling)
+Chain 1: Iteration: 600 / 600 [100%]  (Sampling)
+Chain 1: 
+Chain 1:  Elapsed Time: 0.012 seconds (Warm-up)
+Chain 1:                0.013 seconds (Sampling)
+Chain 1:                0.025 seconds (Total)
+Chain 1: 
+Chain 2: Iteration: 450 / 600 [ 75%]  (Sampling)
+Chain 2: Iteration: 500 / 600 [ 83%]  (Sampling)
+Chain 2: Iteration: 550 / 600 [ 91%]  (Sampling)
+Chain 2: Iteration: 600 / 600 [100%]  (Sampling)
+Chain 2: 
+Chain 2:  Elapsed Time: 0.014 seconds (Warm-up)
+Chain 2:                0.008 seconds (Sampling)
+Chain 2:                0.022 seconds (Total)
+Chain 2: 
+Warning: Bulk Effective Samples Size (ESS) is too low, indicating posterior means and medians may be unreliable.
+Running the chains for more iterations may help. See
+https://mc-stan.org/misc/warnings.html#bulk-ess
+Warning: Tail Effective Samples Size (ESS) is too low, indicating posterior variances and tail quantiles may be unreliable.
+Running the chains for more iterations may help. See
+https://mc-stan.org/misc/warnings.html#tail-ess
+FIT_END binary Null FAILED_DIAGNOSTICS 
+FIT_START binary M1 record_equal seed 20260923 
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 1).
+Chain 1: 
+Chain 1: Gradient evaluation took 3e-05 seconds
+Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 0.3 seconds.
+Chain 1: Adjust your expectations accordingly!
+Chain 1: 
+Chain 1: 
+Chain 1: Iteration:   1 / 600 [  0%]  (Warmup)
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 2).
+Chain 2: 
+Chain 2: Gradient evaluation took 2.4e-05 seconds
+Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 0.24 seconds.
+Chain 2: Adjust your expectations accordingly!
+Chain 2: 
+Chain 2: 
+Chain 2: Iteration:   1 / 600 [  0%]  (Warmup)
+Chain 1: Iteration:  50 / 600 [  8%]  (Warmup)
+Chain 2: Iteration:  50 / 600 [  8%]  (Warmup)
+Chain 1: Iteration: 100 / 600 [ 16%]  (Warmup)
+Chain 2: Iteration: 100 / 600 [ 16%]  (Warmup)
+Chain 1: Iteration: 150 / 600 [ 25%]  (Warmup)
+Chain 2: Iteration: 150 / 600 [ 25%]  (Warmup)
+Chain 1: Iteration: 200 / 600 [ 33%]  (Warmup)
+Chain 1: Iteration: 250 / 600 [ 41%]  (Warmup)
+Chain 1: Iteration: 300 / 600 [ 50%]  (Warmup)
+Chain 1: Iteration: 301 / 600 [ 50%]  (Sampling)
+Chain 2: Iteration: 200 / 600 [ 33%]  (Warmup)
+Chain 1: Iteration: 350 / 600 [ 58%]  (Sampling)
+Chain 2: Iteration: 250 / 600 [ 41%]  (Warmup)
+Chain 1: Iteration: 400 / 600 [ 66%]  (Sampling)
+Chain 2: Iteration: 300 / 600 [ 50%]  (Warmup)
+Chain 2: Iteration: 301 / 600 [ 50%]  (Sampling)
+Chain 1: Iteration: 450 / 600 [ 75%]  (Sampling)
+Chain 2: Iteration: 350 / 600 [ 58%]  (Sampling)
+Chain 1: Iteration: 500 / 600 [ 83%]  (Sampling)
+Chain 2: Iteration: 400 / 600 [ 66%]  (Sampling)
+Chain 1: Iteration: 550 / 600 [ 91%]  (Sampling)
+Chain 2: Iteration: 450 / 600 [ 75%]  (Sampling)
+Chain 1: Iteration: 600 / 600 [100%]  (Sampling)
+Chain 1: 
+Chain 1:  Elapsed Time: 0.059 seconds (Warm-up)
+Chain 1:                0.037 seconds (Sampling)
+Chain 1:                0.096 seconds (Total)
+Chain 1: 
+Chain 2: Iteration: 500 / 600 [ 83%]  (Sampling)
+Chain 2: Iteration: 550 / 600 [ 91%]  (Sampling)
+Chain 2: Iteration: 600 / 600 [100%]  (Sampling)
+Chain 2: 
+Chain 2:  Elapsed Time: 0.071 seconds (Warm-up)
+Chain 2:                0.035 seconds (Sampling)
+Chain 2:                0.106 seconds (Total)
+Chain 2: 
+FIT_END binary M1 FAILED_DIAGNOSTICS 
+FIT_START binary M1 record_equal seed 20260924 
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 1).
+Chain 1: 
+Chain 1: Gradient evaluation took 4.3e-05 seconds
+Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 0.43 seconds.
+Chain 1: Adjust your expectations accordingly!
+Chain 1: 
+Chain 1: 
+Chain 1: Iteration:   1 / 600 [  0%]  (Warmup)
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 2).
+Chain 2: 
+Chain 2: Gradient evaluation took 3.8e-05 seconds
+Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 0.38 seconds.
+Chain 2: Adjust your expectations accordingly!
+Chain 2: 
+Chain 2: 
+Chain 2: Iteration:   1 / 600 [  0%]  (Warmup)
+Chain 1: Iteration:  50 / 600 [  8%]  (Warmup)
+Chain 1: Iteration: 100 / 600 [ 16%]  (Warmup)
+Chain 2: Iteration:  50 / 600 [  8%]  (Warmup)
+Chain 1: Iteration: 150 / 600 [ 25%]  (Warmup)
+Chain 2: Iteration: 100 / 600 [ 16%]  (Warmup)
+Chain Chain 12: : Iteration: 150 / 600 [ 25%]  (Warmup)Iteration: 200 / 600 [ 33%]  (Warmup)
+
+Chain 1: Iteration: 250 / 600 [ 41%]  (Warmup)
+Chain 1: Iteration: 300 / 600 [ 50%]  (Warmup)
+Chain 2: Iteration: 200 / 600 [ 33%]  (Warmup)
+Chain 1: Iteration: 301 / 600 [ 50%]  (Sampling)
+Chain 1: Iteration: 350 / 600 [ 58%]  (Sampling)
+Chain 2: Iteration: 250 / 600 [ 41%]  (Warmup)
+Chain 1: Iteration: 400 / 600 [ 66%]  (Sampling)
+Chain 1: Iteration: 450 / 600 [ 75%]  (Sampling)
+Chain 2: Iteration: 300 / 600 [ 50%]  (Warmup)
+Chain 2: Iteration: 301 / 600 [ 50%]  (Sampling)
+Chain 1: Iteration: 500 / 600 [ 83%]  (Sampling)
+Chain 2: Iteration: 350 / 600 [ 58%]  (Sampling)
+Chain 1: Iteration: 550 / 600 [ 91%]  (Sampling)
+Chain 2: Iteration: 400 / 600 [ 66%]  (Sampling)
+Chain 1: Iteration: 600 / 600 [100%]  (Sampling)
+Chain 1: 
+Chain 1:  Elapsed Time: 0.047 seconds (Warm-up)
+Chain 1:                0.036 seconds (Sampling)
+Chain 1:                0.083 seconds (Total)
+Chain 1: 
+Chain 2: Iteration: 450 / 600 [ 75%]  (Sampling)
+Chain 2: Iteration: 500 / 600 [ 83%]  (Sampling)
+Chain 2: Iteration: 550 / 600 [ 91%]  (Sampling)
+Chain 2: Iteration: 600 / 600 [100%]  (Sampling)
+Chain 2: 
+Chain 2:  Elapsed Time: 0.058 seconds (Warm-up)
+Chain 2:                0.037 seconds (Sampling)
+Chain 2:                0.095 seconds (Total)
+Chain 2: 
+FIT_END binary M1 FAILED_DIAGNOSTICS 
+FIT_START binary M1 species_equal seed 20260923 
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 1).
+Chain 1: 
+Chain 1: Gradient evaluation took 4.1e-05 seconds
+Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 0.41 seconds.
+Chain 1: Adjust your expectations accordingly!
+Chain 1: 
+Chain 1: 
+Chain 1: Iteration:   1 / 600 [  0%]  (Warmup)
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 2).
+Chain 2: 
+Chain 2: Gradient evaluation took 3.4e-05 seconds
+Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 0.34 seconds.
+Chain 2: Adjust your expectations accordingly!
+Chain 2: 
+Chain 2: 
+Chain 2: Iteration:   1 / 600 [  0%]  (Warmup)
+Chain 1: Iteration:  50 / 600 [  8%]  (Warmup)
+Chain 1: Iteration: 100 / 600 [ 16%]  (Warmup)
+Chain 2: Iteration:  50 / 600 [  8%]  (Warmup)
+Chain 1: Iteration: 150 / 600 [ 25%]  (Warmup)
+Chain 2: Iteration: 100 / 600 [ 16%]  (Warmup)
+Chain 2: Iteration: 150 / 600 [ 25%]  (Warmup)
+Chain 1: Iteration: 200 / 600 [ 33%]  (Warmup)
+Chain 1: Iteration: 250 / 600 [ 41%]  (Warmup)
+Chain 1: Iteration: 300 / 600 [ 50%]  (Warmup)
+Chain 1: Iteration: 301 / 600 [ 50%]  (Sampling)
+Chain 2: Iteration: 200 / 600 [ 33%]  (Warmup)
+Chain 1: Iteration: 350 / 600 [ 58%]  (Sampling)
+Chain 2: Iteration: 250 / 600 [ 41%]  (Warmup)
+Chain 1: Iteration: 400 / 600 [ 66%]  (Sampling)
+Chain 1: Iteration: 450 / 600 [ 75%]  (Sampling)
+Chain 2: Iteration: 300 / 600 [ 50%]  (Warmup)
+Chain 2: Iteration: 301 / 600 [ 50%]  (Sampling)
+Chain 1: Iteration: 500 / 600 [ 83%]  (Sampling)
+Chain 2: Iteration: 350 / 600 [ 58%]  (Sampling)
+Chain 1: Iteration: 550 / 600 [ 91%]  (Sampling)
+Chain 2: Iteration: 400 / 600 [ 66%]  (Sampling)
+Chain 1: Iteration: 600 / 600 [100%]  (Sampling)
+Chain 1: 
+Chain 1:  Elapsed Time: 0.06 seconds (Warm-up)
+Chain 1:                0.037 seconds (Sampling)
+Chain 1:                0.097 seconds (Total)
+Chain 1: 
+Chain 2: Iteration: 450 / 600 [ 75%]  (Sampling)
+Chain 2: Iteration: 500 / 600 [ 83%]  (Sampling)
+Chain 2: Iteration: 550 / 600 [ 91%]  (Sampling)
+Chain 2: Iteration: 600 / 600 [100%]  (Sampling)
+Chain 2: 
+Chain 2:  Elapsed Time: 0.072 seconds (Warm-up)
+Chain 2:                0.036 seconds (Sampling)
+Chain 2:                0.108 seconds (Total)
+Chain 2: 
+FIT_END binary M1 FAILED_DIAGNOSTICS 
+FIT_START binary M1 species_equal seed 20260924 
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 1).
+Chain 1: 
+Chain 1: Gradient evaluation took 4.1e-05 seconds
+Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 0.41 seconds.
+Chain 1: Adjust your expectations accordingly!
+Chain 1: 
+Chain 1: 
+Chain 1: Iteration:   1 / 600 [  0%]  (Warmup)
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 2).
+Chain 2: 
+Chain 2: Gradient evaluation took 4.4e-05 seconds
+Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 0.44 seconds.
+Chain 2: Adjust your expectations accordingly!
+Chain 2: 
+Chain 2: 
+Chain 2: Iteration:   1 / 600 [  0%]  (Warmup)
+Chain 1: Iteration:  50 / 600 [  8%]  (Warmup)
+Chain 1: Iteration: 100 / 600 [ 16%]  (Warmup)
+Chain 2: Iteration:  50 / 600 [  8%]  (Warmup)
+Chain 1: Iteration: 150 / 600 [ 25%]  (Warmup)
+Chain 2: Iteration: 100 / 600 [ 16%]  (Warmup)
+Chain 1: Iteration: 200 / 600 [ 33%]  (Warmup)
+Chain 2: Iteration: 150 / 600 [ 25%]  (Warmup)
+Chain 1: Iteration: 250 / 600 [ 41%]  (Warmup)
+Chain 1: Iteration: 300 / 600 [ 50%]  (Warmup)
+Chain 1: Iteration: 301 / 600 [ 50%]  (Sampling)
+Chain 2: Iteration: 200 / 600 [ 33%]  (Warmup)
+Chain 1: Iteration: 350 / 600 [ 58%]  (Sampling)
+Chain 2: Iteration: 250 / 600 [ 41%]  (Warmup)
+Chain 1: Iteration: 400 / 600 [ 66%]  (Sampling)
+Chain 1: Iteration: 450 / 600 [ 75%]  (Sampling)
+Chain 2: Iteration: 300 / 600 [ 50%]  (Warmup)
+Chain 2: Iteration: 301 / 600 [ 50%]  (Sampling)
+Chain 1: Iteration: 500 / 600 [ 83%]  (Sampling)
+Chain 2: Iteration: 350 / 600 [ 58%]  (Sampling)
+Chain 1: Iteration: 550 / 600 [ 91%]  (Sampling)
+Chain 2: Iteration: 400 / 600 [ 66%]  (Sampling)
+Chain 1: Iteration: 600 / 600 [100%]  (Sampling)
+Chain 1: 
+Chain 1:  Elapsed Time: 0.047 seconds (Warm-up)
+Chain 1:                0.036 seconds (Sampling)
+Chain 1:                0.083 seconds (Total)
+Chain 1: 
+Chain 2: Iteration: 450 / 600 [ 75%]  (Sampling)
+Chain 2: Iteration: 500 / 600 [ 83%]  (Sampling)
+Chain 2: Iteration: 550 / 600 [ 91%]  (Sampling)
+Chain 2: Iteration: 600 / 600 [100%]  (Sampling)
+Chain 2: 
+Chain 2:  Elapsed Time: 0.059 seconds (Warm-up)
+Chain 2:                0.037 seconds (Sampling)
+Chain 2:                0.096 seconds (Total)
+Chain 2: 
+FIT_END binary M1 FAILED_DIAGNOSTICS 
+FIT_START joint_bb Null record_equal seed 20260922 
+
+SAMPLING FOR MODEL 'ratio_v31_joint' NOW (CHAIN 1).
+Chain 1: 
+Chain 1: Gradient evaluation took 0.000176 seconds
+Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 1.76 seconds.
+Chain 1: Adjust your expectations accordingly!
+Chain 1: 
+Chain 1: 
+Chain 1: Iteration:   1 / 600 [  0%]  (Warmup)
+
+SAMPLING FOR MODEL 'ratio_v31_joint' NOW (CHAIN 2).
+Chain 2: 
+Chain 2: Gradient evaluation took 0.000167 seconds
+Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 1.67 seconds.
+Chain 2: Adjust your expectations accordingly!
+Chain 2: 
+Chain 2: 
+Chain 2: Iteration:   1 / 600 [  0%]  (Warmup)
+Chain 1: Iteration:  50 / 600 [  8%]  (Warmup)
+Chain 2: Iteration:  50 / 600 [  8%]  (Warmup)
+Chain 1: Iteration: 100 / 600 [ 16%]  (Warmup)
+Chain 1: Iteration: 150 / 600 [ 25%]  (Warmup)
+Chain 2: Iteration: 100 / 600 [ 16%]  (Warmup)
+Chain 1: Iteration: 200 / 600 [ 33%]  (Warmup)
+Chain 1: Iteration: 250 / 600 [ 41%]  (Warmup)
+Chain 2: Iteration: 150 / 600 [ 25%]  (Warmup)
+Chain 1: Iteration: 300 / 600 [ 50%]  (Warmup)
+Chain 1: Iteration: 301 / 600 [ 50%]  (Sampling)
+Chain 1: Iteration: 350 / 600 [ 58%]  (Sampling)
+Chain 2: Iteration: 200 / 600 [ 33%]  (Warmup)
+Chain 1: Iteration: 400 / 600 [ 66%]  (Sampling)
+Chain 2: Iteration: 250 / 600 [ 41%]  (Warmup)
+Chain 1: Iteration: 450 / 600 [ 75%]  (Sampling)
+Chain 1: Iteration: 500 / 600 [ 83%]  (Sampling)
+Chain 2: Iteration: 300 / 600 [ 50%]  (Warmup)
+Chain 2: Iteration: 301 / 600 [ 50%]  (Sampling)
+Chain 1: Iteration: 550 / 600 [ 91%]  (Sampling)
+Chain 2: Iteration: 350 / 600 [ 58%]  (Sampling)
+Chain 1: Iteration: 600 / 600 [100%]  (Sampling)
+Chain 1: 
+Chain 1:  Elapsed Time: 0.526 seconds (Warm-up)
+Chain 1:                0.426 seconds (Sampling)
+Chain 1:                0.952 seconds (Total)
+Chain 1: 
+Chain 2: Iteration: 400 / 600 [ 66%]  (Sampling)
+Chain 2: Iteration: 450 / 600 [ 75%]  (Sampling)
+Chain 2: Iteration: 500 / 600 [ 83%]  (Sampling)
+Chain 2: Iteration: 550 / 600 [ 91%]  (Sampling)
+Chain 2: Iteration: 600 / 600 [100%]  (Sampling)
+Chain 2: 
+Chain 2:  Elapsed Time: 0.804 seconds (Warm-up)
+Chain 2:                0.444 seconds (Sampling)
+Chain 2:                1.248 seconds (Total)
+Chain 2: 
+FIT_END joint_bb Null FAILED_DIAGNOSTICS 
+FIT_START joint_bb Null record_equal seed 20260923 
+
+SAMPLING FOR MODEL 'ratio_v31_joint' NOW (CHAIN 1).
+Chain 1: 
+Chain 1: Gradient evaluation took 0.00021 seconds
+Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 2.1 seconds.
+Chain 1: Adjust your expectations accordingly!
+Chain 1: 
+Chain 1: 
+Chain 1: Iteration:   1 / 600 [  0%]  (Warmup)
+
+SAMPLING FOR MODEL 'ratio_v31_joint' NOW (CHAIN 2).
+Chain 2: 
+Chain 2: Gradient evaluation took 0.000132 seconds
+Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 1.32 seconds.
+Chain 2: Adjust your expectations accordingly!
+Chain 2: 
+Chain 2: 
+Chain 2: Iteration:   1 / 600 [  0%]  (Warmup)
+Chain 1: Iteration:  50 / 600 [  8%]  (Warmup)
+Chain 1: Iteration: 100 / 600 [ 16%]  (Warmup)
+Chain 2: Iteration:  50 / 600 [  8%]  (Warmup)
+Chain 1: Iteration: 150 / 600 [ 25%]  (Warmup)
+Chain 2: Iteration: 100 / 600 [ 16%]  (Warmup)
+Chain 1: Iteration: 200 / 600 [ 33%]  (Warmup)
+Chain 2: Iteration: 150 / 600 [ 25%]  (Warmup)
+Chain 1: Iteration: 250 / 600 [ 41%]  (Warmup)
+Chain 2: Iteration: 200 / 600 [ 33%]  (Warmup)
+Chain 2: Iteration: 250 / 600 [ 41%]  (Warmup)
+Chain 1: Iteration: 300 / 600 [ 50%]  (Warmup)
+Chain 1: Iteration: 301 / 600 [ 50%]  (Sampling)
+Chain 2: Iteration: 300 / 600 [ 50%]  (Warmup)
+Chain 2: Iteration: 301 / 600 [ 50%]  (Sampling)
+Chain 2: Iteration: 350 / 600 [ 58%]  (Sampling)
+Chain 1: Iteration: 350 / 600 [ 58%]  (Sampling)
+Chain 2: Iteration: 400 / 600 [ 66%]  (Sampling)
+Chain 2: Iteration: 450 / 600 [ 75%]  (Sampling)
+Chain 1: Iteration: 400 / 600 [ 66%]  (Sampling)
+Chain 2: Iteration: 500 / 600 [ 83%]  (Sampling)
+Chain 1: Iteration: 450 / 600 [ 75%]  (Sampling)
+Chain 2: Iteration: 550 / 600 [ 91%]  (Sampling)
+Chain 2: Iteration: 600 / 600 [100%]  (Sampling)
+Chain 2: 
+Chain 2:  Elapsed Time: 0.78 seconds (Warm-up)
+Chain 2:                0.404 seconds (Sampling)
+Chain 2:                1.184 seconds (Total)
+Chain 2: 
+Chain 1: Iteration: 500 / 600 [ 83%]  (Sampling)
+Chain 1: Iteration: 550 / 600 [ 91%]  (Sampling)
+Chain 1: Iteration: 600 / 600 [100%]  (Sampling)
+Chain 1: 
+Chain 1:  Elapsed Time: 0.762 seconds (Warm-up)
+Chain 1:                0.705 seconds (Sampling)
+Chain 1:                1.467 seconds (Total)
+Chain 1: 
+FIT_END joint_bb Null FAILED_DIAGNOSTICS 
+FIT_START joint_bb Null species_equal seed 20260922 
+
+SAMPLING FOR MODEL 'ratio_v31_joint' NOW (CHAIN 1).
+Chain 1: 
+Chain 1: Gradient evaluation took 0.000169 seconds
+Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 1.69 seconds.
+Chain 1: Adjust your expectations accordingly!
+Chain 1: 
+Chain 1: 
+Chain 1: Iteration:   1 / 600 [  0%]  (Warmup)
+
+SAMPLING FOR MODEL 'ratio_v31_joint' NOW (CHAIN 2).
+Chain 2: 
+Chain 2: Gradient evaluation took 0.000128 seconds
+Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 1.28 seconds.
+Chain 2: Adjust your expectations accordingly!
+Chain 2: 
+Chain 2: 
+Chain 2: Iteration:   1 / 600 [  0%]  (Warmup)
+Chain 1: Iteration:  50 / 600 [  8%]  (Warmup)
+Chain 2: Iteration:  50 / 600 [  8%]  (Warmup)
+Chain 1: Iteration: 100 / 600 [ 16%]  (Warmup)
+Chain 2: Iteration: 100 / 600 [ 16%]  (Warmup)
+Chain 1: Iteration: 150 / 600 [ 25%]  (Warmup)
+Chain 1: Iteration: 200 / 600 [ 33%]  (Warmup)
+Chain 2: Iteration: 150 / 600 [ 25%]  (Warmup)
+Chain 1: Iteration: 250 / 600 [ 41%]  (Warmup)
+Chain 1: Iteration: 300 / 600 [ 50%]  (Warmup)
+Chain 1: Iteration: 301 / 600 [ 50%]  (Sampling)
+Chain 2: Iteration: 200 / 600 [ 33%]  (Warmup)
+Chain 1: Iteration: 350 / 600 [ 58%]  (Sampling)
+Chain 2: Iteration: 250 / 600 [ 41%]  (Warmup)
+Chain 1: Iteration: 400 / 600 [ 66%]  (Sampling)
+Chain 2: Iteration: 300 / 600 [ 50%]  (Warmup)
+Chain 2: Iteration: 301 / 600 [ 50%]  (Sampling)
+Chain 1: Iteration: 450 / 600 [ 75%]  (Sampling)
+Chain 2: Iteration: 350 / 600 [ 58%]  (Sampling)
+Chain 1: Iteration: 500 / 600 [ 83%]  (Sampling)
+Chain 2: Iteration: 400 / 600 [ 66%]  (Sampling)
+Chain 1: Iteration: 550 / 600 [ 91%]  (Sampling)
+Chain 2: Iteration: 450 / 600 [ 75%]  (Sampling)
+Chain 1: Iteration: 600 / 600 [100%]  (Sampling)
+Chain 1: 
+Chain 1:  Elapsed Time: 0.531 seconds (Warm-up)
+Chain 1:                0.428 seconds (Sampling)
+Chain 1:                0.959 seconds (Total)
+Chain 1: 
+Chain 2: Iteration: 500 / 600 [ 83%]  (Sampling)
+Chain 2: Iteration: 550 / 600 [ 91%]  (Sampling)
+Chain 2: Iteration: 600 / 600 [100%]  (Sampling)
+Chain 2: 
+Chain 2:  Elapsed Time: 0.694 seconds (Warm-up)
+Chain 2:                0.385 seconds (Sampling)
+Chain 2:                1.079 seconds (Total)
+Chain 2: 
+FIT_END joint_bb Null FAILED_DIAGNOSTICS 
+FIT_START joint_bb Null species_equal seed 20260923 
+
+SAMPLING FOR MODEL 'ratio_v31_joint' NOW (CHAIN 1).
+Chain 1: 
+Chain 1: Gradient evaluation took 0.000184 seconds
+Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 1.84 seconds.
+Chain 1: Adjust your expectations accordingly!
+Chain 1: 
+Chain 1: 
+Chain 1: Iteration:   1 / 600 [  0%]  (Warmup)
+
+SAMPLING FOR MODEL 'ratio_v31_joint' NOW (CHAIN 2).
+Chain 2: 
+Chain 2: Gradient evaluation took 0.000117 seconds
+Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 1.17 seconds.
+Chain 2: Adjust your expectations accordingly!
+Chain 2: 
+Chain 2: 
+Chain 2: Iteration:   1 / 600 [  0%]  (Warmup)
+Chain 1: Iteration:  50 / 600 [  8%]  (Warmup)
+Chain 1: Iteration: 100 / 600 [ 16%]  (Warmup)
+Chain 2: Iteration:  50 / 600 [  8%]  (Warmup)
+Chain 1: Iteration: 150 / 600 [ 25%]  (Warmup)
+Chain 2: Iteration: 100 / 600 [ 16%]  (Warmup)
+Chain 1: Iteration: 200 / 600 [ 33%]  (Warmup)
+Chain 2: Iteration: 150 / 600 [ 25%]  (Warmup)
+Chain 1: Iteration: 250 / 600 [ 41%]  (Warmup)
+Chain 2: Iteration: 200 / 600 [ 33%]  (Warmup)
+Chain 2: Iteration: 250 / 600 [ 41%]  (Warmup)
+Chain 1: Iteration: 300 / 600 [ 50%]  (Warmup)
+Chain 1: Iteration: 301 / 600 [ 50%]  (Sampling)
+Chain 2: Iteration: 300 / 600 [ 50%]  (Warmup)
+Chain 2: Iteration: 301 / 600 [ 50%]  (Sampling)
+Chain 2: Iteration: 350 / 600 [ 58%]  (Sampling)
+Chain 1: Iteration: 350 / 600 [ 58%]  (Sampling)
+Chain 2: Iteration: 400 / 600 [ 66%]  (Sampling)
+Chain 2: Iteration: 450 / 600 [ 75%]  (Sampling)
+Chain 1: Iteration: 400 / 600 [ 66%]  (Sampling)
+Chain 2: Iteration: 500 / 600 [ 83%]  (Sampling)
+Chain 1: Iteration: 450 / 600 [ 75%]  (Sampling)
+Chain 2: Iteration: 550 / 600 [ 91%]  (Sampling)
+Chain 2: Iteration: 600 / 600 [100%]  (Sampling)
+Chain 2: 
+Chain 2:  Elapsed Time: 0.785 seconds (Warm-up)
+Chain 2:                0.406 seconds (Sampling)
+Chain 2:                1.191 seconds (Total)
+Chain 2: 
+Chain 1: Iteration: 500 / 600 [ 83%]  (Sampling)
+Chain 1: Iteration: 550 / 600 [ 91%]  (Sampling)
+Chain 1: Iteration: 600 / 600 [100%]  (Sampling)
+Chain 1: 
+Chain 1:  Elapsed Time: 0.769 seconds (Warm-up)
+Chain 1:                0.701 seconds (Sampling)
+Chain 1:                1.47 seconds (Total)
+Chain 1: 
+FIT_END joint_bb Null FAILED_DIAGNOSTICS 
+FIT_START joint_bb M1 record_equal seed 20260923 
+
+SAMPLING FOR MODEL 'ratio_v31_joint' NOW (CHAIN 1).
+Chain 1: 
+Chain 1: Gradient evaluation took 0.000131 seconds
+Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 1.31 seconds.
+Chain 1: Adjust your expectations accordingly!
+Chain 1: 
+Chain 1: 
+Chain 1: Iteration:   1 / 600 [  0%]  (Warmup)
+
+SAMPLING FOR MODEL 'ratio_v31_joint' NOW (CHAIN 2).
+Chain 2: 
+Chain 2: Gradient evaluation took 0.000187 seconds
+Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 1.87 seconds.
+Chain 2: Adjust your expectations accordingly!
+Chain 2: 
+Chain 2: 
+Chain 2: Iteration:   1 / 600 [  0%]  (Warmup)
+Chain 2: Iteration:  50 / 600 [  8%]  (Warmup)
+Chain 1: Iteration:  50 / 600 [  8%]  (Warmup)
+Chain 2: Iteration: 100 / 600 [ 16%]  (Warmup)
+Chain 1: Iteration: 100 / 600 [ 16%]  (Warmup)
+Chain 1: Iteration: 150 / 600 [ 25%]  (Warmup)
+Chain 2: Iteration: 150 / 600 [ 25%]  (Warmup)
+Chain 1: Iteration: 200 / 600 [ 33%]  (Warmup)
+Chain 1: Iteration: 250 / 600 [ 41%]  (Warmup)
+Chain 2: Iteration: 200 / 600 [ 33%]  (Warmup)
+Chain 1: Iteration: 300 / 600 [ 50%]  (Warmup)
+Chain 1: Iteration: 301 / 600 [ 50%]  (Sampling)
+Chain 2: Iteration: 250 / 600 [ 41%]  (Warmup)
+Chain 1: Iteration: 350 / 600 [ 58%]  (Sampling)
+Chain 2: Iteration: 300 / 600 [ 50%]  (Warmup)
+Chain 2: Iteration: 301 / 600 [ 50%]  (Sampling)
+Chain 2: Iteration: 350 / 600 [ 58%]  (Sampling)
+Chain 1: Iteration: 400 / 600 [ 66%]  (Sampling)
+Chain 2: Iteration: 400 / 600 [ 66%]  (Sampling)
+Chain 1: Iteration: 450 / 600 [ 75%]  (Sampling)
+Chain 2: Iteration: 450 / 600 [ 75%]  (Sampling)
+Chain 1: Iteration: 500 / 600 [ 83%]  (Sampling)
+Chain 2: Iteration: 500 / 600 [ 83%]  (Sampling)
+Chain 1: Iteration: 550 / 600 [ 91%]  (Sampling)
+Chain 2: Iteration: 550 / 600 [ 91%]  (Sampling)
+Chain 1: Iteration: 600 / 600 [100%]  (Sampling)
+Chain 1: 
+Chain 1:  Elapsed Time: 1.049 seconds (Warm-up)
+Chain 1:                0.84 seconds (Sampling)
+Chain 1:                1.889 seconds (Total)
+Chain 1: 
+Chain 2: Iteration: 600 / 600 [100%]  (Sampling)
+Chain 2: 
+Chain 2:  Elapsed Time: 1.206 seconds (Warm-up)
+Chain 2:                0.679 seconds (Sampling)
+Chain 2:                1.885 seconds (Total)
+Chain 2: 
+FIT_END joint_bb M1 FAILED_DIAGNOSTICS 
+FIT_START joint_bb M1 record_equal seed 20260924 
+
+SAMPLING FOR MODEL 'ratio_v31_joint' NOW (CHAIN 1).
+Chain 1: 
+Chain 1: Gradient evaluation took 0.000145 seconds
+Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 1.45 seconds.
+Chain 1: Adjust your expectations accordingly!
+Chain 1: 
+Chain 1: 
+Chain 1: Iteration:   1 / 600 [  0%]  (Warmup)
+
+SAMPLING FOR MODEL 'ratio_v31_joint' NOW (CHAIN 2).
+Chain 2: 
+Chain 2: Gradient evaluation took 0.000122 seconds
+Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 1.22 seconds.
+Chain 2: Adjust your expectations accordingly!
+Chain 2: 
+Chain 2: 
+Chain 2: Iteration:   1 / 600 [  0%]  (Warmup)
+Chain 1: Iteration:  50 / 600 [  8%]  (Warmup)
+Chain 2: Iteration:  50 / 600 [  8%]  (Warmup)
+Chain 1: Iteration: 100 / 600 [ 16%]  (Warmup)
+Chain 2: Iteration: 100 / 600 [ 16%]  (Warmup)
+Chain 2: Iteration: 150 / 600 [ 25%]  (Warmup)
+Chain 2: Iteration: 200 / 600 [ 33%]  (Warmup)
+Chain 1: Iteration: 150 / 600 [ 25%]  (Warmup)
+Chain 2: Iteration: 250 / 600 [ 41%]  (Warmup)
+Chain 1: Iteration: 200 / 600 [ 33%]  (Warmup)
+Chain 1: Iteration: 250 / 600 [ 41%]  (Warmup)
+Chain 2: Iteration: 300 / 600 [ 50%]  (Warmup)
+Chain 2: Iteration: 301 / 600 [ 50%]  (Sampling)
+Chain 1: Iteration: 300 / 600 [ 50%]  (Warmup)
+Chain 1: Iteration: 301 / 600 [ 50%]  (Sampling)
+Chain 2: Iteration: 350 / 600 [ 58%]  (Sampling)
+Chain 1: Iteration: 350 / 600 [ 58%]  (Sampling)
+Chain 2: Iteration: 400 / 600 [ 66%]  (Sampling)
+Chain 1: Iteration: 400 / 600 [ 66%]  (Sampling)
+Chain 2: Iteration: 450 / 600 [ 75%]  (Sampling)
+Chain 1: Iteration: 450 / 600 [ 75%]  (Sampling)
+Chain 2: Iteration: 500 / 600 [ 83%]  (Sampling)
+Chain 1: Iteration: 500 / 600 [ 83%]  (Sampling)
+Chain 2: Iteration: 550 / 600 [ 91%]  (Sampling)
+Chain 1: Iteration: 550 / 600 [ 91%]  (Sampling)
+Chain 2: Iteration: 600 / 600 [100%]  (Sampling)
+Chain 2: 
+Chain 2:  Elapsed Time: 0.827 seconds (Warm-up)
+Chain 2:                0.787 seconds (Sampling)
+Chain 2:                1.614 seconds (Total)
+Chain 2: 
+Chain 1: Iteration: 600 / 600 [100%]  (Sampling)
+Chain 1: 
+Chain 1:  Elapsed Time: 0.948 seconds (Warm-up)
+Chain 1:                0.784 seconds (Sampling)
+Chain 1:                1.732 seconds (Total)
+Chain 1: 
+FIT_END joint_bb M1 FAILED_DIAGNOSTICS 
+FIT_START joint_bb M1 species_equal seed 20260923 
+
+SAMPLING FOR MODEL 'ratio_v31_joint' NOW (CHAIN 1).
+Chain 1: 
+Chain 1: Gradient evaluation took 0.000219 seconds
+Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 2.19 seconds.
+Chain 1: Adjust your expectations accordingly!
+Chain 1: 
+Chain 1: 
+Chain 1: Iteration:   1 / 600 [  0%]  (Warmup)
+
+SAMPLING FOR MODEL 'ratio_v31_joint' NOW (CHAIN 2).
+Chain 2: 
+Chain 2: Gradient evaluation took 0.000132 seconds
+Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 1.32 seconds.
+Chain 2: Adjust your expectations accordingly!
+Chain 2: 
+Chain 2: 
+Chain 2: Iteration:   1 / 600 [  0%]  (Warmup)
+Chain 2: Iteration:  50 / 600 [  8%]  (Warmup)
+Chain 1: Iteration:  50 / 600 [  8%]  (Warmup)
+Chain 2: Iteration: 100 / 600 [ 16%]  (Warmup)
+Chain 1: Iteration: 100 / 600 [ 16%]  (Warmup)
+Chain 1: Iteration: 150 / 600 [ 25%]  (Warmup)
+Chain 2: Iteration: 150 / 600 [ 25%]  (Warmup)
+Chain 1: Iteration: 200 / 600 [ 33%]  (Warmup)
+Chain 1: Iteration: 250 / 600 [ 41%]  (Warmup)
+Chain 2: Iteration: 200 / 600 [ 33%]  (Warmup)
+Chain 1: Iteration: 300 / 600 [ 50%]  (Warmup)
+Chain 1: Iteration: 301 / 600 [ 50%]  (Sampling)
+Chain 2: Iteration: 250 / 600 [ 41%]  (Warmup)
+Chain 1: Iteration: 350 / 600 [ 58%]  (Sampling)
+Chain 2: Iteration: 300 / 600 [ 50%]  (Warmup)
+Chain 2: Iteration: 301 / 600 [ 50%]  (Sampling)
+Chain 2: Iteration: 350 / 600 [ 58%]  (Sampling)
+Chain 1: Iteration: 400 / 600 [ 66%]  (Sampling)
+Chain 2: Iteration: 400 / 600 [ 66%]  (Sampling)
+Chain 1: Iteration: 450 / 600 [ 75%]  (Sampling)
+Chain 2: Iteration: 450 / 600 [ 75%]  (Sampling)
+Chain 1: Iteration: 500 / 600 [ 83%]  (Sampling)
+Chain 2: Iteration: 500 / 600 [ 83%]  (Sampling)
+Chain 1: Iteration: 550 / 600 [ 91%]  (Sampling)
+Chain 2: Iteration: 550 / 600 [ 91%]  (Sampling)
+Chain 1: Iteration: 600 / 600 [100%]  (Sampling)
+Chain 1: 
+Chain 1:  Elapsed Time: 1.043 seconds (Warm-up)
+Chain 1:                0.839 seconds (Sampling)
+Chain 1:                1.882 seconds (Total)
+Chain 1: 
+Chain 2: Iteration: 600 / 600 [100%]  (Sampling)
+Chain 2: 
+Chain 2:  Elapsed Time: 1.199 seconds (Warm-up)
+Chain 2:                0.684 seconds (Sampling)
+Chain 2:                1.883 seconds (Total)
+Chain 2: 
+FIT_END joint_bb M1 FAILED_DIAGNOSTICS 
+FIT_START joint_bb M1 species_equal seed 20260924 
+
+SAMPLING FOR MODEL 'ratio_v31_joint' NOW (CHAIN 1).
+Chain 1: 
+Chain 1: Gradient evaluation took 0.000148 seconds
+Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 1.48 seconds.
+Chain 1: Adjust your expectations accordingly!
+Chain 1: 
+Chain 1: 
+Chain 1: Iteration:   1 / 600 [  0%]  (Warmup)
+
+SAMPLING FOR MODEL 'ratio_v31_joint' NOW (CHAIN 2).
+Chain 2: 
+Chain 2: Gradient evaluation took 0.000133 seconds
+Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 1.33 seconds.
+Chain 2: Adjust your expectations accordingly!
+Chain 2: 
+Chain 2: 
+Chain 2: Iteration:   1 / 600 [  0%]  (Warmup)
+Chain 1: Iteration:  50 / 600 [  8%]  (Warmup)
+Chain 2: Iteration:  50 / 600 [  8%]  (Warmup)
+Chain 1: Iteration: 100 / 600 [ 16%]  (Warmup)
+Chain 2: Iteration: 100 / 600 [ 16%]  (Warmup)
+Chain 2: Iteration: 150 / 600 [ 25%]  (Warmup)
+Chain 2: Iteration: 200 / 600 [ 33%]  (Warmup)
+Chain 1: Iteration: 150 / 600 [ 25%]  (Warmup)
+Chain 2: Iteration: 250 / 600 [ 41%]  (Warmup)
+Chain 1: Iteration: 200 / 600 [ 33%]  (Warmup)
+Chain 1: Iteration: 250 / 600 [ 41%]  (Warmup)
+Chain 2: Iteration: 300 / 600 [ 50%]  (Warmup)
+Chain 2: Iteration: 301 / 600 [ 50%]  (Sampling)
+Chain 1: Iteration: 300 / 600 [ 50%]  (Warmup)
+Chain 1: Iteration: 301 / 600 [ 50%]  (Sampling)
+Chain 2: Iteration: 350 / 600 [ 58%]  (Sampling)
+Chain 1: Iteration: 350 / 600 [ 58%]  (Sampling)
+Chain 2: Iteration: 400 / 600 [ 66%]  (Sampling)
+Chain 1: Iteration: 400 / 600 [ 66%]  (Sampling)
+Chain 2: Iteration: 450 / 600 [ 75%]  (Sampling)
+Chain 1: Iteration: 450 / 600 [ 75%]  (Sampling)
+Chain 2: Iteration: 500 / 600 [ 83%]  (Sampling)
+Chain 1: Iteration: 500 / 600 [ 83%]  (Sampling)
+Chain 2: Iteration: 550 / 600 [ 91%]  (Sampling)
+Chain 1: Iteration: 550 / 600 [ 91%]  (Sampling)
+Chain 2: Iteration: 600 / 600 [100%]  (Sampling)
+Chain 2: 
+Chain 2:  Elapsed Time: 0.826 seconds (Warm-up)
+Chain 2:                0.788 seconds (Sampling)
+Chain 2:                1.614 seconds (Total)
+Chain 2: 
+Chain 1: Iteration: 600 / 600 [100%]  (Sampling)
+Chain 1: 
+Chain 1:  Elapsed Time: 0.943 seconds (Warm-up)
+Chain 1:                0.783 seconds (Sampling)
+Chain 1:                1.726 seconds (Total)
+Chain 1: 
+FIT_END joint_bb M1 FAILED_DIAGNOSTICS 
+Error in `[.data.frame`(bundle$fit$data, , names(spec$data), drop = FALSE) : 
+  undefined columns selected
+Calls: validate_fitted_bundle_v3 ... isTRUE -> all.equal -> as.data.frame -> [ -> [.data.frame
+Execution halted

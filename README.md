@@ -76,3 +76,17 @@ v3 是在保留 v1/v2 的独立目录中新增的代码版本。它固定比较 
 v3 保留 Site151 输入但不把它放入预测矩阵，保留 Site315 作为 M1/M2/M3 的预测位点，删除 Site315 单位点模型、Scheme A 和系统发育路线。40–50% 区间按约定归 LOW，M3 频数小于 4 的类别归入 `OTHER`。v3 的输入合同、运行环境、测试和 Docker 命令都在 `v3/` 内。
 
 本次发布时 v3 已完成 Docker 预检、静态解析、契约测试、smoke 拟合、smoke 评分和外部投影检查。正式 16 个全数据 MCMC 拟合及 240 个 CV 拟合尚未启动，因此 v3 目录中的正式结果表和正式图件仍需执行 `v3/src/v3_pipeline.R --stage all` 后生成。smoke 的低迭代诊断记录明确标为 `PASS_WITH_DIAGNOSTIC_WARNINGS`，不能当作正式研究结果。
+
+
+## v3.1 修订与发布验证
+
+v3.1 位于 [v3.1/](v3.1/README.md)，保留原 v1/v2/v3 历史文件。旧 v3 自检覆盖不足，其 PASS 不能作为完整流程正确性的证明；本版修复原审查问题及复核中新发现的接口、观测机制、缓存和状态问题。
+
+- [当前流程与模块说明](v3.1/docs/V3_1_WORKFLOW_zh.md)
+- [逐项修复理由与审查矩阵](v3.1/docs/REVIEW_MATRIX_zh.md)
+- [测试结果、范围和限制](v3.1/review/RELEASE_VALIDATION_zh.md)
+- [Ubuntu/Docker运行](v3.1/docs/reproduction_ubuntu.md)
+
+18个实际拟合都是合成测试（16个短链接口拟合+2个加权后验数值对照），正式研究数据的16+240项拟合未执行。测试指标、日志、图源和数值抽样快照随包保存；平台相关编译缓存保留本地，其大小与SHA-256列于逐项清单。
+
+[下载 v3.1 源码与测试包](releases/ratio-analysis-v3.1.zip) · [ZIP SHA-256](releases/ratio-analysis-v3.1.zip.sha256)

@@ -1,0 +1,21 @@
+{
+  "version": "v3.1",
+  "status": "CODE_AND_REPRESENTATIVE_INTERFACE_VALIDATED",
+  "deterministic_assertions": 52,
+  "synthetic_integration_fits": 16,
+  "synthetic_weighted_reference_fits": 2,
+  "integration_rows": {
+    "evidence": 216,
+    "fold_metrics": 32,
+    "summary": 16
+  },
+  "mock_full_cv_rows": {
+    "evidence": 4880,
+    "fold_metrics": 480,
+    "summary": 64
+  },
+  "formal_research_fits_executed": 0,
+  "stan_r_likelihood_checks": 600,
+  "stan_r_max_abs_error": 1.065814e-14,
+  "weighted_posterior_max_abs_error": 0.00227784798579322
+}

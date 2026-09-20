@@ -1,0 +1,5 @@
+/README.md -text
+/MANIFEST.csv -text
+/MANIFEST.sha256 -text
+/v3.1/** -text
+/releases/** -text

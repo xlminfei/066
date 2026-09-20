@@ -1,0 +1,8 @@
+{
+  "status": "PASS_SYNTHETIC_LAYOUT",
+  "rows": 5840,
+  "pages_per_file": 9,
+  "files": 4,
+  "labels": "explicit Species match",
+  "scientific_results": false
+}

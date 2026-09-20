@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "CVTasks": 240,
+  "OOFRows": 4880,
+  "FoldMetrics": 480,
+  "SummaryRows": 64,
+  "purpose": "mock_sampler_orchestration_only"
+}

@@ -1,0 +1,9 @@
+{
+  "status": "PASS_INTERFACE_ONLY",
+  "purpose": "synthetic_twofold_species_holdout",
+  "actual_fits": 16,
+  "cv_records": 216,
+  "fold_metric_rows": 32,
+  "summary_rows": 16,
+  "diagnostic_gate": "strict_gate_tested_separately; low_iteration_test_results_not_formal"
+}
