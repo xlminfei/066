@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "version": "ratio_analysis_v3_weighted_20260920",
+  "panel_species": 365,
+  "records": 153,
+  "binary_species": 50,
+  "joint_species": 51,
+  "fit_count_full": 16,
+  "fit_count_cv": 240,
+  "input_hashes": {
+    "observations": "3c886f7f2c11012463296b350a931543542b4e1c0d128ad3c408fda9ae824d79",
+    "sites": "0a99692b060f13d1faaa870d06ea7dca9a4f16bc289636bcc88f5d105ebdacb5"
+  },
+  "package_versions": {
+    "digest": "0.6.39",
+    "jsonlite": "2.0.0"
+  }
+}

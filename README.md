@@ -19,6 +19,8 @@
 - [docs/algorithm_details_zh.md](docs/algorithm_details_zh.md)：用不依赖编程背景的语言说明模型、区间和评价指标。
 - [docs/reproduction_ubuntu.md](docs/reproduction_ubuntu.md)：Ubuntu/Docker 的可复制命令和检查点。
 - [docs/limitations_zh.md](docs/limitations_zh.md)：结果可以支持什么、不能支持什么。
+- [v3/README.md](v3/README.md)：独立的 v3 重构代码包，包含两种训练权重 × 两种评价权重、binary/joint_bb 两条路线和完整测试入口。
+- [v3/docs/reproduction_ubuntu.md](v3/docs/reproduction_ubuntu.md)：v3 的 Docker 构建、预检、测试和正式运行命令。
 
 ## 目录结构
 
@@ -41,6 +43,14 @@ v1/
   archive/       v1 图件、全部非 RDS 衍生结果和运行产物压缩包
   provenance/    v1 图注、清单、完整日志和省略大文件说明
 docs/            版本差异、算法解释、复现和限制
+v3/
+  config/        v3 固定分析网格与输入合同配置
+  input/         v3 冻结输入 CSV 与合同
+  R/             输入、权重、拟合、评分、CV、预测和绘图模块
+  stan/          joint beta-binomial/endpoint-mixture Stan 模型
+  src/           v3 阶段调度、审计、后处理和报告入口
+  tests/         解析、契约、预备数据、外部投影和 smoke 评分检查
+  provenance/    v3 文件清单和运行环境说明
 ```
 
 ## v2 已完成的正式运行
@@ -58,3 +68,11 @@ docs/            版本差异、算法解释、复现和限制
 根目录的 `MANIFEST.csv` 给出每个交付文件的相对路径、字节数和 SHA256；`MANIFEST.sha256` 校验清单本身。它们不包含省略的后验 RDS，不能替代方法和诊断报告。
 
 v2 postprocess 中唯一未直接放入 `figures/`、`reports/` 或 `results/derived/` 的文件，是没有 `corrected` 后缀的旧 F06 图件；它们与分页标签错配的旧版本对应，已经被 corrected F06 替代，完整清单在 `v2/provenance/postprocess_omissions.csv`。
+
+## v3 重构代码包
+
+v3 是在保留 v1/v2 的独立目录中新增的代码版本。它固定比较 `Null`、`M1`、`M2`、`M3` 四个模型，使用 `binary` 和 `joint_bb` 两条路线，并分别拟合 `record_equal` 与 `species_equal` 两种训练权重。每套拟合从同一张折外记录证据表接受 `record_equal` 与 `species_equal` 两种评价，因此计划包含 16 个全数据拟合和 240 个五折/十折交叉验证拟合。
+
+v3 保留 Site151 输入但不把它放入预测矩阵，保留 Site315 作为 M1/M2/M3 的预测位点，删除 Site315 单位点模型、Scheme A 和系统发育路线。40–50% 区间按约定归 LOW，M3 频数小于 4 的类别归入 `OTHER`。v3 的输入合同、运行环境、测试和 Docker 命令都在 `v3/` 内。
+
+本次发布时 v3 已完成 Docker 预检、静态解析、契约测试、smoke 拟合、smoke 评分和外部投影检查。正式 16 个全数据 MCMC 拟合及 240 个 CV 拟合尚未启动，因此 v3 目录中的正式结果表和正式图件仍需执行 `v3/src/v3_pipeline.R --stage all` 后生成。smoke 的低迭代诊断记录明确标为 `PASS_WITH_DIAGNOSTIC_WARNINGS`，不能当作正式研究结果。

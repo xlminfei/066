@@ -1,0 +1,12 @@
+{
+  "base_image": "rocker/r2u:24.04",
+  "base_image_id": "sha256:dc2a96c3b368969635c25c177c64514ba8e37cf2259dd3584de7c33520191d92",
+  "R": "4.6.1",
+  "packages": {
+    "brms": "2.23.0",
+    "rstan": "2.32.7",
+    "posterior": "1.7.0",
+    "digest": "0.6.39",
+    "jsonlite": "2.0.0"
+  }
+}

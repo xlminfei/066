@@ -1,0 +1,22 @@
+{
+  "version": "ratio_analysis_v3_weighted_20260920",
+  "expected_panel_species": 365,
+  "expected_records": 153,
+  "models": ["Null", "M1", "M2", "M3"],
+  "routes": ["binary", "joint_bb"],
+  "train_weightings": ["record_equal", "species_equal"],
+  "eval_weightings": ["record_equal", "species_equal"],
+  "designs": {"fivefold": 5, "tenfold": 10},
+  "primary_evaluation": "species_equal",
+  "predictor_sites": ["Site3", "Site20", "Site117", "Site196", "Site315"],
+  "metadata_only_sites": ["Site151"],
+  "rare_min": 4,
+  "scheme_a": false,
+  "phylogeny": false,
+  "formal_full_fit_count": 16,
+  "formal_cv_fit_count": 240,
+  "formal_fit_count": 256,
+  "classification_rule": "count/exact >= 0.5 HIGH; interval Upper <= 0.5 LOW; interval Lower >= 0.5 HIGH; strict crossing excluded",
+  "train_weight_normalization": "N_train/(S_train*R_s), total weight equals N_train",
+  "seed": 20260920
+}

@@ -1,0 +1,28 @@
+{
+  "status": "PASS_WITH_DIAGNOSTIC_WARNINGS",
+  "version": "ratio_analysis_v3_weighted_20260920",
+  "diagnostics": {
+    "binary": [
+      {
+        "Status": "FAILED_DIAGNOSTICS",
+        "MaxRhat": 1.0377,
+        "MinBulkESS": 122.7273,
+        "MinTailESS": 106.0859,
+        "Divergences": 0,
+        "TreeDepthHits": 0,
+        "MinEBFMI": 1.0042
+      }
+    ],
+    "joint_bb": [
+      {
+        "Status": "FAILED_DIAGNOSTICS",
+        "MaxRhat": 1.0415,
+        "MinBulkESS": 103.5492,
+        "MinTailESS": 121.5234,
+        "Divergences": 0,
+        "TreeDepthHits": 0,
+        "MinEBFMI": 0.8165
+      }
+    ]
+  }
+}

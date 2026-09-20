@@ -1,0 +1,13 @@
+{
+  "R": {
+    "Version": "4.6.1",
+    "Repositories": [{"Name": "CRAN", "URL": "https://cloud.r-project.org"}]
+  },
+  "Packages": {
+    "brms": {"Package": "brms", "Version": "2.23.0", "Source": "Repository"},
+    "rstan": {"Package": "rstan", "Version": "2.32.7", "Source": "Repository"},
+    "posterior": {"Package": "posterior", "Version": "1.7.0", "Source": "Repository"},
+    "digest": {"Package": "digest", "Version": "0.6.39", "Source": "Repository"},
+    "jsonlite": {"Package": "jsonlite", "Version": "2.0.0", "Source": "Repository"}
+  }
+}
