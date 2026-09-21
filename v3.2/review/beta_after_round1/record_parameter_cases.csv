@@ -1,0 +1,6 @@
+"id","m","rho","phi","lo","hi"
+"actual_chain_left_tail",0.72,0.25,280,0.6,0.7
+"actual_chain_right_tail",0.08,0.1,120,0.4,0.5
+"actual_chain_endpoint",0.999,0.7,120,0.99,1
+"actual_chain_narrow",0.4,0.2,30,0.35,0.3500000001
+"actual_chain_u_shape",0.3,0.6,0.8,0.001,0.999

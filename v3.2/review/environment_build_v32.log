@@ -1,0 +1,71 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 951B done
+#1 DONE 0.1s
+
+#2 [internal] load metadata for docker.io/rocker/r2u:24.04@sha256:dc2a96c3b368969635c25c177c64514ba8e37cf2259dd3584de7c33520191d92
+#2 DONE 4.7s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/6] FROM docker.io/rocker/r2u:24.04@sha256:dc2a96c3b368969635c25c177c64514ba8e37cf2259dd3584de7c33520191d92
+#4 resolve docker.io/rocker/r2u:24.04@sha256:dc2a96c3b368969635c25c177c64514ba8e37cf2259dd3584de7c33520191d92 0.0s done
+#4 DONE 0.0s
+
+#5 [2/6] RUN apt-get update && apt-get install -y --no-install-recommends     r-cran-brms r-cran-rstan r-cran-posterior r-cran-digest     ca-certificates curl cmake pandoc     && rm -rf /var/lib/apt/lists/*
+#5 CACHED
+
+#6 [internal] load build context
+#6 transferring context: 183.53kB 0.0s done
+#6 DONE 0.1s
+
+#7 [3/6] COPY renv.lock /opt/ratio-analysis-v3.2/renv.lock
+#7 DONE 0.0s
+
+#8 [4/6] COPY scripts/restore_environment.R /opt/ratio-analysis-v3.2/scripts/restore_environment.R
+#8 DONE 0.1s
+
+#9 [5/6] RUN Rscript /opt/ratio-analysis-v3.2/scripts/restore_environment.R     --lockfile /opt/ratio-analysis-v3.2/renv.lock     --library /usr/local/lib/R/site-library
+#9 0.677 Untracing function "install.packages" in package "utils"
+#9 0.734 trying URL 'https://cran.r-project.org/src/contrib/renv_1.2.4.tar.gz'
+#9 4.793 Content type 'application/x-gzip' length 1438389 bytes (1.4 MB)
+#9 4.954 ==========================================
+#9 60.83 downloaded 1.2 MB
+#9 60.83 
+#9 60.83 Warning in download.file(url, tarball, mode = "wb", quiet = FALSE) :
+#9 60.83   downloaded length 1228125 != reported length 1438389
+#9 60.83 Warning in download.file(url, tarball, mode = "wb", quiet = FALSE) :
+#9 60.83   URL 'https://cran.r-project.org/src/contrib/renv_1.2.4.tar.gz': Timeout of 60 seconds was reached
+#9 60.84 trying URL 'https://cran.r-project.org/src/contrib/Archive/renv/renv_1.2.4.tar.gz'
+#9 63.63 Warning in download.file(url, tarball, mode = "wb", quiet = FALSE) :
+#9 63.63   cannot open URL 'https://cran.r-project.org/src/contrib/Archive/renv/renv_1.2.4.tar.gz': HTTP status was '404 Not Found'
+#9 63.63 Error: Could not retrieve the pinned renv bootstrap source
+#9 63.63 Execution halted
+#9 ERROR: process "/bin/sh -c Rscript /opt/ratio-analysis-v3.2/scripts/restore_environment.R     --lockfile /opt/ratio-analysis-v3.2/renv.lock     --library /usr/local/lib/R/site-library" did not complete successfully: exit code: 1
+------
+ > [5/6] RUN Rscript /opt/ratio-analysis-v3.2/scripts/restore_environment.R     --lockfile /opt/ratio-analysis-v3.2/renv.lock     --library /usr/local/lib/R/site-library:
+60.83 
+60.83 Warning in download.file(url, tarball, mode = "wb", quiet = FALSE) :
+60.83   downloaded length 1228125 != reported length 1438389
+60.83 Warning in download.file(url, tarball, mode = "wb", quiet = FALSE) :
+60.83   URL 'https://cran.r-project.org/src/contrib/renv_1.2.4.tar.gz': Timeout of 60 seconds was reached
+60.84 trying URL 'https://cran.r-project.org/src/contrib/Archive/renv/renv_1.2.4.tar.gz'
+63.63 Warning in download.file(url, tarball, mode = "wb", quiet = FALSE) :
+63.63   cannot open URL 'https://cran.r-project.org/src/contrib/Archive/renv/renv_1.2.4.tar.gz': HTTP status was '404 Not Found'
+63.63 Error: Could not retrieve the pinned renv bootstrap source
+63.63 Execution halted
+------
+Dockerfile:11
+--------------------
+  10 |     COPY scripts/restore_environment.R /opt/ratio-analysis-v3.2/scripts/restore_environment.R
+  11 | >>> RUN Rscript /opt/ratio-analysis-v3.2/scripts/restore_environment.R \
+  12 | >>>     --lockfile /opt/ratio-analysis-v3.2/renv.lock \
+  13 | >>>     --library /usr/local/lib/R/site-library
+  14 |     ENV RATIO_V32_LOCKFILE=/opt/ratio-analysis-v3.2/renv.lock
+--------------------
+ERROR: failed to build: failed to solve: process "/bin/sh -c Rscript /opt/ratio-analysis-v3.2/scripts/restore_environment.R     --lockfile /opt/ratio-analysis-v3.2/renv.lock     --library /usr/local/lib/R/site-library" did not complete successfully: exit code: 1
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/y13gjgzffpvuv7bzv5sab9l9v

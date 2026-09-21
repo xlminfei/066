@@ -1,0 +1,15 @@
+{
+  "stage": "after",
+  "status": "PASS",
+  "purpose": "synthetic_parameter_evaluation_only_no_posterior_sampling",
+  "value_count": 289,
+  "gradient_count": 583,
+  "value_pass": true,
+  "gradient_pass": true,
+  "max_value_abs_error": 9.0949e-13,
+  "max_gradient_scaled_error": 3.9863e-08,
+  "rstan_version": "2.32.7",
+  "R_version": "R version 4.6.1 (2026-06-24)",
+  "production_source": "/work/stan/joint_bb.stan",
+  "created_utc": "2026-09-21 14:53:35 UTC"
+}

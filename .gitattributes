@@ -3,3 +3,4 @@
 /MANIFEST.sha256 -text
 /v3.1/** -text
 /releases/** -text
+/v3.2/** -text

@@ -1,0 +1,12 @@
+{
+  "status": "NOT_RUN_BY_USER_INSTRUCTION",
+  "version": "ratio_analysis_v3_2_weighted_20260921",
+  "formal_full_fits": 0,
+  "formal_cv_fits": 0,
+  "formal_predictions": 0,
+  "real_data_smoke_fits": 0,
+  "expected_formal_full_fits": 16,
+  "expected_formal_cv_fits": 240,
+  "static_input_inspection_only": true,
+  "new_mcmc_input": "synthetic_fixture_only"
+}

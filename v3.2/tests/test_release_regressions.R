@@ -1,0 +1,11 @@
+checks <- list()
+check <- function(name, expr) { ans <- tryCatch(isTRUE(force(expr)), error=function(e) FALSE); checks[[name]] <<- ans; cat(if(ans) "PASS " else "FAIL ",name,"\n",sep="") }
+check("NaN diagnostics must fail", !diagnostic_metrics_pass(data.frame(rhat=c(1,NA),ess_bulk=c(800,NA),ess_tail=c(800,NA))))
+d<-data.frame(Species=c("a","b","c"),Difference=1)
+check("degenerate bootstrap cannot imply P=0", is.na(cluster_bootstrap_difference(d,"species_equal",42L,B=50L)$p))
+check("AUC rejects fractional truth", inherits(tryCatch(weighted_auc(c(.2,1),c(.3,.7)),error=identity),"error"))
+check("log mean exp rejects NA", inherits(tryCatch(log_mean_exp(c(NA,-1)),error=identity),"error"))
+check("zero-col Null projection", isTRUE(all.equal(null_projection_draws(qlogis(c(.1,.8)),2L),matrix(c(.1,.8,.1,.8),2L))))
+check("typed record simulator exists", exists("joint_record_predictive_draws"))
+check("ROC fold multiplicity", abs(mean_roc_summary_v3(data.frame(Fold=rep(1:5,each=2),AUC=rep(c(.5,.5,.5,.5,1),each=2),FPR=rep(0:1,5),TPR=rep(0:1,5)))$auc-.6)<1e-12)
+if(!all(unlist(checks))) stop("release regression failures: ",paste(names(checks)[!unlist(checks)],collapse=", "))

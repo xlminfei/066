@@ -1,0 +1,2444 @@
+diff --git a/v3.1/Dockerfile b/v3.2/Dockerfile
+index 02dd182..ed1e543 100644
+--- a/v3.1/Dockerfile
++++ b/v3.2/Dockerfile
+@@ -6,10 +6,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
+     r-cran-brms r-cran-rstan r-cran-posterior r-cran-digest \
+     ca-certificates curl cmake pandoc \
+     && rm -rf /var/lib/apt/lists/*
+-COPY renv.lock /opt/ratio-analysis-v3.1/renv.lock
+-COPY scripts/restore_environment.R /opt/ratio-analysis-v3.1/scripts/restore_environment.R
+-RUN Rscript /opt/ratio-analysis-v3.1/scripts/restore_environment.R \
+-    --lockfile /opt/ratio-analysis-v3.1/renv.lock \
++COPY renv.lock /opt/ratio-analysis-v3.2/renv.lock
++COPY scripts/restore_environment.R /opt/ratio-analysis-v3.2/scripts/restore_environment.R
++RUN Rscript /opt/ratio-analysis-v3.2/scripts/restore_environment.R \
++    --lockfile /opt/ratio-analysis-v3.2/renv.lock \
+     --library /usr/local/lib/R/site-library
+-ENV RATIO_V31_LOCKFILE=/opt/ratio-analysis-v3.1/renv.lock
++ENV RATIO_V32_LOCKFILE=/opt/ratio-analysis-v3.2/renv.lock
+ WORKDIR /project
+
+diff --git a/v3.1/R/audit_run.R b/v3.2/R/audit_run.R
+index 44c2814..a47127e 100644
+--- a/v3.1/R/audit_run.R
++++ b/v3.2/R/audit_run.R
+@@ -1,56 +1,151 @@
+-audit_plan_v3_impl <- function(state,root,run_dir,review_dir) {
+-  folds<-make_fold_tables_v3(state);expected<-task_plan_v3(state,folds)
+-  plan<-read.csv(file.path(run_dir,"run_plan.csv"),stringsAsFactors=FALSE)
+-  if(!identical(names(plan),names(expected))||!isTRUE(all.equal(plan,expected,check.attributes=FALSE)))stop("Run plan differs from canonical full grid/current inputs/config")
+-  receipts<-list();issues<-character()
+-  for(i in seq_len(nrow(plan))) {
+-    row<-plan[i,];p<-fit_path_v3(root,row$Route,row$Model,row$TrainWeighting,row$Design,if(is.na(row$Fold))NULL else row$Fold)
+-    result<-tryCatch({
+-      b<-readRDS(p);active<-if(row$Route=="binary")state$binary_species else state$joint_species
+-      tr<-if(row$Design=="full")active else setdiff(active,folds[[row$Design]][[row$Route]]$Species[folds[[row$Design]][[row$Route]]$Fold==row$Fold])
+-      spec<-fit_spec_v3(state,row$Route,row$Model,tr,row$TrainWeighting,file.path(root,"stan","joint_bb.stan"),seed=row$Seed)
+-      d<-validate_fitted_bundle_v3(b,spec,require_pass=TRUE)
+-      list(ok=TRUE,key=b$key,reason="identity_data_code_recomputed_diagnostics_pass")
+-    },error=function(e)list(ok=FALSE,key=NA_character_,reason=conditionMessage(e)))
+-    receipts[[i]]<-cbind(row,data.frame(Pass=result$ok,FitKey=result$key,Reason=result$reason))
+-    if(!result$ok)issues<-c(issues,paste(row$FitID,result$reason))
++audit_plan_v3_impl <- function(state, root, run_dir, review_dir) {
++  cfg <- read_config_v3(root)
++  fresh <- prepare_state(file.path(root, "input"), cfg$expected_panel_species, cfg$expected_records)
++  if (!identical(state, fresh)) stop("Formal audit state differs from freshly reconstructed current inputs")
++  state <- fresh
++  folds <- make_fold_tables_v3(state); expected <- task_plan_v3(state, folds)
++  plan <- read.csv(file.path(run_dir, "run_plan.csv"), stringsAsFactors = FALSE)
++  if (!identical(names(plan), names(expected)) || !isTRUE(all.equal(plan, expected, check.attributes = FALSE))) {
++    stop("Run plan differs from canonical full grid/current inputs/config")
+   }
+-  rec<-do.call(rbind,receipts);write_csv_atomic(rec,file.path(review_dir,"fit_audit.csv"))
+-  if(!length(issues)) {
++  receipts <- list(); prediction_receipts <- list(); issues <- character()
++  read_output <- function(name) {
++    path <- file.path(root, "results", name)
++    if (!file.exists(path)) { issues <<- c(issues, paste("Missing output:", name)); return(NULL) }
++    read.csv(path, stringsAsFactors = FALSE)
++  }
++  ev <- read_output("cv_record_predictions.csv")
++  pred <- read_output("full_panel_predictions.csv")
++  if (!is.null(ev)) tryCatch({
++    validate_cv_evidence_v3(state, ev, folds)
++    if (!"RunPurpose" %in% names(ev) || anyNA(ev$RunPurpose) || any(ev$RunPurpose != "formal")) {
++      stop("Test evidence cannot be audited as formal results")
++    }
++  }, error = function(e) issues <<- c(issues, conditionMessage(e)))
++  if (!is.null(pred)) tryCatch({
++    validate_prediction_table_v3(pred)
++    grid <- expand.grid(Species = state$sites$Species, Route = V3_ROUTES, Model = V3_MODELS,
++      TrainWeighting = V3_TRAIN_WEIGHTINGS, stringsAsFactors = FALSE)
++    audit_assert_key_grid_v3(pred, grid, names(grid), "full_panel_grid")
++  }, error = function(e) issues <<- c(issues, conditionMessage(e)))
++
++  # Every saved fit is reopened; every held-out row and every full-panel species
++  # is recomputed from its posterior, including an independent R likelihood.
++  for (i in seq_len(nrow(plan))) {
++    row <- plan[i, , drop = FALSE]
++    path <- fit_path_v3(root, row$Route, row$Model, row$TrainWeighting, row$Design,
++      if (is.na(row$Fold)) NULL else row$Fold)
++    result <- tryCatch({
++      bundle <- readRDS(path)
++      active <- if (row$Route == "binary") state$binary_species else state$joint_species
++      held <- if (row$Design == "full") character() else
++        folds[[row$Design]][[row$Route]]$Species[folds[[row$Design]][[row$Route]]$Fold == row$Fold]
++      train <- if (row$Design == "full") active else setdiff(active, held)
++      spec <- fit_spec_v3(state, row$Route, row$Model, train, row$TrainWeighting,
++        file.path(root, "stan", "joint_bb.stan"), seed = row$Seed)
++      validate_fitted_bundle_v3(bundle, spec, require_pass = TRUE)
++      context <- row[, c("Design", "Fold", "Route", "Model", "TrainWeighting"), drop = FALSE]
++      context$RunPurpose <- "formal"
++      recomputed <- tryCatch({
++        if (row$Design == "full") {
++          if (is.null(pred)) stop("Full-panel predictions are missing")
++          saved <- pred[pred$Route == row$Route & pred$Model == row$Model &
++            pred$TrainWeighting == row$TrainWeighting, , drop = FALSE]
++          audit_full_bundle_predictions_v3(bundle, state, saved, context)
++        } else {
++          if (is.null(ev)) stop("OOF predictions are missing")
++          held_rows <- which(state$observations$Species %in% held &
++            if (row$Route == "binary") !is.na(state$observations$High) else state$observations$Informative)
++          saved <- ev[ev$Design == row$Design & ev$Fold == row$Fold & ev$Route == row$Route &
++            ev$Model == row$Model & ev$TrainWeighting == row$TrainWeighting, , drop = FALSE]
++          audit_cv_bundle_predictions_v3(bundle, state, held_rows, saved, context)
++        }
++      }, error = function(e) audit_receipt_v3(context,
++          if (row$Design == "full") "posterior_to_full_panel" else "posterior_to_OOF", "FAILED_STRATUM",
++          0L, 0L, NA_integer_, NA_real_, 1e-10, status = "FAIL", reason = conditionMessage(e)))
++      prediction_receipts[[length(prediction_receipts) + 1L]] <- recomputed
++      passed <- all(recomputed$Status == "PASS")
++      list(ok = passed, identity_ok = TRUE, prediction_ok = passed, key = bundle$key,
++        reason = if (passed) "identity_current_inputs_diagnostics_and_all_predictions_recomputed" else
++          paste(recomputed$Reason[recomputed$Status != "PASS"], collapse = "; "))
++    }, error = function(e) list(ok = FALSE, identity_ok = FALSE, prediction_ok = FALSE,
++      key = NA_character_, reason = conditionMessage(e)))
++    receipts[[i]] <- cbind(row, data.frame(Pass = result$ok, IdentityPass = result$identity_ok,
++      PredictionPass = result$prediction_ok, FitKey = result$key, Reason = result$reason))
++    if (!result$ok) issues <- c(issues, paste(row$FitID, result$reason))
++    # Persist each completed stratum so an interrupted audit cannot imply that
++    # later fits or observations were checked.
++    write_csv_atomic(do.call(rbind, receipts), file.path(review_dir, "fit_audit.csv"))
++    if (length(prediction_receipts)) write_csv_atomic(do.call(rbind, prediction_receipts),
++      file.path(review_dir, "audit_prediction_recompute.csv"))
++    cat("AUDIT_FIT", i, "/", nrow(plan), row$FitID, if (result$ok) "PASS" else "FAIL", "\n")
++    flush.console()
++  }
++  rec <- do.call(rbind, receipts)
++  if (!length(issues)) {
+     tryCatch({
+-      verify_derived_outputs_v3(root,state)
+-      for(s in c("cv","predict","ppc"))verify_stage_receipt_v3(root,state,s)
+-      ev<-read.csv(file.path(root,"results","cv_record_predictions.csv"),stringsAsFactors=FALSE)
+-      validate_cv_evidence_v3(state,ev,folds)
+-      if(any(ev$RunPurpose!="formal"))stop("Test evidence cannot be audited as formal results")
+-      for(i in seq_len(nrow(rec)))if(rec$Design[i]!="full") {
+-        r<-rec[i,];e<-subset(ev,Design==r$Design&Fold==r$Fold&Route==r$Route&Model==r$Model&TrainWeighting==r$TrainWeighting)
+-        if(any(e$FitKey!=r$FitKey))stop("Evidence FitKey mismatch")
+-      }
+-      fm<-read.csv(file.path(root,"results","cv_fold_metrics.csv"));if(nrow(fm)!=480L||anyDuplicated(fm[,c("Design","Route","Model","TrainWeighting","EvalWeighting","Fold")]))stop("Invalid fold metric grid")
+-      for(i in seq_len(nrow(fm))) {
+-        r<-fm[i,];e<-subset(ev,Design==r$Design&Fold==r$Fold&Route==r$Route&Model==r$Model&TrainWeighting==r$TrainWeighting)
+-        score<-evaluate_evidence(e,r$EvalWeighting,r$Route)
+-        for(n in intersect(names(score),names(fm)))if(!isTRUE(all.equal(score[[n]],r[[n]],tolerance=1e-10,check.attributes=FALSE)))stop("Fold score mismatch: ",n)
++      verify_derived_outputs_v3(root, state)
++      for (stage in c("cv", "predict", "ppc")) verify_stage_receipt_v3(root, state, stage)
++      fm <- read.csv(file.path(root, "results", "cv_fold_metrics.csv"), stringsAsFactors = FALSE)
++      fold_grid <- do.call(rbind, lapply(names(folds), function(design) {
++        z <- expand.grid(Route = V3_ROUTES, Model = V3_MODELS, TrainWeighting = V3_TRAIN_WEIGHTINGS,
++          EvalWeighting = V3_EVAL_WEIGHTINGS, Fold = seq_len(V3_DESIGN_K[[design]]), stringsAsFactors = FALSE)
++        z$Design <- design; z
++      }))
++      fold_keys <- c("Design", "Route", "Model", "TrainWeighting", "EvalWeighting", "Fold")
++      audit_assert_key_grid_v3(fm, fold_grid, fold_keys, "cv_fold_metric_grid")
++      for (i in seq_len(nrow(fm))) {
++        row <- fm[i, , drop = FALSE]
++        evidence <- ev[ev$Design == row$Design & ev$Fold == row$Fold & ev$Route == row$Route &
++          ev$Model == row$Model & ev$TrainWeighting == row$TrainWeighting, , drop = FALSE]
++        score <- evaluate_evidence(evidence, row$EvalWeighting, row$Route)
++        # Required evaluation fields are dynamic: new support/Bias fields cannot
++        # be silently omitted by comparing only an old hard-coded intersection.
++        for (name in setdiff(fold_keys, names(score))) score[[name]] <- row[[name]]
++        audit_compare_table_v3(row, score, fold_keys, "cv_fold_scores")
+       }
+-      summary<-summarize_cv_metrics_v3(ev,fm);stored<-read.csv(file.path(root,"results","cv_metrics_summary.csv"))
+-      if(nrow(summary)!=64L||!isTRUE(all.equal(stored,summary,tolerance=1e-10,check.attributes=FALSE)))stop("CV summary mismatch")
+-      pred<-read.csv(file.path(root,"results","full_panel_predictions.csv"));validate_prediction_table_v3(pred)
+-      grid<-expand.grid(Species=state$sites$Species,Route=V3_ROUTES,Model=V3_MODELS,TrainWeighting=V3_TRAIN_WEIGHTINGS,stringsAsFactors=FALSE)
+-      key<-function(x)do.call(paste,c(x[,names(grid)],sep="|"))
+-      if(nrow(pred)!=nrow(grid)||!setequal(key(pred),key(grid)))stop("Full panel grid mismatch")
+-      required<-c("model_vs_null.csv","training_method_comparisons.csv","calibration_bins.csv","roc_coordinates.csv","training_ppc_summary.csv")
+-      for(f in required)if(!file.exists(file.path(root,"results",f)))stop("Missing output: ",f)
+-      if(!file.exists(file.path(root,"reports","REPORT_v3_1.md")))stop("Missing full result report")
+-    },error=function(e)issues<<-c(issues,conditionMessage(e)))
++      summary <- summarize_cv_metrics_v3(ev, fm)
++      stored <- read.csv(file.path(root, "results", "cv_metrics_summary.csv"), stringsAsFactors = FALSE)
++      audit_compare_table_v3(stored, summary, setdiff(fold_keys, "Fold"), "cv_summary")
++      model_table <- read.csv(file.path(root, "results", "model_vs_null.csv"), stringsAsFactors = FALSE)
++      training_table <- read.csv(file.path(root, "results", "training_method_comparisons.csv"), stringsAsFactors = FALSE)
++      comparison_receipts <- verify_comparison_outputs_v3(ev, model_table, training_table)
++      write_csv_atomic(comparison_receipts, file.path(review_dir, "audit_comparison_recompute.csv"))
++      quantitative_receipts <- verify_quantitative_outputs_v32(ev,
++        read.csv(file.path(root, "results", "quantitative_bias_summary.csv"), stringsAsFactors = FALSE),
++        read.csv(file.path(root, "results", "quantitative_plot_source.csv"), stringsAsFactors = FALSE))
++      write_csv_atomic(quantitative_receipts, file.path(review_dir, "audit_quantitative_recompute.csv"))
++      required <- c("calibration_bins.csv", "roc_coordinates.csv", "training_ppc_summary.csv")
++      for (file in required) if (!file.exists(file.path(root, "results", file))) stop("Missing output: ", file)
++      if (!file.exists(file.path(root, "reports", "REPORT_v3_2.md"))) stop("Missing full result report")
++    }, error = function(e) issues <<- c(issues, conditionMessage(e)))
+   }
+-  status<-if(length(issues))"FAILED" else "PASS"
+-  write_json_atomic(list(status=status,version=V3_VERSION,expected_tasks=nrow(expected),fits_checked=nrow(rec),fits_passed=sum(rec$Pass),issues=issues),file.path(review_dir,"audit_v3.json"))
+-  if(length(issues))stop("Formal audit failed: ",paste(head(issues,5),collapse="; "))
++  status <- if (length(issues)) "FAILED" else "PASS"
++  checked <- if (length(prediction_receipts)) do.call(rbind, prediction_receipts) else data.frame()
++  write_json_atomic(list(status = status, version = V3_VERSION, expected_tasks = nrow(expected),
++    fits_checked = nrow(rec), fits_passed = sum(rec$Pass), posterior_refits = 0L,
++    prediction_strata_checked = nrow(checked),
++    prediction_rows_checked = if (nrow(checked)) sum(checked$RowsChecked) else 0L,
++    prediction_audit_source = "current_inputs_and_saved_fitted_posterior; independent_R_raw_loglik",
++    issues = issues), file.path(review_dir, "audit_v3.json"))
++  if (length(issues)) stop("Formal audit failed: ", paste(head(issues, 5), collapse = "; "))
+   invisible(TRUE)
+ }
+ 
+-audit_plan_v3 <- function(state,root,run_dir,review_dir) {
+-  p<-file.path(review_dir,"audit_v3.json");write_json_atomic(list(status="RUNNING",version=V3_VERSION),p)
+-  tryCatch(audit_plan_v3_impl(state,root,run_dir,review_dir),error=function(e){write_json_atomic(list(status="FAILED",version=V3_VERSION,reason=conditionMessage(e)),p);stop(e)})
++audit_plan_v3 <- function(state, root, run_dir, review_dir) {
++  path <- file.path(review_dir, "audit_v3.json")
++  write_json_atomic(list(status = "RUNNING", version = V3_VERSION), path)
++  empty_predictions <- audit_receipt_v3(list(), "", "", 0L, 0L, 0L, NA_real_, 1e-10)[FALSE, , drop = FALSE]
++  write_csv_atomic(empty_predictions, file.path(review_dir, "audit_prediction_recompute.csv"))
++  write_csv_atomic(data.frame(Check = character(), RowsChecked = integer(), ColumnsChecked = integer(),
++    MaximumAbsoluteDifference = numeric(), Status = character()), file.path(review_dir, "audit_comparison_recompute.csv"))
++  write_csv_atomic(data.frame(Check = character(), RowsChecked = integer(), ColumnsChecked = integer(),
++    MaximumAbsoluteDifference = numeric(), Status = character()), file.path(review_dir, "audit_quantitative_recompute.csv"))
++  write_csv_atomic(data.frame(FitID = character(), Pass = logical(), Reason = character()), file.path(review_dir, "fit_audit.csv"))
++  tryCatch(audit_plan_v3_impl(state, root, run_dir, review_dir), error = function(e) {
++    previous <- tryCatch(jsonlite::read_json(path, simplifyVector = TRUE), error = function(e) list())
++    previous$status <- "FAILED"; previous$version <- V3_VERSION; previous$reason <- conditionMessage(e)
++    write_json_atomic(previous, path)
++    stop(e)
++  })
+ }
+
+diff --git a/v3.1/R/bootstrap.R b/v3.2/R/bootstrap.R
+index 57d43be..6e256dc 100644
+--- a/v3.1/R/bootstrap.R
++++ b/v3.2/R/bootstrap.R
+@@ -7,11 +7,11 @@ resolve_v3_root <- function(args=commandArgs(TRUE),script=NULL) {
+     candidate<-dirname(dirname(script))
+   }
+   candidate<-normalizePath(candidate,winslash="/",mustWork=TRUE)
+-  if(!file.exists(file.path(candidate,"R","config.R")))stop("Invalid v3.1 root: ",candidate)
++  if(!file.exists(file.path(candidate,"R","config.R")))stop("Invalid version root: ",candidate)
+   candidate
+ }
+ load_v3_modules <- function(root,envir=.GlobalEnv,configure=TRUE) {
+-  for(f in c("config","data_encoding","weights","metrics","applicability","cache_io","fitting","prediction","cross_validation","comparison","plotting","ppc","provenance","reporting","audit_run","workflow"))source(file.path(root,"R",paste0(f,".R")),local=envir)
++  for(f in c("config","data_encoding","weights","metrics","applicability","cache_io","fitting","prediction","prediction_audit","cross_validation","comparison","plotting","quantitative_diagnostics","ppc","provenance","reporting","audit_run","workflow"))source(file.path(root,"R",paste0(f,".R")),local=envir)
+   if(configure)get("apply_analysis_config",envir)(jsonlite::read_json(file.path(root,"config","analysis.json"),simplifyVector=TRUE))
+   invisible(root)
+ }
+
+diff --git a/v3.1/R/config.R b/v3.2/R/config.R
+index 16ad10f..91e55c7 100644
+--- a/v3.1/R/config.R
++++ b/v3.2/R/config.R
+@@ -1,4 +1,4 @@
+-V3_VERSION <- "ratio_analysis_v3_1_weighted_20260920"
++V3_VERSION <- "ratio_analysis_v3_2_weighted_20260921"
+ V3_MODELS <- c("Null", "M1", "M2", "M3")
+ V3_ROUTES <- c("binary", "joint_bb")
+ V3_TRAIN_WEIGHTINGS <- c("record_equal", "species_equal")
+@@ -101,7 +101,7 @@ apply_analysis_config <- function(cfg) {
+     train_weight_normalization="N_train/(S_train*R_s), total weight equals N_train",
+     classification_rule="count/exact >= 0.5 HIGH; interval Upper <= 0.5 LOW; interval Lower >= 0.5 HIGH; strict crossing excluded")
+   for(n in names(fixed))if(!identical(unname(unlist(cfg[[n]])),unname(fixed[[n]])))stop("Unsupported or missing config field: ",n)
+-  dk<-unlist(cfg$designs);if(!identical(names(dk),names(V3_DESIGN_K))||any(dk!=V3_DESIGN_K))stop("v3.1 requires fixed fivefold/tenfold designs")
++  dk<-unlist(cfg$designs);if(!identical(names(dk),names(V3_DESIGN_K))||any(dk!=V3_DESIGN_K))stop("v3.2 requires fixed fivefold/tenfold designs")
+   for(n in c("rare_min","seed","expected_panel_species","expected_records","comparison_bootstrap"))if(length(cfg[[n]])!=1||!is.finite(cfg[[n]])||cfg[[n]]<1||cfg[[n]]!=floor(cfg[[n]]))stop("Invalid config field: ",n)
+   for(n in names(V3_PRIORS))if(length(cfg$priors[[n]])!=1||!is.finite(cfg$priors[[n]])||(n!="log_phi_mean"&&cfg$priors[[n]]<=0))stop("Invalid prior: ",n)
+   totals<-c(formal_full_fit_count=16L,formal_cv_fit_count=240L,formal_fit_count=256L)
+
+diff --git a/v3.1/R/cross_validation.R b/v3.2/R/cross_validation.R
+index 86500c5..0991a2b 100644
+--- a/v3.1/R/cross_validation.R
++++ b/v3.2/R/cross_validation.R
+@@ -98,7 +98,7 @@ summarize_cv_metrics_v3 <- function(evidence, fold_metrics) {
+     row$TrainWeighting <- k$TrainWeighting[[1L]]; row$EvalWeighting <- k$EvalWeighting[[1L]]
+     row$FoldCount <- length(unique(z$Fold))
+     row$Aggregation <- if (k$Route[[1L]] == "binary") "full_design_records; AUC_is_unweighted_fold_mean_and_PooledAUC_is_record_evidence" else "full_design_records"
+-    desired <- c("Design", "Route", "Model", "TrainWeighting", "EvalWeighting", "FoldCount", "RecordsUsed", "SpeciesUsed", "WeightSum", "ELPD", "MeanLogScore", "AUC", "PooledAUC", "FoldMeanAUC", "Brier", "MAE", "RMSE", "PointRecords", "PICoverage", "MeanPIWidth", "PIRecords", "Aggregation")
++    desired <- c("Design", "Route", "Model", "TrainWeighting", "EvalWeighting", "FoldCount", "RecordsUsed", "SpeciesUsed", "LogScoreRecordsUsed", "LogScoreSpeciesUsed", "PointSpeciesUsed", "PISpeciesUsed", "WeightSum", "ELPD", "MeanLogScore", "AUC", "PooledAUC", "FoldMeanAUC", "Brier", "MAE", "RMSE", "Bias", "PointRecords", "PICoverage", "MeanPIWidth", "PIRecords", "Aggregation")
+     row <- row[, intersect(desired, names(row)), drop = FALSE]
+     rows[[i]] <- row
+   }
+@@ -159,7 +159,7 @@ run_cv_v3 <- function(state, root, fold_tables, stan_path,
+           for (eval_weighting in V3_EVAL_WEIGHTINGS) {
+             r <- evaluate_evidence(scored, eval_weighting, route)
+             r$Design <- design; r$Fold <- fold_id; r$Model <- model; r$TrainWeighting <- train_weighting
+-            desired <- c("Design", "Fold", "Route", "Model", "TrainWeighting", "EvalWeighting", "RecordsUsed", "SpeciesUsed", "WeightSum", "ELPD", "MeanLogScore", "AUC", "Brier", "MAE", "RMSE", "PointRecords", "PICoverage", "MeanPIWidth", "PIRecords", "Aggregation")
++            desired <- c("Design", "Fold", "Route", "Model", "TrainWeighting", "EvalWeighting", "RecordsUsed", "SpeciesUsed", "LogScoreRecordsUsed", "LogScoreSpeciesUsed", "PointSpeciesUsed", "PISpeciesUsed", "WeightSum", "ELPD", "MeanLogScore", "AUC", "Brier", "MAE", "RMSE", "Bias", "PointRecords", "PICoverage", "MeanPIWidth", "PIRecords", "Aggregation")
+             metric_rows[[m <- m + 1L]] <- r[, intersect(desired, names(r)), drop = FALSE]
+           }
+         }
+
+diff --git a/v3.1/R/fitting.R b/v3.2/R/fitting.R
+index 6ade05a..d7a8592 100644
+--- a/v3.1/R/fitting.R
++++ b/v3.2/R/fitting.R
+@@ -1,3 +1,5 @@
++binary_template_key_v32 <- function(spec) sha256_object(list(stan_code=spec$code, model=spec$request$model, columns=spec$blueprint$columns))
++
+ diagnostic_metrics_pass <- function(draws) {
+   cols<-c("rhat","ess_bulk","ess_tail")
+   if(!nrow(draws)||!all(cols%in%names(draws)))return(FALSE)
+@@ -96,14 +98,14 @@ fit_from_spec_v3 <- function(spec,out_path,force=FALSE) {
+   if(!force && cache_is_valid(out_path,req,req$route,req$model,req$train_weighting)) {
+     b<-readRDS(out_path);b$diagnostics<-validate_fitted_bundle_v3(b,spec,require_pass=FALSE)
+     if(req$route=="joint_bb") { if(!exists(".v31_compiled",.GlobalEnv,inherits=FALSE))assign(".v31_compiled",new.env(),.GlobalEnv);assign(sha256_object(spec$code),b$fit@stanmodel,get(".v31_compiled",.GlobalEnv)) }
+-    if(req$route=="binary") { if(!exists(".v31_binary_templates",.GlobalEnv,inherits=FALSE))assign(".v31_binary_templates",new.env(),.GlobalEnv);assign(sha256_object(spec$code),b$fit,get(".v31_binary_templates",.GlobalEnv)) }
++    if(req$route=="binary") { if(!exists(".v31_binary_templates",.GlobalEnv,inherits=FALSE))assign(".v31_binary_templates",new.env(),.GlobalEnv);assign(binary_template_key_v32(spec),b$fit,get(".v31_binary_templates",.GlobalEnv)) }
+     return(b)
+   }
+   ctl<-req$sampling
+   cat("FIT_START",req$route,req$model,req$train_weighting,"seed",req$seed,"\n");flush.console()
+   if(req$route=="binary") {
+     if(!exists(".v31_binary_templates",.GlobalEnv,inherits=FALSE))assign(".v31_binary_templates",new.env(),.GlobalEnv)
+-    templates<-get(".v31_binary_templates",.GlobalEnv);codekey<-sha256_object(spec$code)
++    templates<-get(".v31_binary_templates",.GlobalEnv);codekey<-binary_template_key_v32(spec)
+     if(exists(codekey,templates,inherits=FALSE)) {
+       fit<-stats::update(get(codekey,templates),newdata=spec$data,recompile=FALSE,seed=req$seed,
+         chains=ctl$chains,cores=ctl$cores,iter=ctl$iter,warmup=ctl$warmup,
+
+diff --git a/v3.1/R/metrics.R b/v3.2/R/metrics.R
+index ac23b52..a8a0d6d 100644
+--- a/v3.1/R/metrics.R
++++ b/v3.2/R/metrics.R
+@@ -66,6 +66,7 @@ roc_coordinates <- function(y, score, weight = rep(1, length(y))) {
+ weighted_brier <- function(y, p, weight = rep(1, length(y))) weighted_mean((y - p)^2, weight)
+ weighted_mae <- function(y, p, weight = rep(1, length(y))) weighted_mean(abs(y - p), weight)
+ weighted_rmse <- function(y, p, weight = rep(1, length(y))) sqrt(weighted_mean((y - p)^2, weight))
++weighted_bias <- function(y, p, weight = rep(1, length(y))) weighted_mean(p - y, weight)
+ 
+ assert_score_column <- function(evidence) {
+   if (!"LogPredictiveDensityRaw" %in% names(evidence)) stop("Evidence lacks LogPredictiveDensityRaw")
+@@ -91,11 +92,13 @@ evaluate_evidence <- function(evidence, eval_weighting = "record_equal", route =
+     wf <- build_eval_weights(z[, "Species", drop = FALSE], eval_weighting)
+     out <- data.frame(Route = route, EvalWeighting = eval_weighting,
+       RecordsUsed = nrow(z), SpeciesUsed = length(unique(z$Species)),
++      LogScoreRecordsUsed = nrow(z), LogScoreSpeciesUsed = length(unique(z$Species)),
++      PointSpeciesUsed = 0L, PISpeciesUsed = 0L,
+       WeightSum = sum(wf$weight), ELPD = sum(wf$weight * z$LogPredictiveDensityRaw),
+       MeanLogScore = weighted_mean(z$LogPredictiveDensityRaw, wf$weight),
+       AUC = weighted_auc(z$ObservedHigh, z$PredictedPrHigh, wf$weight),
+       Brier = weighted_brier(z$ObservedHigh, z$PredictedPrHigh, wf$weight),
+-      MAE = NA_real_, RMSE = NA_real_, PointRecords = 0L,
++      MAE = NA_real_, RMSE = NA_real_, Bias = NA_real_, PointRecords = 0L,
+        PICoverage = NA_real_, MeanPIWidth = NA_real_, PIRecords = 0L,
+        Aggregation = "weighted_record_or_species", stringsAsFactors = FALSE)
+     return(out)
+@@ -113,10 +116,13 @@ evaluate_evidence <- function(evidence, eval_weighting = "record_equal", route =
+   if(anyNA(evidence$IntervalCovered[point])||any(covered!=evidence$IntervalCovered[point]))stop("Incorrect or missing interval coverage")
+   z<-evidence;wf<-build_eval_weights(z[,"Species",drop=FALSE],eval_weighting)
+   wp<-if(any(point))build_eval_weights(z[point,"Species",drop=FALSE],eval_weighting)$weight else numeric()
+-  out<-data.frame(Route=route,EvalWeighting=eval_weighting,RecordsUsed=nrow(z),SpeciesUsed=length(unique(z$Species)),WeightSum=sum(wf$weight),
++  out<-data.frame(Route=route,EvalWeighting=eval_weighting,RecordsUsed=nrow(z),SpeciesUsed=length(unique(z$Species)),
++    LogScoreRecordsUsed=nrow(z),LogScoreSpeciesUsed=length(unique(z$Species)),
++    PointSpeciesUsed=length(unique(z$Species[point])),PISpeciesUsed=length(unique(z$Species[point])),WeightSum=sum(wf$weight),
+     ELPD=sum(wf$weight*z$LogPredictiveDensityRaw),MeanLogScore=weighted_mean(z$LogPredictiveDensityRaw,wf$weight),AUC=NA_real_,Brier=NA_real_,
+     MAE=if(any(point))weighted_mae(z$ObservedPoint[point],z$PredictedPoint[point],wp) else NA_real_,
+-    RMSE=if(any(point))weighted_rmse(z$ObservedPoint[point],z$PredictedPoint[point],wp) else NA_real_,PointRecords=sum(point),
++    RMSE=if(any(point))weighted_rmse(z$ObservedPoint[point],z$PredictedPoint[point],wp) else NA_real_,
++    Bias=if(any(point))weighted_bias(z$ObservedPoint[point],z$PredictedPoint[point],wp) else NA_real_,PointRecords=sum(point),
+     PICoverage=if(any(point))weighted_mean(as.numeric(covered),wp) else NA_real_,
+     MeanPIWidth=if(any(point))weighted_mean(z$PIWidth[point],wp) else NA_real_,PIRecords=sum(point),Aggregation="full_metric_valid_set_weights; PI_matches_record_observation_model")
+   out
+
+diff --git a/v3.2/R/prediction_audit.R b/v3.2/R/prediction_audit.R
+new file mode 100644
+index 0000000..55383f5
+--- /dev/null
++++ b/v3.2/R/prediction_audit.R
+@@ -0,0 +1,361 @@
++# The audit starts from fitted parameters and current inputs, never from saved OOF
++# scores. Pure posterior fixtures are opt-in and cannot pass the formal fit gate.
++audit_key_v3 <- function(x, columns, context = "table") {
++  if (!is.data.frame(x) || !all(columns %in% names(x))) stop(context, ": missing primary-key columns")
++  if (anyDuplicated(names(x))) stop(context, ": duplicate column names")
++  if (anyNA(x[, columns, drop = FALSE])) stop(context, ": missing primary-key values")
++  z <- lapply(x[, columns, drop = FALSE], as.character)
++  if (any(vapply(z, function(v) any(!nzchar(v) | grepl("\034", v, fixed = TRUE)), logical(1)))) {
++    stop(context, ": empty or unsupported primary-key value")
++  }
++  do.call(paste, c(z, sep = "\034"))
++}
++
++audit_assert_key_grid_v3 <- function(stored, expected, columns, context = "table") {
++  actual_key <- audit_key_v3(stored, columns, context)
++  expected_key <- audit_key_v3(expected, columns, paste(context, "expected"))
++  if (anyDuplicated(actual_key)) stop(context, ": duplicate primary key")
++  if (anyDuplicated(expected_key)) stop(context, ": duplicate expected primary key")
++  if (length(actual_key) != length(expected_key) || !setequal(actual_key, expected_key)) {
++    stop(context, ": primary-key grid mismatch; missing=", length(setdiff(expected_key, actual_key)),
++         "; extra=", length(setdiff(actual_key, expected_key)))
++  }
++  invisible(match(expected_key, actual_key))
++}
++
++# CSV serialization may read an all-empty character column as logical NA. Only
++# empty character metadata receives that normalization; numeric/logical inactive
++# fields must retain their exact NA mask. Integer/double and row order are benign.
++audit_compare_table_v3 <- function(stored, expected, keys, context = "table", tolerance = 1e-10) {
++  if (length(tolerance) != 1L || !is.finite(tolerance) || tolerance <= 0) stop("Invalid audit tolerance")
++  index <- audit_assert_key_grid_v3(stored, expected, keys, context)
++  if (!all(names(expected) %in% names(stored))) {
++    stop(context, ": missing expected fields: ", paste(setdiff(names(expected), names(stored)), collapse = ", "))
++  }
++  stored <- stored[index, , drop = FALSE]
++  max_error <- 0
++  for (column in names(expected)) {
++    a <- stored[[column]]; b <- expected[[column]]
++    if (is.character(b) || is.factor(b)) {
++      a <- as.character(a); b <- as.character(b)
++      a[is.na(a) & !is.na(b) & b == ""] <- ""
++      if (!identical(is.na(a), is.na(b)) || any(a[!is.na(b)] != b[!is.na(b)])) {
++        stop(context, ": value mismatch in ", column)
++      }
++    } else if (is.numeric(b) || is.logical(b)) {
++      if (!is.numeric(a) && !is.logical(a)) stop(context, ": non-numeric/non-logical field ", column)
++      if (any(is.nan(a)) || any(is.nan(b))) stop(context, ": NaN is not an inactive NA in ", column)
++      if (!identical(is.na(a), is.na(b))) stop(context, ": inactive/NA mask mismatch in ", column)
++      valid <- !is.na(b)
++      if (any(is.infinite(a[valid]) != is.infinite(b[valid]))) stop(context, ": nonfinite mismatch in ", column)
++      if (any(is.infinite(b[valid]) & a[valid] != b[valid])) stop(context, ": infinity sign mismatch in ", column)
++      finite <- valid & is.finite(b)
++      error <- abs(as.numeric(a[finite]) - as.numeric(b[finite]))
++      bound <- if (is.logical(b)) rep(0, sum(finite)) else tolerance * pmax(1, abs(b[finite]))
++      if (any(!is.finite(error)) || any(error > bound)) stop(context, ": numeric mismatch in ", column,
++        "; max_abs_error=", if (length(error)) max(error) else 0)
++      if (length(error)) max_error <- max(max_error, error)
++    } else stop(context, ": unsupported audit field type in ", column)
++  }
++  list(rows = nrow(expected), columns = length(names(expected)), max_absolute_error = max_error)
++}
++
++audit_logspace_difference_v3 <- function(a, b) {
++  out <- rep(NA_real_, length(a))
++  valid <- !is.na(a) & !is.na(b) & a > b
++  out[valid] <- a[valid] + log(-expm1(b[valid] - a[valid]))
++  out[is.finite(a) & is.infinite(b) & b < 0] <- a[is.finite(a) & is.infinite(b) & b < 0]
++  out
++}
++
++# Independent R/Rmath reference. Both tails are evaluated; the smaller large-end
++# tail is preferred. Cancellation in both tails uses density quadrature over
++# t in [0,1], which also resolves intervals narrower than ordinary x grids.
++audit_log_beta_interval_v3 <- function(lo, hi, a, b) {
++  if (length(lo) != 1L || length(hi) != 1L || !is.finite(lo) || !is.finite(hi) || lo < 0 || hi > 1 || lo >= hi) {
++    stop("Audit beta interval requires 0 <= lo < hi <= 1")
++  }
++  if (length(a) != length(b) || any(!is.finite(a) | !is.finite(b) | a <= 0 | b <= 0)) stop("Invalid audit beta shapes")
++  if (lo == 0 && hi == 1) return(rep(0, length(a)))
++  if (lo == 0) return(stats::pbeta(hi, a, b, log.p = TRUE))
++  if (hi == 1) return(stats::pbeta(lo, a, b, lower.tail = FALSE, log.p = TRUE))
++  cdf_hi <- stats::pbeta(hi, a, b, log.p = TRUE)
++  cdf_lo <- stats::pbeta(lo, a, b, log.p = TRUE)
++  sf_lo <- stats::pbeta(lo, a, b, lower.tail = FALSE, log.p = TRUE)
++  sf_hi <- stats::pbeta(hi, a, b, lower.tail = FALSE, log.p = TRUE)
++  left <- audit_logspace_difference_v3(cdf_hi, cdf_lo)
++  right <- audit_logspace_difference_v3(sf_lo, sf_hi)
++  out <- ifelse(cdf_hi <= sf_lo, left, right)
++  other <- ifelse(cdf_hi <= sf_lo, right, left)
++  use_other <- !is.finite(out) & is.finite(other)
++  out[use_other] <- other[use_other]
++  narrow <- (hi - lo) < 1e-5 * min(lo, 1 - hi)
++  for (i in which(!is.finite(out) | narrow)) {
++    mid <- lo + (hi - lo) / 2
++    candidates <- c(lo, mid, hi)
++    if (a[i] > 1 && b[i] > 1) candidates <- c(candidates, max(lo, min(hi, (a[i] - 1) / (a[i] + b[i] - 2))))
++    scale <- max(stats::dbeta(candidates, a[i], b[i], log = TRUE))
++    if (!is.finite(scale)) stop("Audit interval density is nonfinite")
++    integral <- stats::integrate(function(t) exp(stats::dbeta(lo + (hi - lo) * t, a[i], b[i], log = TRUE) - scale),
++      lower = 0, upper = 1, subdivisions = 2000L, rel.tol = 1e-10, abs.tol = 0, stop.on.error = TRUE)
++    if (!is.finite(integral$value) || integral$value <= 0) stop("Audit interval quadrature failed")
++    out[i] <- log(hi - lo) + scale + log(integral$value)
++  }
++  if (any(!is.finite(out)) || any(out > 1e-12)) stop("Invalid audit interval probability")
++  pmin(out, 0)
++}
++
++raw_joint_loglik_audit_v3 <- function(observation, m, rho, log_phi_count, log_phi_ratio) {
++  if (nrow(observation) != 1L) stop("Audit likelihood requires exactly one observation")
++  n <- length(m)
++  if (!n || any(vapply(list(rho, log_phi_count, log_phi_ratio), length, integer(1)) != n)) stop("Audit parameter length mismatch")
++  if (any(!is.finite(m) | m <= 0 | m >= 1 | !is.finite(rho) | rho < 0 | rho > 1)) stop("Invalid audit mean/endpoint parameter")
++  kind <- as.character(observation$Type[[1L]])
++  if (kind == "count") {
++    phi <- exp(log_phi_count); a <- phi * m; b <- phi * (1 - m)
++    if (any(!is.finite(a) | !is.finite(b) | a <= 0 | b <= 0)) stop("Invalid audit count precision")
++    k <- observation$Events[[1L]]; total <- observation$Total[[1L]]
++    answer <- lchoose(total, k) + lbeta(k + a, total - k + b) - lbeta(a, b)
++  } else {
++    atom <- rho * m; continuous <- 1 - atom
++    mu <- m * (1 - rho) / continuous
++    a <- exp(log_phi_ratio) * mu; b <- exp(log_phi_ratio) * (1 - mu)
++    if (any(!is.finite(a) | !is.finite(b) | a <= 0 | b <= 0)) stop("Invalid audit report precision")
++    if (kind == "exact") {
++      value <- observation$Exact[[1L]]
++      answer <- if (value == 1) log(atom) else log1p(-atom) + stats::dbeta(value, a, b, log = TRUE)
++    } else if (kind == "interval") {
++      lo <- observation$Lower[[1L]]; hi <- observation$Upper[[1L]]
++      if (lo == 0 && hi == 1) return(rep(0, n))
++      component <- log1p(-atom) + audit_log_beta_interval_v3(lo, hi, a, b)
++      if (hi == 1) {
++        endpoint <- log(atom); scale <- pmax(component, endpoint)
++        answer <- scale + log(exp(component - scale) + exp(endpoint - scale))
++      } else answer <- component
++    } else stop("Unsupported audit observation type: ", kind)
++  }
++  if (anyNA(answer) || any(is.infinite(answer) & answer > 0)) stop("Invalid independently recomputed log likelihood")
++  answer
++}
++
++audit_extract_parameters_v3 <- function(bundle, allow_fixture = FALSE) {
++  if (is.null(bundle$fit)) {
++    if (!isTRUE(allow_fixture) || is.null(bundle$posterior)) stop("Audit requires a fitted posterior object")
++  } else {
++    # Never let a convenience posterior member override the validated fit payload.
++    bundle$posterior <- NULL
++  }
++  pars <- extract_parameters_v3(bundle)
++  if (!length(pars$alpha) || any(!is.finite(pars$alpha)) || !is.matrix(pars$beta) ||
++      nrow(pars$beta) != length(pars$alpha) || any(!is.finite(pars$beta))) stop("Malformed audit posterior")
++  pars
++}
++
++audit_project_parameters_v3 <- function(pars, encoded, blueprint) {
++  x <- design_from_blueprint(encoded, blueprint)
++  if (ncol(x) != ncol(pars$beta)) stop("Audit projection dimension mismatch")
++  eta <- if (ncol(x)) tcrossprod(pars$beta, x) else matrix(0, length(pars$alpha), nrow(x))
++  eta <- sweep(eta, 1L, pars$alpha, FUN = "+")
++  stats::plogis(eta)
++}
++
++audit_report_draws_v3 <- function(u, m, pars) {
++  atom <- pars$rho * m
++  internal <- m * (1 - pars$rho) / (1 - atom)
++  result <- rep(1, length(m)); selected <- u < 1 - atom
++  result[selected] <- stats::qbeta(u[selected] / (1 - atom[selected]),
++    exp(pars$log_phi_ratio[selected]) * internal[selected],
++    exp(pars$log_phi_ratio[selected]) * (1 - internal[selected]))
++  if (any(!is.finite(result))) stop("Nonfinite independent predictive draws")
++  result
++}
++
++audit_fresh_panel_v3 <- function(state) {
++  sites <- validate_sites_panel(state$sites)
++  encoded <- encode_panel(sites, state$dictionary)$data
++  if (!identical(encoded, state$encoded)) stop("Audit encoded panel differs from current raw panel/dictionary")
++  encoded
++}
++
++audit_recompute_cv_scores_v3 <- function(bundle, state, held_rows, allow_fixture = FALSE) {
++  if (!length(held_rows) || anyNA(held_rows) || anyDuplicated(held_rows) ||
++      any(held_rows != as.integer(held_rows) | held_rows < 1L | held_rows > nrow(state$observations))) stop("Invalid audit held-out rows")
++  obs <- state$observations[held_rows, , drop = FALSE]
++  if (any(obs$Species %in% bundle$train_species)) stop("Audit held-out species overlap training species")
++  encoded <- audit_fresh_panel_v3(state)
++  index <- match(obs$Species, encoded$Species); if (anyNA(index)) stop("Unknown audit species")
++  pars <- audit_extract_parameters_v3(bundle, allow_fixture)
++  m <- audit_project_parameters_v3(pars, encoded[index, , drop = FALSE], bundle$blueprint)
++  n <- nrow(obs); missing <- rep(NA_real_, n)
++  result <- data.frame(RecordID = obs$RecordID, ExperimentID = obs$ExperimentID, SourceID = obs$SourceID,
++    Species = obs$Species, Type = obs$Type, ObservedHigh = obs$High, ObservedPoint = missing,
++    PredictedPrHigh = missing, PredictedPoint = missing, PredictedPI_lower = missing,
++    PredictedPI_upper = missing, PIWidth = missing, IntervalCovered = rep(NA, n),
++    IntervalOverlap = rep(NA, n), PIObservationModel = rep("not_applicable", n),
++    LogPredictiveDensityRaw = missing, OriginalRow = held_rows, stringsAsFactors = FALSE)
++  if (bundle$route == "binary") {
++    if (anyNA(obs$High)) stop("Audit binary rows are unclassified")
++    result$PredictedPrHigh <- colMeans(m)
++    result$LogPredictiveDensityRaw <- vapply(seq_len(n), function(i) {
++      log_mean_exp(if (obs$High[i] == 1L) log(m[, i]) else log1p(-m[, i]))
++    }, numeric(1))
++  } else if (bundle$route == "joint_bb") {
++    if (any(!obs$Informative)) stop("Audit joint rows are uninformative")
++    result$PredictedPoint <- colMeans(m)
++    set.seed(V3_SEED + sum(held_rows))
++    replicated <- m
++    for (i in seq_len(n)) {
++      if (obs$Type[i] == "count") {
++        phi <- exp(pars$log_phi_count)
++        p <- stats::rbeta(nrow(m), phi * m[, i], phi * (1 - m[, i]))
++        replicated[, i] <- stats::rbinom(nrow(m), obs$Total[i], p) / obs$Total[i]
++      } else replicated[, i] <- audit_report_draws_v3(stats::runif(nrow(m)), m[, i], pars)
++      result$LogPredictiveDensityRaw[i] <- log_mean_exp(raw_joint_loglik_audit_v3(
++        obs[i, , drop = FALSE], m[, i], pars$rho, pars$log_phi_count, pars$log_phi_ratio))
++    }
++    q <- matrix(apply(replicated, 2L, stats::quantile, probs = c(.025, .975), names = FALSE), nrow = 2L)
++    count <- obs$Type == "count"; exact <- obs$Type == "exact"; interval <- obs$Type == "interval"
++    result$ObservedPoint[count] <- obs$Events[count] / obs$Total[count]
++    result$ObservedPoint[exact] <- obs$Exact[exact]
++    result$PredictedPI_lower <- q[1L, ]; result$PredictedPI_upper <- q[2L, ]
++    result$PIWidth <- q[2L, ] - q[1L, ]
++    result$IntervalCovered[!interval] <- result$ObservedPoint[!interval] >= q[1L, !interval] & result$ObservedPoint[!interval] <= q[2L, !interval]
++    result$IntervalOverlap[interval] <- obs$Upper[interval] >= q[1L, interval] & obs$Lower[interval] <= q[2L, interval]
++    result$PIObservationModel <- ifelse(count, "beta_binomial_at_observed_Total", "one_inflated_beta_report")
++  } else stop("Invalid audit route")
++  if (any(!is.finite(result$LogPredictiveDensityRaw))) stop("Nonfinite independent held-out log score")
++  status_state <- state
++  status_state$blueprints[[blueprint_key(bundle$route, bundle$model)]] <- bundle$blueprint
++  status <- assess_applicability(status_state, bundle$model, bundle$route, training_species = bundle$train_species)
++  fields <- c("ApplicabilityStatus", "WarningCodes", "AnyMissingInputSite", "AnyMissingPredictorSite",
++    "UnseenEncodedCategory", "UnseenRawResidue", "CombinationSeenInTraining", "FixedEffectEstimable", "Site151OutsideTrainingDomain")
++  status <- status[match(result$Species, status$Species), fields, drop = FALSE]
++  result <- cbind(result, status); rownames(result) <- NULL
++  attr(result, "audit_draw_count") <- length(pars$alpha)
++  result
++}
++
++audit_receipt_v3 <- function(context, check, type, rows, columns, draws, max_error, tolerance,
++                             status = "PASS", reason = "") {
++  value <- function(name, default = NA) if (name %in% names(context)) context[[name]][[1L]] else default
++  data.frame(Check = check, Design = value("Design"), Fold = value("Fold", NA_integer_),
++    Route = value("Route"), Model = value("Model"), TrainWeighting = value("TrainWeighting"),
++    RunPurpose = value("RunPurpose", "unspecified"), RecordType = type, RowsChecked = rows, ColumnsChecked = columns, PosteriorDraws = draws,
++    MaximumAbsoluteDifference = max_error, AbsoluteAndRelativeTolerance = tolerance,
++    RecomputeSource = "fitted_posterior_parameters_and_current_inputs", Coverage = "all_rows_in_fit_stratum",
++    Status = status, Reason = reason, stringsAsFactors = FALSE)
++}
++
++audit_cv_bundle_predictions_v3 <- function(bundle, state, held_rows, stored, context,
++                                            tolerance = 1e-10, allow_fixture = FALSE) {
++  expected <- audit_recompute_cv_scores_v3(bundle, state, held_rows, allow_fixture)
++  draws <- attr(expected, "audit_draw_count")
++  for (name in c("Design", "Fold", "Route", "Model", "TrainWeighting")) expected[[name]] <- context[[name]][[1L]]
++  if (bundle$route != context$Route[[1L]] || bundle$model != context$Model[[1L]] ||
++      bundle$train_weighting != context$TrainWeighting[[1L]]) stop("Audit fit/evidence context mismatch")
++  expected$FitKey <- bundle$key
++  if ("RunPurpose" %in% names(context)) expected$RunPurpose <- context$RunPurpose[[1L]]
++  keys <- c("Design", "Route", "Model", "TrainWeighting", "RecordID")
++  label <- paste("posterior_to_OOF", paste(unlist(context[c("Design", "Route", "Model", "TrainWeighting", "Fold")]), collapse = "/"))
++  audit_compare_table_v3(stored, expected, keys, label, tolerance)
++  receipts <- lapply(unique(as.character(expected$Type)), function(type) {
++    z <- expected[expected$Type == type, , drop = FALSE]; s <- stored[stored$Type == type, , drop = FALSE]
++    result <- audit_compare_table_v3(s, z, keys, paste(label, type), tolerance)
++    audit_receipt_v3(context, "posterior_to_OOF", type, result$rows, result$columns, draws,
++      result$max_absolute_error, tolerance)
++  })
++  receipts <- do.call(rbind, receipts)
++  if (is.null(bundle$fit)) receipts$RecomputeSource <- "explicit_synthetic_posterior_fixture_and_current_inputs"
++  receipts
++}
++
++audit_recompute_full_predictions_v3 <- function(bundle, state, allow_fixture = FALSE) {
++  encoded <- audit_fresh_panel_v3(state)
++  pars <- audit_extract_parameters_v3(bundle, allow_fixture)
++  m <- audit_project_parameters_v3(pars, encoded, bundle$blueprint)
++  q <- matrix(apply(m, 2L, stats::quantile, probs = c(.025, .5, .975), names = FALSE), nrow = 3L)
++  result <- data.frame(Species = state$sites$Species, Route = bundle$route, Model = bundle$model,
++    TrainWeighting = bundle$train_weighting, Point = colMeans(m), PosteriorMedian = q[2L, ],
++    CrI_lower = q[1L, ], CrI_upper = q[3L, ], PI_lower = NA_real_, PI_upper = NA_real_, stringsAsFactors = FALSE)
++  if (bundle$route == "joint_bb") {
++    set.seed(V3_SEED); u <- stats::runif(nrow(m)); replicated <- m
++    for (i in seq_len(ncol(m))) replicated[, i] <- audit_report_draws_v3(u, m[, i], pars)
++    qp <- matrix(apply(replicated, 2L, stats::quantile, probs = c(.025, .975), names = FALSE), nrow = 2L)
++    result$PI_lower <- qp[1L, ]; result$PI_upper <- qp[2L, ]
++  }
++  status_state <- list(encoded = encoded, sites = state$sites,
++    blueprints = setNames(list(bundle$blueprint), blueprint_key(bundle$route, bundle$model)))
++  status <- assess_applicability(status_state, bundle$model, bundle$route, training_species = bundle$train_species)
++  result <- cbind(result, status[, setdiff(names(status), c("Species", "Model", "Route")), drop = FALSE])
++  result$PredictionTarget <- if (bundle$route == "binary") "Pr_HIGH" else "mean_ratio_and_future_exact_report_PI"
++  attr(result, "audit_draw_count") <- length(pars$alpha)
++  result
++}
++
++audit_full_bundle_predictions_v3 <- function(bundle, state, stored, context,
++                                              tolerance = 1e-10, allow_fixture = FALSE) {
++  if (bundle$route != context$Route[[1L]] || bundle$model != context$Model[[1L]] ||
++      bundle$train_weighting != context$TrainWeighting[[1L]]) stop("Audit fit/full-panel context mismatch")
++  expected <- audit_recompute_full_predictions_v3(bundle, state, allow_fixture)
++  result <- audit_compare_table_v3(stored, expected, c("Species", "Route", "Model", "TrainWeighting"),
++    "posterior_to_full_panel", tolerance)
++  receipt <- audit_receipt_v3(context, "posterior_to_full_panel", "all_panel_species", result$rows, result$columns,
++    attr(expected, "audit_draw_count"), result$max_absolute_error, tolerance)
++  if (is.null(bundle$fit)) receipt$RecomputeSource <- "explicit_synthetic_posterior_fixture_and_current_inputs"
++  receipt
++}
++
++validate_comparison_grid_v3 <- function(model_table, training_table, designs = V3_DESIGNS,
++                                         routes = V3_ROUTES, models = V3_MODELS,
++                                         train_weightings = V3_TRAIN_WEIGHTINGS,
++                                         eval_weightings = V3_EVAL_WEIGHTINGS) {
++  expected_model <- expand.grid(Design = designs, Route = routes, Model = setdiff(models, "Null"),
++    TrainWeighting = train_weightings, EvalWeighting = eval_weightings, stringsAsFactors = FALSE)
++  expected_model$Scope <- "design"; expected_model$Family <- "model_vs_null"; expected_model$Reference <- "Null"
++  expected_training <- expand.grid(Design = designs, Route = routes, Model = models,
++    EvalWeighting = eval_weightings, stringsAsFactors = FALSE)
++  expected_training$Scope <- "design"; expected_training$Family <- "training_method"
++  expected_training$ModelA <- "species_equal"; expected_training$ModelB <- "record_equal"
++  if (!all(c("record_equal", "species_equal") %in% train_weightings)) expected_training <- expected_training[FALSE, , drop = FALSE]
++  for (name in c("model_table", "training_table")) {
++    table <- get(name)
++    if (!"Fold" %in% names(table) || any(!is.na(table$Fold))) stop("Design-level comparison requires inactive Fold=NA: ", name)
++  }
++  audit_compare_table_v3(model_table, expected_model, names(expected_model), "model_vs_null_grid")
++  audit_compare_table_v3(training_table, expected_training, names(expected_training), "training_method_grid")
++  invisible(c(model_vs_null = nrow(expected_model), training_method = nrow(expected_training)))
++}
++
++verify_comparison_outputs_v3 <- function(evidence, model_table, training_table,
++                                         designs = V3_DESIGNS, routes = V3_ROUTES,
++                                         models = V3_MODELS, train_weightings = V3_TRAIN_WEIGHTINGS,
++                                         eval_weightings = V3_EVAL_WEIGHTINGS, tolerance = 1e-10) {
++  counts <- validate_comparison_grid_v3(model_table, training_table, designs, routes, models,
++    train_weightings, eval_weightings)
++  model_expected <- do.call(rbind, lapply(eval_weightings, function(w) compare_evidence_models(evidence, w, "design")))
++  training_expected <- do.call(rbind, lapply(eval_weightings, function(w) compare_training_methods(evidence, w, "design")))
++  model_result <- audit_compare_table_v3(model_table, model_expected,
++    c("Scope", "Design", "Route", "Model", "TrainWeighting", "EvalWeighting", "Family", "Reference"),
++    "model_vs_null_recomputed", tolerance)
++  training_result <- audit_compare_table_v3(training_table, training_expected,
++    c("Scope", "Design", "Route", "Model", "EvalWeighting", "Family", "ModelA", "ModelB"),
++    "training_method_recomputed", tolerance)
++  data.frame(Check = c("model_vs_null_grid_and_recompute", "training_method_grid_and_recompute"),
++    RowsChecked = as.integer(counts), ColumnsChecked = c(model_result$columns, training_result$columns),
++    MaximumAbsoluteDifference = c(model_result$max_absolute_error, training_result$max_absolute_error),
++    Status = "PASS", stringsAsFactors = FALSE)
++}
++
++# Both new section-7.3 tables are recomputed from already verified OOF evidence.
++verify_quantitative_outputs_v32 <- function(evidence, bias_table, plot_table, tolerance = 1e-10) {
++  expected <- quantitative_diagnostics_v32(evidence)
++  summary_keys <- c("Design", "Route", "Model", "TrainWeighting", "EvalWeighting")
++  bias <- audit_compare_table_v3(bias_table, expected$summary, summary_keys,
++    "quantitative_bias_recomputed", tolerance)
++  points <- audit_compare_table_v3(plot_table, expected$plot_source,
++    c(summary_keys, "RecordID"), "quantitative_plot_source_recomputed", tolerance)
++  data.frame(Check = c("quantitative_bias_recomputed", "quantitative_plot_source_recomputed"),
++    RowsChecked = c(bias$rows, points$rows), ColumnsChecked = c(bias$columns, points$columns),
++    MaximumAbsoluteDifference = c(bias$max_absolute_error, points$max_absolute_error),
++    Status = "PASS", stringsAsFactors = FALSE)
++}
+
+diff --git a/v3.2/R/quantitative_diagnostics.R b/v3.2/R/quantitative_diagnostics.R
+new file mode 100644
+index 0000000..cf01f43
+--- /dev/null
++++ b/v3.2/R/quantitative_diagnostics.R
+@@ -0,0 +1,72 @@
++# Section 7.3 only: point-level predicted-vs-observed diagnostic and signed bias.
++# No additional type-specific metrics or bootstrap intervals are introduced here.
++quantitative_diagnostics_v32 <- function(evidence) {
++  required<-c("Design","Fold","Route","Model","TrainWeighting","RecordID","Species","Type","ObservedPoint","PredictedPoint")
++  if(!all(required%in%names(evidence)))stop("Quantitative diagnostic evidence lacks required fields")
++  joint<-evidence[evidence$Route=="joint_bb",,drop=FALSE]
++  if(!nrow(joint))stop("No quantitative OOF evidence")
++  if(any(!joint$Type%in%c("count","exact","interval")))stop("Invalid quantitative observation type")
++  key_cols<-c("Design","Route","Model","TrainWeighting","RecordID")
++  if(anyNA(joint[,key_cols])||anyDuplicated(joint[,key_cols]))stop("Invalid or duplicated quantitative OOF keys")
++  point<-joint$Type%in%c("count","exact")
++  if(any(!is.finite(joint$ObservedPoint[point]))||any(!is.finite(joint$PredictedPoint[point])))stop("Missing/nonfinite point-level quantitative evidence")
++  if(any(joint$ObservedPoint[point]<0|joint$ObservedPoint[point]>1|joint$PredictedPoint[point]<0|joint$PredictedPoint[point]>1))stop("Point proportion outside [0,1]")
++  group_cols<-c("Design","Route","Model","TrainWeighting")
++  keys<-unique(joint[,group_cols,drop=FALSE]);sources<-list();summaries<-list()
++  for(i in seq_len(nrow(keys))) {
++    q<-joint
++    for(n in group_cols)q<-q[q[[n]]==keys[[n]][i],,drop=FALSE]
++    z<-q[q$Type%in%c("count","exact"),,drop=FALSE]
++    for(ew in V3_EVAL_WEIGHTINGS) {
++      weights<-if(nrow(z))build_eval_weights(z[,"Species",drop=FALSE],ew)$weight else numeric()
++      if(nrow(z)) {
++        source<-z[,required,drop=FALSE];source$EvalWeighting<-ew;source$EvaluationWeight<-weights
++        source$SignedError<-z$PredictedPoint-z$ObservedPoint
++        if("FitKey"%in%names(z))source$FitKey<-z$FitKey
++        if("RunPurpose"%in%names(z))source$RunPurpose<-z$RunPurpose
++        sources[[length(sources)+1L]]<-source
++      }
++      summaries[[length(summaries)+1L]]<-cbind(keys[i,,drop=FALSE],data.frame(EvalWeighting=ew,
++        LogScoreRecordsUsed=nrow(q),LogScoreSpeciesUsed=length(unique(q$Species)),
++        PointRecords=nrow(z),PointSpeciesUsed=length(unique(z$Species)),PISpeciesUsed=length(unique(z$Species)),
++        Bias=if(nrow(z))weighted_bias(z$ObservedPoint,z$PredictedPoint,weights) else NA_real_,
++        BiasDefinition="weighted_mean(predicted_minus_observed)",PointSet="count_and_exact; interval_not_imputed",stringsAsFactors=FALSE))
++    }
++  }
++  source<-if(length(sources))do.call(rbind,sources) else data.frame()
++  summary<-do.call(rbind,summaries);rownames(source)<-rownames(summary)<-NULL
++  list(plot_source=source,summary=summary)
++}
++plot_quantitative_diagnostics_v32 <- function(source,summary,output_path,test_only=FALSE) {
++  if(!nrow(source))stop("No count/exact point records to plot")
++  if("RunPurpose"%in%names(source)&&any(source$RunPurpose!="formal"))test_only<-TRUE
++  dir.create(dirname(output_path),recursive=TRUE,showWarnings=FALSE)
++  pdf(output_path,width=11,height=9,onefile=TRUE);on.exit(dev.off(),add=TRUE)
++  pages<-unique(summary[,c("Design","TrainWeighting","EvalWeighting"),drop=FALSE])
++  for(i in seq_len(nrow(pages))) {
++    par(mfrow=c(2,2),pty="s",mar=c(4,4,3,1),oma=c(3,0,if(test_only)3 else 1,0))
++    for(m in V3_MODELS) {
++      z<-source[source$Design==pages$Design[i]&source$TrainWeighting==pages$TrainWeighting[i]&source$EvalWeighting==pages$EvalWeighting[i]&source$Model==m,,drop=FALSE]
++      s<-summary[summary$Design==pages$Design[i]&summary$TrainWeighting==pages$TrainWeighting[i]&summary$EvalWeighting==pages$EvalWeighting[i]&summary$Model==m,,drop=FALSE]
++      plot(0:1,0:1,type="n",xlab="Observed report proportion",ylab="OOF predicted expected proportion",main=m,asp=1)
++      abline(0,1,lty=2,col="grey50")
++      if(nrow(z)) {
++        size<-.65*sqrt(z$EvaluationWeight/mean(z$EvaluationWeight))
++        points(z$ObservedPoint,z$PredictedPoint,pch=ifelse(z$Type=="count",16,17),col=grDevices::adjustcolor("#1f5e9a",.55),cex=size)
++        if(nrow(s)!=1)stop("Ambiguous plot summary key")
++        legend("topleft",legend=c(sprintf("Bias = %+.4f",s$Bias),sprintf("%d point records / %d species",s$PointRecords,s$PointSpeciesUsed)),bty="n",cex=.8)
++      }else text(.5,.5,"No point records for this model")
++    }
++    mtext(paste(unlist(pages[i,]),collapse=" | "),side=1,outer=TRUE,line=0,cex=.9)
++    mtext("Count: circles; exact: triangles; interval excluded. Point area reflects evaluation weight; dashed line y = x.",side=1,outer=TRUE,line=1.2,cex=.72)
++    if(test_only)mtext("SYNTHETIC TEST DATA - NOT RESEARCH RESULTS",side=3,outer=TRUE,line=1,font=2,col="#b3261e",cex=1.05)
++  }
++  invisible(output_path)
++}
++write_quantitative_diagnostics_v32 <- function(evidence,result_dir,figure_dir=NULL,test_only=FALSE) {
++  d<-quantitative_diagnostics_v32(evidence)
++  write_csv_atomic(d$plot_source,file.path(result_dir,"quantitative_plot_source.csv"))
++  write_csv_atomic(d$summary,file.path(result_dir,"quantitative_bias_summary.csv"))
++  if(!is.null(figure_dir))plot_quantitative_diagnostics_v32(d$plot_source,d$summary,file.path(figure_dir,"quantitative_predicted_observed.pdf"),test_only)
++  invisible(d)
++}
+
+diff --git a/v3.1/R/reporting.R b/v3.2/R/reporting.R
+index 32b38ee..f91d1dd 100644
+--- a/v3.1/R/reporting.R
++++ b/v3.2/R/reporting.R
+@@ -4,21 +4,27 @@ markdown_table_v3 <- function(x) {
+   c(paste0("| ",paste(names(x),collapse=" | ")," |"),paste0("|",paste(rep("---",ncol(x)),collapse="|"),"|"),apply(x,1,function(z)paste0("| ",paste(z,collapse=" | ")," |")))
+ }
+ write_results_report_v3 <- function(root) {
+-  res<-file.path(root,"results");required<-c("cv_metrics_summary.csv","model_vs_null.csv","training_method_comparisons.csv","training_ppc_summary.csv")
++  res<-file.path(root,"results");required<-c("cv_metrics_summary.csv","model_vs_null.csv","training_method_comparisons.csv","training_ppc_summary.csv","quantitative_bias_summary.csv","quantitative_plot_source.csv")
+   for(f in required)if(!file.exists(file.path(res,f)))stop("Report requires computed output: ",f)
+   cv<-read.csv(file.path(res,required[1]));mod<-read.csv(file.path(res,required[2]));train<-read.csv(file.path(res,required[3]));ppc<-read.csv(file.path(res,required[4]))
+-  lines<-c("# v3.1 computed analysis report","",paste("Version:",V3_VERSION),"",
++  bias<-read.csv(file.path(res,"quantitative_bias_summary.csv"),stringsAsFactors=FALSE)
++  lines<-c("# v3.2 computed analysis report","",paste("Version:",V3_VERSION),"",
+     "Purpose: predict a new species from a frozen six-site input table; Site151 is applicability metadata, five other sites enter M1/M2/M3. Models compare joint coding against Null, not causal site effects.","",
+     "Primary comparison: species-equal evaluation in fivefold species-grouped CV. Tenfold and record-equal evaluation are supplementary. Four combinations reuse two fits, not four independent experiments.","",
+     "AUC is the equal-fold mean. PooledAUC uses all OOF predictions and is distinct. Log score/MAE/RMSE use weights computed over each metric's complete valid-record set. ELPD is a scaled weighted log-score sum (weight sum=N); compare MeanLogScore across weighting choices.","",
+     "Intervals in model comparisons are conditional species-cluster bootstrap intervals of fixed OOF predictions, excluding refitting and model-selection uncertainty. Approximate P/BH values are exploratory; degenerate or fewer-than-ten-species cases do not receive a P value. Training species may not represent every target species.","",
+     "The weighted likelihood N/(S R_s) fixes a relative species contribution and overall likelihood scale, not N independent observations or automatic frequentist interval coverage. Do not duplicate records to improve apparent precision.","",
+     "## All four training/evaluation combinations","",markdown_table_v3(cv),"",
++    "## Quantitative point bias and observed-versus-predicted plot","",
++    "Bias = weighted mean(predicted minus observed), on the same count/exact point subset and weights as MAE/RMSE. Positive means overprediction, negative means underprediction. Interval observations are never imputed as points. Zero mean bias can coexist with large absolute errors.","",
++    "LogScoreSpeciesUsed/LogScoreRecordsUsed describe the log-score subset; PointSpeciesUsed/PointRecords describe MAE/RMSE/Bias; PISpeciesUsed/PIRecords describe point PI coverage and width. Legacy SpeciesUsed still denotes the log-score set, not all adjacent metrics.","",
++    markdown_table_v3(bias),"",
++    "See figures/quantitative_predicted_observed.pdf and results/quantitative_plot_source.csv. Plotted markers are individual count/exact reports; marker area represents evaluation weight; the diagonal indicates equality.","",
+     "## Models versus Null","",markdown_table_v3(mod),"","## Training methods (species minus record)","",markdown_table_v3(train),"",
+     "## Posterior predictive checks","","Observed and replicated statistics use the same record subset, observation type and evaluation weights. count simulations use each observed Total; exact reports use the one-inflated Beta. Interval records are not imputed as points. PPC uses training data and is not independent validation.","",markdown_table_v3(ppc),"",
+     "Full-panel Point is the posterior mean; CrI describes uncertainty in the expected quantity. Joint full-panel PI describes a future exact-type report without a specified denominator. CV count PI uses the observed denominator; interval overlap is descriptive and is not point coverage.")
+   dir.create(file.path(root,"reports"),showWarnings=FALSE,recursive=TRUE)
+-  writeLines(lines,file.path(root,"reports","REPORT_v3_1.md"),useBytes=TRUE)
++  writeLines(lines,file.path(root,"reports","REPORT_v3_2.md"),useBytes=TRUE)
+ }
+ export_model_package_v3 <- function(root,state,bundles,path) {
+   wanted<-unlist(lapply(V3_ROUTES,function(r)unlist(lapply(V3_MODELS,function(m)paste(r,m,V3_TRAIN_WEIGHTINGS,sep="|")))))
+
+diff --git a/v3.1/R/weights.R b/v3.2/R/weights.R
+index 7b73643..a357c87 100644
+--- a/v3.1/R/weights.R
++++ b/v3.2/R/weights.R
+@@ -24,10 +24,20 @@ build_eval_weights <- function(records, weighting = "record_equal", species_col
+ }
+ 
+ check_weight_contract <- function(weight_frame, tolerance = 1e-10) {
+-  if (!nrow(weight_frame) || any(!is.finite(weight_frame$weight)) || any(weight_frame$weight <= 0)) {
+-    return(FALSE)
+-  }
+-  if (abs(sum(weight_frame$weight) - nrow(weight_frame)) > tolerance) return(FALSE)
+-  sums <- tapply(weight_frame$weight, weight_frame$Species, sum)
+-  max(sums) - min(sums) <= tolerance
++  if (!is.data.frame(weight_frame) || !nrow(weight_frame) ||
++      !all(c("Species", "weight", "Weighting") %in% names(weight_frame))) return(FALSE)
++  if (length(tolerance) != 1L || !is.numeric(tolerance) || !is.finite(tolerance) || tolerance < 0) return(FALSE)
++  weight <- weight_frame$weight
++  species <- as.character(weight_frame$Species)
++  mode <- as.character(weight_frame$Weighting)
++  if (!is.numeric(weight) || any(!is.finite(weight)) || any(weight <= 0) ||
++      anyNA(species) || any(!nzchar(trimws(species))) ||
++      anyNA(mode) || length(unique(mode)) != 1L ||
++      !mode[1] %in% c("record_equal", "species_equal")) return(FALSE)
++  n <- nrow(weight_frame)
++  if (abs(sum(weight) - n) > tolerance * max(1,n)) return(FALSE)
++  if (mode[1] == "record_equal") return(all(abs(weight - 1) <= tolerance))
++  counts <- table(species)
++  expected <- n / (length(counts) * as.numeric(counts[species]))
++  all(abs(weight - expected) <= tolerance * pmax(1, expected))
+ }
+
+diff --git a/v3.1/R/workflow.R b/v3.2/R/workflow.R
+index 699363d..7b9b841 100644
+--- a/v3.1/R/workflow.R
++++ b/v3.2/R/workflow.R
+@@ -53,6 +53,7 @@ load_full_bundles_v3 <- function(root,state,require_pass=TRUE) {
+ postprocess_v3 <- function(root,evidence=NULL) {
+   if(is.null(evidence))evidence<-read.csv(file.path(root,"results","cv_record_predictions.csv"),stringsAsFactors=FALSE)
+   dir<-file.path(root,"results");make_roc_outputs(evidence,dir)
++  write_quantitative_diagnostics_v32(evidence,dir)
+   cal<-list()
+   for(ew in V3_EVAL_WEIGHTINGS)for(d in unique(evidence$Design))for(m in unique(evidence$Model))for(tw in unique(evidence$TrainWeighting)) {
+     z<-subset(evidence,Route=="binary"&Design==d&Model==m&TrainWeighting==tw)
+@@ -70,6 +71,9 @@ render_outputs_v3 <- function(root) {
+   plot_roc_base(read.csv(file.path(res,"roc_coordinates.csv")),file.path(fig,"ROC_curves.pdf"))
+   plot_calibration_base(read.csv(file.path(res,"calibration_bins.csv")),file.path(fig,"calibration_bins.pdf"))
+   plot_species_predictions_base(read.csv(file.path(res,"full_panel_predictions.csv")),fig)
++  qsource<-read.csv(file.path(res,"quantitative_plot_source.csv"),stringsAsFactors=FALSE)
++  qsummary<-read.csv(file.path(res,"quantitative_bias_summary.csv"),stringsAsFactors=FALSE)
++  plot_quantitative_diagnostics_v32(qsource,qsummary,file.path(fig,"quantitative_predicted_observed.pdf"))
+   write_results_report_v3(root)
+ }
+ run_stage_v3 <- function(root,stage,args=list()) {
+@@ -102,7 +106,7 @@ run_stage_v3 <- function(root,stage,args=list()) {
+   if(stage%in%c("cv","all")) {
+     folds<-make_fold_tables_v3(state,output_dir=res);ans<-run_cv_v3(state,root,folds,stan)
+     postprocess_v3(root,ans$evidence)
+-    write_stage_receipt_v3(root,state,"cv",file.path("results",c("cv_record_predictions.csv","cv_fold_metrics.csv","cv_metrics_summary.csv","model_vs_null.csv","training_method_comparisons.csv","calibration_bins.csv","roc_coordinates.csv")))
++    write_stage_receipt_v3(root,state,"cv",file.path("results",c("cv_record_predictions.csv","cv_fold_metrics.csv","cv_metrics_summary.csv","model_vs_null.csv","training_method_comparisons.csv","calibration_bins.csv","roc_coordinates.csv","quantitative_plot_source.csv","quantitative_bias_summary.csv")))
+   }
+   if(stage%in%c("predict","all")){make_prediction_table(state,load_full_bundles_v3(root,state),file.path(res,"full_panel_predictions.csv"));write_stage_receipt_v3(root,state,"predict","results/full_panel_predictions.csv")}
+   if(stage=="external") {
+
+diff --git a/v3.1/config/analysis.json b/v3.2/config/analysis.json
+index e3aa8f9..be76de0 100644
+--- a/v3.1/config/analysis.json
++++ b/v3.2/config/analysis.json
+@@ -1,5 +1,5 @@
+ {
+-  "version": "ratio_analysis_v3_1_weighted_20260920",
++  "version": "ratio_analysis_v3_2_weighted_20260921",
+   "expected_panel_species": 365,
+   "expected_records": 153,
+   "models": [
+
+diff --git a/v3.1/input/contract.json b/v3.2/input/contract.json
+index eb3f88b..63026bb 100644
+--- a/v3.1/input/contract.json
++++ b/v3.2/input/contract.json
+@@ -1,5 +1,5 @@
+ {
+-  "version": "ratio_analysis_v3_1_weighted_20260920",
++  "version": "ratio_analysis_v3_2_weighted_20260921",
+   "status": "PREPARED_NOT_FIT",
+   "input_hashes": {
+     "observations.csv": "3c886f7f2c11012463296b350a931543542b4e1c0d128ad3c408fda9ae824d79",
+
+diff --git a/v3.1/scripts/ENVIRONMENT.md b/v3.2/scripts/ENVIRONMENT.md
+index cb1ba85..5679942 100644
+--- a/v3.1/scripts/ENVIRONMENT.md
++++ b/v3.2/scripts/ENVIRONMENT.md
+@@ -1,15 +1,15 @@
+-# v3.1 environment restoration
++# v3.2 environment restoration
+ 
+ The validated environment uses R 4.6.1 and a complete lock of 79 non-base R packages, including the recursive `Depends`, `Imports`, and `LinkingTo` dependencies of `brms`, `rstan`, `posterior`, `digest`, `jsonlite`, and `renv`. Optional `Suggests` packages are not universally installed. The tested versions, exact base-image digest, local image ID, and file hashes are recorded in `provenance/runtime_spec.json`.
+ 
+ Build from this version directory (the directory containing `Dockerfile` and `renv.lock`):
+ 
+ ```bash
+-docker build --progress=plain -t ratio-analysis-v3-1:local .
++docker build --progress=plain -t ratio-analysis-v3-2:local .
+ docker run --rm \
+   --mount type=bind,source="$PWD",target=/project/v3,readonly \
+   --workdir /project/v3 \
+-  ratio-analysis-v3-1:local \
++  ratio-analysis-v3-2:local \
+   Rscript scripts/test_environment.R
+ ```
+ 
+@@ -20,11 +20,11 @@ The environment tests also require rejection of an altered R-version lock and a
+ For a prepared Ubuntu host that already has R 4.6.1, compilers, and the required system libraries, an explicit restoration is also available:
+ 
+ ```bash
+-export R_LIBS_USER="$HOME/R/ratio-v3-1"
++export R_LIBS_USER="$HOME/R/ratio-v3-2"
+ mkdir -p "$R_LIBS_USER"
+ Rscript scripts/restore_environment.R --library "$R_LIBS_USER"
+ ```
+ 
+ Keep `R_LIBS_USER` set when running subsequent analysis commands on that host. The tested reproducibility path is the Docker build. Additional Ubuntu system packages come from apt repositories, so future OS-layer bytes may differ even though the base digest and complete required R package versions are checked. Repository/network availability is required for a new build. Unavailable pinned artifacts cause a failure, not an unannounced package upgrade.
+ 
+-`review/environment_build.log` preserves the build attempts and final successful build/test exit codes. An initial attempt was stopped after a version-string normalization error was identified; another reached all dependency checks but failed at final R-version log formatting. Both defects were corrected before the successful build. These environment results do not substitute for the pipeline's separate regression, Stan-interface, or formal-fit diagnostics.
++`review/environment_build_v32.log` preserves the initial v3.2 build failure caused by a partial download and a 60-second timeout. The restore script now uses a 300-second download timeout and a cloud CRAN fallback for the same pinned renv source; SHA-256 verification remains mandatory. `review/environment_build_retry.log` and its exit receipt record the successful build. `review/environment_test_final.log` records the separate tests on that image. These checks do not substitute for regression, synthetic Stan-interface, or formal-fit diagnostics.
+
+diff --git a/v3.1/scripts/build_complete_archive.ps1 b/v3.2/scripts/build_complete_archive.ps1
+index 1a4c46e..9dd3816 100644
+--- a/v3.1/scripts/build_complete_archive.ps1
++++ b/v3.2/scripts/build_complete_archive.ps1
+@@ -1,11 +1,11 @@
+ #requires -Version 7.0
+-param([Parameter(Mandatory)][string]$WorkingDirectory,[Parameter(Mandatory)][string]$VersionDirectory,[Parameter(Mandatory)][string]$OutputDirectory)
++param([Parameter(Mandatory)][string]$VersionDirectory,[Parameter(Mandatory)][string]$OutputDirectory)
+ $ErrorActionPreference='Stop'
+-$taskRoots=[ordered]@{'working-v3'=(Resolve-Path -LiteralPath $WorkingDirectory).Path;'published-v3.1'=(Resolve-Path -LiteralPath $VersionDirectory).Path}
++$taskRoots=[ordered]@{'v3.2'=(Resolve-Path -LiteralPath $VersionDirectory).Path}
+ $taskOutput=[IO.Path]::GetFullPath($OutputDirectory)
+ foreach($taskSource in $taskRoots.Values){if($taskOutput.StartsWith($taskSource.TrimEnd([char]92)+[IO.Path]::DirectorySeparatorChar,[StringComparison]::OrdinalIgnoreCase)){throw 'Archive output must be outside the captured roots'}}
+ New-Item -ItemType Directory -Path $taskOutput -Force | Out-Null
+-$taskZip=Join-Path $taskOutput 'v3.1-complete-evidence.zip'
++$taskZip=Join-Path $taskOutput 'v3.2-complete-evidence.zip'
+ if(Test-Path -LiteralPath $taskZip){throw 'Refusing to replace an existing archive'}
+ $taskFiles=[Collections.Generic.List[object]]::new()
+ foreach($taskNs in $taskRoots.Keys){
+@@ -15,19 +15,17 @@ foreach($taskNs in $taskRoots.Keys){
+   $taskFiles.Add([pscustomobject]@{Namespace=$taskNs;RelativePath=$taskRel;ArchivePath="$taskNs/$taskRel";Bytes=$taskFile.Length;SHA256=(Get-FileHash -LiteralPath $taskFile.FullName -Algorithm SHA256).Hash.ToLowerInvariant();SourcePath=$taskFile.FullName})
+  }
+ }
+-$taskManifest=Join-Path $taskOutput 'v3.1-complete-evidence.files.csv'
++$taskManifest=Join-Path $taskOutput 'v3.2-complete-evidence.files.csv'
+ $taskFiles | Select-Object Namespace,RelativePath,ArchivePath,Bytes,SHA256 | Export-Csv -LiteralPath $taskManifest -Encoding utf8 -NoTypeInformation
+ $taskReadme=Join-Path $taskOutput 'README_archive_zh.md'
+ @'
+-# v3.1 完整资料快照
++# v3.2 完整源码与测试证据快照
+ 
+-working-v3/ 是本次工作原始目录的全部现存文件，包括原始fit.rds、早期smoke、调试日志和修改前代码快照。
+-published-v3.1/ 是补充说明时的当前发行目录，包含当前代码、逐项修改说明、明确标识的绘图夹具与测试证据。
++v3.2/ 包含本次交付目录的全部现存文件，未按扩展名或文件大小省略。包括全部原始合成 fit.rds、Beta编译对象、成功和失败尝试、中间目录、源码、说明与测试表。
+ 
+-这些目录中的历史/中间文件不是全部有效的生产结果。目录名含visual_fixture的图片是合成布局测试；早期等值图不是真实物种预测；正式研究的256项拟合尚未启动。
++review/ 内是测试/历史材料，不能当作真实研究结果。短链合成拟合允许记录诊断失败以验收接口；正式256项研究拟合保持未运行。
+ 
+-_archive/CONTENTS.csv列出每个源文件的相对路径、大小和SHA-256。归档构建后逐项读回校验；没有按扩展名或大小省略源文件。
+-Github上传收据和此快照完成之后形成的提交差异附件独立发布，不递归包含在本ZIP中。
++_archive/CONTENTS.csv逐文件列出路径、大小、SHA-256。归档完成后逐文件读回并比对源文件。归档后的压缩包收据、分片清单、远端上传收据与Git提交补丁独立发布，避免递归自包含。
+ '@ | Set-Content -LiteralPath $taskReadme -Encoding utf8
+ $taskStream=[IO.File]::Open($taskZip,[IO.FileMode]::CreateNew,[IO.FileAccess]::Write,[IO.FileShare]::None)
+ $taskArchive=[IO.Compression.ZipArchive]::new($taskStream,[IO.Compression.ZipArchiveMode]::Create,$false)
+@@ -61,7 +59,7 @@ try {
+  }
+ }finally{$taskArchive.Dispose()}
+ $taskZipHash=(Get-FileHash -LiteralPath $taskZip -Algorithm SHA256).Hash.ToLowerInvariant()
+-"$taskZipHash  v3.1-complete-evidence.zip" | Set-Content -LiteralPath (Join-Path $taskOutput 'v3.1-complete-evidence.zip.sha256') -Encoding ascii
+-$taskReceipt=[ordered]@{status='LOCAL_ARCHIVE_VERIFIED';source_files=$taskFiles.Count;verified_files=$taskChecked;omitted_source_files=0;working_files=@($taskFiles|Where-Object Namespace -eq 'working-v3').Count;published_files=@($taskFiles|Where-Object Namespace -eq 'published-v3.1').Count;source_bytes=($taskFiles|Measure-Object Bytes -Sum).Sum;archive_bytes=(Get-Item -LiteralPath $taskZip).Length;archive_sha256=$taskZipHash;manifest_sha256=(Get-FileHash -LiteralPath $taskManifest -Algorithm SHA256).Hash.ToLowerInvariant()}
+-$taskReceipt | ConvertTo-Json | Set-Content -LiteralPath (Join-Path $taskOutput 'v3.1-complete-evidence.build.json') -Encoding utf8
++"$taskZipHash  v3.2-complete-evidence.zip" | Set-Content -LiteralPath (Join-Path $taskOutput 'v3.2-complete-evidence.zip.sha256') -Encoding ascii
++$taskReceipt=[ordered]@{status='LOCAL_ARCHIVE_VERIFIED';source_files=$taskFiles.Count;verified_files=$taskChecked;omitted_source_files=0;version_files=$taskFiles.Count;source_bytes=($taskFiles|Measure-Object Bytes -Sum).Sum;archive_bytes=(Get-Item -LiteralPath $taskZip).Length;archive_sha256=$taskZipHash;manifest_sha256=(Get-FileHash -LiteralPath $taskManifest -Algorithm SHA256).Hash.ToLowerInvariant()}
++$taskReceipt | ConvertTo-Json | Set-Content -LiteralPath (Join-Path $taskOutput 'v3.2-complete-evidence.build.json') -Encoding utf8
+ $taskReceipt | ConvertTo-Json
+
+diff --git a/v3.1/scripts/restore_environment.R b/v3.2/scripts/restore_environment.R
+index 0ce81c6..6f2145a 100644
+--- a/v3.1/scripts/restore_environment.R
++++ b/v3.2/scripts/restore_environment.R
+@@ -1,7 +1,7 @@
+ #!/usr/bin/env Rscript
+-# Restore and verify the complete R dependency closure used by v3.1.
++# Restore and verify the complete R dependency closure used by v3.2 (unchanged R package versions from v3.1).
+ # Supported host: Ubuntu 24.04 with the pinned R 4.6.1 runtime (or the Dockerfile).
+-options(warn = 1, repos = c(CRAN = "https://cloud.r-project.org", RSPM = "https://packagemanager.posit.co/cran/latest"))
++options(timeout = 300, warn = 1, repos = c(CRAN = "https://cloud.r-project.org", RSPM = "https://packagemanager.posit.co/cran/latest"))
+ args <- commandArgs(trailingOnly = TRUE)
+ arg_value <- function(name, default = NULL) {
+   i <- match(name, args)
+@@ -28,6 +28,7 @@ installed_version <- function(package) {
+ if (!identical(installed_version("renv"), renv_version)) {
+   tarball <- tempfile(fileext = ".tar.gz")
+   urls <- c(sprintf("https://cran.r-project.org/src/contrib/renv_%s.tar.gz", renv_version),
++            sprintf("https://cloud.r-project.org/src/contrib/renv_%s.tar.gz", renv_version),
+             sprintf("https://cran.r-project.org/src/contrib/Archive/renv/renv_%s.tar.gz", renv_version))
+   downloaded <- FALSE
+   for (url in urls) {
+
+diff --git a/v3.1/scripts/upload_release_asset.ps1 b/v3.2/scripts/upload_release_asset.ps1
+index 8685ec8..a701768 100644
+--- a/v3.1/scripts/upload_release_asset.ps1
++++ b/v3.2/scripts/upload_release_asset.ps1
+@@ -14,7 +14,7 @@ if($taskPasswordLine.Count -ne 1){throw 'GitHub credential unavailable'}
+ $taskSecret=$taskPasswordLine[0].Substring(9)
+ $taskClient=[Net.Http.HttpClient]::new();$taskClient.Timeout=[TimeSpan]::FromMinutes(45)
+ $taskClient.DefaultRequestHeaders.Authorization=[Net.Http.Headers.AuthenticationHeaderValue]::new('Bearer',$taskSecret)
+-$taskClient.DefaultRequestHeaders.UserAgent.ParseAdd('ratio-v3.1-evidence-uploader')
++$taskClient.DefaultRequestHeaders.UserAgent.ParseAdd('ratio-v3.2-evidence-uploader')
+ $taskClient.DefaultRequestHeaders.Accept.ParseAdd('application/vnd.github+json')
+ $taskClient.DefaultRequestHeaders.Add('X-GitHub-Api-Version','2022-11-28')
+ $taskInput=$null;$taskRequest=$null
+
+diff --git a/v3.1/stan/joint_bb.stan b/v3.2/stan/joint_bb.stan
+index 2c5a70f..05bc8fd 100644
+--- a/v3.1/stan/joint_bb.stan
++++ b/v3.2/stan/joint_bb.stan
+@@ -1,14 +1,165 @@
+ functions {
++  // Dual components track d/da and d/db solely to check convergence of the
++  // continued fraction. The returned probability is still Stan-autodiff'd.
++  vector beta_cf_product(vector x, vector y) {
++    vector[3] z;
++    z[1] = x[1] * y[1];
++    z[2] = x[2] * y[1] + x[1] * y[2];
++    z[3] = x[3] * y[1] + x[1] * y[3];
++    return z;
++  }
++  vector beta_cf_inverse(vector x) {
++    vector[3] z;
++    // Lentz denominator protection is numerical scaling, never a probability
++    // floor. Its value and derivatives are required to remain finite.
++    real den = x[1];
++    if (abs(den) < 1e-300) den = den < 0 ? -1e-300 : 1e-300;
++    z[1] = 1 / den;
++    z[2] = -(x[2] / den) / den;
++    z[3] = -(x[3] / den) / den;
++    return z;
++  }
++  real beta_log_cf_lower(real x, real a, real b) {
++    real qab = a + b;
++    real qap = a + 1;
++    vector[3] one = [1, 0, 0]';
++    vector[3] c = one;
++    vector[3] den = [1 - qab * x / qap,
++                     x * (b - 1) / square(qap), -x / qap]';
++    vector[3] d = beta_cf_inverse(den);
++    vector[3] h = d;
++    int stable_steps = 0;
++    // The fraction converges in this tail. Check the value AND its shape
++    // derivatives: integer b can terminate the value before d/db converges.
++    for (n in 1:10000) {
++      real n2 = 2.0 * n;
++      real den_even = (a + n2 - 1) * (a + n2);
++      real v_even = n * (b - n) * x / den_even;
++      vector[3] q_even = [v_even,
++        -v_even * (1 / (a + n2 - 1) + 1 / (a + n2)),
++        n * x / den_even]';
++      real v_odd = -(a + n) * (qab + n) * x /
++                    ((a + n2) * (a + n2 + 1));
++      vector[3] q_odd = [v_odd,
++        v_odd * (1 / (a + n) + 1 / (qab + n) -
++                 1 / (a + n2) - 1 / (a + n2 + 1)),
++        v_odd / (qab + n)]';
++      vector[3] old_h = h;
++      d = beta_cf_inverse(one + beta_cf_product(q_even, d));
++      c = one + beta_cf_product(q_even, beta_cf_inverse(c));
++      h = beta_cf_product(h, beta_cf_product(d, c));
++      d = beta_cf_inverse(one + beta_cf_product(q_odd, d));
++      c = one + beta_cf_product(q_odd, beta_cf_inverse(c));
++      h = beta_cf_product(h, beta_cf_product(d, c));
++      if (is_nan(h[1]) || is_inf(h[1]) || h[1] <= 0)
++        reject("Beta continued fraction became nonfinite; a=", a, ", b=", b, ", x=", x);
++      if (abs(h[1] - old_h[1]) <= 2e-14 * abs(h[1]) &&
++          abs(h[2] / h[1] - old_h[2] / old_h[1]) <=
++            2e-13 * (1 + abs(h[2] / h[1])) &&
++          abs(h[3] / h[1] - old_h[3] / old_h[1]) <=
++            2e-13 * (1 + abs(h[3] / h[1]))) stable_steps += 1;
++      else stable_steps = 0;
++      if (stable_steps >= 3)
++        return a * log(x) + b * log1m(x) - lbeta(a, b) + log(h[1]) - log(a);
++    }
++    reject("Beta continued fraction failed to converge; a=", a, ", b=", b, ", x=", x);
++    return not_a_number();
++  }
++  real beta_log_lower_stable(real x, real a, real b) {
++    if (x <= 0) return negative_infinity();
++    if (x >= 1) return 0;
++    if (x <= (a + 1) / (a + b + 2)) return beta_log_cf_lower(x, a, b);
++    return log1m_exp(beta_log_cf_lower(1 - x, b, a));
++  }
++  real beta_log_upper_stable(real x, real a, real b) {
++    // Computing the small opposite tail directly avoids 1-CDF cancellation.
++    if (x <= 0) return 0;
++    if (x >= 1) return negative_infinity();
++    return beta_log_lower_stable(1 - x, b, a);
++  }
+   real log_diff_exp_safe(real a, real b) {
+     if (is_inf(a) && a < 0) return negative_infinity();
+     if (is_inf(b) && b < 0) return a;
+     if (b >= a) return negative_infinity();
+     return a + log1m_exp(b - a);
+   }
++  real beta_log_interval_quadrature(real lo, real hi, real a, real b) {
++    // Eight-point Gauss-Legendre, with panel doubling and convergence checks
++    // for log mass and both shape derivatives. A logit change of variable
++    // removes endpoint singularities; only interior intervals enter.
++    vector[8] nodes = [-0.9602898564975363, -0.7966664774136267,
++      -0.5255324099163290, -0.1834346424956498, 0.1834346424956498,
++       0.5255324099163290, 0.7966664774136267, 0.9602898564975363]';
++    vector[8] weights = [0.1012285362903763, 0.2223810344533745,
++      0.3137066458778873, 0.3626837833783620, 0.3626837833783620,
++      0.3137066458778873, 0.2223810344533745, 0.1012285362903763]';
++    real zlo = logit(lo);
++    // Stable logit(hi)-logit(lo), including very narrow intervals.
++    real zwidth = log1p((hi - lo) / lo) - log1p(-(hi - lo) / (1 - lo));
++    real previous = negative_infinity();
++    real previous_da = 0;
++    real previous_db = 0;
++    int panels = 1;
++    for (level in 1:10) {
++      vector[8 * panels] terms;
++      vector[8 * panels] log_x;
++      vector[8 * panels] log_1mx;
++      real half_width = zwidth / (2.0 * panels);
++      real answer;
++      real da;
++      real db;
++      for (p in 1:panels) {
++        real center = zlo + (p - 0.5) * zwidth / panels;
++        for (j in 1:8) {
++          int k = (p - 1) * 8 + j;
++          real z = center + half_width * nodes[j];
++          log_x[k] = log_inv_logit(z);
++          log_1mx[k] = log1m_inv_logit(z);
++          // Includes dx/dz=x*(1-x), so exponents here are a and b.
++          terms[k] = log(weights[j]) + a * log_x[k] + b * log_1mx[k] - lbeta(a, b);
++        }
++      }
++      answer = log(half_width) + log_sum_exp(terms);
++      da = dot_product(softmax(terms), log_x);
++      db = dot_product(softmax(terms), log_1mx);
++      if (level > 1 && abs(answer - previous) < 2e-11 &&
++          abs(da - previous_da) < 2e-12 * (1 + abs(da)) &&
++          abs(db - previous_db) < 2e-12 * (1 + abs(db))) return answer;
++      previous = answer;
++      previous_da = da;
++      previous_db = db;
++      panels *= 2;
++    }
++    reject("Beta interval quadrature failed to converge; a=", a, ", b=", b,
++           ", lo=", lo, ", hi=", hi);
++    return not_a_number();
++  }
+   real log_beta_interval(real lo, real hi, real a, real b) {
++    real answer;
++    real large_tail;
++    real small_tail;
++    if (!(a > 0) || !(b > 0) || !(lo >= 0) || !(hi <= 1) || !(lo < hi))
++      reject("Invalid Beta interval or shape parameter");
+     if (lo == 0 && hi == 1) return 0;
+-    if (hi <= 0.5) return log_diff_exp_safe(beta_lcdf(hi | a, b), beta_lcdf(lo | a, b));
+-    return log_diff_exp_safe(beta_lccdf(lo | a, b), beta_lccdf(hi | a, b));
++    if (lo == 0) return beta_log_lower_stable(hi, a, b);
++    if (hi == 1) return beta_log_upper_stable(lo, a, b);
++    // Even a correct tail loses relative precision when subtracting very
++    // close CDF values. Integrate a narrow interior interval directly.
++    if (hi - lo < 1e-5 * fmin(lo, 1 - hi))
++      return beta_log_interval_quadrature(lo, hi, a, b);
++    if ((lo + hi) / 2 <= (a + 1) / (a + b + 2)) {
++      large_tail = beta_log_lower_stable(hi, a, b);
++      small_tail = beta_log_lower_stable(lo, a, b);
++    } else {
++      large_tail = beta_log_upper_stable(lo, a, b);
++      small_tail = beta_log_upper_stable(hi, a, b);
++    }
++    if (abs(large_tail - small_tail) < 1e-4)
++      return beta_log_interval_quadrature(lo, hi, a, b);
++    answer = log_diff_exp_safe(large_tail, small_tail);
++    if (is_inf(answer) || is_nan(answer))
++      return beta_log_interval_quadrature(lo, hi, a, b);
++    return answer;
+   }
+   real record_log_lik(int kind, int events, int total, real exact_ratio,
+                      real lo, real hi, real m, real rho,
+@@ -28,7 +179,7 @@ functions {
+     }
+     if (lo == 0 && hi == 1) return 0;
+     if (hi == 1) return log_sum_exp(log(endpoint_mass),
+-      log(continuous_mass) + beta_lccdf(lo | a, b));
++      log(continuous_mass) + beta_log_upper_stable(lo, a, b));
+     return log(continuous_mass) + log_beta_interval(lo, hi, a, b);
+   }
+ }
+
+diff --git a/v3.2/tests/fixtures_v32.R b/v3.2/tests/fixtures_v32.R
+new file mode 100644
+index 0000000..12b219c
+--- /dev/null
++++ b/v3.2/tests/fixtures_v32.R
+@@ -0,0 +1,26 @@
++make_unequal_fixture_v32 <- function(destination, n_species=12L) {
++  if(n_species!=12L)stop("This fixed synthetic fixture has 12 species")
++  p<-data.frame(Species=sprintf("synthetic_%02d",1:12),
++    Site3=c(rep("C",4),rep("R",4),"MISSING",rep("Q",3)),
++    Site20=c(rep("K",6),rep("V",6)),
++    Site117=c(rep("K",4),rep("S",6),"MISSING","G"),
++    Site151="C",Site196=c(rep("C",4),rep("A",4),rep("G",4)),
++    Site315=c(rep("K",6),rep("T",6)),stringsAsFactors=FALSE)
++  rows<-list()
++  for(i in 1:12) {
++    n<-i+3L
++    for(j in seq_len(n)) {
++      type<-if(i==12L)"interval" else c("count","exact","interval")[(j-1L)%%3L+1L]
++      total<-if(type=="count")as.integer(6+(i+j)%%7) else NA_integer_
++      y<-if((i+j)%%4L==0L).85 else if((i+j)%%4L==1L).15 else if((i+j)%%4L==2L).65 else .35
++      rows[[length(rows)+1L]]<-data.frame(RecordID=paste0("SYN_",i,"_",j),ExperimentID=paste0("SYNEXP_",i,"_",j),Species=p$Species[i],
++        Type=type,Events=if(type=="count")as.integer(round(y*total)) else NA_integer_,Total=total,
++        Exact=if(type=="exact")if(j%%7==0)1 else y else NA_real_,
++        Lower=if(type=="interval").35 else NA_real_,Upper=if(type=="interval").65 else NA_real_,SourceID="SYNTHETIC_UNEQUAL_V32")
++    }
++  }
++  obs<-do.call(rbind,rows)
++  dir.create(file.path(destination,"input"),showWarnings=FALSE,recursive=TRUE)
++  write_csv_atomic(p,file.path(destination,"input","sites.csv"));write_csv_atomic(obs,file.path(destination,"input","observations.csv"))
++  prepare_state(file.path(destination,"input"))
++}
+
+diff --git a/v3.2/tests/prepare_binary_fixture.R b/v3.2/tests/prepare_binary_fixture.R
+new file mode 100644
+index 0000000..c54b434
+--- /dev/null
++++ b/v3.2/tests/prepare_binary_fixture.R
+@@ -0,0 +1,13 @@
++#!/usr/bin/env Rscript
++script<-sub("^--file=","",grep("^--file=",commandArgs(FALSE),value=TRUE)[1])
++source(file.path(dirname(dirname(script)),"R","bootstrap.R"))
++root<-resolve_v3_root();load_v3_modules(root)
++options(warn=1)
++source(file.path(root,"tests","fixtures_v32.R"))
++out<-file.path(root,"review","unequal_integration");state<-make_unequal_fixture_v32(out)
++f<-data.frame(Species=state$sites$Species,Fold=rep(1:2,each=6L))
++for(m in V3_MODELS)for(tw in V3_TRAIN_WEIGHTINGS)for(fold in 1:2) {
++  tr<-setdiff(state$binary_species,f$Species[f$Fold==fold])
++  fit_bundle_v3(state,"binary",m,tr,tw,out,"integration",fold,file.path(root,"stan","joint_bb.stan"),iter=600L,warmup=300L,chains=2L,cores=2L,seed=V3_SEED+fold+match(m,V3_MODELS))
++}
++cat("SYNTHETIC_BINARY_SUBSET_READY: 16 fits; diagnostic status retained; no research fits\n")
+
+diff --git a/v3.2/tests/run_audit_deterministic.R b/v3.2/tests/run_audit_deterministic.R
+new file mode 100644
+index 0000000..94b1c96
+--- /dev/null
++++ b/v3.2/tests/run_audit_deterministic.R
+@@ -0,0 +1,5 @@
++#!/usr/bin/env Rscript
++script<-sub("^--file=","",grep("^--file=",commandArgs(FALSE),value=TRUE)[1])
++source(file.path(dirname(dirname(script)),"R","bootstrap.R"))
++root<-resolve_v3_root();load_v3_modules(root)
++source(file.path(root,"tests","test_prediction_audit.R"),local=new.env(parent=.GlobalEnv))
+
+diff --git a/v3.1/tests/run_tests.R b/v3.2/tests/run_tests.R
+index 0637da9..3b2fc2b 100644
+--- a/v3.1/tests/run_tests.R
++++ b/v3.2/tests/run_tests.R
+@@ -6,4 +6,4 @@ for(f in c("test_contracts.R","test_release_regressions.R","test_scientific_cont
+  cat("TEST_FILE",f,"\n")
+  source(file.path(root,"tests",f),local=new.env(parent=.GlobalEnv))
+ }
+-cat("ALL V3.1 DETERMINISTIC TESTS PASSED\n")
++cat("ALL INHERITED DETERMINISTIC TESTS PASSED (CURRENT V3.2 CODE)\n")
+
+diff --git a/v3.2/tests/run_v32_regressions.R b/v3.2/tests/run_v32_regressions.R
+new file mode 100644
+index 0000000..f56b1a5
+--- /dev/null
++++ b/v3.2/tests/run_v32_regressions.R
+@@ -0,0 +1,17 @@
++#!/usr/bin/env Rscript
++script<-sub("^--file=","",grep("^--file=",commandArgs(FALSE),value=TRUE)[1])
++source(file.path(dirname(dirname(script)),"R","bootstrap.R"))
++root<-resolve_v3_root();load_v3_modules(root)
++scripts<-c("run_tests.R","test_v32_metrics.R","test_quantitative_diagnostics.R","run_audit_deterministic.R","test_binary_template_key.R","test_input_support_counts.R","parse_all.R")
++rows<-list()
++for(script in scripts) {
++  cat("REGRESSION_START",script,"\n");flush.console()
++  output<-suppressWarnings(system2(file.path(R.home("bin"),"Rscript"),c(shQuote(file.path(root,"tests",script)),"--root",shQuote(root)),stdout=TRUE,stderr=TRUE))
++  status<-attr(output,"status");if(is.null(status))status<-0L
++  writeLines(output,file.path(root,"review",paste0("final_",sub("\\.R$","",script),".log")))
++  rows[[length(rows)+1L]]<-data.frame(Script=script,ExitStatus=status,Pass=status==0L)
++  write_csv_atomic(do.call(rbind,rows),file.path(root,"review","regression_runner.csv"))
++  cat(paste(output,collapse="\n"),"\n")
++  if(status!=0L)stop("Regression failed: ",script)
++}
++cat("V32_REGRESSION_RUNNER_PASS: separate processes; no real-data fit or scoring\n")
+
+diff --git a/v3.2/tests/stan/beta_interval_before.stan b/v3.2/tests/stan/beta_interval_before.stan
+new file mode 100644
+index 0000000..2c5a70f
+--- /dev/null
++++ b/v3.2/tests/stan/beta_interval_before.stan
+@@ -0,0 +1,82 @@
++functions {
++  real log_diff_exp_safe(real a, real b) {
++    if (is_inf(a) && a < 0) return negative_infinity();
++    if (is_inf(b) && b < 0) return a;
++    if (b >= a) return negative_infinity();
++    return a + log1m_exp(b - a);
++  }
++  real log_beta_interval(real lo, real hi, real a, real b) {
++    if (lo == 0 && hi == 1) return 0;
++    if (hi <= 0.5) return log_diff_exp_safe(beta_lcdf(hi | a, b), beta_lcdf(lo | a, b));
++    return log_diff_exp_safe(beta_lccdf(lo | a, b), beta_lccdf(hi | a, b));
++  }
++  real record_log_lik(int kind, int events, int total, real exact_ratio,
++                     real lo, real hi, real m, real rho,
++                     real log_phi_count, real log_phi_ratio) {
++    real phi_count = exp(log_phi_count);
++    real endpoint_mass = rho * m;
++    real continuous_mass = 1 - endpoint_mass;
++    real mu_internal = m * (1 - rho) / (1 - endpoint_mass);
++    real a = exp(log_phi_ratio) * mu_internal;
++    real b = exp(log_phi_ratio) * (1 - mu_internal);
++    if (kind == 1) {
++      return beta_binomial_lpmf(events | total, phi_count * m, phi_count * (1 - m));
++    }
++    if (kind == 2) {
++      if (exact_ratio == 1) return log(endpoint_mass);
++      return log(continuous_mass) + beta_lpdf(exact_ratio | a, b);
++    }
++    if (lo == 0 && hi == 1) return 0;
++    if (hi == 1) return log_sum_exp(log(endpoint_mass),
++      log(continuous_mass) + beta_lccdf(lo | a, b));
++    return log(continuous_mass) + log_beta_interval(lo, hi, a, b);
++  }
++}
++data {
++  int<lower=1> S;
++  int<lower=0> K;
++  int<lower=1> N;
++  matrix[S, K] X;
++  array[N] int<lower=0, upper=1> train;
++  vector<lower=0>[N] train_weight;
++  array[N] int<lower=1, upper=3> kind;
++  array[N] int<lower=0> events;
++  array[N] int<lower=1> total;
++  vector<lower=0, upper=1>[N] exact_ratio;
++  vector<lower=0, upper=1>[N] lower_ratio;
++  vector<lower=0, upper=1>[N] upper_ratio;
++  array[N] int<lower=1, upper=S> species_id;
++  real<lower=0> prior_intercept_sd;
++  real<lower=0> prior_beta_sd;
++  real<lower=0> prior_rho_a;
++  real<lower=0> prior_rho_b;
++  real prior_log_phi_mean;
++  real<lower=0> prior_log_phi_sd;
++}
++parameters {
++  real alpha;
++  vector[K] beta;
++  real<lower=0, upper=1> rho;
++  real log_phi_ratio;
++  real log_phi_count;
++}
++transformed parameters {
++  vector[S] eta = rep_vector(alpha, S) + X * beta;
++  vector[S] m = inv_logit(eta);
++}
++model {
++  alpha ~ normal(0, prior_intercept_sd);
++  beta ~ normal(0, prior_beta_sd);
++  rho ~ beta(prior_rho_a, prior_rho_b);
++  log_phi_ratio ~ normal(prior_log_phi_mean, prior_log_phi_sd);
++  log_phi_count ~ normal(prior_log_phi_mean, prior_log_phi_sd);
++  for (i in 1:N) if (train[i] == 1 && train_weight[i] > 0)
++    target += train_weight[i] * record_log_lik(kind[i], events[i], total[i], exact_ratio[i],
++      lower_ratio[i], upper_ratio[i], m[species_id[i]], rho, log_phi_count, log_phi_ratio);
++}
++generated quantities {
++  vector[N] log_lik;
++  for (i in 1:N)
++    log_lik[i] = record_log_lik(kind[i], events[i], total[i], exact_ratio[i],
++      lower_ratio[i], upper_ratio[i], m[species_id[i]], rho, log_phi_count, log_phi_ratio);
++}
+
+diff --git a/v3.2/tests/stan/beta_interval_probe_after.stan b/v3.2/tests/stan/beta_interval_probe_after.stan
+new file mode 100644
+index 0000000..6c9438f
+--- /dev/null
++++ b/v3.2/tests/stan/beta_interval_probe_after.stan
+@@ -0,0 +1,192 @@
++functions {
++  // Dual components track d/da and d/db solely to check convergence of the
++  // continued fraction. The returned probability is still Stan-autodiff'd.
++  vector beta_cf_product(vector x, vector y) {
++    vector[3] z;
++    z[1] = x[1] * y[1];
++    z[2] = x[2] * y[1] + x[1] * y[2];
++    z[3] = x[3] * y[1] + x[1] * y[3];
++    return z;
++  }
++  vector beta_cf_inverse(vector x) {
++    vector[3] z;
++    // Lentz denominator protection is numerical scaling, never a probability
++    // floor. Its value and derivatives are required to remain finite.
++    real den = x[1];
++    if (abs(den) < 1e-300) den = den < 0 ? -1e-300 : 1e-300;
++    z[1] = 1 / den;
++    z[2] = -(x[2] / den) / den;
++    z[3] = -(x[3] / den) / den;
++    return z;
++  }
++  real beta_log_cf_lower(real x, real a, real b) {
++    real qab = a + b;
++    real qap = a + 1;
++    vector[3] one = [1, 0, 0]';
++    vector[3] c = one;
++    vector[3] den = [1 - qab * x / qap,
++                     x * (b - 1) / square(qap), -x / qap]';
++    vector[3] d = beta_cf_inverse(den);
++    vector[3] h = d;
++    int stable_steps = 0;
++    // The fraction converges in this tail. Check the value AND its shape
++    // derivatives: integer b can terminate the value before d/db converges.
++    for (n in 1:10000) {
++      real n2 = 2.0 * n;
++      real den_even = (a + n2 - 1) * (a + n2);
++      real v_even = n * (b - n) * x / den_even;
++      vector[3] q_even = [v_even,
++        -v_even * (1 / (a + n2 - 1) + 1 / (a + n2)),
++        n * x / den_even]';
++      real v_odd = -(a + n) * (qab + n) * x /
++                    ((a + n2) * (a + n2 + 1));
++      vector[3] q_odd = [v_odd,
++        v_odd * (1 / (a + n) + 1 / (qab + n) -
++                 1 / (a + n2) - 1 / (a + n2 + 1)),
++        v_odd / (qab + n)]';
++      vector[3] old_h = h;
++      d = beta_cf_inverse(one + beta_cf_product(q_even, d));
++      c = one + beta_cf_product(q_even, beta_cf_inverse(c));
++      h = beta_cf_product(h, beta_cf_product(d, c));
++      d = beta_cf_inverse(one + beta_cf_product(q_odd, d));
++      c = one + beta_cf_product(q_odd, beta_cf_inverse(c));
++      h = beta_cf_product(h, beta_cf_product(d, c));
++      if (is_nan(h[1]) || is_inf(h[1]) || h[1] <= 0)
++        reject("Beta continued fraction became nonfinite; a=", a, ", b=", b, ", x=", x);
++      if (abs(h[1] - old_h[1]) <= 2e-14 * abs(h[1]) &&
++          abs(h[2] / h[1] - old_h[2] / old_h[1]) <=
++            2e-13 * (1 + abs(h[2] / h[1])) &&
++          abs(h[3] / h[1] - old_h[3] / old_h[1]) <=
++            2e-13 * (1 + abs(h[3] / h[1]))) stable_steps += 1;
++      else stable_steps = 0;
++      if (stable_steps >= 3)
++        return a * log(x) + b * log1m(x) - lbeta(a, b) + log(h[1]) - log(a);
++    }
++    reject("Beta continued fraction failed to converge; a=", a, ", b=", b, ", x=", x);
++    return not_a_number();
++  }
++  real beta_log_lower_stable(real x, real a, real b) {
++    if (x <= 0) return negative_infinity();
++    if (x >= 1) return 0;
++    if (x <= (a + 1) / (a + b + 2)) return beta_log_cf_lower(x, a, b);
++    return log1m_exp(beta_log_cf_lower(1 - x, b, a));
++  }
++  real beta_log_upper_stable(real x, real a, real b) {
++    // Computing the small opposite tail directly avoids 1-CDF cancellation.
++    if (x <= 0) return 0;
++    if (x >= 1) return negative_infinity();
++    return beta_log_lower_stable(1 - x, b, a);
++  }
++  real log_diff_exp_safe(real a, real b) {
++    if (is_inf(a) && a < 0) return negative_infinity();
++    if (is_inf(b) && b < 0) return a;
++    if (b >= a) return negative_infinity();
++    return a + log1m_exp(b - a);
++  }
++  real beta_log_interval_quadrature(real lo, real hi, real a, real b) {
++    // Eight-point Gauss-Legendre, with panel doubling and convergence checks
++    // for log mass and both shape derivatives. A logit change of variable
++    // removes endpoint singularities; only interior intervals enter.
++    vector[8] nodes = [-0.9602898564975363, -0.7966664774136267,
++      -0.5255324099163290, -0.1834346424956498, 0.1834346424956498,
++       0.5255324099163290, 0.7966664774136267, 0.9602898564975363]';
++    vector[8] weights = [0.1012285362903763, 0.2223810344533745,
++      0.3137066458778873, 0.3626837833783620, 0.3626837833783620,
++      0.3137066458778873, 0.2223810344533745, 0.1012285362903763]';
++    real zlo = logit(lo);
++    // Stable logit(hi)-logit(lo), including very narrow intervals.
++    real zwidth = log1p((hi - lo) / lo) - log1p(-(hi - lo) / (1 - lo));
++    real previous = negative_infinity();
++    real previous_da = 0;
++    real previous_db = 0;
++    int panels = 1;
++    for (level in 1:10) {
++      vector[8 * panels] terms;
++      vector[8 * panels] log_x;
++      vector[8 * panels] log_1mx;
++      real half_width = zwidth / (2.0 * panels);
++      real answer;
++      real da;
++      real db;
++      for (p in 1:panels) {
++        real center = zlo + (p - 0.5) * zwidth / panels;
++        for (j in 1:8) {
++          int k = (p - 1) * 8 + j;
++          real z = center + half_width * nodes[j];
++          log_x[k] = log_inv_logit(z);
++          log_1mx[k] = log1m_inv_logit(z);
++          // Includes dx/dz=x*(1-x), so exponents here are a and b.
++          terms[k] = log(weights[j]) + a * log_x[k] + b * log_1mx[k] - lbeta(a, b);
++        }
++      }
++      answer = log(half_width) + log_sum_exp(terms);
++      da = dot_product(softmax(terms), log_x);
++      db = dot_product(softmax(terms), log_1mx);
++      if (level > 1 && abs(answer - previous) < 2e-11 &&
++          abs(da - previous_da) < 2e-12 * (1 + abs(da)) &&
++          abs(db - previous_db) < 2e-12 * (1 + abs(db))) return answer;
++      previous = answer;
++      previous_da = da;
++      previous_db = db;
++      panels *= 2;
++    }
++    reject("Beta interval quadrature failed to converge; a=", a, ", b=", b,
++           ", lo=", lo, ", hi=", hi);
++    return not_a_number();
++  }
++  real log_beta_interval(real lo, real hi, real a, real b) {
++    real answer;
++    real large_tail;
++    real small_tail;
++    if (!(a > 0) || !(b > 0) || !(lo >= 0) || !(hi <= 1) || !(lo < hi))
++      reject("Invalid Beta interval or shape parameter");
++    if (lo == 0 && hi == 1) return 0;
++    if (lo == 0) return beta_log_lower_stable(hi, a, b);
++    if (hi == 1) return beta_log_upper_stable(lo, a, b);
++    // Even a correct tail loses relative precision when subtracting very
++    // close CDF values. Integrate a narrow interior interval directly.
++    if (hi - lo < 1e-5 * fmin(lo, 1 - hi))
++      return beta_log_interval_quadrature(lo, hi, a, b);
++    if ((lo + hi) / 2 <= (a + 1) / (a + b + 2)) {
++      large_tail = beta_log_lower_stable(hi, a, b);
++      small_tail = beta_log_lower_stable(lo, a, b);
++    } else {
++      large_tail = beta_log_upper_stable(lo, a, b);
++      small_tail = beta_log_upper_stable(hi, a, b);
++    }
++    if (abs(large_tail - small_tail) < 1e-4)
++      return beta_log_interval_quadrature(lo, hi, a, b);
++    answer = log_diff_exp_safe(large_tail, small_tail);
++    if (is_inf(answer) || is_nan(answer))
++      return beta_log_interval_quadrature(lo, hi, a, b);
++    return answer;
++  }
++  real record_log_lik(int kind, int events, int total, real exact_ratio,
++                     real lo, real hi, real m, real rho,
++                     real log_phi_count, real log_phi_ratio) {
++    real phi_count = exp(log_phi_count);
++    real endpoint_mass = rho * m;
++    real continuous_mass = 1 - endpoint_mass;
++    real mu_internal = m * (1 - rho) / (1 - endpoint_mass);
++    real a = exp(log_phi_ratio) * mu_internal;
++    real b = exp(log_phi_ratio) * (1 - mu_internal);
++    if (kind == 1) {
++      return beta_binomial_lpmf(events | total, phi_count * m, phi_count * (1 - m));
++    }
++    if (kind == 2) {
++      if (exact_ratio == 1) return log(endpoint_mass);
++      return log(continuous_mass) + beta_lpdf(exact_ratio | a, b);
++    }
++    if (lo == 0 && hi == 1) return 0;
++    if (hi == 1) return log_sum_exp(log(endpoint_mass),
++      log(continuous_mass) + beta_log_upper_stable(lo, a, b));
++    return log(continuous_mass) + log_beta_interval(lo, hi, a, b);
++  }
++}
++data { int<lower=1,upper=3> mode; real<lower=0,upper=1> lo; real<lower=0,upper=1> hi; }
++parameters { vector[3] theta; }
++model {
++  if (mode == 1) target += log_beta_interval(lo, hi, theta[1], theta[2]);
++  else if (mode == 3) target += log_beta_interval(lo, hi, exp(theta[1]), exp(theta[2]));
++  else target += record_log_lik(3, 0, 1, 0.5, lo, hi, inv_logit(theta[1]), inv_logit(theta[2]), 0, theta[3]);
++}
+
+diff --git a/v3.2/tests/stan/beta_interval_probe_before.stan b/v3.2/tests/stan/beta_interval_probe_before.stan
+new file mode 100644
+index 0000000..0e072a3
+--- /dev/null
++++ b/v3.2/tests/stan/beta_interval_probe_before.stan
+@@ -0,0 +1,40 @@
++functions {
++  real log_diff_exp_safe(real a, real b) {
++    if (is_inf(a) && a < 0) return negative_infinity();
++    if (is_inf(b) && b < 0) return a;
++    if (b >= a) return negative_infinity();
++    return a + log1m_exp(b - a);
++  }
++  real log_beta_interval(real lo, real hi, real a, real b) {
++    if (lo == 0 && hi == 1) return 0;
++    if (hi <= 0.5) return log_diff_exp_safe(beta_lcdf(hi | a, b), beta_lcdf(lo | a, b));
++    return log_diff_exp_safe(beta_lccdf(lo | a, b), beta_lccdf(hi | a, b));
++  }
++  real record_log_lik(int kind, int events, int total, real exact_ratio,
++                     real lo, real hi, real m, real rho,
++                     real log_phi_count, real log_phi_ratio) {
++    real phi_count = exp(log_phi_count);
++    real endpoint_mass = rho * m;
++    real continuous_mass = 1 - endpoint_mass;
++    real mu_internal = m * (1 - rho) / (1 - endpoint_mass);
++    real a = exp(log_phi_ratio) * mu_internal;
++    real b = exp(log_phi_ratio) * (1 - mu_internal);
++    if (kind == 1) {
++      return beta_binomial_lpmf(events | total, phi_count * m, phi_count * (1 - m));
++    }
++    if (kind == 2) {
++      if (exact_ratio == 1) return log(endpoint_mass);
++      return log(continuous_mass) + beta_lpdf(exact_ratio | a, b);
++    }
++    if (lo == 0 && hi == 1) return 0;
++    if (hi == 1) return log_sum_exp(log(endpoint_mass),
++      log(continuous_mass) + beta_lccdf(lo | a, b));
++    return log(continuous_mass) + log_beta_interval(lo, hi, a, b);
++  }
++}
++data { int<lower=1,upper=2> mode; real<lower=0,upper=1> lo; real<lower=0,upper=1> hi; }
++parameters { vector[3] theta; }
++model {
++  if (mode == 1) target += log_beta_interval(lo, hi, theta[1], theta[2]);
++  else target += record_log_lik(3, 0, 1, 0.5, lo, hi, inv_logit(theta[1]), inv_logit(theta[2]), 0, theta[3]);
++}
+
+diff --git a/v3.2/tests/test_beta_intervals.R b/v3.2/tests/test_beta_intervals.R
+new file mode 100644
+index 0000000..eba1e98
+--- /dev/null
++++ b/v3.2/tests/test_beta_intervals.R
+@@ -0,0 +1,124 @@
++#!/usr/bin/env Rscript
++# Only synthetic parameter evaluations. Fixed_param creates an interface object;
++# this test never samples a posterior and never reads the research input files.
++args <- commandArgs(TRUE)
++stage <- if (length(args)) args[1] else "after"
++stopifnot(stage %in% c("before", "after"))
++script <- sub("^--file=", "", grep("^--file=", commandArgs(FALSE), value=TRUE)[1])
++root <- normalizePath(file.path(dirname(script), ".."), mustWork=TRUE)
++out <- file.path(root,"review",paste0("beta_",stage))
++dir.create(out,recursive=TRUE,showWarnings=FALSE)
++suppressPackageStartupMessages(library(rstan))
++options(mc.cores=1L)
++rstan_options(auto_write=TRUE)
++source_file <- if(stage=="before") file.path(root,"tests","stan","beta_interval_before.stan") else file.path(root,"stan","joint_bb.stan")
++src <- readLines(source_file,warn=FALSE)
++endfun <- grep("^data \\{",src)[1]-1L
++stopifnot(!is.na(endfun),endfun>2L)
++probe <- c(src[seq_len(endfun)],
++  "data { int<lower=1,upper=3> mode; real<lower=0,upper=1> lo; real<lower=0,upper=1> hi; }",
++  "parameters { vector[3] theta; }",
++  "model {",
++  "  if (mode == 1) target += log_beta_interval(lo, hi, theta[1], theta[2]);",
++  "  else if (mode == 3) target += log_beta_interval(lo, hi, exp(theta[1]), exp(theta[2]));",
++  "  else target += record_log_lik(3, 0, 1, 0.5, lo, hi, inv_logit(theta[1]), inv_logit(theta[2]), 0, theta[3]);",
++  "}")
++probe_file <- file.path(root,"tests","stan",paste0("beta_interval_probe_",stage,".stan"))
++writeLines(probe,probe_file)
++sm <- stan_model(file=probe_file,model_name=paste0("beta_interval_",stage),verbose=TRUE)
++# R pbeta is used only as an independent reference. Narrow intervals are
++# integrated directly using a scaled density, avoiding subtraction entirely.
++ldiff <- function(x,y) if(is.infinite(y)&&y<0) x else if(y>=x) -Inf else x+log(-expm1(y-x))
++ref_interval <- function(lo,hi,a,b) {
++  if(lo==0&&hi==1) return(0)
++  if(lo==0) return(pbeta(hi,a,b,log.p=TRUE))
++  if(hi==1) return(pbeta(lo,a,b,lower.tail=FALSE,log.p=TRUE))
++  if(a==1) return(b*log1p(-lo)+log(-expm1(b*(log1p(-hi)-log1p(-lo)))))
++  if(b==1) return(a*log(hi)+log(-expm1(a*(log(lo)-log(hi)))))
++  if(hi-lo<1e-5*min(lo,1-hi) || min(a,b)<1e-5) {
++    mid<-lo+(hi-lo)/2; scale<-dbeta(mid,a,b,log=TRUE)
++    q<-integrate(function(t)exp(dbeta(lo+(hi-lo)*t,a,b,log=TRUE)-scale),0,1,
++      rel.tol=2e-12,abs.tol=1e-12,subdivisions=2000L,stop.on.error=TRUE)$value
++    return(log(hi-lo)+scale+log(q))
++  }
++  cl<-pbeta(lo,a,b,log.p=TRUE);ch<-pbeta(hi,a,b,log.p=TRUE)
++  sl<-pbeta(lo,a,b,lower.tail=FALSE,log.p=TRUE);sh<-pbeta(hi,a,b,lower.tail=FALSE,log.p=TRUE)
++  if(ch<=log(.5)) return(ldiff(ch,cl))
++  if(sl<=log(.5)) return(ldiff(sl,sh))
++  ldiff(ch,cl)
++}
++ref_record <- function(lo,hi,th) {
++  m<-plogis(th[1]);rho<-plogis(th[2]);phi<-exp(th[3]);pm<-rho*m
++  mu<-m*(1-rho)/(1-pm);a<-phi*mu;b<-phi*(1-mu)
++  li<-ref_interval(lo,hi,a,b)+log1p(-pm)
++  if(hi==1) { q<-max(log(pm),li); return(q+log(exp(log(pm)-q)+exp(li-q))) }
++  li
++}
++fd5<-function(f,x,j,positive=FALSE) {
++  h<-2e-4*max(abs(x[j]),.05)
++  if(positive)h<-min(h,2e-4*x[j])
++  eval<-function(s){y<-x;y[j]<-y[j]+s*h;f(y)}
++  (eval(-2)-8*eval(-1)+8*eval(1)-eval(2))/(12*h)
++}
++cases<-data.frame(
++ id=c("beta_1_100_upper","beta_200_1_lower","underflow_upper","underflow_lower","near_zero","near_one","narrow_middle","narrow_tail","u_shaped","wide_center","skew_left","skew_right","concentrated_center","full_support","left_boundary","right_boundary","cf_switch_left","cf_switch_right"),
++ a=c(1,200,1,2000,.3,12,2.5,2.5,.2,2,1.1,100,800,2,.2,10,5,5),
++ b=c(100,1,2000,1,12,.3,7.5,120,.4,3,100,1.1,1000,3,10,.2,7,7),
++ lo=c(.4,.6,.4,.6,0,1-1e-8,.45,.85,.001,.01,.4,.01,.43,0,0,.7,6/14-1e-9,6/14+1e-9),
++ hi=c(.5,.7,.5,.7,1e-8,1,.45+1e-12,.85+1e-10,.99,.95,.5,.05,.46,1,.3,1,6/14+1e-3,6/14+1e-3+2e-9), stringsAsFactors=FALSE)
++if(stage=="before") cases<-cases[1:2,]
++if(stage=="after") {
++  g<-expand.grid(a=c(.05,.2,1,5,50,200,1000),b=c(.05,.2,1,5,50,200,1000),interval=1:5)
++  gg<-data.frame(id=paste0("grid_",seq_len(nrow(g))),a=g$a,b=g$b,lo=c(.001,.05,.4,.7,.95)[g$interval],hi=c(.01,.15,.5,.9,.999)[g$interval])
++  tiny<-data.frame(id=c("tiny_u_shape","tiny_left_shape","tiny_right_shape"),a=c(1e-8,1e-7,.2),b=c(1e-8,.2,1e-7),lo=c(.1,.3,.4),hi=c(.9,.4,.5))
++  cases<-rbind(cases,gg,tiny)
++}
++write.csv(cases,file.path(out,"parameter_cases.csv"),row.names=FALSE)
++make_fit<-function(mode,lo,hi) suppressWarnings(sampling(sm,data=list(mode=mode,lo=lo,hi=hi),iter=1L,warmup=0L,chains=1L,algorithm="Fixed_param",init=list(list(theta=c(2,3,0))),refresh=0L,seed=743L))
++values<-list();gradients<-list()
++for(i in seq_len(nrow(cases))) {
++  z<-cases[i,];fit<-make_fit(1,z$lo,z$hi);th<-c(z$a,z$b,0)
++  val<-tryCatch(log_prob(fit,th,adjust_transform=FALSE),error=function(e)NA_real_)
++  gr<-tryCatch(grad_log_prob(fit,th,adjust_transform=FALSE),error=function(e)rep(NA_real_,3))
++  ref<-ref_interval(z$lo,z$hi,z$a,z$b)
++  values[[i]]<-data.frame(Case=z$id,Mode="a_b",Stan=val,Reference=ref,AbsError=abs(val-ref))
++  for(j in 1:2) {
++    f<-function(v)ref_interval(z$lo,z$hi,v[1],v[2]);num<-fd5(f,th,j,positive=TRUE)
++    gradients[[length(gradients)+1L]]<-data.frame(Case=z$id,Mode="a_b",Parameter=c("a","b")[j],Stan=gr[j],Reference=num,AbsError=abs(gr[j]-num),ScaledError=abs(gr[j]-num)/max(1,abs(num)))
++  }
++}
++if(stage=="after") {
++  for(i in seq_len(18L)) {
++    z<-cases[i,];fit<-make_fit(3,z$lo,z$hi);th<-c(log(z$a),log(z$b),0)
++    val<-log_prob(fit,th,adjust_transform=FALSE);gr<-grad_log_prob(fit,th,adjust_transform=FALSE)
++    ref<-ref_interval(z$lo,z$hi,z$a,z$b)
++    values[[length(values)+1L]]<-data.frame(Case=z$id,Mode="log_a_log_b",Stan=val,Reference=ref,AbsError=abs(val-ref))
++    for(j in 1:2) {
++      num<-fd5(function(v)ref_interval(z$lo,z$hi,exp(v[1]),exp(v[2])),th,j)
++      gradients[[length(gradients)+1L]]<-data.frame(Case=z$id,Mode="log_a_log_b",Parameter=c("log_a","log_b")[j],Stan=gr[j],Reference=num,AbsError=abs(gr[j]-num),ScaledError=abs(gr[j]-num)/max(1,abs(num)))
++    }
++  }
++  rc<-data.frame(id=c("actual_chain_left_tail","actual_chain_right_tail","actual_chain_endpoint","actual_chain_narrow","actual_chain_u_shape"),m=c(.72,.08,.999,.4,.3),rho=c(.25,.1,.7,.2,.6),phi=c(280,120,120,30,.8),lo=c(.6,.4,.99,.35,.001),hi=c(.7,.5,1,.35+1e-10,.999))
++  write.csv(rc,file.path(out,"record_parameter_cases.csv"),row.names=FALSE)
++  for(i in seq_len(nrow(rc))) {
++    z<-rc[i,];fit<-make_fit(2,z$lo,z$hi);th<-c(qlogis(z$m),qlogis(z$rho),log(z$phi))
++    val<-log_prob(fit,th,adjust_transform=FALSE);gr<-grad_log_prob(fit,th,adjust_transform=FALSE);ref<-ref_record(z$lo,z$hi,th)
++    values[[length(values)+1L]]<-data.frame(Case=z$id,Mode="record_chain",Stan=val,Reference=ref,AbsError=abs(val-ref))
++    for(j in 1:3) {
++      num<-fd5(function(v)ref_record(z$lo,z$hi,v),th,j)
++      gradients[[length(gradients)+1L]]<-data.frame(Case=z$id,Mode="record_chain",Parameter=c("logit_m","logit_rho","log_phi_ratio")[j],Stan=gr[j],Reference=num,AbsError=abs(gr[j]-num),ScaledError=abs(gr[j]-num)/max(1,abs(num)))
++    }
++  }
++}
++v<-do.call(rbind,values);g<-do.call(rbind,gradients)
++write.csv(v,file.path(out,"value_comparison.csv"),row.names=FALSE)
++write.csv(g,file.path(out,"gradient_comparison.csv"),row.names=FALSE)
++v$ScaledError<-v$AbsError/pmax(1,abs(v$Reference))
++write.csv(v,file.path(out,"value_comparison.csv"),row.names=FALSE)
++value_pass<-all(is.finite(v$Stan))&&all(v$ScaledError<1e-10)
++gradient_pass<-all(is.finite(g$Stan))&&all(g$ScaledError<3e-6)
++status<-list(stage=stage,status=if(value_pass&&gradient_pass)"PASS" else "FAIL_REPRODUCED",purpose="synthetic_parameter_evaluation_only_no_posterior_sampling",value_count=nrow(v),gradient_count=nrow(g),value_pass=value_pass,gradient_pass=gradient_pass,max_value_abs_error=max(v$AbsError),max_value_scaled_error=max(v$ScaledError),value_tolerance="abs(error)<1e-10*max(1,abs(reference_logprob))",max_gradient_scaled_error=max(g$ScaledError),rstan_version=as.character(packageVersion("rstan")),R_version=R.version.string,production_source=source_file,created_utc=format(Sys.time(),tz="UTC",usetz=TRUE))
++jsonlite::write_json(status,file.path(out,"status.json"),pretty=TRUE,auto_unbox=TRUE,na="string")
++print(v);print(g);print(status)
++if(stage=="before")stopifnot(!value_pass) else stopifnot(value_pass,gradient_pass)
++cat(if(stage=="before")"BETA_BEFORE_FAILURE_REPRODUCED\n" else "BETA_AFTER_NUMERICAL_AND_AUTODIFF_PASS\n")
+
+diff --git a/v3.2/tests/test_beta_switches.R b/v3.2/tests/test_beta_switches.R
+new file mode 100644
+index 0000000..7c3c390
+--- /dev/null
++++ b/v3.2/tests/test_beta_switches.R
+@@ -0,0 +1,94 @@
++#!/usr/bin/env Rscript
++# Bounded branch-switch check. Reuses an existing compiled Stan model; no MCMC.
++script <- sub("^--file=", "", grep("^--file=", commandArgs(FALSE), value=TRUE)[1])
++root <- normalizePath(file.path(dirname(script), ".."),mustWork=TRUE)
++out <- file.path(root,"review","beta_switches")
++dir.create(out,recursive=TRUE,showWarnings=FALSE)
++suppressPackageStartupMessages(library(rstan))
++prod<-readLines(file.path(root,"stan","joint_bb.stan"),warn=FALSE)
++probe<-readLines(file.path(root,"tests","stan","beta_interval_probe_after.stan"),warn=FALSE)
++endfun<-grep("^data \\{",prod)[1]-1L
++stopifnot(identical(prod[seq_len(endfun)],probe[seq_len(endfun)]))
++sm<-readRDS(file.path(root,"tests","stan","beta_interval_probe_after.rds"))
++stopifnot(methods::is(sm,"stanmodel"))
++ref<-function(lo,hi,a,b) {
++  # Independent adaptive R integration of the original Beta density.
++  shift<-max(dbeta(c(lo,(lo+hi)/2,hi),a,b,log=TRUE))
++  ans<-integrate(function(t)exp(dbeta(lo+(hi-lo)*t,a,b,log=TRUE)-shift),0,1,
++    abs.tol=1e-12,rel.tol=1e-12,subdivisions=2000L,stop.on.error=TRUE)$value
++  log(hi-lo)+shift+log(ans)
++}
++fd<-function(lo,hi,a,b,j) {
++  z<-c(a,b);h<-2e-4*z[j]
++  at<-function(k){p<-z;p[j]<-p[j]+k*h;ref(lo,hi,p[1],p[2])}
++  (at(-2)-8*at(-1)+8*at(1)-at(2))/(12*h)
++}
++tail_gap<-function(lo,hi,a,b) {
++  if((lo+hi)/2 <= (a+1)/(a+b+2))
++    pbeta(hi,a,b,log.p=TRUE)-pbeta(lo,a,b,log.p=TRUE)
++  else pbeta(lo,a,b,lower.tail=FALSE,log.p=TRUE)-pbeta(hi,a,b,lower.tail=FALSE,log.p=TRUE)
++}
++cases<-list()
++add<-function(group,delta,side,a,b,lo,hi,branch,threshold) {
++ cases[[length(cases)+1L]]<<-data.frame(Group=group,RelativeOffset=delta,Side=side,a=a,b=b,lo=lo,hi=hi,ExpectedBranch=branch,Threshold=threshold)
++}
++for(pair in list(c(2.5,7.5),c(1,1)))for(delta in c(.01,.0001,.000001))for(side in c(-1,1)) {
++ lo<-.3;hi<-lo+3e-6*(1+side*delta)
++ add(paste0("width_a",pair[1],"_b",pair[2]),delta,side,pair[1],pair[2],lo,hi,if(side<0)"quadrature" else "tail_difference","relative_width_1e-5")
++}
++roots<-list()
++for(ratio in c(1,2)) {
++ lo<-.2;hi<-.8
++ objective<-function(loga)log(tail_gap(lo,hi,exp(loga),ratio*exp(loga))/1e-4)
++ loga<-uniroot(objective,c(log(1e-10),log(1e-2)),tol=1e-11)$root
++ a0<-exp(loga)
++ roots[[length(roots)+1L]]<-data.frame(b_over_a=ratio,a_at_switch=a0,b_at_switch=ratio*a0,ReferenceTailLogDifference=tail_gap(lo,hi,a0,ratio*a0))
++ # 1e-4 relative separation is larger than CDF rounding uncertainty here.
++ for(delta in c(.01,.0001))for(side in c(-1,1)) {
++   a<-a0*(1+side*delta);b<-ratio*a
++   add(paste0("tail_b_over_a_",ratio),delta,side,a,b,lo,hi,if(side<0)"quadrature" else "tail_difference","tail_log_gap_1e-4")
++ }
++}
++cases<-do.call(rbind,cases)
++# Re-evaluate the original problematic threshold and exact archived worst case.
++legacy<-read.csv(file.path(root,"review","beta_switches_before_threshold_fix","cases.csv"),stringsAsFactors=FALSE)
++legacy<-legacy[legacy$Threshold=="tail_log_gap_1e-7" & legacy$RelativeOffset==1e-4,names(cases)]
++legacy$Group<-paste0("legacy_",legacy$Group)
++legacy$ExpectedBranch<-"quadrature_after_threshold_fix"
++cases<-rbind(cases,legacy)
++cases$WidthTrigger<-(cases$hi-cases$lo)/(pmin(cases$lo,1-cases$hi))
++cases$ReferenceTailLogDifference<-mapply(tail_gap,cases$lo,cases$hi,cases$a,cases$b)
++stopifnot(all(cases$ReferenceTailLogDifference[cases$Threshold=="tail_log_gap_1e-4"&cases$Side<0]<1e-4),all(cases$ReferenceTailLogDifference[cases$Threshold=="tail_log_gap_1e-4"&cases$Side>0]>1e-4))
++write.csv(cases,file.path(out,"cases.csv"),row.names=FALSE)
++write.csv(do.call(rbind,roots),file.path(out,"tail_switch_reference_roots.csv"),row.names=FALSE)
++rows<-list()
++for(i in seq_len(nrow(cases))) {
++ z<-cases[i,]
++ fit<-suppressWarnings(sampling(sm,data=list(mode=1L,lo=z$lo,hi=z$hi),iter=1L,warmup=0L,chains=1L,algorithm="Fixed_param",init=list(list(theta=c(2,3,0))),refresh=0L,seed=731L))
++ stan<-log_prob(fit,c(z$a,z$b,0),adjust_transform=FALSE)
++ grad<-grad_log_prob(fit,c(z$a,z$b,0),adjust_transform=FALSE)
++ actual<-ref(z$lo,z$hi,z$a,z$b);ga<-fd(z$lo,z$hi,z$a,z$b,1L);gb<-fd(z$lo,z$hi,z$a,z$b,2L)
++ rows[[i]]<-cbind(z,data.frame(Stan=stan,Reference=actual,ValueAbsError=abs(stan-actual),Stan_da=grad[1],Ref_da=ga,GradientScaledError_a=abs(grad[1]-ga)/max(1,abs(ga)),Stan_db=grad[2],Ref_db=gb,GradientScaledError_b=abs(grad[2]-gb)/max(1,abs(gb))))
++}
++z<-do.call(rbind,rows)
++z$ValueScaledError<-z$ValueAbsError/pmax(1,abs(z$Reference))
++write.csv(z,file.path(out,"value_and_gradient_comparison.csv"),row.names=FALSE)
++pairs<-list()
++for(key in unique(paste(z$Group,z$RelativeOffset,sep="|"))) {
++ p<-z[paste(z$Group,z$RelativeOffset,sep="|")==key,];p<-p[order(p$Side),]
++ stopifnot(nrow(p)==2L)
++ valerr<-(p$Stan[2]-p$Stan[1])-(p$Reference[2]-p$Reference[1])
++ aerr<-(p$Stan_da[2]-p$Stan_da[1])-(p$Ref_da[2]-p$Ref_da[1])
++ berr<-(p$Stan_db[2]-p$Stan_db[1])-(p$Ref_db[2]-p$Ref_db[1])
++ pairs[[length(pairs)+1L]]<-data.frame(Group=p$Group[1],RelativeOffset=p$RelativeOffset[1],StanValueChange=diff(p$Stan),ReferenceValueChange=diff(p$Reference),ValueChangeResidual=valerr,ValueChangeScaledResidual=abs(valerr)/max(1,abs(p$Reference)),StanGradientChange_a=diff(p$Stan_da),ReferenceGradientChange_a=diff(p$Ref_da),GradientChangeScaledResidual_a=abs(aerr)/max(1,abs(p$Ref_da)),StanGradientChange_b=diff(p$Stan_db),ReferenceGradientChange_b=diff(p$Ref_db),GradientChangeScaledResidual_b=abs(berr)/max(1,abs(p$Ref_db)))
++}
++p<-do.call(rbind,pairs)
++write.csv(p,file.path(out,"cross_switch_changes.csv"),row.names=FALSE)
++value_pass<-all(is.finite(z$Stan))&&all(z$ValueScaledError<1e-10)
++gradient_pass<-all(is.finite(z$Stan_da))&&all(is.finite(z$Stan_db))&&all(z$GradientScaledError_a<3e-6)&&all(z$GradientScaledError_b<3e-6)
++change_pass<-all(p$ValueChangeScaledResidual<2e-10)&&all(p$GradientChangeScaledResidual_a<6e-6)&&all(p$GradientChangeScaledResidual_b<6e-6)
++status<-list(status=if(value_pass&&gradient_pass&&change_pass)"PASS" else "FAIL",purpose="synthetic_branch_switch_evaluation_only_reused_compiled_model_no_MCMC",value_count=nrow(z),gradient_count=2*nrow(z),cross_switch_pairs=nrow(p),value_pass=value_pass,gradient_pass=gradient_pass,change_pass=change_pass,max_value_abs_error=max(z$ValueAbsError),max_value_scaled_error=max(z$ValueScaledError),value_tolerance="abs(error)<1e-10*max(1,abs(reference_logprob))",max_gradient_scaled_error=max(z$GradientScaledError_a,z$GradientScaledError_b),max_value_change_residual=max(abs(p$ValueChangeResidual)),max_value_change_scaled_residual=max(p$ValueChangeScaledResidual),max_gradient_change_scaled_residual=max(p$GradientChangeScaledResidual_a,p$GradientChangeScaledResidual_b),production_sha256=digest::digest(file=file.path(root,"stan","joint_bb.stan"),algo="sha256"),probe_rds_sha256=digest::digest(file=file.path(root,"tests","stan","beta_interval_probe_after.rds"),algo="sha256"),created_utc=format(Sys.time(),tz="UTC",usetz=TRUE),limitation="Numerical two-sided agreement at listed finite offsets, not proof of exact floating-point continuity or arbitrary double-precision inputs. Lentz denominator-clamp activation not tested.")
++jsonlite::write_json(status,file.path(out,"status.json"),pretty=TRUE,auto_unbox=TRUE,na="string")
++print(z);print(p);print(status)
++stopifnot(value_pass,gradient_pass,change_pass)
++cat("BETA_SWITCH_TWO_SIDED_NUMERICAL_AND_GRADIENT_PASS\n")
+
+diff --git a/v3.2/tests/test_binary_template_key.R b/v3.2/tests/test_binary_template_key.R
+new file mode 100644
+index 0000000..b374ff3
+--- /dev/null
++++ b/v3.2/tests/test_binary_template_key.R
+@@ -0,0 +1,16 @@
++#!/usr/bin/env Rscript
++script<-sub("^--file=","",grep("^--file=",commandArgs(FALSE),value=TRUE)[1])
++source(file.path(dirname(dirname(script)),"R","bootstrap.R"))
++root<-resolve_v3_root();load_v3_modules(root)
++source(file.path(root,"tests","fixtures_v32.R"))
++out<-file.path(root,"review","template_key_fixture");s<-make_unequal_fixture_v32(out)
++tr<-head(s$binary_species,6)
++a<-fit_spec_v3(s,"binary","M1",tr,"record_equal",NULL)
++b<-fit_spec_v3(s,"binary","M2",tr,"record_equal",NULL)
++stopifnot(identical(a$code,b$code),!identical(a$blueprint$columns,b$blueprint$columns))
++if(!exists("binary_template_key_v32"))stop("BUG_REPRODUCED: same Stan code and different brms columns need distinct template keys")
++stopifnot(binary_template_key_v32(a)!=binary_template_key_v32(b))
++a2<-fit_spec_v3(s,"binary","M1",tr,"species_equal",NULL)
++stopifnot(binary_template_key_v32(a)==binary_template_key_v32(a2))
++write_json_atomic(list(status="PASS",old_collision_reproduced=TRUE,M1_M2_stan_code_identical=TRUE,M1_M2_columns_different=TRUE,template_keys_different=TRUE,same_formula_different_weights_reuses_template=TRUE),file.path(out,"status.json"))
++cat("BINARY_TEMPLATE_KEY_PASS: model/columns distinguished despite identical generic Stan program\n")
+
+diff --git a/v3.2/tests/test_input_support_counts.R b/v3.2/tests/test_input_support_counts.R
+new file mode 100644
+index 0000000..1c8624a
+--- /dev/null
++++ b/v3.2/tests/test_input_support_counts.R
+@@ -0,0 +1,11 @@
++#!/usr/bin/env Rscript
++script<-sub("^--file=","",grep("^--file=",commandArgs(FALSE),value=TRUE)[1])
++source(file.path(dirname(dirname(script)),"R","bootstrap.R"))
++root<-resolve_v3_root();load_v3_modules(root)
++# Read-only input-contract inspection. No fitting, predictions or real-data scores.
++obs<-read.csv(file.path(root,"input","observations.csv"),stringsAsFactors=FALSE)
++high<-classify_high_low(obs)$High;point<-obs$Type%in%c("count","exact")
++counts<-list(status="INPUT_INSPECTION_ONLY",records=nrow(obs),LogScoreSpeciesUsed=length(unique(obs$Species)),BinaryRecords=sum(!is.na(high)),BinarySpecies=length(unique(obs$Species[!is.na(high)])),PointRecords=sum(point),PointSpeciesUsed=length(unique(obs$Species[point])),PISpeciesUsed=length(unique(obs$Species[point])),IntervalOnlySpecies=setdiff(unique(obs$Species),unique(obs$Species[point])),formal_research_fits=0,real_data_predictions_or_scores_computed=FALSE)
++stopifnot(counts$records==153L,counts$LogScoreSpeciesUsed==51L,counts$BinaryRecords==152L,counts$BinarySpecies==50L,counts$PointRecords==145L,counts$PointSpeciesUsed==48L,counts$PISpeciesUsed==48L)
++write_json_atomic(counts,file.path(root,"review","input_support_counts.json"))
++cat("INPUT_SUPPORT_COUNTS_PASS: logscore51 / binary50 / point-and-PI48 species; read-only inspection, no fitting\n")
+
+diff --git a/v3.2/tests/test_prediction_audit.R b/v3.2/tests/test_prediction_audit.R
+new file mode 100644
+index 0000000..6d72e76
+--- /dev/null
++++ b/v3.2/tests/test_prediction_audit.R
+@@ -0,0 +1,210 @@
++# Deterministic audit regression tests. All inputs and posterior draws below are
++# synthetic fixtures; this file starts no sampler and uses no research records.
++if (!exists("audit_cv_bundle_predictions_v3", mode = "function")) {
++  source(file.path(root, "R", "prediction_audit.R"))
++}
++checks <- list()
++check <- function(name, value) {
++  result <- tryCatch(isTRUE(force(value)), error = function(e) { cat("ERROR", name, conditionMessage(e), "\n"); FALSE })
++  checks[[name]] <<- result
++  cat(if (result) "PASS " else "FAIL ", name, "\n", sep = "")
++}
++assert_error <- function(name, expr) {
++  error <- tryCatch({ force(expr); NULL }, error = identity)
++  check(name, inherits(error, "error"))
++}
++
++panel <- data.frame(Species = paste0("audit_species_", 1:6), Site3 = rep(c("C", "R"), 3),
++  Site20 = c("K", "K", "R", "K", "T", "K"), Site117 = "K", Site151 = "C", Site196 = "C",
++  Site315 = rep(c("K", "T", "R"), 2), stringsAsFactors = FALSE)
++observations <- do.call(rbind, lapply(seq_len(nrow(panel)), function(i) {
++  data.frame(RecordID = paste0("audit_", i, "_", 1:6), ExperimentID = paste0("experiment_", i, "_", 1:6),
++    SourceID = "synthetic_audit_fixture", Species = panel$Species[i],
++    Type = c("count", "count", "exact", "exact", "interval", "interval"),
++    Events = c(1L, 8L, NA, NA, NA, NA), Total = c(5L, 10L, NA, NA, NA, NA),
++    Exact = c(NA, NA, .3, 1, NA, NA), Lower = c(NA, NA, NA, NA, .1, .4),
++    Upper = c(NA, NA, NA, NA, .4, .7), stringsAsFactors = FALSE)
++}))
++classified <- classify_high_low(observations)
++observations <- cbind(observations, classified)
++dictionary <- build_encoding_dictionary(panel)
++encoded <- encode_panel(panel, dictionary)$data
++state <- list(sites = panel, encoded = encoded, dictionary = dictionary, observations = observations,
++  blueprints = list(), binary_species = panel$Species, joint_species = panel$Species)
++train <- panel$Species[1:4]
++D <- 48L
++bundles <- list()
++for (route in V3_ROUTES) for (model in V3_MODELS) for (tw in V3_TRAIN_WEIGHTINGS) {
++  bp <- make_design_blueprint(encoded, train, model)
++  pars <- list(alpha = seq(-.55, .6, length.out = D),
++    beta = matrix(if (length(bp$columns)) seq(-.2, .25, length.out = D * length(bp$columns)) else numeric(),
++      nrow = D, ncol = length(bp$columns)))
++  if (route == "joint_bb") pars <- c(pars, list(rho = seq(.08, .3, length.out = D),
++    log_phi_count = rep(log(10), D), log_phi_ratio = rep(log(16), D)))
++  b <- list(route = route, model = model, train_weighting = tw, train_species = train,
++    blueprint = bp, posterior = pars, key = paste("synthetic", route, model, tw, sep = "__"))
++  bundles[[paste(route, model, tw, sep = "|")]] <- b
++}
++
++# Joint oracle uses production predictive draws and direct, elementary R density
++# formulas in a moderate-parameter fixture, independently of the new audit scorer.
++reference_joint <- function(bundle, held_rows) {
++  obs <- state$observations[held_rows, , drop = FALSE]
++  m <- joint_expected_draws(bundle, state, obs$Species); pars <- bundle$posterior
++  replicated <- joint_record_predictive_draws(bundle, state, held_rows, V3_SEED + sum(held_rows))
++  q <- posterior_quantiles(replicated)
++  point <- rep(NA_real_, nrow(obs)); count <- obs$Type == "count"; exact <- obs$Type == "exact"; interval <- obs$Type == "interval"
++  point[count] <- obs$Events[count] / obs$Total[count]; point[exact] <- obs$Exact[exact]
++  ll <- vapply(seq_len(nrow(obs)), function(i) {
++    mu <- m[, i]; phi_count <- exp(pars$log_phi_count)
++    if (obs$Type[i] == "count") {
++      draws <- lchoose(obs$Total[i], obs$Events[i]) + lbeta(obs$Events[i] + phi_count * mu,
++        obs$Total[i] - obs$Events[i] + phi_count * (1 - mu)) - lbeta(phi_count * mu, phi_count * (1 - mu))
++    } else {
++      atom <- pars$rho * mu; internal <- mu * (1 - pars$rho) / (1 - atom)
++      a <- exp(pars$log_phi_ratio) * internal; b <- exp(pars$log_phi_ratio) * (1 - internal)
++      if (obs$Type[i] == "exact") draws <- if (obs$Exact[i] == 1) log(atom) else log1p(-atom) + dbeta(obs$Exact[i], a, b, log = TRUE)
++      else draws <- log1p(-atom) + log(pbeta(obs$Upper[i], a, b) - pbeta(obs$Lower[i], a, b))
++    }
++    log_mean_exp(draws)
++  }, numeric(1))
++  covered <- overlap <- rep(NA, nrow(obs))
++  covered[!interval] <- point[!interval] >= q[1, !interval] & point[!interval] <= q[3, !interval]
++  overlap[interval] <- obs$Upper[interval] >= q[1, interval] & obs$Lower[interval] <= q[3, interval]
++  data.frame(RecordID = obs$RecordID, ExperimentID = obs$ExperimentID, SourceID = obs$SourceID,
++    Species = obs$Species, Type = obs$Type, ObservedHigh = obs$High, ObservedPoint = point,
++    PredictedPrHigh = NA_real_, PredictedPoint = colMeans(m), PredictedPI_lower = q[1, ], PredictedPI_upper = q[3, ],
++    PIWidth = q[3, ] - q[1, ], IntervalCovered = covered, IntervalOverlap = overlap,
++    PIObservationModel = ifelse(count, "beta_binomial_at_observed_Total", "one_inflated_beta_report"),
++    LogPredictiveDensityRaw = ll, OriginalRow = held_rows)
++}
++
++evidence <- list(); receipts <- list(); contexts <- list(); rows_by_route <- list()
++for (route in V3_ROUTES) {
++  held_rows <- which(state$observations$Species %in% panel$Species[5:6] &
++    if (route == "binary") !is.na(state$observations$High) else state$observations$Informative)
++  rows_by_route[[route]] <- held_rows
++  for (model in V3_MODELS) for (tw in V3_TRAIN_WEIGHTINGS) {
++    key <- paste(route, model, tw, sep = "|"); b <- bundles[[key]]
++    z <- if (route == "binary") binary_record_scores(b, state, held_rows) else reference_joint(b, held_rows)
++    ss <- state; ss$blueprints[[blueprint_key(route, model)]] <- b$blueprint
++    status <- assess_applicability(ss, model, route, training_species = train)
++    status_fields <- c("ApplicabilityStatus", "WarningCodes", "AnyMissingInputSite", "AnyMissingPredictorSite",
++      "UnseenEncodedCategory", "UnseenRawResidue", "CombinationSeenInTraining", "FixedEffectEstimable", "Site151OutsideTrainingDomain")
++    z <- cbind(z, status[match(z$Species, status$Species), status_fields, drop = FALSE])
++    z$Design <- "fivefold"; z$Fold <- 1L; z$Route <- route; z$Model <- model; z$TrainWeighting <- tw
++    z$FitKey <- b$key; z$RunPurpose <- "SYNTHETIC_AUDIT_FIXTURE"
++    context <- data.frame(Design = "fivefold", Fold = 1L, Route = route, Model = model,
++      TrainWeighting = tw, RunPurpose = "SYNTHETIC_AUDIT_FIXTURE", stringsAsFactors = FALSE)
++    contexts[[key]] <- context
++    r <- audit_cv_bundle_predictions_v3(b, state, held_rows, z[nrow(z):1, ], context, allow_fixture = TRUE)
++    receipts[[length(receipts) + 1L]] <- r
++    evidence[[length(evidence) + 1L]] <- z
++  }
++}
++receipts <- do.call(rbind, receipts); evidence <- do.call(rbind, evidence); rownames(evidence) <- NULL
++check("16 synthetic posterior strata and all three record types recompute", nrow(receipts) == 48L && all(receipts$Status == "PASS"))
++check("OOF audit covers every held-out row without sampling", sum(receipts$RowsChecked) == nrow(evidence))
++check("R independent raw likelihood matches moderate oracle", max(receipts$MaximumAbsoluteDifference) < 1e-10)
++
++key <- "joint_bb|M1|species_equal"; b <- bundles[[key]]; context <- contexts[[key]]
++z <- subset(evidence, Route == "joint_bb" & Model == "M1" & TrainWeighting == "species_equal")
++bad <- z; bad$PredictedPoint[1L] <- bad$PredictedPoint[1L] + .05
++# Recomputing downstream metrics from the same wrong OOF table succeeds, whereas
++# anchoring its values to posterior draws must reject the wrong primitive.
++check("tampered OOF can still produce internally consistent downstream metrics", is.data.frame(evaluate_evidence(bad, "species_equal", "joint_bb")))
++assert_error("OOF corruption is caught even if downstream metrics were regenerated", audit_cv_bundle_predictions_v3(
++  b, state, rows_by_route$joint_bb, bad, context, allow_fixture = TRUE))
++bad <- z; bad$LogPredictiveDensityRaw[1L] <- bad$LogPredictiveDensityRaw[1L] + .1
++assert_error("raw log-score tampering fails posterior audit", audit_cv_bundle_predictions_v3(b, state, rows_by_route$joint_bb, bad, context, allow_fixture = TRUE))
++bad <- z; bad$PredictedPrHigh[1L] <- .5
++assert_error("inactive joint probability must remain NA", audit_cv_bundle_predictions_v3(b, state, rows_by_route$joint_bb, bad, context, allow_fixture = TRUE))
++bad <- z; bad$ObservedPoint[bad$Type == "interval"] <- .5
++assert_error("interval observations cannot become pseudo point targets", audit_cv_bundle_predictions_v3(b, state, rows_by_route$joint_bb, bad, context, allow_fixture = TRUE))
++bad <- z; bad$PIObservationModel[1L] <- "one_inflated_beta_report"
++assert_error("count predictive distribution label cannot be changed", audit_cv_bundle_predictions_v3(b, state, rows_by_route$joint_bb, bad, context, allow_fixture = TRUE))
++bad <- z; bad$RecordID[1L] <- bad$RecordID[2L]
++assert_error("duplicate OOF records are rejected", audit_cv_bundle_predictions_v3(b, state, rows_by_route$joint_bb, bad, context, allow_fixture = TRUE))
++assert_error("fixture posterior cannot pass without explicit fixture opt-in", audit_cv_bundle_predictions_v3(b, state, rows_by_route$joint_bb, z, context))
++bad_state <- state; bad_state$encoded$M1_Site3[1L] <- "MISSING"
++assert_error("stale encoded state is rejected", audit_cv_bundle_predictions_v3(b, bad_state, rows_by_route$joint_bb, z, context, allow_fixture = TRUE))
++
++full <- external_prediction_table(state, bundles, state$sites)
++full_receipts <- list()
++for (key in names(bundles)) {
++  b <- bundles[[key]]; context <- contexts[[key]]; context$Design <- "full"; context$Fold <- NA_integer_
++  z <- subset(full, Route == b$route & Model == b$model & TrainWeighting == b$train_weighting)
++  full_receipts[[length(full_receipts) + 1L]] <- audit_full_bundle_predictions_v3(b, state, z[nrow(z):1, ], context, allow_fixture = TRUE)
++}
++full_receipts <- do.call(rbind, full_receipts)
++check("every panel row is recomputed for every route/model/training fixture", sum(full_receipts$RowsChecked) == 96L && all(full_receipts$Status == "PASS"))
++b <- bundles[["joint_bb|M1|species_equal"]]; context <- contexts[["joint_bb|M1|species_equal"]]
++z <- subset(full, Route == "joint_bb" & Model == "M1" & TrainWeighting == "species_equal")
++bad <- z; bad$Point[1L] <- bad$Point[1L] + .05
++assert_error("wrong full-panel posterior mean is rejected", audit_full_bundle_predictions_v3(b, state, bad, context, allow_fixture = TRUE))
++bad <- z; bad$PI_lower[1L] <- bad$PI_lower[1L] + .01
++assert_error("wrong full-panel predictive interval is rejected", audit_full_bundle_predictions_v3(b, state, bad, context, allow_fixture = TRUE))
++bad <- z; bad$Species[1L] <- bad$Species[2L]
++assert_error("duplicated full-panel species is rejected", audit_full_bundle_predictions_v3(b, state, bad, context, allow_fixture = TRUE))
++
++model_table <- do.call(rbind, lapply(V3_EVAL_WEIGHTINGS, function(w) compare_evidence_models(evidence, w)))
++training_table <- do.call(rbind, lapply(V3_EVAL_WEIGHTINGS, function(w) compare_training_methods(evidence, w)))
++comparison_receipts <- verify_comparison_outputs_v3(evidence, model_table, training_table, designs = "fivefold")
++check("small-grid model/training comparisons include exact keys and recomputed values", identical(comparison_receipts$RowsChecked, c(24L, 16L)))
++assert_error("missing model comparison key is rejected", validate_comparison_grid_v3(model_table[-1L, ], training_table, designs = "fivefold"))
++assert_error("duplicated training comparison key is rejected", validate_comparison_grid_v3(model_table, rbind(training_table, training_table[1L, ]), designs = "fivefold"))
++bad <- training_table; bad$ModelA[1L] <- "record_equal"
++assert_error("reversed/incorrect comparison identity is rejected", validate_comparison_grid_v3(model_table, bad, designs = "fivefold"))
++bad <- model_table; bad$Difference[1L] <- bad$Difference[1L] + .1
++assert_error("comparison value tampering is rejected after grid validation", verify_comparison_outputs_v3(evidence, bad, training_table, designs = "fivefold"))
++# Full production identity universe is 48 + 32 design-level comparisons.
++second <- evidence; second$Design <- "tenfold"; all_designs <- rbind(evidence, second)
++models_full <- do.call(rbind, lapply(V3_EVAL_WEIGHTINGS, function(w) compare_evidence_models(all_designs, w)))
++training_full <- do.call(rbind, lapply(V3_EVAL_WEIGHTINGS, function(w) compare_training_methods(all_designs, w)))
++check("formal comparison universe is 48 plus 32 without fitting", identical(unname(validate_comparison_grid_v3(models_full, training_full)), c(48L, 32L)))
++
++upper_ref <- 100 * log(.6) + log1p(-exp(100 * (log(.5) - log(.6))))
++lower_ref <- 200 * log(.7) + log1p(-exp(200 * (log(.6) - log(.7))))
++check("independent R likelihood handles the old upper-tail counterexample", abs(audit_log_beta_interval_v3(.4, .5, 1, 100) - upper_ref) < 1e-11)
++check("independent R likelihood handles the old lower-tail counterexample", abs(audit_log_beta_interval_v3(.6, .7, 200, 1) - lower_ref) < 1e-11)
++check("fraction-scale quadrature resolves a 1e-12 uniform interval", abs(audit_log_beta_interval_v3(.45, .45 + 1e-12, 1, 1) - log((.45 + 1e-12) - .45)) < 1e-11)
++
++# Numeric/logical NA masks survive CSV roundtrip; integer/double and row names do
++# not trigger false failures, while missing a newly added metric field does.
++roundtrip <- tempfile(fileext = ".csv"); write_csv_atomic(model_table, roundtrip)
++loaded <- read.csv(roundtrip, stringsAsFactors = FALSE)
++check("comparison roundtrip tolerates benign CSV type differences", is.data.frame(verify_comparison_outputs_v3(evidence,
++  loaded[nrow(loaded):1, ], training_table, designs = "fivefold")))
++target <- data.frame(Key = "k", AddedMetric = .12, Inactive = NA_real_)
++bad_target <- target; bad_target$Inactive <- NaN
++assert_error("NaN cannot masquerade as an inactive NA", audit_compare_table_v3(bad_target, target, "Key"))
++assert_error("newly required numeric fields cannot silently disappear", audit_compare_table_v3(target[, c("Key", "Inactive")], target, "Key"))
++
++qd <- quantitative_diagnostics_v32(evidence)
++quantitative_receipts <- verify_quantitative_outputs_v32(evidence, qd$summary, qd$plot_source)
++check("quantitative summaries and sources recompute under shuffled keys", all(verify_quantitative_outputs_v32(evidence,
++  qd$summary[nrow(qd$summary):1, ], qd$plot_source[nrow(qd$plot_source):1, ])$Status == "PASS"))
++bad <- qd$summary; bad$Bias[1L] <- bad$Bias[1L] + .1
++assert_error("quantitative Bias tampering is rejected", verify_quantitative_outputs_v32(evidence, bad, qd$plot_source))
++bad <- qd$plot_source; bad$EvaluationWeight[1L] <- bad$EvaluationWeight[1L] + .1
++assert_error("plot EvaluationWeight tampering is rejected", verify_quantitative_outputs_v32(evidence, qd$summary, bad))
++bad <- qd$plot_source; bad$SignedError[1L] <- bad$SignedError[1L] + .1
++assert_error("plot SignedError tampering is rejected", verify_quantitative_outputs_v32(evidence, qd$summary, bad))
++bad <- qd$summary; bad$PointSpeciesUsed[1L] <- bad$PointSpeciesUsed[1L] + 1L
++assert_error("quantitative support-count tampering is rejected", verify_quantitative_outputs_v32(evidence, bad, qd$plot_source))
++assert_error("missing quantitative plot key is rejected", verify_quantitative_outputs_v32(evidence, qd$summary, qd$plot_source[-1L, ]))
++bad <- qd$summary; bad$Bias <- NULL
++assert_error("missing required Bias field is rejected", verify_quantitative_outputs_v32(evidence, bad, qd$plot_source))
++
++out <- file.path(root, "review", "audit_deterministic")
++dir.create(out, recursive = TRUE, showWarnings = FALSE)
++write_csv_atomic(data.frame(Test = names(checks), Pass = unlist(checks), row.names = NULL), file.path(out, "assertions.csv"))
++write_csv_atomic(receipts, file.path(out, "posterior_to_OOF_receipts.csv"))
++write_csv_atomic(full_receipts, file.path(out, "posterior_to_full_panel_receipts.csv"))
++write_csv_atomic(comparison_receipts, file.path(out, "comparison_receipts.csv"))
++write_csv_atomic(quantitative_receipts, file.path(out, "quantitative_receipts.csv"))
++write_json_atomic(list(status = if (all(unlist(checks))) "PASS_SYNTHETIC_ONLY" else "FAIL", assertions = length(checks),
++  samplers_started = 0L, research_data_fits = 0L, coverage = "synthetic parameter fixtures; 16 CV strata; 16 full-panel strata; negative tampering tests"),
++  file.path(out, "audit_test_status.json"))
++if (!all(unlist(checks))) stop("prediction audit regressions failed: ", paste(names(checks)[!unlist(checks)], collapse = "; "))
++cat("PREDICTION_AUDIT_PASS: synthetic fixtures and tampering negatives only; no research fits\n")
+
+diff --git a/v3.2/tests/test_quantitative_artifacts.R b/v3.2/tests/test_quantitative_artifacts.R
+new file mode 100644
+index 0000000..f153442
+--- /dev/null
++++ b/v3.2/tests/test_quantitative_artifacts.R
+@@ -0,0 +1,19 @@
++#!/usr/bin/env Rscript
++script<-sub("^--file=","",grep("^--file=",commandArgs(FALSE),value=TRUE)[1])
++source(file.path(dirname(dirname(script)),"R","bootstrap.R"));root<-resolve_v3_root();load_v3_modules(root)
++receipts<-list()
++for(d in c("unequal_integration","fullgrid_synthetic")) {
++ out<-file.path(root,"review",d,"results")
++ e<-read.csv(file.path(out,"cv_record_predictions.csv"),stringsAsFactors=FALSE)
++ b<-read.csv(file.path(out,"quantitative_bias_summary.csv"),stringsAsFactors=FALSE)
++ p<-read.csv(file.path(out,"quantitative_plot_source.csv"),stringsAsFactors=FALSE)
++ r<-verify_quantitative_outputs_v32(e,b,p);r$Fixture<-d;receipts[[d]]<-r
++ cv<-read.csv(file.path(out,"cv_metrics_summary.csv"),stringsAsFactors=FALSE)
++ cv<-cv[cv$Route=="joint_bb",,drop=FALSE]
++ keys<-c("Design","Route","Model","TrainWeighting","EvalWeighting")
++ fields<-c(keys,"Bias","PointSpeciesUsed","PISpeciesUsed","LogScoreSpeciesUsed")
++ audit_compare_table_v3(b[,fields],cv[,fields],keys,paste(d,"bias_matches_main_CV"))
++}
++write_csv_atomic(do.call(rbind,receipts),file.path(root,"review","quantitative_artifact_receipts.csv"))
++cat("QUANTITATIVE_ARTIFACT_AUDIT_PASS: both synthetic runs; bias/source values and main-CV consistency
++")
+
+diff --git a/v3.2/tests/test_quantitative_diagnostics.R b/v3.2/tests/test_quantitative_diagnostics.R
+new file mode 100644
+index 0000000..68778de
+--- /dev/null
++++ b/v3.2/tests/test_quantitative_diagnostics.R
+@@ -0,0 +1,21 @@
++#!/usr/bin/env Rscript
++script<-sub("^--file=","",grep("^--file=",commandArgs(FALSE),value=TRUE)[1])
++source(file.path(dirname(dirname(script)),"R","bootstrap.R"))
++root<-resolve_v3_root();load_v3_modules(root)
++e<-data.frame(Design="fixture",Fold=c(1,1,2,2),Route="joint_bb",Model="M2",TrainWeighting="record_equal",RecordID=paste0("r",1:4),Species=c("A","A","B","C"),Type=c("count","exact","count","interval"),ObservedPoint=c(.1,.4,.7,NA),PredictedPoint=c(.4,.6,.6,.5),LogPredictiveDensityRaw=-1,PredictedPI_lower=0,PredictedPI_upper=1,PIWidth=1,IntervalCovered=c(TRUE,TRUE,TRUE,NA),FitKey="SYNTHETIC_FIXTURE",RunPurpose="INTEGRATION_TEST_ONLY")
++error<-tryCatch({
++  d<-quantitative_diagnostics_v32(e)
++  stopifnot(nrow(d$plot_source)==6L,nrow(d$summary)==2L,all(d$plot_source$Type!="interval"),all(d$summary$PointRecords==3L),all(d$summary$PointSpeciesUsed==2L))
++  r<-d$summary[d$summary$EvalWeighting=="record_equal",];s<-d$summary[d$summary$EvalWeighting=="species_equal",]
++  stopifnot(abs(r$Bias-2/15)<1e-12,abs(s$Bias-.075)<1e-12)
++  for(ew in V3_EVAL_WEIGHTINGS){z<-d$plot_source[d$plot_source$EvalWeighting==ew,];stopifnot(abs(weighted_mean(z$SignedError,z$EvaluationWeight)-d$summary$Bias[d$summary$EvalWeighting==ew])<1e-12)}
++  d2<-quantitative_diagnostics_v32(e[4:1,]);key<-function(z)paste(z$RecordID,z$EvalWeighting)
++  z<-d2$plot_source[match(key(d$plot_source),key(d2$plot_source)),];stopifnot(isTRUE(all.equal(z$SignedError,d$plot_source$SignedError)),isTRUE(all.equal(z$EvaluationWeight,d$plot_source$EvaluationWeight)))
++  TRUE
++},error=function(err){cat("EXPECTED_OR_ACTUAL_FAILURE:",conditionMessage(err),"\n");FALSE})
++if(!error)stop("quantitative diagnostic regression not satisfied")
++out<-file.path(root,"review","quantitative_plot_fixture")
++write_quantitative_diagnostics_v32(e,file.path(out,"results"),file.path(out,"figures"),test_only=TRUE)
++stopifnot(file.info(file.path(out,"figures","quantitative_predicted_observed.pdf"))$size>1000L)
++write_json_atomic(list(status="PASS_SYNTHETIC_PLOT",source_rows=6,records=3,species=2,interval_excluded=TRUE,bias_record_equal=2/15,bias_species_equal=.075,sign="predicted_minus_observed",input_shuffle_invariant=TRUE),file.path(out,"test_status.json"))
++cat("QUANTITATIVE_PLOT_PASS: signed bias, point-set weights, interval exclusion, shuffled keys, PDF generated\n")
+
+diff --git a/v3.2/tests/test_unequal_integration.R b/v3.2/tests/test_unequal_integration.R
+new file mode 100644
+index 0000000..17416c3
+--- /dev/null
++++ b/v3.2/tests/test_unequal_integration.R
+@@ -0,0 +1,71 @@
++#!/usr/bin/env Rscript
++script<-sub("^--file=","",grep("^--file=",commandArgs(FALSE),value=TRUE)[1])
++source(file.path(dirname(dirname(script)),"R","bootstrap.R"))
++root<-resolve_v3_root();load_v3_modules(root)
++options(warn=1)
++source(file.path(root,"tests","fixtures_v32.R"))
++out<-file.path(root,"review","unequal_integration")
++state<-make_unequal_fixture_v32(out)
++stopifnot(length(unique(table(state$observations$Species)))>1L)
++# Synthetic test configuration is confined to this R process and test output root.
++V3_DESIGN_K<-c(integration=2L);V3_DESIGNS<-"integration"
++allfolds<-data.frame(Species=state$sites$Species,Fold=rep(1:2,each=6L))
++folds<-list(integration=list(binary=allfolds[allfolds$Species%in%state$binary_species,],joint_bb=allfolds))
++ctl<-modifyList(V3_SAMPLING,list(iter=600L,warmup=300L,chains=2L,cores=2L))
++expected<-list()
++for(route in V3_ROUTES)for(fold in 1:2) {
++  active<-if(route=="binary")state$binary_species else state$joint_species
++  tr<-setdiff(active,allfolds$Species[allfolds$Fold==fold])
++  rr<-which(state$observations$Species%in%tr & if(route=="binary")!is.na(state$observations$High) else state$observations$Informative)
++  w1<-build_train_weights(state$observations[rr,,drop=FALSE],"record_equal")
++  w2<-build_train_weights(state$observations[rr,,drop=FALSE],"species_equal")
++  stopifnot(check_weight_contract(w1),check_weight_contract(w2),any(abs(w1$weight-w2$weight)>1e-8))
++  expected[[length(expected)+1L]]<-data.frame(Route=route,Fold=fold,Records=length(rr),Species=length(tr),MaxWeightDifference=max(abs(w1$weight-w2$weight)))
++}
++write_csv_atomic(do.call(rbind,expected),file.path(out,"pre_fit_weight_inequality.csv"))
++# Explicitly isolated interface settings: joint uses shorter, shallower chains.
++# No diagnostic thresholds or formal config are relaxed; all warnings are retained.
++fit_interface<-function(state,route,model,train_species,train_weighting,root,design,fold,stan_path,iter,warmup,chains,cores,seed,force) {
++  previous<-V3_SAMPLING;on.exit({V3_SAMPLING<<-previous},add=TRUE)
++  if(route=="joint_bb") {
++    V3_SAMPLING<<-modifyList(previous,list(adapt_delta=.9,max_treedepth=8L))
++    iter<-300L;warmup<-150L
++  }
++  fit_bundle_v3(state,route,model,train_species,train_weighting,root,design,fold,stan_path,iter,warmup,chains,cores,seed,force)
++}
++ans<-run_cv_v3(state,out,folds,file.path(root,"stan","joint_bb.stan"),iter=ctl$iter,warmup=ctl$warmup,chains=ctl$chains,cores=ctl$cores,models=V3_MODELS,fit_function=fit_interface,diagnostic_gate=FALSE)
++stopifnot(nrow(ans$fold_metrics)==64L,nrow(ans$summary)==32L,!anyDuplicated(names(ans$evidence)),all(ans$evidence$RunPurpose=="INTEGRATION_TEST_ONLY"),all(c("Bias","LogScoreSpeciesUsed","PointSpeciesUsed","PISpeciesUsed")%in%names(ans$summary)))
++receipts<-list();bundles<-list();weight_check<-list()
++for(route in V3_ROUTES)for(model in V3_MODELS)for(tw in V3_TRAIN_WEIGHTINGS)for(fold in 1:2) {
++  b<-readRDS(fit_path_v3(out,route,model,tw,"integration",fold))
++  held<-folds$integration[[route]]$Species[folds$integration[[route]]$Fold==fold]
++  tr<-setdiff(if(route=="binary")state$binary_species else state$joint_species,held)
++  actual_ctl<-if(route=="joint_bb")modifyList(ctl,list(iter=300L,warmup=150L,adapt_delta=.9,max_treedepth=8L)) else ctl
++  spec<-fit_spec_v3(state,route,model,tr,tw,file.path(root,"stan","joint_bb.stan"),actual_ctl,V3_SEED+fold+match(model,V3_MODELS))
++  d<-validate_fitted_bundle_v3(b,spec,FALSE)
++  stopifnot(!any(b$train_species%in%held),setequal(b$train_species,tr))
++  actual_weights<-if(route=="binary")b$data$TrainWeight else b$data$train_weight[b$request$train_rows]
++  wf<-build_train_weights(state$observations[b$request$train_rows,,drop=FALSE],tw)
++  stopifnot(isTRUE(all.equal(actual_weights,wf$weight,tolerance=1e-12)))
++  if(route=="joint_bb")stopifnot(all(b$data$train_weight[-b$request$train_rows]==0),all(b$data$train[-b$request$train_rows]==0))
++  e<-subset(ans$evidence,Route==route&Model==model&TrainWeighting==tw&Fold==fold)
++  if(model=="M3")stopifnot(any(!e$FixedEffectEstimable),any(e$UnseenEncodedCategory))
++  receipts[[length(receipts)+1L]]<-cbind(data.frame(Route=route,Model=model,TrainWeighting=tw,Fold=fold,TrainingWeightVerified=TRUE,HeldOutDisjoint=TRUE),d)
++  weight_check[[length(weight_check)+1L]]<-data.frame(Route=route,Model=model,TrainWeighting=tw,Fold=fold,RecordID=state$observations$RecordID[b$request$train_rows],Weight=actual_weights)
++  bundles[[paste(route,model,tw,fold,sep="|")]]<-b
++}
++write_csv_atomic(do.call(rbind,receipts),file.path(out,"fit_diagnostics.csv"))
++write_csv_atomic(do.call(rbind,weight_check),file.path(out,"verified_training_weights.csv"))
++# Compare both actual branch posteriors on the same held-out species; no requirement that one be better.
++posterior_diffs<-list()
++for(route in V3_ROUTES)for(model in V3_MODELS)for(fold in 1:2) {
++  a<-bundles[[paste(route,model,"record_equal",fold,sep="|")]];b<-bundles[[paste(route,model,"species_equal",fold,sep="|")]]
++  held<-folds$integration[[route]]$Species[folds$integration[[route]]$Fold==fold]
++  pd<-max(abs(colMeans(binary_prediction_draws(a,state,held))-colMeans(binary_prediction_draws(b,state,held))))
++  stopifnot(a$key!=b$key,a$request$weight_hash!=b$request$weight_hash,is.finite(pd))
++  posterior_diffs[[length(posterior_diffs)+1L]]<-data.frame(Route=route,Model=model,Fold=fold,MaxMeanDifference=pd,RecordEqualWeightHash=a$request$weight_hash,SpeciesEqualWeightHash=b$request$weight_hash)
++}
++write_csv_atomic(do.call(rbind,posterior_diffs),file.path(out,"posterior_training_comparison.csv"))
++if(exists("write_quantitative_diagnostics_v32"))write_quantitative_diagnostics_v32(ans$evidence,file.path(out,"results"),file.path(out,"figures"),test_only=TRUE)
++write_json_atomic(list(status="PASS_INTERFACE_ONLY",version=V3_VERSION,purpose="UNBALANCED_SYNTHETIC_DATA_ONLY",actual_fits=32,models=V3_MODELS,routes=V3_ROUTES,train_weightings=V3_TRAIN_WEIGHTINGS,records_by_species=as.list(table(state$observations$Species)),evidence_rows=nrow(ans$evidence),fold_metrics=nrow(ans$fold_metrics),summary_rows=nrow(ans$summary),training_weights_unequal_in_both_folds=TRUE,synthetic_binary_sampling=ctl,synthetic_joint_sampling=modifyList(ctl,list(iter=300L,warmup=150L,adapt_delta=.9,max_treedepth=8L)),diagnostics=as.list(table(do.call(rbind,receipts)$Status)),formal_research_fits=0),file.path(out,"integration_status.json"))
++cat("UNEQUAL_INTEGRATION_PASS: 32 real synthetic fits, Null/M1/M2/M3, binary/joint, unequal species counts; no formal results\n")
+
+diff --git a/v3.2/tests/test_unequal_posterior_audit.R b/v3.2/tests/test_unequal_posterior_audit.R
+new file mode 100644
+index 0000000..7113c36
+--- /dev/null
++++ b/v3.2/tests/test_unequal_posterior_audit.R
+@@ -0,0 +1,44 @@
++#!/usr/bin/env Rscript
++script<-sub("^--file=","",grep("^--file=",commandArgs(FALSE),value=TRUE)[1])
++source(file.path(dirname(dirname(script)),"R","bootstrap.R"))
++root<-resolve_v3_root();load_v3_modules(root)
++options(warn=1)
++out<-file.path(root,"review","unequal_integration")
++state<-prepare_state(file.path(out,"input"))
++evidence<-read.csv(file.path(out,"results","cv_record_predictions.csv"),stringsAsFactors=FALSE)
++allfolds<-data.frame(Species=state$sites$Species,Fold=rep(1:2,each=6L))
++receipts<-list();panel_bundles<-list()
++for(route in V3_ROUTES)for(model in V3_MODELS)for(tw in V3_TRAIN_WEIGHTINGS)for(fold in 1:2) {
++ b<-readRDS(fit_path_v3(out,route,model,tw,"integration",fold))
++ held<-allfolds$Species[allfolds$Fold==fold]
++ held_rows<-which(state$observations$Species%in%held & if(route=="binary")!is.na(state$observations$High) else state$observations$Informative)
++ saved<-evidence[evidence$Route==route&evidence$Model==model&evidence$TrainWeighting==tw&evidence$Fold==fold,,drop=FALSE]
++ context<-data.frame(Design="integration",Fold=fold,Route=route,Model=model,TrainWeighting=tw,RunPurpose="INTEGRATION_TEST_ONLY")
++ receipts[[length(receipts)+1L]]<-audit_cv_bundle_predictions_v3(b,state,held_rows,saved,context)
++ changed<-saved
++ if(route=="binary")changed$PredictedPrHigh[1]<-min(1,changed$PredictedPrHigh[1]+.005) else changed$PredictedPoint[1]<-min(1,changed$PredictedPoint[1]+.005)
++ stopifnot(inherits(tryCatch(audit_cv_bundle_predictions_v3(b,state,held_rows,changed,context),error=identity),"error"))
++ changed<-saved;changed$LogPredictiveDensityRaw[1]<-changed$LogPredictiveDensityRaw[1]+.01
++ # Even if the metric summary is recomputed from the forged raw evidence it must fail posterior audit.
++ metrics_from_forgery<-evaluate_evidence(changed,"record_equal",route)
++ stopifnot(is.finite(metrics_from_forgery$MeanLogScore),inherits(tryCatch(audit_cv_bundle_predictions_v3(b,state,held_rows,changed,context),error=identity),"error"))
++ if(fold==1L)panel_bundles[[paste(route,model,tw,sep="|")]]<-b
++}
++# Exercise the entire panel projection code with real synthetic CV posteriors.
++# These are not newly performed full-data fits and are marked accordingly.
++projected<-external_prediction_table(state,panel_bundles,state$sites,allow_diagnostic_warnings=TRUE)
++projected$TestOnly<-TRUE
++write_csv_atomic(projected,file.path(out,"synthetic_panel_projection.csv"))
++for(route in V3_ROUTES)for(model in V3_MODELS)for(tw in V3_TRAIN_WEIGHTINGS) {
++ b<-panel_bundles[[paste(route,model,tw,sep="|")]]
++ saved<-projected[projected$Route==route&projected$Model==model&projected$TrainWeighting==tw,,drop=FALSE]
++ ctx<-data.frame(Design="synthetic_panel_projection_from_CV",Fold=1L,Route=route,Model=model,TrainWeighting=tw,RunPurpose="INTEGRATION_TEST_ONLY")
++ receipts[[length(receipts)+1L]]<-audit_full_bundle_predictions_v3(b,state,saved,ctx)
++ changed<-saved;changed$Point[1]<-changed$Point[1]+.001
++ stopifnot(inherits(tryCatch(audit_full_bundle_predictions_v3(b,state,changed,ctx),error=identity),"error"))
++}
++r<-do.call(rbind,receipts)
++stopifnot(all(r$Status=="PASS"),all(c("count","exact","interval")%in%r$RecordType[r$Route=="joint_bb"]))
++write_csv_atomic(r,file.path(out,"posterior_recompute_receipts.csv"))
++write_json_atomic(list(status="PASS_REAL_SYNTHETIC_POSTERIOR_AUDIT",fits_reopened=32,full_panel_projection_strata=16,raw_rows_recomputed=sum(r$RowsChecked[r$Check=="posterior_to_OOF"]),panel_rows_recomputed=sum(r$RowsChecked[r$Check=="posterior_to_full_panel"]),max_absolute_error=max(r$MaximumAbsoluteDifference),tampered_prediction_cases=48,tampered_logscore_cases=32,source="fitted_posteriors_plus_current_synthetic_inputs; independent_R_raw_likelihood",formal_research_fits=0),file.path(out,"posterior_audit_status.json"))
++cat("UNEQUAL_POSTERIOR_AUDIT_PASS: raw OOF/full panel values reproduced from real synthetic fitted posteriors; forged rows rejected\n")
+
+diff --git a/v3.2/tests/test_v32_fullgrid_synthetic.R b/v3.2/tests/test_v32_fullgrid_synthetic.R
+new file mode 100644
+index 0000000..60c8d6c
+--- /dev/null
++++ b/v3.2/tests/test_v32_fullgrid_synthetic.R
+@@ -0,0 +1,48 @@
++#!/usr/bin/env Rscript
++script<-sub("^--file=","",grep("^--file=",commandArgs(FALSE),value=TRUE)[1])
++source(file.path(dirname(dirname(script)),"R","bootstrap.R"))
++root<-resolve_v3_root();load_v3_modules(root)
++source(file.path(root,"tests","fixtures_v32.R"))
++out<-file.path(root,"review","fullgrid_synthetic");state<-make_unequal_fixture_v32(out)
++folds<-make_fold_tables_v3(state,output_dir=file.path(out,"results"))
++fit_fake<-function(state,route,model,train_species,train_weighting,root,design,fold,stan_path,iter,warmup,chains,cores,seed,force) {
++ list(route=route,model=model,train_weighting=train_weighting,train_species=train_species,
++  blueprint=make_design_blueprint(state$encoded,train_species,model),key=paste(route,model,train_weighting,design,fold),diagnostics=data.frame(Status="PASS"))
++}
++score_fake<-function(bundle,state,held_rows) {
++ o<-state$observations[held_rows,];point<-o$Type%in%c("count","exact")
++ y<-ifelse(o$Type=="count",o$Events/o$Total,o$Exact)
++ pred<-rep(.35+.05*match(bundle$model,V3_MODELS),nrow(o))
++ data.frame(RecordID=o$RecordID,Species=o$Species,Type=o$Type,ObservedHigh=o$High,
++   ObservedPoint=if(bundle$route=="binary")NA_real_ else y,
++   PredictedPrHigh=if(bundle$route=="binary")pred else NA_real_,
++   PredictedPoint=if(bundle$route=="joint_bb")pred else NA_real_,
++   PredictedPI_lower=0,PredictedPI_upper=1,PIWidth=1,IntervalCovered=ifelse(point,TRUE,NA),
++   LogPredictiveDensityRaw=log(.5)+.01*match(bundle$model,V3_MODELS),OriginalRow=held_rows)
++}
++env<-new.env(parent=.GlobalEnv);env$binary_record_scores<-env$joint_record_scores<-score_fake
++runner<-run_cv_v3;environment(runner)<-env
++ans<-runner(state,out,folds,NULL,fit_function=fit_fake,diagnostic_gate=FALSE)
++stopifnot(nrow(ans$fold_metrics)==480L,nrow(ans$summary)==64L)
++need<-c("LogScoreSpeciesUsed","PointSpeciesUsed","PISpeciesUsed","Bias")
++stopifnot(all(need%in%names(ans$fold_metrics)),all(need%in%names(ans$summary)))
++q<-subset(ans$summary,Route=="joint_bb")
++stopifnot(all(q$LogScoreSpeciesUsed==12L),all(q$PointSpeciesUsed==11L),all(q$PISpeciesUsed==11L),all(is.finite(q$Bias)))
++for(i in seq_len(nrow(q))) {
++ row<-q[i,];e<-subset(ans$evidence,Route==row$Route&Design==row$Design&Model==row$Model&TrainWeighting==row$TrainWeighting)
++ direct<-evaluate_evidence(e,row$EvalWeighting,row$Route)
++ stopifnot(abs(direct$Bias-row$Bias)<1e-12)
++}
++V3_COMPARISON_BOOTSTRAP<-50L # only speed for deterministic orchestration fixture
++postprocess_v3(out,ans$evidence)
++a<-read.csv(file.path(out,"results","model_vs_null.csv"));b<-read.csv(file.path(out,"results","training_method_comparisons.csv"))
++stopifnot(nrow(a)==48L,nrow(b)==32L)
++if(exists("verify_comparison_outputs_v3"))verify_comparison_outputs_v3(ans$evidence,a,b)
++d<-read.csv(file.path(out,"results","quantitative_bias_summary.csv"));stopifnot(nrow(d)==32L)
++keys<-c("Design","Route","Model","TrainWeighting","EvalWeighting")
++match_key<-function(z)do.call(paste,c(z[,keys],sep="|"))
++d<-d[match(match_key(q),match_key(d)),]
++stopifnot(max(abs(d$Bias-q$Bias))<1e-12)
++write_quantitative_diagnostics_v32(ans$evidence,file.path(out,"results"),file.path(out,"figures"),test_only=TRUE)
++write_json_atomic(list(status="PASS_SYNTHETIC_MOCK_FULLGRID",cv_tasks=240,OOFRows=nrow(ans$evidence),FoldMetrics=480,SummaryRows=64,ModelComparisons=48,TrainingComparisons=32,QuantitativeBiasRows=32,LogScoreSpecies=12,PointSpecies=11,PISpecies=11,formal_research_fits=0),file.path(out,"test_status.json"))
++cat("FULLGRID_SYNTHETIC_PASS: 240 mock tasks; 480/64/48/32 keys; metric support and bias propagated\n")
+
+diff --git a/v3.2/tests/test_v32_metrics.R b/v3.2/tests/test_v32_metrics.R
+new file mode 100644
+index 0000000..b50b6bb
+--- /dev/null
++++ b/v3.2/tests/test_v32_metrics.R
+@@ -0,0 +1,31 @@
++#!/usr/bin/env Rscript
++script<-sub("^--file=","",grep("^--file=",commandArgs(FALSE),value=TRUE)[1])
++source(file.path(dirname(dirname(script)),"R","bootstrap.R"))
++root<-resolve_v3_root();load_v3_modules(root)
++checks<-list()
++check<-function(label,expr){ok<-tryCatch(isTRUE(force(expr)),error=function(e)FALSE);checks[[label]]<<-ok;cat(if(ok)"PASS" else "FAIL",label,"\n")}
++x<-data.frame(Species=c("A","A","B"));wr<-build_train_weights(x,"record_equal");ws<-build_train_weights(x,"species_equal")
++check("3.2 valid record-equal unbalanced species accepted",check_weight_contract(wr))
++check("3.2 valid species-equal accepted",check_weight_contract(ws))
++bad<-wr;bad$weight<-c(.5,1,1.5);check("3.2 wrong record weights rejected",!check_weight_contract(bad))
++bad<-ws;bad$weight<-c(.5,1,1.5);check("3.2 species total alone insufficient if within-species weights unequal",!check_weight_contract(bad))
++bad<-wr;bad$Weighting[1]<-"species_equal";check("3.2 mixed weighting labels rejected",!check_weight_contract(bad))
++bad<-wr;bad$Weighting<-NULL;check("3.2 missing weighting rejected",!check_weight_contract(bad))
++bad<-wr;bad$Species[1]<-NA;check("3.2 missing species rejected",!check_weight_contract(bad))
++bad<-ws;bad$weight[1]<-Inf;check("3.2 nonfinite weights rejected",!check_weight_contract(bad))
++e<-data.frame(RecordID=paste0("r",1:4),Route="joint_bb",Species=c("A","A","B","C"),Type=c("count","exact","count","interval"),ObservedPoint=c(.1,.4,.7,NA),PredictedPoint=c(.4,.6,.6,.4),
++ LogPredictiveDensityRaw=c(-1,-2,-3,-4),PredictedPI_lower=0,PredictedPI_upper=1,PIWidth=1,IntervalCovered=c(TRUE,TRUE,TRUE,NA))
++r<-evaluate_evidence(e,"record_equal","joint_bb");s<-evaluate_evidence(e,"species_equal","joint_bb")
++check("3.3 distinct 3 logscore species / 2 point and PI species",r$LogScoreSpeciesUsed==3L&&r$PointSpeciesUsed==2L&&r$PISpeciesUsed==2L)
++check("3.3 records and species both exposed",r$LogScoreRecordsUsed==4L&&r$PointRecords==3L&&r$PIRecords==3L)
++check("7.3 record bias is mean(predicted-observed)",abs(r$Bias-(.3+.2-.1)/3)<1e-12)
++check("7.3 species bias weights within valid point subset",abs(s$Bias-((.3+.2)/2-.1)/2)<1e-12)
++check("7.3 bias positive means overprediction",r$Bias>0&&s$Bias>0)
++only<-evaluate_evidence(e[4,,drop=FALSE],"species_equal","joint_bb")
++check("3.3 interval-only has no fabricated point species",only$PointSpeciesUsed==0L&&only$PISpeciesUsed==0L&&is.na(only$Bias))
++b<-data.frame(Route="binary",Species=c("A","B"),ObservedHigh=c(0,1),PredictedPrHigh=c(.2,.8),LogPredictiveDensityRaw=log(.8))
++bm<-evaluate_evidence(b,"record_equal","binary")
++check("binary species counts and quantitative NA are explicit",bm$LogScoreSpeciesUsed==2L&&bm$PointSpeciesUsed==0L&&bm$PISpeciesUsed==0L&&is.na(bm$Bias))
++jsonlite::write_json(checks,file.path(root,"review","v32_metric_checks.json"),pretty=TRUE,auto_unbox=TRUE)
++if(!all(unlist(checks)))stop("v3.2 metric regressions failed: ",paste(names(checks)[!unlist(checks)],collapse=", "))
++cat("V32_METRICS_PASS\n")

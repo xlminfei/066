@@ -1,0 +1,5 @@
+"Check","RowsChecked","ColumnsChecked","MaximumAbsoluteDifference","Status","Fixture"
+"quantitative_bias_recomputed",16,13,4.5102810375397e-17,"PASS","unequal_integration"
+"quantitative_plot_source_recomputed",1120,15,2.66453525910038e-15,"PASS","unequal_integration"
+"quantitative_bias_recomputed",32,13,4.85722573273506e-17,"PASS","fullgrid_synthetic"
+"quantitative_plot_source_recomputed",2240,15,2.66453525910038e-15,"PASS","fullgrid_synthetic"

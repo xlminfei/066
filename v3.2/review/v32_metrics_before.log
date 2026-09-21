@@ -1,0 +1,17 @@
+FAIL 3.2 valid record-equal unbalanced species accepted 
+PASS 3.2 valid species-equal accepted 
+FAIL 3.2 wrong record weights rejected 
+FAIL 3.2 species total alone insufficient if within-species weights unequal 
+PASS 3.2 mixed weighting labels rejected 
+PASS 3.2 missing weighting rejected 
+FAIL 3.2 missing species rejected 
+PASS 3.2 nonfinite weights rejected 
+FAIL 3.3 distinct 3 logscore species / 2 point and PI species 
+FAIL 3.3 records and species both exposed 
+FAIL 7.3 record bias is mean(predicted-observed) 
+FAIL 7.3 species bias weights within valid point subset 
+FAIL 7.3 bias positive means overprediction 
+FAIL 3.3 interval-only has no fabricated point species 
+FAIL binary species counts and quantitative NA are explicit 
+Error: v3.2 metric regressions failed: 3.2 valid record-equal unbalanced species accepted, 3.2 wrong record weights rejected, 3.2 species total alone insufficient if within-species weights unequal, 3.2 missing species rejected, 3.3 distinct 3 logscore species / 2 point and PI species, 3.3 records and species both exposed, 7.3 record bias is mean(predicted-observed), 7.3 species bias weights within valid point subset, 7.3 bias positive means overprediction, 3.3 interval-only has no fabricated point species, binary species counts and quantitative NA are explicit
+Execution halted

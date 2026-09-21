@@ -1,0 +1,28 @@
+{
+  "purpose": "synthetic_parameter_numerical_test_only",
+  "docker_image": "ratio-analysis-v3-1-local:validated",
+  "docker_image_id": "sha256:6c1e0e2737e6a03dda651cb8bbe1daaa908b5c852c44106a974345335ebc97be",
+  "after_completed_utc": "2026-09-21 14:53:35 UTC",
+  "files": [
+    {
+      "path": "stan/joint_bb.stan",
+      "sha256": "39978126d67c49b7a80258ee1696e346cd94a3f50b6ae0c8d30aba6bd95b2317"
+    },
+    {
+      "path": "tests/test_beta_intervals.R",
+      "sha256": "6017e0f26fd9ee7d677a4e27596f4953cb7512af94c0a4625460d883bcc43db2"
+    },
+    {
+      "path": "tests/stan/beta_interval_before.stan",
+      "sha256": "ed5cf0761285718fec900cbb8a4d219621d53b960753e333d98b0b761eb05964"
+    },
+    {
+      "path": "tests/stan/beta_interval_probe_before.stan",
+      "sha256": "feaebe6d936d9e4d006dae7899640754e3b777f017ee98550291c9515d5cee38"
+    },
+    {
+      "path": "tests/stan/beta_interval_probe_after.stan",
+      "sha256": "a1ffdbcf0e513295674b838a0a4ba47fae9706490c19018de33285165eb4aa7a"
+    }
+  ]
+}

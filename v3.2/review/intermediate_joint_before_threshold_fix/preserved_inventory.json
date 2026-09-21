@@ -1,0 +1,19 @@
+{
+  "directories": [
+    "joint_bb__M1__record_equal__integration_f1",
+    "joint_bb__M1__record_equal__integration_f2",
+    "joint_bb__M1__species_equal__integration_f1",
+    "joint_bb__M1__species_equal__integration_f2",
+    "joint_bb__M2__record_equal__integration_f1",
+    "joint_bb__M2__record_equal__integration_f2",
+    "joint_bb__M2__species_equal__integration_f1",
+    "joint_bb__M2__species_equal__integration_f2",
+    "joint_bb__M3__record_equal__integration_f1",
+    "joint_bb__Null__record_equal__integration_f1",
+    "joint_bb__Null__record_equal__integration_f2",
+    "joint_bb__Null__species_equal__integration_f1",
+    "joint_bb__Null__species_equal__integration_f2"
+  ],
+  "reason": "preserve old code/sampling attempts before regenerating affected joint cache",
+  "formal_fits": 0
+}

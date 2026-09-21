@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "old_collision_reproduced": true,
+  "M1_M2_stan_code_identical": true,
+  "M1_M2_columns_different": true,
+  "template_keys_different": true,
+  "same_formula_different_weights_reuses_template": true
+}

@@ -1,0 +1,17 @@
+{
+  "image_tag": "ratio-analysis-v3-2-local:validated",
+  "image_id": "sha256:9626ebfc06c92409610af4d623626766345689fe47b30567e2e6c9c891bc16a8",
+  "base_image": "rocker/r2u:24.04@sha256:dc2a96c3b368969635c25c177c64514ba8e37cf2259dd3584de7c33520191d92",
+  "R": "4.6.1",
+  "rstan": "2.32.7",
+  "locked_nonbase_packages": 79,
+  "renv_lock_sha256": "77ce8ad056d4c0cc816e33e9815afdc44fd7a2728257fb64b6c61c90b19b4de2",
+  "dockerfile_sha256": "aa7223734e4b83b7baeff97f1627c247e53cf7ec6e3e5249b5b8eac576f4816d",
+  "restore_script_sha256": "a0ad16e90fdf783233650a8514c8ca0fb3781765014ca808661bbb37ef2abea2",
+  "stan_sha256": "db491633fcadbd940c2e78280660a47cd037f46795c9dce2258f9381c4571430",
+  "build_receipt": "review/environment_build_retry_exit.json",
+  "environment_test_receipt": "review/environment_test_final_exit.json",
+  "historical_beta_test_image": "ratio-analysis-v3-1-local:validated",
+  "historical_beta_test_image_id": "sha256:6c1e0e2737e6a03dda651cb8bbe1daaa908b5c852c44106a974345335ebc97be",
+  "beta_evidence_reuse_reason": "Same R4.6.1/rstan2.32.7 and locked package versions; final Stan hash independently recorded. New synthetic integration/posterior tests executed in new v3.2 image."
+}

@@ -1,0 +1,34 @@
+Untracing function "install.packages" in package "utils"
+All locked package versions already match; no restoration required.
+ENVIRONMENT_VERIFIED: R 4.6.1; 79 locked packages; complete Depends/Imports/LinkingTo closure.
+RUNTIME_LIBRARY=/usr/local/lib/R/site-library 
+PASS: all 79 locked package versions, full dependency closure, and model namespaces.
+- Lockfile written to "/tmp/Rtmp87fu8V/file16d7acd96.lock".
+NULL
+PASS: altered R-version lock is rejected.
+- Lockfile written to "/tmp/Rtmp87fu8V/file113c42c02.lock".
+NULL
+PASS: missing transitive dependency in lock is rejected.
+The following package(s) will be updated:
+
+# RSPM -----------------------------------------------------------------------
+- abind   [* -> 1.4-8]
+
+# Downloading packages -------------------------------------------------------
+[?25l
+  (0/1) Downloading: abind                                                      
+                                                                                
+[32m✔[0m abind 1.4-8                              [22 kB in 3.9s]
+
+                                                                                
+Successfully downloaded 1 package in 4.2 seconds.
+
+# Installing packages --------------------------------------------------------
+
+  (0/1) Installing: abind                                                       
+  (0/1) Installing: abind                                                       
+                                                                                
+[32m✔[0m abind 1.4-8                              [built from source in 2.2s]
+Successfully installed 1 package in 2.4 seconds.
+[?25hPASS: pinned RSPM/CRAN dependency restored into a clean temporary library.
+ENVIRONMENT_TESTS_PASS; no MCMC was run.

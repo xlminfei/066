@@ -1,0 +1,5 @@
+{
+  "exit": 1,
+  "baseline": "2dcb479/v3.1",
+  "expected": "regression failures before patch"
+}

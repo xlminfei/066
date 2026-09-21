@@ -1,0 +1,3 @@
+"Case","Mode","Stan","Reference","AbsError"
+"beta_1_100_upper","a_b",-Inf,-51.0825623886737,Inf
+"beta_200_1_lower","a_b",-Inf,-71.3349887877465,Inf

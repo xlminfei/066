@@ -1,0 +1,17 @@
+"Design","Model","TrainWeighting","PredictedPoint.min","PredictedPoint.max","PredictedPoint.unique"
+"fivefold","M1","record_equal",0.45,0.45,1.00
+"tenfold","M1","record_equal",0.45,0.45,1.00
+"fivefold","M2","record_equal",0.50,0.50,1.00
+"tenfold","M2","record_equal",0.50,0.50,1.00
+"fivefold","M3","record_equal",0.55,0.55,1.00
+"tenfold","M3","record_equal",0.55,0.55,1.00
+"fivefold","Null","record_equal",0.40,0.40,1.00
+"tenfold","Null","record_equal",0.40,0.40,1.00
+"fivefold","M1","species_equal",0.45,0.45,1.00
+"tenfold","M1","species_equal",0.45,0.45,1.00
+"fivefold","M2","species_equal",0.50,0.50,1.00
+"tenfold","M2","species_equal",0.50,0.50,1.00
+"fivefold","M3","species_equal",0.55,0.55,1.00
+"tenfold","M3","species_equal",0.55,0.55,1.00
+"fivefold","Null","species_equal",0.40,0.40,1.00
+"tenfold","Null","species_equal",0.40,0.40,1.00

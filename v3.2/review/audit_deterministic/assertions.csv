@@ -1,0 +1,36 @@
+"Test","Pass"
+"16 synthetic posterior strata and all three record types recompute",TRUE
+"OOF audit covers every held-out row without sampling",TRUE
+"R independent raw likelihood matches moderate oracle",TRUE
+"tampered OOF can still produce internally consistent downstream metrics",TRUE
+"OOF corruption is caught even if downstream metrics were regenerated",TRUE
+"raw log-score tampering fails posterior audit",TRUE
+"inactive joint probability must remain NA",TRUE
+"interval observations cannot become pseudo point targets",TRUE
+"count predictive distribution label cannot be changed",TRUE
+"duplicate OOF records are rejected",TRUE
+"fixture posterior cannot pass without explicit fixture opt-in",TRUE
+"stale encoded state is rejected",TRUE
+"every panel row is recomputed for every route/model/training fixture",TRUE
+"wrong full-panel posterior mean is rejected",TRUE
+"wrong full-panel predictive interval is rejected",TRUE
+"duplicated full-panel species is rejected",TRUE
+"small-grid model/training comparisons include exact keys and recomputed values",TRUE
+"missing model comparison key is rejected",TRUE
+"duplicated training comparison key is rejected",TRUE
+"reversed/incorrect comparison identity is rejected",TRUE
+"comparison value tampering is rejected after grid validation",TRUE
+"formal comparison universe is 48 plus 32 without fitting",TRUE
+"independent R likelihood handles the old upper-tail counterexample",TRUE
+"independent R likelihood handles the old lower-tail counterexample",TRUE
+"fraction-scale quadrature resolves a 1e-12 uniform interval",TRUE
+"comparison roundtrip tolerates benign CSV type differences",TRUE
+"NaN cannot masquerade as an inactive NA",TRUE
+"newly required numeric fields cannot silently disappear",TRUE
+"quantitative summaries and sources recompute under shuffled keys",TRUE
+"quantitative Bias tampering is rejected",TRUE
+"plot EvaluationWeight tampering is rejected",TRUE
+"plot SignedError tampering is rejected",TRUE
+"quantitative support-count tampering is rejected",TRUE
+"missing quantitative plot key is rejected",TRUE
+"missing required Bias field is rejected",TRUE

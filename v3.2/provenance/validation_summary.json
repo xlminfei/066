@@ -1,0 +1,159 @@
+{
+  "status": "SCOPED_CODE_AND_SYNTHETIC_TESTS_PASSED",
+  "formal_status": "NOT_RUN_BY_USER_INSTRUCTION",
+  "baseline": "2dcb4795712674cf793098049ab206fdb4ed8cee",
+  "implemented_review_items": [
+    "3.1",
+    "3.2",
+    "3.3",
+    "3.4",
+    "3.5",
+    "7.3"
+  ],
+  "not_added": [
+    "7.1",
+    "7.2"
+  ],
+  "inherited_assertions": 52,
+  "metric_assertions": 15,
+  "prediction_audit_assertions": 35,
+  "R_files_parsed": 54,
+  "beta_main": {
+    "stage": "after",
+    "status": "PASS",
+    "purpose": "synthetic_parameter_evaluation_only_no_posterior_sampling",
+    "value_count": 289,
+    "gradient_count": 583,
+    "value_pass": true,
+    "gradient_pass": true,
+    "max_value_abs_error": 9.0949e-13,
+    "max_value_scaled_error": 1.3711e-13,
+    "value_tolerance": "abs(error)<1e-10*max(1,abs(reference_logprob))",
+    "max_gradient_scaled_error": 3.9863e-8,
+    "rstan_version": "2.32.7",
+    "R_version": "R version 4.6.1 (2026-06-24)",
+    "production_source": "/work/stan/joint_bb.stan",
+    "created_utc": "2026-09-21 16:14:10 UTC"
+  },
+  "beta_switches": {
+    "status": "PASS",
+    "purpose": "synthetic_branch_switch_evaluation_only_reused_compiled_model_no_MCMC",
+    "value_count": 24,
+    "gradient_count": 48,
+    "cross_switch_pairs": 12,
+    "value_pass": true,
+    "gradient_pass": true,
+    "change_pass": true,
+    "max_value_abs_error": 3.2879e-11,
+    "max_value_scaled_error": 3.1924e-12,
+    "value_tolerance": "abs(error)<1e-10*max(1,abs(reference_logprob))",
+    "max_gradient_scaled_error": 3.8181e-11,
+    "max_value_change_residual": 3.2879e-11,
+    "max_value_change_scaled_residual": 3.1862e-12,
+    "max_gradient_change_scaled_residual": 6.5501e-11,
+    "production_sha256": "db491633fcadbd940c2e78280660a47cd037f46795c9dce2258f9381c4571430",
+    "probe_rds_sha256": "5fc1f77f424b52c92e110454184ce044a43f4be95183c75ca45c450d7f8acb98",
+    "created_utc": "2026-09-21 16:20:15 UTC",
+    "limitation": "Numerical two-sided agreement at listed finite offsets, not proof of exact floating-point continuity or arbitrary double-precision inputs. Lentz denominator-clamp activation not tested."
+  },
+  "synthetic_integration": {
+    "status": "PASS_INTERFACE_ONLY",
+    "version": "ratio_analysis_v3_2_weighted_20260921",
+    "purpose": "UNBALANCED_SYNTHETIC_DATA_ONLY",
+    "actual_fits": 32,
+    "models": [
+      "Null",
+      "M1",
+      "M2",
+      "M3"
+    ],
+    "routes": [
+      "binary",
+      "joint_bb"
+    ],
+    "train_weightings": [
+      "record_equal",
+      "species_equal"
+    ],
+    "records_by_species": {
+      "synthetic_01": 4,
+      "synthetic_02": 5,
+      "synthetic_03": 6,
+      "synthetic_04": 7,
+      "synthetic_05": 8,
+      "synthetic_06": 9,
+      "synthetic_07": 10,
+      "synthetic_08": 11,
+      "synthetic_09": 12,
+      "synthetic_10": 13,
+      "synthetic_11": 14,
+      "synthetic_12": 15
+    },
+    "evidence_rows": 1472,
+    "fold_metrics": 64,
+    "summary_rows": 32,
+    "training_weights_unequal_in_both_folds": true,
+    "synthetic_binary_sampling": {
+      "chains": 2,
+      "cores": 2,
+      "iter": 600,
+      "warmup": 300,
+      "adapt_delta": 0.99,
+      "max_treedepth": 12
+    },
+    "synthetic_joint_sampling": {
+      "chains": 2,
+      "cores": 2,
+      "iter": 300,
+      "warmup": 150,
+      "adapt_delta": 0.9,
+      "max_treedepth": 8
+    },
+    "diagnostics": {
+      "FAILED_DIAGNOSTICS": 32
+    },
+    "formal_research_fits": 0
+  },
+  "synthetic_posterior_audit": {
+    "status": "PASS_REAL_SYNTHETIC_POSTERIOR_AUDIT",
+    "fits_reopened": 32,
+    "full_panel_projection_strata": 16,
+    "raw_rows_recomputed": 1472,
+    "panel_rows_recomputed": 192,
+    "max_absolute_error": 8.4377e-15,
+    "tampered_prediction_cases": 48,
+    "tampered_logscore_cases": 32,
+    "source": "fitted_posteriors_plus_current_synthetic_inputs; independent_R_raw_likelihood",
+    "formal_research_fits": 0
+  },
+  "synthetic_mock_grid": {
+    "status": "PASS_SYNTHETIC_MOCK_FULLGRID",
+    "cv_tasks": 240,
+    "OOFRows": 2944,
+    "FoldMetrics": 480,
+    "SummaryRows": 64,
+    "ModelComparisons": 48,
+    "TrainingComparisons": 32,
+    "QuantitativeBiasRows": 32,
+    "LogScoreSpecies": 12,
+    "PointSpecies": 11,
+    "PISpecies": 11,
+    "formal_research_fits": 0
+  },
+  "final_regression_exit": {
+    "purpose": "REGRESSION_ONLY_NO_RESEARCH_FITS",
+    "ended_at": "2026-09-22T01:15:28.9096250+08:00",
+    "exit_code": 0
+  },
+  "derived_checks_exit": {
+    "parse_exit_code": 0,
+    "quantitative_artifacts_exit_code": 0,
+    "ended_at": "2026-09-22T01:18:37.2958895+08:00"
+  },
+  "environment_exit": {
+    "purpose": "ENVIRONMENT_ONLY_NO_MCMC",
+    "exit_code": 0,
+    "ended_at": "2026-09-22T00:38:16.1403609+08:00"
+  },
+  "limitation": "All32 short-chain synthetic fits FAILED_DIAGNOSTICS under unchanged formal thresholds; interface and recomputation acceptance only."
+}

@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "purpose": "synthetic_branch_switch_evaluation_only_reused_compiled_model_no_MCMC",
+  "value_count": 24,
+  "gradient_count": 48,
+  "cross_switch_pairs": 12,
+  "value_pass": true,
+  "gradient_pass": true,
+  "change_pass": true,
+  "max_value_abs_error": 3.2879e-11,
+  "max_value_scaled_error": 3.1924e-12,
+  "value_tolerance": "abs(error)<1e-10*max(1,abs(reference_logprob))",
+  "max_gradient_scaled_error": 3.8181e-11,
+  "max_value_change_residual": 3.2879e-11,
+  "max_value_change_scaled_residual": 3.1862e-12,
+  "max_gradient_change_scaled_residual": 6.5501e-11,
+  "production_sha256": "db491633fcadbd940c2e78280660a47cd037f46795c9dce2258f9381c4571430",
+  "probe_rds_sha256": "5fc1f77f424b52c92e110454184ce044a43f4be95183c75ca45c450d7f8acb98",
+  "created_utc": "2026-09-21 16:20:15 UTC",
+  "limitation": "Numerical two-sided agreement at listed finite offsets, not proof of exact floating-point continuity or arbitrary double-precision inputs. Lentz denominator-clamp activation not tested."
+}

@@ -1,0 +1,15 @@
+{
+  "stage": "before",
+  "status": "FAIL_REPRODUCED",
+  "purpose": "synthetic_parameter_evaluation_only_no_posterior_sampling",
+  "value_count": 2,
+  "gradient_count": 4,
+  "value_pass": false,
+  "gradient_pass": false,
+  "max_value_abs_error": "Inf",
+  "max_gradient_scaled_error": 1,
+  "rstan_version": "2.32.7",
+  "R_version": "R version 4.6.1 (2026-06-24)",
+  "production_source": "/work/tests/stan/beta_interval_before.stan",
+  "created_utc": "2026-09-21 14:37:00 UTC"
+}

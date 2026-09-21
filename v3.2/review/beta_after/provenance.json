@@ -1,0 +1,38 @@
+{
+  "purpose": "synthetic_parameter_numerical_tests_only_no_MCMC",
+  "docker_image": "ratio-analysis-v3-1-local:validated",
+  "docker_image_id": "sha256:6c1e0e2737e6a03dda651cb8bbe1daaa908b5c852c44106a974345335ebc97be",
+  "main_completed_utc": "2026-09-21 16:14:10 UTC",
+  "switches_completed_utc": "2026-09-21 16:20:15 UTC",
+  "value_contract": "abs(error)<1e-10*max(1,abs(reference_logprob))",
+  "files": [
+    {
+      "path": "stan/joint_bb.stan",
+      "sha256": "db491633fcadbd940c2e78280660a47cd037f46795c9dce2258f9381c4571430"
+    },
+    {
+      "path": "tests/test_beta_intervals.R",
+      "sha256": "9707413f23ad479466ba2c87512213993f7dca98ee5a340856c128224a7e1bb7"
+    },
+    {
+      "path": "tests/test_beta_switches.R",
+      "sha256": "df7c7868228b00f64d85e10145538bc5056b71a11abeb63b3f2920a0aed6d170"
+    },
+    {
+      "path": "tests/stan/beta_interval_before.stan",
+      "sha256": "ed5cf0761285718fec900cbb8a4d219621d53b960753e333d98b0b761eb05964"
+    },
+    {
+      "path": "tests/stan/beta_interval_probe_before.stan",
+      "sha256": "feaebe6d936d9e4d006dae7899640754e3b777f017ee98550291c9515d5cee38"
+    },
+    {
+      "path": "tests/stan/beta_interval_probe_after.stan",
+      "sha256": "58fe290b393c0cfdb167bc6117f28c85ed2ea82385444d2edcc626461e84dd63"
+    },
+    {
+      "path": "tests/stan/beta_interval_probe_after.rds",
+      "sha256": "5fc1f77f424b52c92e110454184ce044a43f4be95183c75ca45c450d7f8acb98"
+    }
+  ]
+}

@@ -1,0 +1,2 @@
+Error: BUG_REPRODUCED: same Stan code and different brms columns need distinct template keys
+Execution halted
