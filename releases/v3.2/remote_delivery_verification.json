@@ -1,0 +1,600 @@
+{
+  "status": "PUBLISHED_ALL80_ASSETS_PUBLICLY_VERIFIED",
+  "release_id": 393166329,
+  "tag": "v3.2",
+  "url": "https://github.com/xlminfei/066/releases/tag/v3.2",
+  "published_at": "2026-09-21T18:04:27Z",
+  "code_commit": "e7066c0dae21624cb7ac66cf9801163ed68b1593",
+  "assets_verified": 80,
+  "source_files": 280,
+  "native_RDS_files": 47,
+  "source_files_omitted": 0,
+  "archive_bytes": 1007573820,
+  "archive_sha256": "51a577666046b0d667534485df6626a61bd59c35f589b46d7e0ddb553ce83c56",
+  "formal_research_fits": 0,
+  "assets": [
+    {
+      "name": "figure_metadata_final.json",
+      "bytes": 405,
+      "sha256": "cbfeae00ac273d008af96d6ae5d332ca12094f4a17bf4a6bdf55437e69792baf",
+      "server_digest": "sha256:cbfeae00ac273d008af96d6ae5d332ca12094f4a17bf4a6bdf55437e69792baf",
+      "url": "https://github.com/xlminfei/066/releases/download/v3.2/figure_metadata_final.json"
+    },
+    {
+      "name": "figure_metadata_final.txt",
+      "bytes": 533,
+      "sha256": "488121654630259a59286a2e24d0f04b419a843b95574b77da744f75608ab590",
+      "server_digest": "sha256:488121654630259a59286a2e24d0f04b419a843b95574b77da744f75608ab590",
+      "url": "https://github.com/xlminfei/066/releases/download/v3.2/figure_metadata_final.txt"
+    },
+    {
+      "name": "git_snapshot_validation.json",
+      "bytes": 525,
+      "sha256": "caf36625f47089ba71c6bdabb5eb95505b36c80d2547e4bbdb68add340c55815",
+      "server_digest": "sha256:caf36625f47089ba71c6bdabb5eb95505b36c80d2547e4bbdb68add340c55815",
+      "url": "https://github.com/xlminfei/066/releases/download/v3.2/git_snapshot_validation.json"
+    },
+    {
+      "name": "manage_v3_2_release.ps1",
+      "bytes": 3140,
+      "sha256": "4aaa61f65c818c49382d005e982fb1aa990868af280e63bf133a90809c5ca5b6",
+      "server_digest": "sha256:4aaa61f65c818c49382d005e982fb1aa990868af280e63bf133a90809c5ca5b6",
+      "url": "https://github.com/xlminfei/066/releases/download/v3.2/manage_v3_2_release.ps1"
+    },
+    {
+      "name": "README_archive_zh.md",
+      "bytes": 670,
+      "sha256": "c8ad3fcb8f69b67f6146b88a7242e49d93e8c45581c1971d2edac491a5c9efc9",
+      "server_digest": "sha256:c8ad3fcb8f69b67f6146b88a7242e49d93e8c45581c1971d2edac491a5c9efc9",
+      "url": "https://github.com/xlminfei/066/releases/download/v3.2/README_archive_zh.md"
+    },
+    {
+      "name": "RELEASE_NOTES_v3_2.md",
+      "bytes": 2066,
+      "sha256": "4de342eee11ba1c31f87e58d9c6d2a7346ae316d87efbe8c2d9c16cf04fe0a61",
+      "server_digest": "sha256:4de342eee11ba1c31f87e58d9c6d2a7346ae316d87efbe8c2d9c16cf04fe0a61",
+      "url": "https://github.com/xlminfei/066/releases/download/v3.2/RELEASE_NOTES_v3_2.md"
+    },
+    {
+      "name": "remote_primary_assets_verified.json",
+      "bytes": 37564,
+      "sha256": "fb6d775db7ceeb2520c55d2b1a1caac007ebd620c3016321a5d27440cfe33380",
+      "server_digest": "sha256:fb6d775db7ceeb2520c55d2b1a1caac007ebd620c3016321a5d27440cfe33380",
+      "url": "https://github.com/xlminfei/066/releases/download/v3.2/remote_primary_assets_verified.json"
+    },
+    {
+      "name": "restore_local_validation.log",
+      "bytes": 3382,
+      "sha256": "ded4cab91e88e347215a13bd631a771bafe2517c465fe5981b01e2780e050452",
+      "server_digest": "sha256:ded4cab91e88e347215a13bd631a771bafe2517c465fe5981b01e2780e050452",
+      "url": "https://github.com/xlminfei/066/releases/download/v3.2/restore_local_validation.log"
+    },
+    {
+      "name": "restore_v3_2_evidence.py",
+      "bytes": 4231,
+      "sha256": "70adc141abc716e33aa9f4a5144debe1f16a8be0b36491a914d43d009519548c",
+      "server_digest": "sha256:70adc141abc716e33aa9f4a5144debe1f16a8be0b36491a914d43d009519548c",
+      "url": "https://github.com/xlminfei/066/releases/download/v3.2/restore_v3_2_evidence.py"
+    },
+    {
+      "name": "source_whitespace_check.log",
+      "bytes": 286,
+      "sha256": "8a82e904eed6c759132c660c8b3d14e7181556f51389579ab4d442c1e06b46bf",
+      "server_digest": "sha256:8a82e904eed6c759132c660c8b3d14e7181556f51389579ab4d442c1e06b46bf",
+      "url": "https://github.com/xlminfei/066/releases/download/v3.2/source_whitespace_check.log"
+    },
+    {
+      "name": "v3.2-complete-evidence.build.json",
+      "bytes": 393,
+      "sha256": "a3daef014869fbb40502ed2852afb1dfecbfc3173b5d81a7e6e0721180c8e670",
+      "server_digest": "sha256:a3daef014869fbb40502ed2852afb1dfecbfc3173b5d81a7e6e0721180c8e670",
+      "url": "https://github.com/xlminfei/066/releases/download/v3.2/v3.2-complete-evidence.build.json"
+    },
+    {
+      "name": "v3.2-complete-evidence.files.csv",
+      "bytes": 52985,
+      "sha256": "a1ebb8116344523e0fd7075d5efdd3d4e4455bafd5293aecec04bff06711f241",
+      "server_digest": "sha256:a1ebb8116344523e0fd7075d5efdd3d4e4455bafd5293aecec04bff06711f241",
+      "url": "https://github.com/xlminfei/066/releases/download/v3.2/v3.2-complete-evidence.files.csv"
+    },
+    {
+      "name": "v3.2-complete-evidence.parts.json",
+      "bytes": 12029,
+      "sha256": "f0bd5d1c325dfb7000fce7ee45820e786b3ae4b5ca6e378fd9e827afda7eef29",
+      "server_digest": "sha256:f0bd5d1c325dfb7000fce7ee45820e786b3ae4b5ca6e378fd9e827afda7eef29",
+      "url": "https://github.com/xlminfei/066/releases/download/v3.2/v3.2-complete-evidence.parts.json"
+    },
+    {
+      "name": "v3.2-complete-evidence.parts.json.sha256",
+      "bytes": 100,
+      "sha256": "c6a9d2616009b35197cad312090eb4511818aab360706d81ed0afc544978f851",
+      "server_digest": "sha256:c6a9d2616009b35197cad312090eb4511818aab360706d81ed0afc544978f851",
+      "url": "https://github.com/xlminfei/066/releases/download/v3.2/v3.2-complete-evidence.parts.json.sha256"
+    },
+    {
+      "name": "v3.2-complete-evidence.zip.part001",
+      "bytes": 16777216,
+      "sha256": "2b8d13ceddcb3a66e3754027430314e97fe74ce0f6644b88e888d92225ff3849",
+      "server_digest": "sha256:2b8d13ceddcb3a66e3754027430314e97fe74ce0f6644b88e888d92225ff3849",
+      "url": "https://github.com/xlminfei/066/releases/download/v3.2/v3.2-complete-evidence.zip.part001"
+    },
+    {
+      "name": "v3.2-complete-evidence.zip.part002",
+      "bytes": 16777216,
+      "sha256": "b95c068892041d77e6baadcec93e2faa55a3a52bdca4fd07c39059efb922dbb8",
+      "server_digest": "sha256:b95c068892041d77e6baadcec93e2faa55a3a52bdca4fd07c39059efb922dbb8",
+      "url": "https://github.com/xlminfei/066/releases/download/v3.2/v3.2-complete-evidence.zip.part002"
+    },
+    {
+      "name": "v3.2-complete-evidence.zip.part003",
+      "bytes": 16777216,
+      "sha256": "7ee0fc2f556ce487a3d4cae2c8cbaa6cac53167d5d23c359b41398f607a9b759",
+      "server_digest": "sha256:7ee0fc2f556ce487a3d4cae2c8cbaa6cac53167d5d23c359b41398f607a9b759",
+      "url": "https://github.com/xlminfei/066/releases/download/v3.2/v3.2-complete-evidence.zip.part003"
+    },
+    {
+      "name": "v3.2-complete-evidence.zip.part004",
+      "bytes": 16777216,
+      "sha256": "8b6b72a4870112095d2df91ca3bb252c589f486d7c5e0e51a3989de4028ec0e1",
+      "server_digest": "sha256:8b6b72a4870112095d2df91ca3bb252c589f486d7c5e0e51a3989de4028ec0e1",
+      "url": "https://github.com/xlminfei/066/releases/download/v3.2/v3.2-complete-evidence.zip.part004"
+    },
+    {
+      "name": "v3.2-complete-evidence.zip.part005",
+      "bytes": 16777216,
+      "sha256": "8567b190e5d0a9cd02e596f8bc0a20c8f9a5135428ef610b82b74b2205f1c447",
+      "server_digest": "sha256:8567b190e5d0a9cd02e596f8bc0a20c8f9a5135428ef610b82b74b2205f1c447",
+      "url": "https://github.com/xlminfei/066/releases/download/v3.2/v3.2-complete-evidence.zip.part005"
+    },
+    {
+      "name": "v3.2-complete-evidence.zip.part006",
+      "bytes": 16777216,
+      "sha256": "9280c3e7633f94cf0419556801736cb72fecd9bd629f2dc72e53c9e418a1c071",
+      "server_digest": "sha256:9280c3e7633f94cf0419556801736cb72fecd9bd629f2dc72e53c9e418a1c071",
+      "url": "https://github.com/xlminfei/066/releases/download/v3.2/v3.2-complete-evidence.zip.part006"
+    },
+    {
+      "name": "v3.2-complete-evidence.zip.part007",
+      "bytes": 16777216,
+      "sha256": "4c8d0dea7c1d6a5f2d58e2c411796d4319602654750a140af8200bda150d3400",
+      "server_digest": "sha256:4c8d0dea7c1d6a5f2d58e2c411796d4319602654750a140af8200bda150d3400",
+      "url": "https://github.com/xlminfei/066/releases/download/v3.2/v3.2-complete-evidence.zip.part007"
+    },
+    {
+      "name": "v3.2-complete-evidence.zip.part008",
+      "bytes": 16777216,
+      "sha256": "27006ae2fe8e82588c6e45b0e02cd9f7728bd5c24f07dca1ae9f373daa5ba673",
+      "server_digest": "sha256:27006ae2fe8e82588c6e45b0e02cd9f7728bd5c24f07dca1ae9f373daa5ba673",
+      "url": "https://github.com/xlminfei/066/releases/download/v3.2/v3.2-complete-evidence.zip.part008"
+    },
+    {
+      "name": "v3.2-complete-evidence.zip.part009",
+      "bytes": 16777216,
+      "sha256": "51f1a3c34757758219684aebc46fb6e5542f3b5a38d5b611744d63dfaad792af",
+      "server_digest": "sha256:51f1a3c34757758219684aebc46fb6e5542f3b5a38d5b611744d63dfaad792af",
+      "url": "https://github.com/xlminfei/066/releases/download/v3.2/v3.2-complete-evidence.zip.part009"
+    },
+    {
+      "name": "v3.2-complete-evidence.zip.part010",
+      "bytes": 16777216,
+      "sha256": "39cd821cd13e13b93fbd0541f8f02a3bc0b4d0611428c0ff2e5a0ebab761df66",
+      "server_digest": "sha256:39cd821cd13e13b93fbd0541f8f02a3bc0b4d0611428c0ff2e5a0ebab761df66",
+      "url": "https://github.com/xlminfei/066/releases/download/v3.2/v3.2-complete-evidence.zip.part010"
+    },
+    {
+      "name": "v3.2-complete-evidence.zip.part011",
+      "bytes": 16777216,
+      "sha256": "e3824ef3ced43f8e667e98c55554593b30d8982980569bc5586d089f374a189e",
+      "server_digest": "sha256:e3824ef3ced43f8e667e98c55554593b30d8982980569bc5586d089f374a189e",
+      "url": "https://github.com/xlminfei/066/releases/download/v3.2/v3.2-complete-evidence.zip.part011"
+    },
+    {
+      "name": "v3.2-complete-evidence.zip.part012",
+      "bytes": 16777216,
+      "sha256": "20db46c20d94a07234794708f293b75d48ff33634d9fbd1092f9b93abb88ca87",
+      "server_digest": "sha256:20db46c20d94a07234794708f293b75d48ff33634d9fbd1092f9b93abb88ca87",
+      "url": "https://github.com/xlminfei/066/releases/download/v3.2/v3.2-complete-evidence.zip.part012"
+    },
+    {
+      "name": "v3.2-complete-evidence.zip.part013",
+      "bytes": 16777216,
+      "sha256": "6ede80f833a7f9bad8c4a59153b3ec4c1d68aada2c8cebd4b95e9b2c28a25dc4",
+      "server_digest": "sha256:6ede80f833a7f9bad8c4a59153b3ec4c1d68aada2c8cebd4b95e9b2c28a25dc4",
+      "url": "https://github.com/xlminfei/066/releases/download/v3.2/v3.2-complete-evidence.zip.part013"
+    },
+    {
+      "name": "v3.2-complete-evidence.zip.part014",
+      "bytes": 16777216,
+      "sha256": "860913e736fccbf7716115caec7264d4bce0ad285f2b50c2626dc70c6a08c884",
+      "server_digest": "sha256:860913e736fccbf7716115caec7264d4bce0ad285f2b50c2626dc70c6a08c884",
+      "url": "https://github.com/xlminfei/066/releases/download/v3.2/v3.2-complete-evidence.zip.part014"
+    },
+    {
+      "name": "v3.2-complete-evidence.zip.part015",
+      "bytes": 16777216,
+      "sha256": "f6dd28da4f9f2f306b1ba758a0a7783b541380863f022d22dca3f1b26ef6b4d0",
+      "server_digest": "sha256:f6dd28da4f9f2f306b1ba758a0a7783b541380863f022d22dca3f1b26ef6b4d0",
+      "url": "https://github.com/xlminfei/066/releases/download/v3.2/v3.2-complete-evidence.zip.part015"
+    },
+    {
+      "name": "v3.2-complete-evidence.zip.part016",
+      "bytes": 16777216,
+      "sha256": "d11edd9d227bc4f01d473616a8549c964dff36c9712521d201e72973c791ea14",
+      "server_digest": "sha256:d11edd9d227bc4f01d473616a8549c964dff36c9712521d201e72973c791ea14",
+      "url": "https://github.com/xlminfei/066/releases/download/v3.2/v3.2-complete-evidence.zip.part016"
+    },
+    {
+      "name": "v3.2-complete-evidence.zip.part017",
+      "bytes": 16777216,
+      "sha256": "83d1859dfcb55f53abf100b430c6156bd68c6a50713d928f052d31776e0afb01",
+      "server_digest": "sha256:83d1859dfcb55f53abf100b430c6156bd68c6a50713d928f052d31776e0afb01",
+      "url": "https://github.com/xlminfei/066/releases/download/v3.2/v3.2-complete-evidence.zip.part017"
+    },
+    {
+      "name": "v3.2-complete-evidence.zip.part018",
+      "bytes": 16777216,
+      "sha256": "23c9f3dadb14e3ed49f359b04bcfa17567c31741b62fef3d9bdf5848c3a37e43",
+      "server_digest": "sha256:23c9f3dadb14e3ed49f359b04bcfa17567c31741b62fef3d9bdf5848c3a37e43",
+      "url": "https://github.com/xlminfei/066/releases/download/v3.2/v3.2-complete-evidence.zip.part018"
+    },
+    {
+      "name": "v3.2-complete-evidence.zip.part019",
+      "bytes": 16777216,
+      "sha256": "f450c6b91057e06d5e5f1e05be8176311528a7563e91d24ffb9e0d18c3853113",
+      "server_digest": "sha256:f450c6b91057e06d5e5f1e05be8176311528a7563e91d24ffb9e0d18c3853113",
+      "url": "https://github.com/xlminfei/066/releases/download/v3.2/v3.2-complete-evidence.zip.part019"
+    },
+    {
+      "name": "v3.2-complete-evidence.zip.part020",
+      "bytes": 16777216,
+      "sha256": "a0613123706e7a60a9ec9fd28bd616cb58b0abbe7f554d7825a32d09b9273aae",
+      "server_digest": "sha256:a0613123706e7a60a9ec9fd28bd616cb58b0abbe7f554d7825a32d09b9273aae",
+      "url": "https://github.com/xlminfei/066/releases/download/v3.2/v3.2-complete-evidence.zip.part020"
+    },
+    {
+      "name": "v3.2-complete-evidence.zip.part021",
+      "bytes": 16777216,
+      "sha256": "0f0e168151dd74b66a633076bd833bc7347d5bd92d7a9ebb9027fbc26facde50",
+      "server_digest": "sha256:0f0e168151dd74b66a633076bd833bc7347d5bd92d7a9ebb9027fbc26facde50",
+      "url": "https://github.com/xlminfei/066/releases/download/v3.2/v3.2-complete-evidence.zip.part021"
+    },
+    {
+      "name": "v3.2-complete-evidence.zip.part022",
+      "bytes": 16777216,
+      "sha256": "9209c71df2d79077a1a34acc045311cd2483c6552d5a4cbc6fa2703891d34ea0",
+      "server_digest": "sha256:9209c71df2d79077a1a34acc045311cd2483c6552d5a4cbc6fa2703891d34ea0",
+      "url": "https://github.com/xlminfei/066/releases/download/v3.2/v3.2-complete-evidence.zip.part022"
+    },
+    {
+      "name": "v3.2-complete-evidence.zip.part023",
+      "bytes": 16777216,
+      "sha256": "f7484d99db3a73fa3bfd1469f65ab11b6ecd600384941c0f33383aa8566afc5c",
+      "server_digest": "sha256:f7484d99db3a73fa3bfd1469f65ab11b6ecd600384941c0f33383aa8566afc5c",
+      "url": "https://github.com/xlminfei/066/releases/download/v3.2/v3.2-complete-evidence.zip.part023"
+    },
+    {
+      "name": "v3.2-complete-evidence.zip.part024",
+      "bytes": 16777216,
+      "sha256": "ef4eaefd496982de862a31c1bae6ea925e73a2c1b1965327076fd1b4bff8b609",
+      "server_digest": "sha256:ef4eaefd496982de862a31c1bae6ea925e73a2c1b1965327076fd1b4bff8b609",
+      "url": "https://github.com/xlminfei/066/releases/download/v3.2/v3.2-complete-evidence.zip.part024"
+    },
+    {
+      "name": "v3.2-complete-evidence.zip.part025",
+      "bytes": 16777216,
+      "sha256": "a3704a4eb23088a5ff2c2312f893465eaa693373ccbe1bffaae965c4ecf7fab2",
+      "server_digest": "sha256:a3704a4eb23088a5ff2c2312f893465eaa693373ccbe1bffaae965c4ecf7fab2",
+      "url": "https://github.com/xlminfei/066/releases/download/v3.2/v3.2-complete-evidence.zip.part025"
+    },
+    {
+      "name": "v3.2-complete-evidence.zip.part026",
+      "bytes": 16777216,
+      "sha256": "96b124afbb04de37d1ebb07dc7a7590d6dc80ca5a11a25038b1891a95fc63fd8",
+      "server_digest": "sha256:96b124afbb04de37d1ebb07dc7a7590d6dc80ca5a11a25038b1891a95fc63fd8",
+      "url": "https://github.com/xlminfei/066/releases/download/v3.2/v3.2-complete-evidence.zip.part026"
+    },
+    {
+      "name": "v3.2-complete-evidence.zip.part027",
+      "bytes": 16777216,
+      "sha256": "67c77363e6419b5599f8c9dbbfa3c4ba17b1560168f45570b26b149d312ee1d2",
+      "server_digest": "sha256:67c77363e6419b5599f8c9dbbfa3c4ba17b1560168f45570b26b149d312ee1d2",
+      "url": "https://github.com/xlminfei/066/releases/download/v3.2/v3.2-complete-evidence.zip.part027"
+    },
+    {
+      "name": "v3.2-complete-evidence.zip.part028",
+      "bytes": 16777216,
+      "sha256": "25bd1ef529d398411383b8f8efdb9fabbb193d78b1458ba922ed7044fb58ee4c",
+      "server_digest": "sha256:25bd1ef529d398411383b8f8efdb9fabbb193d78b1458ba922ed7044fb58ee4c",
+      "url": "https://github.com/xlminfei/066/releases/download/v3.2/v3.2-complete-evidence.zip.part028"
+    },
+    {
+      "name": "v3.2-complete-evidence.zip.part029",
+      "bytes": 16777216,
+      "sha256": "e934eff88d7b7ef9daa361122bbbcd132cbca8e49f5bb65e4a33ec1f6d085755",
+      "server_digest": "sha256:e934eff88d7b7ef9daa361122bbbcd132cbca8e49f5bb65e4a33ec1f6d085755",
+      "url": "https://github.com/xlminfei/066/releases/download/v3.2/v3.2-complete-evidence.zip.part029"
+    },
+    {
+      "name": "v3.2-complete-evidence.zip.part030",
+      "bytes": 16777216,
+      "sha256": "e6093ff2acea77b783d69a3da62b3e3414309a9c73b143812eea2ad0ab8a3cc5",
+      "server_digest": "sha256:e6093ff2acea77b783d69a3da62b3e3414309a9c73b143812eea2ad0ab8a3cc5",
+      "url": "https://github.com/xlminfei/066/releases/download/v3.2/v3.2-complete-evidence.zip.part030"
+    },
+    {
+      "name": "v3.2-complete-evidence.zip.part031",
+      "bytes": 16777216,
+      "sha256": "3831cc430f8b32c6492c4296fbcbbddb56fa24ea601e9e76bcb16da60112a677",
+      "server_digest": "sha256:3831cc430f8b32c6492c4296fbcbbddb56fa24ea601e9e76bcb16da60112a677",
+      "url": "https://github.com/xlminfei/066/releases/download/v3.2/v3.2-complete-evidence.zip.part031"
+    },
+    {
+      "name": "v3.2-complete-evidence.zip.part032",
+      "bytes": 16777216,
+      "sha256": "0d8cd690eac74ecb5a1bff4c9ae086c5c3f71707619d827e4b34bbc3c1c5c6ec",
+      "server_digest": "sha256:0d8cd690eac74ecb5a1bff4c9ae086c5c3f71707619d827e4b34bbc3c1c5c6ec",
+      "url": "https://github.com/xlminfei/066/releases/download/v3.2/v3.2-complete-evidence.zip.part032"
+    },
+    {
+      "name": "v3.2-complete-evidence.zip.part033",
+      "bytes": 16777216,
+      "sha256": "a960dd46fc0c3c7427a4d4c64b438a1c82f1d6856bf8c2bd0ee94d11a544367d",
+      "server_digest": "sha256:a960dd46fc0c3c7427a4d4c64b438a1c82f1d6856bf8c2bd0ee94d11a544367d",
+      "url": "https://github.com/xlminfei/066/releases/download/v3.2/v3.2-complete-evidence.zip.part033"
+    },
+    {
+      "name": "v3.2-complete-evidence.zip.part034",
+      "bytes": 16777216,
+      "sha256": "36a5f39fd079c2088324898a9ebda9ede3bdfd4a38eefd2748ec9809d3fdda73",
+      "server_digest": "sha256:36a5f39fd079c2088324898a9ebda9ede3bdfd4a38eefd2748ec9809d3fdda73",
+      "url": "https://github.com/xlminfei/066/releases/download/v3.2/v3.2-complete-evidence.zip.part034"
+    },
+    {
+      "name": "v3.2-complete-evidence.zip.part035",
+      "bytes": 16777216,
+      "sha256": "fb29c590191804bc59974ca765153ea226b5582dbf1caa4236e76923dc684beb",
+      "server_digest": "sha256:fb29c590191804bc59974ca765153ea226b5582dbf1caa4236e76923dc684beb",
+      "url": "https://github.com/xlminfei/066/releases/download/v3.2/v3.2-complete-evidence.zip.part035"
+    },
+    {
+      "name": "v3.2-complete-evidence.zip.part036",
+      "bytes": 16777216,
+      "sha256": "310f9995a3500f89eef76231418efdb32cdb3961e5a23dfc0994d6f9e267f726",
+      "server_digest": "sha256:310f9995a3500f89eef76231418efdb32cdb3961e5a23dfc0994d6f9e267f726",
+      "url": "https://github.com/xlminfei/066/releases/download/v3.2/v3.2-complete-evidence.zip.part036"
+    },
+    {
+      "name": "v3.2-complete-evidence.zip.part037",
+      "bytes": 16777216,
+      "sha256": "80d8e2f82a07874c1737303fb5f87ab9b74f1a0c30a89d9257f781fdb1fd6a3d",
+      "server_digest": "sha256:80d8e2f82a07874c1737303fb5f87ab9b74f1a0c30a89d9257f781fdb1fd6a3d",
+      "url": "https://github.com/xlminfei/066/releases/download/v3.2/v3.2-complete-evidence.zip.part037"
+    },
+    {
+      "name": "v3.2-complete-evidence.zip.part038",
+      "bytes": 16777216,
+      "sha256": "6b8fa8772160dc83348d80505e93846c423ff83f5aadecb1105078f97124c25b",
+      "server_digest": "sha256:6b8fa8772160dc83348d80505e93846c423ff83f5aadecb1105078f97124c25b",
+      "url": "https://github.com/xlminfei/066/releases/download/v3.2/v3.2-complete-evidence.zip.part038"
+    },
+    {
+      "name": "v3.2-complete-evidence.zip.part039",
+      "bytes": 16777216,
+      "sha256": "e6c58efc6552b16c912109916b4b9ef7ca4b178e9a997270d8961db55d34a565",
+      "server_digest": "sha256:e6c58efc6552b16c912109916b4b9ef7ca4b178e9a997270d8961db55d34a565",
+      "url": "https://github.com/xlminfei/066/releases/download/v3.2/v3.2-complete-evidence.zip.part039"
+    },
+    {
+      "name": "v3.2-complete-evidence.zip.part040",
+      "bytes": 16777216,
+      "sha256": "4dcef05de85b5740916fa7375f1c979d701f79bd81e3a7627000124a0b3c48c1",
+      "server_digest": "sha256:4dcef05de85b5740916fa7375f1c979d701f79bd81e3a7627000124a0b3c48c1",
+      "url": "https://github.com/xlminfei/066/releases/download/v3.2/v3.2-complete-evidence.zip.part040"
+    },
+    {
+      "name": "v3.2-complete-evidence.zip.part041",
+      "bytes": 16777216,
+      "sha256": "912af3547d25a2ca0c3ac56f666ae9e2fa56913d1a0785d37330606fd9bc7a1d",
+      "server_digest": "sha256:912af3547d25a2ca0c3ac56f666ae9e2fa56913d1a0785d37330606fd9bc7a1d",
+      "url": "https://github.com/xlminfei/066/releases/download/v3.2/v3.2-complete-evidence.zip.part041"
+    },
+    {
+      "name": "v3.2-complete-evidence.zip.part042",
+      "bytes": 16777216,
+      "sha256": "5d1baff8d1db07c95807e15fbcc909e24157f6bdc909df560c61ea97b2febddc",
+      "server_digest": "sha256:5d1baff8d1db07c95807e15fbcc909e24157f6bdc909df560c61ea97b2febddc",
+      "url": "https://github.com/xlminfei/066/releases/download/v3.2/v3.2-complete-evidence.zip.part042"
+    },
+    {
+      "name": "v3.2-complete-evidence.zip.part043",
+      "bytes": 16777216,
+      "sha256": "0b5dda045302e3f7446a1edd633d99c57fa82d83559cd8c3cb2026263a56b6f6",
+      "server_digest": "sha256:0b5dda045302e3f7446a1edd633d99c57fa82d83559cd8c3cb2026263a56b6f6",
+      "url": "https://github.com/xlminfei/066/releases/download/v3.2/v3.2-complete-evidence.zip.part043"
+    },
+    {
+      "name": "v3.2-complete-evidence.zip.part044",
+      "bytes": 16777216,
+      "sha256": "beaf9bd88da527c12ab92e74d3c82563d10f0ef597268d82ab786271e60f9b66",
+      "server_digest": "sha256:beaf9bd88da527c12ab92e74d3c82563d10f0ef597268d82ab786271e60f9b66",
+      "url": "https://github.com/xlminfei/066/releases/download/v3.2/v3.2-complete-evidence.zip.part044"
+    },
+    {
+      "name": "v3.2-complete-evidence.zip.part045",
+      "bytes": 16777216,
+      "sha256": "229dfd2fe24df29b3a6747598dac620e9daa397a3b17d118093407c50a13d982",
+      "server_digest": "sha256:229dfd2fe24df29b3a6747598dac620e9daa397a3b17d118093407c50a13d982",
+      "url": "https://github.com/xlminfei/066/releases/download/v3.2/v3.2-complete-evidence.zip.part045"
+    },
+    {
+      "name": "v3.2-complete-evidence.zip.part046",
+      "bytes": 16777216,
+      "sha256": "3f9a925b5e69dab08324b8afbe3a4ed64df9a42b153249374aae1dc1411f3c75",
+      "server_digest": "sha256:3f9a925b5e69dab08324b8afbe3a4ed64df9a42b153249374aae1dc1411f3c75",
+      "url": "https://github.com/xlminfei/066/releases/download/v3.2/v3.2-complete-evidence.zip.part046"
+    },
+    {
+      "name": "v3.2-complete-evidence.zip.part047",
+      "bytes": 16777216,
+      "sha256": "67f163fe82fd608779cc7516c5c4c42fe7d950f74a70da0429f46828d45984f0",
+      "server_digest": "sha256:67f163fe82fd608779cc7516c5c4c42fe7d950f74a70da0429f46828d45984f0",
+      "url": "https://github.com/xlminfei/066/releases/download/v3.2/v3.2-complete-evidence.zip.part047"
+    },
+    {
+      "name": "v3.2-complete-evidence.zip.part048",
+      "bytes": 16777216,
+      "sha256": "85b810eb35653bb7bdb9095b4416c6650798369113623cfd9eacd1ae5d2675bf",
+      "server_digest": "sha256:85b810eb35653bb7bdb9095b4416c6650798369113623cfd9eacd1ae5d2675bf",
+      "url": "https://github.com/xlminfei/066/releases/download/v3.2/v3.2-complete-evidence.zip.part048"
+    },
+    {
+      "name": "v3.2-complete-evidence.zip.part049",
+      "bytes": 16777216,
+      "sha256": "e198c94728eadc72749f22f9817abff017b115fcc9bf12d80e10b1954b049747",
+      "server_digest": "sha256:e198c94728eadc72749f22f9817abff017b115fcc9bf12d80e10b1954b049747",
+      "url": "https://github.com/xlminfei/066/releases/download/v3.2/v3.2-complete-evidence.zip.part049"
+    },
+    {
+      "name": "v3.2-complete-evidence.zip.part050",
+      "bytes": 16777216,
+      "sha256": "1a74cba8bd4d8e912ed70ea5ed9975fb5d94e4a21ea2d61ba67ab9005f82ed5e",
+      "server_digest": "sha256:1a74cba8bd4d8e912ed70ea5ed9975fb5d94e4a21ea2d61ba67ab9005f82ed5e",
+      "url": "https://github.com/xlminfei/066/releases/download/v3.2/v3.2-complete-evidence.zip.part050"
+    },
+    {
+      "name": "v3.2-complete-evidence.zip.part051",
+      "bytes": 16777216,
+      "sha256": "bc5e1028594098fcf759d6ff2166ff0c7d0017768181e17b39fe5c62039e62ab",
+      "server_digest": "sha256:bc5e1028594098fcf759d6ff2166ff0c7d0017768181e17b39fe5c62039e62ab",
+      "url": "https://github.com/xlminfei/066/releases/download/v3.2/v3.2-complete-evidence.zip.part051"
+    },
+    {
+      "name": "v3.2-complete-evidence.zip.part052",
+      "bytes": 16777216,
+      "sha256": "124360f2367ed1475525e32224b9b53fe327e0752513f44837b72164aaca337b",
+      "server_digest": "sha256:124360f2367ed1475525e32224b9b53fe327e0752513f44837b72164aaca337b",
+      "url": "https://github.com/xlminfei/066/releases/download/v3.2/v3.2-complete-evidence.zip.part052"
+    },
+    {
+      "name": "v3.2-complete-evidence.zip.part053",
+      "bytes": 16777216,
+      "sha256": "69a821eb24c6c068eacd2df8b6f608146d575dc6f7993e054e57a6d565413183",
+      "server_digest": "sha256:69a821eb24c6c068eacd2df8b6f608146d575dc6f7993e054e57a6d565413183",
+      "url": "https://github.com/xlminfei/066/releases/download/v3.2/v3.2-complete-evidence.zip.part053"
+    },
+    {
+      "name": "v3.2-complete-evidence.zip.part054",
+      "bytes": 16777216,
+      "sha256": "bef63a9e238ecb2dad9e0ac073719b126852f63f6a51df37022772d71bbde06b",
+      "server_digest": "sha256:bef63a9e238ecb2dad9e0ac073719b126852f63f6a51df37022772d71bbde06b",
+      "url": "https://github.com/xlminfei/066/releases/download/v3.2/v3.2-complete-evidence.zip.part054"
+    },
+    {
+      "name": "v3.2-complete-evidence.zip.part055",
+      "bytes": 16777216,
+      "sha256": "a64ff4bdff994b03d9c1fb78c29a415de789803d65a6fc75707445024cb4f208",
+      "server_digest": "sha256:a64ff4bdff994b03d9c1fb78c29a415de789803d65a6fc75707445024cb4f208",
+      "url": "https://github.com/xlminfei/066/releases/download/v3.2/v3.2-complete-evidence.zip.part055"
+    },
+    {
+      "name": "v3.2-complete-evidence.zip.part056",
+      "bytes": 16777216,
+      "sha256": "0c91cd48d7454cfd84500415a359be2b0ba290f45ed3ecc5a1f31fffd60b5542",
+      "server_digest": "sha256:0c91cd48d7454cfd84500415a359be2b0ba290f45ed3ecc5a1f31fffd60b5542",
+      "url": "https://github.com/xlminfei/066/releases/download/v3.2/v3.2-complete-evidence.zip.part056"
+    },
+    {
+      "name": "v3.2-complete-evidence.zip.part057",
+      "bytes": 16777216,
+      "sha256": "8f7a539dd8a1ad7c1d4aa8dbcdf1c0ff4049fda3417f7cab98cfc75bff8c963b",
+      "server_digest": "sha256:8f7a539dd8a1ad7c1d4aa8dbcdf1c0ff4049fda3417f7cab98cfc75bff8c963b",
+      "url": "https://github.com/xlminfei/066/releases/download/v3.2/v3.2-complete-evidence.zip.part057"
+    },
+    {
+      "name": "v3.2-complete-evidence.zip.part058",
+      "bytes": 16777216,
+      "sha256": "3a5ac278e329afc32d23df486702a4ff3b9b5057360819f79582bc7cd71472cd",
+      "server_digest": "sha256:3a5ac278e329afc32d23df486702a4ff3b9b5057360819f79582bc7cd71472cd",
+      "url": "https://github.com/xlminfei/066/releases/download/v3.2/v3.2-complete-evidence.zip.part058"
+    },
+    {
+      "name": "v3.2-complete-evidence.zip.part059",
+      "bytes": 16777216,
+      "sha256": "1d8ef3ac3aa49130232c1a5a9be50e8b6d17dcc27a2c47c8173d999267d42ea4",
+      "server_digest": "sha256:1d8ef3ac3aa49130232c1a5a9be50e8b6d17dcc27a2c47c8173d999267d42ea4",
+      "url": "https://github.com/xlminfei/066/releases/download/v3.2/v3.2-complete-evidence.zip.part059"
+    },
+    {
+      "name": "v3.2-complete-evidence.zip.part060",
+      "bytes": 16777216,
+      "sha256": "1e320961421afc1f780982dfe79c58091b06bc3658447cf46bdec4559c52557d",
+      "server_digest": "sha256:1e320961421afc1f780982dfe79c58091b06bc3658447cf46bdec4559c52557d",
+      "url": "https://github.com/xlminfei/066/releases/download/v3.2/v3.2-complete-evidence.zip.part060"
+    },
+    {
+      "name": "v3.2-complete-evidence.zip.part061",
+      "bytes": 940860,
+      "sha256": "51d06d6365b1baea23f2b87e298c0c4031b76cb9776521dd5d5dad283f20217f",
+      "server_digest": "sha256:51d06d6365b1baea23f2b87e298c0c4031b76cb9776521dd5d5dad283f20217f",
+      "url": "https://github.com/xlminfei/066/releases/download/v3.2/v3.2-complete-evidence.zip.part061"
+    },
+    {
+      "name": "v3.2-complete-evidence.zip.sha256",
+      "bytes": 94,
+      "sha256": "80314f6594597917fe595baba79553b1d7096c6e0c6b9938d0cad9d2db2fd1fd",
+      "server_digest": "sha256:80314f6594597917fe595baba79553b1d7096c6e0c6b9938d0cad9d2db2fd1fd",
+      "url": "https://github.com/xlminfei/066/releases/download/v3.2/v3.2-complete-evidence.zip.sha256"
+    },
+    {
+      "name": "v3.2-complete-git-changes.patch",
+      "bytes": 13960960,
+      "sha256": "2751a2f6ec48583dbd9825979c3962038c419d01fb710bc34f27d8ca5cccb894",
+      "server_digest": "sha256:2751a2f6ec48583dbd9825979c3962038c419d01fb710bc34f27d8ca5cccb894",
+      "url": "https://github.com/xlminfei/066/releases/download/v3.2/v3.2-complete-git-changes.patch"
+    },
+    {
+      "name": "v3.2-delivery-execution-evidence.build.json",
+      "bytes": 377,
+      "sha256": "70c15acc0bc1cc1ef22a40fb0a89ffce2840ada6ae40dc3e46c9241091d4d15e",
+      "server_digest": "sha256:70c15acc0bc1cc1ef22a40fb0a89ffce2840ada6ae40dc3e46c9241091d4d15e",
+      "url": "https://github.com/xlminfei/066/releases/download/v3.2/v3.2-delivery-execution-evidence.build.json"
+    },
+    {
+      "name": "v3.2-delivery-execution-evidence.files.csv",
+      "bytes": 21135,
+      "sha256": "918d203623d8cd11e703b75164c44f7d0f40da927e29ffb230c8b272a382f6bc",
+      "server_digest": "sha256:918d203623d8cd11e703b75164c44f7d0f40da927e29ffb230c8b272a382f6bc",
+      "url": "https://github.com/xlminfei/066/releases/download/v3.2/v3.2-delivery-execution-evidence.files.csv"
+    },
+    {
+      "name": "v3.2-delivery-execution-evidence.zip",
+      "bytes": 1102870,
+      "sha256": "6930a38a5db74b2265bf794abd7cb6e25a605287ef374d870d7f4b62a5a05429",
+      "server_digest": "sha256:6930a38a5db74b2265bf794abd7cb6e25a605287ef374d870d7f4b62a5a05429",
+      "url": "https://github.com/xlminfei/066/releases/download/v3.2/v3.2-delivery-execution-evidence.zip"
+    }
+  ],
+  "public_download_checks": [
+    {
+      "name": "v3.2-complete-evidence.zip.part001",
+      "bytes": 16777216,
+      "sha256": "2b8d13ceddcb3a66e3754027430314e97fe74ce0f6644b88e888d92225ff3849",
+      "unauthenticated_download_verified": true
+    },
+    {
+      "name": "v3.2-complete-evidence.zip.part061",
+      "bytes": 940860,
+      "sha256": "51d06d6365b1baea23f2b87e298c0c4031b76cb9776521dd5d5dad283f20217f",
+      "unauthenticated_download_verified": true
+    },
+    {
+      "name": "v3.2-complete-evidence.parts.json",
+      "bytes": 12029,
+      "sha256": "f0bd5d1c325dfb7000fce7ee45820e786b3ae4b5ca6e378fd9e827afda7eef29",
+      "unauthenticated_download_verified": true
+    }
+  ],
+  "checked_at": "2026-09-21T18:12:57.411Z",
+  "method": "Unauthenticated Node fetch; public GitHub metadata for all80 assets and actual byte downloads of first/last parts and manifest",
+  "superseded_check": "The .NET public-download helper stalled and was stopped after independent Node verification passed; no publication/source changes resulted."
+}

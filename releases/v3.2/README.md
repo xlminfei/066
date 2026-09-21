@@ -30,3 +30,15 @@ python restore_v3_2_evidence.py --directory v3.2-complete-data
 32项最终真实合成拟合完成的是接口和后验复算验收；32项短链全部未通过正式诊断阈值，原始诊断表完整保留。复算覆盖1472行OOF及192行合成面板，最大绝对差8.4377e-15。正式16全拟合+240CV仍为NOT_RUN_BY_USER_INSTRUCTION。
 
 快照后的分片清单、恢复脚本、上传收据和Git二进制补丁独立交付，避免归档递归包含自身。v3.2标签固定代码/测试快照；上传收据可通过后续main提交补充，版本代码不因此改变。
+
+## 最终交付验收
+
+[公开交付收据](remote_delivery_verification.json)：Release已发布，80个附件逐个核对GitHub大小/SHA-256；额外匿名下载首片、尾片和清单，实际字节摘要全部一致。233个Git版本文件与本地字节一致，旧版本改动0，见[Git快照核验](git_snapshot_validation.json)。
+
+执行证据补充ZIP包含168个归档/恢复/上传过程文件，包含全部73项主附件上传日志与收据；7个补充附件使最终总数为80。补充ZIP本地逐文件读回通过，目录和摘要见v3.2-delivery-execution-evidence.files.csv及build.json。
+
+发布时按标签读取草稿返回404，改用已确认Release ID完成发布；.NET匿名下载检查等待过长，停止后改用Node匿名获取公开清单并下载字节，全部通过。这些过程及脚本作为独立后续证据保留，不更改固定v3.2源代码标签和完整归档。
+
+归档内figures/pdfinfo.txt保留的是方形坐标修整前的中间检查；当前最终PDF为4页，实际大小/SHA和元信息见figure_metadata_final.json及txt。图片数值不因该版式修整改变。
+
+如需重跑最终新增定量文件交叉核验，在完成两个合成测试后执行tests/test_quantitative_artifacts.R。恢复脚本会对每片及ZIP校验；此次已下载部分的本地复核日志见restore_local_validation.log。

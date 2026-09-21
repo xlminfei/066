@@ -1,0 +1,7 @@
+{
+  "status": "ALL_DELIVERY_INTERMEDIATE_FILES_READBACK_VERIFIED",
+  "scope": "Snapshot of delivery helpers, local restore checks, git verification, primary upload logs and73 server receipts; excludes original archive and its already uploaded61 parts",
+  "sha256": "6930a38a5db74b2265bf794abd7cb6e25a605287ef374d870d7f4b62a5a05429",
+  "bytes": 1102870,
+  "files": 168
+}

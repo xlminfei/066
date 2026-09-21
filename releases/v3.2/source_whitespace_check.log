@@ -1,0 +1,2 @@
+PASS: git -c core.whitespace=cr-at-eol diff --cached --check over v3.2/R, src, stan, config, tests, scripts returned0; stdout/stderr were empty.
+The initial whole-tree check reported trailing spaces/CR in raw recorded logs and tables; those evidence bytes were intentionally preserved.

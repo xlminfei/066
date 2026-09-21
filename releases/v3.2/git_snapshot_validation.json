@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "code_commit": "e7066c0dae21624cb7ac66cf9801163ed68b1593",
+  "git_version_files_checked": 233,
+  "git_blob_mismatches": [],
+  "older_version_changed_paths": "",
+  "archive_source_files": 280,
+  "archive_native_RDS_files": 47,
+  "archive_sha256": "51a577666046b0d667534485df6626a61bd59c35f589b46d7e0ddb553ce83c56",
+  "parts_concatenation_sha256": "51a577666046b0d667534485df6626a61bd59c35f589b46d7e0ddb553ce83c56",
+  "parts_verified": 61,
+  "restore_local_validation": "restore_local_validation.log"
+}
