@@ -1,0 +1,248 @@
+{
+  "status": "ALL_ARCHIVE_PARTS_SERVER_VERIFIED",
+  "repository": "xlminfei/066",
+  "release_id": 392906459,
+  "release_tag": "v3.1-complete",
+  "scope": "all persistent files under working-v3 and published-v3.1 at snapshot; subsequent docs/receipts are in Git",
+  "source_files": 301,
+  "source_files_verified": 301,
+  "omitted_source_files": 0,
+  "archive_bytes": 386483393,
+  "archive_sha256": "e32e32675897c6f81ace04d24e125f3f7c805244b787773cdcda0cb44ddd71cc",
+  "part_count": 24,
+  "local_reassembly": "SHA256_MATCH",
+  "files_manifest_sha256": "d05dc84d9a18f1f2809d6f51af4f7fdab76abfd3af05340a29ca830ca1783bf8",
+  "assets": [
+    {
+      "id": 578956713,
+      "name": "DOWNLOAD_AND_VERIFY.md",
+      "bytes": 3766,
+      "server_digest": "sha256:ab75609cbd7f696508e8ac3779118f39ef183d1d26731ce7c60c3bd592d946ec",
+      "state": "uploaded"
+    },
+    {
+      "id": 578956748,
+      "name": "local_reassembly_test.log",
+      "bytes": 1424,
+      "server_digest": "sha256:710d345bac2a198a7f876e2ff0b30b69e112590f76006fdddc8d3e08d90485c3",
+      "state": "uploaded"
+    },
+    {
+      "id": 578956685,
+      "name": "README_archive_zh.md",
+      "bytes": 808,
+      "server_digest": "sha256:7664efdc5093c218350fe19f3accdae5d741e97664e7d6670a07210a0c6a5f4a",
+      "state": "uploaded"
+    },
+    {
+      "id": 578956698,
+      "name": "restore_complete_evidence.py",
+      "bytes": 4257,
+      "server_digest": "sha256:097e66a384013486da7b53dfcea58aa4576d9d9ddd61480abe6ae31a5c63ed61",
+      "state": "uploaded"
+    },
+    {
+      "id": 578956727,
+      "name": "transport_attempt.json",
+      "bytes": 279,
+      "server_digest": "sha256:5fadd7de192aa675756c4b38e8998ba86e42627f7b5308641437aadcc0375155",
+      "state": "uploaded"
+    },
+    {
+      "id": 578956671,
+      "name": "v3.1-complete-evidence.build.json",
+      "bytes": 418,
+      "server_digest": "sha256:08705ecaabea7631f92c759945a1f57c5ff10199e12c132c179d2c86b3690d83",
+      "state": "uploaded"
+    },
+    {
+      "id": 578956633,
+      "name": "v3.1-complete-evidence.files.csv",
+      "bytes": 53996,
+      "server_digest": "sha256:d05dc84d9a18f1f2809d6f51af4f7fdab76abfd3af05340a29ca830ca1783bf8",
+      "state": "uploaded"
+    },
+    {
+      "id": 578956603,
+      "name": "v3.1-complete-evidence.parts.json",
+      "bytes": 4798,
+      "server_digest": "sha256:a997592eb00494b42576bee300cbb6debfb963d3145388bd03cc96c591db1ec6",
+      "state": "uploaded"
+    },
+    {
+      "id": 578931419,
+      "name": "v3.1-complete-evidence.zip.part001",
+      "bytes": 16777216,
+      "server_digest": "sha256:5cee3ac8b5998a77ac900eb67680b26f97bb2b321008a5a04676d33a25c823d0",
+      "state": "uploaded"
+    },
+    {
+      "id": 578936551,
+      "name": "v3.1-complete-evidence.zip.part002",
+      "bytes": 16777216,
+      "server_digest": "sha256:6d7b658366ee8551531c755739879c3ba9143146fb496cc8453ee26c3fa40db4",
+      "state": "uploaded"
+    },
+    {
+      "id": 578938533,
+      "name": "v3.1-complete-evidence.zip.part003",
+      "bytes": 16777216,
+      "server_digest": "sha256:8dfaf836707c3d98a7863545d4943e5e331e4d35bfb2df15491076c7e2561603",
+      "state": "uploaded"
+    },
+    {
+      "id": 578937194,
+      "name": "v3.1-complete-evidence.zip.part004",
+      "bytes": 16777216,
+      "server_digest": "sha256:6df6919e760ed94acdda38e05b212dbacdf6d470b15369febd9dc4ca32883779",
+      "state": "uploaded"
+    },
+    {
+      "id": 578939418,
+      "name": "v3.1-complete-evidence.zip.part005",
+      "bytes": 16777216,
+      "server_digest": "sha256:0b05d9043186b14f9945fec35c16d63f1573f92cecbf32144f87d3581ef64123",
+      "state": "uploaded"
+    },
+    {
+      "id": 578937730,
+      "name": "v3.1-complete-evidence.zip.part006",
+      "bytes": 16777216,
+      "server_digest": "sha256:2f09b702fb4a5ff388f2c3bee704819d9c64ed12b4bdf907a71e2a8dec93b261",
+      "state": "uploaded"
+    },
+    {
+      "id": 578940010,
+      "name": "v3.1-complete-evidence.zip.part007",
+      "bytes": 16777216,
+      "server_digest": "sha256:84d90bc6d1df84c9e6d8c28aa37afefca9ebd00f9fd5969b46d7319ef794c932",
+      "state": "uploaded"
+    },
+    {
+      "id": 578938326,
+      "name": "v3.1-complete-evidence.zip.part008",
+      "bytes": 16777216,
+      "server_digest": "sha256:cfef0d11ea307a7747301787e46d2da1895069ae1712ce8e0edf6fcf4233c50f",
+      "state": "uploaded"
+    },
+    {
+      "id": 578940331,
+      "name": "v3.1-complete-evidence.zip.part009",
+      "bytes": 16777216,
+      "server_digest": "sha256:990400955d905cd2f996ea8e1b6ef0750580c98c7dfd1b372b0f7e805857fe51",
+      "state": "uploaded"
+    },
+    {
+      "id": 578938874,
+      "name": "v3.1-complete-evidence.zip.part010",
+      "bytes": 16777216,
+      "server_digest": "sha256:08001af2c5adb40f703b9f631f2dac2857adab25409e28e6e8b7f45fef18da62",
+      "state": "uploaded"
+    },
+    {
+      "id": 578944882,
+      "name": "v3.1-complete-evidence.zip.part011",
+      "bytes": 16777216,
+      "server_digest": "sha256:0faf03f694972080de63d6e9ade92f9937e51366daccc383c4d7deb4926ccd66",
+      "state": "uploaded"
+    },
+    {
+      "id": 578939863,
+      "name": "v3.1-complete-evidence.zip.part012",
+      "bytes": 16777216,
+      "server_digest": "sha256:d3439d32bec2a197e07446f8c5bf060c922c493fb28447c20c86cb8527647b54",
+      "state": "uploaded"
+    },
+    {
+      "id": 578945756,
+      "name": "v3.1-complete-evidence.zip.part013",
+      "bytes": 16777216,
+      "server_digest": "sha256:77bd3d3b8bf10e3e6d8a42a2db243bca308830ccbecb7f04d8007267abff3b6e",
+      "state": "uploaded"
+    },
+    {
+      "id": 578940144,
+      "name": "v3.1-complete-evidence.zip.part014",
+      "bytes": 16777216,
+      "server_digest": "sha256:6655ed81cf0f7a89682b54c8a1b9df4ee0b647aeb3fb5c76080044055ee6b41c",
+      "state": "uploaded"
+    },
+    {
+      "id": 578946396,
+      "name": "v3.1-complete-evidence.zip.part015",
+      "bytes": 16777216,
+      "server_digest": "sha256:2bd88d6c756efe6906c22ab3f4a88b348eda595b06fed3fe31cde3836b235f24",
+      "state": "uploaded"
+    },
+    {
+      "id": 578941210,
+      "name": "v3.1-complete-evidence.zip.part016",
+      "bytes": 16777216,
+      "server_digest": "sha256:fd987221c5c23334c957bac8dce9349a8a064012cef925246008291cc1dc1e91",
+      "state": "uploaded"
+    },
+    {
+      "id": 578948919,
+      "name": "v3.1-complete-evidence.zip.part017",
+      "bytes": 16777216,
+      "server_digest": "sha256:18f21bd7f4e628175a02d142b43e2f4357e9e661004ef46821ecc87b9c45aeb8",
+      "state": "uploaded"
+    },
+    {
+      "id": 578941978,
+      "name": "v3.1-complete-evidence.zip.part018",
+      "bytes": 16777216,
+      "server_digest": "sha256:468107de3108349d3d6fb7498c5123aa2e1ddad08927fa8d7950bc2aaa81429c",
+      "state": "uploaded"
+    },
+    {
+      "id": 578950415,
+      "name": "v3.1-complete-evidence.zip.part019",
+      "bytes": 16777216,
+      "server_digest": "sha256:f29c584e124ed662ad26c7af7432fe837541c4645c6133e389116b9e071d99f3",
+      "state": "uploaded"
+    },
+    {
+      "id": 578942665,
+      "name": "v3.1-complete-evidence.zip.part020",
+      "bytes": 16777216,
+      "server_digest": "sha256:ed876fa42d96e279f39e5260afe820e7a590f628e4b2e7aee80d14cfd20ff3cc",
+      "state": "uploaded"
+    },
+    {
+      "id": 578951092,
+      "name": "v3.1-complete-evidence.zip.part021",
+      "bytes": 16777216,
+      "server_digest": "sha256:e89446629d64284b59e8d27b6c345e92d5792390f4369d9c50b4d5b971e5d137",
+      "state": "uploaded"
+    },
+    {
+      "id": 578942964,
+      "name": "v3.1-complete-evidence.zip.part022",
+      "bytes": 16777216,
+      "server_digest": "sha256:89ba70d5a2b1d3356ade8e4fb643bac6cf6e91178caaa23329dcf159c8394b6b",
+      "state": "uploaded"
+    },
+    {
+      "id": 578951563,
+      "name": "v3.1-complete-evidence.zip.part023",
+      "bytes": 16777216,
+      "server_digest": "sha256:8e4402f003bacdfadb6209e6a22d00803f54891d68fc7eef1b8f8a8f8a1a13d7",
+      "state": "uploaded"
+    },
+    {
+      "id": 578943671,
+      "name": "v3.1-complete-evidence.zip.part024",
+      "bytes": 607425,
+      "server_digest": "sha256:7f82f63d0a5bda64454d0ce4f1480856f9e92af514d5dda3faebe8c7b5079597",
+      "state": "uploaded"
+    },
+    {
+      "id": 578956650,
+      "name": "v3.1-complete-evidence.zip.sha256",
+      "bytes": 94,
+      "server_digest": "sha256:8796b4926b5edc17d7f363af6fdc3aa36a6ec25cfe309419d1e3797d326001e2",
+      "state": "uploaded"
+    }
+  ]
+}

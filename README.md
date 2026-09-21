@@ -1,5 +1,7 @@
 # STING 跨物种响应比率模型：v1 与 v2 可复现项目
 
+> **v3.1 完整资料补充**：全部说明、中间文件与测试结果见 v3.1-complete Release；[图片为何等值](v3.1/docs/FIGURE_TEST_EXPLANATION_zh.md)、[逐项修改](v3.1/docs/CHANGE_DETAILS_zh.md)、[完整下载与校验](v3.1/docs/COMPLETE_ARCHIVE_zh.md)。
+
 这是一个把同一蛋白的六个位点序列特征与实验响应资料联系起来的研究计算项目。项目同时保留原始的 **v1** 工作流和当前采用的 **v2** 工作流。v2 是正式推荐版本；v1 作为历史版本、结果对照和方法演变记录保留。
 
 ## 研究问题
@@ -90,3 +92,8 @@ v3.1 位于 [v3.1/](v3.1/README.md)，保留原 v1/v2/v3 历史文件。旧 v3 �
 18个实际拟合都是合成测试（16个短链接口拟合+2个加权后验数值对照），正式研究数据的16+240项拟合未执行。测试指标、日志、图源和数值抽样快照随包保存；平台相关编译缓存保留本地，其大小与SHA-256列于逐项清单。
 
 [下载 v3.1 源码与测试包](releases/ratio-analysis-v3.1.zip) · [ZIP SHA-256](releases/ratio-analysis-v3.1.zip.sha256)
+
+
+## v3.1 完整资料补充
+
+之前展示的等值图是布局夹具，见 [图片解释](v3.1/docs/FIGURE_TEST_EXPLANATION_zh.md)。[逐函数修改明细](v3.1/docs/CHANGE_DETAILS_zh.md)记录修改前的问题、修改位置、理由、测试证据和未运行边界；[逐文件差异清单](v3.1/provenance/CHANGED_SOURCE_FILES.csv)对应源文件哈希。全部现存中间文件、原始fit.rds、早期smoke和历史快照随 v3.1-complete 完整资料Release提供；[归档范围与校验](v3.1/docs/COMPLETE_ARCHIVE_zh.md)。

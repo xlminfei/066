@@ -1,0 +1,10 @@
+{
+  "attempt": 1,
+  "method": "single_asset",
+  "result": "transport_error_while_copying_stream",
+  "failed_asset_id": 578920417,
+  "failed_asset_state": "starter",
+  "server_digest": null,
+  "cleanup_status": 204,
+  "recovery": "16MiB_parts; original local archive unchanged"
+}

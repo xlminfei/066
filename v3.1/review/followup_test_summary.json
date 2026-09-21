@@ -1,0 +1,34 @@
+{
+  "status": "FOLLOWUP_VERIFIED",
+  "figure_preview_was": "constant synthetic layout values, not model results",
+  "original_values": {
+    "Null": 0.37,
+    "M1": 0.44,
+    "M2": 0.51,
+    "M3": 0.58
+  },
+  "distinct_visual_rows": 5840,
+  "matched_fields": [
+    "Species",
+    "Route",
+    "Model",
+    "TrainWeighting",
+    "Point",
+    "CrI_lower",
+    "CrI_upper",
+    "PI_lower",
+    "PI_upper",
+    "WarningCodes"
+  ],
+  "input_order_shuffled": true,
+  "Null_kept_constant": true,
+  "R_regression_assertions_passed": 52,
+  "R_files_parsed": 37,
+  "formal_research_fits_executed": 0,
+  "complete_archive_source_files": 301,
+  "complete_archive_omitted_source_files": 0,
+  "archive_bytes": 386483393,
+  "archive_sha256": "e32e32675897c6f81ace04d24e125f3f7c805244b787773cdcda0cb44ddd71cc",
+  "remote_parts_sha_and_size_verified": 24,
+  "local_reassembly_sha_verified": true
+}

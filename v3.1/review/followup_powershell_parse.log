@@ -1,0 +1,2 @@
+POWERSHELL_PARSE_PASS build_complete_archive.ps1
+POWERSHELL_PARSE_PASS upload_release_asset.ps1

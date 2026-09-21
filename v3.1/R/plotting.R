@@ -60,11 +60,12 @@ plot_calibration_base <- function(calibration, output_path) {
 plot_species_predictions_base <- function(predictions,output_dir,page_size=42L) {
   validate_prediction_table_v3(predictions);dir.create(output_dir,recursive=TRUE,showWarnings=FALSE)
   ss<-unique(predictions$Species);pages<-split(ss,ceiling(seq_along(ss)/page_size));sources<-list()
+  is_fixture<-"FixtureOnly"%in%names(predictions) && isTRUE(any(predictions$FixtureOnly,na.rm=TRUE))
   cols<-setNames(hcl.colors(4,"Dark 3"),V3_MODELS)
   for(route in unique(predictions$Route))for(tw in unique(predictions$TrainWeighting)) {
     pdf(file.path(output_dir,paste0("species_predictions_",route,"_",tw,".pdf")),width=16,height=12)
     for(pg in seq_along(pages)) {
-      sp<-pages[[pg]];par(mfrow=c(1,4),oma=c(2,0,0,0))
+      sp<-pages[[pg]];par(mfrow=c(1,4),oma=c(2,0,if(is_fixture)3 else 0,0))
       for(m in V3_MODELS) {
         z<-predictions[predictions$Route==route&predictions$TrainWeighting==tw&predictions$Model==m,,drop=FALSE];z<-z[match(sp,z$Species),]
         if(anyNA(z$Species))stop("Missing plotted species/model")
@@ -77,7 +78,10 @@ plot_species_predictions_base <- function(predictions,output_dir,page_size=42L) 
         z$Page<-pg;z$YPosition<-yy;sources[[length(sources)+1]]<-z
       }
       note<-if(route=="joint_bb")"Point: posterior mean | dark: 95% CrI | pale: future-report 95% PI | x: applicability warning" else "Point: posterior Pr(HIGH) | line: 95% CrI | x: applicability warning"
-      if("FixtureOnly"%in%names(predictions)&&all(predictions$FixtureOnly))note<-paste("SYNTHETIC TEST FIXTURE -",note)
+      if(is_fixture) {
+        note<-"SYNTHETIC: dummy points and intervals for layout only | x: dummy warning | no fitted species results"
+        mtext("SYNTHETIC TEST DATA - NOT RESEARCH RESULTS",side=3,outer=TRUE,line=1,font=2,col="#b3261e",cex=1.05)
+      }
       mtext(note,side=1,outer=TRUE,line=0,cex=.65)
     };dev.off()
   }

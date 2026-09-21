@@ -1,0 +1,24 @@
+PACK 25 / 301
+PACK 50 / 301
+PACK 75 / 301
+PACK 100 / 301
+PACK 125 / 301
+PACK 150 / 301
+PACK 175 / 301
+PACK 200 / 301
+PACK 225 / 301
+PACK 250 / 301
+PACK 275 / 301
+PACK 300 / 301
+{
+  "status": "LOCAL_ARCHIVE_VERIFIED",
+  "source_files": 301,
+  "verified_files": 301,
+  "omitted_source_files": 0,
+  "working_files": 164,
+  "published_files": 137,
+  "source_bytes": 393150799.0,
+  "archive_bytes": 386483393,
+  "archive_sha256": "e32e32675897c6f81ace04d24e125f3f7c805244b787773cdcda0cb44ddd71cc",
+  "manifest_sha256": "d05dc84d9a18f1f2809d6f51af4f7fdab76abfd3af05340a29ca830ca1783bf8"
+}

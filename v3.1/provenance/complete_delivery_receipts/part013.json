@@ -1,0 +1,10 @@
+{
+  "status": "REMOTE_SHA256_AND_SIZE_VERIFIED",
+  "release_id": 392906459,
+  "asset_id": 578945756,
+  "name": "v3.1-complete-evidence.zip.part013",
+  "bytes": 16777216,
+  "sha256": "77bd3d3b8bf10e3e6d8a42a2db243bca308830ccbecb7f04d8007267abff3b6e",
+  "server_digest": "sha256:77bd3d3b8bf10e3e6d8a42a2db243bca308830ccbecb7f04d8007267abff3b6e",
+  "url": "https://github.com/xlminfei/066/releases/download/untagged-d0268d505fccee0f9245/v3.1-complete-evidence.zip.part013"
+}

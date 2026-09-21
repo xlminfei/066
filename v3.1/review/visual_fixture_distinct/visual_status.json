@@ -1,0 +1,10 @@
+{
+  "status": "PASS_DISTINCT_SYNTHETIC_LAYOUT",
+  "rows": 5840,
+  "pages_per_file": 9,
+  "files": 4,
+  "labels": "explicit Species match; shuffled data; point and every interval checked",
+  "Null": "constant by design",
+  "M1_M2_M3": "365 distinct synthetic points each",
+  "scientific_results": false
+}
