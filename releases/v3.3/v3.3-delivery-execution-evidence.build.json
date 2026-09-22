@@ -1,0 +1,7 @@
+{
+  "status": "DELIVERY_EXECUTION_FILES_READBACK_VERIFIED",
+  "sha256": "a27e3eb8749cd60134d74bd05b0365b30c97714b3aac7468e71898cb4919ea36",
+  "scope": "Delivery scripts, restore checks, upload logs and53 primary server receipts at snapshot; archive and40 parts separately supplied",
+  "bytes": 1478771,
+  "files": 127
+}

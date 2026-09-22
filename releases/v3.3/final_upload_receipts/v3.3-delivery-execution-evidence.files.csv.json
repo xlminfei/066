@@ -1,0 +1,10 @@
+{
+  "status": "REMOTE_SHA256_AND_SIZE_VERIFIED",
+  "release_id": 393624027,
+  "asset_id": 581134306,
+  "name": "v3.3-delivery-execution-evidence.files.csv",
+  "bytes": 15874,
+  "sha256": "3e51bdf4a2bf7fc4bbb30f702aa48f1cd4e9df82a1bb6ec7e5be1356dcfa42d6",
+  "server_digest": "sha256:3e51bdf4a2bf7fc4bbb30f702aa48f1cd4e9df82a1bb6ec7e5be1356dcfa42d6",
+  "url": "https://github.com/xlminfei/066/releases/download/untagged-447a6056c533282080f2/v3.3-delivery-execution-evidence.files.csv"
+}

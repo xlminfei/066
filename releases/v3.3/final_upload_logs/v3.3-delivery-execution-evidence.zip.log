@@ -1,0 +1,11 @@
+UPLOAD v3.3-delivery-execution-evidence.zip: 100.0% read from source
+{
+  "status": "REMOTE_SHA256_AND_SIZE_VERIFIED",
+  "release_id": 393624027,
+  "asset_id": 581134308,
+  "name": "v3.3-delivery-execution-evidence.zip",
+  "bytes": 1478771,
+  "sha256": "a27e3eb8749cd60134d74bd05b0365b30c97714b3aac7468e71898cb4919ea36",
+  "server_digest": "sha256:a27e3eb8749cd60134d74bd05b0365b30c97714b3aac7468e71898cb4919ea36",
+  "url": "https://github.com/xlminfei/066/releases/download/untagged-447a6056c533282080f2/v3.3-delivery-execution-evidence.zip"
+}

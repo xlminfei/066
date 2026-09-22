@@ -1,0 +1,540 @@
+{
+  "native_RDS_files": 33,
+  "status": "ALL53_PRIMARY_ASSETS_SERVER_VERIFIED",
+  "assets": [
+    {
+      "status": "REMOTE_SHA256_AND_SIZE_VERIFIED",
+      "release_id": 393624027,
+      "asset_id": 581131110,
+      "name": "git_snapshot_validation.json",
+      "bytes": 346,
+      "sha256": "cb5f39a5d87cb6bcbb6fcd5a697fb7c6704b77e31faccac775dd5a4a5ec5d971",
+      "server_digest": "sha256:cb5f39a5d87cb6bcbb6fcd5a697fb7c6704b77e31faccac775dd5a4a5ec5d971",
+      "url": "https://github.com/xlminfei/066/releases/download/untagged-447a6056c533282080f2/git_snapshot_validation.json"
+    },
+    {
+      "status": "REMOTE_SHA256_AND_SIZE_VERIFIED",
+      "release_id": 393624027,
+      "asset_id": 581130998,
+      "name": "manage_v3_3_release.ps1",
+      "bytes": 3482,
+      "sha256": "ecc57a4606f7e48b249b7d151ba247cf2925c16ad10f6dbf1ee467c22d4a920d",
+      "server_digest": "sha256:ecc57a4606f7e48b249b7d151ba247cf2925c16ad10f6dbf1ee467c22d4a920d",
+      "url": "https://github.com/xlminfei/066/releases/download/untagged-447a6056c533282080f2/manage_v3_3_release.ps1"
+    },
+    {
+      "status": "REMOTE_SHA256_AND_SIZE_VERIFIED",
+      "release_id": 393624027,
+      "asset_id": 581130624,
+      "name": "README_archive_zh.md",
+      "bytes": 670,
+      "sha256": "78c8c5ca19a1f6c2b1506ef28535c733ceaf91747bbe6b0c366a534713578ec5",
+      "server_digest": "sha256:78c8c5ca19a1f6c2b1506ef28535c733ceaf91747bbe6b0c366a534713578ec5",
+      "url": "https://github.com/xlminfei/066/releases/download/untagged-447a6056c533282080f2/README_archive_zh.md"
+    },
+    {
+      "status": "REMOTE_SHA256_AND_SIZE_VERIFIED",
+      "release_id": 393624027,
+      "asset_id": 581130739,
+      "name": "RELEASE_NOTES_v3_3.md",
+      "bytes": 1883,
+      "sha256": "961c921d6aa1d4b1ae1affdb20b4317890b5d107764696127cfdf4cd6b7db909",
+      "server_digest": "sha256:961c921d6aa1d4b1ae1affdb20b4317890b5d107764696127cfdf4cd6b7db909",
+      "url": "https://github.com/xlminfei/066/releases/download/untagged-447a6056c533282080f2/RELEASE_NOTES_v3_3.md"
+    },
+    {
+      "status": "REMOTE_SHA256_AND_SIZE_VERIFIED",
+      "release_id": 393624027,
+      "asset_id": 581130279,
+      "name": "restore_local_validation.log",
+      "bytes": 2310,
+      "sha256": "832ca813d97a1f9b0b9a320143e47e1e98b34ed3b8f6283ef23bed56e1aa7bc0",
+      "server_digest": "sha256:832ca813d97a1f9b0b9a320143e47e1e98b34ed3b8f6283ef23bed56e1aa7bc0",
+      "url": "https://github.com/xlminfei/066/releases/download/untagged-447a6056c533282080f2/restore_local_validation.log"
+    },
+    {
+      "status": "REMOTE_SHA256_AND_SIZE_VERIFIED",
+      "release_id": 393624027,
+      "asset_id": 581130019,
+      "name": "restore_v3_3_evidence.py",
+      "bytes": 4231,
+      "sha256": "6b38cedd479052f97fcaf2e1e83612b0325b16d8c6111ead0c647111a52459f6",
+      "server_digest": "sha256:6b38cedd479052f97fcaf2e1e83612b0325b16d8c6111ead0c647111a52459f6",
+      "url": "https://github.com/xlminfei/066/releases/download/untagged-447a6056c533282080f2/restore_v3_3_evidence.py"
+    },
+    {
+      "status": "REMOTE_SHA256_AND_SIZE_VERIFIED",
+      "release_id": 393624027,
+      "asset_id": 581130580,
+      "name": "source_and_restore_validation.json",
+      "bytes": 454,
+      "sha256": "3435a700a7f6aff809f92fa548ac5d88bb6646e3b5815692d2f74b440dc86d33",
+      "server_digest": "sha256:3435a700a7f6aff809f92fa548ac5d88bb6646e3b5815692d2f74b440dc86d33",
+      "url": "https://github.com/xlminfei/066/releases/download/untagged-447a6056c533282080f2/source_and_restore_validation.json"
+    },
+    {
+      "status": "REMOTE_SHA256_AND_SIZE_VERIFIED",
+      "release_id": 393624027,
+      "asset_id": 581129973,
+      "name": "v3.3-complete-evidence.build.json",
+      "bytes": 391,
+      "sha256": "985e3edf816f94cc64cce761032a9f4253c1d9cb56c0dbac89e880a533d2ef0d",
+      "server_digest": "sha256:985e3edf816f94cc64cce761032a9f4253c1d9cb56c0dbac89e880a533d2ef0d",
+      "url": "https://github.com/xlminfei/066/releases/download/untagged-447a6056c533282080f2/v3.3-complete-evidence.build.json"
+    },
+    {
+      "status": "REMOTE_SHA256_AND_SIZE_VERIFIED",
+      "release_id": 393624027,
+      "asset_id": 581129580,
+      "name": "v3.3-complete-evidence.files.csv",
+      "bytes": 51578,
+      "sha256": "2761a9fc0f2943169f62ef86a412c75a75acaf4b76fad1137ef589fc0945fc9e",
+      "server_digest": "sha256:2761a9fc0f2943169f62ef86a412c75a75acaf4b76fad1137ef589fc0945fc9e",
+      "url": "https://github.com/xlminfei/066/releases/download/untagged-447a6056c533282080f2/v3.3-complete-evidence.files.csv"
+    },
+    {
+      "status": "REMOTE_SHA256_AND_SIZE_VERIFIED",
+      "release_id": 393624027,
+      "asset_id": 581129292,
+      "name": "v3.3-complete-evidence.parts.json",
+      "bytes": 8024,
+      "sha256": "b86dbf4132210f71f3685597e33054174ac724d9fcf9ab80e4c432cee9b56e9e",
+      "server_digest": "sha256:b86dbf4132210f71f3685597e33054174ac724d9fcf9ab80e4c432cee9b56e9e",
+      "url": "https://github.com/xlminfei/066/releases/download/untagged-447a6056c533282080f2/v3.3-complete-evidence.parts.json"
+    },
+    {
+      "status": "REMOTE_SHA256_AND_SIZE_VERIFIED",
+      "release_id": 393624027,
+      "asset_id": 581129538,
+      "name": "v3.3-complete-evidence.parts.json.sha256",
+      "bytes": 100,
+      "sha256": "7ff5155410fe659891397d81c14bd223bfda5e50f811e8496e341702819d26cc",
+      "server_digest": "sha256:7ff5155410fe659891397d81c14bd223bfda5e50f811e8496e341702819d26cc",
+      "url": "https://github.com/xlminfei/066/releases/download/untagged-447a6056c533282080f2/v3.3-complete-evidence.parts.json.sha256"
+    },
+    {
+      "status": "REMOTE_SHA256_AND_SIZE_VERIFIED",
+      "release_id": 393624027,
+      "asset_id": 581119788,
+      "name": "v3.3-complete-evidence.zip.part001",
+      "bytes": 16777216,
+      "sha256": "4d76483c8b9313742c4122ad870f8e0265714eb358f7431d3f0bc679bf63e6a6",
+      "server_digest": "sha256:4d76483c8b9313742c4122ad870f8e0265714eb358f7431d3f0bc679bf63e6a6",
+      "url": "https://github.com/xlminfei/066/releases/download/untagged-447a6056c533282080f2/v3.3-complete-evidence.zip.part001"
+    },
+    {
+      "status": "REMOTE_SHA256_AND_SIZE_VERIFIED",
+      "release_id": 393624027,
+      "asset_id": 581119791,
+      "name": "v3.3-complete-evidence.zip.part002",
+      "bytes": 16777216,
+      "sha256": "e40326b25d0993980f1b86ed8d747741931a171f3da2f1be250eb36bb904eae3",
+      "server_digest": "sha256:e40326b25d0993980f1b86ed8d747741931a171f3da2f1be250eb36bb904eae3",
+      "url": "https://github.com/xlminfei/066/releases/download/untagged-447a6056c533282080f2/v3.3-complete-evidence.zip.part002"
+    },
+    {
+      "status": "REMOTE_SHA256_AND_SIZE_VERIFIED",
+      "release_id": 393624027,
+      "asset_id": 581119787,
+      "name": "v3.3-complete-evidence.zip.part003",
+      "bytes": 16777216,
+      "sha256": "8b60f3f67de0e3f1c3ce68133ef94ac842ddc4d4ff59317e85c266600efd1687",
+      "server_digest": "sha256:8b60f3f67de0e3f1c3ce68133ef94ac842ddc4d4ff59317e85c266600efd1687",
+      "url": "https://github.com/xlminfei/066/releases/download/untagged-447a6056c533282080f2/v3.3-complete-evidence.zip.part003"
+    },
+    {
+      "status": "REMOTE_SHA256_AND_SIZE_VERIFIED",
+      "release_id": 393624027,
+      "asset_id": 581120596,
+      "name": "v3.3-complete-evidence.zip.part004",
+      "bytes": 16777216,
+      "sha256": "290c9a0a8bb578e482c4200572c7243a33246aa956122656a6c1891a47e5abe5",
+      "server_digest": "sha256:290c9a0a8bb578e482c4200572c7243a33246aa956122656a6c1891a47e5abe5",
+      "url": "https://github.com/xlminfei/066/releases/download/untagged-447a6056c533282080f2/v3.3-complete-evidence.zip.part004"
+    },
+    {
+      "status": "REMOTE_SHA256_AND_SIZE_VERIFIED",
+      "release_id": 393624027,
+      "asset_id": 581120599,
+      "name": "v3.3-complete-evidence.zip.part005",
+      "bytes": 16777216,
+      "sha256": "da41a1295cde9390408c622c9163bc3bd3a880bad690fa90af5a731658acbcd1",
+      "server_digest": "sha256:da41a1295cde9390408c622c9163bc3bd3a880bad690fa90af5a731658acbcd1",
+      "url": "https://github.com/xlminfei/066/releases/download/untagged-447a6056c533282080f2/v3.3-complete-evidence.zip.part005"
+    },
+    {
+      "status": "REMOTE_SHA256_AND_SIZE_VERIFIED",
+      "release_id": 393624027,
+      "asset_id": 581120634,
+      "name": "v3.3-complete-evidence.zip.part006",
+      "bytes": 16777216,
+      "sha256": "7ce3f4929ea42449153d8e5f1e56e758cf61001d0c58d55bff5935f488ab13f4",
+      "server_digest": "sha256:7ce3f4929ea42449153d8e5f1e56e758cf61001d0c58d55bff5935f488ab13f4",
+      "url": "https://github.com/xlminfei/066/releases/download/untagged-447a6056c533282080f2/v3.3-complete-evidence.zip.part006"
+    },
+    {
+      "status": "REMOTE_SHA256_AND_SIZE_VERIFIED",
+      "release_id": 393624027,
+      "asset_id": 581121417,
+      "name": "v3.3-complete-evidence.zip.part007",
+      "bytes": 16777216,
+      "sha256": "68447bb0911b77907954e7b7e0d00ae221b3aadeeed493c561ae132fb78daf7b",
+      "server_digest": "sha256:68447bb0911b77907954e7b7e0d00ae221b3aadeeed493c561ae132fb78daf7b",
+      "url": "https://github.com/xlminfei/066/releases/download/untagged-447a6056c533282080f2/v3.3-complete-evidence.zip.part007"
+    },
+    {
+      "status": "REMOTE_SHA256_AND_SIZE_VERIFIED",
+      "release_id": 393624027,
+      "asset_id": 581121423,
+      "name": "v3.3-complete-evidence.zip.part008",
+      "bytes": 16777216,
+      "sha256": "689c22bb3e19da2f1134e5ac94ec692e7db755c390442c4bd9d82b7cc1ce6292",
+      "server_digest": "sha256:689c22bb3e19da2f1134e5ac94ec692e7db755c390442c4bd9d82b7cc1ce6292",
+      "url": "https://github.com/xlminfei/066/releases/download/untagged-447a6056c533282080f2/v3.3-complete-evidence.zip.part008"
+    },
+    {
+      "status": "REMOTE_SHA256_AND_SIZE_VERIFIED",
+      "release_id": 393624027,
+      "asset_id": 581121422,
+      "name": "v3.3-complete-evidence.zip.part009",
+      "bytes": 16777216,
+      "sha256": "8f81cfd274f187e143ffb16a604d319a738e12c11abfee73570e8cde3154a034",
+      "server_digest": "sha256:8f81cfd274f187e143ffb16a604d319a738e12c11abfee73570e8cde3154a034",
+      "url": "https://github.com/xlminfei/066/releases/download/untagged-447a6056c533282080f2/v3.3-complete-evidence.zip.part009"
+    },
+    {
+      "status": "REMOTE_SHA256_AND_SIZE_VERIFIED",
+      "release_id": 393624027,
+      "asset_id": 581122416,
+      "name": "v3.3-complete-evidence.zip.part010",
+      "bytes": 16777216,
+      "sha256": "e7042bf7096fd824eaee867182c45d7896072a3d38c7e201a1b6f51c62d5cc7f",
+      "server_digest": "sha256:e7042bf7096fd824eaee867182c45d7896072a3d38c7e201a1b6f51c62d5cc7f",
+      "url": "https://github.com/xlminfei/066/releases/download/untagged-447a6056c533282080f2/v3.3-complete-evidence.zip.part010"
+    },
+    {
+      "status": "REMOTE_SHA256_AND_SIZE_VERIFIED",
+      "release_id": 393624027,
+      "asset_id": 581122434,
+      "name": "v3.3-complete-evidence.zip.part011",
+      "bytes": 16777216,
+      "sha256": "977ae8c6e47fb24a61404184fce5bde0aa4606a644abdf4c4caba30c55dbcd7e",
+      "server_digest": "sha256:977ae8c6e47fb24a61404184fce5bde0aa4606a644abdf4c4caba30c55dbcd7e",
+      "url": "https://github.com/xlminfei/066/releases/download/untagged-447a6056c533282080f2/v3.3-complete-evidence.zip.part011"
+    },
+    {
+      "status": "REMOTE_SHA256_AND_SIZE_VERIFIED",
+      "release_id": 393624027,
+      "asset_id": 581122438,
+      "name": "v3.3-complete-evidence.zip.part012",
+      "bytes": 16777216,
+      "sha256": "3c51b65c9bf135c1823f3722deee9af65af5f55c6d88bb1b538bcc95ad512794",
+      "server_digest": "sha256:3c51b65c9bf135c1823f3722deee9af65af5f55c6d88bb1b538bcc95ad512794",
+      "url": "https://github.com/xlminfei/066/releases/download/untagged-447a6056c533282080f2/v3.3-complete-evidence.zip.part012"
+    },
+    {
+      "status": "REMOTE_SHA256_AND_SIZE_VERIFIED",
+      "release_id": 393624027,
+      "asset_id": 581123179,
+      "name": "v3.3-complete-evidence.zip.part013",
+      "bytes": 16777216,
+      "sha256": "d1688049c3765cdef60d6e044094390c5ead518adb2577961c4c1506460c593c",
+      "server_digest": "sha256:d1688049c3765cdef60d6e044094390c5ead518adb2577961c4c1506460c593c",
+      "url": "https://github.com/xlminfei/066/releases/download/untagged-447a6056c533282080f2/v3.3-complete-evidence.zip.part013"
+    },
+    {
+      "status": "REMOTE_SHA256_AND_SIZE_VERIFIED",
+      "release_id": 393624027,
+      "asset_id": 581123197,
+      "name": "v3.3-complete-evidence.zip.part014",
+      "bytes": 16777216,
+      "sha256": "d3d82bc55aec22c826effd35fed47315e68bbdffd456fa583d282e21459997fc",
+      "server_digest": "sha256:d3d82bc55aec22c826effd35fed47315e68bbdffd456fa583d282e21459997fc",
+      "url": "https://github.com/xlminfei/066/releases/download/untagged-447a6056c533282080f2/v3.3-complete-evidence.zip.part014"
+    },
+    {
+      "status": "REMOTE_SHA256_AND_SIZE_VERIFIED",
+      "release_id": 393624027,
+      "asset_id": 581123219,
+      "name": "v3.3-complete-evidence.zip.part015",
+      "bytes": 16777216,
+      "sha256": "62fb337f2cf71128a3aeedb9dd40deebe2dc01bc15516fc416364126b1d2bbf0",
+      "server_digest": "sha256:62fb337f2cf71128a3aeedb9dd40deebe2dc01bc15516fc416364126b1d2bbf0",
+      "url": "https://github.com/xlminfei/066/releases/download/untagged-447a6056c533282080f2/v3.3-complete-evidence.zip.part015"
+    },
+    {
+      "status": "REMOTE_SHA256_AND_SIZE_VERIFIED",
+      "release_id": 393624027,
+      "asset_id": 581123612,
+      "name": "v3.3-complete-evidence.zip.part016",
+      "bytes": 16777216,
+      "sha256": "16fad9dfafdf56fc0d8822b568327a69c09bdf022adf4af87ec221e40e681c54",
+      "server_digest": "sha256:16fad9dfafdf56fc0d8822b568327a69c09bdf022adf4af87ec221e40e681c54",
+      "url": "https://github.com/xlminfei/066/releases/download/untagged-447a6056c533282080f2/v3.3-complete-evidence.zip.part016"
+    },
+    {
+      "status": "REMOTE_SHA256_AND_SIZE_VERIFIED",
+      "release_id": 393624027,
+      "asset_id": 581124422,
+      "name": "v3.3-complete-evidence.zip.part017",
+      "bytes": 16777216,
+      "sha256": "49f6e57f436da192f67dbba5bd77afdd6664a4c5b1cce690d0f7c6ccd21b1beb",
+      "server_digest": "sha256:49f6e57f436da192f67dbba5bd77afdd6664a4c5b1cce690d0f7c6ccd21b1beb",
+      "url": "https://github.com/xlminfei/066/releases/download/untagged-447a6056c533282080f2/v3.3-complete-evidence.zip.part017"
+    },
+    {
+      "status": "REMOTE_SHA256_AND_SIZE_VERIFIED",
+      "release_id": 393624027,
+      "asset_id": 581124577,
+      "name": "v3.3-complete-evidence.zip.part018",
+      "bytes": 16777216,
+      "sha256": "592a4c4b0935add6b4c43da3293b4f9ee3686ecbf4461c048fdb331de8efef6d",
+      "server_digest": "sha256:592a4c4b0935add6b4c43da3293b4f9ee3686ecbf4461c048fdb331de8efef6d",
+      "url": "https://github.com/xlminfei/066/releases/download/untagged-447a6056c533282080f2/v3.3-complete-evidence.zip.part018"
+    },
+    {
+      "status": "REMOTE_SHA256_AND_SIZE_VERIFIED",
+      "release_id": 393624027,
+      "asset_id": 581124590,
+      "name": "v3.3-complete-evidence.zip.part019",
+      "bytes": 16777216,
+      "sha256": "19544c24e1f8269c40713ef98a466e7f4189184c644f14177c776c6aed813322",
+      "server_digest": "sha256:19544c24e1f8269c40713ef98a466e7f4189184c644f14177c776c6aed813322",
+      "url": "https://github.com/xlminfei/066/releases/download/untagged-447a6056c533282080f2/v3.3-complete-evidence.zip.part019"
+    },
+    {
+      "status": "REMOTE_SHA256_AND_SIZE_VERIFIED",
+      "release_id": 393624027,
+      "asset_id": 581124817,
+      "name": "v3.3-complete-evidence.zip.part020",
+      "bytes": 16777216,
+      "sha256": "c1f15ff29d55a2b570dd0243155a1a89339919f023b505002001c674864de682",
+      "server_digest": "sha256:c1f15ff29d55a2b570dd0243155a1a89339919f023b505002001c674864de682",
+      "url": "https://github.com/xlminfei/066/releases/download/untagged-447a6056c533282080f2/v3.3-complete-evidence.zip.part020"
+    },
+    {
+      "status": "REMOTE_SHA256_AND_SIZE_VERIFIED",
+      "release_id": 393624027,
+      "asset_id": 581124949,
+      "name": "v3.3-complete-evidence.zip.part021",
+      "bytes": 16777216,
+      "sha256": "79e19f2a71b2b484bb301143fbd5d41a188e5d29d737de74ab53bc522ec68b1e",
+      "server_digest": "sha256:79e19f2a71b2b484bb301143fbd5d41a188e5d29d737de74ab53bc522ec68b1e",
+      "url": "https://github.com/xlminfei/066/releases/download/untagged-447a6056c533282080f2/v3.3-complete-evidence.zip.part021"
+    },
+    {
+      "status": "REMOTE_SHA256_AND_SIZE_VERIFIED",
+      "release_id": 393624027,
+      "asset_id": 581125262,
+      "name": "v3.3-complete-evidence.zip.part022",
+      "bytes": 16777216,
+      "sha256": "b23021499bae3cf6d96126130e7ac36b87264149fa74f44713a20adca01b00e6",
+      "server_digest": "sha256:b23021499bae3cf6d96126130e7ac36b87264149fa74f44713a20adca01b00e6",
+      "url": "https://github.com/xlminfei/066/releases/download/untagged-447a6056c533282080f2/v3.3-complete-evidence.zip.part022"
+    },
+    {
+      "status": "REMOTE_SHA256_AND_SIZE_VERIFIED",
+      "release_id": 393624027,
+      "asset_id": 581125403,
+      "name": "v3.3-complete-evidence.zip.part023",
+      "bytes": 16777216,
+      "sha256": "877cf6741e41f67149390fd1c363fb3016d2f7711cf4a864103d63ec8cb03272",
+      "server_digest": "sha256:877cf6741e41f67149390fd1c363fb3016d2f7711cf4a864103d63ec8cb03272",
+      "url": "https://github.com/xlminfei/066/releases/download/untagged-447a6056c533282080f2/v3.3-complete-evidence.zip.part023"
+    },
+    {
+      "status": "REMOTE_SHA256_AND_SIZE_VERIFIED",
+      "release_id": 393624027,
+      "asset_id": 581125608,
+      "name": "v3.3-complete-evidence.zip.part024",
+      "bytes": 16777216,
+      "sha256": "7158396137ae22c59c2c23332cb0aa94cdb76f8e8fb8d602d93b6df7a1f18609",
+      "server_digest": "sha256:7158396137ae22c59c2c23332cb0aa94cdb76f8e8fb8d602d93b6df7a1f18609",
+      "url": "https://github.com/xlminfei/066/releases/download/untagged-447a6056c533282080f2/v3.3-complete-evidence.zip.part024"
+    },
+    {
+      "status": "REMOTE_SHA256_AND_SIZE_VERIFIED",
+      "release_id": 393624027,
+      "asset_id": 581125750,
+      "name": "v3.3-complete-evidence.zip.part025",
+      "bytes": 16777216,
+      "sha256": "9cd87b4c8102c37a189ac5027527a527a13b68c791d48c6ce11b716b94a55fc9",
+      "server_digest": "sha256:9cd87b4c8102c37a189ac5027527a527a13b68c791d48c6ce11b716b94a55fc9",
+      "url": "https://github.com/xlminfei/066/releases/download/untagged-447a6056c533282080f2/v3.3-complete-evidence.zip.part025"
+    },
+    {
+      "status": "REMOTE_SHA256_AND_SIZE_VERIFIED",
+      "release_id": 393624027,
+      "asset_id": 581126347,
+      "name": "v3.3-complete-evidence.zip.part026",
+      "bytes": 16777216,
+      "sha256": "dbbd6df51b15e8198b0b02ffaf4352cf38a58a3814f9a9ac40181a33adff5e89",
+      "server_digest": "sha256:dbbd6df51b15e8198b0b02ffaf4352cf38a58a3814f9a9ac40181a33adff5e89",
+      "url": "https://github.com/xlminfei/066/releases/download/untagged-447a6056c533282080f2/v3.3-complete-evidence.zip.part026"
+    },
+    {
+      "status": "REMOTE_SHA256_AND_SIZE_VERIFIED",
+      "release_id": 393624027,
+      "asset_id": 581126499,
+      "name": "v3.3-complete-evidence.zip.part027",
+      "bytes": 16777216,
+      "sha256": "df2789b358bacf481ff11e9d1232926b757c318399606f6ad55ff884e3bfe582",
+      "server_digest": "sha256:df2789b358bacf481ff11e9d1232926b757c318399606f6ad55ff884e3bfe582",
+      "url": "https://github.com/xlminfei/066/releases/download/untagged-447a6056c533282080f2/v3.3-complete-evidence.zip.part027"
+    },
+    {
+      "status": "REMOTE_SHA256_AND_SIZE_VERIFIED",
+      "release_id": 393624027,
+      "asset_id": 581126740,
+      "name": "v3.3-complete-evidence.zip.part028",
+      "bytes": 16777216,
+      "sha256": "41db9ff4b7ab61d825145a2ae39d42e2849fb8b5f67447b669f7337271a98b60",
+      "server_digest": "sha256:41db9ff4b7ab61d825145a2ae39d42e2849fb8b5f67447b669f7337271a98b60",
+      "url": "https://github.com/xlminfei/066/releases/download/untagged-447a6056c533282080f2/v3.3-complete-evidence.zip.part028"
+    },
+    {
+      "status": "REMOTE_SHA256_AND_SIZE_VERIFIED",
+      "release_id": 393624027,
+      "asset_id": 581126910,
+      "name": "v3.3-complete-evidence.zip.part029",
+      "bytes": 16777216,
+      "sha256": "67132fc21856fca94d891a0597e8eb079e5c5cea67117a9e03cbc213819bf006",
+      "server_digest": "sha256:67132fc21856fca94d891a0597e8eb079e5c5cea67117a9e03cbc213819bf006",
+      "url": "https://github.com/xlminfei/066/releases/download/untagged-447a6056c533282080f2/v3.3-complete-evidence.zip.part029"
+    },
+    {
+      "status": "REMOTE_SHA256_AND_SIZE_VERIFIED",
+      "release_id": 393624027,
+      "asset_id": 581127099,
+      "name": "v3.3-complete-evidence.zip.part030",
+      "bytes": 16777216,
+      "sha256": "e12c53c1282bf717898e43a2dd4e13679dccd6bf3e1a13af0fa4a21431738985",
+      "server_digest": "sha256:e12c53c1282bf717898e43a2dd4e13679dccd6bf3e1a13af0fa4a21431738985",
+      "url": "https://github.com/xlminfei/066/releases/download/untagged-447a6056c533282080f2/v3.3-complete-evidence.zip.part030"
+    },
+    {
+      "status": "REMOTE_SHA256_AND_SIZE_VERIFIED",
+      "release_id": 393624027,
+      "asset_id": 581127327,
+      "name": "v3.3-complete-evidence.zip.part031",
+      "bytes": 16777216,
+      "sha256": "0f628f73a57b6f2a533eb058b8c9928700bc35a576c7c5290299a305e77dca79",
+      "server_digest": "sha256:0f628f73a57b6f2a533eb058b8c9928700bc35a576c7c5290299a305e77dca79",
+      "url": "https://github.com/xlminfei/066/releases/download/untagged-447a6056c533282080f2/v3.3-complete-evidence.zip.part031"
+    },
+    {
+      "status": "REMOTE_SHA256_AND_SIZE_VERIFIED",
+      "release_id": 393624027,
+      "asset_id": 581127565,
+      "name": "v3.3-complete-evidence.zip.part032",
+      "bytes": 16777216,
+      "sha256": "72e410cfcfaec9dd88bafe1e33646fd8d60fcb39a378fb5dc9e06b64beac13be",
+      "server_digest": "sha256:72e410cfcfaec9dd88bafe1e33646fd8d60fcb39a378fb5dc9e06b64beac13be",
+      "url": "https://github.com/xlminfei/066/releases/download/untagged-447a6056c533282080f2/v3.3-complete-evidence.zip.part032"
+    },
+    {
+      "status": "REMOTE_SHA256_AND_SIZE_VERIFIED",
+      "release_id": 393624027,
+      "asset_id": 581127630,
+      "name": "v3.3-complete-evidence.zip.part033",
+      "bytes": 16777216,
+      "sha256": "89ff5a9b365b2105cb0e2aed1fba9c672eb3d1dfa7e69877a9e467ef67b5fb6f",
+      "server_digest": "sha256:89ff5a9b365b2105cb0e2aed1fba9c672eb3d1dfa7e69877a9e467ef67b5fb6f",
+      "url": "https://github.com/xlminfei/066/releases/download/untagged-447a6056c533282080f2/v3.3-complete-evidence.zip.part033"
+    },
+    {
+      "status": "REMOTE_SHA256_AND_SIZE_VERIFIED",
+      "release_id": 393624027,
+      "asset_id": 581127771,
+      "name": "v3.3-complete-evidence.zip.part034",
+      "bytes": 16777216,
+      "sha256": "ce6d605285d7c6cf0b7d8c7e35cad9c9c4af1bfa9c847595dd031f1ea75949d0",
+      "server_digest": "sha256:ce6d605285d7c6cf0b7d8c7e35cad9c9c4af1bfa9c847595dd031f1ea75949d0",
+      "url": "https://github.com/xlminfei/066/releases/download/untagged-447a6056c533282080f2/v3.3-complete-evidence.zip.part034"
+    },
+    {
+      "status": "REMOTE_SHA256_AND_SIZE_VERIFIED",
+      "release_id": 393624027,
+      "asset_id": 581127932,
+      "name": "v3.3-complete-evidence.zip.part035",
+      "bytes": 16777216,
+      "sha256": "e5ae22b22d1aa24cc16c196ae7180a91c4d17f2a32eb131445205354df7ec242",
+      "server_digest": "sha256:e5ae22b22d1aa24cc16c196ae7180a91c4d17f2a32eb131445205354df7ec242",
+      "url": "https://github.com/xlminfei/066/releases/download/untagged-447a6056c533282080f2/v3.3-complete-evidence.zip.part035"
+    },
+    {
+      "status": "REMOTE_SHA256_AND_SIZE_VERIFIED",
+      "release_id": 393624027,
+      "asset_id": 581128391,
+      "name": "v3.3-complete-evidence.zip.part036",
+      "bytes": 16777216,
+      "sha256": "fc2bf0e3b1e614b04aef30236ad2ccb1479ce0a379fd0ae11b01e625bd2d8c15",
+      "server_digest": "sha256:fc2bf0e3b1e614b04aef30236ad2ccb1479ce0a379fd0ae11b01e625bd2d8c15",
+      "url": "https://github.com/xlminfei/066/releases/download/untagged-447a6056c533282080f2/v3.3-complete-evidence.zip.part036"
+    },
+    {
+      "status": "REMOTE_SHA256_AND_SIZE_VERIFIED",
+      "release_id": 393624027,
+      "asset_id": 581128670,
+      "name": "v3.3-complete-evidence.zip.part037",
+      "bytes": 16777216,
+      "sha256": "3f7424d69e4e64bd2020c75f5efcf98b08e7e64fcc807f9823a6d2072ac042cb",
+      "server_digest": "sha256:3f7424d69e4e64bd2020c75f5efcf98b08e7e64fcc807f9823a6d2072ac042cb",
+      "url": "https://github.com/xlminfei/066/releases/download/untagged-447a6056c533282080f2/v3.3-complete-evidence.zip.part037"
+    },
+    {
+      "status": "REMOTE_SHA256_AND_SIZE_VERIFIED",
+      "release_id": 393624027,
+      "asset_id": 581128822,
+      "name": "v3.3-complete-evidence.zip.part038",
+      "bytes": 16777216,
+      "sha256": "1c55bc1cd4d9c7d364826376ec3abdefbe18106a6d1a50da4b7490ef1df904eb",
+      "server_digest": "sha256:1c55bc1cd4d9c7d364826376ec3abdefbe18106a6d1a50da4b7490ef1df904eb",
+      "url": "https://github.com/xlminfei/066/releases/download/untagged-447a6056c533282080f2/v3.3-complete-evidence.zip.part038"
+    },
+    {
+      "status": "REMOTE_SHA256_AND_SIZE_VERIFIED",
+      "release_id": 393624027,
+      "asset_id": 581128859,
+      "name": "v3.3-complete-evidence.zip.part039",
+      "bytes": 16777216,
+      "sha256": "0366f1550700df10dba6be2dd66b93756aaaf331803a36e5c8dea045d956431d",
+      "server_digest": "sha256:0366f1550700df10dba6be2dd66b93756aaaf331803a36e5c8dea045d956431d",
+      "url": "https://github.com/xlminfei/066/releases/download/untagged-447a6056c533282080f2/v3.3-complete-evidence.zip.part039"
+    },
+    {
+      "status": "REMOTE_SHA256_AND_SIZE_VERIFIED",
+      "release_id": 393624027,
+      "asset_id": 581129155,
+      "name": "v3.3-complete-evidence.zip.part040",
+      "bytes": 1831454,
+      "sha256": "4eea56bcdfc0fd3d3f63e812189a535bf85d08091531273befb3fa179a5e89d9",
+      "server_digest": "sha256:4eea56bcdfc0fd3d3f63e812189a535bf85d08091531273befb3fa179a5e89d9",
+      "url": "https://github.com/xlminfei/066/releases/download/untagged-447a6056c533282080f2/v3.3-complete-evidence.zip.part040"
+    },
+    {
+      "status": "REMOTE_SHA256_AND_SIZE_VERIFIED",
+      "release_id": 393624027,
+      "asset_id": 581129704,
+      "name": "v3.3-complete-evidence.zip.sha256",
+      "bytes": 94,
+      "sha256": "58a48dc9bd34b7ce383ba4c8d76767d5956f5d31274bf196681654d3b7977f05",
+      "server_digest": "sha256:58a48dc9bd34b7ce383ba4c8d76767d5956f5d31274bf196681654d3b7977f05",
+      "url": "https://github.com/xlminfei/066/releases/download/untagged-447a6056c533282080f2/v3.3-complete-evidence.zip.sha256"
+    },
+    {
+      "status": "REMOTE_SHA256_AND_SIZE_VERIFIED",
+      "release_id": 393624027,
+      "asset_id": 581130944,
+      "name": "v3.3-complete-git-changes.patch",
+      "bytes": 13925380,
+      "sha256": "bf6cf33b9905773708dc9f9f2cc01013d717479e4e0b0abcd8889832965f6fa8",
+      "server_digest": "sha256:bf6cf33b9905773708dc9f9f2cc01013d717479e4e0b0abcd8889832965f6fa8",
+      "url": "https://github.com/xlminfei/066/releases/download/untagged-447a6056c533282080f2/v3.3-complete-git-changes.patch"
+    }
+  ],
+  "archive_sha256": "5fc2b56e7583ad0d8f5ea3a62c788438f39bf9d163c01fb934b932e50981492e",
+  "code_commit": "d3a6571d476fc33656b3a998c797b3d552f56da7",
+  "source_files": 277,
+  "release_id": 393624027
+}

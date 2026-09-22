@@ -1,0 +1,11 @@
+UPLOAD v3.3-delivery-execution-evidence.build.json: 100.0% read from source
+{
+  "status": "REMOTE_SHA256_AND_SIZE_VERIFIED",
+  "release_id": 393624027,
+  "asset_id": 581134307,
+  "name": "v3.3-delivery-execution-evidence.build.json",
+  "bytes": 327,
+  "sha256": "0f1dcf1f67e5314750a069f141d81fedb7bbbec4b9d41ba3f60802271f235d42",
+  "server_digest": "sha256:0f1dcf1f67e5314750a069f141d81fedb7bbbec4b9d41ba3f60802271f235d42",
+  "url": "https://github.com/xlminfei/066/releases/download/untagged-447a6056c533282080f2/v3.3-delivery-execution-evidence.build.json"
+}

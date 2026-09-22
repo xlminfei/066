@@ -23,3 +23,13 @@ Git中原生RDS被忽略，它们均在完整ZIP中；本次不以“可以重�
 32旧合成fit保留v3.2版本身份、FitKey和FAILED_DIAGNOSTICS状态；本版通过了新版审计复算，没有新增收敛结论。正式16全拟合+240CV仍未执行。
 
 归档之后形成的分片/上传日志/收据/Git补丁独立发布；最终收据加入main而不移动固定v3.3标签。
+
+## 最终交付核验
+
+代码标签v3.3固定在d3a6571d476fc33656b3a998c797b3d552f56da7。Release已发布，57个附件逐个核对GitHub大小与SHA256；额外匿名下载首片、尾片和清单，实际字节全部一致。[最终收据](remote_delivery_verification.json)记录完整附件列表。244个Git版文件与本地字节一致，旧版本改动0，见git_snapshot_validation.json。
+
+发布过程补充ZIP含127个文件，包括全部53项主附件上传日志/收据、恢复检查、执行脚本与Git补丁；4个补充附件使总数为57。补充附件自己的最后上传日志/收据在final_upload_logs/及final_upload_receipts/。
+
+最终匿名API查询受到每IP限额限制（403，remaining=0）；仅元数据查询使用本任务已有授权，Release网页与3个文件样本仍匿名读取成功。原始失败、修正后脚本和通过日志都随本目录保留。详情见public_api_rate_limit_note.md。
+
+所有真实研究计算与新MCMC仍未启动。原32合成短链诊断失败状态未改；这里的完成状态仅针对本次限定修复及资料交付。

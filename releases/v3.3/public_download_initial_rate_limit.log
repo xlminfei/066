@@ -1,0 +1,10 @@
+file:///C:/Users/minfei/Documents/Codex/2026-09-09/02-08-r-x20-2/work/v3_3_delivery/verify_public_v3_3_delivery.mjs:7
+if(!response.ok)throw Error('Release HTTP'+response.status);
+                      ^
+
+Error: Release HTTP403
+    at file:///C:/Users/minfei/Documents/Codex/2026-09-09/02-08-r-x20-2/work/v3_3_delivery/verify_public_v3_3_delivery.mjs:7:23
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+
+Node.js v24.15.0
+Assertion failed: !(handle->flags & UV_HANDLE_CLOSING), file src\win\async.c, line 76
