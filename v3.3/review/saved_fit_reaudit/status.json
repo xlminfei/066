@@ -1,0 +1,14 @@
+{
+  "status": "PASS_REAUDIT_OF_SOURCE_VERIFIED_V32_SYNTHETIC_FITS",
+  "fits_reopened": 32,
+  "source_version": "ratio_analysis_v3_2_weighted_20260921",
+  "audit_version": "ratio_analysis_v3_3_weighted_20260922",
+  "OOFRows": 1472,
+  "PanelRows": 192,
+  "max_absolute_difference": 8.4377e-15,
+  "forged_logscore_rejections": 32,
+  "formal_cache_and_diagnostic_rejections": 32,
+  "source_diagnostics": "FAILED_DIAGNOSTICS:32_unchanged",
+  "new_fits": 0,
+  "real_data_fits": 0
+}

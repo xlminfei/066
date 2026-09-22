@@ -1,0 +1,131 @@
+REGRESSION_START run_tests.R 
+TEST_FILE test_contracts.R 
+PASS: 40-50 is LOW, exact/lower 50 is HIGH, strict crossing is excluded
+PASS: Site151 is excluded from predictor sites
+PASS: Site315 M1 uses K_or_T and other
+PASS: M3 rare levels below four panel occurrences become OTHER
+PASS: record_equal training weights are one
+PASS: species_equal gives each species the same total weight
+PASS: species_equal keeps total training weight equal to record count
+PASS: unweighted AUC matches the pairwise definition
+PASS: weighted AUC matches the weighted pairwise definition
+PASS: weighted AUC is invariant to row order
+PASS: tied predictions have AUC 0.5
+PASS: both evaluation weightings use the same base evidence rows
+PASS: evaluation AUC uses the shared tie-safe metric
+PASS: calibration bins provide fixed-weight point estimates and cluster bootstrap intervals
+PASS: applicability status retains all independent warnings
+PASS: post-processing writes ROC coordinates from the shared evidence table
+PASS: post-processing computes calibration bins
+PASS: plotting entry points create PDF artifacts
+PASS: unclassified records remain in binary audit counts
+PASS: blueprints reserve MISSING even when absent from training panel
+PASS: calibration output has one row per bin
+PASS: prediction Point uses posterior mean
+PASS: non-finite held-out scores are rejected instead of dropped
+PASS: Null batch projection repeats each posterior draw across species
+PASS: external MISSING has a dedicated design direction
+PASS: CV summary preserves model, training weighting, and evaluation weighting identities
+PASS: model comparison aggregates the complete CV design at the species cluster level
+PASS: joint evaluation reports predictive interval coverage and width
+TEST_FILE test_release_regressions.R 
+PASS NaN diagnostics must fail
+PASS degenerate bootstrap cannot imply P=0
+PASS AUC rejects fractional truth
+PASS log mean exp rejects NA
+PASS zero-col Null projection
+PASS typed record simulator exists
+PASS ROC fold multiplicity
+TEST_FILE test_scientific_contracts.R 
+PASS: reserved MISSING for all sites 
+PASS: row estimability compares row space 
+PASS: illegal residue refused 
+PASS: empty species refused 
+PASS: two-species counterexample uses cluster uncertainty 
+PASS: too few species has no approximate p value 
+PASS: record and species targets are different 
+PASS: pairing rejects species mismatch 
+PASS: pairing rejects fold mismatch 
+PASS: count PI draws respect denominator2 support 
+PASS: count PI draws respect denominator20 support 
+PASS: count/report simulators preserve common mean 
+PASS: report endpoint mass equals rho*m 
+PASS: weight normalization does not pretend duplicate invariance 
+PASS: unsupported predictor change refused 
+PASS: unsupported CV design change refused 
+SCIENTIFIC_CONTRACT_PASS
+PASS: mean ROC handles rounded weighted endpoints 
+ALL INHERITED DETERMINISTIC TESTS PASSED (CURRENT V3.3 CODE) 
+REGRESSION_START test_v32_metrics.R 
+PASS 3.2 valid record-equal unbalanced species accepted 
+PASS 3.2 valid species-equal accepted 
+PASS 3.2 wrong record weights rejected 
+PASS 3.2 species total alone insufficient if within-species weights unequal 
+PASS 3.2 mixed weighting labels rejected 
+PASS 3.2 missing weighting rejected 
+PASS 3.2 missing species rejected 
+PASS 3.2 nonfinite weights rejected 
+PASS 3.3 distinct 3 logscore species / 2 point and PI species 
+PASS 3.3 records and species both exposed 
+PASS 7.3 record bias is mean(predicted-observed) 
+PASS 7.3 species bias weights within valid point subset 
+PASS 7.3 bias positive means overprediction 
+PASS 3.3 interval-only has no fabricated point species 
+PASS binary species counts and quantitative NA are explicit 
+V32_METRICS_PASS 
+REGRESSION_START test_quantitative_diagnostics.R 
+QUANTITATIVE_PLOT_PASS: signed bias, point-set weights, interval exclusion, shuffled keys, PDF generated 
+REGRESSION_START run_audit_deterministic.R 
+PASS 16 synthetic posterior strata and all three record types recompute
+PASS OOF audit covers every held-out row without sampling
+PASS R independent raw likelihood matches moderate oracle
+PASS tampered OOF can still produce internally consistent downstream metrics
+PASS OOF corruption is caught even if downstream metrics were regenerated
+PASS raw log-score tampering fails posterior audit
+PASS inactive joint probability must remain NA
+PASS interval observations cannot become pseudo point targets
+PASS count predictive distribution label cannot be changed
+PASS duplicate OOF records are rejected
+PASS fixture posterior cannot pass without explicit fixture opt-in
+PASS stale encoded state is rejected
+PASS every panel row is recomputed for every route/model/training fixture
+PASS wrong full-panel posterior mean is rejected
+PASS wrong full-panel predictive interval is rejected
+PASS duplicated full-panel species is rejected
+PASS small-grid model/training comparisons include exact keys and recomputed values
+PASS missing model comparison key is rejected
+PASS duplicated training comparison key is rejected
+PASS reversed/incorrect comparison identity is rejected
+PASS comparison value tampering is rejected after grid validation
+PASS formal comparison universe is 48 plus 32 without fitting
+PASS independent R likelihood handles the old upper-tail counterexample
+PASS independent R likelihood handles the old lower-tail counterexample
+PASS fraction-scale quadrature resolves a 1e-12 uniform interval
+PASS comparison roundtrip tolerates benign CSV type differences
+PASS NaN cannot masquerade as an inactive NA
+PASS newly required numeric fields cannot silently disappear
+PASS quantitative summaries and sources recompute under shuffled keys
+PASS quantitative Bias tampering is rejected
+PASS plot EvaluationWeight tampering is rejected
+PASS plot SignedError tampering is rejected
+PASS quantitative support-count tampering is rejected
+PASS missing quantitative plot key is rejected
+PASS missing required Bias field is rejected
+PREDICTION_AUDIT_PASS: synthetic fixtures and tampering negatives only; no research fits 
+REGRESSION_START test_binary_template_key.R 
+BINARY_TEMPLATE_KEY_PASS: model/columns distinguished despite identical generic Stan program 
+REGRESSION_START test_input_support_counts.R 
+INPUT_SUPPORT_COUNTS_PASS: logscore51 / binary50 / point-and-PI48 species; read-only inspection, no fitting 
+REGRESSION_START test_v32_fullgrid_synthetic.R 
+                               Check RowsChecked ColumnsChecked
+1   model_vs_null_grid_and_recompute          48             21
+2 training_method_grid_and_recompute          32             21
+  MaximumAbsoluteDifference Status
+1              3.122502e-17   PASS
+2              0.000000e+00   PASS
+FULLGRID_SYNTHETIC_PASS: 240 mock tasks; 480/64/48/32 keys; metric support and bias propagated 
+REGRESSION_START test_report_comparison_wording.R 
+REPORT_COMPARISON_WORDING_PASS: fixed route/design/evaluation; generated report checked 
+REGRESSION_START parse_all.R 
+PARSE_PASS 60 R files 
+V33_REGRESSION_PASS; deterministic/synthetic_mock_only; no MCMC

@@ -1,0 +1,2 @@
+Error: identical(trimws(paste(probe, collapse = "\n")), trimws(sm@model_code)) is not TRUE
+Execution halted

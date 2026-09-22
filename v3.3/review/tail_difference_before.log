@@ -1,0 +1,34 @@
+$a
+[1] 1e-08
+
+$b
+[1] 1e-08
+
+$lo
+[1] 0.40000000000000002
+
+$hi
+[1] 0.5
+
+$old_audit
+[1] -20.016548414999001
+
+$independent_integral
+[1] -20.016548394229577
+
+$absolute_error
+[1] 2.0769423514366281e-08
+
+$tolerance
+[1] 2.0016548394229576e-09
+
+$old_finite
+[1] TRUE
+
+$geometrically_narrow
+[1] FALSE
+
+$old_pass
+[1] FALSE
+
+FINITE_INACCURATE_R_AUDIT_REPRODUCED_IN_LOCKED_R_ENVIRONMENT

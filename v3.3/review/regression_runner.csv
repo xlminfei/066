@@ -1,0 +1,11 @@
+"Script","ExitStatus","Pass"
+"run_tests.R",0,TRUE
+"test_v32_metrics.R",0,TRUE
+"test_quantitative_diagnostics.R",0,TRUE
+"run_audit_deterministic.R",0,TRUE
+"test_binary_template_key.R",0,TRUE
+"test_input_support_counts.R",0,TRUE
+"test_v32_fullgrid_synthetic.R",0,TRUE
+"test_report_comparison_wording.R",0,TRUE
+"test_v33_scope_guard.R",0,TRUE
+"parse_all.R",0,TRUE

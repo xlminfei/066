@@ -1,0 +1,60 @@
+{
+  "status": "SCOPED_V33_FIXES_VERIFIED",
+  "baseline": "2eec10f0ff37a3fb7c102901d0a3bfaab491440b",
+  "scope": [
+    "ReviewSection4:finite_tail_difference_precision",
+    "ReviewSection6:fixed_evaluation_target_wording",
+    "ReviewSection8:bounded_regression_and_preservation"
+  ],
+  "beta_threeway": {
+    "status": "PASS",
+    "interval_cases": 312,
+    "mixture_record_cases": 5,
+    "old_audit_failures": 8,
+    "max_audit_abs_error": 5.1568e-12,
+    "max_audit_scaled_error": 5.0023e-13,
+    "max_stan_scaled_error": 7.762e-12,
+    "max_pair_scaled_difference": 8.1848e-12,
+    "max_mixture_difference": 7.1054e-15,
+    "reference": "mpmath1.3.0_100_decimal_digits_independent_incomplete_beta_and_closed_forms",
+    "production_stan_sha256": "db491633fcadbd940c2e78280660a47cd037f46795c9dce2258f9381c4571430",
+    "audit_source_sha256": "afe818c01737ca11ac74ea493eeea67ab6b10e8d4d1c5618e6aa2cb93f4eb831",
+    "probe_rds_sha256": "5fc1f77f424b52c92e110454184ce044a43f4be95183c75ca45c450d7f8acb98",
+    "tolerance": "1e-10*max(1,abs(reference_log_probability))",
+    "posterior_sampling": false,
+    "formal_research_fits": 0
+  },
+  "reused_posterior_audit": {
+    "status": "PASS_REAUDIT_OF_SOURCE_VERIFIED_V32_SYNTHETIC_FITS",
+    "fits_reopened": 32,
+    "source_version": "ratio_analysis_v3_2_weighted_20260921",
+    "audit_version": "ratio_analysis_v3_3_weighted_20260922",
+    "OOFRows": 1472,
+    "PanelRows": 192,
+    "max_absolute_difference": 8.4377e-15,
+    "forged_logscore_rejections": 32,
+    "formal_cache_and_diagnostic_rejections": 32,
+    "source_diagnostics": "FAILED_DIAGNOSTICS:32_unchanged",
+    "new_fits": 0,
+    "real_data_fits": 0
+  },
+  "inherited_assertions": 52,
+  "weight_metric_assertions": 15,
+  "audit_tamper_assertions": 35,
+  "report_wording_checks": 5,
+  "scope_preservation_checks": 19,
+  "R_files_parsed": 61,
+  "regression_exit": {
+    "exit_code": 0,
+    "ended_at": "2026-09-22T17:56:01.2635999+08:00",
+    "purpose": "V33_IMAGE_STANDALONE_FINAL_REGRESSION"
+  },
+  "environment_exit": {
+    "ended_at": "2026-09-22T17:52:01.1452941+08:00",
+    "exit_code": 0,
+    "purpose": "ENVIRONMENT_ONLY"
+  },
+  "new_posterior_fits": 0,
+  "real_data_fits": 0,
+  "limitations": "No new convergence result; reused32 short chains remain FAILED_DIAGNOSTICS; numerical agreement limited to checked domains; formal256-fit successful path not executed"
+}

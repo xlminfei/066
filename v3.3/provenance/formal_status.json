@@ -1,0 +1,12 @@
+{
+  "status": "NOT_RUN_BY_USER_INSTRUCTION",
+  "version": "ratio_analysis_v3_3_weighted_20260922",
+  "formal_full_fits": 0,
+  "formal_cv_fits": 0,
+  "real_data_predictions": 0,
+  "new_synthetic_posterior_fits": 0,
+  "reused_v32_synthetic_fits": 32,
+  "reused_fit_diagnostics": "FAILED_DIAGNOSTICS:32",
+  "function_probe": "Fixed_param creates log_prob interface only; no posterior MCMC",
+  "source_identity_preserved": true
+}

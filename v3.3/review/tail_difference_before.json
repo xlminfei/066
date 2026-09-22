@@ -1,0 +1,13 @@
+{
+  "a": 1e-08,
+  "b": 1e-08,
+  "lo": 0.40000000000000002,
+  "hi": 0.5,
+  "old_audit": -20.016548414999001,
+  "independent_integral": -20.016548394229577,
+  "absolute_error": 2.0769423514366281e-08,
+  "tolerance": 2.0016548394229576e-09,
+  "old_finite": true,
+  "geometrically_narrow": false,
+  "old_pass": false
+}

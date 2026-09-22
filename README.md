@@ -1,5 +1,7 @@
 # STING 跨物种响应比率模型：版本化代码与验证资料
 
+> **v3.3 更新**：[修改与范围](v3.3/README.md)、[详细修改理由](v3.3/docs/CHANGE_DETAILS_v3_3_zh.md)、[测试结果](v3.3/review/VALIDATION_v3_3.md)、[完整资料](releases/v3.3/README.md)。仅修复R审计有限尾差精度和MeanLogScore比较文案；没有新MCMC或真实研究计算。
+
 > **v3.2 更新**：[代码与范围](v3.2/README.md)、[逐项修改及原因](v3.2/docs/V3_2_CHANGE_DETAILS_zh.md)、[完整流程](v3.2/docs/PIPELINE_v3_2_zh.md)、[测试结果](v3.2/review/VALIDATION_v3_2.md)、[完整资料下载](releases/v3.2/README.md)。本次只完成审查3.1—3.5及7.3，正式真实数据计算仍未启动。
 
 > **v3.1 完整资料补充**：全部说明、中间文件与测试结果见 v3.1-complete Release；[图片为何等值](v3.1/docs/FIGURE_TEST_EXPLANATION_zh.md)、[逐项修改](v3.1/docs/CHANGE_DETAILS_zh.md)、[完整下载与校验](v3.1/docs/COMPLETE_ARCHIVE_zh.md)。

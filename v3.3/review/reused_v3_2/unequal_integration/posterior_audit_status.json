@@ -1,0 +1,12 @@
+{
+  "status": "PASS_REAL_SYNTHETIC_POSTERIOR_AUDIT",
+  "fits_reopened": 32,
+  "full_panel_projection_strata": 16,
+  "raw_rows_recomputed": 1472,
+  "panel_rows_recomputed": 192,
+  "max_absolute_error": 8.4377e-15,
+  "tampered_prediction_cases": 48,
+  "tampered_logscore_cases": 32,
+  "source": "fitted_posteriors_plus_current_synthetic_inputs; independent_R_raw_likelihood",
+  "formal_research_fits": 0
+}

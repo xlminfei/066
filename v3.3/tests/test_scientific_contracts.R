@@ -1,0 +1,41 @@
+check<-function(condition,label){if(!isTRUE(condition))stop("FAIL: ",label);cat("PASS:",label,"\n")}
+assert_error<-function(expr,label){ans<-tryCatch({force(expr);FALSE},error=function(e)TRUE);check(ans,label)}
+p<-data.frame(Species=c("a","b","c"),Site3="C",Site20="K",Site117="K",Site151="C",Site196="C",Site315="K")
+dict<-build_encoding_dictionary(p);enc<-encode_panel(p,dict)$data
+bp<-make_design_blueprint(enc,p$Species,"M1")
+check(all(vapply(bp$levels,function(x)"MISSING"%in%x,logical(1))),"reserved MISSING for all sites")
+check(!row_in_span(matrix(c(1,1,0,0),2),c(1,1)),"row estimability compares row space")
+bad<-p;bad$Site3[1]<-"Z";assert_error(encode_panel(bad,dict),"illegal residue refused")
+bad<-p;bad$Species[1]<-"";assert_error(encode_panel(bad,dict),"empty species refused")
+r<-data.frame(Species=c(rep("a",20),rep("b",2)),Difference=c(rep(1,20),rep(-.2,2)))
+cb<-cluster_bootstrap_difference(r,"species_equal",42L,B=500L)
+check(abs(cb$mean-.4)<1e-12&&cb$se>.3,"two-species counterexample uses cluster uncertainty")
+check(is.na(cb$p),"too few species has no approximate p value")
+co<-cluster_bootstrap_difference(r,"record_equal",42L,B=500L)
+check(abs(co$mean-(20-.4)/22)<1e-12,"record and species targets are different")
+a<-data.frame(RecordID=c("1","2"),Species=c("a","b"),LogPredictiveDensityRaw=c(-1,-2),Fold=1:2)
+b<-a;b$Species[1]<-"c";assert_error(pair_log_score_rows(a,b),"pairing rejects species mismatch")
+b<-a;b$Fold<-2:1;assert_error(pair_log_score_rows(a,b),"pairing rejects fold mismatch")
+# Known posterior draws isolate the observation model, not the implementation.
+D<-10000L;nullbp<-make_design_blueprint(enc,p$Species,"Null")
+bs<-list(route="joint_bb",blueprint=nullbp,posterior=list(alpha=rep(0,D),beta=matrix(numeric(),D,0),rho=rep(.2,D),log_phi_count=rep(log(8),D),log_phi_ratio=rep(log(50),D)))
+obs<-data.frame(Species=c("a","b","c"),Type=c("count","count","exact"),Total=c(2,20,NA))
+state0<-list(observations=obs,encoded=enc)
+sim<-joint_record_predictive_draws(bs,state0,1:3,seed=2L)
+check(all(sim[,1]%in%c(0,.5,1)),"count PI draws respect denominator2 support")
+check(all(abs(sim[,2]*20-round(sim[,2]*20))<1e-12),"count PI draws respect denominator20 support")
+check(abs(mean(sim[,1])-.5)<.025&&abs(mean(sim[,3])-.5)<.025,"count/report simulators preserve common mean")
+check(abs(mean(sim[,3]==1)-.1)<.02,"report endpoint mass equals rho*m")
+# Duplicate records scale a power likelihood; evaluation means remain unchanged.
+w<-build_train_weights(data.frame(Species=c("a","a","b")),"species_equal")
+w2<-build_train_weights(data.frame(Species=rep(c("a","a","b"),2)),"species_equal")
+check(sum(w2$weight)==2*sum(w$weight),"weight normalization does not pretend duplicate invariance")
+# Configuration fields cannot silently go unused.
+cfg<-read_config_v3(root);badcfg<-cfg;badcfg$predictor_sites<-c(cfg$predictor_sites,"Site151")
+assert_error(apply_analysis_config(badcfg),"unsupported predictor change refused")
+badcfg<-cfg;badcfg$designs$fivefold<-4;assert_error(apply_analysis_config(badcfg),"unsupported CV design change refused")
+apply_analysis_config(cfg)
+cat("SCIENTIFIC_CONTRACT_PASS\n")
+
+q<-data.frame(Fold=c(1,1,2,2),FPR=c(0,1-2e-16,0,1),TPR=c(0,1,0,1),AUC=rep(.5,4))
+s<-mean_roc_summary_v3(q);check(all(is.finite(s$y))&&abs(roc_area_v3(s$x,s$y)-.5)<1e-12,"mean ROC handles rounded weighted endpoints")

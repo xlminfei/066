@@ -1,0 +1,21 @@
+{
+  "version": "ratio_analysis_v3_3_weighted_20260922",
+  "status": "PREPARED_NOT_FIT",
+  "input_hashes": {
+    "observations.csv": "3c886f7f2c11012463296b350a931543542b4e1c0d128ad3c408fda9ae824d79",
+    "sites.csv": "0a99692b060f13d1faaa870d06ea7dca9a4f16bc289636bcc88f5d105ebdacb5"
+  },
+  "records": 153,
+  "panel_species": 365,
+  "response_species": 51,
+  "models": ["Null", "M1", "M2", "M3"],
+  "routes": ["binary", "joint_bb"],
+  "train_weightings": ["record_equal", "species_equal"],
+  "eval_weightings": ["record_equal", "species_equal"],
+  "site151": "input_metadata_only",
+  "site315": "predictor_in_M1_M2_M3",
+  "scheme_a": false,
+  "phylogeny": false,
+  "binary_cv_species_expected": 50,
+  "joint_cv_species_expected": 51
+}

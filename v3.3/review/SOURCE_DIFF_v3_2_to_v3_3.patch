@@ -1,0 +1,569 @@
+diff --git a/v3.2/Dockerfile b/v3.3/Dockerfile
+index ed1e543..a1c8c03 100644
+--- a/v3.2/Dockerfile
++++ b/v3.3/Dockerfile
+@@ -6,10 +6,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
+     r-cran-brms r-cran-rstan r-cran-posterior r-cran-digest \
+     ca-certificates curl cmake pandoc \
+     && rm -rf /var/lib/apt/lists/*
+-COPY renv.lock /opt/ratio-analysis-v3.2/renv.lock
+-COPY scripts/restore_environment.R /opt/ratio-analysis-v3.2/scripts/restore_environment.R
+-RUN Rscript /opt/ratio-analysis-v3.2/scripts/restore_environment.R \
+-    --lockfile /opt/ratio-analysis-v3.2/renv.lock \
++COPY renv.lock /opt/ratio-analysis-v3.3/renv.lock
++COPY scripts/restore_environment.R /opt/ratio-analysis-v3.3/scripts/restore_environment.R
++RUN Rscript /opt/ratio-analysis-v3.3/scripts/restore_environment.R \
++    --lockfile /opt/ratio-analysis-v3.3/renv.lock \
+     --library /usr/local/lib/R/site-library
+-ENV RATIO_V32_LOCKFILE=/opt/ratio-analysis-v3.2/renv.lock
++ENV RATIO_V33_LOCKFILE=/opt/ratio-analysis-v3.3/renv.lock
+ WORKDIR /project
+
+diff --git a/v3.2/R/audit_run.R b/v3.3/R/audit_run.R
+index a47127e..f8d081a 100644
+--- a/v3.2/R/audit_run.R
++++ b/v3.3/R/audit_run.R
+@@ -117,7 +117,7 @@ audit_plan_v3_impl <- function(state, root, run_dir, review_dir) {
+       write_csv_atomic(quantitative_receipts, file.path(review_dir, "audit_quantitative_recompute.csv"))
+       required <- c("calibration_bins.csv", "roc_coordinates.csv", "training_ppc_summary.csv")
+       for (file in required) if (!file.exists(file.path(root, "results", file))) stop("Missing output: ", file)
+-      if (!file.exists(file.path(root, "reports", "REPORT_v3_2.md"))) stop("Missing full result report")
++      if (!file.exists(file.path(root, "reports", "REPORT_v3_3.md"))) stop("Missing full result report")
+     }, error = function(e) issues <<- c(issues, conditionMessage(e)))
+   }
+   status <- if (length(issues)) "FAILED" else "PASS"
+
+diff --git a/v3.2/R/config.R b/v3.3/R/config.R
+index 91e55c7..c73718d 100644
+--- a/v3.2/R/config.R
++++ b/v3.3/R/config.R
+@@ -1,4 +1,4 @@
+-V3_VERSION <- "ratio_analysis_v3_2_weighted_20260921"
++V3_VERSION <- "ratio_analysis_v3_3_weighted_20260922"
+ V3_MODELS <- c("Null", "M1", "M2", "M3")
+ V3_ROUTES <- c("binary", "joint_bb")
+ V3_TRAIN_WEIGHTINGS <- c("record_equal", "species_equal")
+@@ -101,7 +101,7 @@ apply_analysis_config <- function(cfg) {
+     train_weight_normalization="N_train/(S_train*R_s), total weight equals N_train",
+     classification_rule="count/exact >= 0.5 HIGH; interval Upper <= 0.5 LOW; interval Lower >= 0.5 HIGH; strict crossing excluded")
+   for(n in names(fixed))if(!identical(unname(unlist(cfg[[n]])),unname(fixed[[n]])))stop("Unsupported or missing config field: ",n)
+-  dk<-unlist(cfg$designs);if(!identical(names(dk),names(V3_DESIGN_K))||any(dk!=V3_DESIGN_K))stop("v3.2 requires fixed fivefold/tenfold designs")
++  dk<-unlist(cfg$designs);if(!identical(names(dk),names(V3_DESIGN_K))||any(dk!=V3_DESIGN_K))stop("v3.3 requires fixed fivefold/tenfold designs")
+   for(n in c("rare_min","seed","expected_panel_species","expected_records","comparison_bootstrap"))if(length(cfg[[n]])!=1||!is.finite(cfg[[n]])||cfg[[n]]<1||cfg[[n]]!=floor(cfg[[n]]))stop("Invalid config field: ",n)
+   for(n in names(V3_PRIORS))if(length(cfg$priors[[n]])!=1||!is.finite(cfg$priors[[n]])||(n!="log_phi_mean"&&cfg$priors[[n]]<=0))stop("Invalid prior: ",n)
+   totals<-c(formal_full_fit_count=16L,formal_cv_fit_count=240L,formal_fit_count=256L)
+
+diff --git a/v3.2/R/prediction_audit.R b/v3.3/R/prediction_audit.R
+index 55383f5..7c74b94 100644
+--- a/v3.2/R/prediction_audit.R
++++ b/v3.3/R/prediction_audit.R
+@@ -69,8 +69,9 @@ audit_logspace_difference_v3 <- function(a, b) {
+ }
+ 
+ # Independent R/Rmath reference. Both tails are evaluated; the smaller large-end
+-# tail is preferred. Cancellation in both tails uses density quadrature over
+-# t in [0,1], which also resolves intervals narrower than ordinary x grids.
++# tail is preferred. Finite log-tail differences can still lose precision.
++# Close tails, small shapes and narrow intervals use independent density
++# quadrature over t in [0,1]; no Stan continued fraction or probability floor.
+ audit_log_beta_interval_v3 <- function(lo, hi, a, b) {
+   if (length(lo) != 1L || length(hi) != 1L || !is.finite(lo) || !is.finite(hi) || lo < 0 || hi > 1 || lo >= hi) {
+     stop("Audit beta interval requires 0 <= lo < hi <= 1")
+@@ -85,20 +86,29 @@ audit_log_beta_interval_v3 <- function(lo, hi, a, b) {
+   sf_hi <- stats::pbeta(hi, a, b, lower.tail = FALSE, log.p = TRUE)
+   left <- audit_logspace_difference_v3(cdf_hi, cdf_lo)
+   right <- audit_logspace_difference_v3(sf_lo, sf_hi)
+-  out <- ifelse(cdf_hi <= sf_lo, left, right)
+-  other <- ifelse(cdf_hi <= sf_lo, right, left)
++  use_lower <- cdf_hi <= sf_lo
++  out <- ifelse(use_lower, left, right)
++  other <- ifelse(use_lower, right, left)
+   use_other <- !is.finite(out) & is.finite(other)
+   out[use_other] <- other[use_other]
++  # Track the tail actually used, including the alternative-tail fallback.
++  use_lower[use_other] <- !use_lower[use_other]
++  tail_gap <- ifelse(use_lower, cdf_hi - cdf_lo, sf_lo - sf_hi)
++  close_tails <- is.finite(tail_gap) & tail_gap < 1e-4
++  small_shape <- pmin(a, b) < 1e-5
+   narrow <- (hi - lo) < 1e-5 * min(lo, 1 - hi)
+-  for (i in which(!is.finite(out) | narrow)) {
++  for (i in which(!is.finite(out) | close_tails | small_shape | narrow)) {
+     mid <- lo + (hi - lo) / 2
+     candidates <- c(lo, mid, hi)
+     if (a[i] > 1 && b[i] > 1) candidates <- c(candidates, max(lo, min(hi, (a[i] - 1) / (a[i] + b[i] - 2))))
+     scale <- max(stats::dbeta(candidates, a[i], b[i], log = TRUE))
+     if (!is.finite(scale)) stop("Audit interval density is nonfinite")
+     integral <- stats::integrate(function(t) exp(stats::dbeta(lo + (hi - lo) * t, a[i], b[i], log = TRUE) - scale),
+-      lower = 0, upper = 1, subdivisions = 2000L, rel.tol = 1e-10, abs.tol = 0, stop.on.error = TRUE)
+-    if (!is.finite(integral$value) || integral$value <= 0) stop("Audit interval quadrature failed")
++      lower = 0, upper = 1, subdivisions = 2000L, rel.tol = 1e-12, abs.tol = 0, stop.on.error = TRUE)
++    if (!is.finite(integral$value) || integral$value <= 0 ||
++        !is.finite(integral$abs.error) || integral$abs.error > 1e-11 * integral$value) {
++      stop("Audit interval quadrature failed its precision check")
++    }
+     out[i] <- log(hi - lo) + scale + log(integral$value)
+   }
+   if (any(!is.finite(out)) || any(out > 1e-12)) stop("Invalid audit interval probability")
+
+diff --git a/v3.2/R/reporting.R b/v3.3/R/reporting.R
+index f91d1dd..3dd6b3c 100644
+--- a/v3.2/R/reporting.R
++++ b/v3.3/R/reporting.R
+@@ -8,10 +8,10 @@ write_results_report_v3 <- function(root) {
+   for(f in required)if(!file.exists(file.path(res,f)))stop("Report requires computed output: ",f)
+   cv<-read.csv(file.path(res,required[1]));mod<-read.csv(file.path(res,required[2]));train<-read.csv(file.path(res,required[3]));ppc<-read.csv(file.path(res,required[4]))
+   bias<-read.csv(file.path(res,"quantitative_bias_summary.csv"),stringsAsFactors=FALSE)
+-  lines<-c("# v3.2 computed analysis report","",paste("Version:",V3_VERSION),"",
++  lines<-c("# v3.3 computed analysis report","",paste("Version:",V3_VERSION),"",
+     "Purpose: predict a new species from a frozen six-site input table; Site151 is applicability metadata, five other sites enter M1/M2/M3. Models compare joint coding against Null, not causal site effects.","",
+     "Primary comparison: species-equal evaluation in fivefold species-grouped CV. Tenfold and record-equal evaluation are supplementary. Four combinations reuse two fits, not four independent experiments.","",
+-    "AUC is the equal-fold mean. PooledAUC uses all OOF predictions and is distinct. Log score/MAE/RMSE use weights computed over each metric's complete valid-record set. ELPD is a scaled weighted log-score sum (weight sum=N); compare MeanLogScore across weighting choices.","",
++    "AUC is the equal-fold mean. PooledAUC uses all OOF predictions and is distinct. Log score/MAE/RMSE use weights computed over each metric's complete valid-record set. ELPD is a scaled weighted log-score sum (weight sum=N); MeanLogScore reports the mean on the stated evaluation scale. Compare models or training methods only within the same route, CV design, and evaluation weighting. Different evaluation weightings define different targets; do not rank training methods by comparing their scores across evaluation weightings.","",
+     "Intervals in model comparisons are conditional species-cluster bootstrap intervals of fixed OOF predictions, excluding refitting and model-selection uncertainty. Approximate P/BH values are exploratory; degenerate or fewer-than-ten-species cases do not receive a P value. Training species may not represent every target species.","",
+     "The weighted likelihood N/(S R_s) fixes a relative species contribution and overall likelihood scale, not N independent observations or automatic frequentist interval coverage. Do not duplicate records to improve apparent precision.","",
+     "## All four training/evaluation combinations","",markdown_table_v3(cv),"",
+@@ -24,7 +24,7 @@ write_results_report_v3 <- function(root) {
+     "## Posterior predictive checks","","Observed and replicated statistics use the same record subset, observation type and evaluation weights. count simulations use each observed Total; exact reports use the one-inflated Beta. Interval records are not imputed as points. PPC uses training data and is not independent validation.","",markdown_table_v3(ppc),"",
+     "Full-panel Point is the posterior mean; CrI describes uncertainty in the expected quantity. Joint full-panel PI describes a future exact-type report without a specified denominator. CV count PI uses the observed denominator; interval overlap is descriptive and is not point coverage.")
+   dir.create(file.path(root,"reports"),showWarnings=FALSE,recursive=TRUE)
+-  writeLines(lines,file.path(root,"reports","REPORT_v3_2.md"),useBytes=TRUE)
++  writeLines(lines,file.path(root,"reports","REPORT_v3_3.md"),useBytes=TRUE)
+ }
+ export_model_package_v3 <- function(root,state,bundles,path) {
+   wanted<-unlist(lapply(V3_ROUTES,function(r)unlist(lapply(V3_MODELS,function(m)paste(r,m,V3_TRAIN_WEIGHTINGS,sep="|")))))
+
+diff --git a/v3.2/config/analysis.json b/v3.3/config/analysis.json
+index be76de0..0cb35c5 100644
+--- a/v3.2/config/analysis.json
++++ b/v3.3/config/analysis.json
+@@ -1,5 +1,5 @@
+ {
+-  "version": "ratio_analysis_v3_2_weighted_20260921",
++  "version": "ratio_analysis_v3_3_weighted_20260922",
+   "expected_panel_species": 365,
+   "expected_records": 153,
+   "models": [
+
+diff --git a/v3.2/input/contract.json b/v3.3/input/contract.json
+index 63026bb..b4e5780 100644
+--- a/v3.2/input/contract.json
++++ b/v3.3/input/contract.json
+@@ -1,5 +1,5 @@
+ {
+-  "version": "ratio_analysis_v3_2_weighted_20260921",
++  "version": "ratio_analysis_v3_3_weighted_20260922",
+   "status": "PREPARED_NOT_FIT",
+   "input_hashes": {
+     "observations.csv": "3c886f7f2c11012463296b350a931543542b4e1c0d128ad3c408fda9ae824d79",
+
+diff --git a/v3.2/scripts/ENVIRONMENT.md b/v3.3/scripts/ENVIRONMENT.md
+index 5679942..618a6f3 100644
+--- a/v3.2/scripts/ENVIRONMENT.md
++++ b/v3.3/scripts/ENVIRONMENT.md
+@@ -1,30 +1,11 @@
+-# v3.2 environment restoration
++# v3.3 runtime
+ 
+-The validated environment uses R 4.6.1 and a complete lock of 79 non-base R packages, including the recursive `Depends`, `Imports`, and `LinkingTo` dependencies of `brms`, `rstan`, `posterior`, `digest`, `jsonlite`, and `renv`. Optional `Suggests` packages are not universally installed. The tested versions, exact base-image digest, local image ID, and file hashes are recorded in `provenance/runtime_spec.json`.
++R4.6.1 and79 locked non-base R packages remain identical to v3.2. Dockerfile keeps the exact base-image digest and changes only the version installation path and lockfile environment variable. The successful v3.3 build is recorded in review/environment_build_v33.log; the apt layer was reused, while pinned renv/jsonlite restoration and all79 dependency/version checks executed. This is not a claim of rebuilding every OS package from an empty cache.
+ 
+-Build from this version directory (the directory containing `Dockerfile` and `renv.lock`):
++review/environment_test_v33.log records rejection of an altered R-version lock and a lock missing BH, plus pinned abind restoration in a clean temporary library. No model fitting occurs in these tests.
+ 
+-```bash
+-docker build --progress=plain -t ratio-analysis-v3-2:local .
+-docker run --rm \
+-  --mount type=bind,source="$PWD",target=/project/v3,readonly \
+-  --workdir /project/v3 \
+-  ratio-analysis-v3-2:local \
+-  Rscript scripts/test_environment.R
+-```
++The initial Beta function tests used the existing validated v3.2 image with exactly the same R/package versions. Final regression and standalone saved-fit re-audit ran in the newly built v3.3 image. Exact IDs and source hashes are in provenance/runtime_spec.json.
+ 
+-The Dockerfile fixes the base-image digest. It first obtains r2u binary packages for speed, then runs `scripts/restore_environment.R` to restore any missing or mismatching R versions from the lock. The script bootstraps exactly renv 1.2.4 and verifies its source archive with SHA-256 before installation. It then verifies the exact R version, all 79 package versions, dependency closure, and actual model namespace loading. A mismatch fails the build. It does not start model fitting.
++The independent100-digit Python oracle loads a local mpmath1.3.0 wheel from review/reference_dependency. Its SHA256 is checked before import. A pip TLS attempt failed; the verified PyPI release wheel was then fetched normally without disabling certificate checks. No global Python installation was changed.
+ 
+-The environment tests also require rejection of an altered R-version lock and a lock missing the transitive `BH` dependency. They exercise source restoration of `abind` into a clean temporary library. The successful Docker build additionally restored `jsonlite` from source. Tests only use temporary files and libraries inside the container; the package mount remains read-only.
+-
+-For a prepared Ubuntu host that already has R 4.6.1, compilers, and the required system libraries, an explicit restoration is also available:
+-
+-```bash
+-export R_LIBS_USER="$HOME/R/ratio-v3-2"
+-mkdir -p "$R_LIBS_USER"
+-Rscript scripts/restore_environment.R --library "$R_LIBS_USER"
+-```
+-
+-Keep `R_LIBS_USER` set when running subsequent analysis commands on that host. The tested reproducibility path is the Docker build. Additional Ubuntu system packages come from apt repositories, so future OS-layer bytes may differ even though the base digest and complete required R package versions are checked. Repository/network availability is required for a new build. Unavailable pinned artifacts cause a failure, not an unannounced package upgrade.
+-
+-`review/environment_build_v32.log` preserves the initial v3.2 build failure caused by a partial download and a 60-second timeout. The restore script now uses a 300-second download timeout and a cloud CRAN fallback for the same pinned renv source; SHA-256 verification remains mandatory. `review/environment_build_retry.log` and its exit receipt record the successful build. `review/environment_test_final.log` records the separate tests on that image. These checks do not substitute for regression, synthetic Stan-interface, or formal-fit diagnostics.
++From the repository root, build with docker build -t ratio-analysis-v3-3:local ./v3.3. Reproduction commands are in docs/reproduction_ubuntu.md.
+
+diff --git a/v3.2/scripts/build_complete_archive.ps1 b/v3.3/scripts/build_complete_archive.ps1
+index 9dd3816..7a86c14 100644
+--- a/v3.2/scripts/build_complete_archive.ps1
++++ b/v3.3/scripts/build_complete_archive.ps1
+@@ -1,11 +1,11 @@
+ #requires -Version 7.0
+ param([Parameter(Mandatory)][string]$VersionDirectory,[Parameter(Mandatory)][string]$OutputDirectory)
+ $ErrorActionPreference='Stop'
+-$taskRoots=[ordered]@{'v3.2'=(Resolve-Path -LiteralPath $VersionDirectory).Path}
++$taskRoots=[ordered]@{'v3.3'=(Resolve-Path -LiteralPath $VersionDirectory).Path}
+ $taskOutput=[IO.Path]::GetFullPath($OutputDirectory)
+ foreach($taskSource in $taskRoots.Values){if($taskOutput.StartsWith($taskSource.TrimEnd([char]92)+[IO.Path]::DirectorySeparatorChar,[StringComparison]::OrdinalIgnoreCase)){throw 'Archive output must be outside the captured roots'}}
+ New-Item -ItemType Directory -Path $taskOutput -Force | Out-Null
+-$taskZip=Join-Path $taskOutput 'v3.2-complete-evidence.zip'
++$taskZip=Join-Path $taskOutput 'v3.3-complete-evidence.zip'
+ if(Test-Path -LiteralPath $taskZip){throw 'Refusing to replace an existing archive'}
+ $taskFiles=[Collections.Generic.List[object]]::new()
+ foreach($taskNs in $taskRoots.Keys){
+@@ -15,13 +15,13 @@ foreach($taskNs in $taskRoots.Keys){
+   $taskFiles.Add([pscustomobject]@{Namespace=$taskNs;RelativePath=$taskRel;ArchivePath="$taskNs/$taskRel";Bytes=$taskFile.Length;SHA256=(Get-FileHash -LiteralPath $taskFile.FullName -Algorithm SHA256).Hash.ToLowerInvariant();SourcePath=$taskFile.FullName})
+  }
+ }
+-$taskManifest=Join-Path $taskOutput 'v3.2-complete-evidence.files.csv'
++$taskManifest=Join-Path $taskOutput 'v3.3-complete-evidence.files.csv'
+ $taskFiles | Select-Object Namespace,RelativePath,ArchivePath,Bytes,SHA256 | Export-Csv -LiteralPath $taskManifest -Encoding utf8 -NoTypeInformation
+ $taskReadme=Join-Path $taskOutput 'README_archive_zh.md'
+ @'
+-# v3.2 完整源码与测试证据快照
++# v3.3 完整源码与测试证据快照
+ 
+-v3.2/ 包含本次交付目录的全部现存文件，未按扩展名或文件大小省略。包括全部原始合成 fit.rds、Beta编译对象、成功和失败尝试、中间目录、源码、说明与测试表。
++v3.3/ 包含本次交付目录的全部现存文件，未按扩展名或文件大小省略。包括全部原始合成 fit.rds、Beta编译对象、成功和失败尝试、中间目录、源码、说明与测试表。
+ 
+ review/ 内是测试/历史材料，不能当作真实研究结果。短链合成拟合允许记录诊断失败以验收接口；正式256项研究拟合保持未运行。
+ 
+@@ -59,7 +59,7 @@ try {
+  }
+ }finally{$taskArchive.Dispose()}
+ $taskZipHash=(Get-FileHash -LiteralPath $taskZip -Algorithm SHA256).Hash.ToLowerInvariant()
+-"$taskZipHash  v3.2-complete-evidence.zip" | Set-Content -LiteralPath (Join-Path $taskOutput 'v3.2-complete-evidence.zip.sha256') -Encoding ascii
++"$taskZipHash  v3.3-complete-evidence.zip" | Set-Content -LiteralPath (Join-Path $taskOutput 'v3.3-complete-evidence.zip.sha256') -Encoding ascii
+ $taskReceipt=[ordered]@{status='LOCAL_ARCHIVE_VERIFIED';source_files=$taskFiles.Count;verified_files=$taskChecked;omitted_source_files=0;version_files=$taskFiles.Count;source_bytes=($taskFiles|Measure-Object Bytes -Sum).Sum;archive_bytes=(Get-Item -LiteralPath $taskZip).Length;archive_sha256=$taskZipHash;manifest_sha256=(Get-FileHash -LiteralPath $taskManifest -Algorithm SHA256).Hash.ToLowerInvariant()}
+-$taskReceipt | ConvertTo-Json | Set-Content -LiteralPath (Join-Path $taskOutput 'v3.2-complete-evidence.build.json') -Encoding utf8
++$taskReceipt | ConvertTo-Json | Set-Content -LiteralPath (Join-Path $taskOutput 'v3.3-complete-evidence.build.json') -Encoding utf8
+ $taskReceipt | ConvertTo-Json
+
+diff --git a/v3.2/scripts/upload_release_asset.ps1 b/v3.3/scripts/upload_release_asset.ps1
+index a701768..bae10ce 100644
+--- a/v3.2/scripts/upload_release_asset.ps1
++++ b/v3.3/scripts/upload_release_asset.ps1
+@@ -14,7 +14,7 @@ if($taskPasswordLine.Count -ne 1){throw 'GitHub credential unavailable'}
+ $taskSecret=$taskPasswordLine[0].Substring(9)
+ $taskClient=[Net.Http.HttpClient]::new();$taskClient.Timeout=[TimeSpan]::FromMinutes(45)
+ $taskClient.DefaultRequestHeaders.Authorization=[Net.Http.Headers.AuthenticationHeaderValue]::new('Bearer',$taskSecret)
+-$taskClient.DefaultRequestHeaders.UserAgent.ParseAdd('ratio-v3.2-evidence-uploader')
++$taskClient.DefaultRequestHeaders.UserAgent.ParseAdd('ratio-v3.3-evidence-uploader')
+ $taskClient.DefaultRequestHeaders.Accept.ParseAdd('application/vnd.github+json')
+ $taskClient.DefaultRequestHeaders.Add('X-GitHub-Api-Version','2022-11-28')
+ $taskInput=$null;$taskRequest=$null
+
+diff --git a/v3.3/tests/build_audit_beta_cases.R b/v3.3/tests/build_audit_beta_cases.R
+new file mode 100644
+index 0000000..158e754
+--- /dev/null
++++ b/v3.3/tests/build_audit_beta_cases.R
+@@ -0,0 +1,21 @@
++#!/usr/bin/env Rscript
++script<-sub("^--file=","",grep("^--file=",commandArgs(FALSE),value=TRUE)[1]);root<-normalizePath(dirname(dirname(script)),mustWork=TRUE)
++base<-read.csv(file.path(root,"review","inherited_beta_cases","parameter_cases.csv"))
++base$Group<-"inherited_266"
++switch<-read.csv(file.path(root,"review","inherited_beta_cases","switch_cases.csv"))
++switch<-data.frame(id=paste0("inherited_switch_",seq_len(nrow(switch))),a=switch$a,b=switch$b,lo=switch$lo,hi=switch$hi,Group="inherited_switch_24")
++extra<-data.frame(id=c("review_counterexample","tiny_shape_1e12","tiny_shape_1e6","tiny_shape_asymmetric"),a=c(1e-8,1e-12,1e-6,1e-9),b=c(1e-8,1e-12,2e-6,3e-8),lo=c(.4,.4,.2,.3),hi=c(.5,.5,.8,.6),Group="new_counterexamples")
++cases<-rbind(base,switch,extra)
++gap<-function(a,b,lo,hi) {ch<-pbeta(hi,a,b,log.p=TRUE);cl<-pbeta(lo,a,b,log.p=TRUE);sl<-pbeta(lo,a,b,lower.tail=FALSE,log.p=TRUE);sh<-pbeta(hi,a,b,lower.tail=FALSE,log.p=TRUE);if(ch<=sl)ch-cl else sl-sh}
++for(ratio in c(1,2)) {
++ a0<-exp(uniroot(function(x)log(gap(exp(x),ratio*exp(x),.2,.8)/1e-4),c(log(1e-6),log(1e-3)),tol=1e-12)$root)
++ for(delta in c(.01,.0001,.000001))for(side in c(-1,1))cases<-rbind(cases,data.frame(id=paste("audit_gap",ratio,delta,side,sep="_"),a=a0*(1+side*delta),b=ratio*a0*(1+side*delta),lo=.2,hi=.8,Group="audit_gap_switch"))
++}
++for(delta in c(.01,.0001,.000001))for(side in c(-1,1))cases<-rbind(cases,data.frame(id=paste("audit_shape",delta,side,sep="_"),a=1e-5*(1+side*delta),b=.2,lo=.3,hi=.4,Group="audit_shape_switch"))
++# Save round-trip-safe decimal values; serialize the actual IEEE doubles checked.
++cols<-c("id","a","b","lo","hi","Group")
++encoded<-cases[,cols];for(n in c("a","b","lo","hi"))encoded[[n]]<-sprintf("%.17g",cases[[n]])
++out<-file.path(root,"review","audit_beta_three_way");dir.create(out,recursive=TRUE,showWarnings=FALSE)
++write.csv(encoded,file.path(out,"cases.csv"),row.names=FALSE)
++cat("AUDIT_BETA_CASES",nrow(cases),"
++")
+
+diff --git a/v3.3/tests/high_precision_audit_reference.py b/v3.3/tests/high_precision_audit_reference.py
+new file mode 100644
+index 0000000..62d016d
+--- /dev/null
++++ b/v3.3/tests/high_precision_audit_reference.py
+@@ -0,0 +1,41 @@
++#!/usr/bin/env python3
++"""Independent 100-decimal incomplete-Beta reference; no research data or fits."""
++import csv, hashlib, json, pathlib, sys, time
++root = pathlib.Path(__file__).resolve().parents[1]
++wheel = root / 'review/reference_dependency/mpmath-1.3.0-py3-none-any.whl'
++expected = 'a0b2b9fe80bbcd81a6647ff13108738cfb482d481d826cc0e02f5b35e5c88d2c'
++assert hashlib.sha256(wheel.read_bytes()).hexdigest() == expected
++sys.path.insert(0,str(wheel)); import mpmath as mp
++mp.mp.dps = 100
++out = root / 'review/audit_beta_three_way'
++rows = list(csv.DictReader((out/'cases.csv').open(encoding='utf-8')))
++results=[]; started=time.time()
++for i,row in enumerate(rows,1):
++    # R reads the same decimal into an IEEE double; use that exact binary value.
++    a,b,lo,hi=(mp.mpf(float(row[k])) for k in ('a','b','lo','hi'))
++    if lo==0 and hi==1:
++        logp=mp.mpf(0);method='full_support'
++    elif a==1:
++        v=b*mp.log1p(-lo)
++        logp=v if hi==1 else v+mp.log(-mp.expm1(b*(mp.log1p(-hi)-mp.log1p(-lo))))
++        method='closed_a1'
++    elif b==1:
++        v=a*mp.log(hi)
++        logp=v if lo==0 else v+mp.log(-mp.expm1(a*(mp.log(lo)-mp.log(hi))))
++        method='closed_b1'
++    else:
++        if (lo+hi)/2 > a/(a+b):
++            probability=mp.betainc(b,a,1-hi,1-lo,regularized=True)
++            method='high_precision_complement_interval'
++        else:
++            probability=mp.betainc(a,b,lo,hi,regularized=True)
++            method='high_precision_lower_interval'
++        if not mp.isfinite(probability) or probability<=0: raise RuntimeError('Invalid reference '+row['id'])
++        logp=mp.log(probability)
++    results.append(dict(row,ReferenceLogP=mp.nstr(logp,100),ReferenceMethod=method,PrecisionDigits=100))
++    if i%50==0: print('HIGH_PRECISION_REFERENCE',i,'/',len(rows),flush=True)
++with (out/'high_precision_reference.csv').open('w',encoding='utf-8',newline='') as f:
++    w=csv.DictWriter(f,fieldnames=results[0].keys());w.writeheader();w.writerows(results)
++info=dict(status='PASS_REFERENCE_GENERATED',cases=len(results),precision_digits=100,mpmath_version=mp.__version__,wheel_sha256=expected,input_semantics='exact IEEE binary64 values parsed from 17-digit decimal case table',elapsed_seconds=time.time()-started,formal_research_fits=0)
++(out/'high_precision_reference_status.json').write_text(json.dumps(info,indent=2)+chr(10),encoding='utf-8')
++print(json.dumps(info),flush=True)
+
+diff --git a/v3.2/tests/run_tests.R b/v3.3/tests/run_tests.R
+index 3b2fc2b..9e050eb 100644
+--- a/v3.2/tests/run_tests.R
++++ b/v3.3/tests/run_tests.R
+@@ -6,4 +6,4 @@ for(f in c("test_contracts.R","test_release_regressions.R","test_scientific_cont
+  cat("TEST_FILE",f,"\n")
+  source(file.path(root,"tests",f),local=new.env(parent=.GlobalEnv))
+ }
+-cat("ALL INHERITED DETERMINISTIC TESTS PASSED (CURRENT V3.2 CODE)\n")
++cat("ALL INHERITED DETERMINISTIC TESTS PASSED (CURRENT V3.3 CODE)\n")
+
+diff --git a/v3.3/tests/run_v33_regressions.R b/v3.3/tests/run_v33_regressions.R
+new file mode 100644
+index 0000000..91c0735
+--- /dev/null
++++ b/v3.3/tests/run_v33_regressions.R
+@@ -0,0 +1,15 @@
++#!/usr/bin/env Rscript
++script<-sub("^--file=","",grep("^--file=",commandArgs(FALSE),value=TRUE)[1]);root<-normalizePath(dirname(dirname(script)),mustWork=TRUE)
++source(file.path(root,"R","bootstrap.R"));load_v3_modules(root)
++scripts<-c("run_tests.R","test_v32_metrics.R","test_quantitative_diagnostics.R","run_audit_deterministic.R","test_binary_template_key.R","test_input_support_counts.R","test_v32_fullgrid_synthetic.R","test_report_comparison_wording.R","test_v33_scope_guard.R","parse_all.R")
++rows<-list()
++for(script in scripts){
++ cat("REGRESSION_START",script,"\n");flush.console()
++ output<-suppressWarnings(system2(file.path(R.home("bin"),"Rscript"),c(shQuote(file.path(root,"tests",script)),"--root",shQuote(root)),stdout=TRUE,stderr=TRUE))
++ status<-attr(output,"status");if(is.null(status))status<-0L
++ writeLines(output,file.path(root,"review",paste0("final_",sub("[.]R$","",script),".log")))
++ rows[[length(rows)+1L]]<-data.frame(Script=script,ExitStatus=status,Pass=status==0L)
++ write_csv_atomic(do.call(rbind,rows),file.path(root,"review","regression_runner.csv"))
++ cat(paste(output,collapse="\n"),"\n");if(status!=0L)stop("Regression failed: ",script)
++}
++cat("V33_REGRESSION_PASS; deterministic/synthetic_mock_only; no MCMC\n")
+
+diff --git a/v3.3/tests/test_audit_beta_reference.R b/v3.3/tests/test_audit_beta_reference.R
+new file mode 100644
+index 0000000..c6394d9
+--- /dev/null
++++ b/v3.3/tests/test_audit_beta_reference.R
+@@ -0,0 +1,34 @@
++#!/usr/bin/env Rscript
++# Synthetic parameters only; run before/after against the actual R audit helper.
++argv<-commandArgs(TRUE);stage<-if(length(argv))argv[1] else "after";stopifnot(stage%in%c("before","after"))
++script<-sub("^--file=","",grep("^--file=",commandArgs(FALSE),value=TRUE)[1]);root<-normalizePath(dirname(dirname(script)),mustWork=TRUE)
++source(file.path(root,"R","bootstrap.R"));load_v3_modules(root)
++if(stage=="before")source(file.path(root,"review","prediction_audit_v3_2_before.R"))
++out<-file.path(root,"review",paste0("audit_beta_",stage));dir.create(out,recursive=TRUE,showWarnings=FALSE)
++# The known fixed reference was evaluated independently at high precision;
++# scaled adaptive integration below supplies an independent R cross-check.
++ref_integral<-function(lo,hi,a,b) {
++  mid<-lo+(hi-lo)/2
++  scale<-dbeta(mid,a,b,log=TRUE)
++  q<-integrate(function(t)exp(dbeta(lo+(hi-lo)*t,a,b,log=TRUE)-scale),0,1,subdivisions=4000L,rel.tol=2e-13,abs.tol=0,stop.on.error=TRUE)
++  log(hi-lo)+scale+log(q$value)
++}
++cases<-data.frame(id=c("review_counterexample","tiny_wide","tiny_left","tiny_right","moderate","narrow_uniform","narrow_beta"),
++ a=c(1e-8,1e-8,1e-7,.2,2.5,1,2.5),b=c(1e-8,1e-8,.2,1e-7,7.5,1,7.5),
++ lo=c(.4,.1,.3,.4,.2,.45,.45),hi=c(.5,.9,.4,.5,.6,.45+1e-12,.45+1e-12))
++actual<-mapply(audit_log_beta_interval_v3,cases$lo,cases$hi,cases$a,cases$b)
++reference<-mapply(ref_integral,cases$lo,cases$hi,cases$a,cases$b)
++stopifnot(abs(reference[1]-(-20.016548394229577))<1e-12)
++z<-cbind(cases,Actual=actual,Reference=reference,AbsError=abs(actual-reference),Allowed=1e-10*pmax(1,abs(reference)))
++z$Pass<-is.finite(z$Actual)&z$AbsError<=z$Allowed
++write.csv(z,file.path(out,"regression_cases.csv"),row.names=FALSE)
++# Mixed vector validates that fallback indices and the selected-tail swap align.
++vector_actual<-audit_log_beta_interval_v3(.4,.5,c(1e-8,2,1e-7,200),c(1e-8,3,.2,1))
++vector_reference<-mapply(function(a,b)ref_integral(.4,.5,a,b),c(1e-8,2,1e-7,200),c(1e-8,3,.2,1))
++vector_pass<-all(abs(vector_actual-vector_reference)<=1e-10*pmax(1,abs(vector_reference)))
++status<-list(stage=stage,status=if(all(z$Pass)&&vector_pass)"PASS" else "FAIL_REPRODUCED",cases=nrow(z),failures=sum(!z$Pass),vector_pass=vector_pass,max_abs_error=max(z$AbsError),formal_research_fits=0,posterior_sampling=FALSE)
++write_json_atomic(status,file.path(out,"status.json"));print(z);print(status)
++if(stage=="before")stopifnot(!z$Pass[1]) else stopifnot(all(z$Pass),vector_pass)
++cat(if(stage=="before")"R_AUDIT_FAILURE_REPRODUCED
++" else "R_AUDIT_REGRESSION_PASS
++")
+
+diff --git a/v3.3/tests/test_audit_beta_three_way.R b/v3.3/tests/test_audit_beta_three_way.R
+new file mode 100644
+index 0000000..9a1e9d0
+--- /dev/null
++++ b/v3.3/tests/test_audit_beta_three_way.R
+@@ -0,0 +1,59 @@
++#!/usr/bin/env Rscript
++# Compare actual production Stan, current R audit, and independent100-digit values.
++script<-sub("^--file=","",grep("^--file=",commandArgs(FALSE),value=TRUE)[1]);root<-normalizePath(dirname(dirname(script)),mustWork=TRUE)
++source(file.path(root,"R","bootstrap.R"));load_v3_modules(root)
++options(warn=1)
++suppressPackageStartupMessages(library(rstan))
++out<-file.path(root,"review","audit_beta_three_way")
++z<-read.csv(file.path(out,"high_precision_reference.csv"),stringsAsFactors=FALSE)
++stopifnot(nrow(z)==312L,all(z$PrecisionDigits==100L),!anyDuplicated(z$id))
++production<-readLines(file.path(root,"stan","joint_bb.stan"),warn=FALSE)
++probe<-readLines(file.path(root,"tests","stan","beta_interval_probe_after.stan"),warn=FALSE)
++end<-which(startsWith(production,"data {"))[1]-1L
++stopifnot(identical(production[seq_len(end)],probe[seq_len(end)]))
++sm<-readRDS(file.path(root,"tests","stan","beta_interval_probe_after.rds"))
++stopifnot(methods::is(sm,"stanmodel"),isTRUE(trimws(paste(probe,collapse="\n"))==trimws(sm@model_code)))
++old<-new.env(parent=globalenv());sys.source(file.path(root,"review","prediction_audit_v3_2_before.R"),old)
++cache<-new.env();rows<-list();branch_rows<-list()
++for(i in seq_len(nrow(z))) {
++ c<-z[i,];key<-paste(sprintf("%.17g",c$lo),sprintf("%.17g",c$hi),sep="|")
++ if(!exists(key,cache,inherits=FALSE)) {
++  fit<-suppressWarnings(sampling(sm,data=list(mode=1L,lo=c$lo,hi=c$hi),iter=1L,warmup=0L,chains=1L,algorithm="Fixed_param",init=list(list(theta=c(2,3,0))),refresh=0L,seed=733L))
++  assign(key,fit,cache)
++ }
++ stan<-log_prob(get(key,cache),c(c$a,c$b,0),adjust_transform=FALSE)
++ audit<-audit_log_beta_interval_v3(c$lo,c$hi,c$a,c$b)
++ before<-old$audit_log_beta_interval_v3(c$lo,c$hi,c$a,c$b)
++ ref<-c$ReferenceLogP;bound<-1e-10*max(1,abs(ref))
++ rows[[i]]<-data.frame(Case=c$id,Group=c$Group,a=c$a,b=c$b,lo=c$lo,hi=c$hi,Reference=ref,Stan=stan,Audit=audit,OldAudit=before,
++  StanAbsError=abs(stan-ref),AuditAbsError=abs(audit-ref),OldAuditAbsError=abs(before-ref),StanAuditAbsDifference=abs(stan-audit),Allowed=bound,
++  StanPass=is.finite(stan)&&abs(stan-ref)<=bound,AuditPass=is.finite(audit)&&abs(audit-ref)<=bound,PairPass=is.finite(audit)&&abs(stan-audit)<=bound)
++ if(i%%50L==0L){cat("THREE_WAY",i,"/",nrow(z),"\n");flush.console()}
++}
++r<-do.call(rbind,rows);write_csv_atomic(r,file.path(out,"three_way_values.csv"))
++# Explicit table-audit test: the old finite result wrongly rejects a correct value.
++review<-r[r$Case=="review_counterexample",]
++expected<-data.frame(Key="counterexample",LogProbability=review$Reference)
++actual<-data.frame(Key="counterexample",LogProbability=review$Audit)
++prior<-data.frame(Key="counterexample",LogProbability=review$OldAudit)
++stopifnot(inherits(tryCatch(audit_compare_table_v3(prior,expected,"Key"),error=identity),"error"))
++audit_compare_table_v3(actual,expected,"Key")
++# Vector/permutation behavior and independent upper-endpoint mixture.
++order<-c(3,1,4,2);aa<-c(1e-8,2,1e-7,200);bb<-c(1e-8,3,.2,1)
++p<-audit_log_beta_interval_v3(.4,.5,aa,bb)
++stopifnot(identical(p[order],audit_log_beta_interval_v3(.4,.5,aa[order],bb[order])))
++stopifnot(all(audit_log_beta_interval_v3(0,1,aa,bb)==0))
++rc<-read.csv(file.path(root,"review","inherited_beta_cases","record_parameter_cases.csv"))
++mix<-list()
++for(i in seq_len(nrow(rc))) {
++ c<-rc[i,];fit<-suppressWarnings(sampling(sm,data=list(mode=2L,lo=c$lo,hi=c$hi),iter=1L,warmup=0L,chains=1L,algorithm="Fixed_param",init=list(list(theta=c(2,3,0))),refresh=0L,seed=734L))
++ theta<-c(qlogis(c$m),qlogis(c$rho),log(c$phi));stan<-log_prob(fit,theta,adjust_transform=FALSE)
++ observation<-data.frame(Type="interval",Lower=c$lo,Upper=c$hi)
++ audit<-raw_joint_loglik_audit_v3(observation,c$m,c$rho,0,log(c$phi))
++ mix[[i]]<-data.frame(Case=c$id,Stan=stan,Audit=audit,AbsDifference=abs(stan-audit),Allowed=1e-10*max(1,abs(stan)))
++}
++mix<-do.call(rbind,mix);write_csv_atomic(mix,file.path(out,"raw_record_audit_comparison.csv"))
++pass<-all(r$StanPass&r$AuditPass&r$PairPass)&&all(is.finite(mix$Audit)&mix$AbsDifference<=mix$Allowed)
++status<-list(status=if(pass)"PASS" else "FAIL",interval_cases=nrow(r),mixture_record_cases=nrow(mix),old_audit_failures=sum(!is.finite(r$OldAudit)|r$OldAuditAbsError>r$Allowed),max_audit_abs_error=max(r$AuditAbsError),max_audit_scaled_error=max(r$AuditAbsError/pmax(1,abs(r$Reference))),max_stan_scaled_error=max(r$StanAbsError/pmax(1,abs(r$Reference))),max_pair_scaled_difference=max(r$StanAuditAbsDifference/pmax(1,abs(r$Reference))),max_mixture_difference=max(mix$AbsDifference),reference="mpmath1.3.0_100_decimal_digits_independent_incomplete_beta_and_closed_forms",production_stan_sha256=sha256_file(file.path(root,"stan","joint_bb.stan")),audit_source_sha256=sha256_file(file.path(root,"R","prediction_audit.R")),probe_rds_sha256=sha256_file(file.path(root,"tests","stan","beta_interval_probe_after.rds")),tolerance="1e-10*max(1,abs(reference_log_probability))",posterior_sampling=FALSE,formal_research_fits=0)
++write_json_atomic(status,file.path(out,"status.json"));print(status);stopifnot(pass)
++cat("AUDIT_BETA_THREE_WAY_PASS; reused_source_verified_Stan_model; fixed_parameter_evaluation_only\n")
+
+diff --git a/v3.3/tests/test_report_comparison_wording.R b/v3.3/tests/test_report_comparison_wording.R
+new file mode 100644
+index 0000000..354446f
+--- /dev/null
++++ b/v3.3/tests/test_report_comparison_wording.R
+@@ -0,0 +1,16 @@
++#!/usr/bin/env Rscript
++script<-sub("^--file=","",grep("^--file=",commandArgs(FALSE),value=TRUE)[1]);root<-normalizePath(dirname(dirname(script)),mustWork=TRUE)
++source(file.path(root,"R","bootstrap.R"));load_v3_modules(root)
++out<-file.path(root,"review","report_wording_fixture");dir.create(file.path(out,"results"),recursive=TRUE,showWarnings=FALSE)
++# Output contract fixture only; no data fitting or scientific numerical result.
++for(f in c("cv_metrics_summary.csv","model_vs_null.csv","training_method_comparisons.csv","training_ppc_summary.csv","quantitative_bias_summary.csv","quantitative_plot_source.csv"))write_csv_atomic(data.frame(FixtureOnly=TRUE,Meaning="synthetic_report_contract_fixture"),file.path(out,"results",f))
++write_results_report_v3(out)
++file<-file.path(out,"reports","REPORT_v3_3.md");text<-paste(readLines(file),collapse="\n")
++checks<-c(fixed_route=grepl("same route, CV design, and evaluation weighting",text,fixed=TRUE),different_targets=grepl("Different evaluation weightings define different targets",text,fixed=TRUE),no_cross_target_ranking=grepl("do not rank training methods by comparing their scores across evaluation weightings",text,fixed=TRUE),old_ambiguous_text_absent=!grepl("compare MeanLogScore across weighting choices",text,fixed=TRUE),primary_species_target=grepl("Primary comparison: species-equal evaluation in fivefold",text,fixed=TRUE))
++# Clearly mark this generated text fixture, while preserving actual writer output.
++writeLines(c("SYNTHETIC REPORT CONTRACT TEST ONLY - NO SCIENTIFIC RESULTS",readLines(file)),file)
++old<-readLines(file.path(root,"review","baseline_v3_2","R","reporting.R"))
++stopifnot(any(grepl("compare MeanLogScore across weighting choices",old,fixed=TRUE)))
++write_csv_atomic(data.frame(Check=names(checks),Pass=unname(checks)),file.path(out,"checks.csv"))
++write_json_atomic(list(status=if(all(checks))"PASS" else "FAIL",checks=length(checks),computed_scores_changed=FALSE,posterior_sampling=FALSE),file.path(out,"status.json"))
++stopifnot(all(checks));cat("REPORT_COMPARISON_WORDING_PASS: fixed route/design/evaluation; generated report checked\n")
+
+diff --git a/v3.3/tests/test_v33_reaudit_saved_fits.R b/v3.3/tests/test_v33_reaudit_saved_fits.R
+new file mode 100644
+index 0000000..2e173cb
+--- /dev/null
++++ b/v3.3/tests/test_v33_reaudit_saved_fits.R
+@@ -0,0 +1,44 @@
++#!/usr/bin/env Rscript
++script<-sub("^--file=","",grep("^--file=",commandArgs(FALSE),value=TRUE)[1]);root<-normalizePath(dirname(dirname(script)),mustWork=TRUE)
++source(file.path(root,"R","bootstrap.R"));load_v3_modules(root);options(warn=1)
++base<-normalizePath(file.path(root,"review","baseline_v3_2"),mustWork=TRUE)
++prior<-new.env(parent=.GlobalEnv);sys.source(file.path(base,"R","bootstrap.R"),prior)
++prior$load_v3_modules(base,envir=prior)
++stopifnot(identical(V3_PRIORS,prior$V3_PRIORS),identical(V3_SAMPLING,prior$V3_SAMPLING),V3_SEED==prior$V3_SEED,
++ identical(sha256_file(file.path(root,"stan","joint_bb.stan")),sha256_file(file.path(base,"stan","joint_bb.stan"))))
++source<-file.path(root,"review","reused_v3_2","unequal_integration")
++out<-file.path(root,"review","saved_fit_reaudit");dir.create(out,recursive=TRUE,showWarnings=FALSE)
++state<-prior$prepare_state(file.path(source,"input"))
++evidence<-read.csv(file.path(source,"results","cv_record_predictions.csv"),stringsAsFactors=FALSE)
++panel<-read.csv(file.path(source,"synthetic_panel_projection.csv"),stringsAsFactors=FALSE)
++folds<-data.frame(Species=state$sites$Species,Fold=rep(1:2,each=6))
++receipts<-list();identities<-list();tamper_count<-0L
++for(route in V3_ROUTES)for(model in V3_MODELS)for(tw in V3_TRAIN_WEIGHTINGS)for(fold in 1:2) {
++ p<-prior$fit_path_v3(source,route,model,tw,"integration",fold)
++ source_hash<-sha256_file(p);b<-readRDS(p)
++ held<-folds$Species[folds$Fold==fold];tr<-setdiff(if(route=="binary")state$binary_species else state$joint_species,held)
++ ctl<-modifyList(prior$V3_SAMPLING,list(chains=2L,cores=2L,iter=600L,warmup=300L))
++ if(route=="joint_bb")ctl<-modifyList(ctl,list(iter=300L,warmup=150L,adapt_delta=.9,max_treedepth=8L))
++ spec<-prior$fit_spec_v3(state,route,model,tr,tw,file.path(base,"stan","joint_bb.stan"),ctl,V3_SEED+fold+match(model,V3_MODELS))
++ d<-prior$validate_fitted_bundle_v3(b,spec,require_pass=FALSE)
++ stopifnot(b$version==prior$V3_VERSION,d$Status=="FAILED_DIAGNOSTICS")
++ # Old failed/test fits cannot become accepted formal v3.3 cache entries.
++ stopifnot(inherits(tryCatch(validate_bundle_for_use(b,require_pass=TRUE),error=identity),"error"))
++ stopifnot(inherits(tryCatch(prior$validate_fitted_bundle_v3(b,spec,require_pass=TRUE),error=identity),"error"))
++ rows<-which(state$observations$Species%in%held & if(route=="binary")!is.na(state$observations$High) else state$observations$Informative)
++ saved<-subset(evidence,Route==route&Model==model&TrainWeighting==tw&Fold==fold)
++ ctx<-data.frame(Design="integration",Fold=fold,Route=route,Model=model,TrainWeighting=tw,RunPurpose="INTEGRATION_TEST_ONLY")
++ receipts[[length(receipts)+1L]]<-audit_cv_bundle_predictions_v3(b,state,rows,saved,ctx)
++ bad<-saved;bad$LogPredictiveDensityRaw[1]<-bad$LogPredictiveDensityRaw[1]+.01
++ stopifnot(inherits(tryCatch(audit_cv_bundle_predictions_v3(b,state,rows,bad,ctx),error=identity),"error"));tamper_count<-tamper_count+1L
++ if(fold==1L){z<-subset(panel,Route==route&Model==model&TrainWeighting==tw);receipts[[length(receipts)+1L]]<-audit_full_bundle_predictions_v3(b,state,z,ctx)}
++ identities[[length(identities)+1L]]<-cbind(data.frame(Route=route,Model=model,TrainWeighting=tw,Fold=fold,SourceVersion=b$version,AuditVersion=V3_VERSION,FitKey=b$key,SourceRDS_SHA256=source_hash,SourceIdentityVerified=TRUE,NewVersionCacheRejected=TRUE,FormalDiagnosticGateRejected=TRUE),d)
++ stopifnot(identical(source_hash,sha256_file(p)))
++ cat("REAUDIT",route,model,tw,fold,"PASS\n");flush.console()
++}
++r<-do.call(rbind,receipts);r$SourceVersion<-prior$V3_VERSION;r$AuditVersion<-V3_VERSION
++write_csv_atomic(r,file.path(out,"posterior_recompute_receipts.csv"));write_csv_atomic(do.call(rbind,identities),file.path(out,"source_fit_identity_and_diagnostics.csv"))
++q<-verify_quantitative_outputs_v32(evidence,read.csv(file.path(source,"results","quantitative_bias_summary.csv")),read.csv(file.path(source,"results","quantitative_plot_source.csv")))
++write_csv_atomic(q,file.path(out,"quantitative_recompute_receipts.csv"))
++write_json_atomic(list(status="PASS_REAUDIT_OF_SOURCE_VERIFIED_V32_SYNTHETIC_FITS",fits_reopened=32,source_version=prior$V3_VERSION,audit_version=V3_VERSION,OOFRows=sum(r$RowsChecked[r$Check=="posterior_to_OOF"]),PanelRows=sum(r$RowsChecked[r$Check=="posterior_to_full_panel"]),max_absolute_difference=max(r$MaximumAbsoluteDifference),forged_logscore_rejections=tamper_count,formal_cache_and_diagnostic_rejections=32,source_diagnostics="FAILED_DIAGNOSTICS:32_unchanged",new_fits=0,real_data_fits=0),file.path(out,"status.json"))
++cat("SAVED_V32_FITS_REAUDITED_WITH_V33_PASS; no refit, no identity relabel, no research data\n")
+
+diff --git a/v3.3/tests/test_v33_scope_guard.R b/v3.3/tests/test_v33_scope_guard.R
+new file mode 100644
+index 0000000..985228a
+--- /dev/null
++++ b/v3.3/tests/test_v33_scope_guard.R
+@@ -0,0 +1,13 @@
++#!/usr/bin/env Rscript
++script<-sub("^--file=","",grep("^--file=",commandArgs(FALSE),value=TRUE)[1]);root<-normalizePath(dirname(dirname(script)),mustWork=TRUE)
++source(file.path(root,"R","bootstrap.R"));load_v3_modules(root)
++base<-file.path(root,"review","baseline_v3_2")
++retained<-c("applicability.R","bootstrap.R","cache_io.R","comparison.R","cross_validation.R","data_encoding.R","fitting.R","metrics.R","plotting.R","ppc.R","prediction.R","provenance.R","quantitative_diagnostics.R","weights.R","workflow.R")
++checks<-vapply(retained,function(f)identical(sha256_file(file.path(root,"R",f)),sha256_file(file.path(base,"R",f))),logical(1))
++checks<-c(checks,Stan=identical(sha256_file(file.path(root,"stan","joint_bb.stan")),sha256_file(file.path(base,"stan","joint_bb.stan"))))
++new<-jsonlite::read_json(file.path(root,"config","analysis.json"),simplifyVector=TRUE);old<-jsonlite::read_json(file.path(base,"config","analysis.json"),simplifyVector=TRUE)
++new$version<-old$version;checks<-c(checks,ConfigOnlyVersionChanged=identical(new,old))
++# Compare two frozen copies of real input bytes, without generating predictions/scores.
++checks<-c(checks,ObservationsUnchanged=identical(sha256_file(file.path(root,"input","observations.csv")),"3c886f7f2c11012463296b350a931543542b4e1c0d128ad3c408fda9ae824d79"),SitesUnchanged=identical(sha256_file(file.path(root,"input","sites.csv")),"0a99692b060f13d1faaa870d06ea7dca9a4f16bc289636bcc88f5d105ebdacb5"))
++write_csv_atomic(data.frame(Item=names(checks),Unchanged=unname(checks)),file.path(root,"review","scope_preservation_checks.csv"))
++stopifnot(all(checks));cat("V33_SCOPE_GUARD_PASS:15 core R modules, Stan, complete config except version and both original inputs unchanged\n")

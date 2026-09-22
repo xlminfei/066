@@ -1,0 +1,64 @@
+THREE_WAY 50 / 312 
+THREE_WAY 100 / 312 
+THREE_WAY 150 / 312 
+THREE_WAY 200 / 312 
+THREE_WAY 250 / 312 
+THREE_WAY 300 / 312 
+$rows
+[1] 1
+
+$columns
+[1] 2
+
+$max_absolute_error
+[1] 0
+
+$status
+[1] "PASS"
+
+$interval_cases
+[1] 312
+
+$mixture_record_cases
+[1] 5
+
+$old_audit_failures
+[1] 8
+
+$max_audit_abs_error
+[1] 5.156764e-12
+
+$max_audit_scaled_error
+[1] 5.002268e-13
+
+$max_stan_scaled_error
+[1] 7.76197e-12
+
+$max_pair_scaled_difference
+[1] 8.184824e-12
+
+$max_mixture_difference
+[1] 7.105427e-15
+
+$reference
+[1] "mpmath1.3.0_100_decimal_digits_independent_incomplete_beta_and_closed_forms"
+
+$production_stan_sha256
+[1] "db491633fcadbd940c2e78280660a47cd037f46795c9dce2258f9381c4571430"
+
+$audit_source_sha256
+[1] "afe818c01737ca11ac74ea493eeea67ab6b10e8d4d1c5618e6aa2cb93f4eb831"
+
+$probe_rds_sha256
+[1] "5fc1f77f424b52c92e110454184ce044a43f4be95183c75ca45c450d7f8acb98"
+
+$tolerance
+[1] "1e-10*max(1,abs(reference_log_probability))"
+
+$posterior_sampling
+[1] FALSE
+
+$formal_research_fits
+[1] 0
+
+AUDIT_BETA_THREE_WAY_PASS; reused_source_verified_Stan_model; fixed_parameter_evaluation_only

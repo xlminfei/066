@@ -1,0 +1,7 @@
+"Design","Fold","Route","Model","TrainWeighting","RecordID","Species","Type","ObservedPoint","PredictedPoint","EvalWeighting","EvaluationWeight","SignedError","FitKey","RunPurpose"
+"fixture",1,"joint_bb","M2","record_equal","r1","A","count",0.1,0.4,"record_equal",1,0.3,"SYNTHETIC_FIXTURE","INTEGRATION_TEST_ONLY"
+"fixture",1,"joint_bb","M2","record_equal","r2","A","exact",0.4,0.6,"record_equal",1,0.2,"SYNTHETIC_FIXTURE","INTEGRATION_TEST_ONLY"
+"fixture",2,"joint_bb","M2","record_equal","r3","B","count",0.7,0.6,"record_equal",1,-0.1,"SYNTHETIC_FIXTURE","INTEGRATION_TEST_ONLY"
+"fixture",1,"joint_bb","M2","record_equal","r1","A","count",0.1,0.4,"species_equal",0.75,0.3,"SYNTHETIC_FIXTURE","INTEGRATION_TEST_ONLY"
+"fixture",1,"joint_bb","M2","record_equal","r2","A","exact",0.4,0.6,"species_equal",0.75,0.2,"SYNTHETIC_FIXTURE","INTEGRATION_TEST_ONLY"
+"fixture",2,"joint_bb","M2","record_equal","r3","B","count",0.7,0.6,"species_equal",1.5,-0.1,"SYNTHETIC_FIXTURE","INTEGRATION_TEST_ONLY"

@@ -4,3 +4,6 @@
 /v3.1/** -text
 /releases/** -text
 /v3.2/** -text
+/v3.3/** -text
+/.gitattributes -text
+/.gitignore -text

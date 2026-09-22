@@ -1,3 +1,5 @@
 # Native fitted/compiled R objects are preserved without omission in the v3.2 complete Release archive.
 # Source, text tables, figures, logs and manifests remain in Git.
 /v3.2/**/*.rds
+# v3.3 native objects are fully included in its Release archive.
+/v3.3/**/*.rds

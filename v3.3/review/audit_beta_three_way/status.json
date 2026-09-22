@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "interval_cases": 312,
+  "mixture_record_cases": 5,
+  "old_audit_failures": 8,
+  "max_audit_abs_error": 5.1568e-12,
+  "max_audit_scaled_error": 5.0023e-13,
+  "max_stan_scaled_error": 7.762e-12,
+  "max_pair_scaled_difference": 8.1848e-12,
+  "max_mixture_difference": 7.1054e-15,
+  "reference": "mpmath1.3.0_100_decimal_digits_independent_incomplete_beta_and_closed_forms",
+  "production_stan_sha256": "db491633fcadbd940c2e78280660a47cd037f46795c9dce2258f9381c4571430",
+  "audit_source_sha256": "afe818c01737ca11ac74ea493eeea67ab6b10e8d4d1c5618e6aa2cb93f4eb831",
+  "probe_rds_sha256": "5fc1f77f424b52c92e110454184ce044a43f4be95183c75ca45c450d7f8acb98",
+  "tolerance": "1e-10*max(1,abs(reference_log_probability))",
+  "posterior_sampling": false,
+  "formal_research_fits": 0
+}

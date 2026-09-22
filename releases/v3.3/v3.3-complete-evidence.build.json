@@ -1,0 +1,11 @@
+{
+  "status": "LOCAL_ARCHIVE_VERIFIED",
+  "source_files": 277,
+  "verified_files": 277,
+  "omitted_source_files": 0,
+  "version_files": 277,
+  "source_bytes": 672479569.0,
+  "archive_bytes": 656142878,
+  "archive_sha256": "5fc2b56e7583ad0d8f5ea3a62c788438f39bf9d163c01fb934b932e50981492e",
+  "manifest_sha256": "2761a9fc0f2943169f62ef86a412c75a75acaf4b76fad1137ef589fc0945fc9e"
+}

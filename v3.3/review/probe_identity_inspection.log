@@ -1,0 +1,30 @@
+$expected_lines
+[1] 192
+
+$actual_lines
+[1] 192
+
+$rds_hash
+[1] "5fc1f77f424b52c92e110454184ce044a43f4be95183c75ca45c450d7f8acb98"
+
+[1] "functions {"                                                                
+[2] "  // Dual components track d/da and d/db solely to check convergence of the"
+[3] "  // continued fraction. The returned probability is still Stan-autodiff'd."
+[1] "functions {"                                                                
+[2] "  // Dual components track d/da and d/db solely to check convergence of the"
+[3] "  // continued fraction. The returned probability is still Stan-autodiff'd."
+[4] "  vector beta_cf_product(vector x, vector y) {"                             
+[5] "    vector[3] z;"                                                           
+[1] "model {"                                                                                                      
+[2] "  if (mode == 1) target += log_beta_interval(lo, hi, theta[1], theta[2]);"                                    
+[3] "  else if (mode == 3) target += log_beta_interval(lo, hi, exp(theta[1]), exp(theta[2]));"                     
+[4] "  else target += record_log_lik(3, 0, 1, 0.5, lo, hi, inv_logit(theta[1]), inv_logit(theta[2]), 0, theta[3]);"
+[5] "}"                                                                                                            
+[1] "}"                                                                                                            
+[2] "data { int<lower=1,upper=3> mode; real<lower=0,upper=1> lo; real<lower=0,upper=1> hi; }"                      
+[3] "parameters { vector[3] theta; }"                                                                              
+[4] "model {"                                                                                                      
+[5] "  if (mode == 1) target += log_beta_interval(lo, hi, theta[1], theta[2]);"                                    
+[6] "  else if (mode == 3) target += log_beta_interval(lo, hi, exp(theta[1]), exp(theta[2]));"                     
+[7] "  else target += record_log_lik(3, 0, 1, 0.5, lo, hi, inv_logit(theta[1]), inv_logit(theta[2]), 0, theta[3]);"
+[8] "}"                                                                                                            

@@ -1,0 +1,9 @@
+"Design","Model","TrainWeighting","PredictedPoint.min","PredictedPoint.max","PredictedPoint.unique"
+"integration","M1","record_equal",0.4936376,0.5144800,5.0000000
+"integration","M2","record_equal",0.4888489,0.4972242,5.0000000
+"integration","M3","record_equal",0.4964218,0.5137047,6.0000000
+"integration","Null","record_equal",0.4995892,0.5125805,2.0000000
+"integration","M1","species_equal",0.4849888,0.5131043,5.0000000
+"integration","M2","species_equal",0.4932412,0.5076244,5.0000000
+"integration","M3","species_equal",0.4888389,0.5013256,6.0000000
+"integration","Null","species_equal",0.4951399,0.5111990,2.0000000

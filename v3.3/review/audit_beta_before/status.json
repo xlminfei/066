@@ -1,0 +1,10 @@
+{
+  "stage": "before",
+  "status": "FAIL_REPRODUCED",
+  "cases": 7,
+  "failures": 2,
+  "vector_pass": false,
+  "max_abs_error": 2.0769e-08,
+  "formal_research_fits": 0,
+  "posterior_sampling": false
+}

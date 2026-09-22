@@ -1,0 +1,53 @@
+REAUDIT binary Null record_equal 1 PASS
+REAUDIT binary Null record_equal 2 PASS
+REAUDIT binary Null species_equal 1 PASS
+REAUDIT binary Null species_equal 2 PASS
+REAUDIT binary M1 record_equal 1 PASS
+REAUDIT binary M1 record_equal 2 PASS
+REAUDIT binary M1 species_equal 1 PASS
+REAUDIT binary M1 species_equal 2 PASS
+REAUDIT binary M2 record_equal 1 PASS
+REAUDIT binary M2 record_equal 2 PASS
+REAUDIT binary M2 species_equal 1 PASS
+REAUDIT binary M2 species_equal 2 PASS
+REAUDIT binary M3 record_equal 1 PASS
+REAUDIT binary M3 record_equal 2 PASS
+Warning: The ESS has been capped to avoid unstable estimates.
+Warning: The ESS has been capped to avoid unstable estimates.
+Warning: The ESS has been capped to avoid unstable estimates.
+Warning: The ESS has been capped to avoid unstable estimates.
+Warning: The ESS has been capped to avoid unstable estimates.
+Warning: The ESS has been capped to avoid unstable estimates.
+REAUDIT binary M3 species_equal 1 PASS
+REAUDIT binary M3 species_equal 2 PASS
+REAUDIT joint_bb Null record_equal 1 PASS
+REAUDIT joint_bb Null record_equal 2 PASS
+REAUDIT joint_bb Null species_equal 1 PASS
+REAUDIT joint_bb Null species_equal 2 PASS
+Warning: The ESS has been capped to avoid unstable estimates.
+Warning: The ESS has been capped to avoid unstable estimates.
+REAUDIT joint_bb M1 record_equal 1 PASS
+REAUDIT joint_bb M1 record_equal 2 PASS
+REAUDIT joint_bb M1 species_equal 1 PASS
+Warning: The ESS has been capped to avoid unstable estimates.
+Warning: The ESS has been capped to avoid unstable estimates.
+REAUDIT joint_bb M1 species_equal 2 PASS
+REAUDIT joint_bb M2 record_equal 1 PASS
+REAUDIT joint_bb M2 record_equal 2 PASS
+REAUDIT joint_bb M2 species_equal 1 PASS
+REAUDIT joint_bb M2 species_equal 2 PASS
+REAUDIT joint_bb M3 record_equal 1 PASS
+Warning: The ESS has been capped to avoid unstable estimates.
+Warning: The ESS has been capped to avoid unstable estimates.
+Warning: The ESS has been capped to avoid unstable estimates.
+Warning: The ESS has been capped to avoid unstable estimates.
+REAUDIT joint_bb M3 record_equal 2 PASS
+REAUDIT joint_bb M3 species_equal 1 PASS
+Warning: The ESS has been capped to avoid unstable estimates.
+Warning: The ESS has been capped to avoid unstable estimates.
+Warning: The ESS has been capped to avoid unstable estimates.
+Warning: The ESS has been capped to avoid unstable estimates.
+Warning: The ESS has been capped to avoid unstable estimates.
+Warning: The ESS has been capped to avoid unstable estimates.
+REAUDIT joint_bb M3 species_equal 2 PASS
+SAVED_V32_FITS_REAUDITED_WITH_V33_PASS; no refit, no identity relabel, no research data

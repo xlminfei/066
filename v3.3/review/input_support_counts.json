@@ -1,0 +1,13 @@
+{
+  "status": "INPUT_INSPECTION_ONLY",
+  "records": 153,
+  "LogScoreSpeciesUsed": 51,
+  "BinaryRecords": 152,
+  "BinarySpecies": 50,
+  "PointRecords": 145,
+  "PointSpeciesUsed": 48,
+  "PISpeciesUsed": 48,
+  "IntervalOnlySpecies": ["Anabas_testudineus", "Scophthalmus_maximus", "Lateolabrax_maculatus"],
+  "formal_research_fits": 0,
+  "real_data_predictions_or_scores_computed": false
+}
