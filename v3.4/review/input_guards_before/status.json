@@ -1,0 +1,10 @@
+{
+  "stage": "before",
+  "status": "FAIL_REPRODUCED",
+  "checks": 151,
+  "passed": 90,
+  "failed": 61,
+  "sampler_callback_calls": 1,
+  "actual_samplers_started": 0,
+  "real_data_fits": 0
+}

@@ -1,0 +1,57 @@
+TEST_FILE test_contracts.R 
+PASS: 40-50 is LOW, exact/lower 50 is HIGH, strict crossing is excluded
+PASS: Site151 is excluded from predictor sites
+PASS: Site315 M1 uses K_or_T and other
+PASS: M3 rare levels below four panel occurrences become OTHER
+PASS: record_equal training weights are one
+PASS: species_equal gives each species the same total weight
+PASS: species_equal keeps total training weight equal to record count
+PASS: unweighted AUC matches the pairwise definition
+PASS: weighted AUC matches the weighted pairwise definition
+PASS: weighted AUC is invariant to row order
+PASS: tied predictions have AUC 0.5
+PASS: both evaluation weightings use the same base evidence rows
+PASS: evaluation AUC uses the shared tie-safe metric
+PASS: calibration bins provide fixed-weight point estimates and cluster bootstrap intervals
+PASS: applicability status retains all independent warnings
+PASS: post-processing writes ROC coordinates from the shared evidence table
+PASS: post-processing computes calibration bins
+PASS: plotting entry points create PDF artifacts
+PASS: unclassified records remain in binary audit counts
+PASS: blueprints reserve MISSING even when absent from training panel
+PASS: calibration output has one row per bin
+PASS: prediction Point uses posterior mean
+PASS: non-finite held-out scores are rejected instead of dropped
+PASS: Null batch projection repeats each posterior draw across species
+PASS: external MISSING has a dedicated design direction
+PASS: CV summary preserves model, training weighting, and evaluation weighting identities
+PASS: model comparison aggregates the complete CV design at the species cluster level
+PASS: joint evaluation reports predictive interval coverage and width
+TEST_FILE test_release_regressions.R 
+PASS NaN diagnostics must fail
+PASS degenerate bootstrap cannot imply P=0
+PASS AUC rejects fractional truth
+PASS log mean exp rejects NA
+PASS zero-col Null projection
+PASS typed record simulator exists
+PASS ROC fold multiplicity
+TEST_FILE test_scientific_contracts.R 
+PASS: reserved MISSING for all sites 
+PASS: row estimability compares row space 
+PASS: illegal residue refused 
+PASS: empty species refused 
+PASS: two-species counterexample uses cluster uncertainty 
+PASS: too few species has no approximate p value 
+PASS: record and species targets are different 
+PASS: pairing rejects species mismatch 
+PASS: pairing rejects fold mismatch 
+PASS: count PI draws respect denominator2 support 
+PASS: count PI draws respect denominator20 support 
+PASS: count/report simulators preserve common mean 
+PASS: report endpoint mass equals rho*m 
+PASS: weight normalization does not pretend duplicate invariance 
+PASS: unsupported predictor change refused 
+PASS: unsupported CV design change refused 
+SCIENTIFIC_CONTRACT_PASS
+PASS: mean ROC handles rounded weighted endpoints 
+ALL INHERITED DETERMINISTIC TESTS PASSED (CURRENT V3.4 CODE)

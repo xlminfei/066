@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "default_fold_tables_identical": true,
+  "metric_groups_compared": 640,
+  "saved_synthetic_rows": 1472,
+  "mock_rows": 2944,
+  "all_metrics_exactly_identical": true,
+  "new_fits": 0,
+  "real_data_fits": 0
+}

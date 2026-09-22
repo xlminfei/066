@@ -1,0 +1,7 @@
+{
+  "status": "PASS_SYNTHETIC_ONLY",
+  "assertions": 35,
+  "samplers_started": 0,
+  "research_data_fits": 0,
+  "coverage": "synthetic parameter fixtures; 16 CV strata; 16 full-panel strata; negative tampering tests"
+}

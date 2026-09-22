@@ -1,0 +1,12 @@
+{
+  "status": "NOT_RUN_BY_USER_INSTRUCTION",
+  "version": "ratio_analysis_v3_4_weighted_20260922",
+  "formal_full_fits": 0,
+  "formal_cv_fits": 0,
+  "real_data_predictions": 0,
+  "new_synthetic_fits": 0,
+  "native_fit_objects_reopened": 0,
+  "saved_synthetic_OOF_rows_compared": 1472,
+  "expected_formal_fits": 256,
+  "old32_synthetic_diagnostics": "FAILED_DIAGNOSTICS unchanged; no new convergence result"
+}

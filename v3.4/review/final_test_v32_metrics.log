@@ -1,0 +1,16 @@
+PASS 3.2 valid record-equal unbalanced species accepted 
+PASS 3.2 valid species-equal accepted 
+PASS 3.2 wrong record weights rejected 
+PASS 3.2 species total alone insufficient if within-species weights unequal 
+PASS 3.2 mixed weighting labels rejected 
+PASS 3.2 missing weighting rejected 
+PASS 3.2 missing species rejected 
+PASS 3.2 nonfinite weights rejected 
+PASS 3.3 distinct 3 logscore species / 2 point and PI species 
+PASS 3.3 records and species both exposed 
+PASS 7.3 record bias is mean(predicted-observed) 
+PASS 7.3 species bias weights within valid point subset 
+PASS 7.3 bias positive means overprediction 
+PASS 3.3 interval-only has no fabricated point species 
+PASS binary species counts and quantitative NA are explicit 
+V32_METRICS_PASS

@@ -1,0 +1,8 @@
+{
+  "source_commit": "3692f07840807c8abfcac58dd87d1218a68c1149",
+  "source_path": "v3.3/review/reused_v3_2/unequal_integration/results/cv_record_predictions.csv",
+  "sha256": "72e86659a51f45305014cbffa3130cfe387940ba102981ec372f0a50f950f5f0",
+  "rows": 1472,
+  "purpose": "legal-input metric equivalence only; no posterior object reused/refit this turn",
+  "underlying_diagnostics": "original32 short-chain fits FAILED_DIAGNOSTICS; unchanged"
+}

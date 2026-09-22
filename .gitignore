@@ -3,3 +3,5 @@
 /v3.2/**/*.rds
 # v3.3 native objects are fully included in its Release archive.
 /v3.3/**/*.rds
+# Future v3.4 native fits belong in the complete Release archive.
+/v3.4/**/*.rds
