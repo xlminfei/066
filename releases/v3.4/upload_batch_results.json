@@ -1,0 +1,62 @@
+[
+  {
+    "name": "v3.4-complete-evidence.zip",
+    "success": true,
+    "message": "server digest and size verified"
+  },
+  {
+    "name": "v3.4-complete-evidence.files.csv",
+    "success": true,
+    "message": "server digest and size verified"
+  },
+  {
+    "name": "v3.4-complete-evidence.zip.sha256",
+    "success": true,
+    "message": "server digest and size verified"
+  },
+  {
+    "name": "verify_v3_4_archive.py",
+    "success": true,
+    "message": "server digest and size verified"
+  },
+  {
+    "name": "v3.4-complete-evidence.build.json",
+    "success": true,
+    "message": "server digest and size verified"
+  },
+  {
+    "name": "archive_verifier_local.log",
+    "success": true,
+    "message": "server digest and size verified"
+  },
+  {
+    "name": "README_archive_zh.md",
+    "success": true,
+    "message": "server digest and size verified"
+  },
+  {
+    "name": "source_and_archive_validation.json",
+    "success": true,
+    "message": "server digest and size verified"
+  },
+  {
+    "name": "RELEASE_NOTES_v3_4.md",
+    "success": true,
+    "message": "server digest and size verified"
+  },
+  {
+    "name": "v3.4-complete-git-changes.patch",
+    "success": true,
+    "message": "server digest and size verified"
+  },
+  {
+    "name": "manage_v3_4_release.ps1",
+    "success": true,
+    "message": "server digest and size verified"
+  },
+  {
+    "name": "git_snapshot_validation.json",
+    "success": true,
+    "message": "server digest and size verified"
+  }
+]

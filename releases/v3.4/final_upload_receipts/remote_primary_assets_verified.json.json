@@ -1,0 +1,10 @@
+{
+  "status": "REMOTE_SHA256_AND_SIZE_VERIFIED",
+  "release_id": 393691565,
+  "asset_id": 581308392,
+  "name": "remote_primary_assets_verified.json",
+  "bytes": 6377,
+  "sha256": "b4793bd4dfe7a7fa55a16987d128cc609faf996584ebccea4cf4117e9e8958a7",
+  "server_digest": "sha256:b4793bd4dfe7a7fa55a16987d128cc609faf996584ebccea4cf4117e9e8958a7",
+  "url": "https://github.com/xlminfei/066/releases/download/untagged-7545c93906665996a5be/remote_primary_assets_verified.json"
+}

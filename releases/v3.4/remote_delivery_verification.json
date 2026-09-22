@@ -1,0 +1,151 @@
+{
+  "status": "PUBLISHED_ALL16_ASSETS_VERIFIED_PUBLIC_COMPLETE_ARCHIVE_DOWNLOAD_PASSED",
+  "release_id": 393691565,
+  "tag": "v3.4",
+  "url": "https://github.com/xlminfei/066/releases/tag/v3.4",
+  "published_at": "2026-09-22T12:01:41Z",
+  "code_commit": "3a090759e64d5b6e8a7026ee358eb4e4fa032586",
+  "metadata_access": "authorized GitHub account",
+  "public_page_status": 200,
+  "source_files": 221,
+  "source_files_omitted": 0,
+  "archive_sha256": "abb1db9af70d5bc53b7c958cb599acef85f038344137162767090de4908cf5db",
+  "assets_verified": 16,
+  "assets": [
+    {
+      "name": "archive_verifier_local.log",
+      "bytes": 330,
+      "sha256": "eae77e8c3f49520d642991b437b08b1dfeaaccd7ba57c6c65f1ac524487b0e11",
+      "server_digest": "sha256:eae77e8c3f49520d642991b437b08b1dfeaaccd7ba57c6c65f1ac524487b0e11",
+      "url": "https://github.com/xlminfei/066/releases/download/v3.4/archive_verifier_local.log"
+    },
+    {
+      "name": "git_snapshot_validation.json",
+      "bytes": 295,
+      "sha256": "c0bb33a42caf772c00751b31d03dc3d7b9a76a4386ee87f3cfad61bad807d4da",
+      "server_digest": "sha256:c0bb33a42caf772c00751b31d03dc3d7b9a76a4386ee87f3cfad61bad807d4da",
+      "url": "https://github.com/xlminfei/066/releases/download/v3.4/git_snapshot_validation.json"
+    },
+    {
+      "name": "manage_v3_4_release.ps1",
+      "bytes": 3475,
+      "sha256": "bb0df15090e92a3210950bde25e8026bf30e63d79ad8e5ba134ba723562c4290",
+      "server_digest": "sha256:bb0df15090e92a3210950bde25e8026bf30e63d79ad8e5ba134ba723562c4290",
+      "url": "https://github.com/xlminfei/066/releases/download/v3.4/manage_v3_4_release.ps1"
+    },
+    {
+      "name": "README_archive_zh.md",
+      "bytes": 706,
+      "sha256": "a1827d756f0b58286608ef77f3a5657a7da871db6752a558f8e26ef940d3c3ba",
+      "server_digest": "sha256:a1827d756f0b58286608ef77f3a5657a7da871db6752a558f8e26ef940d3c3ba",
+      "url": "https://github.com/xlminfei/066/releases/download/v3.4/README_archive_zh.md"
+    },
+    {
+      "name": "RELEASE_NOTES_v3_4.md",
+      "bytes": 1802,
+      "sha256": "4fce091ddd49201d8c38be40756ad5b4bf805f3fbcfccd1f23407aa6f69acd49",
+      "server_digest": "sha256:4fce091ddd49201d8c38be40756ad5b4bf805f3fbcfccd1f23407aa6f69acd49",
+      "url": "https://github.com/xlminfei/066/releases/download/v3.4/RELEASE_NOTES_v3_4.md"
+    },
+    {
+      "name": "remote_primary_assets_verified.json",
+      "bytes": 6377,
+      "sha256": "b4793bd4dfe7a7fa55a16987d128cc609faf996584ebccea4cf4117e9e8958a7",
+      "server_digest": "sha256:b4793bd4dfe7a7fa55a16987d128cc609faf996584ebccea4cf4117e9e8958a7",
+      "url": "https://github.com/xlminfei/066/releases/download/v3.4/remote_primary_assets_verified.json"
+    },
+    {
+      "name": "source_and_archive_validation.json",
+      "bytes": 346,
+      "sha256": "47c36f56274a3cb9fe880db83fe537d6f8c903066f8bdb0726c0f9f4b7b401a9",
+      "server_digest": "sha256:47c36f56274a3cb9fe880db83fe537d6f8c903066f8bdb0726c0f9f4b7b401a9",
+      "url": "https://github.com/xlminfei/066/releases/download/v3.4/source_and_archive_validation.json"
+    },
+    {
+      "name": "v3.4-complete-evidence.build.json",
+      "bytes": 387,
+      "sha256": "3b2370b7616fa607098481759b2c26588287ea995822a988ed437a193c9626a1",
+      "server_digest": "sha256:3b2370b7616fa607098481759b2c26588287ea995822a988ed437a193c9626a1",
+      "url": "https://github.com/xlminfei/066/releases/download/v3.4/v3.4-complete-evidence.build.json"
+    },
+    {
+      "name": "v3.4-complete-evidence.files.csv",
+      "bytes": 36670,
+      "sha256": "b454bc9d2e752bc3d37893c760b92f27e58c41490f1279c0f05afe6cfb55bc7c",
+      "server_digest": "sha256:b454bc9d2e752bc3d37893c760b92f27e58c41490f1279c0f05afe6cfb55bc7c",
+      "url": "https://github.com/xlminfei/066/releases/download/v3.4/v3.4-complete-evidence.files.csv"
+    },
+    {
+      "name": "v3.4-complete-evidence.zip",
+      "bytes": 619833,
+      "sha256": "abb1db9af70d5bc53b7c958cb599acef85f038344137162767090de4908cf5db",
+      "server_digest": "sha256:abb1db9af70d5bc53b7c958cb599acef85f038344137162767090de4908cf5db",
+      "url": "https://github.com/xlminfei/066/releases/download/v3.4/v3.4-complete-evidence.zip"
+    },
+    {
+      "name": "v3.4-complete-evidence.zip.sha256",
+      "bytes": 94,
+      "sha256": "7d9e43876cf77f7d53eda9ab2f00893737f20e53cc17745e8258ab95a21700c4",
+      "server_digest": "sha256:7d9e43876cf77f7d53eda9ab2f00893737f20e53cc17745e8258ab95a21700c4",
+      "url": "https://github.com/xlminfei/066/releases/download/v3.4/v3.4-complete-evidence.zip.sha256"
+    },
+    {
+      "name": "v3.4-complete-git-changes.patch",
+      "bytes": 11603733,
+      "sha256": "23e67dd895bde4297149be0f392b1e3332676fd3d048ad47cc68abdbea7d1193",
+      "server_digest": "sha256:23e67dd895bde4297149be0f392b1e3332676fd3d048ad47cc68abdbea7d1193",
+      "url": "https://github.com/xlminfei/066/releases/download/v3.4/v3.4-complete-git-changes.patch"
+    },
+    {
+      "name": "v3.4-delivery-execution-evidence.build.json",
+      "bytes": 327,
+      "sha256": "6c317961798674c17fbc7b04d97239a13cda6c36c91a68c3901df7970ee9fb82",
+      "server_digest": "sha256:6c317961798674c17fbc7b04d97239a13cda6c36c91a68c3901df7970ee9fb82",
+      "url": "https://github.com/xlminfei/066/releases/download/v3.4/v3.4-delivery-execution-evidence.build.json"
+    },
+    {
+      "name": "v3.4-delivery-execution-evidence.files.csv",
+      "bytes": 4983,
+      "sha256": "b7ba185b24a169a1723ad80c5721a501e192f993089fe5862d94bcdfa1e750e8",
+      "server_digest": "sha256:b7ba185b24a169a1723ad80c5721a501e192f993089fe5862d94bcdfa1e750e8",
+      "url": "https://github.com/xlminfei/066/releases/download/v3.4/v3.4-delivery-execution-evidence.files.csv"
+    },
+    {
+      "name": "v3.4-delivery-execution-evidence.zip",
+      "bytes": 548623,
+      "sha256": "569316211941181a65520197c78137e421736db179a2e4292dbcffe6b0139902",
+      "server_digest": "sha256:569316211941181a65520197c78137e421736db179a2e4292dbcffe6b0139902",
+      "url": "https://github.com/xlminfei/066/releases/download/v3.4/v3.4-delivery-execution-evidence.zip"
+    },
+    {
+      "name": "verify_v3_4_archive.py",
+      "bytes": 3005,
+      "sha256": "0bd1cad5713b8acd07b8d99241b08a9873e71406316bfa4da42c92897211fe68",
+      "server_digest": "sha256:0bd1cad5713b8acd07b8d99241b08a9873e71406316bfa4da42c92897211fe68",
+      "url": "https://github.com/xlminfei/066/releases/download/v3.4/verify_v3_4_archive.py"
+    }
+  ],
+  "public_download_checks": [
+    {
+      "name": "v3.4-complete-evidence.zip",
+      "bytes": 619833,
+      "sha256": "abb1db9af70d5bc53b7c958cb599acef85f038344137162767090de4908cf5db",
+      "unauthenticated_download_verified": true
+    },
+    {
+      "name": "v3.4-complete-evidence.files.csv",
+      "bytes": 36670,
+      "sha256": "b454bc9d2e752bc3d37893c760b92f27e58c41490f1279c0f05afe6cfb55bc7c",
+      "unauthenticated_download_verified": true
+    },
+    {
+      "name": "verify_v3_4_archive.py",
+      "bytes": 3005,
+      "sha256": "0bd1cad5713b8acd07b8d99241b08a9873e71406316bfa4da42c92897211fe68",
+      "unauthenticated_download_verified": true
+    }
+  ],
+  "new_fits": 0,
+  "real_data_fits": 0,
+  "checked_at": "2026-09-22T12:02:21.374Z"
+}

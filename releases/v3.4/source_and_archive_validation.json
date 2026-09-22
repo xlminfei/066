@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "archive_source_files": 221,
+  "archive_sha256": "abb1db9af70d5bc53b7c958cb599acef85f038344137162767090de4908cf5db",
+  "zip_source_file_verifier_exit": 0,
+  "source_whitespace_check_exit": 0,
+  "potential_credential_pattern_check": "no matches in nonbinary version/release files",
+  "new_fits": 0,
+  "real_data_fits": 0
+}
