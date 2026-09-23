@@ -1,0 +1,25 @@
+$stage
+[1] "before"
+
+$status
+[1] "FAIL_REPRODUCED"
+
+$checks
+[1] 140
+
+$passed
+[1] 82
+
+$failed
+[1] 58
+
+$sampler_callback_calls
+[1] 1
+
+$actual_samplers_started
+[1] 0
+
+$real_data_fits
+[1] 0
+
+V33_INPUT_GAPS_REPRODUCED; no sampler executed

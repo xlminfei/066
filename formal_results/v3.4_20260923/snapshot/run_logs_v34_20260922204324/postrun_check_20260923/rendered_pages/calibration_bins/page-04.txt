@@ -1,0 +1,9 @@
+0.0 0.2 0.4 0.6 0.8 1.0
+0.0 0.2 0.4 0.6 0.8 1.0
+tenfold | record_equal | species_equal
+Mean predicted HIGH probability
+Observed HIGH rate
+Null
+M1
+M2
+M3

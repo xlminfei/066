@@ -1,0 +1,607 @@
+[
+  {
+    "file": "ROC_curves.pdf",
+    "bytes": 16330,
+    "pages": 8,
+    "expected_pages": 8,
+    "render_exit": 0,
+    "render_stderr": "Syntax Error: No display font for 'Symbol'\nSyntax Error: No display font for 'ArialUnicode'\n",
+    "rendered_pages": 8,
+    "nonempty_text_pages": 8,
+    "all_pages_nonblank": true,
+    "images": [
+      {
+        "file": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324\\postrun_check_20260923\\rendered_pages\\ROC_curves\\page-1.png",
+        "width": 864,
+        "height": 672,
+        "nonwhite_fraction": 0.039966724537037035
+      },
+      {
+        "file": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324\\postrun_check_20260923\\rendered_pages\\ROC_curves\\page-2.png",
+        "width": 864,
+        "height": 672,
+        "nonwhite_fraction": 0.040374917328042326
+      },
+      {
+        "file": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324\\postrun_check_20260923\\rendered_pages\\ROC_curves\\page-3.png",
+        "width": 864,
+        "height": 672,
+        "nonwhite_fraction": 0.0427672371031746
+      },
+      {
+        "file": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324\\postrun_check_20260923\\rendered_pages\\ROC_curves\\page-4.png",
+        "width": 864,
+        "height": 672,
+        "nonwhite_fraction": 0.04270695546737213
+      },
+      {
+        "file": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324\\postrun_check_20260923\\rendered_pages\\ROC_curves\\page-5.png",
+        "width": 864,
+        "height": 672,
+        "nonwhite_fraction": 0.0390573330026455
+      },
+      {
+        "file": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324\\postrun_check_20260923\\rendered_pages\\ROC_curves\\page-6.png",
+        "width": 864,
+        "height": 672,
+        "nonwhite_fraction": 0.039388020833333336
+      },
+      {
+        "file": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324\\postrun_check_20260923\\rendered_pages\\ROC_curves\\page-7.png",
+        "width": 864,
+        "height": 672,
+        "nonwhite_fraction": 0.04239693562610229
+      },
+      {
+        "file": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324\\postrun_check_20260923\\rendered_pages\\ROC_curves\\page-8.png",
+        "width": 864,
+        "height": 672,
+        "nonwhite_fraction": 0.04291535769400353
+      }
+    ],
+    "contacts": [
+      "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324\\postrun_check_20260923\\contact_ROC_curves_1.jpg"
+    ],
+    "sha256": "4f0d1d81c5da78db595a86d3b6fe468a9556fbc444023579ecaf2998ed3724f5",
+    "pass_check": true
+  },
+  {
+    "file": "calibration_bins.pdf",
+    "bytes": 19705,
+    "pages": 8,
+    "expected_pages": 8,
+    "render_exit": 0,
+    "render_stderr": "Syntax Error: No display font for 'Symbol'\nSyntax Error: No display font for 'ArialUnicode'\n",
+    "rendered_pages": 8,
+    "nonempty_text_pages": 8,
+    "all_pages_nonblank": true,
+    "images": [
+      {
+        "file": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324\\postrun_check_20260923\\rendered_pages\\calibration_bins\\page-1.png",
+        "width": 768,
+        "height": 576,
+        "nonwhite_fraction": 0.034394440827546294
+      },
+      {
+        "file": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324\\postrun_check_20260923\\rendered_pages\\calibration_bins\\page-2.png",
+        "width": 768,
+        "height": 576,
+        "nonwhite_fraction": 0.03305392795138889
+      },
+      {
+        "file": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324\\postrun_check_20260923\\rendered_pages\\calibration_bins\\page-3.png",
+        "width": 768,
+        "height": 576,
+        "nonwhite_fraction": 0.033196343315972224
+      },
+      {
+        "file": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324\\postrun_check_20260923\\rendered_pages\\calibration_bins\\page-4.png",
+        "width": 768,
+        "height": 576,
+        "nonwhite_fraction": 0.03286404079861111
+      },
+      {
+        "file": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324\\postrun_check_20260923\\rendered_pages\\calibration_bins\\page-5.png",
+        "width": 768,
+        "height": 576,
+        "nonwhite_fraction": 0.034557201244212965
+      },
+      {
+        "file": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324\\postrun_check_20260923\\rendered_pages\\calibration_bins\\page-6.png",
+        "width": 768,
+        "height": 576,
+        "nonwhite_fraction": 0.03325963903356482
+      },
+      {
+        "file": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324\\postrun_check_20260923\\rendered_pages\\calibration_bins\\page-7.png",
+        "width": 768,
+        "height": 576,
+        "nonwhite_fraction": 0.03258373119212963
+      },
+      {
+        "file": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324\\postrun_check_20260923\\rendered_pages\\calibration_bins\\page-8.png",
+        "width": 768,
+        "height": 576,
+        "nonwhite_fraction": 0.03290247034143518
+      }
+    ],
+    "contacts": [
+      "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324\\postrun_check_20260923\\contact_calibration_bins_1.jpg"
+    ],
+    "sha256": "6e8bf4b359e1e879db0b3a544e9a99f9b8b7e28cc3cb5d20b62d3fe28fbd58f3",
+    "pass_check": true
+  },
+  {
+    "file": "quantitative_predicted_observed.pdf",
+    "bytes": 120681,
+    "pages": 8,
+    "expected_pages": 8,
+    "render_exit": 0,
+    "render_stderr": "Syntax Error: No display font for 'Symbol'\nSyntax Error: No display font for 'ArialUnicode'\n",
+    "rendered_pages": 8,
+    "nonempty_text_pages": 8,
+    "all_pages_nonblank": true,
+    "images": [
+      {
+        "file": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324\\postrun_check_20260923\\rendered_pages\\quantitative_predicted_observed\\page-1.png",
+        "width": 1056,
+        "height": 864,
+        "nonwhite_fraction": 0.0346487882295174
+      },
+      {
+        "file": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324\\postrun_check_20260923\\rendered_pages\\quantitative_predicted_observed\\page-2.png",
+        "width": 1056,
+        "height": 864,
+        "nonwhite_fraction": 0.036409011994949496
+      },
+      {
+        "file": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324\\postrun_check_20260923\\rendered_pages\\quantitative_predicted_observed\\page-3.png",
+        "width": 1056,
+        "height": 864,
+        "nonwhite_fraction": 0.03484278549382716
+      },
+      {
+        "file": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324\\postrun_check_20260923\\rendered_pages\\quantitative_predicted_observed\\page-4.png",
+        "width": 1056,
+        "height": 864,
+        "nonwhite_fraction": 0.036558072039842876
+      },
+      {
+        "file": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324\\postrun_check_20260923\\rendered_pages\\quantitative_predicted_observed\\page-5.png",
+        "width": 1056,
+        "height": 864,
+        "nonwhite_fraction": 0.03468605324074074
+      },
+      {
+        "file": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324\\postrun_check_20260923\\rendered_pages\\quantitative_predicted_observed\\page-6.png",
+        "width": 1056,
+        "height": 864,
+        "nonwhite_fraction": 0.03648244598765432
+      },
+      {
+        "file": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324\\postrun_check_20260923\\rendered_pages\\quantitative_predicted_observed\\page-7.png",
+        "width": 1056,
+        "height": 864,
+        "nonwhite_fraction": 0.03478250385802469
+      },
+      {
+        "file": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324\\postrun_check_20260923\\rendered_pages\\quantitative_predicted_observed\\page-8.png",
+        "width": 1056,
+        "height": 864,
+        "nonwhite_fraction": 0.03660629734848485
+      }
+    ],
+    "contacts": [
+      "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324\\postrun_check_20260923\\contact_quantitative_predicted_observed_1.jpg"
+    ],
+    "sha256": "b647a2b954fa3dcfc911119b8eeba14130044a47e25903b4103ec0d435d1fbb9",
+    "pass_check": true
+  },
+  {
+    "file": "training_ppc_summary.pdf",
+    "bytes": 35983,
+    "pages": 16,
+    "expected_pages": 16,
+    "render_exit": 0,
+    "render_stderr": "Syntax Error: No display font for 'Symbol'\nSyntax Error: No display font for 'ArialUnicode'\n",
+    "rendered_pages": 16,
+    "nonempty_text_pages": 16,
+    "all_pages_nonblank": true,
+    "images": [
+      {
+        "file": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324\\postrun_check_20260923\\rendered_pages\\training_ppc_summary\\page-01.png",
+        "width": 1152,
+        "height": 768,
+        "nonwhite_fraction": 0.026343451605902776
+      },
+      {
+        "file": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324\\postrun_check_20260923\\rendered_pages\\training_ppc_summary\\page-02.png",
+        "width": 1152,
+        "height": 768,
+        "nonwhite_fraction": 0.02547991717303241
+      },
+      {
+        "file": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324\\postrun_check_20260923\\rendered_pages\\training_ppc_summary\\page-03.png",
+        "width": 1152,
+        "height": 768,
+        "nonwhite_fraction": 0.025718406394675927
+      },
+      {
+        "file": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324\\postrun_check_20260923\\rendered_pages\\training_ppc_summary\\page-04.png",
+        "width": 1152,
+        "height": 768,
+        "nonwhite_fraction": 0.025701452184606483
+      },
+      {
+        "file": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324\\postrun_check_20260923\\rendered_pages\\training_ppc_summary\\page-05.png",
+        "width": 1152,
+        "height": 768,
+        "nonwhite_fraction": 0.02543244538483796
+      },
+      {
+        "file": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324\\postrun_check_20260923\\rendered_pages\\training_ppc_summary\\page-06.png",
+        "width": 1152,
+        "height": 768,
+        "nonwhite_fraction": 0.025963677300347224
+      },
+      {
+        "file": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324\\postrun_check_20260923\\rendered_pages\\training_ppc_summary\\page-07.png",
+        "width": 1152,
+        "height": 768,
+        "nonwhite_fraction": 0.026640715422453703
+      },
+      {
+        "file": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324\\postrun_check_20260923\\rendered_pages\\training_ppc_summary\\page-08.png",
+        "width": 1152,
+        "height": 768,
+        "nonwhite_fraction": 0.025413230613425927
+      },
+      {
+        "file": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324\\postrun_check_20260923\\rendered_pages\\training_ppc_summary\\page-09.png",
+        "width": 1152,
+        "height": 768,
+        "nonwhite_fraction": 0.027116563585069444
+      },
+      {
+        "file": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324\\postrun_check_20260923\\rendered_pages\\training_ppc_summary\\page-10.png",
+        "width": 1152,
+        "height": 768,
+        "nonwhite_fraction": 0.02687468352141204
+      },
+      {
+        "file": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324\\postrun_check_20260923\\rendered_pages\\training_ppc_summary\\page-11.png",
+        "width": 1152,
+        "height": 768,
+        "nonwhite_fraction": 0.020971227575231483
+      },
+      {
+        "file": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324\\postrun_check_20260923\\rendered_pages\\training_ppc_summary\\page-12.png",
+        "width": 1152,
+        "height": 768,
+        "nonwhite_fraction": 0.02686677155671296
+      },
+      {
+        "file": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324\\postrun_check_20260923\\rendered_pages\\training_ppc_summary\\page-13.png",
+        "width": 1152,
+        "height": 768,
+        "nonwhite_fraction": 0.02708830656828704
+      },
+      {
+        "file": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324\\postrun_check_20260923\\rendered_pages\\training_ppc_summary\\page-14.png",
+        "width": 1152,
+        "height": 768,
+        "nonwhite_fraction": 0.025538691767939815
+      },
+      {
+        "file": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324\\postrun_check_20260923\\rendered_pages\\training_ppc_summary\\page-15.png",
+        "width": 1152,
+        "height": 768,
+        "nonwhite_fraction": 0.02872608326099537
+      },
+      {
+        "file": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324\\postrun_check_20260923\\rendered_pages\\training_ppc_summary\\page-16.png",
+        "width": 1152,
+        "height": 768,
+        "nonwhite_fraction": 0.026332148799189815
+      }
+    ],
+    "contacts": [
+      "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324\\postrun_check_20260923\\contact_training_ppc_summary_1.jpg",
+      "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324\\postrun_check_20260923\\contact_training_ppc_summary_2.jpg"
+    ],
+    "sha256": "803ff7fa9b167f71e885fd1bcd2a3cb80f30f92ab351174ef02b7b1516e0bd46",
+    "pass_check": true
+  },
+  {
+    "file": "species_predictions_binary_record_equal.pdf",
+    "bytes": 123371,
+    "pages": 9,
+    "expected_pages": 9,
+    "render_exit": 0,
+    "render_stderr": "Syntax Error: No display font for 'Symbol'\nSyntax Error: No display font for 'ArialUnicode'\n",
+    "rendered_pages": 9,
+    "nonempty_text_pages": 9,
+    "all_pages_nonblank": true,
+    "images": [
+      {
+        "file": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324\\postrun_check_20260923\\rendered_pages\\species_predictions_binary_record_equal\\page-1.png",
+        "width": 1536,
+        "height": 1152,
+        "nonwhite_fraction": 0.043831719292534724
+      },
+      {
+        "file": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324\\postrun_check_20260923\\rendered_pages\\species_predictions_binary_record_equal\\page-2.png",
+        "width": 1536,
+        "height": 1152,
+        "nonwhite_fraction": 0.04115351924189815
+      },
+      {
+        "file": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324\\postrun_check_20260923\\rendered_pages\\species_predictions_binary_record_equal\\page-3.png",
+        "width": 1536,
+        "height": 1152,
+        "nonwhite_fraction": 0.046181572808159724
+      },
+      {
+        "file": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324\\postrun_check_20260923\\rendered_pages\\species_predictions_binary_record_equal\\page-4.png",
+        "width": 1536,
+        "height": 1152,
+        "nonwhite_fraction": 0.03598926685474537
+      },
+      {
+        "file": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324\\postrun_check_20260923\\rendered_pages\\species_predictions_binary_record_equal\\page-5.png",
+        "width": 1536,
+        "height": 1152,
+        "nonwhite_fraction": 0.032883820710358794
+      },
+      {
+        "file": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324\\postrun_check_20260923\\rendered_pages\\species_predictions_binary_record_equal\\page-6.png",
+        "width": 1536,
+        "height": 1152,
+        "nonwhite_fraction": 0.03147718641493055
+      },
+      {
+        "file": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324\\postrun_check_20260923\\rendered_pages\\species_predictions_binary_record_equal\\page-7.png",
+        "width": 1536,
+        "height": 1152,
+        "nonwhite_fraction": 0.03372531467013889
+      },
+      {
+        "file": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324\\postrun_check_20260923\\rendered_pages\\species_predictions_binary_record_equal\\page-8.png",
+        "width": 1536,
+        "height": 1152,
+        "nonwhite_fraction": 0.029841670283564815
+      },
+      {
+        "file": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324\\postrun_check_20260923\\rendered_pages\\species_predictions_binary_record_equal\\page-9.png",
+        "width": 1536,
+        "height": 1152,
+        "nonwhite_fraction": 0.02515270091869213
+      }
+    ],
+    "contacts": [
+      "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324\\postrun_check_20260923\\contact_species_predictions_binary_record_equal_1.jpg",
+      "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324\\postrun_check_20260923\\contact_species_predictions_binary_record_equal_2.jpg"
+    ],
+    "sha256": "19f631c79f1b3bc22d583ebf16329178b56c82d5b6b54a811de75d8b0521a1d1",
+    "pass_check": true
+  },
+  {
+    "file": "species_predictions_binary_species_equal.pdf",
+    "bytes": 123289,
+    "pages": 9,
+    "expected_pages": 9,
+    "render_exit": 0,
+    "render_stderr": "Syntax Error: No display font for 'Symbol'\nSyntax Error: No display font for 'ArialUnicode'\n",
+    "rendered_pages": 9,
+    "nonempty_text_pages": 9,
+    "all_pages_nonblank": true,
+    "images": [
+      {
+        "file": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324\\postrun_check_20260923\\rendered_pages\\species_predictions_binary_species_equal\\page-1.png",
+        "width": 1536,
+        "height": 1152,
+        "nonwhite_fraction": 0.04172713668258102
+      },
+      {
+        "file": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324\\postrun_check_20260923\\rendered_pages\\species_predictions_binary_species_equal\\page-2.png",
+        "width": 1536,
+        "height": 1152,
+        "nonwhite_fraction": 0.03808424207899305
+      },
+      {
+        "file": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324\\postrun_check_20260923\\rendered_pages\\species_predictions_binary_species_equal\\page-3.png",
+        "width": 1536,
+        "height": 1152,
+        "nonwhite_fraction": 0.04395774558738426
+      },
+      {
+        "file": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324\\postrun_check_20260923\\rendered_pages\\species_predictions_binary_species_equal\\page-4.png",
+        "width": 1536,
+        "height": 1152,
+        "nonwhite_fraction": 0.03594631618923611
+      },
+      {
+        "file": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324\\postrun_check_20260923\\rendered_pages\\species_predictions_binary_species_equal\\page-5.png",
+        "width": 1536,
+        "height": 1152,
+        "nonwhite_fraction": 0.03264928747106482
+      },
+      {
+        "file": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324\\postrun_check_20260923\\rendered_pages\\species_predictions_binary_species_equal\\page-6.png",
+        "width": 1536,
+        "height": 1152,
+        "nonwhite_fraction": 0.03172358760127315
+      },
+      {
+        "file": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324\\postrun_check_20260923\\rendered_pages\\species_predictions_binary_species_equal\\page-7.png",
+        "width": 1536,
+        "height": 1152,
+        "nonwhite_fraction": 0.03385190610532408
+      },
+      {
+        "file": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324\\postrun_check_20260923\\rendered_pages\\species_predictions_binary_species_equal\\page-8.png",
+        "width": 1536,
+        "height": 1152,
+        "nonwhite_fraction": 0.031013771339699073
+      },
+      {
+        "file": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324\\postrun_check_20260923\\rendered_pages\\species_predictions_binary_species_equal\\page-9.png",
+        "width": 1536,
+        "height": 1152,
+        "nonwhite_fraction": 0.025915075231481483
+      }
+    ],
+    "contacts": [
+      "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324\\postrun_check_20260923\\contact_species_predictions_binary_species_equal_1.jpg",
+      "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324\\postrun_check_20260923\\contact_species_predictions_binary_species_equal_2.jpg"
+    ],
+    "sha256": "478af988b0779b2842b80f62700f625969fc2a6f09b71bfe03f82ed2f2d34355",
+    "pass_check": true
+  },
+  {
+    "file": "species_predictions_joint_bb_record_equal.pdf",
+    "bytes": 135191,
+    "pages": 9,
+    "expected_pages": 9,
+    "render_exit": 0,
+    "render_stderr": "Syntax Error: No display font for 'Symbol'\nSyntax Error: No display font for 'ArialUnicode'\n",
+    "rendered_pages": 9,
+    "nonempty_text_pages": 9,
+    "all_pages_nonblank": true,
+    "images": [
+      {
+        "file": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324\\postrun_check_20260923\\rendered_pages\\species_predictions_joint_bb_record_equal\\page-1.png",
+        "width": 1536,
+        "height": 1152,
+        "nonwhite_fraction": 0.0928921169704861
+      },
+      {
+        "file": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324\\postrun_check_20260923\\rendered_pages\\species_predictions_joint_bb_record_equal\\page-2.png",
+        "width": 1536,
+        "height": 1152,
+        "nonwhite_fraction": 0.09367653175636574
+      },
+      {
+        "file": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324\\postrun_check_20260923\\rendered_pages\\species_predictions_joint_bb_record_equal\\page-3.png",
+        "width": 1536,
+        "height": 1152,
+        "nonwhite_fraction": 0.08863434968171297
+      },
+      {
+        "file": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324\\postrun_check_20260923\\rendered_pages\\species_predictions_joint_bb_record_equal\\page-4.png",
+        "width": 1536,
+        "height": 1152,
+        "nonwhite_fraction": 0.082763671875
+      },
+      {
+        "file": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324\\postrun_check_20260923\\rendered_pages\\species_predictions_joint_bb_record_equal\\page-5.png",
+        "width": 1536,
+        "height": 1152,
+        "nonwhite_fraction": 0.07870257342303241
+      },
+      {
+        "file": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324\\postrun_check_20260923\\rendered_pages\\species_predictions_joint_bb_record_equal\\page-6.png",
+        "width": 1536,
+        "height": 1152,
+        "nonwhite_fraction": 0.07936604817708333
+      },
+      {
+        "file": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324\\postrun_check_20260923\\rendered_pages\\species_predictions_joint_bb_record_equal\\page-7.png",
+        "width": 1536,
+        "height": 1152,
+        "nonwhite_fraction": 0.08169329607928241
+      },
+      {
+        "file": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324\\postrun_check_20260923\\rendered_pages\\species_predictions_joint_bb_record_equal\\page-8.png",
+        "width": 1536,
+        "height": 1152,
+        "nonwhite_fraction": 0.0735931396484375
+      },
+      {
+        "file": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324\\postrun_check_20260923\\rendered_pages\\species_predictions_joint_bb_record_equal\\page-9.png",
+        "width": 1536,
+        "height": 1152,
+        "nonwhite_fraction": 0.05549452039930555
+      }
+    ],
+    "contacts": [
+      "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324\\postrun_check_20260923\\contact_species_predictions_joint_bb_record_equal_1.jpg",
+      "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324\\postrun_check_20260923\\contact_species_predictions_joint_bb_record_equal_2.jpg"
+    ],
+    "sha256": "ad1b09f3f584e0b042aec929abeef4ce60f16586b779cc5c684a6ba27bc8477f",
+    "pass_check": true
+  },
+  {
+    "file": "species_predictions_joint_bb_species_equal.pdf",
+    "bytes": 135070,
+    "pages": 9,
+    "expected_pages": 9,
+    "render_exit": 0,
+    "render_stderr": "Syntax Error: No display font for 'Symbol'\nSyntax Error: No display font for 'ArialUnicode'\n",
+    "rendered_pages": 9,
+    "nonempty_text_pages": 9,
+    "all_pages_nonblank": true,
+    "images": [
+      {
+        "file": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324\\postrun_check_20260923\\rendered_pages\\species_predictions_joint_bb_species_equal\\page-1.png",
+        "width": 1536,
+        "height": 1152,
+        "nonwhite_fraction": 0.09395797164351852
+      },
+      {
+        "file": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324\\postrun_check_20260923\\rendered_pages\\species_predictions_joint_bb_species_equal\\page-2.png",
+        "width": 1536,
+        "height": 1152,
+        "nonwhite_fraction": 0.09339113588686343
+      },
+      {
+        "file": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324\\postrun_check_20260923\\rendered_pages\\species_predictions_joint_bb_species_equal\\page-3.png",
+        "width": 1536,
+        "height": 1152,
+        "nonwhite_fraction": 0.083953857421875
+      },
+      {
+        "file": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324\\postrun_check_20260923\\rendered_pages\\species_predictions_joint_bb_species_equal\\page-4.png",
+        "width": 1536,
+        "height": 1152,
+        "nonwhite_fraction": 0.08404371473524305
+      },
+      {
+        "file": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324\\postrun_check_20260923\\rendered_pages\\species_predictions_joint_bb_species_equal\\page-5.png",
+        "width": 1536,
+        "height": 1152,
+        "nonwhite_fraction": 0.07873083043981481
+      },
+      {
+        "file": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324\\postrun_check_20260923\\rendered_pages\\species_predictions_joint_bb_species_equal\\page-6.png",
+        "width": 1536,
+        "height": 1152,
+        "nonwhite_fraction": 0.08114228425202547
+      },
+      {
+        "file": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324\\postrun_check_20260923\\rendered_pages\\species_predictions_joint_bb_species_equal\\page-7.png",
+        "width": 1536,
+        "height": 1152,
+        "nonwhite_fraction": 0.08244606300636574
+      },
+      {
+        "file": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324\\postrun_check_20260923\\rendered_pages\\species_predictions_joint_bb_species_equal\\page-8.png",
+        "width": 1536,
+        "height": 1152,
+        "nonwhite_fraction": 0.07490991663049769
+      },
+      {
+        "file": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324\\postrun_check_20260923\\rendered_pages\\species_predictions_joint_bb_species_equal\\page-9.png",
+        "width": 1536,
+        "height": 1152,
+        "nonwhite_fraction": 0.057072957356770836
+      }
+    ],
+    "contacts": [
+      "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324\\postrun_check_20260923\\contact_species_predictions_joint_bb_species_equal_1.jpg",
+      "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324\\postrun_check_20260923\\contact_species_predictions_joint_bb_species_equal_2.jpg"
+    ],
+    "sha256": "59313863301f0e6c457d8ac25fb72558265f2bbb50512f1766dd71cd3963746d",
+    "pass_check": true
+  }
+]

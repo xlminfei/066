@@ -1,0 +1,29 @@
+{
+  "checkedAt": "2026-09-22T12:48:53.913Z",
+  "state": {
+    "Status": "running",
+    "Running": true,
+    "Paused": false,
+    "Restarting": false,
+    "OOMKilled": false,
+    "Dead": false,
+    "Pid": 1213,
+    "ExitCode": 0,
+    "Error": "",
+    "StartedAt": "2026-09-22T12:48:17.73676468Z",
+    "FinishedAt": "0001-01-01T00:00:00Z"
+  },
+  "stats": {
+    "BlockIO": "0B / 0B",
+    "CPUPerc": "99.61%",
+    "Container": "2192b83c6d64427cedb3da160125e9f6a4e79c5e123bdc66c7e8e3c5a659981c",
+    "ID": "2192b83c6d64",
+    "MemPerc": "1.81%",
+    "MemUsage": "2.134GiB / 117.9GiB",
+    "Name": "ratio-v34-formal-20260922204324",
+    "NetIO": "1.17kB / 126B",
+    "PIDs": "12"
+  },
+  "logTail": "FORMAL_ALL_STARTED 2026-09-22T12:48:17Z\nPREFLIGHT_PASS: 256 planned; no formal fit claimed\nFIT_START binary Null record_equal seed 20260920 \n",
+  "processes": "PID                 PPID                %CPU                COMMAND\n1213                1188                0.1                 docker-init\n1226                1213                0.0                 bash\n1228                1226                26.0                R\n1229                1226                0.0                 tee\n1290                1228                0.0                 sh\n1291                1290                0.0                 sh\n1295                1291                0.1                 R\n1308                1295                0.0                 sh\n1309                1308                0.0                 make\n1310                1309                0.0                 x86_64-linux-gn\n1311                1310                95.3                cc1plus\n"
+}

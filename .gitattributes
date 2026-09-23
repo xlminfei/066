@@ -8,3 +8,5 @@
 /.gitattributes -text
 /.gitignore -text
 /v3.4/** -text
+
+/formal_results/** -text

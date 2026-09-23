@@ -1,0 +1,8 @@
+{
+  "exit_code": 0,
+  "verification_source": "regression_runner.csv:test_v34_input_guards.R",
+  "checks": 151,
+  "status": "PASS",
+  "batch_receipt": "review/regression_runner_exit.json",
+  "purpose": "FINAL_INPUT_GUARD_REGRESSION_NO_SAMPLING"
+}

@@ -1,0 +1,165 @@
+{
+  "commit": "c9ec1c58e173dd5209bbbe5e89b2213553fc0630",
+  "files": [
+    {
+      "path": "Dockerfile",
+      "bytes": 912,
+      "sha256": "49d2b2878daab1bd46673984cbe11082f6bccd66191eb6ca53959daa428c73a4"
+    },
+    {
+      "path": "R/applicability.R",
+      "bytes": 3597,
+      "sha256": "20e678c3184a470cc010d5e8e38e163d27ade40352cac2b0434c49f77442d588"
+    },
+    {
+      "path": "R/audit_run.R",
+      "bytes": 10250,
+      "sha256": "6957d805914425e4e6b57874a0b3872eb52b0bdaa3896a60014b3b2ac8717e24"
+    },
+    {
+      "path": "R/bootstrap.R",
+      "bytes": 1122,
+      "sha256": "02cfcdcd5c64b87b38b3152c2574584665fcd8a732f5f84ddcc8b5ccdc833d1d"
+    },
+    {
+      "path": "R/cache_io.R",
+      "bytes": 6792,
+      "sha256": "e5bff6618d266164800cbbcdd43556e92acebd1589b16338045be80baa32dc98"
+    },
+    {
+      "path": "R/comparison.R",
+      "bytes": 7114,
+      "sha256": "2ce68d341f9992ac418f55c27a1731b996d7a2fcf53ea3193e5b196912a98c2f"
+    },
+    {
+      "path": "R/config.R",
+      "bytes": 5808,
+      "sha256": "d31a7952aa76d1ca74bec971f62ac03fb30e501eb85c0618ea68fc99ceada974"
+    },
+    {
+      "path": "R/cross_validation.R",
+      "bytes": 13689,
+      "sha256": "2ce3be87473190750c76fd9d0a1cdb41bc3bba36b0e0b306b25df6e6cc6312c7"
+    },
+    {
+      "path": "R/data_encoding.R",
+      "bytes": 14243,
+      "sha256": "205c15f8211918bb42705e1532162441d3fec32fc8bd1053d1abdb77dab9be88"
+    },
+    {
+      "path": "R/fitting.R",
+      "bytes": 9798,
+      "sha256": "98dae597f05612cdfad2af2647c167a8c873dc524331a1d59c4bc13307f412f7"
+    },
+    {
+      "path": "R/metrics.R",
+      "bytes": 11065,
+      "sha256": "71bec12ef257b0a362ee9a76469a1866839e0de1ec7f44f4a0329a57ba58d216"
+    },
+    {
+      "path": "R/plotting.R",
+      "bytes": 5861,
+      "sha256": "6880ffc04a2cd9ad79999f1d6af6e072d7b183b21a5b846b559dee9e16f26430"
+    },
+    {
+      "path": "R/ppc.R",
+      "bytes": 2797,
+      "sha256": "48fbac66931959c6f7ead27419d6b84c5843185f61a80e93d11083d034afabd2"
+    },
+    {
+      "path": "R/prediction.R",
+      "bytes": 7675,
+      "sha256": "5772e289e9b21f976272f305334bde5bd6227fd226680b5666e224e591424927"
+    },
+    {
+      "path": "R/prediction_audit.R",
+      "bytes": 23300,
+      "sha256": "afe818c01737ca11ac74ea493eeea67ab6b10e8d4d1c5618e6aa2cb93f4eb831"
+    },
+    {
+      "path": "R/provenance.R",
+      "bytes": 2388,
+      "sha256": "0a34fb3b5ca427286bce7cd2fbd8d60442d22ad213633ec89f857ba12296bc9f"
+    },
+    {
+      "path": "R/quantitative_diagnostics.R",
+      "bytes": 5215,
+      "sha256": "f28522b05dc4fb854b36ab51781aeb6394b8d0dab1b52fda014bd5eedf6d410b"
+    },
+    {
+      "path": "R/reporting.R",
+      "bytes": 6602,
+      "sha256": "bbe82ba1ab62d926363eeacecc00eb2fa0254aaf4ed928c6f0e3a92638ffaadc"
+    },
+    {
+      "path": "R/weights.R",
+      "bytes": 2244,
+      "sha256": "7951bdb1dcf79015bd889f60ebbd97cb8c2091631f62049cadca32cbce3c6019"
+    },
+    {
+      "path": "R/workflow.R",
+      "bytes": 10385,
+      "sha256": "9afa967d9f05f3bd591f697c09ffdc5dfb66a4b8615a9c6012f9ab3ec2f2cd1c"
+    },
+    {
+      "path": "config/analysis.json",
+      "bytes": 1314,
+      "sha256": "a2c7dfe05744b40f05f3272e5af5f3837474707d9f6c7c06bf2bbb9d73de6888"
+    },
+    {
+      "path": "input/contract.json",
+      "bytes": 735,
+      "sha256": "52cc6e008e66d4362f0373add71f0eab3b3aa1e8e518c6e7a135a19bc16a4bd4"
+    },
+    {
+      "path": "input/observations.csv",
+      "bytes": 15730,
+      "sha256": "3c886f7f2c11012463296b350a931543542b4e1c0d128ad3c408fda9ae824d79"
+    },
+    {
+      "path": "input/sites.csv",
+      "bytes": 16905,
+      "sha256": "0a99692b060f13d1faaa870d06ea7dca9a4f16bc289636bcc88f5d105ebdacb5"
+    },
+    {
+      "path": "renv.lock",
+      "bytes": 178662,
+      "sha256": "77ce8ad056d4c0cc816e33e9815afdc44fd7a2728257fb64b6c61c90b19b4de2"
+    },
+    {
+      "path": "scripts/restore_environment.R",
+      "bytes": 4815,
+      "sha256": "a0ad16e90fdf783233650a8514c8ca0fb3781765014ca808661bbb37ef2abea2"
+    },
+    {
+      "path": "src/audit_run.R",
+      "bytes": 402,
+      "sha256": "641ace08e8b5be25f81502e4e28bc6d9856461cc1cc231146b4bcf20c9988f4c"
+    },
+    {
+      "path": "src/plot_species_predictions.R",
+      "bytes": 331,
+      "sha256": "587f6b47df19e1b58e9cbe19a5aaeddb9fe84d52158bc7c2dfcf400fb2ca3813"
+    },
+    {
+      "path": "src/postprocess_results.R",
+      "bytes": 389,
+      "sha256": "30ff4ef0ec6cca355c1aaf984fb52e21623f19c92961f887a6496e2c1a835b5c"
+    },
+    {
+      "path": "src/v3_pipeline.R",
+      "bytes": 887,
+      "sha256": "fefde2a9652a985c537f5e8d268009ba51e51acad6c31bcb255043280c24c17c"
+    },
+    {
+      "path": "src/write_reports.R",
+      "bytes": 239,
+      "sha256": "e78395b5c9202f7db1cf5c2566f6d4e48af138e1496c4dd36c02aca64a0f8560"
+    },
+    {
+      "path": "stan/joint_bb.stan",
+      "bytes": 9477,
+      "sha256": "db491633fcadbd940c2e78280660a47cd037f46795c9dce2258f9381c4571430"
+    }
+  ]
+}

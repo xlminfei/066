@@ -1,0 +1,33 @@
+{
+  "status": "PASS",
+  "result_csv_counts": {
+    "calibration_bins.csv": 110,
+    "cv_fold_metrics.csv": 480,
+    "cv_metrics_summary.csv": 64,
+    "cv_record_predictions.csv": 4880,
+    "folds_binary_species_10.csv": 50,
+    "folds_binary_species_5.csv": 50,
+    "folds_joint_bb_species_10.csv": 51,
+    "folds_joint_bb_species_5.csv": 51,
+    "full_diagnostics.csv": 16,
+    "full_panel_predictions.csv": 5840,
+    "model_vs_null.csv": 48,
+    "model_vs_null_by_fold.csv": 360,
+    "quantitative_bias_summary.csv": 32,
+    "quantitative_plot_source.csv": 4640,
+    "roc_coordinates.csv": 1144,
+    "training_method_comparisons.csv": 32,
+    "training_method_comparisons_by_fold.csv": 240,
+    "training_ppc_summary.csv": 256,
+    "training_weights.csv": 34160,
+    "training_weights_cv.csv": 31720,
+    "training_weights_full.csv": 2440
+  },
+  "ppc_flags": 18,
+  "pdf_files": 8,
+  "pdf_pages": 76,
+  "rendered_pages": 76,
+  "notes": "Read-only verification of current outputs; no posterior fits or MCMC; rendering only. Visual review is recorded separately."
+}
+FAILED_CHECKS []
+CONTACTS ["C:\\Users\\minfei\\Documents\\ChatGPT\\��ģ\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324\\postrun_check_20260923\\contact_ROC_curves_1.jpg", "C:\\Users\\minfei\\Documents\\ChatGPT\\��ģ\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324\\postrun_check_20260923\\contact_calibration_bins_1.jpg", "C:\\Users\\minfei\\Documents\\ChatGPT\\��ģ\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324\\postrun_check_20260923\\contact_quantitative_predicted_observed_1.jpg", "C:\\Users\\minfei\\Documents\\ChatGPT\\��ģ\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324\\postrun_check_20260923\\contact_training_ppc_summary_1.jpg", "C:\\Users\\minfei\\Documents\\ChatGPT\\��ģ\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324\\postrun_check_20260923\\contact_training_ppc_summary_2.jpg", "C:\\Users\\minfei\\Documents\\ChatGPT\\��ģ\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324\\postrun_check_20260923\\contact_species_predictions_binary_record_equal_1.jpg", "C:\\Users\\minfei\\Documents\\ChatGPT\\��ģ\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324\\postrun_check_20260923\\contact_species_predictions_binary_record_equal_2.jpg", "C:\\Users\\minfei\\Documents\\ChatGPT\\��ģ\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324\\postrun_check_20260923\\contact_species_predictions_binary_species_equal_1.jpg", "C:\\Users\\minfei\\Documents\\ChatGPT\\��ģ\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324\\postrun_check_20260923\\contact_species_predictions_binary_species_equal_2.jpg", "C:\\Users\\minfei\\Documents\\ChatGPT\\��ģ\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324\\postrun_check_20260923\\contact_species_predictions_joint_bb_record_equal_1.jpg", "C:\\Users\\minfei\\Documents\\ChatGPT\\��ģ\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324\\postrun_check_20260923\\contact_species_predictions_joint_bb_record_equal_2.jpg", "C:\\Users\\minfei\\Documents\\ChatGPT\\��ģ\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324\\postrun_check_20260923\\contact_species_predictions_joint_bb_species_equal_1.jpg", "C:\\Users\\minfei\\Documents\\ChatGPT\\��ģ\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324\\postrun_check_20260923\\contact_species_predictions_joint_bb_species_equal_2.jpg"]

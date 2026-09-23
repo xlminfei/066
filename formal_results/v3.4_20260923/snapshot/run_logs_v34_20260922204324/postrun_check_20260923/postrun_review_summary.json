@@ -1,0 +1,19 @@
+{
+  "checkedAt": "2026-09-23T07:08:02.301Z",
+  "status": "COMPLETE_WITH_REVIEW_FLAGS",
+  "processExitCode": 0,
+  "formalFitsExpected": 256,
+  "formalFitsAuditedPassed": 256,
+  "savedFitsReopenedThisCheck": 256,
+  "formalAudit": "PASS",
+  "structuralChecks": 35,
+  "structuralChecksPassed": 35,
+  "pdfCount": 8,
+  "pdfPages": 76,
+  "renderedPages": 76,
+  "ppcReviewFlags": 18,
+  "newFits": 0,
+  "newMCMC": 0,
+  "sourceOrFormalResultsModified": false,
+  "summaryDocument": "RUN_COMPLETION_REVIEW_zh.md"
+}

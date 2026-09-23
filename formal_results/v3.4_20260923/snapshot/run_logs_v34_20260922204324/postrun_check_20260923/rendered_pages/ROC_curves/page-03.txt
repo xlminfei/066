@@ -1,0 +1,9 @@
+0.0 0.2 0.4 0.6 0.8 1.0
+0.0 0.2 0.4 0.6 0.8 1.0
+tenfold | record_equal | record_equal
+FPR
+TPR
+Null | Mean CV AUC 0.500 (10 folds)
+M1 | Mean CV AUC 0.740 (10 folds)
+M2 | Mean CV AUC 0.747 (10 folds)
+M3 | Mean CV AUC 0.798 (10 folds)

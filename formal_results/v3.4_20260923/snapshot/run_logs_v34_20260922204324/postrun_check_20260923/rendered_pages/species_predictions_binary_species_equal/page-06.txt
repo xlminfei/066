@@ -1,0 +1,63 @@
+0.0 0.2 0.4 0.6 0.8 1.0
+Null
+binary
+species_equal
+Pr(HIGH)
+Nothobranchius pienaari
+Nothobranchius kadleci
+Nothobranchius furzeri
+Girardinichthys multiradiatus
+Crenichthys baileyi
+Ameca splendens
+Fundulus heteroclitus
+Fundulus diaphanus
+Cyprinodon variegatus
+Cyprinodon tularosa
+Anableps anableps
+Cololabis saira
+Xenentodon cancila
+Oryzias melastigma
+Oryzias latipes
+Oryzias javanicus
+Telmatherina bonti
+Melanotaenia boesemani
+Odontesthes bonariensis
+Menidia menidia
+Leuresthes tenuis
+Simochromis diagramma
+Sarotherodon galilaeus
+Rhamphochromis longiceps
+Pterophyllum scalare
+Perissodus microlepis
+Pelmatolapia mariae
+Oreochromis niloticus
+Oreochromis aureus
+Neolamprologus multifasciatus
+Neolamprologus brichardi
+Mchenga conophoros
+Maylandia zebra
+Haplochromis nyererei
+Diplotaxodon limnothrissa
+Copadichromis virginalis
+Aulonocara stuartgranti
+Astronotus ocellatus
+Astatotilapia calliptera
+Astatotilapia burtoni
+Archocentrus centrarchus
+Andinoacara rivulatus
+0.0 0.2 0.4 0.6 0.8 1.0
+M1
+binary
+species_equal
+Pr(HIGH)
+0.0 0.2 0.4 0.6 0.8 1.0
+M2
+binary
+species_equal
+Pr(HIGH)
+0.0 0.2 0.4 0.6 0.8 1.0
+M3
+binary
+species_equal
+Pr(HIGH)
+Point: posterior Pr(HIGH) | line: 95% CrI | x: applicability warning

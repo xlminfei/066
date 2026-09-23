@@ -1,0 +1,52 @@
+{
+  "status": "PASS",
+  "plotted_values": 128,
+  "figures": [
+    {
+      "metric": "ELPD",
+      "png_dimensions": [
+        2860,
+        2112
+      ],
+      "png_sha256": "67e33d25fd688f90949f6ef42f9a52daa1f5e2c3ce3df2e4c4e17901097bcfa4",
+      "svg_sha256": "ce384782a8b014eb1870b505cdfe7c74e09aea24b055446948f79a75535dc2ae",
+      "svg_paths": 297
+    },
+    {
+      "metric": "MAE",
+      "png_dimensions": [
+        2860,
+        2112
+      ],
+      "png_sha256": "50e72ececbf3ccc8ad0e8cc2cea5d47f6ed4229723580526e259cd39728d48f3",
+      "svg_sha256": "896056337a88358fe35a82f2990e3926f898f06184bb11a1b106761ce8dfb59e",
+      "svg_paths": 310
+    },
+    {
+      "metric": "RMSE",
+      "png_dimensions": [
+        2860,
+        2112
+      ],
+      "png_sha256": "13fd696bd8f282cbba7811a84a90d43ba8b2fcab004678f80d5ba7fa07154359",
+      "svg_sha256": "752a54947c0d98c0ba6495ec0b3d12e9e380f77af311451e6a3fac44e504037d",
+      "svg_paths": 328
+    },
+    {
+      "metric": "ELPD_binary",
+      "png_dimensions": [
+        2860,
+        2112
+      ],
+      "png_sha256": "95f417d930cbf8be3d7b85847ea22f2c0eba4161252274128dd5170f036c6a83",
+      "svg_sha256": "2cbe66a8677469dd173eca8e361d4d0aa2bd3110d1c2eb5418877b90c58f17a4",
+      "svg_paths": 312
+    }
+  ],
+  "issues": [],
+  "formal_derived_files_verified": 31,
+  "new_fits": 0,
+  "new_bootstrap": 0,
+  "new_tests_of_effect": 0,
+  "statement": "Numeric source and file validation; visual inspection separately recorded."
+}

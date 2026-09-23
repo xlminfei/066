@@ -1,0 +1,287 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "check": "final_status",
+      "passed": true,
+      "status": "COMPLETE_WITH_REVIEW_FLAGS"
+    },
+    {
+      "check": "final_audit",
+      "passed": true,
+      "status": "PASS",
+      "version": "ratio_analysis_v3_4_weighted_20260922",
+      "expected_tasks": 256,
+      "fits_checked": 256,
+      "fits_passed": 256,
+      "posterior_refits": 0,
+      "prediction_strata_checked": 600,
+      "prediction_rows_checked": 10720,
+      "prediction_audit_source": "current_inputs_and_saved_fitted_posterior; independent_R_raw_loglik",
+      "issues": []
+    },
+    {
+      "check": "derived_output_hashes_and_universe",
+      "passed": true,
+      "files": 31,
+      "bad": [],
+      "unlisted": []
+    },
+    {
+      "check": "frozen_code_inputs_config",
+      "passed": true,
+      "files": 32,
+      "changed": []
+    },
+    {
+      "check": "plan",
+      "passed": true,
+      "rows": 256,
+      "expected": 256,
+      "missing": 0,
+      "extra": 0
+    },
+    {
+      "check": "fit_audit",
+      "passed": true,
+      "rows": 256,
+      "expected": 256,
+      "missing": 0,
+      "extra": 0
+    },
+    {
+      "check": "fit_audit_all_statuses",
+      "passed": true
+    },
+    {
+      "check": "256_checkpoint_files",
+      "passed": true,
+      "count": 256,
+      "total_bytes": 11350681431
+    },
+    {
+      "check": "OOF_4880_record_identity",
+      "passed": true,
+      "rows": 4880,
+      "expected": 4880,
+      "missing": 0,
+      "extra": 0
+    },
+    {
+      "check": "OOF_formal_finite_log_scores",
+      "passed": true
+    },
+    {
+      "check": "full_panel_5840_identity",
+      "passed": true,
+      "rows": 5840,
+      "expected": 5840,
+      "missing": 0,
+      "extra": 0
+    },
+    {
+      "check": "64_CV_summary_groups",
+      "passed": true,
+      "rows": 64,
+      "expected": 64,
+      "missing": 0,
+      "extra": 0
+    },
+    {
+      "check": "480_fold_metric_groups",
+      "passed": true,
+      "rows": 480,
+      "expected": 480,
+      "missing": 0,
+      "extra": 0
+    },
+    {
+      "check": "48_model_comparison_groups",
+      "passed": true,
+      "rows": 48,
+      "expected": 48,
+      "missing": 0,
+      "extra": 0
+    },
+    {
+      "check": "32_training_comparison_groups",
+      "passed": true,
+      "rows": 32,
+      "expected": 32,
+      "missing": 0,
+      "extra": 0
+    },
+    {
+      "check": "80_overall_comparison_P_values_present",
+      "passed": true
+    },
+    {
+      "check": "240_ROC_curve_groups",
+      "passed": true,
+      "curves": 240,
+      "rows": 1144
+    },
+    {
+      "check": "32_calibration_groups",
+      "passed": true,
+      "bins": 110,
+      "interval_statuses": {
+        "OK": 56,
+        "LIMITED_SPECIES": 40,
+        "DEGENERATE_INTERVAL": 10,
+        "INSUFFICIENT_SUPPORT": 4
+      }
+    },
+    {
+      "check": "32_quantitative_bias_groups",
+      "passed": true,
+      "rows": 32,
+      "expected": 32,
+      "missing": 0,
+      "extra": 0
+    },
+    {
+      "check": "4640_quantitative_plot_rows",
+      "passed": true,
+      "rows": 4640,
+      "expected": 4640,
+      "missing": 0,
+      "extra": 0
+    },
+    {
+      "check": "5840_species_plot_rows",
+      "passed": true,
+      "rows": 5840,
+      "expected": 5840,
+      "missing": 0,
+      "extra": 0
+    },
+    {
+      "check": "species_plot_values_match_full_prediction_table",
+      "passed": true
+    },
+    {
+      "check": "Null_constant_and_predictor_models_variable",
+      "passed": true
+    },
+    {
+      "check": "256_PPC_statistic_groups",
+      "passed": true,
+      "rows": 256,
+      "expected": 256,
+      "missing": 0,
+      "extra": 0
+    },
+    {
+      "check": "PPC_flags_consistent_with_bounds",
+      "passed": true,
+      "flag_count": 18,
+      "by_model_train": {
+        "('Null', 'record_equal')": 7,
+        "('Null', 'species_equal')": 2,
+        "('M1', 'record_equal')": 2,
+        "('M1', 'species_equal')": 1,
+        "('M2', 'record_equal')": 2,
+        "('M2', 'species_equal')": 1,
+        "('M3', 'record_equal')": 2,
+        "('M3', 'species_equal')": 1
+      }
+    },
+    {
+      "check": "expected_PDF_file_set",
+      "passed": true
+    },
+    {
+      "check": "PDF_render_ROC_curves.pdf",
+      "passed": true,
+      "pages": 8,
+      "render_exit": 0,
+      "stderr": "Syntax Error: No display font for 'Symbol'\nSyntax Error: No display font for 'ArialUnicode'\n"
+    },
+    {
+      "check": "PDF_render_calibration_bins.pdf",
+      "passed": true,
+      "pages": 8,
+      "render_exit": 0,
+      "stderr": "Syntax Error: No display font for 'Symbol'\nSyntax Error: No display font for 'ArialUnicode'\n"
+    },
+    {
+      "check": "PDF_render_quantitative_predicted_observed.pdf",
+      "passed": true,
+      "pages": 8,
+      "render_exit": 0,
+      "stderr": "Syntax Error: No display font for 'Symbol'\nSyntax Error: No display font for 'ArialUnicode'\n"
+    },
+    {
+      "check": "PDF_render_training_ppc_summary.pdf",
+      "passed": true,
+      "pages": 16,
+      "render_exit": 0,
+      "stderr": "Syntax Error: No display font for 'Symbol'\nSyntax Error: No display font for 'ArialUnicode'\n"
+    },
+    {
+      "check": "PDF_render_species_predictions_binary_record_equal.pdf",
+      "passed": true,
+      "pages": 9,
+      "render_exit": 0,
+      "stderr": "Syntax Error: No display font for 'Symbol'\nSyntax Error: No display font for 'ArialUnicode'\n"
+    },
+    {
+      "check": "PDF_render_species_predictions_binary_species_equal.pdf",
+      "passed": true,
+      "pages": 9,
+      "render_exit": 0,
+      "stderr": "Syntax Error: No display font for 'Symbol'\nSyntax Error: No display font for 'ArialUnicode'\n"
+    },
+    {
+      "check": "PDF_render_species_predictions_joint_bb_record_equal.pdf",
+      "passed": true,
+      "pages": 9,
+      "render_exit": 0,
+      "stderr": "Syntax Error: No display font for 'Symbol'\nSyntax Error: No display font for 'ArialUnicode'\n"
+    },
+    {
+      "check": "PDF_render_species_predictions_joint_bb_species_equal.pdf",
+      "passed": true,
+      "pages": 9,
+      "render_exit": 0,
+      "stderr": "Syntax Error: No display font for 'Symbol'\nSyntax Error: No display font for 'ArialUnicode'\n"
+    },
+    {
+      "check": "formal_log_256_fit_end_PASS",
+      "passed": true,
+      "fit_end_pass": 256,
+      "fit_start": 256,
+      "audit_pass": 256,
+      "warning_lines": 0
+    }
+  ],
+  "result_csv_counts": {
+    "calibration_bins.csv": 110,
+    "cv_fold_metrics.csv": 480,
+    "cv_metrics_summary.csv": 64,
+    "cv_record_predictions.csv": 4880,
+    "folds_binary_species_10.csv": 50,
+    "folds_binary_species_5.csv": 50,
+    "folds_joint_bb_species_10.csv": 51,
+    "folds_joint_bb_species_5.csv": 51,
+    "full_diagnostics.csv": 16,
+    "full_panel_predictions.csv": 5840,
+    "model_vs_null.csv": 48,
+    "model_vs_null_by_fold.csv": 360,
+    "quantitative_bias_summary.csv": 32,
+    "quantitative_plot_source.csv": 4640,
+    "roc_coordinates.csv": 1144,
+    "training_method_comparisons.csv": 32,
+    "training_method_comparisons_by_fold.csv": 240,
+    "training_ppc_summary.csv": 256,
+    "training_weights.csv": 34160,
+    "training_weights_cv.csv": 31720,
+    "training_weights_full.csv": 2440
+  },
+  "ppc_flags": 18,
+  "pdf_files": 8,
+  "pdf_pages": 76,
+  "rendered_pages": 76,
+  "notes": "Read-only verification of current outputs; no posterior fits or MCMC; rendering only. Visual review is recorded separately."
+}

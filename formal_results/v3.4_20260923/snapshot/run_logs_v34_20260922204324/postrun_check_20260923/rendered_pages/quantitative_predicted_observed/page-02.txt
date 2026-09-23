@@ -1,0 +1,30 @@
+0.0 0.2 0.4 0.6 0.8 1.0
+0.0 0.2 0.4 0.6 0.8 1.0
+Null
+Observed report proportion
+OOF predicted expected proportion
+Bias = +0.1173
+145 point records / 48 species
+0.0 0.2 0.4 0.6 0.8 1.0
+0.0 0.2 0.4 0.6 0.8 1.0
+M1
+Observed report proportion
+OOF predicted expected proportion
+Bias = +0.0561
+145 point records / 48 species
+0.0 0.2 0.4 0.6 0.8 1.0
+0.0 0.2 0.4 0.6 0.8 1.0
+M2
+Observed report proportion
+OOF predicted expected proportion
+Bias = +0.0623
+145 point records / 48 species
+0.0 0.2 0.4 0.6 0.8 1.0
+0.0 0.2 0.4 0.6 0.8 1.0
+M3
+Observed report proportion
+OOF predicted expected proportion
+Bias = +0.0498
+145 point records / 48 species
+fivefold | record_equal | species_equal
+Count: circles; exact: triangles; interval excluded. Point area reflects evaluation weight; dashed line y = x.

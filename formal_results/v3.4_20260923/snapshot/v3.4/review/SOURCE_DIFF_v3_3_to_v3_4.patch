@@ -1,0 +1,481 @@
+diff --git a/v3.3/Dockerfile b/v3.4/Dockerfile
+index a1c8c03..b5c6ab1 100644
+--- a/v3.3/Dockerfile
++++ b/v3.4/Dockerfile
+@@ -6,10 +6,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
+     r-cran-brms r-cran-rstan r-cran-posterior r-cran-digest \
+     ca-certificates curl cmake pandoc \
+     && rm -rf /var/lib/apt/lists/*
+-COPY renv.lock /opt/ratio-analysis-v3.3/renv.lock
+-COPY scripts/restore_environment.R /opt/ratio-analysis-v3.3/scripts/restore_environment.R
+-RUN Rscript /opt/ratio-analysis-v3.3/scripts/restore_environment.R \
+-    --lockfile /opt/ratio-analysis-v3.3/renv.lock \
++COPY renv.lock /opt/ratio-analysis-v3.4/renv.lock
++COPY scripts/restore_environment.R /opt/ratio-analysis-v3.4/scripts/restore_environment.R
++RUN Rscript /opt/ratio-analysis-v3.4/scripts/restore_environment.R \
++    --lockfile /opt/ratio-analysis-v3.4/renv.lock \
+     --library /usr/local/lib/R/site-library
+-ENV RATIO_V33_LOCKFILE=/opt/ratio-analysis-v3.3/renv.lock
++ENV RATIO_V34_LOCKFILE=/opt/ratio-analysis-v3.4/renv.lock
+ WORKDIR /project
+
+diff --git a/v3.3/R/audit_run.R b/v3.4/R/audit_run.R
+index f8d081a..033984a 100644
+--- a/v3.3/R/audit_run.R
++++ b/v3.4/R/audit_run.R
+@@ -117,7 +117,7 @@ audit_plan_v3_impl <- function(state, root, run_dir, review_dir) {
+       write_csv_atomic(quantitative_receipts, file.path(review_dir, "audit_quantitative_recompute.csv"))
+       required <- c("calibration_bins.csv", "roc_coordinates.csv", "training_ppc_summary.csv")
+       for (file in required) if (!file.exists(file.path(root, "results", file))) stop("Missing output: ", file)
+-      if (!file.exists(file.path(root, "reports", "REPORT_v3_3.md"))) stop("Missing full result report")
++      if (!file.exists(file.path(root, "reports", "REPORT_v3_4.md"))) stop("Missing full result report")
+     }, error = function(e) issues <<- c(issues, conditionMessage(e)))
+   }
+   status <- if (length(issues)) "FAILED" else "PASS"
+
+diff --git a/v3.3/R/config.R b/v3.4/R/config.R
+index c73718d..ebd8ec4 100644
+--- a/v3.3/R/config.R
++++ b/v3.4/R/config.R
+@@ -1,4 +1,4 @@
+-V3_VERSION <- "ratio_analysis_v3_3_weighted_20260922"
++V3_VERSION <- "ratio_analysis_v3_4_weighted_20260922"
+ V3_MODELS <- c("Null", "M1", "M2", "M3")
+ V3_ROUTES <- c("binary", "joint_bb")
+ V3_TRAIN_WEIGHTINGS <- c("record_equal", "species_equal")
+@@ -101,7 +101,7 @@ apply_analysis_config <- function(cfg) {
+     train_weight_normalization="N_train/(S_train*R_s), total weight equals N_train",
+     classification_rule="count/exact >= 0.5 HIGH; interval Upper <= 0.5 LOW; interval Lower >= 0.5 HIGH; strict crossing excluded")
+   for(n in names(fixed))if(!identical(unname(unlist(cfg[[n]])),unname(fixed[[n]])))stop("Unsupported or missing config field: ",n)
+-  dk<-unlist(cfg$designs);if(!identical(names(dk),names(V3_DESIGN_K))||any(dk!=V3_DESIGN_K))stop("v3.3 requires fixed fivefold/tenfold designs")
++  dk<-unlist(cfg$designs);if(!identical(names(dk),names(V3_DESIGN_K))||any(dk!=V3_DESIGN_K))stop("v3.4 requires fixed fivefold/tenfold designs")
+   for(n in c("rare_min","seed","expected_panel_species","expected_records","comparison_bootstrap"))if(length(cfg[[n]])!=1||!is.finite(cfg[[n]])||cfg[[n]]<1||cfg[[n]]!=floor(cfg[[n]]))stop("Invalid config field: ",n)
+   for(n in names(V3_PRIORS))if(length(cfg$priors[[n]])!=1||!is.finite(cfg$priors[[n]])||(n!="log_phi_mean"&&cfg$priors[[n]]<=0))stop("Invalid prior: ",n)
+   totals<-c(formal_full_fit_count=16L,formal_cv_fit_count=240L,formal_fit_count=256L)
+
+diff --git a/v3.3/R/cross_validation.R b/v3.4/R/cross_validation.R
+index 0991a2b..ae29a97 100644
+--- a/v3.3/R/cross_validation.R
++++ b/v3.4/R/cross_validation.R
+@@ -28,19 +28,43 @@ make_binary_folds_v3 <- function(state, k, seed, max_attempts = 200L) {
+ make_joint_folds_v3 <- function(state, k, seed) make_species_folds_v3(state$joint_species, k, seed)
+ 
+ validate_fold_tables_v3 <- function(state, fold_tables) {
+-  if (!length(fold_tables) || any(!names(fold_tables)%in%names(V3_DESIGN_K))) stop("Invalid fold designs")
+-  for (design in names(fold_tables)) {
++  designs <- names(fold_tables)
++  if (!is.list(fold_tables) || !length(fold_tables) || is.null(designs) ||
++      anyNA(designs) || any(!nzchar(designs)) || anyDuplicated(designs) ||
++      !setequal(designs, V3_DESIGNS)) {
++    stop("Fold designs must match the complete configured design set")
++  }
++  for (design in V3_DESIGNS) {
+     fset <- fold_tables[[design]]
+-    if (!all(V3_ROUTES %in% names(fset))) stop("Fold tables are missing route joint_bb or binary for ", design)
++    routes <- names(fset)
++    if (!is.list(fset) || is.null(routes) || anyNA(routes) ||
++        anyDuplicated(routes) || !setequal(routes, V3_ROUTES)) {
++      stop("Fold routes must match binary and joint_bb exactly for ", design)
++    }
++    k <- V3_DESIGN_K[[design]]
++    if (length(k) != 1L || !is.numeric(k) || !is.finite(k) || k < 1 || k != trunc(k)) {
++      stop("Invalid configured fold count for ", design)
++    }
+     for (route in V3_ROUTES) {
+       f <- fset[[route]]
+-      if (is.null(f) || !all(c("Species", "Fold") %in% names(f))) stop("Malformed fold table for ", design, "/", route)
+-      active <- if (route == "binary") state$binary_species else state$joint_species
+-      if (!setequal(as.character(f$Species), as.character(active)) || anyDuplicated(f$Species)) {
++      if (!is.data.frame(f) || anyDuplicated(names(f)) ||
++          !all(c("Species", "Fold") %in% names(f))) {
++        stop("Malformed fold table for ", design, "/", route)
++      }
++      species <- as.character(f$Species)
++      active <- as.character(if (route == "binary") state$binary_species else state$joint_species)
++      if (length(species) != nrow(f) || anyNA(species) || any(!nzchar(trimws(species))) ||
++          anyDuplicated(species) || !setequal(species, active)) {
+         stop("Fold species universe does not match route for ", design, "/", route)
+       }
+-      k <- V3_DESIGN_K[[design]]
+-      if (!setequal(sort(unique(f$Fold)), seq_len(k))) stop("Fold IDs are incomplete for ", design, "/", route)
++      ids <- f$Fold
++      # Validate every row before unique()/sort() can hide missing values.
++      if (!(is.integer(ids) || is.double(ids)) || is.object(ids) || !is.null(dim(ids)) ||
++          length(ids) != nrow(f) || any(!is.finite(ids)) ||
++          any(ids != trunc(ids) | ids < 1 | ids > k)) {
++        stop("Fold IDs must be finite integers in 1..K for ", design, "/", route)
++      }
++      if (!setequal(unique(ids), seq_len(k))) stop("Fold IDs are incomplete for ", design, "/", route)
+     }
+   }
+   invisible(TRUE)
+
+diff --git a/v3.3/R/metrics.R b/v3.4/R/metrics.R
+index a8a0d6d..7d615ac 100644
+--- a/v3.3/R/metrics.R
++++ b/v3.4/R/metrics.R
+@@ -105,9 +105,18 @@ evaluate_evidence <- function(evidence, eval_weighting = "record_equal", route =
+   }
+   if (route != "joint_bb") stop("Unknown evidence route: ", route)
+   if(!"Type"%in%names(evidence)||any(!evidence$Type%in%c("count","exact","interval")))stop("Joint evidence requires Type")
++  if (anyDuplicated(names(evidence)) ||
++      !all(c("PredictedPoint", "ObservedPoint") %in% names(evidence))) {
++    stop("Joint evidence requires unique column names and both point columns")
++  }
+   point <- evidence$Type%in%c("count","exact")
+   bad <- !is.finite(evidence$PredictedPoint) | (point & !is.finite(evidence$ObservedPoint))
+   if(any(bad))stop("Nonfinite joint point inputs; records: ",paste((evidence$RecordID%||%seq_len(nrow(evidence)))[bad],collapse=","))
++  # All joint predictions are proportions; only count/exact have observed points.
++  if (any(evidence$PredictedPoint < 0 | evidence$PredictedPoint > 1) ||
++      any(evidence$ObservedPoint[point] < 0 | evidence$ObservedPoint[point] > 1)) {
++    stop("Joint point predictions and count/exact observations must be within [0,1]")
++  }
+   fields<-c("PredictedPI_lower","PredictedPI_upper","PIWidth","IntervalCovered")
+   if(!all(fields%in%names(evidence)))stop("Joint evidence lacks predictive intervals")
+   lo<-evidence$PredictedPI_lower;hi<-evidence$PredictedPI_upper
+
+diff --git a/v3.3/R/reporting.R b/v3.4/R/reporting.R
+index 3dd6b3c..ee9e60e 100644
+--- a/v3.3/R/reporting.R
++++ b/v3.4/R/reporting.R
+@@ -8,7 +8,7 @@ write_results_report_v3 <- function(root) {
+   for(f in required)if(!file.exists(file.path(res,f)))stop("Report requires computed output: ",f)
+   cv<-read.csv(file.path(res,required[1]));mod<-read.csv(file.path(res,required[2]));train<-read.csv(file.path(res,required[3]));ppc<-read.csv(file.path(res,required[4]))
+   bias<-read.csv(file.path(res,"quantitative_bias_summary.csv"),stringsAsFactors=FALSE)
+-  lines<-c("# v3.3 computed analysis report","",paste("Version:",V3_VERSION),"",
++  lines<-c("# v3.4 computed analysis report","",paste("Version:",V3_VERSION),"",
+     "Purpose: predict a new species from a frozen six-site input table; Site151 is applicability metadata, five other sites enter M1/M2/M3. Models compare joint coding against Null, not causal site effects.","",
+     "Primary comparison: species-equal evaluation in fivefold species-grouped CV. Tenfold and record-equal evaluation are supplementary. Four combinations reuse two fits, not four independent experiments.","",
+     "AUC is the equal-fold mean. PooledAUC uses all OOF predictions and is distinct. Log score/MAE/RMSE use weights computed over each metric's complete valid-record set. ELPD is a scaled weighted log-score sum (weight sum=N); MeanLogScore reports the mean on the stated evaluation scale. Compare models or training methods only within the same route, CV design, and evaluation weighting. Different evaluation weightings define different targets; do not rank training methods by comparing their scores across evaluation weightings.","",
+@@ -24,7 +24,7 @@ write_results_report_v3 <- function(root) {
+     "## Posterior predictive checks","","Observed and replicated statistics use the same record subset, observation type and evaluation weights. count simulations use each observed Total; exact reports use the one-inflated Beta. Interval records are not imputed as points. PPC uses training data and is not independent validation.","",markdown_table_v3(ppc),"",
+     "Full-panel Point is the posterior mean; CrI describes uncertainty in the expected quantity. Joint full-panel PI describes a future exact-type report without a specified denominator. CV count PI uses the observed denominator; interval overlap is descriptive and is not point coverage.")
+   dir.create(file.path(root,"reports"),showWarnings=FALSE,recursive=TRUE)
+-  writeLines(lines,file.path(root,"reports","REPORT_v3_3.md"),useBytes=TRUE)
++  writeLines(lines,file.path(root,"reports","REPORT_v3_4.md"),useBytes=TRUE)
+ }
+ export_model_package_v3 <- function(root,state,bundles,path) {
+   wanted<-unlist(lapply(V3_ROUTES,function(r)unlist(lapply(V3_MODELS,function(m)paste(r,m,V3_TRAIN_WEIGHTINGS,sep="|")))))
+
+diff --git a/v3.3/config/analysis.json b/v3.4/config/analysis.json
+index 0cb35c5..a58eb58 100644
+--- a/v3.3/config/analysis.json
++++ b/v3.4/config/analysis.json
+@@ -1,5 +1,5 @@
+ {
+-  "version": "ratio_analysis_v3_3_weighted_20260922",
++  "version": "ratio_analysis_v3_4_weighted_20260922",
+   "expected_panel_species": 365,
+   "expected_records": 153,
+   "models": [
+
+diff --git a/v3.3/input/contract.json b/v3.4/input/contract.json
+index b4e5780..f334dea 100644
+--- a/v3.3/input/contract.json
++++ b/v3.4/input/contract.json
+@@ -1,5 +1,5 @@
+ {
+-  "version": "ratio_analysis_v3_3_weighted_20260922",
++  "version": "ratio_analysis_v3_4_weighted_20260922",
+   "status": "PREPARED_NOT_FIT",
+   "input_hashes": {
+     "observations.csv": "3c886f7f2c11012463296b350a931543542b4e1c0d128ad3c408fda9ae824d79",
+
+diff --git a/v3.3/scripts/ENVIRONMENT.md b/v3.4/scripts/ENVIRONMENT.md
+index 618a6f3..5b99847 100644
+--- a/v3.3/scripts/ENVIRONMENT.md
++++ b/v3.4/scripts/ENVIRONMENT.md
+@@ -1,11 +1,7 @@
+-# v3.3 runtime
++# v3.4 runtime
+ 
+-R4.6.1 and79 locked non-base R packages remain identical to v3.2. Dockerfile keeps the exact base-image digest and changes only the version installation path and lockfile environment variable. The successful v3.3 build is recorded in review/environment_build_v33.log; the apt layer was reused, while pinned renv/jsonlite restoration and all79 dependency/version checks executed. This is not a claim of rebuilding every OS package from an empty cache.
++The Dockerfile retains the pinned rocker/r2u base digest and unchanged renv.lock (R4.6.1;79 non-base packages). Only its version-specific installation path and lockfile environment name change. The new image build and environment tests are recorded in review/environment_build_v34.log and review/environment_test_v34.log.
+ 
+-review/environment_test_v33.log records rejection of an altered R-version lock and a lock missing BH, plus pinned abind restoration in a clean temporary library. No model fitting occurs in these tests.
++The apt layer was cached; pinned renv/jsonlite restoration and full dependency closure/version validation executed again. Environment tests reject an altered R version and a lock missing BH and restore pinned abind into a clean temporary library. This is not a claim of rebuilding every OS package from an empty cache.
+ 
+-The initial Beta function tests used the existing validated v3.2 image with exactly the same R/package versions. Final regression and standalone saved-fit re-audit ran in the newly built v3.3 image. Exact IDs and source hashes are in provenance/runtime_spec.json.
+-
+-The independent100-digit Python oracle loads a local mpmath1.3.0 wheel from review/reference_dependency. Its SHA256 is checked before import. A pip TLS attempt failed; the verified PyPI release wheel was then fetched normally without disabling certificate checks. No global Python installation was changed.
+-
+-From the repository root, build with docker build -t ratio-analysis-v3-3:local ./v3.3. Reproduction commands are in docs/reproduction_ubuntu.md.
++Initial guard tests used the validated v3.3 image. Final tests run in the new v3.4 image with the same package versions. Exact image identity and source hashes are in provenance/runtime_spec.json. No MCMC or research calculations occur in these environment tests.
+
+diff --git a/v3.3/scripts/build_complete_archive.ps1 b/v3.4/scripts/build_complete_archive.ps1
+index 7a86c14..ee4be4c 100644
+--- a/v3.3/scripts/build_complete_archive.ps1
++++ b/v3.4/scripts/build_complete_archive.ps1
+@@ -1,11 +1,11 @@
+ #requires -Version 7.0
+ param([Parameter(Mandatory)][string]$VersionDirectory,[Parameter(Mandatory)][string]$OutputDirectory)
+ $ErrorActionPreference='Stop'
+-$taskRoots=[ordered]@{'v3.3'=(Resolve-Path -LiteralPath $VersionDirectory).Path}
++$taskRoots=[ordered]@{'v3.4'=(Resolve-Path -LiteralPath $VersionDirectory).Path}
+ $taskOutput=[IO.Path]::GetFullPath($OutputDirectory)
+ foreach($taskSource in $taskRoots.Values){if($taskOutput.StartsWith($taskSource.TrimEnd([char]92)+[IO.Path]::DirectorySeparatorChar,[StringComparison]::OrdinalIgnoreCase)){throw 'Archive output must be outside the captured roots'}}
+ New-Item -ItemType Directory -Path $taskOutput -Force | Out-Null
+-$taskZip=Join-Path $taskOutput 'v3.3-complete-evidence.zip'
++$taskZip=Join-Path $taskOutput 'v3.4-complete-evidence.zip'
+ if(Test-Path -LiteralPath $taskZip){throw 'Refusing to replace an existing archive'}
+ $taskFiles=[Collections.Generic.List[object]]::new()
+ foreach($taskNs in $taskRoots.Keys){
+@@ -15,13 +15,13 @@ foreach($taskNs in $taskRoots.Keys){
+   $taskFiles.Add([pscustomobject]@{Namespace=$taskNs;RelativePath=$taskRel;ArchivePath="$taskNs/$taskRel";Bytes=$taskFile.Length;SHA256=(Get-FileHash -LiteralPath $taskFile.FullName -Algorithm SHA256).Hash.ToLowerInvariant();SourcePath=$taskFile.FullName})
+  }
+ }
+-$taskManifest=Join-Path $taskOutput 'v3.3-complete-evidence.files.csv'
++$taskManifest=Join-Path $taskOutput 'v3.4-complete-evidence.files.csv'
+ $taskFiles | Select-Object Namespace,RelativePath,ArchivePath,Bytes,SHA256 | Export-Csv -LiteralPath $taskManifest -Encoding utf8 -NoTypeInformation
+ $taskReadme=Join-Path $taskOutput 'README_archive_zh.md'
+ @'
+-# v3.3 完整源码与测试证据快照
++# v3.4 完整源码与测试证据快照
+ 
+-v3.3/ 包含本次交付目录的全部现存文件，未按扩展名或文件大小省略。包括全部原始合成 fit.rds、Beta编译对象、成功和失败尝试、中间目录、源码、说明与测试表。
++v3.4/ 包含本次交付目录的全部现存文件，未按扩展名或文件大小省略。包括本轮全部成功和失败尝试、中间目录、源码、说明与测试表。本轮未生成或读取原生RDS，仅复用已保存的合成OOF表。
+ 
+ review/ 内是测试/历史材料，不能当作真实研究结果。短链合成拟合允许记录诊断失败以验收接口；正式256项研究拟合保持未运行。
+ 
+@@ -59,7 +59,7 @@ try {
+  }
+ }finally{$taskArchive.Dispose()}
+ $taskZipHash=(Get-FileHash -LiteralPath $taskZip -Algorithm SHA256).Hash.ToLowerInvariant()
+-"$taskZipHash  v3.3-complete-evidence.zip" | Set-Content -LiteralPath (Join-Path $taskOutput 'v3.3-complete-evidence.zip.sha256') -Encoding ascii
++"$taskZipHash  v3.4-complete-evidence.zip" | Set-Content -LiteralPath (Join-Path $taskOutput 'v3.4-complete-evidence.zip.sha256') -Encoding ascii
+ $taskReceipt=[ordered]@{status='LOCAL_ARCHIVE_VERIFIED';source_files=$taskFiles.Count;verified_files=$taskChecked;omitted_source_files=0;version_files=$taskFiles.Count;source_bytes=($taskFiles|Measure-Object Bytes -Sum).Sum;archive_bytes=(Get-Item -LiteralPath $taskZip).Length;archive_sha256=$taskZipHash;manifest_sha256=(Get-FileHash -LiteralPath $taskManifest -Algorithm SHA256).Hash.ToLowerInvariant()}
+-$taskReceipt | ConvertTo-Json | Set-Content -LiteralPath (Join-Path $taskOutput 'v3.3-complete-evidence.build.json') -Encoding utf8
++$taskReceipt | ConvertTo-Json | Set-Content -LiteralPath (Join-Path $taskOutput 'v3.4-complete-evidence.build.json') -Encoding utf8
+ $taskReceipt | ConvertTo-Json
+
+diff --git a/v3.3/scripts/upload_release_asset.ps1 b/v3.4/scripts/upload_release_asset.ps1
+index bae10ce..5f2dd89 100644
+--- a/v3.3/scripts/upload_release_asset.ps1
++++ b/v3.4/scripts/upload_release_asset.ps1
+@@ -14,7 +14,7 @@ if($taskPasswordLine.Count -ne 1){throw 'GitHub credential unavailable'}
+ $taskSecret=$taskPasswordLine[0].Substring(9)
+ $taskClient=[Net.Http.HttpClient]::new();$taskClient.Timeout=[TimeSpan]::FromMinutes(45)
+ $taskClient.DefaultRequestHeaders.Authorization=[Net.Http.Headers.AuthenticationHeaderValue]::new('Bearer',$taskSecret)
+-$taskClient.DefaultRequestHeaders.UserAgent.ParseAdd('ratio-v3.3-evidence-uploader')
++$taskClient.DefaultRequestHeaders.UserAgent.ParseAdd('ratio-v3.4-evidence-uploader')
+ $taskClient.DefaultRequestHeaders.Accept.ParseAdd('application/vnd.github+json')
+ $taskClient.DefaultRequestHeaders.Add('X-GitHub-Api-Version','2022-11-28')
+ $taskInput=$null;$taskRequest=$null
+
+diff --git a/v3.3/tests/run_tests.R b/v3.4/tests/run_tests.R
+index 9e050eb..c8567c1 100644
+--- a/v3.3/tests/run_tests.R
++++ b/v3.4/tests/run_tests.R
+@@ -6,4 +6,4 @@ for(f in c("test_contracts.R","test_release_regressions.R","test_scientific_cont
+  cat("TEST_FILE",f,"\n")
+  source(file.path(root,"tests",f),local=new.env(parent=.GlobalEnv))
+ }
+-cat("ALL INHERITED DETERMINISTIC TESTS PASSED (CURRENT V3.3 CODE)\n")
++cat("ALL INHERITED DETERMINISTIC TESTS PASSED (CURRENT V3.4 CODE)\n")
+
+diff --git a/v3.4/tests/run_v34_regressions.R b/v3.4/tests/run_v34_regressions.R
+new file mode 100644
+index 0000000..0077b6f
+--- /dev/null
++++ b/v3.4/tests/run_v34_regressions.R
+@@ -0,0 +1,15 @@
++#!/usr/bin/env Rscript
++script<-sub("^--file=","",grep("^--file=",commandArgs(FALSE),value=TRUE)[1]);root<-normalizePath(dirname(dirname(script)),mustWork=TRUE)
++source(file.path(root,"R","bootstrap.R"));load_v3_modules(root)
++scripts<-c("test_v34_input_guards.R","run_tests.R","test_v32_metrics.R","test_quantitative_diagnostics.R","run_audit_deterministic.R","test_binary_template_key.R","test_input_support_counts.R","test_v32_fullgrid_synthetic.R","test_v34_legal_equivalence.R","test_report_comparison_wording.R","test_v34_scope_guard.R","parse_all.R")
++rows<-list()
++for(script in scripts){
++ cat("REGRESSION_START",script,"\n");flush.console()
++ output<-suppressWarnings(system2(file.path(R.home("bin"),"Rscript"),c(shQuote(file.path(root,"tests",script)),"--root",shQuote(root)),stdout=TRUE,stderr=TRUE))
++ status<-attr(output,"status");if(is.null(status))status<-0L
++ writeLines(output,file.path(root,"review",paste0("final_",sub("[.]R$","",script),".log")))
++ rows[[length(rows)+1L]]<-data.frame(Script=script,ExitStatus=status,Pass=status==0L)
++ write_csv_atomic(do.call(rbind,rows),file.path(root,"review","regression_runner.csv"))
++ cat(paste(output,collapse="\n"),"\n");if(status!=0L)stop("Regression failed: ",script)
++}
++cat("V34_REGRESSION_PASS; deterministic and synthetic evidence only; no fitting\n")
+
+diff --git a/v3.3/tests/test_report_comparison_wording.R b/v3.4/tests/test_report_comparison_wording.R
+index 354446f..89084a4 100644
+--- a/v3.3/tests/test_report_comparison_wording.R
++++ b/v3.4/tests/test_report_comparison_wording.R
+@@ -5,12 +5,12 @@ out<-file.path(root,"review","report_wording_fixture");dir.create(file.path(out,
+ # Output contract fixture only; no data fitting or scientific numerical result.
+ for(f in c("cv_metrics_summary.csv","model_vs_null.csv","training_method_comparisons.csv","training_ppc_summary.csv","quantitative_bias_summary.csv","quantitative_plot_source.csv"))write_csv_atomic(data.frame(FixtureOnly=TRUE,Meaning="synthetic_report_contract_fixture"),file.path(out,"results",f))
+ write_results_report_v3(out)
+-file<-file.path(out,"reports","REPORT_v3_3.md");text<-paste(readLines(file),collapse="\n")
++file<-file.path(out,"reports","REPORT_v3_4.md");text<-paste(readLines(file),collapse="\n")
+ checks<-c(fixed_route=grepl("same route, CV design, and evaluation weighting",text,fixed=TRUE),different_targets=grepl("Different evaluation weightings define different targets",text,fixed=TRUE),no_cross_target_ranking=grepl("do not rank training methods by comparing their scores across evaluation weightings",text,fixed=TRUE),old_ambiguous_text_absent=!grepl("compare MeanLogScore across weighting choices",text,fixed=TRUE),primary_species_target=grepl("Primary comparison: species-equal evaluation in fivefold",text,fixed=TRUE))
+ # Clearly mark this generated text fixture, while preserving actual writer output.
+ writeLines(c("SYNTHETIC REPORT CONTRACT TEST ONLY - NO SCIENTIFIC RESULTS",readLines(file)),file)
+-old<-readLines(file.path(root,"review","baseline_v3_2","R","reporting.R"))
+-stopifnot(any(grepl("compare MeanLogScore across weighting choices",old,fixed=TRUE)))
++old<-readLines(file.path(root,"review","baseline_v3_3","R","reporting.R"))
++stopifnot(any(grepl("same route, CV design, and evaluation weighting",old,fixed=TRUE)))
+ write_csv_atomic(data.frame(Check=names(checks),Pass=unname(checks)),file.path(out,"checks.csv"))
+ write_json_atomic(list(status=if(all(checks))"PASS" else "FAIL",checks=length(checks),computed_scores_changed=FALSE,posterior_sampling=FALSE),file.path(out,"status.json"))
+ stopifnot(all(checks));cat("REPORT_COMPARISON_WORDING_PASS: fixed route/design/evaluation; generated report checked\n")
+
+diff --git a/v3.4/tests/test_v34_input_guards.R b/v3.4/tests/test_v34_input_guards.R
+new file mode 100644
+index 0000000..1faaa97
+--- /dev/null
++++ b/v3.4/tests/test_v34_input_guards.R
+@@ -0,0 +1,100 @@
++#!/usr/bin/env Rscript
++script<-sub("^--file=","",grep("^--file=",commandArgs(FALSE),value=TRUE)[1])
++root<-normalizePath(dirname(dirname(script)),mustWork=TRUE)
++source(file.path(root,"R","bootstrap.R"));load_v3_modules(root)
++stage<-commandArgs(TRUE)[1];if(is.na(stage)||stage=="--root")stage<-"after";stopifnot(stage%in%c("before","after"))
++baseline<-new.env(parent=.GlobalEnv);sys.source(file.path(root,"review","baseline_v3_3","R","bootstrap.R"),baseline)
++baseline$load_v3_modules(file.path(root,"review","baseline_v3_3"),envir=baseline)
++impl<-if(stage=="before")baseline else .GlobalEnv
++out<-file.path(root,"review",paste0("input_guards_",stage));dir.create(out,recursive=TRUE,showWarnings=FALSE)
++state<-list(binary_species=paste0("S",1:12),joint_species=paste0("S",1:12))
++make_folds<-function(k)data.frame(Species=state$joint_species,Fold=rep(seq_len(k),length.out=12L),stringsAsFactors=FALSE)
++folds<-list(fivefold=list(binary=make_folds(5),joint_bb=make_folds(5)),tenfold=list(binary=make_folds(10),joint_bb=make_folds(10)))
++write_csv_atomic(folds$fivefold$binary,file.path(out,"valid_fivefold.csv"));write_csv_atomic(folds$tenfold$joint_bb,file.path(out,"valid_tenfold.csv"))
++results<-list()
++record<-function(id,kind,expected_error,fn){
++ value<-tryCatch(fn(),error=identity);rejected<-inherits(value,"error")
++ results[[length(results)+1L]]<<-data.frame(Test=id,Kind=kind,ExpectedError=expected_error,Rejected=rejected,Pass=identical(rejected,expected_error),Message=if(rejected)conditionMessage(value) else "accepted",stringsAsFactors=FALSE)
++}
++check_fold<-function(id,f,expected_error=TRUE)record(id,"fold_contract",expected_error,function()impl$validate_fold_tables_v3(state,f))
++check_fold("valid_complete_designs",folds,FALSE)
++check_fold("valid_reordered_designs",folds[2:1],FALSE)
++q<-folds;for(d in names(q))for(r in names(q[[d]]))q[[d]][[r]]<-q[[d]][[r]][12:1,];check_fold("valid_shuffled_species_rows",q,FALSE)
++q<-folds;for(d in names(q))for(r in names(q[[d]]))q[[d]][[r]]$Fold<-as.numeric(q[[d]][[r]]$Fold);check_fold("valid_double_integer_fold_ids",q,FALSE)
++q<-folds;for(d in names(q))for(r in names(q[[d]]))q[[d]][[r]]$Species<-factor(q[[d]][[r]]$Species);check_fold("valid_factor_species_labels",q,FALSE)
++check_fold("missing_tenfold",folds["fivefold"]);check_fold("missing_fivefold",folds["tenfold"])
++check_fold("unnamed_designs",unname(folds));check_fold("empty_designs",list())
++q<-folds;names(q)[2]<-"unknown";check_fold("unknown_design",q)
++q<-folds;names(q)[2]<-"";check_fold("empty_design_name",q)
++q<-folds;names(q)[2]<-NA_character_;check_fold("NA_design_name",q)
++q<-c(folds,folds["fivefold"]);check_fold("duplicate_design_name",q)
++for(d in V3_DESIGNS)for(r in V3_ROUTES){
++ q<-folds;q[[d]][[r]]$Fold[1]<-NA_real_;check_fold(paste("NA_fold",d,r,sep="_"),q)
++ q<-folds;q[[d]][[r]]$Fold[1]<-NaN;check_fold(paste("NaN_fold",d,r,sep="_"),q)
++}
++for(value in c(-Inf,Inf,0,-1,1.5,11)){
++ q<-folds;q$fivefold$binary$Fold[1]<-value;check_fold(paste0("invalid_fold_",value),q)
++}
++q<-folds;q$fivefold$binary$Fold<-as.character(q$fivefold$binary$Fold);check_fold("character_fold_rejected",q)
++q<-folds;q$fivefold$binary$Fold<-factor(q$fivefold$binary$Fold);check_fold("factor_fold_rejected",q)
++q<-folds;q$fivefold$binary$Fold<-NULL;check_fold("missing_fold_column",q)
++q<-folds;q$fivefold$binary<-as.list(q$fivefold$binary);check_fold("non_dataframe_table",q)
++q<-folds;q$fivefold$binary$Fold[q$fivefold$binary$Fold==5]<-4L;check_fold("missing_fold_id",q)
++q<-folds;q$fivefold$binary<-rbind(q$fivefold$binary,q$fivefold$binary[1,]);check_fold("duplicate_species_same_fold",q)
++q<-folds;extra<-q$fivefold$binary[1,];extra$Fold<-2L;q$fivefold$binary<-rbind(q$fivefold$binary,extra);check_fold("duplicate_species_conflicting_fold",q)
++q<-folds;q$fivefold$binary$Species[1]<-NA_character_;check_fold("NA_species",q)
++q<-folds;q$fivefold$binary$Species[1]<-" ";check_fold("empty_species",q)
++q<-folds;q$fivefold$binary<-q$fivefold$binary[-1,];check_fold("missing_species",q)
++q<-folds;q$fivefold$binary$Species[1]<-"UNKNOWN";check_fold("unknown_species",q)
++q<-folds;q$fivefold$joint_bb<-NULL;check_fold("missing_route",q)
++q<-folds;q$fivefold<-c(q$fivefold,q$fivefold["binary"]);check_fold("duplicate_route_name",q)
++q<-folds;q$fivefold$binary<-cbind(q$fivefold$binary,Fold=q$fivefold$binary$Fold);check_fold("duplicate_column_name",q)
++record("configured_twofold_test_design","fold_contract",FALSE,function(){
++ old_d<-impl$V3_DESIGNS;old_k<-impl$V3_DESIGN_K
++ on.exit({impl$V3_DESIGNS<-old_d;impl$V3_DESIGN_K<-old_k})
++ impl$V3_DESIGNS<-"integration";impl$V3_DESIGN_K<-c(integration=2L)
++ impl$validate_fold_tables_v3(state,list(integration=list(binary=make_folds(2),joint_bb=make_folds(2))))
++})
++e<-data.frame(RecordID=paste0("r",1:4),Route="joint_bb",Species=c("A","A","B","C"),Type=c("count","exact","count","interval"),ObservedPoint=c(0,1,.4,NA),PredictedPoint=c(0,1,.3,.5),LogPredictiveDensityRaw=c(-1,-2,-3,-4),PredictedPI_lower=0,PredictedPI_upper=1,PIWidth=1,IntervalCovered=c(TRUE,TRUE,TRUE,NA))
++write_csv_atomic(e,file.path(out,"valid_joint_evidence.csv"))
++for(w in V3_EVAL_WEIGHTINGS){
++ record(paste0("valid_joint_",w),"joint_range",FALSE,function()impl$evaluate_evidence(e,w,"joint_bb"))
++ for(type in c("count","exact","interval"))for(value in c(-.2,1.2,-.Machine$double.eps,1+.Machine$double.eps,NA,NaN,Inf,-Inf)){
++  q<-e;idx<-which(q$Type==type)[1];q$PredictedPoint[idx]<-value
++  record(paste("prediction",w,type,value,sep="_"),"joint_range",TRUE,function()impl$evaluate_evidence(q,w,"joint_bb"))
++ }
++ for(type in c("count","exact"))for(value in c(-.2,1.2,-.Machine$double.eps,1+.Machine$double.eps,NA,NaN,Inf,-Inf)){
++  q<-e;idx<-which(q$Type==type)[1];q$ObservedPoint[idx]<-value
++  q$IntervalCovered[idx]<-if(is.na(value))NA else value>=0&&value<=1
++  record(paste("observation",w,type,value,sep="_"),"joint_range",TRUE,function()impl$evaluate_evidence(q,w,"joint_bb"))
++ }
++ for(type in c("count","exact","interval"))for(value in c(0,1)){
++  q<-e;idx<-which(q$Type==type)[1];q$PredictedPoint[idx]<-value
++  record(paste("valid_prediction_boundary",w,type,value,sep="_"),"joint_range",FALSE,function()impl$evaluate_evidence(q,w,"joint_bb"))
++ }
++ for(type in c("count","exact"))for(value in c(0,1)){
++  q<-e;idx<-which(q$Type==type)[1];q$ObservedPoint[idx]<-value;q$IntervalCovered[idx]<-TRUE
++  record(paste("valid_observation_boundary",w,type,value,sep="_"),"joint_range",FALSE,function()impl$evaluate_evidence(q,w,"joint_bb"))
++ }
++ q<-e[4,,drop=FALSE]
++ record(paste0("valid_interval_only_",w),"joint_range",FALSE,function(){s<-impl$evaluate_evidence(q,w,"joint_bb");stopifnot(is.na(s$MAE),is.na(s$Bias),s$PointRecords==0);TRUE})
++}
++q<-e;q$ObservedPoint[4]<-99
++record("interval_observed_field_is_not_scored","joint_range",FALSE,function(){stopifnot(identical(impl$evaluate_evidence(q,"species_equal","joint_bb"),impl$evaluate_evidence(e,"species_equal","joint_bb")));TRUE})
++for(field in c("PredictedPoint","ObservedPoint")){
++ q<-e[4,,drop=FALSE];q[[field]]<-NULL
++ record(paste0("interval_only_missing_",field),"joint_range",TRUE,function()impl$evaluate_evidence(q,"record_equal","joint_bb"))
++}
++q<-e;q<-cbind(q,PredictedPoint=rep(1.2,nrow(q)))
++record("duplicate_joint_point_column","joint_range",TRUE,function()impl$evaluate_evidence(q,"record_equal","joint_bb"))
++fit_calls<-0L;sentinel<-function(...){fit_calls<<-fit_calls+1L;stop("SAMPLER_SENTINEL_CALLED")}
++blocked_root<-file.path(out,"must_not_create_cv_output")
++err<-tryCatch(impl$run_cv_v3(state,blocked_root,folds["fivefold"],NULL,fit_function=sentinel),error=identity)
++results[[length(results)+1L]]<-data.frame(Test="incomplete_design_stops_before_fit_or_output",Kind="entrypoint_guard",ExpectedError=TRUE,Rejected=inherits(err,"error"),Pass=inherits(err,"error")&&fit_calls==0L&&!dir.exists(blocked_root),Message=paste(if(inherits(err,"error"))conditionMessage(err) else "accepted","fit_calls",fit_calls))
++res<-do.call(rbind,results);write_csv_atomic(res,file.path(out,"assertions.csv"))
++status<-list(stage=stage,status=if(all(res$Pass))"PASS" else "FAIL_REPRODUCED",checks=nrow(res),passed=sum(res$Pass),failed=sum(!res$Pass),sampler_callback_calls=fit_calls,actual_samplers_started=0L,real_data_fits=0L)
++write_json_atomic(status,file.path(out,"status.json"));print(status)
++if(stage=="before"){
++ key<-c("missing_tenfold","NA_fold_fivefold_binary","prediction_record_equal_count_1.2","observation_record_equal_exact_1.2")
++ stopifnot(all(!res$Pass[match(key,res$Test)]),all(!res$Rejected[match(key,res$Test)]));cat("V33_INPUT_GAPS_REPRODUCED; no sampler executed\n")
++}else{if(!all(res$Pass)){print(res[!res$Pass,]);stop("Input guard regression failed")};cat("V34_INPUT_GUARDS_PASS\n")}
+
+diff --git a/v3.4/tests/test_v34_legal_equivalence.R b/v3.4/tests/test_v34_legal_equivalence.R
+new file mode 100644
+index 0000000..70affd3
+--- /dev/null
++++ b/v3.4/tests/test_v34_legal_equivalence.R
+@@ -0,0 +1,28 @@
++#!/usr/bin/env Rscript
++script<-sub("^--file=","",grep("^--file=",commandArgs(FALSE),value=TRUE)[1]);root<-normalizePath(dirname(dirname(script)),mustWork=TRUE)
++source(file.path(root,"R","bootstrap.R"));load_v3_modules(root)
++prior<-new.env(parent=.GlobalEnv);sys.source(file.path(root,"review","baseline_v3_3","R","bootstrap.R"),prior);prior$load_v3_modules(file.path(root,"review","baseline_v3_3"),envir=prior)
++source(file.path(root,"tests","fixtures_v32.R"))
++out<-file.path(root,"review","legal_equivalence");state<-make_unequal_fixture_v32(out)
++oldfold<-prior$make_fold_tables_v3(state);newfold<-make_fold_tables_v3(state)
++stopifnot(identical(oldfold,newfold),validate_fold_tables_v3(state,newfold))
++for(d in names(newfold))for(r in V3_ROUTES)write_csv_atomic(newfold[[d]][[r]],file.path(out,paste0("unchanged_folds_",d,"_",r,".csv")))
++sets<-list(
++ saved_v32_real_synthetic_OOF=read.csv(file.path(root,"review","reused_evidence","saved_synthetic_OOF.csv"),stringsAsFactors=FALSE),
++ v34_mock_fullgrid_OOF=read.csv(file.path(root,"review","fullgrid_synthetic","results","cv_record_predictions.csv"),stringsAsFactors=FALSE))
++results<-list()
++for(label in names(sets)){
++ ev<-sets[[label]]
++ for(design in unique(ev$Design))for(route in V3_ROUTES)for(model in V3_MODELS)for(tw in V3_TRAIN_WEIGHTINGS){
++  all<-subset(ev,Design==design&Route==route&Model==model&TrainWeighting==tw)
++  for(fold in c(NA,sort(unique(all$Fold))))for(ew in V3_EVAL_WEIGHTINGS){
++   e<-if(is.na(fold))all else all[all$Fold==fold,,drop=FALSE]
++   before<-prior$evaluate_evidence(e,ew,route);after<-evaluate_evidence(e,ew,route)
++   stopifnot(identical(before,after))
++   results[[length(results)+1L]]<-data.frame(Source=label,Design=design,Route=route,Model=model,TrainWeighting=tw,Fold=fold,EvalWeighting=ew,Records=nrow(e),ExactIdentical=TRUE)
++  }
++ }
++}
++r<-do.call(rbind,results);write_csv_atomic(r,file.path(out,"scoring_equivalence_receipts.csv"))
++write_json_atomic(list(status="PASS",default_fold_tables_identical=TRUE,metric_groups_compared=nrow(r),saved_synthetic_rows=nrow(sets[[1]]),mock_rows=nrow(sets[[2]]),all_metrics_exactly_identical=all(r$ExactIdentical),new_fits=0,real_data_fits=0),file.path(out,"status.json"))
++cat("V34_LEGAL_INPUT_EQUIVALENCE_PASS: unchanged default folds and every metric field; no new fits\n")
+
+diff --git a/v3.4/tests/test_v34_scope_guard.R b/v3.4/tests/test_v34_scope_guard.R
+new file mode 100644
+index 0000000..c5cb189
+--- /dev/null
++++ b/v3.4/tests/test_v34_scope_guard.R
+@@ -0,0 +1,15 @@
++#!/usr/bin/env Rscript
++script<-sub("^--file=","",grep("^--file=",commandArgs(FALSE),value=TRUE)[1]);root<-normalizePath(dirname(dirname(script)),mustWork=TRUE)
++source(file.path(root,"R","bootstrap.R"));load_v3_modules(root)
++base<-file.path(root,"review","baseline_v3_3")
++retained<-c("applicability.R","bootstrap.R","cache_io.R","comparison.R","data_encoding.R","fitting.R","plotting.R","ppc.R","prediction.R","prediction_audit.R","provenance.R","quantitative_diagnostics.R","weights.R","workflow.R")
++checks<-vapply(retained,function(f)identical(sha256_file(file.path(root,"R",f)),sha256_file(file.path(base,"R",f))),logical(1))
++entries<-list.files(file.path(root,"src"),pattern="[.]R$")
++entry_checks<-vapply(entries,function(f)identical(sha256_file(file.path(root,"src",f)),sha256_file(file.path(base,"src",f))),logical(1))
++checks<-c(checks,setNames(entry_checks,paste0("entry_",entries)))
++checks<-c(checks,Stan=identical(sha256_file(file.path(root,"stan","joint_bb.stan")),sha256_file(file.path(base,"stan","joint_bb.stan"))))
++cfg<-jsonlite::read_json(file.path(root,"config","analysis.json"),simplifyVector=TRUE);old<-jsonlite::read_json(file.path(base,"config","analysis.json"),simplifyVector=TRUE);cfg$version<-old$version
++checks<-c(checks,ConfigOnlyVersionChanged=identical(cfg,old))
++checks<-c(checks,ObservationsUnchanged=identical(sha256_file(file.path(root,"input","observations.csv")),"3c886f7f2c11012463296b350a931543542b4e1c0d128ad3c408fda9ae824d79"),SitesUnchanged=identical(sha256_file(file.path(root,"input","sites.csv")),"0a99692b060f13d1faaa870d06ea7dca9a4f16bc289636bcc88f5d105ebdacb5"))
++write_csv_atomic(data.frame(Item=names(checks),Unchanged=unname(checks)),file.path(root,"review","scope_preservation_checks.csv"))
++stopifnot(all(checks));cat("V34_SCOPE_GUARD_PASS:14 unchanged R modules,5 entries, Stan, configuration except version, and frozen inputs\n")

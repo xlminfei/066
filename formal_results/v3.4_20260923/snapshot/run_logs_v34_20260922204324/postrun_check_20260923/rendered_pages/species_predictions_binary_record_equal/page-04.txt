@@ -1,0 +1,63 @@
+0.0 0.2 0.4 0.6 0.8 1.0
+Null
+binary
+record_equal
+Pr(HIGH)
+Oxyeleotris marmorata
+Sphaeramia orbicularis
+Pterapogon kauderni
+Fistularia commersonii
+Aulostomus chinensis
+Pampus punctatissimus
+Pampus argenteus
+Thunnus tonggol
+Thunnus thynnus
+Thunnus orientalis
+Thunnus obesus
+Thunnus maccoyii
+Thunnus atlanticus
+Thunnus albacares
+Thunnus alalunga
+Scomber scombrus
+Scomber japonicus
+Sarda sarda
+Katsuwonus pelamis
+Arripis georgiana
+Genypterus blacodes
+Lucifuga dentata
+Myripristis murdjan
+Poromitra crassiceps
+Centroberyx gerrardi
+Centroberyx affinis
+Polymixia lowei
+Polymixia hollisterae
+Protomyctophum parallelum
+Protomyctophum bolini
+Nannobrachium achirus
+Gymnoscopelus microlampas
+Gymnoscopelus braueri
+Electrona antarctica
+Benthosema glaciale
+Osmerus mordax
+Osmerus eperlanus
+Hypomesus transpacificus
+Hypomesus nipponensis
+Umbra pygmaea
+Esox lucius
+Dallia pectoralis
+0.0 0.2 0.4 0.6 0.8 1.0
+M1
+binary
+record_equal
+Pr(HIGH)
+0.0 0.2 0.4 0.6 0.8 1.0
+M2
+binary
+record_equal
+Pr(HIGH)
+0.0 0.2 0.4 0.6 0.8 1.0
+M3
+binary
+record_equal
+Pr(HIGH)
+Point: posterior Pr(HIGH) | line: 95% CrI | x: applicability warning

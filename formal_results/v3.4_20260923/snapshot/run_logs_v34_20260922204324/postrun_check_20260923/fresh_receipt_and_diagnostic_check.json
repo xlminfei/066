@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "check": "source_input_contract_and_derived_stage_hashes_and_read_saved_fit_diagnostics",
+  "fits": 256,
+  "fits_passed": 256,
+  "max_rhat": 1.0041,
+  "min_bulk_ess": 1567.1251,
+  "min_tail_ess": 1349.4951,
+  "divergences": 0,
+  "treedepth_hits": 0,
+  "min_ebfmi": 0.7842,
+  "new_fits": 0,
+  "new_mcmc": 0,
+  "diagnostic_method": "read saved diagnostic tables; main final audit already recomputed them for all fits"
+}

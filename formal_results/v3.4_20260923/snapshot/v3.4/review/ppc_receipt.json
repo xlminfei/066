@@ -1,0 +1,8 @@
+{
+  "stage": "ppc",
+  "analysis_fingerprint": "f7f5b372bdad2effc153e629a83e73d809ffc3d1258c1ffcab1c08064af4e68e",
+  "files": {
+    "results/training_ppc_summary.csv": "9aa666a0c84d6507b9fe14e8332e5e848ecdad20896d65a0bbd167603bc52cd6",
+    "figures/training_ppc_summary.pdf": "803ff7fa9b167f71e885fd1bcd2a3cb80f30f92ab351174ef02b7b1516e0bd46"
+  }
+}

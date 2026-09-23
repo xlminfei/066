@@ -1,0 +1,17 @@
+{
+  "step": "04_preflight",
+  "arguments": [
+    "run",
+    "--rm",
+    "--mount",
+    "type=bind,source=C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\runs\\v3_4_formal_20260922204324\\v3.4,target=/project/v34",
+    "ratio-analysis-v3-4:formal-20260922204324",
+    "Rscript",
+    "/project/v34/src/v3_pipeline.R",
+    "--stage",
+    "preflight"
+  ],
+  "startedAt": "2026-09-22T12:46:35.6626045+00:00",
+  "finishedAt": "2026-09-22T12:46:39.7027699+00:00",
+  "exitCode": 0
+}

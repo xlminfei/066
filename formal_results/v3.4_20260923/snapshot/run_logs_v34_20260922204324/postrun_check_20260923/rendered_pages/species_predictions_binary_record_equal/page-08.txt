@@ -1,0 +1,63 @@
+0.0 0.2 0.4 0.6 0.8 1.0
+Null
+binary
+record_equal
+Pr(HIGH)
+Epinephelus bruneus
+Cromileptes altivelis
+Eleginops maclovinus
+Cyclopterus lumpus
+Taurulus bubalis
+Clinocottus analis
+Pseudochaenichthys georgianus
+Champsocephalus gunnari
+Champsocephalus esox
+Chaenocephalus aceratus
+Cebidichthys violaceus
+Cottoperca gobio
+Gymnodraco acuticeps
+Pogonophryne albipinna
+Anoplopoma fimbria
+Anarrhichthys ocellatus
+Anarhichas minor
+Scortum barcoo
+Siniperca scherzeri
+Siniperca chuatsi
+Maccullochella peelii
+Oplegnathus punctatus
+Oplegnathus fasciatus
+Enoplosus armatus
+Micropterus salmoides
+Micropterus dolomieu
+Pempheris klunzingeri
+Lateolabrax maculatus
+Lateolabrax japonicus
+Nelusetta ayraud
+Sparus aurata
+Rhabdosargus sarba
+Pagrus pagrus
+Pagrus major
+Acanthopagrus schlegelii
+Acanthopagrus latus
+Lethrinus nebulosus
+Symphorus nematophorus
+Pristipomoides typus
+Lutjanus erythropterus
+Caesio teres
+Chelmon rostratus
+0.0 0.2 0.4 0.6 0.8 1.0
+M1
+binary
+record_equal
+Pr(HIGH)
+0.0 0.2 0.4 0.6 0.8 1.0
+M2
+binary
+record_equal
+Pr(HIGH)
+0.0 0.2 0.4 0.6 0.8 1.0
+M3
+binary
+record_equal
+Pr(HIGH)
+Point: posterior Pr(HIGH) | line: 95% CrI | x: applicability warning

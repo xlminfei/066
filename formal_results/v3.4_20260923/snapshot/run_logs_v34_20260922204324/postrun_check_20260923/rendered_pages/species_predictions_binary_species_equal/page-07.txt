@@ -1,0 +1,63 @@
+0.0 0.2 0.4 0.6 0.8 1.0
+Null
+binary
+species_equal
+Pr(HIGH)
+Chaetodon trifascialis
+Chaetodon auriga
+Platax orbicularis
+Xyrichtys novacula
+Thalassoma bifasciatum
+Semicossyphus pulcher
+Notolabrus celidotus
+Halichoeres trimaculatus
+Cheilinus undulatus
+Ammodytes marinus
+Siganus canaliculatus
+Sciaenops ocellatus
+Nibea albiflora
+Larimichthys crocea
+Collichthys lucidus
+Scatophagus argus
+Morone saxatilis
+Dicentrarchus labrax
+Cristiceps australis
+Salarias fasciatus
+Ophioblennius macclurei
+Lipophrys pholis
+Blennius ocellaris
+Gouania willdenowi
+Planiliza haematocheilus
+Mugil cephalus
+Chelon labrosus
+Nematolebias whitei
+Kryptolebias marmoratus
+Austrofundulus limnaeus
+Xiphophorus maculatus
+Xiphophorus hellerii
+Xiphophorus couchianus
+Poropanchax normani
+Poeciliopsis prolifica
+Poecilia reticulata
+Poecilia mexicana
+Poecilia latipinna
+Poecilia formosa
+Gambusia holbrooki
+Gambusia affinis
+Nothobranchius rachovii
+0.0 0.2 0.4 0.6 0.8 1.0
+M1
+binary
+species_equal
+Pr(HIGH)
+0.0 0.2 0.4 0.6 0.8 1.0
+M2
+binary
+species_equal
+Pr(HIGH)
+0.0 0.2 0.4 0.6 0.8 1.0
+M3
+binary
+species_equal
+Pr(HIGH)
+Point: posterior Pr(HIGH) | line: 95% CrI | x: applicability warning

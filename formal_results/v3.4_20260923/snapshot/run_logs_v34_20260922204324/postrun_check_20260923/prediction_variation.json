@@ -1,0 +1,146 @@
+[
+  {
+    "Route": "binary",
+    "Model": "Null",
+    "TrainWeighting": "record_equal",
+    "UniquePointValues": 1,
+    "Minimum": 0.760094708427577,
+    "Maximum": 0.760094708427577,
+    "Warnings": 11
+  },
+  {
+    "Route": "binary",
+    "Model": "Null",
+    "TrainWeighting": "species_equal",
+    "UniquePointValues": 1,
+    "Minimum": 0.693360182403298,
+    "Maximum": 0.693360182403298,
+    "Warnings": 11
+  },
+  {
+    "Route": "binary",
+    "Model": "M1",
+    "TrainWeighting": "record_equal",
+    "UniquePointValues": 27,
+    "Minimum": 0.24444153580585,
+    "Maximum": 0.882174904743687,
+    "Warnings": 226
+  },
+  {
+    "Route": "binary",
+    "Model": "M1",
+    "TrainWeighting": "species_equal",
+    "UniquePointValues": 27,
+    "Minimum": 0.2142364548952,
+    "Maximum": 0.862094943479359,
+    "Warnings": 226
+  },
+  {
+    "Route": "binary",
+    "Model": "M2",
+    "TrainWeighting": "record_equal",
+    "UniquePointValues": 37,
+    "Minimum": 0.24939379998146,
+    "Maximum": 0.873000938502564,
+    "Warnings": 223
+  },
+  {
+    "Route": "binary",
+    "Model": "M2",
+    "TrainWeighting": "species_equal",
+    "UniquePointValues": 37,
+    "Minimum": 0.2068053703043,
+    "Maximum": 0.852765984654394,
+    "Warnings": 223
+  },
+  {
+    "Route": "binary",
+    "Model": "M3",
+    "TrainWeighting": "record_equal",
+    "UniquePointValues": 157,
+    "Minimum": 0.217416178528067,
+    "Maximum": 0.911992955012051,
+    "Warnings": 254
+  },
+  {
+    "Route": "binary",
+    "Model": "M3",
+    "TrainWeighting": "species_equal",
+    "UniquePointValues": 157,
+    "Minimum": 0.166502264903277,
+    "Maximum": 0.886327247591192,
+    "Warnings": 254
+  },
+  {
+    "Route": "joint_bb",
+    "Model": "Null",
+    "TrainWeighting": "record_equal",
+    "UniquePointValues": 1,
+    "Minimum": 0.731122747397507,
+    "Maximum": 0.731122747397507,
+    "Warnings": 11
+  },
+  {
+    "Route": "joint_bb",
+    "Model": "Null",
+    "TrainWeighting": "species_equal",
+    "UniquePointValues": 1,
+    "Minimum": 0.675747576150025,
+    "Maximum": 0.675747576150025,
+    "Warnings": 11
+  },
+  {
+    "Route": "joint_bb",
+    "Model": "M1",
+    "TrainWeighting": "record_equal",
+    "UniquePointValues": 27,
+    "Minimum": 0.410097950831563,
+    "Maximum": 0.890452902584374,
+    "Warnings": 226
+  },
+  {
+    "Route": "joint_bb",
+    "Model": "M1",
+    "TrainWeighting": "species_equal",
+    "UniquePointValues": 27,
+    "Minimum": 0.423957824417871,
+    "Maximum": 0.910493480589473,
+    "Warnings": 226
+  },
+  {
+    "Route": "joint_bb",
+    "Model": "M2",
+    "TrainWeighting": "record_equal",
+    "UniquePointValues": 37,
+    "Minimum": 0.297035351401479,
+    "Maximum": 0.887954365295113,
+    "Warnings": 223
+  },
+  {
+    "Route": "joint_bb",
+    "Model": "M2",
+    "TrainWeighting": "species_equal",
+    "UniquePointValues": 37,
+    "Minimum": 0.221155212847075,
+    "Maximum": 0.917486465792106,
+    "Warnings": 223
+  },
+  {
+    "Route": "joint_bb",
+    "Model": "M3",
+    "TrainWeighting": "record_equal",
+    "UniquePointValues": 157,
+    "Minimum": 0.250373497095684,
+    "Maximum": 0.919722228974989,
+    "Warnings": 254
+  },
+  {
+    "Route": "joint_bb",
+    "Model": "M3",
+    "TrainWeighting": "species_equal",
+    "UniquePointValues": 157,
+    "Minimum": 0.162686354761527,
+    "Maximum": 0.914397148604151,
+    "Warnings": 254
+  }
+]

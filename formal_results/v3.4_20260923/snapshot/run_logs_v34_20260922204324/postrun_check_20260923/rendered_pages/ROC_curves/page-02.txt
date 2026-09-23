@@ -1,0 +1,9 @@
+0.0 0.2 0.4 0.6 0.8 1.0
+0.0 0.2 0.4 0.6 0.8 1.0
+fivefold | record_equal | species_equal
+FPR
+TPR
+Null | Mean CV AUC 0.500 (5 folds)
+M1 | Mean CV AUC 0.666 (5 folds)
+M2 | Mean CV AUC 0.661 (5 folds)
+M3 | Mean CV AUC 0.751 (5 folds)

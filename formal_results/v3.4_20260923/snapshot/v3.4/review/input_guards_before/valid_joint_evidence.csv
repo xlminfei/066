@@ -1,0 +1,5 @@
+"RecordID","Route","Species","Type","ObservedPoint","PredictedPoint","LogPredictiveDensityRaw","PredictedPI_lower","PredictedPI_upper","PIWidth","IntervalCovered"
+"r1","joint_bb","A","count",0,0,-1,0,1,1,TRUE
+"r2","joint_bb","A","exact",1,1,-2,0,1,1,TRUE
+"r3","joint_bb","B","count",0.4,0.3,-3,0,1,1,TRUE
+"r4","joint_bb","C","interval",,0.5,-4,0,1,1,

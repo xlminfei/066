@@ -1,0 +1,19 @@
+0.16 0.18 0.20 0.22 0.24 0.26 0.28
+Training PPC exact SD
+SD
+Null / record_equal / record_equal
+Null / record_equal / species_equal
+Null / species_equal / record_equal
+Null / species_equal / species_equal
+M1 / record_equal / record_equal
+M1 / record_equal / species_equal
+M1 / species_equal / record_equal
+M1 / species_equal / species_equal
+M2 / record_equal / record_equal
+M2 / record_equal / species_equal
+M2 / species_equal / record_equal
+M2 / species_equal / species_equal
+M3 / record_equal / record_equal
+M3 / record_equal / species_equal
+M3 / species_equal / record_equal
+M3 / species_equal / species_equal

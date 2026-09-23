@@ -1,0 +1,125 @@
+{
+  "scope": "final root-level supplement files; original attempt retained separately in round1",
+  "files": [
+    {
+      "path": "binary_metric_source.csv",
+      "bytes": 9133,
+      "sha256": "6d7b64e29a2d5f94246d008c0a2c10bbeefb2d53f306cd89a45d7d7eea261a5f"
+    },
+    {
+      "path": "ELPD_binary_comparison.png",
+      "bytes": 322532,
+      "sha256": "95f417d930cbf8be3d7b85847ea22f2c0eba4161252274128dd5170f036c6a83"
+    },
+    {
+      "path": "ELPD_binary_comparison.svg",
+      "bytes": 252216,
+      "sha256": "2cbe66a8677469dd173eca8e361d4d0aa2bd3110d1c2eb5418877b90c58f17a4"
+    },
+    {
+      "path": "ELPD_binary_preview.png",
+      "bytes": 143095,
+      "sha256": "ce2011b10249edbbd75c69a7af9d06735de963296bbba7133241d8fadd14135e"
+    },
+    {
+      "path": "ELPD_comparison.png",
+      "bytes": 331397,
+      "sha256": "67e33d25fd688f90949f6ef42f9a52daa1f5e2c3ce3df2e4c4e17901097bcfa4"
+    },
+    {
+      "path": "ELPD_comparison.svg",
+      "bytes": 240452,
+      "sha256": "ce384782a8b014eb1870b505cdfe7c74e09aea24b055446948f79a75535dc2ae"
+    },
+    {
+      "path": "ELPD_preview.png",
+      "bytes": 143122,
+      "sha256": "786c72cddc94365e361470965f5110487683e2a67329cb86c61c3beac59c4b76"
+    },
+    {
+      "path": "generation.log",
+      "bytes": 133,
+      "sha256": "e7c3b9196bae671ed2b1a5dce47f77abd1920f6b9e42a87684189162b2543c01"
+    },
+    {
+      "path": "generation_exit.json",
+      "bytes": 77,
+      "sha256": "c4fb558b343a61cbcfa45ba85ce3530a53c1c280986df827ed08e3e8e332d0cf"
+    },
+    {
+      "path": "INTERPRETATION_zh.md",
+      "bytes": 10752,
+      "sha256": "6352aef066cce1251322b2ad3b729a0febccd6d15f81e5090a175d5451bae22f"
+    },
+    {
+      "path": "MAE_comparison.png",
+      "bytes": 330628,
+      "sha256": "50e72ececbf3ccc8ad0e8cc2cea5d47f6ed4229723580526e259cd39728d48f3"
+    },
+    {
+      "path": "MAE_comparison.svg",
+      "bytes": 248441,
+      "sha256": "896056337a88358fe35a82f2990e3926f898f06184bb11a1b106761ce8dfb59e"
+    },
+    {
+      "path": "MAE_preview.png",
+      "bytes": 144185,
+      "sha256": "80ed6f58a6bc1648b6d731d45a76dfa95eeead4c5f3f8c7bd485d45aede0e2bb"
+    },
+    {
+      "path": "make_metric_figures.R",
+      "bytes": 6920,
+      "sha256": "5ec0f0e68c5f888ab514f79fdf27de8dd42997e74e6078fdc8b318a494aff50c"
+    },
+    {
+      "path": "plotted_values.csv",
+      "bytes": 15722,
+      "sha256": "a712fb029434765846c8b98886da860be27b02a418b59e1608bece266a83ba0a"
+    },
+    {
+      "path": "plot_validation.json",
+      "bytes": 722,
+      "sha256": "5efd830b502bdf9569e2906d96f685216dda183dc366d24c839d9021d4d2b90e"
+    },
+    {
+      "path": "quantitative_metric_source.csv",
+      "bytes": 9252,
+      "sha256": "a1bbb1ba3851204f58536636b394d7a653a0c78964e4cd56f98ee6c8fa7107c0"
+    },
+    {
+      "path": "RMSE_comparison.png",
+      "bytes": 336788,
+      "sha256": "13fd696bd8f282cbba7811a84a90d43ba8b2fcab004678f80d5ba7fa07154359"
+    },
+    {
+      "path": "RMSE_comparison.svg",
+      "bytes": 261596,
+      "sha256": "752a54947c0d98c0ba6495ec0b3d12e9e380f77af311451e6a3fac44e504037d"
+    },
+    {
+      "path": "RMSE_preview.png",
+      "bytes": 147596,
+      "sha256": "8a6db5012e5eb391b1cd7e84936c75522faf1d382dc802079dfe27708dc81b04"
+    },
+    {
+      "path": "supplement_validation.json",
+      "bytes": 1530,
+      "sha256": "08d298e0705ed5655d78deccdc111a1103be7a9432f6cab028001f16273b6baa"
+    },
+    {
+      "path": "verification.log",
+      "bytes": 1532,
+      "sha256": "770f179885654fdb0b0fefbbf005a8ae18ed0c419b9567e58dcb3de2f984bd95"
+    },
+    {
+      "path": "verify_and_write_interpretation.py",
+      "bytes": 11855,
+      "sha256": "f41d22a0992addc5796301bfe44f407d3db56d70f391d5da7e95df48ba2c5027"
+    },
+    {
+      "path": "visual_check.json",
+      "bytes": 550,
+      "sha256": "82c224e1cb09cc2a5fd24c603b52dc134b028e1641acabb82ae25de93019d5a5"
+    }
+  ]
+}

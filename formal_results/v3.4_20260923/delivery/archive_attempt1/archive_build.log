@@ -1,0 +1,27 @@
+ARCHIVE_FILES 64/778 bytes=10837034
+ARCHIVE_FILES 128/778 bytes=15232872
+ARCHIVE_FILES 192/778 bytes=17811444
+ARCHIVE_FILES 256/778 bytes=19311775
+ARCHIVE_FILES 320/778 bytes=35605306
+ARCHIVE_FILES 384/778 bytes=45707723
+ARCHIVE_FILES 448/778 bytes=54688233
+ARCHIVE_FILES 512/778 bytes=750536195
+ARCHIVE_FILES 576/778 bytes=1795011000
+ARCHIVE_FILES 640/778 bytes=5701005064
+ARCHIVE_FILES 704/778 bytes=10814215961
+ARCHIVE_FILES 768/778 bytes=11406392676
+ARCHIVE_FILES 778/778 bytes=11406427751
+ARCHIVE_READBACK v3.4-formal-complete.zip 128/778
+ARCHIVE_READBACK v3.4-formal-complete.zip 256/778
+ARCHIVE_READBACK v3.4-formal-complete.zip 384/778
+C:\Users\minfei\Documents\ChatGPT\建模\publication\v3_4_formal_results_20260923\build_complete_archive.py:53: UserWarning: Overlapped entries: 'v3.4/runs/fits/binary__M1__record_equal__fivefold_f1/fit.rds' (possible zip bomb)
+  with z.open(r['Path']) as src:
+ARCHIVE_READBACK v3.4-formal-complete.zip 512/778
+ARCHIVE_READBACK v3.4-formal-complete.zip 640/778
+Traceback (most recent call last):
+  File "C:\Users\minfei\Documents\ChatGPT\建模\publication\v3_4_formal_results_20260923\build_complete_archive.py", line 53, in <module>
+    with z.open(r['Path']) as src:
+         ^^^^^^^^^^^^^^^^^
+  File "C:\Users\minfei\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\zipfile\__init__.py", line 1664, in open
+    raise BadZipFile(
+zipfile.BadZipFile: File name in directory 'v3.4/runs/panel_encoded.csv' and header b'v3.4/runs/fits/binary__M1__record_equal__fivefold_f1/fit.rds' differ.

@@ -1,0 +1,28 @@
+{
+  "checkedAt": "2026-09-23T07:03:36.354Z",
+  "pdfFiles": 8,
+  "totalPages": 76,
+  "method": "Every page rendered at 96 dpi; all 13 contact sheets reviewed; full-resolution pages reviewed for species labels, quantitative axes/legends, and PPC labels.",
+  "contactSheetsReviewed": [
+    "contact_ROC_curves_1.jpg",
+    "contact_calibration_bins_1.jpg",
+    "contact_quantitative_predicted_observed_1.jpg",
+    "contact_training_ppc_summary_1.jpg",
+    "contact_training_ppc_summary_2.jpg",
+    "contact_species_predictions_binary_record_equal_1.jpg",
+    "contact_species_predictions_binary_record_equal_2.jpg",
+    "contact_species_predictions_binary_species_equal_1.jpg",
+    "contact_species_predictions_binary_species_equal_2.jpg",
+    "contact_species_predictions_joint_bb_record_equal_1.jpg",
+    "contact_species_predictions_joint_bb_record_equal_2.jpg",
+    "contact_species_predictions_joint_bb_species_equal_1.jpg",
+    "contact_species_predictions_joint_bb_species_equal_2.jpg"
+  ],
+  "fullResolutionPagesReviewed": [
+    "species_predictions_joint_bb_record_equal.pdf page 1",
+    "quantitative_predicted_observed.pdf page 2",
+    "training_ppc_summary.pdf page 16"
+  ],
+  "finding": "All expected plots are present and render; no blank or missing pages, no obvious broken rendering. This is completeness and visual sanity review, not proof of scientific predictive utility.",
+  "sourceFilesModified": false
+}

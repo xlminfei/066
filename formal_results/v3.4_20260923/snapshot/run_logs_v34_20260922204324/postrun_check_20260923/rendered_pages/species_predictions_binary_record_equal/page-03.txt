@@ -1,0 +1,63 @@
+0.0 0.2 0.4 0.6 0.8 1.0
+Null
+binary
+record_equal
+Pr(HIGH)
+Salvelinus namaycush
+Salvelinus fontinalis
+Salvelinus alpinus
+Salmo trutta
+Salmo salar
+Oncorhynchus tshawytscha
+Oncorhynchus nerka
+Oncorhynchus mykiss
+Oncorhynchus masou
+Oncorhynchus kisutch
+Oncorhynchus keta
+Oncorhynchus gorbuscha
+Oncorhynchus clarkii
+Coregonus suidteri
+Coregonus lavaretus
+Coregonus clupeaformis
+Coregonus albula
+Galaxias brevipinnis
+Nansenia antarctica
+Trichomycterus rosablanca
+Silurus meridionalis
+Silurus asotus
+Silurus aristotelis
+Pangasianodon hypophthalmus
+Pangasianodon gigas
+Ictalurus punctatus
+Ictalurus furcatus
+Clarias magur
+Clarias gariepinus
+Tachysurus vachellii
+Tachysurus fulvidraco
+Hemibagrus wyckioides
+Hemibagrus guttatus
+Neoarius graeffei
+Brachyhypopomus gauderio
+Electrophorus voltai
+Electrophorus electricus
+Serrasalmus rhombeus
+Pygocentrus nattereri
+Metynnis hypsauchen
+Colossoma macropomum
+Acnodon oligacanthus
+0.0 0.2 0.4 0.6 0.8 1.0
+M1
+binary
+record_equal
+Pr(HIGH)
+0.0 0.2 0.4 0.6 0.8 1.0
+M2
+binary
+record_equal
+Pr(HIGH)
+0.0 0.2 0.4 0.6 0.8 1.0
+M3
+binary
+record_equal
+Pr(HIGH)
+Point: posterior Pr(HIGH) | line: 95% CrI | x: applicability warning

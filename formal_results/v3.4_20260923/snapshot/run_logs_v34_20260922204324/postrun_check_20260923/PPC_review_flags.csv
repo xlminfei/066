@@ -1,0 +1,19 @@
+﻿Route,Model,TrainWeighting,EvalWeighting,Subset,Statistic,Records,Species,Observed,PPC_Lower95,PPC_Median,PPC_Upper95,Status,Scope
+joint_bb,Null,record_equal,species_equal,count,Mean,105,29,0.542231648725902,0.614066067420234,0.732939009691883,0.83535765806671,REVIEW_REQUIRED,training_only_same_records_types_weights; intervals_not_imputed
+joint_bb,Null,record_equal,species_equal,count,SD,105,29,0.448805781556778,0.319289799629902,0.39573469732464,0.448648688055426,REVIEW_REQUIRED,training_only_same_records_types_weights; intervals_not_imputed
+joint_bb,Null,record_equal,species_equal,count,ZeroFraction,105,29,0.28448275862069,0.0563363934915659,0.142230183609494,0.260293327362293,REVIEW_REQUIRED,training_only_same_records_types_weights; intervals_not_imputed
+joint_bb,Null,record_equal,species_equal,count,OneFraction,105,29,0.400656814449918,0.443110912076429,0.586703239289446,0.725886139722347,REVIEW_REQUIRED,training_only_same_records_types_weights; intervals_not_imputed
+joint_bb,Null,record_equal,species_equal,all_point,Mean,145,48,0.614479239074521,0.646498044897257,0.732618110873033,0.808567038993517,REVIEW_REQUIRED,training_only_same_records_types_weights; intervals_not_imputed
+joint_bb,Null,record_equal,species_equal,all_point,SD,145,48,0.389160338983604,0.274252345600269,0.327632695071092,0.36984928683685,REVIEW_REQUIRED,training_only_same_records_types_weights; intervals_not_imputed
+joint_bb,Null,record_equal,species_equal,all_point,ZeroFraction,145,48,0.166666666666667,0.0323504233915239,0.0811203063241107,0.147403381642512,REVIEW_REQUIRED,training_only_same_records_types_weights; intervals_not_imputed
+joint_bb,Null,species_equal,species_equal,count,Mean,105,29,0.542231648725902,0.552492274620866,0.677014154959557,0.789377606110365,REVIEW_REQUIRED,training_only_same_records_types_weights; intervals_not_imputed
+joint_bb,Null,species_equal,species_equal,all_point,SD,145,48,0.389160338983604,0.302898924009475,0.348111327058921,0.383657586684039,REVIEW_REQUIRED,training_only_same_records_types_weights; intervals_not_imputed
+joint_bb,M1,record_equal,species_equal,count,Mean,105,29,0.542231648725902,0.55100887673948,0.66892261420997,0.785142406895999,REVIEW_REQUIRED,training_only_same_records_types_weights; intervals_not_imputed
+joint_bb,M1,record_equal,species_equal,all_point,SD,145,48,0.389160338983604,0.299193083903088,0.348652919299382,0.386871578668127,REVIEW_REQUIRED,training_only_same_records_types_weights; intervals_not_imputed
+joint_bb,M1,species_equal,species_equal,all_point,SD,145,48,0.389160338983604,0.308113931595644,0.351843156019718,0.386605440274924,REVIEW_REQUIRED,training_only_same_records_types_weights; intervals_not_imputed
+joint_bb,M2,record_equal,species_equal,count,Mean,105,29,0.542231648725902,0.550266841927761,0.665395235883742,0.777387352589939,REVIEW_REQUIRED,training_only_same_records_types_weights; intervals_not_imputed
+joint_bb,M2,record_equal,species_equal,all_point,SD,145,48,0.389160338983604,0.300716657783577,0.349418154747736,0.386034655981133,REVIEW_REQUIRED,training_only_same_records_types_weights; intervals_not_imputed
+joint_bb,M2,species_equal,species_equal,all_point,SD,145,48,0.389160338983604,0.314043038870292,0.354092289795927,0.386405711210825,REVIEW_REQUIRED,training_only_same_records_types_weights; intervals_not_imputed
+joint_bb,M3,record_equal,species_equal,count,Mean,105,29,0.542231648725902,0.544786083674733,0.653569617908698,0.757568401931189,REVIEW_REQUIRED,training_only_same_records_types_weights; intervals_not_imputed
+joint_bb,M3,record_equal,species_equal,all_point,SD,145,48,0.389160338983604,0.307771310110148,0.35115235979313,0.384554438399178,REVIEW_REQUIRED,training_only_same_records_types_weights; intervals_not_imputed
+joint_bb,M3,species_equal,species_equal,all_point,SD,145,48,0.389160338983604,0.318560000496502,0.355217720551286,0.38558052025528,REVIEW_REQUIRED,training_only_same_records_types_weights; intervals_not_imputed

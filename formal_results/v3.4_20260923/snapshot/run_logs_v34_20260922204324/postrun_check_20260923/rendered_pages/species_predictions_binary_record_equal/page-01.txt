@@ -1,0 +1,63 @@
+0.0 0.2 0.4 0.6 0.8 1.0
+Null
+binary
+record_equal
+Pr(HIGH)
+Abramis brama
+Paramisgurnus dabryanus
+Misgurnus anguillicaudatus
+Xyrauchen texanus
+Myxocyprinus asiaticus
+Chanos chanos
+Engraulis encrasicolus
+Coilia mystus
+Coilia grayii
+Denticeps clupeoides
+Sprattus sprattus
+Clupea harengus
+Sardina pilchardus
+Alosa sapidissima
+Alosa pseudoharengus
+Alosa alosa
+Hiodon alosoides
+Scleropages formosus
+Paramormyrops kingsleyae
+Brienomyrus brachyistius
+Arapaima gigas
+Synaphobranchus kaupii
+Gymnothorax javanicus
+Conger conger
+Anguilla rostrata
+Anguilla japonica
+Anguilla anguilla
+Aldrovandia affinis
+Albula goreensis
+Albula glossodonta
+Megalops cyprinoides
+Megalops atlanticus
+Lepisosteus oculatus
+Atractosteus spatula
+Amia ocellicauda
+Polyodon spathula
+Huso huso
+Acipenser sinensis
+Acipenser ruthenus
+Acipenser oxyrinchus
+Polypterus senegalus
+Erpetoichthys calabaricus
+0.0 0.2 0.4 0.6 0.8 1.0
+M1
+binary
+record_equal
+Pr(HIGH)
+0.0 0.2 0.4 0.6 0.8 1.0
+M2
+binary
+record_equal
+Pr(HIGH)
+0.0 0.2 0.4 0.6 0.8 1.0
+M3
+binary
+record_equal
+Pr(HIGH)
+Point: posterior Pr(HIGH) | line: 95% CrI | x: applicability warning

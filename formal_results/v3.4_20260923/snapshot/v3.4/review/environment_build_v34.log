@@ -1,0 +1,101 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 951B done
+#1 DONE 0.1s
+
+#2 [internal] load metadata for docker.io/rocker/r2u:24.04@sha256:dc2a96c3b368969635c25c177c64514ba8e37cf2259dd3584de7c33520191d92
+#2 DONE 4.3s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/6] FROM docker.io/rocker/r2u:24.04@sha256:dc2a96c3b368969635c25c177c64514ba8e37cf2259dd3584de7c33520191d92
+#4 resolve docker.io/rocker/r2u:24.04@sha256:dc2a96c3b368969635c25c177c64514ba8e37cf2259dd3584de7c33520191d92 0.0s done
+#4 DONE 0.0s
+
+#5 [2/6] RUN apt-get update && apt-get install -y --no-install-recommends     r-cran-brms r-cran-rstan r-cran-posterior r-cran-digest     ca-certificates curl cmake pandoc     && rm -rf /var/lib/apt/lists/*
+#5 CACHED
+
+#6 [internal] load build context
+#6 transferring context: 183.63kB 0.0s done
+#6 DONE 0.1s
+
+#7 [3/6] COPY renv.lock /opt/ratio-analysis-v3.4/renv.lock
+#7 DONE 0.0s
+
+#8 [4/6] COPY scripts/restore_environment.R /opt/ratio-analysis-v3.4/scripts/restore_environment.R
+#8 DONE 0.1s
+
+#9 [5/6] RUN Rscript /opt/ratio-analysis-v3.4/scripts/restore_environment.R     --lockfile /opt/ratio-analysis-v3.4/renv.lock     --library /usr/local/lib/R/site-library
+#9 0.561 Untracing function "install.packages" in package "utils"
+#9 0.621 trying URL 'https://cran.r-project.org/src/contrib/renv_1.2.4.tar.gz'
+#9 3.046 Content type 'application/x-gzip' length 1438389 bytes (1.4 MB)
+#9 3.046 ==================================================
+#9 4.202 downloaded 1.4 MB
+#9 4.202 
+#9 5.082 * installing *source* package ‘renv’ ...
+#9 5.083 ** this is package ‘renv’ version ‘1.2.4’
+#9 5.103 ** package ‘renv’ successfully unpacked and MD5 sums checked
+#9 5.104 ** using staged installation
+#9 5.131 ** R
+#9 5.296 ** inst
+#9 5.305 ** byte-compile and prepare package for lazy loading
+#9 22.96 ** libs
+#9 22.96 using C compiler: ‘x86_64-linux-gnu-gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0’
+#9 22.96 x86_64-linux-gnu-gcc -std=gnu2x -I"/usr/share/R/include" -DNDEBUG       -fpic  -g -O2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -ffile-prefix-map=/build/r-base-SRqRsK/r-base-4.6.1=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -fdebug-prefix-map=/build/r-base-SRqRsK/r-base-4.6.1=/usr/src/r-base-4.6.1-6.2404.0 -Wdate-time -D_FORTIFY_SOURCE=3  -c renv.c -o renv.o
+#9 22.96 x86_64-linux-gnu-gcc -std=gnu2x -shared -L/usr/lib/R/lib -Wl,-Bsymbolic-functions -flto=auto -ffat-lto-objects -Wl,-z,relro -o renv.so renv.o -L/usr/lib/R/lib -lR
+#9 22.96 ** help
+#9 23.19 *** installing help indices
+#9 23.37 *** copying figures
+#9 23.37 ** building package indices
+#9 23.76 ** installing vignettes
+#9 23.77 ** testing if installed package can be loaded from temporary location
+#9 24.21 ** checking absolute paths in shared objects and dynamic libraries
+#9 24.23 ** testing if installed package can be loaded from final location
+#9 25.02 ** testing if installed package keeps a record of temporary installation path
+#9 25.03 * DONE (renv)
+#9 25.58 Restoring pinned package versions: jsonlite 
+#9 26.52 - Querying repositories for available source packages ... Done!
+#9 32.25 The following package(s) will be updated:
+#9 32.25 
+#9 32.25 # RSPM -----------------------------------------------------------------------
+#9 32.25 - jsonlite   [* -> 2.0.0]
+#9 32.25 
+#9 32.27 # Downloading packages -------------------------------------------------------
+#9 32.63 
+  (0/1) Downloading: jsonlite                                                   
+                                                                                
+✔ jsonlite 2.0.0                           [1.1 MB in 0.4s]
+#9 33.28 
+                                                                                
+Successfully downloaded 1 package in 0.65 seconds.
+#9 33.28 
+#9 33.28 # Installing packages --------------------------------------------------------
+#9 33.32 
+  (0/1) Installing: jsonlite                                                    
+  (0/1) Installing: jsonlite                                                    
+  (0/1) Installing: jsonlite                                                    
+                                                                                
+✔ jsonlite 2.0.0                           [built from source in 6.4s]
+#9 39.72 Successfully installed 1 package in 6.4 seconds.
+#9 39.72 ENVIRONMENT_VERIFIED: R 4.6.1; 79 locked packages; complete Depends/Imports/LinkingTo closure.
+#9 45.74 RUNTIME_LIBRARY=/usr/local/lib/R/site-library
+#9 DONE 45.9s
+#10 [6/6] WORKDIR /project
+#10 DONE 0.1s
+
+#11 exporting to image
+#11 exporting layers
+#11 exporting layers 0.8s done
+#11 exporting manifest sha256:5522d2b29bb05d913e5e5c37e809721036c36f576117e1a847ce28770f7dd84c 0.0s done
+#11 exporting config sha256:52f4711bad400e0d378f94b37ee2a7ba3dabdf363f255b6a2c79627220e4cd52 0.0s done
+#11 exporting attestation manifest sha256:568ae0eb63c13d4cd1af986526d4635bf103c90f5f86b30608b6ddabc5b93afd 0.0s done
+#11 exporting manifest list sha256:0c85f02c2a5125ea478dab295298e0cb5bce6a1b91f3f3dc0b7b3ee699554e87 0.0s done
+#11 naming to docker.io/library/ratio-analysis-v3-4-local:validated done
+#11 unpacking to docker.io/library/ratio-analysis-v3-4-local:validated
+#11 unpacking to docker.io/library/ratio-analysis-v3-4-local:validated 0.2s done
+#11 DONE 1.3s
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/w3zszx6gwifh7eaj4j4lzcesl

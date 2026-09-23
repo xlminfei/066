@@ -1,0 +1,19 @@
+0.05 0.10 0.15 0.20 0.25 0.30
+Training PPC count ZeroFraction
+ZeroFraction
+Null / record_equal / record_equal
+Null / record_equal / species_equal
+Null / species_equal / record_equal
+Null / species_equal / species_equal
+M1 / record_equal / record_equal
+M1 / record_equal / species_equal
+M1 / species_equal / record_equal
+M1 / species_equal / species_equal
+M2 / record_equal / record_equal
+M2 / record_equal / species_equal
+M2 / species_equal / record_equal
+M2 / species_equal / species_equal
+M3 / record_equal / record_equal
+M3 / record_equal / species_equal
+M3 / species_equal / record_equal
+M3 / species_equal / species_equal

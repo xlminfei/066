@@ -1,0 +1,63 @@
+0.0 0.2 0.4 0.6 0.8 1.0
+Null
+joint_bb
+record_equal
+Ratio
+Prochilodus magdalenae
+Hoplias malabaricus
+Salminus brasiliensis
+Astyanax mexicanus
+Astyanax lacustris
+Triplophysa rosa
+Triplophysa dalaica
+Barbatula barbatula
+Rhinichthys klamathensis
+Gobio gobio
+Squalius cephalus
+Siphateles boraxobius
+Sinocyclocheilus rhinocerous
+Sinocyclocheilus grahami
+Sinocyclocheilus anshuiensis
+Scardinius erythrophthalmus
+Rutilus rutilus
+Puntigrus tetrazona
+Pseudorasbora parva
+Pimephales promelas
+Phoxinus phoxinus
+Onychostoma macrolepis
+Mylopharyngodon piceus
+Megalobrama amblycephala
+Leuciscus waleckii
+Leuciscus leuciscus
+Leuciscus chuanchicus
+Labeo rohita
+Hemiculter leucisculus
+Garra rufa
+Danio rerio
+Danio aesculapii
+Cyprinus carpio
+Cyprinella venusta
+Culter alburnus
+Ctenopharyngodon idella
+Cirrhinus molitorella
+Chanodichthys erythropterus
+Carassius gibelio
+Carassius carassius
+Carassius auratus
+Barbus barbus
+0.0 0.2 0.4 0.6 0.8 1.0
+M1
+joint_bb
+record_equal
+Ratio
+0.0 0.2 0.4 0.6 0.8 1.0
+M2
+joint_bb
+record_equal
+Ratio
+0.0 0.2 0.4 0.6 0.8 1.0
+M3
+joint_bb
+record_equal
+Ratio
+Point: posterior mean | dark: 95% CrI | pale: future−report 95% PI | x: applicability warning

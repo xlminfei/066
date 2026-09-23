@@ -1,0 +1,17 @@
+{
+  "3.2 valid record-equal unbalanced species accepted": true,
+  "3.2 valid species-equal accepted": true,
+  "3.2 wrong record weights rejected": true,
+  "3.2 species total alone insufficient if within-species weights unequal": true,
+  "3.2 mixed weighting labels rejected": true,
+  "3.2 missing weighting rejected": true,
+  "3.2 missing species rejected": true,
+  "3.2 nonfinite weights rejected": true,
+  "3.3 distinct 3 logscore species / 2 point and PI species": true,
+  "3.3 records and species both exposed": true,
+  "7.3 record bias is mean(predicted-observed)": true,
+  "7.3 species bias weights within valid point subset": true,
+  "7.3 bias positive means overprediction": true,
+  "3.3 interval-only has no fabricated point species": true,
+  "binary species counts and quantitative NA are explicit": true
+}

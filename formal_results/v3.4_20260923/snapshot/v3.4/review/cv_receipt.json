@@ -1,0 +1,15 @@
+{
+  "stage": "cv",
+  "analysis_fingerprint": "f7f5b372bdad2effc153e629a83e73d809ffc3d1258c1ffcab1c08064af4e68e",
+  "files": {
+    "results/cv_record_predictions.csv": "705a6fd93416bf70e08a44ed86f5910a6c9fb0a28008de50793afff16a837b9a",
+    "results/cv_fold_metrics.csv": "0022cf9e5492686a8be8b0234dce82e215e954b7f4ebe772c27a5457ac66f28c",
+    "results/cv_metrics_summary.csv": "f8af8fa8afb44cf9c68ad064f3ac4bd891c98508a6438e21659806a3465d167d",
+    "results/model_vs_null.csv": "f9fc80afbdeba11bdfb918adcca64939b162cb78bf3bc7792bfc88cd2f6526ae",
+    "results/training_method_comparisons.csv": "a89e97406fefbba427c1c792e303eb42f46fff4c0d588a1b6a670c678cfb39b6",
+    "results/calibration_bins.csv": "e4f13dd10c6a64cff4b0571eac95347e60be282f4c603ba6d922dadd9a65a9e3",
+    "results/roc_coordinates.csv": "184e2ff92c3a3133c71ea60067f23cd84023137d56c8c2c8dfc7c1cfdc81db43",
+    "results/quantitative_plot_source.csv": "e3fa5c65cf7b757dbe5c081f46592b4b83e348f0ca15ff53060259dcc248104f",
+    "results/quantitative_bias_summary.csv": "896c3ac972251b3b977849170b6d8e86492cf7255682fa6335e3e9d5528f08ef"
+  }
+}

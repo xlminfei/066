@@ -1,0 +1,48 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 951B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/rocker/r2u:24.04@sha256:dc2a96c3b368969635c25c177c64514ba8e37cf2259dd3584de7c33520191d92
+#2 DONE 4.3s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/6] FROM docker.io/rocker/r2u:24.04@sha256:dc2a96c3b368969635c25c177c64514ba8e37cf2259dd3584de7c33520191d92
+#4 resolve docker.io/rocker/r2u:24.04@sha256:dc2a96c3b368969635c25c177c64514ba8e37cf2259dd3584de7c33520191d92 0.0s done
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 183.63kB 0.0s done
+#5 DONE 0.0s
+
+#6 [4/6] COPY scripts/restore_environment.R /opt/ratio-analysis-v3.4/scripts/restore_environment.R
+#6 CACHED
+
+#7 [5/6] RUN Rscript /opt/ratio-analysis-v3.4/scripts/restore_environment.R     --lockfile /opt/ratio-analysis-v3.4/renv.lock     --library /usr/local/lib/R/site-library
+#7 CACHED
+
+#8 [2/6] RUN apt-get update && apt-get install -y --no-install-recommends     r-cran-brms r-cran-rstan r-cran-posterior r-cran-digest     ca-certificates curl cmake pandoc     && rm -rf /var/lib/apt/lists/*
+#8 CACHED
+
+#9 [3/6] COPY renv.lock /opt/ratio-analysis-v3.4/renv.lock
+#9 CACHED
+
+#10 [6/6] WORKDIR /project
+#10 CACHED
+
+#11 exporting to image
+#11 exporting layers 0.0s done
+#11 exporting manifest sha256:5522d2b29bb05d913e5e5c37e809721036c36f576117e1a847ce28770f7dd84c done
+#11 exporting config sha256:52f4711bad400e0d378f94b37ee2a7ba3dabdf363f255b6a2c79627220e4cd52 done
+#11 exporting attestation manifest sha256:673eec9ac2b9706465cdd7891235863c6d2187457d81ef86bb16b7bbf5825180 0.0s done
+#11 exporting manifest list sha256:c67aade078ec1510b1b036a1a34c6ad0aad66534296b9e6587cd9f283093ca58
+#11 exporting manifest list sha256:c67aade078ec1510b1b036a1a34c6ad0aad66534296b9e6587cd9f283093ca58 0.0s done
+#11 naming to docker.io/library/ratio-analysis-v3-4:formal-20260922204324 done
+#11 unpacking to docker.io/library/ratio-analysis-v3-4:formal-20260922204324 0.0s done
+#11 DONE 0.2s
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/3p68x1k40qllsuyru4krcndbm

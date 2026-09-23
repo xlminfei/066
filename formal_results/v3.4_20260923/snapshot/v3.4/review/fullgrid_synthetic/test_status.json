@@ -1,0 +1,14 @@
+{
+  "status": "PASS_SYNTHETIC_MOCK_FULLGRID",
+  "cv_tasks": 240,
+  "OOFRows": 2944,
+  "FoldMetrics": 480,
+  "SummaryRows": 64,
+  "ModelComparisons": 48,
+  "TrainingComparisons": 32,
+  "QuantitativeBiasRows": 32,
+  "LogScoreSpecies": 12,
+  "PointSpecies": 11,
+  "PISpecies": 11,
+  "formal_research_fits": 0
+}

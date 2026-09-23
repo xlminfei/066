@@ -1,0 +1,50 @@
+0.0 0.2 0.4 0.6 0.8 1.0
+Null
+binary
+species_equal
+Pr(HIGH)
+Zoarces viviparus
+Melanostigma gelatinosum
+Lycodes pacificus
+Eutrigla gurnardus
+Echiichthys vipera
+Centropristis striata
+Sebastes umbrosus
+Sebastes schlegelii
+Sebastes fasciatus
+Pholis gunnellus
+Sander vitreus
+Sander lucioperca
+Perca fluviatilis
+Perca flavescens
+Etheostoma cragini
+Trematomus bernacchii
+Pagothenia borchgrevinki
+Notothenia rossii
+Dissostichus mawsoni
+Dissostichus eleginoides
+Pungitius sinensis
+Pungitius pungitius
+Gasterosteus aculeatus
+Plectropomus leopardus
+Epinephelus multinotatus
+Epinephelus malabaricus
+Epinephelus lanceolatus
+Epinephelus fuscoguttatus
+Epinephelus coioides
+0.0 0.2 0.4 0.6 0.8 1.0
+M1
+binary
+species_equal
+Pr(HIGH)
+0.0 0.2 0.4 0.6 0.8 1.0
+M2
+binary
+species_equal
+Pr(HIGH)
+0.0 0.2 0.4 0.6 0.8 1.0
+M3
+binary
+species_equal
+Pr(HIGH)
+Point: posterior Pr(HIGH) | line: 95% CrI | x: applicability warning

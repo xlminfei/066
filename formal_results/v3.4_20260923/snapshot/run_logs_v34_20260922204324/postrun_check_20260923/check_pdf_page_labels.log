@@ -1,0 +1,56 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "file": "species_predictions_binary_record_equal.pdf",
+      "expected_species": 365,
+      "pages": 9,
+      "missing_species_labels": [],
+      "missing_model_labels": [],
+      "pass_check": true
+    },
+    {
+      "file": "species_predictions_binary_species_equal.pdf",
+      "expected_species": 365,
+      "pages": 9,
+      "missing_species_labels": [],
+      "missing_model_labels": [],
+      "pass_check": true
+    },
+    {
+      "file": "species_predictions_joint_bb_record_equal.pdf",
+      "expected_species": 365,
+      "pages": 9,
+      "missing_species_labels": [],
+      "missing_model_labels": [],
+      "pass_check": true
+    },
+    {
+      "file": "species_predictions_joint_bb_species_equal.pdf",
+      "expected_species": 365,
+      "pages": 9,
+      "missing_species_labels": [],
+      "missing_model_labels": [],
+      "pass_check": true
+    },
+    {
+      "file": "ROC_curves.pdf",
+      "pages": 8,
+      "missing_model_labels": [],
+      "pass_check": true
+    },
+    {
+      "file": "calibration_bins.pdf",
+      "pages": 8,
+      "missing_model_labels": [],
+      "pass_check": true
+    },
+    {
+      "file": "quantitative_predicted_observed.pdf",
+      "pages": 8,
+      "missing_model_labels": [],
+      "pass_check": true
+    }
+  ]
+}
+

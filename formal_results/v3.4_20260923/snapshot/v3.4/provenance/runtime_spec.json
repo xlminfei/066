@@ -1,0 +1,14 @@
+{
+  "image_tag": "ratio-analysis-v3-4-local:validated",
+  "image_id": "sha256:0c85f02c2a5125ea478dab295298e0cb5bce6a1b91f3f3dc0b7b3ee699554e87",
+  "base_image": "rocker/r2u:24.04@sha256:dc2a96c3b368969635c25c177c64514ba8e37cf2259dd3584de7c33520191d92",
+  "R": "4.6.1",
+  "rstan": "2.32.7",
+  "locked_nonbase_packages": 79,
+  "renv_lock_sha256": "77ce8ad056d4c0cc816e33e9815afdc44fd7a2728257fb64b6c61c90b19b4de2",
+  "production_stan_sha256": "db491633fcadbd940c2e78280660a47cd037f46795c9dce2258f9381c4571430",
+  "initial_tests_image": "ratio-analysis-v3-3-local:validated",
+  "final_tests_image": "sha256:0c85f02c2a5125ea478dab295298e0cb5bce6a1b91f3f3dc0b7b3ee699554e87",
+  "build_log": "review/environment_build_v34.log",
+  "environment_log": "review/environment_test_v34.log"
+}

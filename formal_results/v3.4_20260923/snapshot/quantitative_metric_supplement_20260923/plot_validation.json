@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "purpose": "display_existing_formal_metrics_only",
+  "source_hashes": {
+    "cv_metrics_summary.csv": "f8af8fa8afb44cf9c68ad064f3ac4bd891c98508a6438e21659806a3465d167d",
+    "model_vs_null.csv": "f9fc80afbdeba11bdfb918adcca64939b162cb78bf3bc7792bfc88cd2f6526ae",
+    "training_method_comparisons.csv": "a89e97406fefbba427c1c792e303eb42f46fff4c0d588a1b6a670c678cfb39b6"
+  },
+  "groups_per_route": 32,
+  "plotted_values": 128,
+  "figures": 4,
+  "formats": ["PNG", "SVG"],
+  "primary_design": "fivefold",
+  "primary_evaluation": "species_equal",
+  "plot_font": "Microsoft YaHei",
+  "R": "4.6.1",
+  "new_fits": 0,
+  "new_bootstrap": 0,
+  "new_hypothesis_tests": 0,
+  "source_outputs_modified": false
+}

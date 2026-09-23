@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "readback": [
+    {
+      "archive": "v3.4-formal-complete.zip",
+      "verified_source_files": 778,
+      "all_sha256_and_crc_match": true
+    },
+    {
+      "archive": "v3.4-formal-results-light.zip",
+      "verified_source_files": 522,
+      "all_sha256_and_crc_match": true
+    }
+  ],
+  "source_files": 778,
+  "native_fit_files": 256,
+  "source_bytes": 11406427751,
+  "archive_bytes": 11364497982,
+  "archive_sha256": "98f7c9157d87b8389b7934d8eef061c92262c557cc02dd11b6dffae98fd718eb",
+  "parts": 170,
+  "light_bytes": 13758438,
+  "elapsed_seconds": 200.28274631500244,
+  "completed_at": "2026-09-23T10:16:47.146367+00:00"
+}

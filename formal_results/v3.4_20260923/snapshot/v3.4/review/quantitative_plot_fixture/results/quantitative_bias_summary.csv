@@ -1,0 +1,3 @@
+"Design","Route","Model","TrainWeighting","EvalWeighting","LogScoreRecordsUsed","LogScoreSpeciesUsed","PointRecords","PointSpeciesUsed","PISpeciesUsed","Bias","BiasDefinition","PointSet"
+"fixture","joint_bb","M2","record_equal","record_equal",4,3,3,2,2,0.133333333333333,"weighted_mean(predicted_minus_observed)","count_and_exact; interval_not_imputed"
+"fixture","joint_bb","M2","record_equal","species_equal",4,3,3,2,2,0.075,"weighted_mean(predicted_minus_observed)","count_and_exact; interval_not_imputed"

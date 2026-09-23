@@ -1,0 +1,3 @@
+"Check","RowsChecked","ColumnsChecked","MaximumAbsoluteDifference","Status"
+"quantitative_bias_recomputed",32,13,3.46944695195361e-16,"PASS"
+"quantitative_plot_source_recomputed",4640,15,4.44089209850063e-15,"PASS"

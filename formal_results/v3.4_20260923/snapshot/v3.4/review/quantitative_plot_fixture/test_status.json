@@ -1,0 +1,11 @@
+{
+  "status": "PASS_SYNTHETIC_PLOT",
+  "source_rows": 6,
+  "records": 3,
+  "species": 2,
+  "interval_excluded": true,
+  "bias_record_equal": 0.1333,
+  "bias_species_equal": 0.075,
+  "sign": "predicted_minus_observed",
+  "input_shuffle_invariant": true
+}

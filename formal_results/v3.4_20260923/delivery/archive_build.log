@@ -1,0 +1,59 @@
+ARCHIVE_FILES 64/778 bytes=10837034
+ARCHIVE_FILES 128/778 bytes=15232872
+ARCHIVE_FILES 192/778 bytes=17811444
+ARCHIVE_FILES 256/778 bytes=19311775
+ARCHIVE_FILES 320/778 bytes=35605306
+ARCHIVE_FILES 384/778 bytes=45707723
+ARCHIVE_FILES 448/778 bytes=54688233
+ARCHIVE_FILES 512/778 bytes=750536195
+ARCHIVE_FILES 576/778 bytes=1795011000
+ARCHIVE_FILES 640/778 bytes=5701005064
+ARCHIVE_FILES 704/778 bytes=10814215961
+ARCHIVE_FILES 768/778 bytes=11406392676
+ARCHIVE_FILES 778/778 bytes=11406427751
+ARCHIVE_READBACK v3.4-formal-complete.zip 128/778
+ARCHIVE_READBACK v3.4-formal-complete.zip 256/778
+ARCHIVE_READBACK v3.4-formal-complete.zip 384/778
+ARCHIVE_READBACK v3.4-formal-complete.zip 512/778
+ARCHIVE_READBACK v3.4-formal-complete.zip 640/778
+ARCHIVE_READBACK v3.4-formal-complete.zip 768/778
+ARCHIVE_READBACK v3.4-formal-complete.zip 778/778
+ARCHIVE_READBACK v3.4-formal-results-light.zip 128/522
+ARCHIVE_READBACK v3.4-formal-results-light.zip 256/522
+ARCHIVE_READBACK v3.4-formal-results-light.zip 384/522
+ARCHIVE_READBACK v3.4-formal-results-light.zip 512/522
+ARCHIVE_READBACK v3.4-formal-results-light.zip 522/522
+ARCHIVE_PARTS 16
+ARCHIVE_PARTS 32
+ARCHIVE_PARTS 48
+ARCHIVE_PARTS 64
+ARCHIVE_PARTS 80
+ARCHIVE_PARTS 96
+ARCHIVE_PARTS 112
+ARCHIVE_PARTS 128
+ARCHIVE_PARTS 144
+ARCHIVE_PARTS 160
+{
+  "status": "PASS",
+  "readback": [
+    {
+      "archive": "v3.4-formal-complete.zip",
+      "verified_source_files": 778,
+      "all_sha256_and_crc_match": true
+    },
+    {
+      "archive": "v3.4-formal-results-light.zip",
+      "verified_source_files": 522,
+      "all_sha256_and_crc_match": true
+    }
+  ],
+  "source_files": 778,
+  "native_fit_files": 256,
+  "source_bytes": 11406427751,
+  "archive_bytes": 11364497982,
+  "archive_sha256": "98f7c9157d87b8389b7934d8eef061c92262c557cc02dd11b6dffae98fd718eb",
+  "parts": 170,
+  "light_bytes": 13758438,
+  "elapsed_seconds": 200.28274631500244,
+  "completed_at": "2026-09-23T10:16:47.146367+00:00"
+}

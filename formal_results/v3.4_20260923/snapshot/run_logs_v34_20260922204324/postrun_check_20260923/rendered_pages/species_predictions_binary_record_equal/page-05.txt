@@ -1,0 +1,63 @@
+0.0 0.2 0.4 0.6 0.8 1.0
+Null
+binary
+record_equal
+Pr(HIGH)
+Stegastes partitus
+Amphiprion ocellaris
+Acanthochromis polyacanthus
+Embiotoca jacksoni
+Brachyistius frenatus
+Parambassis ranga
+Solea solea
+Solea senegalensis
+Microchirus variegatus
+Scophthalmus maximus
+Pleuronectes platessa
+Platichthys stellatus
+Platichthys flesus
+Limanda limanda
+Hippoglossus stenolepis
+Hippoglossus hippoglossus
+Paralichthys olivaceus
+Echeneis naucrates
+Trachurus trachurus
+Trachurus japonicus
+Trachinotus anak
+Seriola lalandi
+Seriola dumerili
+Caranx melampygus
+Xiphias gladius
+Toxotes jaculatrix
+Eleutheronema tetradactylum
+Lates japonicus
+Lates calcarifer
+Trichopodus trichopterus
+Betta splendens
+Channa striata
+Channa argus
+Anabas testudineus
+Monopterus albus
+Mastacembelus armatus
+Periophthalmus magnuspinnatus
+Mugilogobius chulae
+Knipowitschia caucasica
+Gobius niger
+Eucyclogobius newberryi
+Boleophthalmus pectinirostris
+0.0 0.2 0.4 0.6 0.8 1.0
+M1
+binary
+record_equal
+Pr(HIGH)
+0.0 0.2 0.4 0.6 0.8 1.0
+M2
+binary
+record_equal
+Pr(HIGH)
+0.0 0.2 0.4 0.6 0.8 1.0
+M3
+binary
+record_equal
+Pr(HIGH)
+Point: posterior Pr(HIGH) | line: 95% CrI | x: applicability warning

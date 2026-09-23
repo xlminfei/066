@@ -1,0 +1,3900 @@
+{
+  "run": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\runs\\v3_4_formal_20260922204324",
+  "selections": [
+    "v3.4",
+    "run_logs_v34_20260922204324",
+    "quantitative_metric_supplement_20260923"
+  ],
+  "files": [
+    {
+      "path": "quantitative_metric_supplement_20260923/ARTIFACT_INDEX.json",
+      "bytes": 3872,
+      "mtimeUtc": "2026-09-23T07:28:58.147Z"
+    },
+    {
+      "path": "quantitative_metric_supplement_20260923/binary_metric_source.csv",
+      "bytes": 9133,
+      "mtimeUtc": "2026-09-23T07:25:07.682Z"
+    },
+    {
+      "path": "quantitative_metric_supplement_20260923/ELPD_binary_comparison.png",
+      "bytes": 322532,
+      "mtimeUtc": "2026-09-23T07:25:10.236Z"
+    },
+    {
+      "path": "quantitative_metric_supplement_20260923/ELPD_binary_comparison.svg",
+      "bytes": 252216,
+      "mtimeUtc": "2026-09-23T07:25:10.286Z"
+    },
+    {
+      "path": "quantitative_metric_supplement_20260923/ELPD_binary_preview.png",
+      "bytes": 143095,
+      "mtimeUtc": "2026-09-23T07:25:10.418Z"
+    },
+    {
+      "path": "quantitative_metric_supplement_20260923/ELPD_comparison.png",
+      "bytes": 331397,
+      "mtimeUtc": "2026-09-23T07:25:08.476Z"
+    },
+    {
+      "path": "quantitative_metric_supplement_20260923/ELPD_comparison.svg",
+      "bytes": 240452,
+      "mtimeUtc": "2026-09-23T07:25:08.542Z"
+    },
+    {
+      "path": "quantitative_metric_supplement_20260923/ELPD_preview.png",
+      "bytes": 143122,
+      "mtimeUtc": "2026-09-23T07:25:08.699Z"
+    },
+    {
+      "path": "quantitative_metric_supplement_20260923/generation_exit.json",
+      "bytes": 77,
+      "mtimeUtc": "2026-09-23T07:25:11.015Z"
+    },
+    {
+      "path": "quantitative_metric_supplement_20260923/generation.log",
+      "bytes": 133,
+      "mtimeUtc": "2026-09-23T07:25:10.520Z"
+    },
+    {
+      "path": "quantitative_metric_supplement_20260923/INTERPRETATION_zh.md",
+      "bytes": 10752,
+      "mtimeUtc": "2026-09-23T07:27:56.100Z"
+    },
+    {
+      "path": "quantitative_metric_supplement_20260923/MAE_comparison.png",
+      "bytes": 330628,
+      "mtimeUtc": "2026-09-23T07:25:09.091Z"
+    },
+    {
+      "path": "quantitative_metric_supplement_20260923/MAE_comparison.svg",
+      "bytes": 248441,
+      "mtimeUtc": "2026-09-23T07:25:09.141Z"
+    },
+    {
+      "path": "quantitative_metric_supplement_20260923/MAE_preview.png",
+      "bytes": 144185,
+      "mtimeUtc": "2026-09-23T07:25:09.278Z"
+    },
+    {
+      "path": "quantitative_metric_supplement_20260923/make_metric_figures.R",
+      "bytes": 6920,
+      "mtimeUtc": "2026-09-23T07:25:06.190Z"
+    },
+    {
+      "path": "quantitative_metric_supplement_20260923/plot_validation.json",
+      "bytes": 722,
+      "mtimeUtc": "2026-09-23T07:25:10.497Z"
+    },
+    {
+      "path": "quantitative_metric_supplement_20260923/plotted_values.csv",
+      "bytes": 15722,
+      "mtimeUtc": "2026-09-23T07:25:10.427Z"
+    },
+    {
+      "path": "quantitative_metric_supplement_20260923/quantitative_metric_source.csv",
+      "bytes": 9252,
+      "mtimeUtc": "2026-09-23T07:25:07.670Z"
+    },
+    {
+      "path": "quantitative_metric_supplement_20260923/RMSE_comparison.png",
+      "bytes": 336788,
+      "mtimeUtc": "2026-09-23T07:25:09.662Z"
+    },
+    {
+      "path": "quantitative_metric_supplement_20260923/RMSE_comparison.svg",
+      "bytes": 261596,
+      "mtimeUtc": "2026-09-23T07:25:09.715Z"
+    },
+    {
+      "path": "quantitative_metric_supplement_20260923/RMSE_preview.png",
+      "bytes": 147596,
+      "mtimeUtc": "2026-09-23T07:25:09.849Z"
+    },
+    {
+      "path": "quantitative_metric_supplement_20260923/round1/ELPD_comparison.png",
+      "bytes": 356356,
+      "mtimeUtc": "2026-09-23T07:23:16.046Z"
+    },
+    {
+      "path": "quantitative_metric_supplement_20260923/round1/ELPD_comparison.svg",
+      "bytes": 255054,
+      "mtimeUtc": "2026-09-23T07:23:16.113Z"
+    },
+    {
+      "path": "quantitative_metric_supplement_20260923/round1/ELPD_preview.png",
+      "bytes": 153561,
+      "mtimeUtc": "2026-09-23T07:23:16.268Z"
+    },
+    {
+      "path": "quantitative_metric_supplement_20260923/round1/generation_exit.json",
+      "bytes": 77,
+      "mtimeUtc": "2026-09-23T07:23:18.066Z"
+    },
+    {
+      "path": "quantitative_metric_supplement_20260923/round1/generation.log",
+      "bytes": 107,
+      "mtimeUtc": "2026-09-23T07:23:17.524Z"
+    },
+    {
+      "path": "quantitative_metric_supplement_20260923/round1/MAE_comparison.png",
+      "bytes": 342190,
+      "mtimeUtc": "2026-09-23T07:23:16.653Z"
+    },
+    {
+      "path": "quantitative_metric_supplement_20260923/round1/MAE_comparison.svg",
+      "bytes": 256143,
+      "mtimeUtc": "2026-09-23T07:23:16.709Z"
+    },
+    {
+      "path": "quantitative_metric_supplement_20260923/round1/MAE_preview.png",
+      "bytes": 148687,
+      "mtimeUtc": "2026-09-23T07:23:16.851Z"
+    },
+    {
+      "path": "quantitative_metric_supplement_20260923/round1/make_metric_figures.R",
+      "bytes": 6090,
+      "mtimeUtc": "2026-09-23T07:23:04.593Z"
+    },
+    {
+      "path": "quantitative_metric_supplement_20260923/round1/plot_validation.json",
+      "bytes": 711,
+      "mtimeUtc": "2026-09-23T07:23:17.505Z"
+    },
+    {
+      "path": "quantitative_metric_supplement_20260923/round1/plotted_values.csv",
+      "bytes": 11764,
+      "mtimeUtc": "2026-09-23T07:23:17.432Z"
+    },
+    {
+      "path": "quantitative_metric_supplement_20260923/round1/quantitative_metric_source.csv",
+      "bytes": 9252,
+      "mtimeUtc": "2026-09-23T07:23:15.157Z"
+    },
+    {
+      "path": "quantitative_metric_supplement_20260923/round1/RMSE_comparison.png",
+      "bytes": 343683,
+      "mtimeUtc": "2026-09-23T07:23:17.239Z"
+    },
+    {
+      "path": "quantitative_metric_supplement_20260923/round1/RMSE_comparison.svg",
+      "bytes": 264388,
+      "mtimeUtc": "2026-09-23T07:23:17.290Z"
+    },
+    {
+      "path": "quantitative_metric_supplement_20260923/round1/RMSE_preview.png",
+      "bytes": 150432,
+      "mtimeUtc": "2026-09-23T07:23:17.425Z"
+    },
+    {
+      "path": "quantitative_metric_supplement_20260923/supplement_validation.json",
+      "bytes": 1530,
+      "mtimeUtc": "2026-09-23T07:27:56.102Z"
+    },
+    {
+      "path": "quantitative_metric_supplement_20260923/verification.log",
+      "bytes": 1532,
+      "mtimeUtc": "2026-09-23T07:27:56.136Z"
+    },
+    {
+      "path": "quantitative_metric_supplement_20260923/verify_and_write_interpretation.py",
+      "bytes": 11855,
+      "mtimeUtc": "2026-09-23T07:27:54.486Z"
+    },
+    {
+      "path": "quantitative_metric_supplement_20260923/visual_check.json",
+      "bytes": 550,
+      "mtimeUtc": "2026-09-23T07:28:58.124Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/01_build_exit.json",
+      "bytes": 370,
+      "mtimeUtc": "2026-09-22T12:44:50.874Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/01_build.log",
+      "bytes": 2263,
+      "mtimeUtc": "2026-09-22T12:44:50.808Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/02_environment_exit.json",
+      "bytes": 477,
+      "mtimeUtc": "2026-09-22T12:45:18.758Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/02_environment.log",
+      "bytes": 1853,
+      "mtimeUtc": "2026-09-22T12:45:16.338Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/03_regressions_exit.json",
+      "bytes": 469,
+      "mtimeUtc": "2026-09-22T12:46:35.662Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/03_regressions.log",
+      "bytes": 7719,
+      "mtimeUtc": "2026-09-22T12:46:35.251Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/04_preflight_exit.json",
+      "bytes": 491,
+      "mtimeUtc": "2026-09-22T12:46:39.706Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/04_preflight.log",
+      "bytes": 52,
+      "mtimeUtc": "2026-09-22T12:46:39.316Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/05_formal_all.log",
+      "bytes": 4678521,
+      "mtimeUtc": "2026-09-23T04:42:07.912Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/analysis.json",
+      "bytes": 1314,
+      "mtimeUtc": "2026-09-22T12:43:26.872Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/commit.txt",
+      "bytes": 41,
+      "mtimeUtc": "2026-09-22T12:43:27.657Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/container_created.json",
+      "bytes": 873,
+      "mtimeUtc": "2026-09-22T12:48:17.548Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/formal_process_exit.json",
+      "bytes": 60,
+      "mtimeUtc": "2026-09-23T04:42:16.636Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/frozen_source_inputs.json",
+      "bytes": 4916,
+      "mtimeUtc": "2026-09-22T12:44:26.220Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/initial_runtime_verification.json",
+      "bytes": 1663,
+      "mtimeUtc": "2026-09-22T12:48:53.914Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/launch_manifest.json",
+      "bytes": 3173,
+      "mtimeUtc": "2026-09-22T12:48:53.916Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/all_256_saved_diagnostics.csv",
+      "bytes": 81062,
+      "mtimeUtc": "2026-09-23T07:06:29.586Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/check_outputs_and_render_exit.json",
+      "bytes": 77,
+      "mtimeUtc": "2026-09-23T07:01:00.124Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/check_outputs_and_render.log",
+      "bytes": 3548,
+      "mtimeUtc": "2026-09-23T07:01:00.016Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/check_outputs_and_render.py",
+      "bytes": 12556,
+      "mtimeUtc": "2026-09-23T07:00:30.447Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/check_pdf_page_labels.log",
+      "bytes": 1368,
+      "mtimeUtc": "2026-09-23T07:05:19.777Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/check_pdf_page_labels.py",
+      "bytes": 1688,
+      "mtimeUtc": "2026-09-23T07:05:16.500Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/contact_calibration_bins_1.jpg",
+      "bytes": 338086,
+      "mtimeUtc": "2026-09-23T07:00:54.603Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/contact_quantitative_predicted_observed_1.jpg",
+      "bytes": 421801,
+      "mtimeUtc": "2026-09-23T07:00:55.461Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/contact_ROC_curves_1.jpg",
+      "bytes": 387345,
+      "mtimeUtc": "2026-09-23T07:00:55.326Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/contact_species_predictions_binary_record_equal_1.jpg",
+      "bytes": 498750,
+      "mtimeUtc": "2026-09-23T07:00:57.557Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/contact_species_predictions_binary_record_equal_2.jpg",
+      "bytes": 54720,
+      "mtimeUtc": "2026-09-23T07:00:57.598Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/contact_species_predictions_binary_species_equal_1.jpg",
+      "bytes": 499822,
+      "mtimeUtc": "2026-09-23T07:00:58.463Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/contact_species_predictions_binary_species_equal_2.jpg",
+      "bytes": 56049,
+      "mtimeUtc": "2026-09-23T07:00:58.509Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/contact_species_predictions_joint_bb_record_equal_1.jpg",
+      "bytes": 631724,
+      "mtimeUtc": "2026-09-23T07:00:58.911Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/contact_species_predictions_joint_bb_record_equal_2.jpg",
+      "bytes": 66365,
+      "mtimeUtc": "2026-09-23T07:00:58.953Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/contact_species_predictions_joint_bb_species_equal_1.jpg",
+      "bytes": 628071,
+      "mtimeUtc": "2026-09-23T07:00:59.587Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/contact_species_predictions_joint_bb_species_equal_2.jpg",
+      "bytes": 67305,
+      "mtimeUtc": "2026-09-23T07:00:59.628Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/contact_training_ppc_summary_1.jpg",
+      "bytes": 279383,
+      "mtimeUtc": "2026-09-23T07:00:56.043Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/contact_training_ppc_summary_2.jpg",
+      "bytes": 281194,
+      "mtimeUtc": "2026-09-23T07:00:56.500Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/formal_container_exit_state.json",
+      "bytes": 267,
+      "mtimeUtc": "2026-09-23T07:04:16.316Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/fresh_receipt_and_diagnostic_check.json",
+      "bytes": 442,
+      "mtimeUtc": "2026-09-23T07:06:29.594Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/pdf_check.json",
+      "bytes": 31710,
+      "mtimeUtc": "2026-09-23T07:00:59.979Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/pdf_page_label_check.json",
+      "bytes": 1365,
+      "mtimeUtc": "2026-09-23T07:05:19.740Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/postrun_review_summary.json",
+      "bytes": 503,
+      "mtimeUtc": "2026-09-23T07:08:02.302Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/PPC_review_flags.csv",
+      "bytes": 3978,
+      "mtimeUtc": "2026-09-23T07:00:59.976Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/PPC_review_flags.json",
+      "bytes": 9138,
+      "mtimeUtc": "2026-09-23T07:00:59.975Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/prediction_variation.json",
+      "bytes": 3465,
+      "mtimeUtc": "2026-09-23T07:00:59.980Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/read_current_diagnostics_exit.json",
+      "bytes": 77,
+      "mtimeUtc": "2026-09-23T07:06:30.293Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/read_current_diagnostics.log",
+      "bytes": 341,
+      "mtimeUtc": "2026-09-23T07:06:29.597Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/read_current_diagnostics.R",
+      "bytes": 1933,
+      "mtimeUtc": "2026-09-23T06:57:58.173Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/calibration_bins/page-01.txt",
+      "bytes": 159,
+      "mtimeUtc": "2026-09-23T07:00:54.450Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/calibration_bins/page-02.txt",
+      "bytes": 160,
+      "mtimeUtc": "2026-09-23T07:00:54.452Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/calibration_bins/page-03.txt",
+      "bytes": 158,
+      "mtimeUtc": "2026-09-23T07:00:54.453Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/calibration_bins/page-04.txt",
+      "bytes": 159,
+      "mtimeUtc": "2026-09-23T07:00:54.454Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/calibration_bins/page-05.txt",
+      "bytes": 160,
+      "mtimeUtc": "2026-09-23T07:00:54.455Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/calibration_bins/page-06.txt",
+      "bytes": 161,
+      "mtimeUtc": "2026-09-23T07:00:54.456Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/calibration_bins/page-07.txt",
+      "bytes": 159,
+      "mtimeUtc": "2026-09-23T07:00:54.457Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/calibration_bins/page-08.txt",
+      "bytes": 160,
+      "mtimeUtc": "2026-09-23T07:00:54.458Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/calibration_bins/page-1.png",
+      "bytes": 40198,
+      "mtimeUtc": "2026-09-23T07:00:53.783Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/calibration_bins/page-2.png",
+      "bytes": 38914,
+      "mtimeUtc": "2026-09-23T07:00:53.866Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/calibration_bins/page-3.png",
+      "bytes": 38881,
+      "mtimeUtc": "2026-09-23T07:00:53.955Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/calibration_bins/page-4.png",
+      "bytes": 38960,
+      "mtimeUtc": "2026-09-23T07:00:54.040Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/calibration_bins/page-5.png",
+      "bytes": 39647,
+      "mtimeUtc": "2026-09-23T07:00:54.126Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/calibration_bins/page-6.png",
+      "bytes": 36912,
+      "mtimeUtc": "2026-09-23T07:00:54.211Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/calibration_bins/page-7.png",
+      "bytes": 37436,
+      "mtimeUtc": "2026-09-23T07:00:54.296Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/calibration_bins/page-8.png",
+      "bytes": 38895,
+      "mtimeUtc": "2026-09-23T07:00:54.380Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/calibration_bins/render_stderr.txt",
+      "bytes": 94,
+      "mtimeUtc": "2026-09-23T07:00:54.389Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/quantitative_predicted_observed/page-01.txt",
+      "bytes": 818,
+      "mtimeUtc": "2026-09-23T07:00:55.133Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/quantitative_predicted_observed/page-02.txt",
+      "bytes": 813,
+      "mtimeUtc": "2026-09-23T07:00:55.135Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/quantitative_predicted_observed/page-03.txt",
+      "bytes": 821,
+      "mtimeUtc": "2026-09-23T07:00:55.135Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/quantitative_predicted_observed/page-04.txt",
+      "bytes": 814,
+      "mtimeUtc": "2026-09-23T07:00:55.136Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/quantitative_predicted_observed/page-05.txt",
+      "bytes": 813,
+      "mtimeUtc": "2026-09-23T07:00:55.138Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/quantitative_predicted_observed/page-06.txt",
+      "bytes": 812,
+      "mtimeUtc": "2026-09-23T07:00:55.140Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/quantitative_predicted_observed/page-07.txt",
+      "bytes": 820,
+      "mtimeUtc": "2026-09-23T07:00:55.140Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/quantitative_predicted_observed/page-08.txt",
+      "bytes": 813,
+      "mtimeUtc": "2026-09-23T07:00:55.141Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/quantitative_predicted_observed/page-1.png",
+      "bytes": 69775,
+      "mtimeUtc": "2026-09-23T07:00:53.527Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/quantitative_predicted_observed/page-2.png",
+      "bytes": 73263,
+      "mtimeUtc": "2026-09-23T07:00:53.693Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/quantitative_predicted_observed/page-3.png",
+      "bytes": 70095,
+      "mtimeUtc": "2026-09-23T07:00:53.855Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/quantitative_predicted_observed/page-4.png",
+      "bytes": 72753,
+      "mtimeUtc": "2026-09-23T07:00:54.030Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/quantitative_predicted_observed/page-5.png",
+      "bytes": 70167,
+      "mtimeUtc": "2026-09-23T07:00:54.192Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/quantitative_predicted_observed/page-6.png",
+      "bytes": 73109,
+      "mtimeUtc": "2026-09-23T07:00:54.358Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/quantitative_predicted_observed/page-7.png",
+      "bytes": 69814,
+      "mtimeUtc": "2026-09-23T07:00:54.518Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/quantitative_predicted_observed/page-8.png",
+      "bytes": 73176,
+      "mtimeUtc": "2026-09-23T07:00:54.682Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/quantitative_predicted_observed/render_stderr.txt",
+      "bytes": 94,
+      "mtimeUtc": "2026-09-23T07:00:54.739Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/ROC_curves/page-01.txt",
+      "bytes": 236,
+      "mtimeUtc": "2026-09-23T07:00:55.140Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/ROC_curves/page-02.txt",
+      "bytes": 237,
+      "mtimeUtc": "2026-09-23T07:00:55.140Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/ROC_curves/page-03.txt",
+      "bytes": 239,
+      "mtimeUtc": "2026-09-23T07:00:55.141Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/ROC_curves/page-04.txt",
+      "bytes": 240,
+      "mtimeUtc": "2026-09-23T07:00:55.143Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/ROC_curves/page-05.txt",
+      "bytes": 237,
+      "mtimeUtc": "2026-09-23T07:00:55.144Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/ROC_curves/page-06.txt",
+      "bytes": 238,
+      "mtimeUtc": "2026-09-23T07:00:55.145Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/ROC_curves/page-07.txt",
+      "bytes": 240,
+      "mtimeUtc": "2026-09-23T07:00:55.146Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/ROC_curves/page-08.txt",
+      "bytes": 241,
+      "mtimeUtc": "2026-09-23T07:00:55.147Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/ROC_curves/page-1.png",
+      "bytes": 73340,
+      "mtimeUtc": "2026-09-23T07:00:53.844Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/ROC_curves/page-2.png",
+      "bytes": 73310,
+      "mtimeUtc": "2026-09-23T07:00:53.994Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/ROC_curves/page-3.png",
+      "bytes": 72760,
+      "mtimeUtc": "2026-09-23T07:00:54.144Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/ROC_curves/page-4.png",
+      "bytes": 74417,
+      "mtimeUtc": "2026-09-23T07:00:54.297Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/ROC_curves/page-5.png",
+      "bytes": 67716,
+      "mtimeUtc": "2026-09-23T07:00:54.438Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/ROC_curves/page-6.png",
+      "bytes": 67172,
+      "mtimeUtc": "2026-09-23T07:00:54.580Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/ROC_curves/page-7.png",
+      "bytes": 69562,
+      "mtimeUtc": "2026-09-23T07:00:54.730Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/ROC_curves/page-8.png",
+      "bytes": 69256,
+      "mtimeUtc": "2026-09-23T07:00:54.878Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/ROC_curves/render_stderr.txt",
+      "bytes": 94,
+      "mtimeUtc": "2026-09-23T07:00:54.899Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/species_predictions_binary_record_equal/page-01.txt",
+      "bytes": 1158,
+      "mtimeUtc": "2026-09-23T07:00:57.245Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/species_predictions_binary_record_equal/page-02.txt",
+      "bytes": 1201,
+      "mtimeUtc": "2026-09-23T07:00:57.246Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/species_predictions_binary_record_equal/page-03.txt",
+      "bytes": 1210,
+      "mtimeUtc": "2026-09-23T07:00:57.247Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/species_predictions_binary_record_equal/page-04.txt",
+      "bytes": 1165,
+      "mtimeUtc": "2026-09-23T07:00:57.248Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/species_predictions_binary_record_equal/page-05.txt",
+      "bytes": 1201,
+      "mtimeUtc": "2026-09-23T07:00:57.249Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/species_predictions_binary_record_equal/page-06.txt",
+      "bytes": 1257,
+      "mtimeUtc": "2026-09-23T07:00:57.250Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/species_predictions_binary_record_equal/page-07.txt",
+      "bytes": 1203,
+      "mtimeUtc": "2026-09-23T07:00:57.251Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/species_predictions_binary_record_equal/page-08.txt",
+      "bytes": 1203,
+      "mtimeUtc": "2026-09-23T07:00:57.252Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/species_predictions_binary_record_equal/page-09.txt",
+      "bytes": 941,
+      "mtimeUtc": "2026-09-23T07:00:57.253Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/species_predictions_binary_record_equal/page-1.png",
+      "bytes": 73279,
+      "mtimeUtc": "2026-09-23T07:00:55.534Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/species_predictions_binary_record_equal/page-2.png",
+      "bytes": 73502,
+      "mtimeUtc": "2026-09-23T07:00:55.736Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/species_predictions_binary_record_equal/page-3.png",
+      "bytes": 74631,
+      "mtimeUtc": "2026-09-23T07:00:55.939Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/species_predictions_binary_record_equal/page-4.png",
+      "bytes": 72337,
+      "mtimeUtc": "2026-09-23T07:00:56.142Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/species_predictions_binary_record_equal/page-5.png",
+      "bytes": 72048,
+      "mtimeUtc": "2026-09-23T07:00:56.338Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/species_predictions_binary_record_equal/page-6.png",
+      "bytes": 73639,
+      "mtimeUtc": "2026-09-23T07:00:56.535Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/species_predictions_binary_record_equal/page-7.png",
+      "bytes": 70957,
+      "mtimeUtc": "2026-09-23T07:00:56.729Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/species_predictions_binary_record_equal/page-8.png",
+      "bytes": 73431,
+      "mtimeUtc": "2026-09-23T07:00:56.926Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/species_predictions_binary_record_equal/page-9.png",
+      "bytes": 57672,
+      "mtimeUtc": "2026-09-23T07:00:57.100Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/species_predictions_binary_record_equal/render_stderr.txt",
+      "bytes": 94,
+      "mtimeUtc": "2026-09-23T07:00:57.111Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/species_predictions_binary_species_equal/page-01.txt",
+      "bytes": 1162,
+      "mtimeUtc": "2026-09-23T07:00:58.155Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/species_predictions_binary_species_equal/page-02.txt",
+      "bytes": 1205,
+      "mtimeUtc": "2026-09-23T07:00:58.156Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/species_predictions_binary_species_equal/page-03.txt",
+      "bytes": 1214,
+      "mtimeUtc": "2026-09-23T07:00:58.158Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/species_predictions_binary_species_equal/page-04.txt",
+      "bytes": 1169,
+      "mtimeUtc": "2026-09-23T07:00:58.159Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/species_predictions_binary_species_equal/page-05.txt",
+      "bytes": 1205,
+      "mtimeUtc": "2026-09-23T07:00:58.160Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/species_predictions_binary_species_equal/page-06.txt",
+      "bytes": 1261,
+      "mtimeUtc": "2026-09-23T07:00:58.161Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/species_predictions_binary_species_equal/page-07.txt",
+      "bytes": 1207,
+      "mtimeUtc": "2026-09-23T07:00:58.162Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/species_predictions_binary_species_equal/page-08.txt",
+      "bytes": 1207,
+      "mtimeUtc": "2026-09-23T07:00:58.163Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/species_predictions_binary_species_equal/page-09.txt",
+      "bytes": 945,
+      "mtimeUtc": "2026-09-23T07:00:58.164Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/species_predictions_binary_species_equal/page-1.png",
+      "bytes": 73581,
+      "mtimeUtc": "2026-09-23T07:00:56.439Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/species_predictions_binary_species_equal/page-2.png",
+      "bytes": 74086,
+      "mtimeUtc": "2026-09-23T07:00:56.642Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/species_predictions_binary_species_equal/page-3.png",
+      "bytes": 75079,
+      "mtimeUtc": "2026-09-23T07:00:56.845Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/species_predictions_binary_species_equal/page-4.png",
+      "bytes": 72875,
+      "mtimeUtc": "2026-09-23T07:00:57.046Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/species_predictions_binary_species_equal/page-5.png",
+      "bytes": 72599,
+      "mtimeUtc": "2026-09-23T07:00:57.245Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/species_predictions_binary_species_equal/page-6.png",
+      "bytes": 74354,
+      "mtimeUtc": "2026-09-23T07:00:57.443Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/species_predictions_binary_species_equal/page-7.png",
+      "bytes": 71369,
+      "mtimeUtc": "2026-09-23T07:00:57.639Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/species_predictions_binary_species_equal/page-8.png",
+      "bytes": 73871,
+      "mtimeUtc": "2026-09-23T07:00:57.833Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/species_predictions_binary_species_equal/page-9.png",
+      "bytes": 58183,
+      "mtimeUtc": "2026-09-23T07:00:58.008Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/species_predictions_binary_species_equal/render_stderr.txt",
+      "bytes": 94,
+      "mtimeUtc": "2026-09-23T07:00:58.019Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/species_predictions_joint_bb_record_equal/page-01.txt",
+      "bytes": 1181,
+      "mtimeUtc": "2026-09-23T07:00:58.594Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/species_predictions_joint_bb_record_equal/page-02.txt",
+      "bytes": 1224,
+      "mtimeUtc": "2026-09-23T07:00:58.595Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/species_predictions_joint_bb_record_equal/page-03.txt",
+      "bytes": 1233,
+      "mtimeUtc": "2026-09-23T07:00:58.597Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/species_predictions_joint_bb_record_equal/page-04.txt",
+      "bytes": 1188,
+      "mtimeUtc": "2026-09-23T07:00:58.598Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/species_predictions_joint_bb_record_equal/page-05.txt",
+      "bytes": 1224,
+      "mtimeUtc": "2026-09-23T07:00:58.599Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/species_predictions_joint_bb_record_equal/page-06.txt",
+      "bytes": 1280,
+      "mtimeUtc": "2026-09-23T07:00:58.600Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/species_predictions_joint_bb_record_equal/page-07.txt",
+      "bytes": 1226,
+      "mtimeUtc": "2026-09-23T07:00:58.601Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/species_predictions_joint_bb_record_equal/page-08.txt",
+      "bytes": 1226,
+      "mtimeUtc": "2026-09-23T07:00:58.601Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/species_predictions_joint_bb_record_equal/page-09.txt",
+      "bytes": 964,
+      "mtimeUtc": "2026-09-23T07:00:58.602Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/species_predictions_joint_bb_record_equal/page-1.png",
+      "bytes": 88518,
+      "mtimeUtc": "2026-09-23T07:00:56.677Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/species_predictions_joint_bb_record_equal/page-2.png",
+      "bytes": 88725,
+      "mtimeUtc": "2026-09-23T07:00:56.903Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/species_predictions_joint_bb_record_equal/page-3.png",
+      "bytes": 89703,
+      "mtimeUtc": "2026-09-23T07:00:57.130Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/species_predictions_joint_bb_record_equal/page-4.png",
+      "bytes": 85392,
+      "mtimeUtc": "2026-09-23T07:00:57.353Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/species_predictions_joint_bb_record_equal/page-5.png",
+      "bytes": 84612,
+      "mtimeUtc": "2026-09-23T07:00:57.576Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/species_predictions_joint_bb_record_equal/page-6.png",
+      "bytes": 86083,
+      "mtimeUtc": "2026-09-23T07:00:57.797Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/species_predictions_joint_bb_record_equal/page-7.png",
+      "bytes": 83443,
+      "mtimeUtc": "2026-09-23T07:00:58.021Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/species_predictions_joint_bb_record_equal/page-8.png",
+      "bytes": 84928,
+      "mtimeUtc": "2026-09-23T07:00:58.240Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/species_predictions_joint_bb_record_equal/page-9.png",
+      "bytes": 66829,
+      "mtimeUtc": "2026-09-23T07:00:58.434Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/species_predictions_joint_bb_record_equal/render_stderr.txt",
+      "bytes": 94,
+      "mtimeUtc": "2026-09-23T07:00:58.445Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/species_predictions_joint_bb_species_equal/page-01.txt",
+      "bytes": 1185,
+      "mtimeUtc": "2026-09-23T07:00:59.272Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/species_predictions_joint_bb_species_equal/page-02.txt",
+      "bytes": 1228,
+      "mtimeUtc": "2026-09-23T07:00:59.273Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/species_predictions_joint_bb_species_equal/page-03.txt",
+      "bytes": 1237,
+      "mtimeUtc": "2026-09-23T07:00:59.274Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/species_predictions_joint_bb_species_equal/page-04.txt",
+      "bytes": 1192,
+      "mtimeUtc": "2026-09-23T07:00:59.275Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/species_predictions_joint_bb_species_equal/page-05.txt",
+      "bytes": 1228,
+      "mtimeUtc": "2026-09-23T07:00:59.276Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/species_predictions_joint_bb_species_equal/page-06.txt",
+      "bytes": 1284,
+      "mtimeUtc": "2026-09-23T07:00:59.277Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/species_predictions_joint_bb_species_equal/page-07.txt",
+      "bytes": 1230,
+      "mtimeUtc": "2026-09-23T07:00:59.278Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/species_predictions_joint_bb_species_equal/page-08.txt",
+      "bytes": 1230,
+      "mtimeUtc": "2026-09-23T07:00:59.279Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/species_predictions_joint_bb_species_equal/page-09.txt",
+      "bytes": 968,
+      "mtimeUtc": "2026-09-23T07:00:59.280Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/species_predictions_joint_bb_species_equal/page-1.png",
+      "bytes": 88815,
+      "mtimeUtc": "2026-09-23T07:00:57.374Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/species_predictions_joint_bb_species_equal/page-2.png",
+      "bytes": 89057,
+      "mtimeUtc": "2026-09-23T07:00:57.602Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/species_predictions_joint_bb_species_equal/page-3.png",
+      "bytes": 90050,
+      "mtimeUtc": "2026-09-23T07:00:57.825Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/species_predictions_joint_bb_species_equal/page-4.png",
+      "bytes": 85522,
+      "mtimeUtc": "2026-09-23T07:00:58.050Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/species_predictions_joint_bb_species_equal/page-5.png",
+      "bytes": 84737,
+      "mtimeUtc": "2026-09-23T07:00:58.271Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/species_predictions_joint_bb_species_equal/page-6.png",
+      "bytes": 86074,
+      "mtimeUtc": "2026-09-23T07:00:58.495Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/species_predictions_joint_bb_species_equal/page-7.png",
+      "bytes": 83821,
+      "mtimeUtc": "2026-09-23T07:00:58.716Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/species_predictions_joint_bb_species_equal/page-8.png",
+      "bytes": 85084,
+      "mtimeUtc": "2026-09-23T07:00:58.932Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/species_predictions_joint_bb_species_equal/page-9.png",
+      "bytes": 67036,
+      "mtimeUtc": "2026-09-23T07:00:59.125Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/species_predictions_joint_bb_species_equal/render_stderr.txt",
+      "bytes": 94,
+      "mtimeUtc": "2026-09-23T07:00:59.136Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/training_ppc_summary/page-01.png",
+      "bytes": 39083,
+      "mtimeUtc": "2026-09-23T07:00:53.296Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/training_ppc_summary/page-01.txt",
+      "bytes": 633,
+      "mtimeUtc": "2026-09-23T07:00:55.212Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/training_ppc_summary/page-02.png",
+      "bytes": 37920,
+      "mtimeUtc": "2026-09-23T07:00:53.401Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/training_ppc_summary/page-02.txt",
+      "bytes": 628,
+      "mtimeUtc": "2026-09-23T07:00:55.213Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/training_ppc_summary/page-03.png",
+      "bytes": 37329,
+      "mtimeUtc": "2026-09-23T07:00:53.506Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/training_ppc_summary/page-03.txt",
+      "bytes": 623,
+      "mtimeUtc": "2026-09-23T07:00:55.214Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/training_ppc_summary/page-04.png",
+      "bytes": 37235,
+      "mtimeUtc": "2026-09-23T07:00:53.610Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/training_ppc_summary/page-04.txt",
+      "bytes": 627,
+      "mtimeUtc": "2026-09-23T07:00:55.215Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/training_ppc_summary/page-05.png",
+      "bytes": 35801,
+      "mtimeUtc": "2026-09-23T07:00:53.712Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/training_ppc_summary/page-05.txt",
+      "bytes": 619,
+      "mtimeUtc": "2026-09-23T07:00:55.215Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/training_ppc_summary/page-06.png",
+      "bytes": 39342,
+      "mtimeUtc": "2026-09-23T07:00:53.819Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/training_ppc_summary/page-06.txt",
+      "bytes": 634,
+      "mtimeUtc": "2026-09-23T07:00:55.217Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/training_ppc_summary/page-07.png",
+      "bytes": 38167,
+      "mtimeUtc": "2026-09-23T07:00:53.925Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/training_ppc_summary/page-07.txt",
+      "bytes": 629,
+      "mtimeUtc": "2026-09-23T07:00:55.218Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/training_ppc_summary/page-08.png",
+      "bytes": 39082,
+      "mtimeUtc": "2026-09-23T07:00:54.037Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/training_ppc_summary/page-08.txt",
+      "bytes": 633,
+      "mtimeUtc": "2026-09-23T07:00:55.219Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/training_ppc_summary/page-09.png",
+      "bytes": 40732,
+      "mtimeUtc": "2026-09-23T07:00:54.146Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/training_ppc_summary/page-09.txt",
+      "bytes": 649,
+      "mtimeUtc": "2026-09-23T07:00:55.220Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/training_ppc_summary/page-10.png",
+      "bytes": 39940,
+      "mtimeUtc": "2026-09-23T07:00:54.254Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/training_ppc_summary/page-10.txt",
+      "bytes": 644,
+      "mtimeUtc": "2026-09-23T07:00:55.221Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/training_ppc_summary/page-11.png",
+      "bytes": 37977,
+      "mtimeUtc": "2026-09-23T07:00:54.361Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/training_ppc_summary/page-11.txt",
+      "bytes": 650,
+      "mtimeUtc": "2026-09-23T07:00:55.222Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/training_ppc_summary/page-12.png",
+      "bytes": 38325,
+      "mtimeUtc": "2026-09-23T07:00:54.468Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/training_ppc_summary/page-12.txt",
+      "bytes": 638,
+      "mtimeUtc": "2026-09-23T07:00:55.223Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/training_ppc_summary/page-13.png",
+      "bytes": 41061,
+      "mtimeUtc": "2026-09-23T07:00:54.577Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/training_ppc_summary/page-13.txt",
+      "bytes": 647,
+      "mtimeUtc": "2026-09-23T07:00:55.224Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/training_ppc_summary/page-14.png",
+      "bytes": 37689,
+      "mtimeUtc": "2026-09-23T07:00:54.680Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/training_ppc_summary/page-14.txt",
+      "bytes": 632,
+      "mtimeUtc": "2026-09-23T07:00:55.225Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/training_ppc_summary/page-15.png",
+      "bytes": 39877,
+      "mtimeUtc": "2026-09-23T07:00:54.788Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/training_ppc_summary/page-15.txt",
+      "bytes": 642,
+      "mtimeUtc": "2026-09-23T07:00:55.225Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/training_ppc_summary/page-16.png",
+      "bytes": 41141,
+      "mtimeUtc": "2026-09-23T07:00:54.898Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/training_ppc_summary/page-16.txt",
+      "bytes": 651,
+      "mtimeUtc": "2026-09-23T07:00:55.227Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/rendered_pages/training_ppc_summary/render_stderr.txt",
+      "bytes": 94,
+      "mtimeUtc": "2026-09-23T07:00:54.936Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/RUN_COMPLETION_REVIEW_zh.md",
+      "bytes": 12474,
+      "mtimeUtc": "2026-09-23T07:11:42.232Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/structural_output_check.json",
+      "bytes": 7725,
+      "mtimeUtc": "2026-09-23T07:00:59.982Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/visual_review.json",
+      "bytes": 1422,
+      "mtimeUtc": "2026-09-23T07:03:36.358Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/postrun_check_20260923/warning_lines.json",
+      "bytes": 2,
+      "mtimeUtc": "2026-09-23T07:00:59.981Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/prelaunch_validation.json",
+      "bytes": 2869,
+      "mtimeUtc": "2026-09-22T12:47:49.540Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/run_formal.sh",
+      "bytes": 366,
+      "mtimeUtc": "2026-09-22T12:44:26.224Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/run_prelaunch_checks.ps1",
+      "bytes": 1708,
+      "mtimeUtc": "2026-09-22T12:44:26.223Z"
+    },
+    {
+      "path": "run_logs_v34_20260922204324/RUN_v3_4_zh.md",
+      "bytes": 2570,
+      "mtimeUtc": "2026-09-22T12:49:45.176Z"
+    },
+    {
+      "path": "v3.4/config/analysis.json",
+      "bytes": 1314,
+      "mtimeUtc": "2026-09-22T12:43:26.872Z"
+    },
+    {
+      "path": "v3.4/Dockerfile",
+      "bytes": 912,
+      "mtimeUtc": "2026-09-22T12:43:26.845Z"
+    },
+    {
+      "path": "v3.4/docs/CHANGE_DETAILS_v3_4_zh.md",
+      "bytes": 4845,
+      "mtimeUtc": "2026-09-22T12:43:26.874Z"
+    },
+    {
+      "path": "v3.4/docs/COMPLETE_ARCHIVE_zh.md",
+      "bytes": 1007,
+      "mtimeUtc": "2026-09-22T12:43:26.875Z"
+    },
+    {
+      "path": "v3.4/docs/FILE_CHANGE_INDEX.csv",
+      "bytes": 17757,
+      "mtimeUtc": "2026-09-22T12:43:26.882Z"
+    },
+    {
+      "path": "v3.4/docs/PIPELINE_v3_4_zh.md",
+      "bytes": 1964,
+      "mtimeUtc": "2026-09-22T12:43:26.883Z"
+    },
+    {
+      "path": "v3.4/docs/reproduction_ubuntu.md",
+      "bytes": 1716,
+      "mtimeUtc": "2026-09-22T12:43:26.886Z"
+    },
+    {
+      "path": "v3.4/docs/REQUEST_SCOPE_zh.md",
+      "bytes": 1183,
+      "mtimeUtc": "2026-09-22T12:43:26.884Z"
+    },
+    {
+      "path": "v3.4/figures/calibration_bins.pdf",
+      "bytes": 19705,
+      "mtimeUtc": "2026-09-23T04:22:21.435Z"
+    },
+    {
+      "path": "v3.4/figures/quantitative_predicted_observed.pdf",
+      "bytes": 120681,
+      "mtimeUtc": "2026-09-23T04:22:22.732Z"
+    },
+    {
+      "path": "v3.4/figures/ROC_curves.pdf",
+      "bytes": 16330,
+      "mtimeUtc": "2026-09-23T04:22:21.345Z"
+    },
+    {
+      "path": "v3.4/figures/species_prediction_plot_source.csv",
+      "bytes": 1516624,
+      "mtimeUtc": "2026-09-23T04:22:22.402Z"
+    },
+    {
+      "path": "v3.4/figures/species_predictions_binary_record_equal.pdf",
+      "bytes": 123371,
+      "mtimeUtc": "2026-09-23T04:22:21.786Z"
+    },
+    {
+      "path": "v3.4/figures/species_predictions_binary_species_equal.pdf",
+      "bytes": 123289,
+      "mtimeUtc": "2026-09-23T04:22:21.916Z"
+    },
+    {
+      "path": "v3.4/figures/species_predictions_joint_bb_record_equal.pdf",
+      "bytes": 135191,
+      "mtimeUtc": "2026-09-23T04:22:22.058Z"
+    },
+    {
+      "path": "v3.4/figures/species_predictions_joint_bb_species_equal.pdf",
+      "bytes": 135070,
+      "mtimeUtc": "2026-09-23T04:22:22.201Z"
+    },
+    {
+      "path": "v3.4/figures/training_ppc_summary.pdf",
+      "bytes": 35983,
+      "mtimeUtc": "2026-09-22T14:00:18.345Z"
+    },
+    {
+      "path": "v3.4/input/contract.json",
+      "bytes": 735,
+      "mtimeUtc": "2026-09-22T12:43:26.889Z"
+    },
+    {
+      "path": "v3.4/input/observations.csv",
+      "bytes": 15730,
+      "mtimeUtc": "2026-09-22T12:43:26.891Z"
+    },
+    {
+      "path": "v3.4/input/sites.csv",
+      "bytes": 16905,
+      "mtimeUtc": "2026-09-22T12:43:26.893Z"
+    },
+    {
+      "path": "v3.4/provenance/ARTIFACT_INDEX.csv",
+      "bytes": 34889,
+      "mtimeUtc": "2026-09-22T12:43:26.895Z"
+    },
+    {
+      "path": "v3.4/provenance/formal_status.json",
+      "bytes": 409,
+      "mtimeUtc": "2026-09-22T12:43:26.896Z"
+    },
+    {
+      "path": "v3.4/provenance/runtime_spec.json",
+      "bytes": 779,
+      "mtimeUtc": "2026-09-22T12:43:26.897Z"
+    },
+    {
+      "path": "v3.4/provenance/validation_summary.json",
+      "bytes": 1718,
+      "mtimeUtc": "2026-09-22T12:43:26.899Z"
+    },
+    {
+      "path": "v3.4/R/applicability.R",
+      "bytes": 3597,
+      "mtimeUtc": "2026-09-22T12:43:26.846Z"
+    },
+    {
+      "path": "v3.4/R/audit_run.R",
+      "bytes": 10250,
+      "mtimeUtc": "2026-09-22T12:43:26.848Z"
+    },
+    {
+      "path": "v3.4/R/bootstrap.R",
+      "bytes": 1122,
+      "mtimeUtc": "2026-09-22T12:43:26.849Z"
+    },
+    {
+      "path": "v3.4/R/cache_io.R",
+      "bytes": 6792,
+      "mtimeUtc": "2026-09-22T12:43:26.850Z"
+    },
+    {
+      "path": "v3.4/R/comparison.R",
+      "bytes": 7114,
+      "mtimeUtc": "2026-09-22T12:43:26.851Z"
+    },
+    {
+      "path": "v3.4/R/config.R",
+      "bytes": 5808,
+      "mtimeUtc": "2026-09-22T12:43:26.852Z"
+    },
+    {
+      "path": "v3.4/R/cross_validation.R",
+      "bytes": 13689,
+      "mtimeUtc": "2026-09-22T12:43:26.854Z"
+    },
+    {
+      "path": "v3.4/R/data_encoding.R",
+      "bytes": 14243,
+      "mtimeUtc": "2026-09-22T12:43:26.855Z"
+    },
+    {
+      "path": "v3.4/R/fitting.R",
+      "bytes": 9798,
+      "mtimeUtc": "2026-09-22T12:43:26.855Z"
+    },
+    {
+      "path": "v3.4/R/metrics.R",
+      "bytes": 11065,
+      "mtimeUtc": "2026-09-22T12:43:26.857Z"
+    },
+    {
+      "path": "v3.4/R/plotting.R",
+      "bytes": 5861,
+      "mtimeUtc": "2026-09-22T12:43:26.858Z"
+    },
+    {
+      "path": "v3.4/R/ppc.R",
+      "bytes": 2797,
+      "mtimeUtc": "2026-09-22T12:43:26.859Z"
+    },
+    {
+      "path": "v3.4/R/prediction_audit.R",
+      "bytes": 23300,
+      "mtimeUtc": "2026-09-22T12:43:26.861Z"
+    },
+    {
+      "path": "v3.4/R/prediction.R",
+      "bytes": 7675,
+      "mtimeUtc": "2026-09-22T12:43:26.861Z"
+    },
+    {
+      "path": "v3.4/R/provenance.R",
+      "bytes": 2388,
+      "mtimeUtc": "2026-09-22T12:43:26.863Z"
+    },
+    {
+      "path": "v3.4/R/quantitative_diagnostics.R",
+      "bytes": 5215,
+      "mtimeUtc": "2026-09-22T12:43:26.864Z"
+    },
+    {
+      "path": "v3.4/R/reporting.R",
+      "bytes": 6602,
+      "mtimeUtc": "2026-09-22T12:43:26.866Z"
+    },
+    {
+      "path": "v3.4/R/weights.R",
+      "bytes": 2244,
+      "mtimeUtc": "2026-09-22T12:43:26.867Z"
+    },
+    {
+      "path": "v3.4/R/workflow.R",
+      "bytes": 10385,
+      "mtimeUtc": "2026-09-22T12:43:26.868Z"
+    },
+    {
+      "path": "v3.4/README.md",
+      "bytes": 1150,
+      "mtimeUtc": "2026-09-22T12:43:26.869Z"
+    },
+    {
+      "path": "v3.4/renv.lock",
+      "bytes": 178662,
+      "mtimeUtc": "2026-09-22T12:43:26.901Z"
+    },
+    {
+      "path": "v3.4/reports/REPORT_v3_4.md",
+      "bytes": 104700,
+      "mtimeUtc": "2026-09-23T04:22:22.858Z"
+    },
+    {
+      "path": "v3.4/results/calibration_bins.csv",
+      "bytes": 15556,
+      "mtimeUtc": "2026-09-23T04:20:06.270Z"
+    },
+    {
+      "path": "v3.4/results/cv_fold_metrics.csv",
+      "bytes": 107422,
+      "mtimeUtc": "2026-09-23T03:26:12.777Z"
+    },
+    {
+      "path": "v3.4/results/cv_metrics_summary.csv",
+      "bytes": 16916,
+      "mtimeUtc": "2026-09-23T03:26:14.572Z"
+    },
+    {
+      "path": "v3.4/results/cv_record_predictions.csv",
+      "bytes": 1843554,
+      "mtimeUtc": "2026-09-23T03:26:12.755Z"
+    },
+    {
+      "path": "v3.4/results/folds_binary_species_10.csv",
+      "bytes": 1254,
+      "mtimeUtc": "2026-09-22T14:00:18.580Z"
+    },
+    {
+      "path": "v3.4/results/folds_binary_species_5.csv",
+      "bytes": 1249,
+      "mtimeUtc": "2026-09-22T14:00:18.556Z"
+    },
+    {
+      "path": "v3.4/results/folds_joint_bb_species_10.csv",
+      "bytes": 1277,
+      "mtimeUtc": "2026-09-22T14:00:18.590Z"
+    },
+    {
+      "path": "v3.4/results/folds_joint_bb_species_5.csv",
+      "bytes": 1272,
+      "mtimeUtc": "2026-09-22T14:00:18.566Z"
+    },
+    {
+      "path": "v3.4/results/full_diagnostics.csv",
+      "bytes": 4167,
+      "mtimeUtc": "2026-09-22T13:59:01.805Z"
+    },
+    {
+      "path": "v3.4/results/full_panel_predictions.csv",
+      "bytes": 1488701,
+      "mtimeUtc": "2026-09-23T04:22:19.788Z"
+    },
+    {
+      "path": "v3.4/results/model_vs_null_by_fold.csv",
+      "bytes": 97390,
+      "mtimeUtc": "2026-09-23T04:20:10.069Z"
+    },
+    {
+      "path": "v3.4/results/model_vs_null.csv",
+      "bytes": 15509,
+      "mtimeUtc": "2026-09-23T04:20:07.009Z"
+    },
+    {
+      "path": "v3.4/results/quantitative_bias_summary.csv",
+      "bytes": 5826,
+      "mtimeUtc": "2026-09-23T03:26:16.239Z"
+    },
+    {
+      "path": "v3.4/results/quantitative_plot_source.csv",
+      "bytes": 1064875,
+      "mtimeUtc": "2026-09-23T03:26:16.229Z"
+    },
+    {
+      "path": "v3.4/results/roc_coordinates.csv",
+      "bytes": 104227,
+      "mtimeUtc": "2026-09-23T03:26:15.891Z"
+    },
+    {
+      "path": "v3.4/results/training_method_comparisons_by_fold.csv",
+      "bytes": 68460,
+      "mtimeUtc": "2026-09-23T04:20:12.215Z"
+    },
+    {
+      "path": "v3.4/results/training_method_comparisons.csv",
+      "bytes": 10839,
+      "mtimeUtc": "2026-09-23T04:20:07.531Z"
+    },
+    {
+      "path": "v3.4/results/training_ppc_summary.csv",
+      "bytes": 54067,
+      "mtimeUtc": "2026-09-22T14:00:18.254Z"
+    },
+    {
+      "path": "v3.4/results/training_weights_cv.csv",
+      "bytes": 7999308,
+      "mtimeUtc": "2026-09-23T03:26:13.345Z"
+    },
+    {
+      "path": "v3.4/results/training_weights_full.csv",
+      "bytes": 631324,
+      "mtimeUtc": "2026-09-22T13:59:01.867Z"
+    },
+    {
+      "path": "v3.4/results/training_weights.csv",
+      "bytes": 8664659,
+      "mtimeUtc": "2026-09-23T03:26:14.033Z"
+    },
+    {
+      "path": "v3.4/review/audit_comparison_recompute.csv",
+      "bytes": 216,
+      "mtimeUtc": "2026-09-23T04:42:15.688Z"
+    },
+    {
+      "path": "v3.4/review/audit_deterministic/assertions.csv",
+      "bytes": 2109,
+      "mtimeUtc": "2026-09-22T12:45:32.907Z"
+    },
+    {
+      "path": "v3.4/review/audit_deterministic/audit_test_status.json",
+      "bytes": 218,
+      "mtimeUtc": "2026-09-22T12:45:32.987Z"
+    },
+    {
+      "path": "v3.4/review/audit_deterministic/comparison_receipts.csv",
+      "bytes": 178,
+      "mtimeUtc": "2026-09-22T12:45:32.950Z"
+    },
+    {
+      "path": "v3.4/review/audit_deterministic/posterior_to_full_panel_receipts.csv",
+      "bytes": 3773,
+      "mtimeUtc": "2026-09-22T12:45:32.936Z"
+    },
+    {
+      "path": "v3.4/review/audit_deterministic/posterior_to_OOF_receipts.csv",
+      "bytes": 10297,
+      "mtimeUtc": "2026-09-22T12:45:32.921Z"
+    },
+    {
+      "path": "v3.4/review/audit_deterministic/quantitative_receipts.csv",
+      "bytes": 176,
+      "mtimeUtc": "2026-09-22T12:45:32.963Z"
+    },
+    {
+      "path": "v3.4/review/audit_prediction_recompute.csv",
+      "bytes": 121741,
+      "mtimeUtc": "2026-09-23T04:42:07.907Z"
+    },
+    {
+      "path": "v3.4/review/audit_quantitative_recompute.csv",
+      "bytes": 215,
+      "mtimeUtc": "2026-09-23T04:42:15.991Z"
+    },
+    {
+      "path": "v3.4/review/audit_v3.json",
+      "bytes": 360,
+      "mtimeUtc": "2026-09-23T04:42:16.080Z"
+    },
+    {
+      "path": "v3.4/review/baseline_v3_3/config/analysis.json",
+      "bytes": 1314,
+      "mtimeUtc": "2026-09-22T12:43:26.938Z"
+    },
+    {
+      "path": "v3.4/review/baseline_v3_3/R/applicability.R",
+      "bytes": 3597,
+      "mtimeUtc": "2026-09-22T12:43:26.915Z"
+    },
+    {
+      "path": "v3.4/review/baseline_v3_3/R/audit_run.R",
+      "bytes": 10250,
+      "mtimeUtc": "2026-09-22T12:43:26.916Z"
+    },
+    {
+      "path": "v3.4/review/baseline_v3_3/R/bootstrap.R",
+      "bytes": 1122,
+      "mtimeUtc": "2026-09-22T12:43:26.917Z"
+    },
+    {
+      "path": "v3.4/review/baseline_v3_3/R/cache_io.R",
+      "bytes": 6792,
+      "mtimeUtc": "2026-09-22T12:43:26.919Z"
+    },
+    {
+      "path": "v3.4/review/baseline_v3_3/R/comparison.R",
+      "bytes": 7114,
+      "mtimeUtc": "2026-09-22T12:43:26.921Z"
+    },
+    {
+      "path": "v3.4/review/baseline_v3_3/R/config.R",
+      "bytes": 5808,
+      "mtimeUtc": "2026-09-22T12:43:26.922Z"
+    },
+    {
+      "path": "v3.4/review/baseline_v3_3/R/cross_validation.R",
+      "bytes": 12675,
+      "mtimeUtc": "2026-09-22T12:43:26.922Z"
+    },
+    {
+      "path": "v3.4/review/baseline_v3_3/R/data_encoding.R",
+      "bytes": 14243,
+      "mtimeUtc": "2026-09-22T12:43:26.924Z"
+    },
+    {
+      "path": "v3.4/review/baseline_v3_3/R/fitting.R",
+      "bytes": 9798,
+      "mtimeUtc": "2026-09-22T12:43:26.925Z"
+    },
+    {
+      "path": "v3.4/review/baseline_v3_3/R/metrics.R",
+      "bytes": 10541,
+      "mtimeUtc": "2026-09-22T12:43:26.926Z"
+    },
+    {
+      "path": "v3.4/review/baseline_v3_3/R/plotting.R",
+      "bytes": 5861,
+      "mtimeUtc": "2026-09-22T12:43:26.928Z"
+    },
+    {
+      "path": "v3.4/review/baseline_v3_3/R/ppc.R",
+      "bytes": 2797,
+      "mtimeUtc": "2026-09-22T12:43:26.929Z"
+    },
+    {
+      "path": "v3.4/review/baseline_v3_3/R/prediction_audit.R",
+      "bytes": 23300,
+      "mtimeUtc": "2026-09-22T12:43:26.931Z"
+    },
+    {
+      "path": "v3.4/review/baseline_v3_3/R/prediction.R",
+      "bytes": 7675,
+      "mtimeUtc": "2026-09-22T12:43:26.930Z"
+    },
+    {
+      "path": "v3.4/review/baseline_v3_3/R/provenance.R",
+      "bytes": 2388,
+      "mtimeUtc": "2026-09-22T12:43:26.932Z"
+    },
+    {
+      "path": "v3.4/review/baseline_v3_3/R/quantitative_diagnostics.R",
+      "bytes": 5215,
+      "mtimeUtc": "2026-09-22T12:43:26.934Z"
+    },
+    {
+      "path": "v3.4/review/baseline_v3_3/R/reporting.R",
+      "bytes": 6602,
+      "mtimeUtc": "2026-09-22T12:43:26.935Z"
+    },
+    {
+      "path": "v3.4/review/baseline_v3_3/R/weights.R",
+      "bytes": 2244,
+      "mtimeUtc": "2026-09-22T12:43:26.936Z"
+    },
+    {
+      "path": "v3.4/review/baseline_v3_3/R/workflow.R",
+      "bytes": 10385,
+      "mtimeUtc": "2026-09-22T12:43:26.937Z"
+    },
+    {
+      "path": "v3.4/review/baseline_v3_3/src/audit_run.R",
+      "bytes": 402,
+      "mtimeUtc": "2026-09-22T12:43:26.940Z"
+    },
+    {
+      "path": "v3.4/review/baseline_v3_3/src/plot_species_predictions.R",
+      "bytes": 331,
+      "mtimeUtc": "2026-09-22T12:43:26.941Z"
+    },
+    {
+      "path": "v3.4/review/baseline_v3_3/src/postprocess_results.R",
+      "bytes": 389,
+      "mtimeUtc": "2026-09-22T12:43:26.942Z"
+    },
+    {
+      "path": "v3.4/review/baseline_v3_3/src/v3_pipeline.R",
+      "bytes": 887,
+      "mtimeUtc": "2026-09-22T12:43:26.944Z"
+    },
+    {
+      "path": "v3.4/review/baseline_v3_3/src/write_reports.R",
+      "bytes": 239,
+      "mtimeUtc": "2026-09-22T12:43:26.944Z"
+    },
+    {
+      "path": "v3.4/review/baseline_v3_3/stan/joint_bb.stan",
+      "bytes": 9477,
+      "mtimeUtc": "2026-09-22T12:43:26.946Z"
+    },
+    {
+      "path": "v3.4/review/cv_receipt.json",
+      "bytes": 1097,
+      "mtimeUtc": "2026-09-23T04:20:12.657Z"
+    },
+    {
+      "path": "v3.4/review/derived_outputs_manifest.csv",
+      "bytes": 5374,
+      "mtimeUtc": "2026-09-23T04:22:24.705Z"
+    },
+    {
+      "path": "v3.4/review/environment_build_v34_exit.json",
+      "bytes": 116,
+      "mtimeUtc": "2026-09-22T12:43:26.949Z"
+    },
+    {
+      "path": "v3.4/review/environment_build_v34.log",
+      "bytes": 5672,
+      "mtimeUtc": "2026-09-22T12:43:26.948Z"
+    },
+    {
+      "path": "v3.4/review/environment_test_v34_exit.json",
+      "bytes": 110,
+      "mtimeUtc": "2026-09-22T12:43:26.951Z"
+    },
+    {
+      "path": "v3.4/review/environment_test_v34.log",
+      "bytes": 1789,
+      "mtimeUtc": "2026-09-22T12:43:26.950Z"
+    },
+    {
+      "path": "v3.4/review/final_parse_all.log",
+      "bytes": 22,
+      "mtimeUtc": "2026-09-22T12:46:35.239Z"
+    },
+    {
+      "path": "v3.4/review/final_run_audit_deterministic.log",
+      "bytes": 2114,
+      "mtimeUtc": "2026-09-22T12:45:33.005Z"
+    },
+    {
+      "path": "v3.4/review/final_run_tests.log",
+      "bytes": 2882,
+      "mtimeUtc": "2026-09-22T12:45:23.786Z"
+    },
+    {
+      "path": "v3.4/review/final_test_binary_template_key.log",
+      "bytes": 93,
+      "mtimeUtc": "2026-09-22T12:45:40.866Z"
+    },
+    {
+      "path": "v3.4/review/final_test_input_support_counts.log",
+      "bytes": 108,
+      "mtimeUtc": "2026-09-22T12:45:41.576Z"
+    },
+    {
+      "path": "v3.4/review/final_test_quantitative_diagnostics.log",
+      "bytes": 105,
+      "mtimeUtc": "2026-09-22T12:45:25.645Z"
+    },
+    {
+      "path": "v3.4/review/final_test_report_comparison_wording.log",
+      "bytes": 88,
+      "mtimeUtc": "2026-09-22T12:46:33.135Z"
+    },
+    {
+      "path": "v3.4/review/final_test_v32_fullgrid_synthetic.log",
+      "bytes": 392,
+      "mtimeUtc": "2026-09-22T12:46:23.752Z"
+    },
+    {
+      "path": "v3.4/review/final_test_v32_metrics.log",
+      "bytes": 756,
+      "mtimeUtc": "2026-09-22T12:45:24.685Z"
+    },
+    {
+      "path": "v3.4/review/final_test_v34_input_guards.log",
+      "bytes": 197,
+      "mtimeUtc": "2026-09-22T12:45:21.523Z"
+    },
+    {
+      "path": "v3.4/review/final_test_v34_legal_equivalence.log",
+      "bytes": 94,
+      "mtimeUtc": "2026-09-22T12:46:32.213Z"
+    },
+    {
+      "path": "v3.4/review/final_test_v34_scope_guard.log",
+      "bytes": 109,
+      "mtimeUtc": "2026-09-22T12:46:34.195Z"
+    },
+    {
+      "path": "v3.4/review/final_v3_status.json",
+      "bytes": 169,
+      "mtimeUtc": "2026-09-23T04:42:16.112Z"
+    },
+    {
+      "path": "v3.4/review/fit_audit.csv",
+      "bytes": 114198,
+      "mtimeUtc": "2026-09-23T04:42:07.812Z"
+    },
+    {
+      "path": "v3.4/review/fullgrid_synthetic/figures/quantitative_predicted_observed.pdf",
+      "bytes": 72026,
+      "mtimeUtc": "2026-09-22T12:46:23.717Z"
+    },
+    {
+      "path": "v3.4/review/fullgrid_synthetic/input/observations.csv",
+      "bytes": 9476,
+      "mtimeUtc": "2026-09-22T12:45:42.435Z"
+    },
+    {
+      "path": "v3.4/review/fullgrid_synthetic/input/sites.csv",
+      "bytes": 547,
+      "mtimeUtc": "2026-09-22T12:45:42.408Z"
+    },
+    {
+      "path": "v3.4/review/fullgrid_synthetic/results/calibration_bins.csv",
+      "bytes": 4503,
+      "mtimeUtc": "2026-09-22T12:46:17.600Z"
+    },
+    {
+      "path": "v3.4/review/fullgrid_synthetic/results/cv_fold_metrics.csv",
+      "bytes": 97302,
+      "mtimeUtc": "2026-09-22T12:45:57.457Z"
+    },
+    {
+      "path": "v3.4/review/fullgrid_synthetic/results/cv_metrics_summary.csv",
+      "bytes": 14659,
+      "mtimeUtc": "2026-09-22T12:45:58.626Z"
+    },
+    {
+      "path": "v3.4/review/fullgrid_synthetic/results/cv_record_predictions.csv",
+      "bytes": 803031,
+      "mtimeUtc": "2026-09-22T12:45:57.429Z"
+    },
+    {
+      "path": "v3.4/review/fullgrid_synthetic/results/folds_binary_species_10.csv",
+      "bytes": 205,
+      "mtimeUtc": "2026-09-22T12:45:43.004Z"
+    },
+    {
+      "path": "v3.4/review/fullgrid_synthetic/results/folds_binary_species_5.csv",
+      "bytes": 204,
+      "mtimeUtc": "2026-09-22T12:45:42.965Z"
+    },
+    {
+      "path": "v3.4/review/fullgrid_synthetic/results/folds_joint_bb_species_10.csv",
+      "bytes": 222,
+      "mtimeUtc": "2026-09-22T12:45:43.022Z"
+    },
+    {
+      "path": "v3.4/review/fullgrid_synthetic/results/folds_joint_bb_species_5.csv",
+      "bytes": 221,
+      "mtimeUtc": "2026-09-22T12:45:42.983Z"
+    },
+    {
+      "path": "v3.4/review/fullgrid_synthetic/results/model_vs_null_by_fold.csv",
+      "bytes": 68264,
+      "mtimeUtc": "2026-09-22T12:46:20.424Z"
+    },
+    {
+      "path": "v3.4/review/fullgrid_synthetic/results/model_vs_null.csv",
+      "bytes": 10004,
+      "mtimeUtc": "2026-09-22T12:46:18.136Z"
+    },
+    {
+      "path": "v3.4/review/fullgrid_synthetic/results/quantitative_bias_summary.csv",
+      "bytes": 5815,
+      "mtimeUtc": "2026-09-22T12:46:23.471Z"
+    },
+    {
+      "path": "v3.4/review/fullgrid_synthetic/results/quantitative_plot_source.csv",
+      "bytes": 427341,
+      "mtimeUtc": "2026-09-22T12:46:23.452Z"
+    },
+    {
+      "path": "v3.4/review/fullgrid_synthetic/results/roc_coordinates.csv",
+      "bytes": 29439,
+      "mtimeUtc": "2026-09-22T12:46:00.009Z"
+    },
+    {
+      "path": "v3.4/review/fullgrid_synthetic/results/training_method_comparisons_by_fold.csv",
+      "bytes": 46881,
+      "mtimeUtc": "2026-09-22T12:46:22.482Z"
+    },
+    {
+      "path": "v3.4/review/fullgrid_synthetic/results/training_method_comparisons.csv",
+      "bytes": 6617,
+      "mtimeUtc": "2026-09-22T12:46:18.440Z"
+    },
+    {
+      "path": "v3.4/review/fullgrid_synthetic/results/training_weights_cv.csv",
+      "bytes": 4103196,
+      "mtimeUtc": "2026-09-22T12:45:57.777Z"
+    },
+    {
+      "path": "v3.4/review/fullgrid_synthetic/results/training_weights.csv",
+      "bytes": 4103196,
+      "mtimeUtc": "2026-09-22T12:45:58.099Z"
+    },
+    {
+      "path": "v3.4/review/fullgrid_synthetic/test_status.json",
+      "bytes": 308,
+      "mtimeUtc": "2026-09-22T12:46:23.733Z"
+    },
+    {
+      "path": "v3.4/review/input_guards_after_exit.json",
+      "bytes": 246,
+      "mtimeUtc": "2026-09-22T12:43:27.028Z"
+    },
+    {
+      "path": "v3.4/review/input_guards_after_round1_exit.json",
+      "bytes": 128,
+      "mtimeUtc": "2026-09-22T12:43:27.030Z"
+    },
+    {
+      "path": "v3.4/review/input_guards_after_round1.log",
+      "bytes": 222,
+      "mtimeUtc": "2026-09-22T12:43:27.029Z"
+    },
+    {
+      "path": "v3.4/review/input_guards_after_round2_status.json",
+      "bytes": 178,
+      "mtimeUtc": "2026-09-22T12:43:27.031Z"
+    },
+    {
+      "path": "v3.4/review/input_guards_after.log",
+      "bytes": 197,
+      "mtimeUtc": "2026-09-22T12:43:27.020Z"
+    },
+    {
+      "path": "v3.4/review/input_guards_after/assertions.csv",
+      "bytes": 17665,
+      "mtimeUtc": "2026-09-22T12:45:21.472Z"
+    },
+    {
+      "path": "v3.4/review/input_guards_after/status.json",
+      "bytes": 178,
+      "mtimeUtc": "2026-09-22T12:45:21.503Z"
+    },
+    {
+      "path": "v3.4/review/input_guards_after/valid_fivefold.csv",
+      "bytes": 104,
+      "mtimeUtc": "2026-09-22T12:45:20.595Z"
+    },
+    {
+      "path": "v3.4/review/input_guards_after/valid_joint_evidence.csv",
+      "bytes": 351,
+      "mtimeUtc": "2026-09-22T12:45:20.821Z"
+    },
+    {
+      "path": "v3.4/review/input_guards_after/valid_tenfold.csv",
+      "bytes": 105,
+      "mtimeUtc": "2026-09-22T12:45:20.616Z"
+    },
+    {
+      "path": "v3.4/review/input_guards_before_round1.log",
+      "bytes": 259,
+      "mtimeUtc": "2026-09-22T12:43:27.041Z"
+    },
+    {
+      "path": "v3.4/review/input_guards_before_round2_status.json",
+      "bytes": 190,
+      "mtimeUtc": "2026-09-22T12:43:27.041Z"
+    },
+    {
+      "path": "v3.4/review/input_guards_before.log",
+      "bytes": 259,
+      "mtimeUtc": "2026-09-22T12:43:27.032Z"
+    },
+    {
+      "path": "v3.4/review/input_guards_before/assertions.csv",
+      "bytes": 13878,
+      "mtimeUtc": "2026-09-22T12:43:27.035Z"
+    },
+    {
+      "path": "v3.4/review/input_guards_before/status.json",
+      "bytes": 190,
+      "mtimeUtc": "2026-09-22T12:43:27.036Z"
+    },
+    {
+      "path": "v3.4/review/input_guards_before/valid_fivefold.csv",
+      "bytes": 104,
+      "mtimeUtc": "2026-09-22T12:43:27.036Z"
+    },
+    {
+      "path": "v3.4/review/input_guards_before/valid_joint_evidence.csv",
+      "bytes": 351,
+      "mtimeUtc": "2026-09-22T12:43:27.037Z"
+    },
+    {
+      "path": "v3.4/review/input_guards_before/valid_tenfold.csv",
+      "bytes": 105,
+      "mtimeUtc": "2026-09-22T12:43:27.039Z"
+    },
+    {
+      "path": "v3.4/review/input_guards_test_round1.R",
+      "bytes": 7939,
+      "mtimeUtc": "2026-09-22T12:43:27.042Z"
+    },
+    {
+      "path": "v3.4/review/input_guards_test_round2.R",
+      "bytes": 8241,
+      "mtimeUtc": "2026-09-22T12:43:27.044Z"
+    },
+    {
+      "path": "v3.4/review/input_support_counts.json",
+      "bytes": 386,
+      "mtimeUtc": "2026-09-22T12:45:41.559Z"
+    },
+    {
+      "path": "v3.4/review/last_stage_status.json",
+      "bytes": 157,
+      "mtimeUtc": "2026-09-23T04:42:16.089Z"
+    },
+    {
+      "path": "v3.4/review/legal_equivalence/input/observations.csv",
+      "bytes": 9476,
+      "mtimeUtc": "2026-09-22T12:46:24.840Z"
+    },
+    {
+      "path": "v3.4/review/legal_equivalence/input/sites.csv",
+      "bytes": 547,
+      "mtimeUtc": "2026-09-22T12:46:24.812Z"
+    },
+    {
+      "path": "v3.4/review/legal_equivalence/scoring_equivalence_receipts.csv",
+      "bytes": 59061,
+      "mtimeUtc": "2026-09-22T12:46:32.178Z"
+    },
+    {
+      "path": "v3.4/review/legal_equivalence/status.json",
+      "bytes": 231,
+      "mtimeUtc": "2026-09-22T12:46:32.195Z"
+    },
+    {
+      "path": "v3.4/review/legal_equivalence/unchanged_folds_fivefold_binary.csv",
+      "bytes": 204,
+      "mtimeUtc": "2026-09-22T12:46:25.514Z"
+    },
+    {
+      "path": "v3.4/review/legal_equivalence/unchanged_folds_fivefold_joint_bb.csv",
+      "bytes": 221,
+      "mtimeUtc": "2026-09-22T12:46:25.529Z"
+    },
+    {
+      "path": "v3.4/review/legal_equivalence/unchanged_folds_tenfold_binary.csv",
+      "bytes": 205,
+      "mtimeUtc": "2026-09-22T12:46:25.542Z"
+    },
+    {
+      "path": "v3.4/review/legal_equivalence/unchanged_folds_tenfold_joint_bb.csv",
+      "bytes": 222,
+      "mtimeUtc": "2026-09-22T12:46:25.555Z"
+    },
+    {
+      "path": "v3.4/review/point_column_gap_self_review_assertions.csv",
+      "bytes": 17497,
+      "mtimeUtc": "2026-09-22T12:43:27.058Z"
+    },
+    {
+      "path": "v3.4/review/point_column_gap_self_review_status.json",
+      "bytes": 189,
+      "mtimeUtc": "2026-09-22T12:43:27.060Z"
+    },
+    {
+      "path": "v3.4/review/point_column_gap_self_review.log",
+      "bytes": 654,
+      "mtimeUtc": "2026-09-22T12:43:27.057Z"
+    },
+    {
+      "path": "v3.4/review/ppc_receipt.json",
+      "bytes": 348,
+      "mtimeUtc": "2026-09-22T14:00:18.543Z"
+    },
+    {
+      "path": "v3.4/review/predict_receipt.json",
+      "bytes": 246,
+      "mtimeUtc": "2026-09-23T04:22:20.047Z"
+    },
+    {
+      "path": "v3.4/review/preflight_v3.json",
+      "bytes": 412,
+      "mtimeUtc": "2026-09-22T12:48:21.126Z"
+    },
+    {
+      "path": "v3.4/review/quantitative_plot_fixture/figures/quantitative_predicted_observed.pdf",
+      "bytes": 8129,
+      "mtimeUtc": "2026-09-22T12:45:25.604Z"
+    },
+    {
+      "path": "v3.4/review/quantitative_plot_fixture/results/quantitative_bias_summary.csv",
+      "bytes": 508,
+      "mtimeUtc": "2026-09-22T12:45:25.467Z"
+    },
+    {
+      "path": "v3.4/review/quantitative_plot_fixture/results/quantitative_plot_source.csv",
+      "bytes": 992,
+      "mtimeUtc": "2026-09-22T12:45:25.442Z"
+    },
+    {
+      "path": "v3.4/review/quantitative_plot_fixture/test_status.json",
+      "bytes": 254,
+      "mtimeUtc": "2026-09-22T12:45:25.628Z"
+    },
+    {
+      "path": "v3.4/review/regression_runner_before_point_column_guard.log",
+      "bytes": 7719,
+      "mtimeUtc": "2026-09-22T12:43:27.070Z"
+    },
+    {
+      "path": "v3.4/review/regression_runner_exit.json",
+      "bytes": 179,
+      "mtimeUtc": "2026-09-22T12:43:27.071Z"
+    },
+    {
+      "path": "v3.4/review/regression_runner_v33_image.csv",
+      "bytes": 399,
+      "mtimeUtc": "2026-09-22T12:43:27.072Z"
+    },
+    {
+      "path": "v3.4/review/regression_runner_v33_image.log",
+      "bytes": 7443,
+      "mtimeUtc": "2026-09-22T12:43:27.074Z"
+    },
+    {
+      "path": "v3.4/review/regression_runner.csv",
+      "bytes": 432,
+      "mtimeUtc": "2026-09-22T12:46:35.247Z"
+    },
+    {
+      "path": "v3.4/review/regression_runner.log",
+      "bytes": 7719,
+      "mtimeUtc": "2026-09-22T12:43:27.068Z"
+    },
+    {
+      "path": "v3.4/review/report_wording_fixture/checks.csv",
+      "bytes": 153,
+      "mtimeUtc": "2026-09-22T12:46:33.094Z"
+    },
+    {
+      "path": "v3.4/review/report_wording_fixture/reports/REPORT_v3_4.md",
+      "bytes": 3594,
+      "mtimeUtc": "2026-09-22T12:46:33.072Z"
+    },
+    {
+      "path": "v3.4/review/report_wording_fixture/results/cv_metrics_summary.csv",
+      "bytes": 65,
+      "mtimeUtc": "2026-09-22T12:46:32.805Z"
+    },
+    {
+      "path": "v3.4/review/report_wording_fixture/results/model_vs_null.csv",
+      "bytes": 65,
+      "mtimeUtc": "2026-09-22T12:46:32.829Z"
+    },
+    {
+      "path": "v3.4/review/report_wording_fixture/results/quantitative_bias_summary.csv",
+      "bytes": 65,
+      "mtimeUtc": "2026-09-22T12:46:32.883Z"
+    },
+    {
+      "path": "v3.4/review/report_wording_fixture/results/quantitative_plot_source.csv",
+      "bytes": 65,
+      "mtimeUtc": "2026-09-22T12:46:32.901Z"
+    },
+    {
+      "path": "v3.4/review/report_wording_fixture/results/training_method_comparisons.csv",
+      "bytes": 65,
+      "mtimeUtc": "2026-09-22T12:46:32.847Z"
+    },
+    {
+      "path": "v3.4/review/report_wording_fixture/results/training_ppc_summary.csv",
+      "bytes": 65,
+      "mtimeUtc": "2026-09-22T12:46:32.866Z"
+    },
+    {
+      "path": "v3.4/review/report_wording_fixture/status.json",
+      "bytes": 105,
+      "mtimeUtc": "2026-09-22T12:46:33.118Z"
+    },
+    {
+      "path": "v3.4/review/reused_evidence/provenance.json",
+      "bytes": 445,
+      "mtimeUtc": "2026-09-22T12:43:27.087Z"
+    },
+    {
+      "path": "v3.4/review/reused_evidence/saved_synthetic_OOF.csv",
+      "bytes": 644849,
+      "mtimeUtc": "2026-09-22T12:43:27.090Z"
+    },
+    {
+      "path": "v3.4/review/scope_preservation_checks.csv",
+      "bytes": 556,
+      "mtimeUtc": "2026-09-22T12:46:34.179Z"
+    },
+    {
+      "path": "v3.4/review/SOURCE_DIFF_v3_3_to_v3_4.patch",
+      "bytes": 36825,
+      "mtimeUtc": "2026-09-22T12:43:26.903Z"
+    },
+    {
+      "path": "v3.4/review/template_key_fixture/input/observations.csv",
+      "bytes": 9476,
+      "mtimeUtc": "2026-09-22T12:45:33.834Z"
+    },
+    {
+      "path": "v3.4/review/template_key_fixture/input/sites.csv",
+      "bytes": 547,
+      "mtimeUtc": "2026-09-22T12:45:33.809Z"
+    },
+    {
+      "path": "v3.4/review/template_key_fixture/status.json",
+      "bytes": 224,
+      "mtimeUtc": "2026-09-22T12:45:40.701Z"
+    },
+    {
+      "path": "v3.4/review/v32_metric_checks.json",
+      "bytes": 817,
+      "mtimeUtc": "2026-09-22T12:45:24.673Z"
+    },
+    {
+      "path": "v3.4/review/VALIDATION_v3_4.md",
+      "bytes": 4307,
+      "mtimeUtc": "2026-09-22T12:43:26.905Z"
+    },
+    {
+      "path": "v3.4/runs/binary_counts.csv",
+      "bytes": 11810,
+      "mtimeUtc": "2026-09-22T12:48:19.869Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__M1__record_equal__fivefold_f1/fit.rds",
+      "bytes": 13741511,
+      "mtimeUtc": "2026-09-22T14:01:50.302Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__M1__record_equal__fivefold_f2/fit.rds",
+      "bytes": 13743498,
+      "mtimeUtc": "2026-09-22T14:02:03.279Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__M1__record_equal__fivefold_f3/fit.rds",
+      "bytes": 13742784,
+      "mtimeUtc": "2026-09-22T14:02:15.091Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__M1__record_equal__fivefold_f4/fit.rds",
+      "bytes": 13745453,
+      "mtimeUtc": "2026-09-22T14:02:26.730Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__M1__record_equal__fivefold_f5/fit.rds",
+      "bytes": 13742733,
+      "mtimeUtc": "2026-09-22T14:02:38.729Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__M1__record_equal__full/fit.rds",
+      "bytes": 24575473,
+      "mtimeUtc": "2026-09-22T12:52:29.652Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__M1__record_equal__tenfold_f1/fit.rds",
+      "bytes": 13748995,
+      "mtimeUtc": "2026-09-22T18:17:44.272Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__M1__record_equal__tenfold_f10/fit.rds",
+      "bytes": 13748627,
+      "mtimeUtc": "2026-09-22T18:19:35.787Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__M1__record_equal__tenfold_f2/fit.rds",
+      "bytes": 13746104,
+      "mtimeUtc": "2026-09-22T18:17:56.569Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__M1__record_equal__tenfold_f3/fit.rds",
+      "bytes": 13746113,
+      "mtimeUtc": "2026-09-22T18:18:09.013Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__M1__record_equal__tenfold_f4/fit.rds",
+      "bytes": 13747757,
+      "mtimeUtc": "2026-09-22T18:18:22.340Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__M1__record_equal__tenfold_f5/fit.rds",
+      "bytes": 13747138,
+      "mtimeUtc": "2026-09-22T18:18:34.155Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__M1__record_equal__tenfold_f6/fit.rds",
+      "bytes": 13747453,
+      "mtimeUtc": "2026-09-22T18:18:46.003Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__M1__record_equal__tenfold_f7/fit.rds",
+      "bytes": 13749921,
+      "mtimeUtc": "2026-09-22T18:18:58.213Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__M1__record_equal__tenfold_f8/fit.rds",
+      "bytes": 13748766,
+      "mtimeUtc": "2026-09-22T18:19:10.236Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__M1__record_equal__tenfold_f9/fit.rds",
+      "bytes": 13747920,
+      "mtimeUtc": "2026-09-22T18:19:23.147Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__M1__species_equal__fivefold_f1/fit.rds",
+      "bytes": 13741760,
+      "mtimeUtc": "2026-09-22T14:02:52.072Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__M1__species_equal__fivefold_f2/fit.rds",
+      "bytes": 13740605,
+      "mtimeUtc": "2026-09-22T14:03:04.921Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__M1__species_equal__fivefold_f3/fit.rds",
+      "bytes": 13741485,
+      "mtimeUtc": "2026-09-22T14:03:17.183Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__M1__species_equal__fivefold_f4/fit.rds",
+      "bytes": 13744907,
+      "mtimeUtc": "2026-09-22T14:03:29.139Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__M1__species_equal__fivefold_f5/fit.rds",
+      "bytes": 13741494,
+      "mtimeUtc": "2026-09-22T14:03:43.710Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__M1__species_equal__full/fit.rds",
+      "bytes": 13556817,
+      "mtimeUtc": "2026-09-22T12:52:43.304Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__M1__species_equal__tenfold_f1/fit.rds",
+      "bytes": 13747766,
+      "mtimeUtc": "2026-09-22T18:19:51.025Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__M1__species_equal__tenfold_f10/fit.rds",
+      "bytes": 13747213,
+      "mtimeUtc": "2026-09-22T18:21:59.918Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__M1__species_equal__tenfold_f2/fit.rds",
+      "bytes": 13745804,
+      "mtimeUtc": "2026-09-22T18:20:04.744Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__M1__species_equal__tenfold_f3/fit.rds",
+      "bytes": 13747772,
+      "mtimeUtc": "2026-09-22T18:20:19.516Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__M1__species_equal__tenfold_f4/fit.rds",
+      "bytes": 13745559,
+      "mtimeUtc": "2026-09-22T18:20:34.650Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__M1__species_equal__tenfold_f5/fit.rds",
+      "bytes": 13748004,
+      "mtimeUtc": "2026-09-22T18:20:48.393Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__M1__species_equal__tenfold_f6/fit.rds",
+      "bytes": 13749473,
+      "mtimeUtc": "2026-09-22T18:21:02.775Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__M1__species_equal__tenfold_f7/fit.rds",
+      "bytes": 13747025,
+      "mtimeUtc": "2026-09-22T18:21:16.448Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__M1__species_equal__tenfold_f8/fit.rds",
+      "bytes": 13747396,
+      "mtimeUtc": "2026-09-22T18:21:31.144Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__M1__species_equal__tenfold_f9/fit.rds",
+      "bytes": 13745900,
+      "mtimeUtc": "2026-09-22T18:21:44.864Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__M2__record_equal__fivefold_f1/fit.rds",
+      "bytes": 13745676,
+      "mtimeUtc": "2026-09-22T14:03:56.236Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__M2__record_equal__fivefold_f2/fit.rds",
+      "bytes": 13746171,
+      "mtimeUtc": "2026-09-22T14:04:07.720Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__M2__record_equal__fivefold_f3/fit.rds",
+      "bytes": 13747474,
+      "mtimeUtc": "2026-09-22T14:04:19.881Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__M2__record_equal__fivefold_f4/fit.rds",
+      "bytes": 13748514,
+      "mtimeUtc": "2026-09-22T14:04:30.788Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__M2__record_equal__fivefold_f5/fit.rds",
+      "bytes": 13746847,
+      "mtimeUtc": "2026-09-22T14:04:42.702Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__M2__record_equal__full/fit.rds",
+      "bytes": 24646061,
+      "mtimeUtc": "2026-09-22T12:54:41.155Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__M2__record_equal__tenfold_f1/fit.rds",
+      "bytes": 13750460,
+      "mtimeUtc": "2026-09-22T18:22:12.720Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__M2__record_equal__tenfold_f10/fit.rds",
+      "bytes": 13748426,
+      "mtimeUtc": "2026-09-22T18:24:03.123Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__M2__record_equal__tenfold_f2/fit.rds",
+      "bytes": 13748977,
+      "mtimeUtc": "2026-09-22T18:22:24.975Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__M2__record_equal__tenfold_f3/fit.rds",
+      "bytes": 13748797,
+      "mtimeUtc": "2026-09-22T18:22:37.398Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__M2__record_equal__tenfold_f4/fit.rds",
+      "bytes": 13750425,
+      "mtimeUtc": "2026-09-22T18:22:50.461Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__M2__record_equal__tenfold_f5/fit.rds",
+      "bytes": 13750007,
+      "mtimeUtc": "2026-09-22T18:23:02.585Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__M2__record_equal__tenfold_f6/fit.rds",
+      "bytes": 13753616,
+      "mtimeUtc": "2026-09-22T18:23:13.778Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__M2__record_equal__tenfold_f7/fit.rds",
+      "bytes": 13749947,
+      "mtimeUtc": "2026-09-22T18:23:26.598Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__M2__record_equal__tenfold_f8/fit.rds",
+      "bytes": 13749866,
+      "mtimeUtc": "2026-09-22T18:23:38.603Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__M2__record_equal__tenfold_f9/fit.rds",
+      "bytes": 13750651,
+      "mtimeUtc": "2026-09-22T18:23:50.342Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__M2__species_equal__fivefold_f1/fit.rds",
+      "bytes": 13746600,
+      "mtimeUtc": "2026-09-22T14:04:56.854Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__M2__species_equal__fivefold_f2/fit.rds",
+      "bytes": 13746713,
+      "mtimeUtc": "2026-09-22T14:05:09.238Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__M2__species_equal__fivefold_f3/fit.rds",
+      "bytes": 13745477,
+      "mtimeUtc": "2026-09-22T14:05:23.731Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__M2__species_equal__fivefold_f4/fit.rds",
+      "bytes": 13749533,
+      "mtimeUtc": "2026-09-22T14:05:35.497Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__M2__species_equal__fivefold_f5/fit.rds",
+      "bytes": 13746194,
+      "mtimeUtc": "2026-09-22T14:05:49.699Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__M2__species_equal__full/fit.rds",
+      "bytes": 13626454,
+      "mtimeUtc": "2026-09-22T12:54:54.609Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__M2__species_equal__tenfold_f1/fit.rds",
+      "bytes": 13749063,
+      "mtimeUtc": "2026-09-22T18:24:16.659Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__M2__species_equal__tenfold_f10/fit.rds",
+      "bytes": 13748756,
+      "mtimeUtc": "2026-09-22T18:26:21.288Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__M2__species_equal__tenfold_f2/fit.rds",
+      "bytes": 13748673,
+      "mtimeUtc": "2026-09-22T18:24:31.470Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__M2__species_equal__tenfold_f3/fit.rds",
+      "bytes": 13749153,
+      "mtimeUtc": "2026-09-22T18:24:45.028Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__M2__species_equal__tenfold_f4/fit.rds",
+      "bytes": 13748936,
+      "mtimeUtc": "2026-09-22T18:24:58.556Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__M2__species_equal__tenfold_f5/fit.rds",
+      "bytes": 13748706,
+      "mtimeUtc": "2026-09-22T18:25:13.713Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__M2__species_equal__tenfold_f6/fit.rds",
+      "bytes": 13749666,
+      "mtimeUtc": "2026-09-22T18:25:26.766Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__M2__species_equal__tenfold_f7/fit.rds",
+      "bytes": 13749558,
+      "mtimeUtc": "2026-09-22T18:25:41.163Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__M2__species_equal__tenfold_f8/fit.rds",
+      "bytes": 13749839,
+      "mtimeUtc": "2026-09-22T18:25:54.459Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__M2__species_equal__tenfold_f9/fit.rds",
+      "bytes": 13747780,
+      "mtimeUtc": "2026-09-22T18:26:07.799Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__M3__record_equal__fivefold_f1/fit.rds",
+      "bytes": 18886293,
+      "mtimeUtc": "2026-09-22T14:06:06.975Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__M3__record_equal__fivefold_f2/fit.rds",
+      "bytes": 18885056,
+      "mtimeUtc": "2026-09-22T14:06:23.814Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__M3__record_equal__fivefold_f3/fit.rds",
+      "bytes": 18889474,
+      "mtimeUtc": "2026-09-22T14:06:40.973Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__M3__record_equal__fivefold_f4/fit.rds",
+      "bytes": 18886962,
+      "mtimeUtc": "2026-09-22T14:06:56.954Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__M3__record_equal__fivefold_f5/fit.rds",
+      "bytes": 18886307,
+      "mtimeUtc": "2026-09-22T14:07:13.795Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__M3__record_equal__full/fit.rds",
+      "bytes": 30075041,
+      "mtimeUtc": "2026-09-22T12:56:59.501Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__M3__record_equal__tenfold_f1/fit.rds",
+      "bytes": 18885775,
+      "mtimeUtc": "2026-09-22T18:26:38.854Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__M3__record_equal__tenfold_f10/fit.rds",
+      "bytes": 18885457,
+      "mtimeUtc": "2026-09-22T18:29:17.639Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__M3__record_equal__tenfold_f2/fit.rds",
+      "bytes": 18886188,
+      "mtimeUtc": "2026-09-22T18:26:56.229Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__M3__record_equal__tenfold_f3/fit.rds",
+      "bytes": 18886659,
+      "mtimeUtc": "2026-09-22T18:27:14.181Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__M3__record_equal__tenfold_f4/fit.rds",
+      "bytes": 18887301,
+      "mtimeUtc": "2026-09-22T18:27:32.150Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__M3__record_equal__tenfold_f5/fit.rds",
+      "bytes": 18885602,
+      "mtimeUtc": "2026-09-22T18:27:50.064Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__M3__record_equal__tenfold_f6/fit.rds",
+      "bytes": 18884272,
+      "mtimeUtc": "2026-09-22T18:28:07.130Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__M3__record_equal__tenfold_f7/fit.rds",
+      "bytes": 18885927,
+      "mtimeUtc": "2026-09-22T18:28:24.494Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__M3__record_equal__tenfold_f8/fit.rds",
+      "bytes": 18883881,
+      "mtimeUtc": "2026-09-22T18:28:42.977Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__M3__record_equal__tenfold_f9/fit.rds",
+      "bytes": 18883735,
+      "mtimeUtc": "2026-09-22T18:29:00.192Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__M3__species_equal__fivefold_f1/fit.rds",
+      "bytes": 18884247,
+      "mtimeUtc": "2026-09-22T14:07:31.538Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__M3__species_equal__fivefold_f2/fit.rds",
+      "bytes": 18884267,
+      "mtimeUtc": "2026-09-22T14:07:49.315Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__M3__species_equal__fivefold_f3/fit.rds",
+      "bytes": 18885946,
+      "mtimeUtc": "2026-09-22T14:08:06.811Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__M3__species_equal__fivefold_f4/fit.rds",
+      "bytes": 18882812,
+      "mtimeUtc": "2026-09-22T14:08:22.888Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__M3__species_equal__fivefold_f5/fit.rds",
+      "bytes": 18883372,
+      "mtimeUtc": "2026-09-22T14:08:40.398Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__M3__species_equal__full/fit.rds",
+      "bytes": 18817868,
+      "mtimeUtc": "2026-09-22T12:57:16.071Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__M3__species_equal__tenfold_f1/fit.rds",
+      "bytes": 18883624,
+      "mtimeUtc": "2026-09-22T18:29:36.264Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__M3__species_equal__tenfold_f10/fit.rds",
+      "bytes": 18885345,
+      "mtimeUtc": "2026-09-22T18:32:17.243Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__M3__species_equal__tenfold_f2/fit.rds",
+      "bytes": 18883261,
+      "mtimeUtc": "2026-09-22T18:29:54.373Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__M3__species_equal__tenfold_f3/fit.rds",
+      "bytes": 18884679,
+      "mtimeUtc": "2026-09-22T18:30:12.479Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__M3__species_equal__tenfold_f4/fit.rds",
+      "bytes": 18886136,
+      "mtimeUtc": "2026-09-22T18:30:29.827Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__M3__species_equal__tenfold_f5/fit.rds",
+      "bytes": 18885015,
+      "mtimeUtc": "2026-09-22T18:30:47.203Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__M3__species_equal__tenfold_f6/fit.rds",
+      "bytes": 18887296,
+      "mtimeUtc": "2026-09-22T18:31:04.728Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__M3__species_equal__tenfold_f7/fit.rds",
+      "bytes": 18885279,
+      "mtimeUtc": "2026-09-22T18:31:22.443Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__M3__species_equal__tenfold_f8/fit.rds",
+      "bytes": 18883746,
+      "mtimeUtc": "2026-09-22T18:31:40.395Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__M3__species_equal__tenfold_f9/fit.rds",
+      "bytes": 18883187,
+      "mtimeUtc": "2026-09-22T18:31:58.859Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__Null__record_equal__fivefold_f1/fit.rds",
+      "bytes": 12478029,
+      "mtimeUtc": "2026-09-22T14:00:27.070Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__Null__record_equal__fivefold_f2/fit.rds",
+      "bytes": 12481438,
+      "mtimeUtc": "2026-09-22T14:00:36.905Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__Null__record_equal__fivefold_f3/fit.rds",
+      "bytes": 12478128,
+      "mtimeUtc": "2026-09-22T14:00:44.278Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__Null__record_equal__fivefold_f4/fit.rds",
+      "bytes": 12481292,
+      "mtimeUtc": "2026-09-22T14:00:51.858Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__Null__record_equal__fivefold_f5/fit.rds",
+      "bytes": 12474178,
+      "mtimeUtc": "2026-09-22T14:00:59.157Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__Null__record_equal__full/fit.rds",
+      "bytes": 23195910,
+      "mtimeUtc": "2026-09-22T12:50:27.208Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__Null__record_equal__tenfold_f1/fit.rds",
+      "bytes": 12484567,
+      "mtimeUtc": "2026-09-22T18:15:01.883Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__Null__record_equal__tenfold_f10/fit.rds",
+      "bytes": 12487890,
+      "mtimeUtc": "2026-09-22T18:16:11.116Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__Null__record_equal__tenfold_f2/fit.rds",
+      "bytes": 12486452,
+      "mtimeUtc": "2026-09-22T18:15:10.025Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__Null__record_equal__tenfold_f3/fit.rds",
+      "bytes": 12486251,
+      "mtimeUtc": "2026-09-22T18:15:17.645Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__Null__record_equal__tenfold_f4/fit.rds",
+      "bytes": 12485700,
+      "mtimeUtc": "2026-09-22T18:15:25.269Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__Null__record_equal__tenfold_f5/fit.rds",
+      "bytes": 12484454,
+      "mtimeUtc": "2026-09-22T18:15:33.180Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__Null__record_equal__tenfold_f6/fit.rds",
+      "bytes": 12484677,
+      "mtimeUtc": "2026-09-22T18:15:40.576Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__Null__record_equal__tenfold_f7/fit.rds",
+      "bytes": 12485108,
+      "mtimeUtc": "2026-09-22T18:15:48.403Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__Null__record_equal__tenfold_f8/fit.rds",
+      "bytes": 12487611,
+      "mtimeUtc": "2026-09-22T18:15:55.948Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__Null__record_equal__tenfold_f9/fit.rds",
+      "bytes": 12482084,
+      "mtimeUtc": "2026-09-22T18:16:03.435Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__Null__species_equal__fivefold_f1/fit.rds",
+      "bytes": 12476525,
+      "mtimeUtc": "2026-09-22T14:01:07.116Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__Null__species_equal__fivefold_f2/fit.rds",
+      "bytes": 12479581,
+      "mtimeUtc": "2026-09-22T14:01:15.098Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__Null__species_equal__fivefold_f3/fit.rds",
+      "bytes": 12475980,
+      "mtimeUtc": "2026-09-22T14:01:22.574Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__Null__species_equal__fivefold_f4/fit.rds",
+      "bytes": 12482840,
+      "mtimeUtc": "2026-09-22T14:01:30.330Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__Null__species_equal__fivefold_f5/fit.rds",
+      "bytes": 12475628,
+      "mtimeUtc": "2026-09-22T14:01:38.408Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__Null__species_equal__full/fit.rds",
+      "bytes": 12230618,
+      "mtimeUtc": "2026-09-22T12:50:33.871Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__Null__species_equal__tenfold_f1/fit.rds",
+      "bytes": 12483790,
+      "mtimeUtc": "2026-09-22T18:16:18.965Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__Null__species_equal__tenfold_f10/fit.rds",
+      "bytes": 12483633,
+      "mtimeUtc": "2026-09-22T18:17:31.806Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__Null__species_equal__tenfold_f2/fit.rds",
+      "bytes": 12484062,
+      "mtimeUtc": "2026-09-22T18:16:27.492Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__Null__species_equal__tenfold_f3/fit.rds",
+      "bytes": 12483345,
+      "mtimeUtc": "2026-09-22T18:16:35.448Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__Null__species_equal__tenfold_f4/fit.rds",
+      "bytes": 12482340,
+      "mtimeUtc": "2026-09-22T18:16:43.536Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__Null__species_equal__tenfold_f5/fit.rds",
+      "bytes": 12482934,
+      "mtimeUtc": "2026-09-22T18:16:51.344Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__Null__species_equal__tenfold_f6/fit.rds",
+      "bytes": 12483208,
+      "mtimeUtc": "2026-09-22T18:16:59.391Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__Null__species_equal__tenfold_f7/fit.rds",
+      "bytes": 12482992,
+      "mtimeUtc": "2026-09-22T18:17:07.617Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__Null__species_equal__tenfold_f8/fit.rds",
+      "bytes": 12487423,
+      "mtimeUtc": "2026-09-22T18:17:16.016Z"
+    },
+    {
+      "path": "v3.4/runs/fits/binary__Null__species_equal__tenfold_f9/fit.rds",
+      "bytes": 12484919,
+      "mtimeUtc": "2026-09-22T18:17:23.940Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__M1__record_equal__fivefold_f1/fit.rds",
+      "bytes": 73644471,
+      "mtimeUtc": "2026-09-22T14:36:34.322Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__M1__record_equal__fivefold_f2/fit.rds",
+      "bytes": 73695061,
+      "mtimeUtc": "2026-09-22T14:44:33.828Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__M1__record_equal__fivefold_f3/fit.rds",
+      "bytes": 73680310,
+      "mtimeUtc": "2026-09-22T14:52:26.837Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__M1__record_equal__fivefold_f4/fit.rds",
+      "bytes": 73690115,
+      "mtimeUtc": "2026-09-22T14:57:10.879Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__M1__record_equal__fivefold_f5/fit.rds",
+      "bytes": 73688034,
+      "mtimeUtc": "2026-09-22T15:08:54.032Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__M1__record_equal__full/fit.rds",
+      "bytes": 73601522,
+      "mtimeUtc": "2026-09-22T13:12:47.645Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__M1__record_equal__tenfold_f1/fit.rds",
+      "bytes": 73626286,
+      "mtimeUtc": "2026-09-22T19:26:32.915Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__M1__record_equal__tenfold_f10/fit.rds",
+      "bytes": 73629174,
+      "mtimeUtc": "2026-09-22T20:40:19.056Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__M1__record_equal__tenfold_f2/fit.rds",
+      "bytes": 73664193,
+      "mtimeUtc": "2026-09-22T19:31:32.393Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__M1__record_equal__tenfold_f3/fit.rds",
+      "bytes": 73627523,
+      "mtimeUtc": "2026-09-22T19:40:02.216Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__M1__record_equal__tenfold_f4/fit.rds",
+      "bytes": 73683370,
+      "mtimeUtc": "2026-09-22T19:44:46.299Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__M1__record_equal__tenfold_f5/fit.rds",
+      "bytes": 73656153,
+      "mtimeUtc": "2026-09-22T19:54:39.181Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__M1__record_equal__tenfold_f6/fit.rds",
+      "bytes": 73654697,
+      "mtimeUtc": "2026-09-22T20:06:40.282Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__M1__record_equal__tenfold_f7/fit.rds",
+      "bytes": 73643216,
+      "mtimeUtc": "2026-09-22T20:14:00.959Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__M1__record_equal__tenfold_f8/fit.rds",
+      "bytes": 73609786,
+      "mtimeUtc": "2026-09-22T20:24:12.662Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__M1__record_equal__tenfold_f9/fit.rds",
+      "bytes": 73639596,
+      "mtimeUtc": "2026-09-22T20:32:40.510Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__M1__species_equal__fivefold_f1/fit.rds",
+      "bytes": 73642287,
+      "mtimeUtc": "2026-09-22T15:15:20.509Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__M1__species_equal__fivefold_f2/fit.rds",
+      "bytes": 73739708,
+      "mtimeUtc": "2026-09-22T15:26:19.707Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__M1__species_equal__fivefold_f3/fit.rds",
+      "bytes": 73725110,
+      "mtimeUtc": "2026-09-22T15:38:10.607Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__M1__species_equal__fivefold_f4/fit.rds",
+      "bytes": 73720336,
+      "mtimeUtc": "2026-09-22T15:44:47.409Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__M1__species_equal__fivefold_f5/fit.rds",
+      "bytes": 73695592,
+      "mtimeUtc": "2026-09-22T15:56:46.272Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__M1__species_equal__full/fit.rds",
+      "bytes": 73628805,
+      "mtimeUtc": "2026-09-22T13:25:17.123Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__M1__species_equal__tenfold_f1/fit.rds",
+      "bytes": 73600824,
+      "mtimeUtc": "2026-09-22T20:51:32.546Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__M1__species_equal__tenfold_f10/fit.rds",
+      "bytes": 73649431,
+      "mtimeUtc": "2026-09-22T22:18:55.714Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__M1__species_equal__tenfold_f2/fit.rds",
+      "bytes": 73660882,
+      "mtimeUtc": "2026-09-22T20:57:21.752Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__M1__species_equal__tenfold_f3/fit.rds",
+      "bytes": 73631081,
+      "mtimeUtc": "2026-09-22T21:07:02.562Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__M1__species_equal__tenfold_f4/fit.rds",
+      "bytes": 73689544,
+      "mtimeUtc": "2026-09-22T21:13:20.882Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__M1__species_equal__tenfold_f5/fit.rds",
+      "bytes": 73691632,
+      "mtimeUtc": "2026-09-22T21:23:02.037Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__M1__species_equal__tenfold_f6/fit.rds",
+      "bytes": 73666525,
+      "mtimeUtc": "2026-09-22T21:36:10.062Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__M1__species_equal__tenfold_f7/fit.rds",
+      "bytes": 73669338,
+      "mtimeUtc": "2026-09-22T21:45:46.133Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__M1__species_equal__tenfold_f8/fit.rds",
+      "bytes": 73650509,
+      "mtimeUtc": "2026-09-22T21:58:40.255Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__M1__species_equal__tenfold_f9/fit.rds",
+      "bytes": 73640262,
+      "mtimeUtc": "2026-09-22T22:08:27.665Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__M2__record_equal__fivefold_f1/fit.rds",
+      "bytes": 80118957,
+      "mtimeUtc": "2026-09-22T16:01:00.590Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__M2__record_equal__fivefold_f2/fit.rds",
+      "bytes": 80187883,
+      "mtimeUtc": "2026-09-22T16:08:40.269Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__M2__record_equal__fivefold_f3/fit.rds",
+      "bytes": 80146527,
+      "mtimeUtc": "2026-09-22T16:16:17.001Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__M2__record_equal__fivefold_f4/fit.rds",
+      "bytes": 80085639,
+      "mtimeUtc": "2026-09-22T16:21:44.384Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__M2__record_equal__fivefold_f5/fit.rds",
+      "bytes": 80135069,
+      "mtimeUtc": "2026-09-22T16:33:12.607Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__M2__record_equal__full/fit.rds",
+      "bytes": 80049503,
+      "mtimeUtc": "2026-09-22T13:32:57.742Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__M2__record_equal__tenfold_f1/fit.rds",
+      "bytes": 80095428,
+      "mtimeUtc": "2026-09-22T22:27:18.816Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__M2__record_equal__tenfold_f10/fit.rds",
+      "bytes": 80097022,
+      "mtimeUtc": "2026-09-22T23:37:26.601Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__M2__record_equal__tenfold_f2/fit.rds",
+      "bytes": 80110785,
+      "mtimeUtc": "2026-09-22T22:31:59.229Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__M2__record_equal__tenfold_f3/fit.rds",
+      "bytes": 80080681,
+      "mtimeUtc": "2026-09-22T22:40:21.472Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__M2__record_equal__tenfold_f4/fit.rds",
+      "bytes": 80156325,
+      "mtimeUtc": "2026-09-22T22:45:18.023Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__M2__record_equal__tenfold_f5/fit.rds",
+      "bytes": 80116351,
+      "mtimeUtc": "2026-09-22T22:53:14.590Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__M2__record_equal__tenfold_f6/fit.rds",
+      "bytes": 80140887,
+      "mtimeUtc": "2026-09-22T23:05:03.810Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__M2__record_equal__tenfold_f7/fit.rds",
+      "bytes": 80086795,
+      "mtimeUtc": "2026-09-22T23:11:46.190Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__M2__record_equal__tenfold_f8/fit.rds",
+      "bytes": 80065779,
+      "mtimeUtc": "2026-09-22T23:20:00.528Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__M2__record_equal__tenfold_f9/fit.rds",
+      "bytes": 80101258,
+      "mtimeUtc": "2026-09-22T23:30:15.686Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__M2__species_equal__fivefold_f1/fit.rds",
+      "bytes": 80100509,
+      "mtimeUtc": "2026-09-22T16:38:05.090Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__M2__species_equal__fivefold_f2/fit.rds",
+      "bytes": 80210160,
+      "mtimeUtc": "2026-09-22T16:46:54.769Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__M2__species_equal__fivefold_f3/fit.rds",
+      "bytes": 80126114,
+      "mtimeUtc": "2026-09-22T16:57:18.455Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__M2__species_equal__fivefold_f4/fit.rds",
+      "bytes": 80121406,
+      "mtimeUtc": "2026-09-22T17:03:52.287Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__M2__species_equal__fivefold_f5/fit.rds",
+      "bytes": 80145664,
+      "mtimeUtc": "2026-09-22T17:16:14.744Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__M2__species_equal__full/fit.rds",
+      "bytes": 80057640,
+      "mtimeUtc": "2026-09-22T13:44:02.260Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__M2__species_equal__tenfold_f1/fit.rds",
+      "bytes": 80066393,
+      "mtimeUtc": "2026-09-22T23:49:51.068Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__M2__species_equal__tenfold_f10/fit.rds",
+      "bytes": 80077604,
+      "mtimeUtc": "2026-09-23T01:16:37.496Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__M2__species_equal__tenfold_f2/fit.rds",
+      "bytes": 80097737,
+      "mtimeUtc": "2026-09-22T23:56:34.147Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__M2__species_equal__tenfold_f3/fit.rds",
+      "bytes": 80087148,
+      "mtimeUtc": "2026-09-23T00:06:41.461Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__M2__species_equal__tenfold_f4/fit.rds",
+      "bytes": 80145822,
+      "mtimeUtc": "2026-09-23T00:14:24.842Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__M2__species_equal__tenfold_f5/fit.rds",
+      "bytes": 80118124,
+      "mtimeUtc": "2026-09-23T00:24:30.217Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__M2__species_equal__tenfold_f6/fit.rds",
+      "bytes": 80101533,
+      "mtimeUtc": "2026-09-23T00:36:57.327Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__M2__species_equal__tenfold_f7/fit.rds",
+      "bytes": 80106766,
+      "mtimeUtc": "2026-09-23T00:44:46.831Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__M2__species_equal__tenfold_f8/fit.rds",
+      "bytes": 80072487,
+      "mtimeUtc": "2026-09-23T00:55:53.143Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__M2__species_equal__tenfold_f9/fit.rds",
+      "bytes": 80074489,
+      "mtimeUtc": "2026-09-23T01:08:20.182Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__M3__record_equal__fivefold_f1/fit.rds",
+      "bytes": 101321719,
+      "mtimeUtc": "2026-09-22T17:19:16.225Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__M3__record_equal__fivefold_f2/fit.rds",
+      "bytes": 101380486,
+      "mtimeUtc": "2026-09-22T17:26:14.049Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__M3__record_equal__fivefold_f3/fit.rds",
+      "bytes": 101317439,
+      "mtimeUtc": "2026-09-22T17:33:38.684Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__M3__record_equal__fivefold_f4/fit.rds",
+      "bytes": 101302439,
+      "mtimeUtc": "2026-09-22T17:37:51.753Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__M3__record_equal__fivefold_f5/fit.rds",
+      "bytes": 101310840,
+      "mtimeUtc": "2026-09-22T17:44:23.630Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__M3__record_equal__full/fit.rds",
+      "bytes": 101246928,
+      "mtimeUtc": "2026-09-22T13:51:45.657Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__M3__record_equal__tenfold_f1/fit.rds",
+      "bytes": 101302681,
+      "mtimeUtc": "2026-09-23T01:23:29.263Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__M3__record_equal__tenfold_f10/fit.rds",
+      "bytes": 101307487,
+      "mtimeUtc": "2026-09-23T02:18:14.472Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__M3__record_equal__tenfold_f2/fit.rds",
+      "bytes": 101315658,
+      "mtimeUtc": "2026-09-23T01:27:58.786Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__M3__record_equal__tenfold_f3/fit.rds",
+      "bytes": 101334833,
+      "mtimeUtc": "2026-09-23T01:35:05.690Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__M3__record_equal__tenfold_f4/fit.rds",
+      "bytes": 101318769,
+      "mtimeUtc": "2026-09-23T01:38:58.885Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__M3__record_equal__tenfold_f5/fit.rds",
+      "bytes": 101282109,
+      "mtimeUtc": "2026-09-23T01:45:42.958Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__M3__record_equal__tenfold_f6/fit.rds",
+      "bytes": 101303917,
+      "mtimeUtc": "2026-09-23T01:53:19.930Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__M3__record_equal__tenfold_f7/fit.rds",
+      "bytes": 101278753,
+      "mtimeUtc": "2026-09-23T01:58:45.500Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__M3__record_equal__tenfold_f8/fit.rds",
+      "bytes": 101203910,
+      "mtimeUtc": "2026-09-23T02:05:13.406Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__M3__record_equal__tenfold_f9/fit.rds",
+      "bytes": 101319270,
+      "mtimeUtc": "2026-09-23T02:11:47.759Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__M3__species_equal__fivefold_f1/fit.rds",
+      "bytes": 101254245,
+      "mtimeUtc": "2026-09-22T17:48:31.388Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__M3__species_equal__fivefold_f2/fit.rds",
+      "bytes": 101379674,
+      "mtimeUtc": "2026-09-22T17:55:16.393Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__M3__species_equal__fivefold_f3/fit.rds",
+      "bytes": 101277144,
+      "mtimeUtc": "2026-09-22T18:02:53.222Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__M3__species_equal__fivefold_f4/fit.rds",
+      "bytes": 101284284,
+      "mtimeUtc": "2026-09-22T18:07:26.236Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__M3__species_equal__fivefold_f5/fit.rds",
+      "bytes": 101303926,
+      "mtimeUtc": "2026-09-22T18:14:53.684Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__M3__species_equal__full/fit.rds",
+      "bytes": 101227700,
+      "mtimeUtc": "2026-09-22T13:59:01.787Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__M3__species_equal__tenfold_f1/fit.rds",
+      "bytes": 101221782,
+      "mtimeUtc": "2026-09-23T02:25:44.274Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__M3__species_equal__tenfold_f10/fit.rds",
+      "bytes": 101279522,
+      "mtimeUtc": "2026-09-23T03:26:10.386Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__M3__species_equal__tenfold_f2/fit.rds",
+      "bytes": 101269739,
+      "mtimeUtc": "2026-09-23T02:30:40.755Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__M3__species_equal__tenfold_f3/fit.rds",
+      "bytes": 101272566,
+      "mtimeUtc": "2026-09-23T02:37:53.638Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__M3__species_equal__tenfold_f4/fit.rds",
+      "bytes": 101299475,
+      "mtimeUtc": "2026-09-23T02:42:29.649Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__M3__species_equal__tenfold_f5/fit.rds",
+      "bytes": 101249524,
+      "mtimeUtc": "2026-09-23T02:49:53.068Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__M3__species_equal__tenfold_f6/fit.rds",
+      "bytes": 101263320,
+      "mtimeUtc": "2026-09-23T02:57:15.520Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__M3__species_equal__tenfold_f7/fit.rds",
+      "bytes": 101259605,
+      "mtimeUtc": "2026-09-23T03:03:35.130Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__M3__species_equal__tenfold_f8/fit.rds",
+      "bytes": 101214150,
+      "mtimeUtc": "2026-09-23T03:11:17.689Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__M3__species_equal__tenfold_f9/fit.rds",
+      "bytes": 101276334,
+      "mtimeUtc": "2026-09-23T03:19:08.727Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__Null__record_equal__fivefold_f1/fit.rds",
+      "bytes": 39438870,
+      "mtimeUtc": "2026-09-22T14:10:23.485Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__Null__record_equal__fivefold_f2/fit.rds",
+      "bytes": 39464840,
+      "mtimeUtc": "2026-09-22T14:12:44.044Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__Null__record_equal__fivefold_f3/fit.rds",
+      "bytes": 39441049,
+      "mtimeUtc": "2026-09-22T14:15:51.606Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__Null__record_equal__fivefold_f4/fit.rds",
+      "bytes": 39440628,
+      "mtimeUtc": "2026-09-22T14:17:45.398Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__Null__record_equal__fivefold_f5/fit.rds",
+      "bytes": 39436629,
+      "mtimeUtc": "2026-09-22T14:20:35.251Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__Null__record_equal__full/fit.rds",
+      "bytes": 39410169,
+      "mtimeUtc": "2026-09-22T13:01:51.255Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__Null__record_equal__tenfold_f1/fit.rds",
+      "bytes": 39433764,
+      "mtimeUtc": "2026-09-22T18:34:35.223Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__Null__record_equal__tenfold_f10/fit.rds",
+      "bytes": 39429137,
+      "mtimeUtc": "2026-09-22T18:55:35.302Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__Null__record_equal__tenfold_f2/fit.rds",
+      "bytes": 39434014,
+      "mtimeUtc": "2026-09-22T18:36:42.069Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__Null__record_equal__tenfold_f3/fit.rds",
+      "bytes": 39433822,
+      "mtimeUtc": "2026-09-22T18:39:16.842Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__Null__record_equal__tenfold_f4/fit.rds",
+      "bytes": 39458256,
+      "mtimeUtc": "2026-09-22T18:40:50.644Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__Null__record_equal__tenfold_f5/fit.rds",
+      "bytes": 39427285,
+      "mtimeUtc": "2026-09-22T18:43:27.427Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__Null__record_equal__tenfold_f6/fit.rds",
+      "bytes": 39423030,
+      "mtimeUtc": "2026-09-22T18:45:49.181Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__Null__record_equal__tenfold_f7/fit.rds",
+      "bytes": 39434680,
+      "mtimeUtc": "2026-09-22T18:47:59.720Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__Null__record_equal__tenfold_f8/fit.rds",
+      "bytes": 39424038,
+      "mtimeUtc": "2026-09-22T18:50:31.661Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__Null__record_equal__tenfold_f9/fit.rds",
+      "bytes": 39431026,
+      "mtimeUtc": "2026-09-22T18:53:12.873Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__Null__species_equal__fivefold_f1/fit.rds",
+      "bytes": 39460345,
+      "mtimeUtc": "2026-09-22T14:22:04.117Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__Null__species_equal__fivefold_f2/fit.rds",
+      "bytes": 39483637,
+      "mtimeUtc": "2026-09-22T14:24:38.330Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__Null__species_equal__fivefold_f3/fit.rds",
+      "bytes": 39469064,
+      "mtimeUtc": "2026-09-22T14:27:31.281Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__Null__species_equal__fivefold_f4/fit.rds",
+      "bytes": 39473531,
+      "mtimeUtc": "2026-09-22T14:29:13.946Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__Null__species_equal__fivefold_f5/fit.rds",
+      "bytes": 39461050,
+      "mtimeUtc": "2026-09-22T14:32:07.954Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__Null__species_equal__full/fit.rds",
+      "bytes": 39430507,
+      "mtimeUtc": "2026-09-22T13:04:13.861Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__Null__species_equal__tenfold_f1/fit.rds",
+      "bytes": 39455205,
+      "mtimeUtc": "2026-09-22T18:58:06.126Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__Null__species_equal__tenfold_f10/fit.rds",
+      "bytes": 39452539,
+      "mtimeUtc": "2026-09-22T19:18:45.392Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__Null__species_equal__tenfold_f2/fit.rds",
+      "bytes": 39459726,
+      "mtimeUtc": "2026-09-22T18:59:45.402Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__Null__species_equal__tenfold_f3/fit.rds",
+      "bytes": 39453324,
+      "mtimeUtc": "2026-09-22T19:01:57.338Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__Null__species_equal__tenfold_f4/fit.rds",
+      "bytes": 39470245,
+      "mtimeUtc": "2026-09-22T19:03:33.317Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__Null__species_equal__tenfold_f5/fit.rds",
+      "bytes": 39447812,
+      "mtimeUtc": "2026-09-22T19:05:58.148Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__Null__species_equal__tenfold_f6/fit.rds",
+      "bytes": 39444719,
+      "mtimeUtc": "2026-09-22T19:08:21.119Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__Null__species_equal__tenfold_f7/fit.rds",
+      "bytes": 39445042,
+      "mtimeUtc": "2026-09-22T19:10:47.075Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__Null__species_equal__tenfold_f8/fit.rds",
+      "bytes": 39449124,
+      "mtimeUtc": "2026-09-22T19:13:13.193Z"
+    },
+    {
+      "path": "v3.4/runs/fits/joint_bb__Null__species_equal__tenfold_f9/fit.rds",
+      "bytes": 39468399,
+      "mtimeUtc": "2026-09-22T19:16:06.761Z"
+    },
+    {
+      "path": "v3.4/runs/panel_encoded.csv",
+      "bytes": 70491,
+      "mtimeUtc": "2026-09-22T12:48:19.892Z"
+    },
+    {
+      "path": "v3.4/runs/prepared_v3.rds",
+      "bytes": 26126,
+      "mtimeUtc": "2026-09-22T12:48:19.856Z"
+    },
+    {
+      "path": "v3.4/runs/run_plan.csv",
+      "bytes": 75485,
+      "mtimeUtc": "2026-09-22T12:48:21.113Z"
+    },
+    {
+      "path": "v3.4/scripts/build_complete_archive.ps1",
+      "bytes": 5153,
+      "mtimeUtc": "2026-09-22T12:43:27.100Z"
+    },
+    {
+      "path": "v3.4/scripts/ENVIRONMENT.md",
+      "bytes": 923,
+      "mtimeUtc": "2026-09-22T12:43:27.099Z"
+    },
+    {
+      "path": "v3.4/scripts/restore_environment.R",
+      "bytes": 4815,
+      "mtimeUtc": "2026-09-22T12:43:27.101Z"
+    },
+    {
+      "path": "v3.4/scripts/test_environment.R",
+      "bytes": 2406,
+      "mtimeUtc": "2026-09-22T12:43:27.102Z"
+    },
+    {
+      "path": "v3.4/scripts/upload_release_asset.ps1",
+      "bytes": 4206,
+      "mtimeUtc": "2026-09-22T12:43:27.103Z"
+    },
+    {
+      "path": "v3.4/src/audit_run.R",
+      "bytes": 402,
+      "mtimeUtc": "2026-09-22T12:43:27.105Z"
+    },
+    {
+      "path": "v3.4/src/plot_species_predictions.R",
+      "bytes": 331,
+      "mtimeUtc": "2026-09-22T12:43:27.106Z"
+    },
+    {
+      "path": "v3.4/src/postprocess_results.R",
+      "bytes": 389,
+      "mtimeUtc": "2026-09-22T12:43:27.107Z"
+    },
+    {
+      "path": "v3.4/src/v3_pipeline.R",
+      "bytes": 887,
+      "mtimeUtc": "2026-09-22T12:43:27.109Z"
+    },
+    {
+      "path": "v3.4/src/write_reports.R",
+      "bytes": 239,
+      "mtimeUtc": "2026-09-22T12:43:27.110Z"
+    },
+    {
+      "path": "v3.4/stan/joint_bb.stan",
+      "bytes": 9477,
+      "mtimeUtc": "2026-09-22T12:43:27.111Z"
+    },
+    {
+      "path": "v3.4/tests/build_audit_beta_cases.R",
+      "bytes": 1935,
+      "mtimeUtc": "2026-09-22T12:43:27.112Z"
+    },
+    {
+      "path": "v3.4/tests/check_external.R",
+      "bytes": 976,
+      "mtimeUtc": "2026-09-22T12:43:27.114Z"
+    },
+    {
+      "path": "v3.4/tests/check_prepared.R",
+      "bytes": 610,
+      "mtimeUtc": "2026-09-22T12:43:27.115Z"
+    },
+    {
+      "path": "v3.4/tests/check_smoke_scores.R",
+      "bytes": 1721,
+      "mtimeUtc": "2026-09-22T12:43:27.116Z"
+    },
+    {
+      "path": "v3.4/tests/fixtures_v32.R",
+      "bytes": 1513,
+      "mtimeUtc": "2026-09-22T12:43:27.117Z"
+    },
+    {
+      "path": "v3.4/tests/high_precision_audit_reference.py",
+      "bytes": 2392,
+      "mtimeUtc": "2026-09-22T12:43:27.118Z"
+    },
+    {
+      "path": "v3.4/tests/parse_all.R",
+      "bytes": 442,
+      "mtimeUtc": "2026-09-22T12:43:27.119Z"
+    },
+    {
+      "path": "v3.4/tests/prepare_binary_fixture.R",
+      "bytes": 831,
+      "mtimeUtc": "2026-09-22T12:43:27.120Z"
+    },
+    {
+      "path": "v3.4/tests/print_versions.R",
+      "bytes": 245,
+      "mtimeUtc": "2026-09-22T12:43:27.122Z"
+    },
+    {
+      "path": "v3.4/tests/run_audit_deterministic.R",
+      "bytes": 299,
+      "mtimeUtc": "2026-09-22T12:43:27.123Z"
+    },
+    {
+      "path": "v3.4/tests/run_tests.R",
+      "bytes": 466,
+      "mtimeUtc": "2026-09-22T12:43:27.124Z"
+    },
+    {
+      "path": "v3.4/tests/run_v32_regressions.R",
+      "bytes": 1153,
+      "mtimeUtc": "2026-09-22T12:43:27.125Z"
+    },
+    {
+      "path": "v3.4/tests/run_v33_regressions.R",
+      "bytes": 1239,
+      "mtimeUtc": "2026-09-22T12:43:27.126Z"
+    },
+    {
+      "path": "v3.4/tests/run_v34_regressions.R",
+      "bytes": 1307,
+      "mtimeUtc": "2026-09-22T12:43:27.127Z"
+    },
+    {
+      "path": "v3.4/tests/save_validation_snapshots.R",
+      "bytes": 1574,
+      "mtimeUtc": "2026-09-22T12:43:27.128Z"
+    },
+    {
+      "path": "v3.4/tests/stan/beta_interval_before.stan",
+      "bytes": 3033,
+      "mtimeUtc": "2026-09-22T12:43:27.130Z"
+    },
+    {
+      "path": "v3.4/tests/stan/beta_interval_probe_after.stan",
+      "bytes": 8300,
+      "mtimeUtc": "2026-09-22T12:43:27.132Z"
+    },
+    {
+      "path": "v3.4/tests/stan/beta_interval_probe_before.stan",
+      "bytes": 1767,
+      "mtimeUtc": "2026-09-22T12:43:27.132Z"
+    },
+    {
+      "path": "v3.4/tests/test_artifact_guards.R",
+      "bytes": 3471,
+      "mtimeUtc": "2026-09-22T12:43:27.133Z"
+    },
+    {
+      "path": "v3.4/tests/test_audit_beta_reference.R",
+      "bytes": 2545,
+      "mtimeUtc": "2026-09-22T12:43:27.135Z"
+    },
+    {
+      "path": "v3.4/tests/test_audit_beta_three_way.R",
+      "bytes": 5133,
+      "mtimeUtc": "2026-09-22T12:43:27.136Z"
+    },
+    {
+      "path": "v3.4/tests/test_beta_intervals.R",
+      "bytes": 8329,
+      "mtimeUtc": "2026-09-22T12:43:27.137Z"
+    },
+    {
+      "path": "v3.4/tests/test_beta_switches.R",
+      "bytes": 7238,
+      "mtimeUtc": "2026-09-22T12:43:27.139Z"
+    },
+    {
+      "path": "v3.4/tests/test_binary_template_key.R",
+      "bytes": 1233,
+      "mtimeUtc": "2026-09-22T12:43:27.139Z"
+    },
+    {
+      "path": "v3.4/tests/test_contracts.R",
+      "bytes": 10855,
+      "mtimeUtc": "2026-09-22T12:43:27.140Z"
+    },
+    {
+      "path": "v3.4/tests/test_input_support_counts.R",
+      "bytes": 1309,
+      "mtimeUtc": "2026-09-22T12:43:27.142Z"
+    },
+    {
+      "path": "v3.4/tests/test_integration.R",
+      "bytes": 4828,
+      "mtimeUtc": "2026-09-22T12:43:27.143Z"
+    },
+    {
+      "path": "v3.4/tests/test_orchestration.R",
+      "bytes": 3673,
+      "mtimeUtc": "2026-09-22T12:43:27.144Z"
+    },
+    {
+      "path": "v3.4/tests/test_prediction_audit.R",
+      "bytes": 16400,
+      "mtimeUtc": "2026-09-22T12:43:27.146Z"
+    },
+    {
+      "path": "v3.4/tests/test_quantitative_artifacts.R",
+      "bytes": 1212,
+      "mtimeUtc": "2026-09-22T12:43:27.147Z"
+    },
+    {
+      "path": "v3.4/tests/test_quantitative_diagnostics.R",
+      "bytes": 2321,
+      "mtimeUtc": "2026-09-22T12:43:27.148Z"
+    },
+    {
+      "path": "v3.4/tests/test_release_regressions.R",
+      "bytes": 1178,
+      "mtimeUtc": "2026-09-22T12:43:27.149Z"
+    },
+    {
+      "path": "v3.4/tests/test_report_comparison_wording.R",
+      "bytes": 2115,
+      "mtimeUtc": "2026-09-22T12:43:27.150Z"
+    },
+    {
+      "path": "v3.4/tests/test_scientific_contracts.R",
+      "bytes": 3349,
+      "mtimeUtc": "2026-09-22T12:43:27.152Z"
+    },
+    {
+      "path": "v3.4/tests/test_unequal_integration.R",
+      "bytes": 6469,
+      "mtimeUtc": "2026-09-22T12:43:27.152Z"
+    },
+    {
+      "path": "v3.4/tests/test_unequal_posterior_audit.R",
+      "bytes": 3872,
+      "mtimeUtc": "2026-09-22T12:43:27.153Z"
+    },
+    {
+      "path": "v3.4/tests/test_v32_fullgrid_synthetic.R",
+      "bytes": 3533,
+      "mtimeUtc": "2026-09-22T12:43:27.155Z"
+    },
+    {
+      "path": "v3.4/tests/test_v32_metrics.R",
+      "bytes": 2972,
+      "mtimeUtc": "2026-09-22T12:43:27.156Z"
+    },
+    {
+      "path": "v3.4/tests/test_v33_reaudit_saved_fits.R",
+      "bytes": 4621,
+      "mtimeUtc": "2026-09-22T12:43:27.158Z"
+    },
+    {
+      "path": "v3.4/tests/test_v33_scope_guard.R",
+      "bytes": 1718,
+      "mtimeUtc": "2026-09-22T12:43:27.158Z"
+    },
+    {
+      "path": "v3.4/tests/test_v34_input_guards.R",
+      "bytes": 8630,
+      "mtimeUtc": "2026-09-22T12:43:27.160Z"
+    },
+    {
+      "path": "v3.4/tests/test_v34_legal_equivalence.R",
+      "bytes": 2296,
+      "mtimeUtc": "2026-09-22T12:43:27.161Z"
+    },
+    {
+      "path": "v3.4/tests/test_v34_scope_guard.R",
+      "bytes": 1877,
+      "mtimeUtc": "2026-09-22T12:43:27.163Z"
+    },
+    {
+      "path": "v3.4/tests/test_visual_report.R",
+      "bytes": 2915,
+      "mtimeUtc": "2026-09-22T12:43:27.164Z"
+    },
+    {
+      "path": "v3.4/tests/test_weighted_posterior.R",
+      "bytes": 2641,
+      "mtimeUtc": "2026-09-22T12:43:27.165Z"
+    }
+  ]
+}

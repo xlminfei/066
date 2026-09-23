@@ -1,0 +1,25 @@
+$stage
+[1] "after"
+
+$status
+[1] "PASS"
+
+$checks
+[1] 151
+
+$passed
+[1] 151
+
+$failed
+[1] 0
+
+$sampler_callback_calls
+[1] 0
+
+$actual_samplers_started
+[1] 0
+
+$real_data_fits
+[1] 0
+
+V34_INPUT_GUARDS_PASS

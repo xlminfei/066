@@ -1,0 +1,31 @@
+{
+  "id": "2192b83c6d64427cedb3da160125e9f6a4e79c5e123bdc66c7e8e3c5a659981c",
+  "created": "2026-09-22T12:48:17.305359639Z",
+  "command": [
+    "bash",
+    "/run_logs/run_formal.sh"
+  ],
+  "image": "sha256:c67aade078ec1510b1b036a1a34c6ad0aad66534296b9e6587cd9f283093ca58",
+  "mounts": [
+    {
+      "Type": "bind",
+      "Source": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\runs\\v3_4_formal_20260922204324\\v3.4",
+      "Destination": "/project/v34",
+      "Mode": "",
+      "RW": true,
+      "Propagation": "rprivate"
+    },
+    {
+      "Type": "bind",
+      "Source": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\runs\\v3_4_formal_20260922204324\\run_logs_v34_20260922204324",
+      "Destination": "/run_logs",
+      "Mode": "",
+      "RW": true,
+      "Propagation": "rprivate"
+    }
+  ],
+  "restartPolicy": {
+    "Name": "no",
+    "MaximumRetryCount": 0
+  }
+}

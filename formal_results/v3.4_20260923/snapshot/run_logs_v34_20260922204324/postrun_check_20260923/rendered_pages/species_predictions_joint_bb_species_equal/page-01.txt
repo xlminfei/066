@@ -1,0 +1,63 @@
+0.0 0.2 0.4 0.6 0.8 1.0
+Null
+joint_bb
+species_equal
+Ratio
+Abramis brama
+Paramisgurnus dabryanus
+Misgurnus anguillicaudatus
+Xyrauchen texanus
+Myxocyprinus asiaticus
+Chanos chanos
+Engraulis encrasicolus
+Coilia mystus
+Coilia grayii
+Denticeps clupeoides
+Sprattus sprattus
+Clupea harengus
+Sardina pilchardus
+Alosa sapidissima
+Alosa pseudoharengus
+Alosa alosa
+Hiodon alosoides
+Scleropages formosus
+Paramormyrops kingsleyae
+Brienomyrus brachyistius
+Arapaima gigas
+Synaphobranchus kaupii
+Gymnothorax javanicus
+Conger conger
+Anguilla rostrata
+Anguilla japonica
+Anguilla anguilla
+Aldrovandia affinis
+Albula goreensis
+Albula glossodonta
+Megalops cyprinoides
+Megalops atlanticus
+Lepisosteus oculatus
+Atractosteus spatula
+Amia ocellicauda
+Polyodon spathula
+Huso huso
+Acipenser sinensis
+Acipenser ruthenus
+Acipenser oxyrinchus
+Polypterus senegalus
+Erpetoichthys calabaricus
+0.0 0.2 0.4 0.6 0.8 1.0
+M1
+joint_bb
+species_equal
+Ratio
+0.0 0.2 0.4 0.6 0.8 1.0
+M2
+joint_bb
+species_equal
+Ratio
+0.0 0.2 0.4 0.6 0.8 1.0
+M3
+joint_bb
+species_equal
+Ratio
+Point: posterior mean | dark: 95% CrI | pale: future−report 95% PI | x: applicability warning

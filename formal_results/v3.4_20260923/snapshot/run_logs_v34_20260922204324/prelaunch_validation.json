@@ -1,0 +1,150 @@
+{
+  "checkedAt": "2026-09-22T12:47:49.539Z",
+  "status": "PASS",
+  "frozenFiles": [
+    {
+      "path": "Dockerfile",
+      "unchanged": true
+    },
+    {
+      "path": "R/applicability.R",
+      "unchanged": true
+    },
+    {
+      "path": "R/audit_run.R",
+      "unchanged": true
+    },
+    {
+      "path": "R/bootstrap.R",
+      "unchanged": true
+    },
+    {
+      "path": "R/cache_io.R",
+      "unchanged": true
+    },
+    {
+      "path": "R/comparison.R",
+      "unchanged": true
+    },
+    {
+      "path": "R/config.R",
+      "unchanged": true
+    },
+    {
+      "path": "R/cross_validation.R",
+      "unchanged": true
+    },
+    {
+      "path": "R/data_encoding.R",
+      "unchanged": true
+    },
+    {
+      "path": "R/fitting.R",
+      "unchanged": true
+    },
+    {
+      "path": "R/metrics.R",
+      "unchanged": true
+    },
+    {
+      "path": "R/plotting.R",
+      "unchanged": true
+    },
+    {
+      "path": "R/ppc.R",
+      "unchanged": true
+    },
+    {
+      "path": "R/prediction.R",
+      "unchanged": true
+    },
+    {
+      "path": "R/prediction_audit.R",
+      "unchanged": true
+    },
+    {
+      "path": "R/provenance.R",
+      "unchanged": true
+    },
+    {
+      "path": "R/quantitative_diagnostics.R",
+      "unchanged": true
+    },
+    {
+      "path": "R/reporting.R",
+      "unchanged": true
+    },
+    {
+      "path": "R/weights.R",
+      "unchanged": true
+    },
+    {
+      "path": "R/workflow.R",
+      "unchanged": true
+    },
+    {
+      "path": "config/analysis.json",
+      "unchanged": true
+    },
+    {
+      "path": "input/contract.json",
+      "unchanged": true
+    },
+    {
+      "path": "input/observations.csv",
+      "unchanged": true
+    },
+    {
+      "path": "input/sites.csv",
+      "unchanged": true
+    },
+    {
+      "path": "renv.lock",
+      "unchanged": true
+    },
+    {
+      "path": "scripts/restore_environment.R",
+      "unchanged": true
+    },
+    {
+      "path": "src/audit_run.R",
+      "unchanged": true
+    },
+    {
+      "path": "src/plot_species_predictions.R",
+      "unchanged": true
+    },
+    {
+      "path": "src/postprocess_results.R",
+      "unchanged": true
+    },
+    {
+      "path": "src/v3_pipeline.R",
+      "unchanged": true
+    },
+    {
+      "path": "src/write_reports.R",
+      "unchanged": true
+    },
+    {
+      "path": "stan/joint_bb.stan",
+      "unchanged": true
+    }
+  ],
+  "preflight": {
+    "status": "PASS",
+    "version": "ratio_analysis_v3_4_weighted_20260922",
+    "panel_species": 365,
+    "records": 153,
+    "binary_species": 50,
+    "joint_species": 51,
+    "formal_full_tasks": 16,
+    "formal_cv_tasks": 240,
+    "input_hashes": {
+      "observations": "3c886f7f2c11012463296b350a931543542b4e1c0d128ad3c408fda9ae824d79",
+      "sites": "0a99692b060f13d1faaa870d06ea7dca9a4f16bc289636bcc88f5d105ebdacb5"
+    }
+  },
+  "planRows": 256,
+  "formalShellSyntaxExit": 0
+}

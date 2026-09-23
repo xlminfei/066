@@ -1,5 +1,7 @@
 # STING 跨物种响应比率模型：版本化代码与验证资料
 
+> **v3.4正式运行已完成（2026-09-23）**：[全部运行结果与下载](formal_results/v3.4_20260923/README.md)、[中文指标解读与新增图件](formal_results/v3.4_20260923/ANALYSIS_zh.md)、[诊断与图件复核](formal_results/v3.4_20260923/RUN_REVIEW_zh.md)。256项拟合诊断和最终审计通过；保留18项PPC提示。全部原生拟合对象、日志、中间文件及结果以独立Release完整提供。下面各代码版本的“未运行”说明保留其发布时历史状态。
+
 > **v3.4 更新**：[修改范围](v3.4/README.md)、[逐项理由](v3.4/docs/CHANGE_DETAILS_v3_4_zh.md)、[测试结果](v3.4/review/VALIDATION_v3_4.md)、[完整资料](releases/v3.4/README.md)。补齐完整折表及joint点值输入防护；151项检查通过，640组合法评分完全一致；没有MCMC或真实研究计算。
 
 > **v3.3 更新**：[修改与范围](v3.3/README.md)、[详细修改理由](v3.3/docs/CHANGE_DETAILS_v3_3_zh.md)、[测试结果](v3.3/review/VALIDATION_v3_3.md)、[完整资料](releases/v3.3/README.md)。仅修复R审计有限尾差精度和MeanLogScore比较文案；没有新MCMC或真实研究计算。
@@ -8,7 +10,7 @@
 
 > **v3.1 完整资料补充**：全部说明、中间文件与测试结果见 v3.1-complete Release；[图片为何等值](v3.1/docs/FIGURE_TEST_EXPLANATION_zh.md)、[逐项修改](v3.1/docs/CHANGE_DETAILS_zh.md)、[完整下载与校验](v3.1/docs/COMPLETE_ARCHIVE_zh.md)。
 
-这是一个把同一蛋白的六个位点序列特征与实验响应资料联系起来的研究计算项目。项目保留v1/v2的历史流程及结果，并继续维护独立的v3系列。当前v3.2完成的是指定修改和合成验收，尚无正式研究计算结果；v2的已有正式结果不会被新测试覆盖。
+这是一个把同一蛋白的六个位点序列特征与实验响应资料联系起来的研究计算项目。项目保留v1/v2的历史流程及结果，并继续维护独立的v3系列。v3.4的首次正式研究计算已完成，完整结果见上方链接；旧版本代码、测试及v2历史结果保持原样。
 
 ## 研究问题
 
@@ -21,7 +23,8 @@
 
 ## 从哪里开始
 
-- [v2/README.md](v2/README.md)：当前正式版本的完整方法、参数、公式、输出列和复现步骤。
+- [formal_results/v3.4_20260923/README.md](formal_results/v3.4_20260923/README.md)：最新v3.4正式结果、图文解读、完整拟合对象与运行证据。
+- [v2/README.md](v2/README.md)：历史v2方法、参数、公式、输出列和复现步骤。
 - [v1/README.md](v1/README.md)：历史版本的模型网格、进化树路线、手册执行顺序和已知限制。
 - [docs/v1_vs_v2_改进说明_zh.md](docs/v1_vs_v2_改进说明_zh.md)：逐项解释 v2 改了什么以及为什么改。
 - [docs/algorithm_details_zh.md](docs/algorithm_details_zh.md)：用不依赖编程背景的语言说明模型、区间和评价指标。

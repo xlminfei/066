@@ -1,0 +1,7 @@
+{
+  "stage": "predict",
+  "analysis_fingerprint": "f7f5b372bdad2effc153e629a83e73d809ffc3d1258c1ffcab1c08064af4e68e",
+  "files": {
+    "results/full_panel_predictions.csv": "1edcbf60e4d70f3c69c7f0bc4258a207771d08ff33e3914ea5fb1448fb8883d7"
+  }
+}

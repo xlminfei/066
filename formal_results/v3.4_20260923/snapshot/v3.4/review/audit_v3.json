@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "version": "ratio_analysis_v3_4_weighted_20260922",
+  "expected_tasks": 256,
+  "fits_checked": 256,
+  "fits_passed": 256,
+  "posterior_refits": 0,
+  "prediction_strata_checked": 600,
+  "prediction_rows_checked": 10720,
+  "prediction_audit_source": "current_inputs_and_saved_fitted_posterior; independent_R_raw_loglik",
+  "issues": []
+}
