@@ -1,0 +1,35 @@
+             Version   Design EvalWeighting                      Inference
+                  v2 fivefold  record_equal analytic_species_sums_or_means
+                  v2 fivefold  record_equal      current_species_bootstrap
+                  v2 fivefold species_equal analytic_species_sums_or_means
+                  v2 fivefold species_equal      current_species_bootstrap
+                  v2  tenfold  record_equal analytic_species_sums_or_means
+                  v2  tenfold  record_equal      current_species_bootstrap
+                  v2  tenfold species_equal analytic_species_sums_or_means
+                  v2  tenfold species_equal      current_species_bootstrap
+ v34_record_training fivefold  record_equal analytic_species_sums_or_means
+ v34_record_training fivefold  record_equal      current_species_bootstrap
+ v34_record_training fivefold species_equal analytic_species_sums_or_means
+ v34_record_training fivefold species_equal      current_species_bootstrap
+ v34_record_training  tenfold  record_equal analytic_species_sums_or_means
+ v34_record_training  tenfold  record_equal      current_species_bootstrap
+ v34_record_training  tenfold species_equal analytic_species_sums_or_means
+ v34_record_training  tenfold species_equal      current_species_bootstrap
+ Difference         SE          P ScaledDifference  ScaledSE
+ 0.11386419 0.05146614 0.02693835         17.42122  7.874319
+ 0.11386419 0.04517124 0.01171140         17.42122  6.911200
+ 0.11795768 0.07655070 0.12333889         18.04752 11.712257
+ 0.11795768 0.07590532 0.12018185         18.04752 11.613513
+ 0.11579207 0.05160066 0.02483217         17.71619  7.894901
+ 0.11579207 0.04500229 0.01008135         17.71619  6.885350
+ 0.13067986 0.07885603 0.09747996         19.99402 12.064973
+ 0.13067986 0.07777783 0.09292454         19.99402 11.900008
+ 0.09234372 0.04547728 0.04230105         14.12859  6.958024
+ 0.09234372 0.04496185 0.03999277         14.12859  6.879164
+ 0.12072222 0.07485850 0.10681575         18.47050 11.453351
+ 0.12072222 0.07398899 0.10275869         18.47050 11.320316
+ 0.08587246 0.04745267 0.07035096         13.13849  7.260259
+ 0.08587246 0.04324990 0.04708943         13.13849  6.617235
+ 0.09725723 0.07652078 0.20373184         14.88036 11.707680
+ 0.09725723 0.07617736 0.20170081         14.88036 11.655136
+P_VALUE_RECONCILIATION_PASS; saved results only; no MCMC

@@ -1,0 +1,166 @@
+{
+  "model_vs_null.csv": [
+    {
+      "group": [
+        "binary",
+        "record_equal",
+        "fivefold"
+      ],
+      "n": 6,
+      "raw_below05": 6,
+      "BH_below05": 6
+    },
+    {
+      "group": [
+        "joint_bb",
+        "record_equal",
+        "fivefold"
+      ],
+      "n": 6,
+      "raw_below05": 1,
+      "BH_below05": 0
+    },
+    {
+      "group": [
+        "binary",
+        "record_equal",
+        "tenfold"
+      ],
+      "n": 6,
+      "raw_below05": 5,
+      "BH_below05": 4
+    },
+    {
+      "group": [
+        "joint_bb",
+        "record_equal",
+        "tenfold"
+      ],
+      "n": 6,
+      "raw_below05": 1,
+      "BH_below05": 0
+    },
+    {
+      "group": [
+        "binary",
+        "species_equal",
+        "fivefold"
+      ],
+      "n": 6,
+      "raw_below05": 6,
+      "BH_below05": 6
+    },
+    {
+      "group": [
+        "joint_bb",
+        "species_equal",
+        "fivefold"
+      ],
+      "n": 6,
+      "raw_below05": 0,
+      "BH_below05": 0
+    },
+    {
+      "group": [
+        "binary",
+        "species_equal",
+        "tenfold"
+      ],
+      "n": 6,
+      "raw_below05": 6,
+      "BH_below05": 6
+    },
+    {
+      "group": [
+        "joint_bb",
+        "species_equal",
+        "tenfold"
+      ],
+      "n": 6,
+      "raw_below05": 0,
+      "BH_below05": 0
+    }
+  ],
+  "training_method_comparisons.csv": [
+    {
+      "group": [
+        "binary",
+        "record_equal",
+        "fivefold"
+      ],
+      "n": 4,
+      "raw_below05": 0,
+      "BH_below05": 0
+    },
+    {
+      "group": [
+        "joint_bb",
+        "record_equal",
+        "fivefold"
+      ],
+      "n": 4,
+      "raw_below05": 0,
+      "BH_below05": 0
+    },
+    {
+      "group": [
+        "binary",
+        "record_equal",
+        "tenfold"
+      ],
+      "n": 4,
+      "raw_below05": 0,
+      "BH_below05": 0
+    },
+    {
+      "group": [
+        "joint_bb",
+        "record_equal",
+        "tenfold"
+      ],
+      "n": 4,
+      "raw_below05": 0,
+      "BH_below05": 0
+    },
+    {
+      "group": [
+        "binary",
+        "species_equal",
+        "fivefold"
+      ],
+      "n": 4,
+      "raw_below05": 0,
+      "BH_below05": 0
+    },
+    {
+      "group": [
+        "joint_bb",
+        "species_equal",
+        "fivefold"
+      ],
+      "n": 4,
+      "raw_below05": 0,
+      "BH_below05": 0
+    },
+    {
+      "group": [
+        "binary",
+        "species_equal",
+        "tenfold"
+      ],
+      "n": 4,
+      "raw_below05": 0,
+      "BH_below05": 0
+    },
+    {
+      "group": [
+        "joint_bb",
+        "species_equal",
+        "tenfold"
+      ],
+      "n": 4,
+      "raw_below05": 0,
+      "BH_below05": 0
+    }
+  ]
+}

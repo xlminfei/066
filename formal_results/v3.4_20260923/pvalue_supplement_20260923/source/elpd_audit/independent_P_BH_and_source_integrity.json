@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "independent_checks": [
+    {
+      "file": "model_vs_null.csv",
+      "rows": 48,
+      "normal_P_max_abs_difference": 8.881784197001252e-16,
+      "BH_max_abs_difference": 1.1102230246251565e-15,
+      "group_sizes": [
+        6
+      ],
+      "status": "PASS"
+    },
+    {
+      "file": "training_method_comparisons.csv",
+      "rows": 32,
+      "normal_P_max_abs_difference": 1.7763568394002505e-15,
+      "BH_max_abs_difference": 9.992007221626409e-16,
+      "group_sizes": [
+        4
+      ],
+      "status": "PASS"
+    }
+  ],
+  "unchanged_formal_outputs": 31,
+  "new_fits": 0
+}

@@ -1,0 +1,8 @@
+{
+  "action": "git add",
+  "initial_status": "FAILED",
+  "reason": "Git for Windows path length limit for a preserved v1 evidence filename",
+  "resolution": "Use per-command git -c core.longpaths=true; retain original names and bytes; no global configuration change",
+  "scientific_outputs_changed": false,
+  "archive_valid": true
+}

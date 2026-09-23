@@ -1,0 +1,5 @@
+AUC_SUPPLEMENT_DONE fivefold 
+ERROR_SUPPLEMENT_DONE fivefold 
+AUC_SUPPLEMENT_DONE tenfold 
+ERROR_SUPPLEMENT_DONE tenfold 
+SUPPLEMENT_METRIC_TESTS_COMPLETE: 80 rows, 72 inferential tests, fixed OOF only, no MCMC

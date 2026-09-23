@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "result_rows": 80,
+  "inferential_tests": 72,
+  "normal_P_max_abs_error": 1.9984014443252818e-15,
+  "BH_endpoint_max_abs_error": 1.942890293094024e-16,
+  "BH_three_metrics_max_abs_error": 5.967448757360216e-16,
+  "source_files_unchanged": 31,
+  "new_fits": 0
+}

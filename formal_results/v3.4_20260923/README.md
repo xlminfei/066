@@ -1,5 +1,7 @@
 # v3.4 正式运行结果与完整证据
 
+> **P 值解释与补充检验已整理（2026-09-23）**：[完整补充目录](pvalue_supplement_20260923/README.md)、[ELPD P 值及旧版对照](pvalue_supplement_20260923/ELPD_P_VALUES_zh.md)、[AUC 对 0.5 / MAE / RMSE 的方法与结果](pvalue_supplement_20260923/AUC_MAE_RMSE_P_VALUES_zh.md)、[完整 ZIP](pvalue_supplement_20260923/archive/v3.4-pvalue-supplement-20260923.zip)。含全部 88 个分析原始文件、50,000 次 bootstrap 的两份完整 RDS、代码、日志和验证。使用原 OOF 结果，无新增拟合；条件近似推断和两种 BH 范围的限制均保留。原正式归档保持发布时身份，新增材料单独打包。
+
 **正式计算已完成：16个全数据拟合＋240个CV拟合，全部256项采样诊断和最终审计通过。最终状态为 COMPLETE_WITH_REVIEW_FLAGS，保留18项训练内PPC提示。**
 
 - [中文结果解读与ELPD/MAE/RMSE补图](ANALYSIS_zh.md)

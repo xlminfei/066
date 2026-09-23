@@ -1,0 +1,13 @@
+﻿Design,EvalWeighting,Metric,Tests,RawPBelow05,BH6Below05,BH18Below05
+fivefold,species_equal,AUC,6,6,6,6
+fivefold,species_equal,MAE,6,3,0,2
+fivefold,species_equal,RMSE,6,5,3,3
+fivefold,record_equal,AUC,6,6,6,6
+fivefold,record_equal,MAE,6,4,4,4
+fivefold,record_equal,RMSE,6,4,4,4
+tenfold,species_equal,AUC,6,6,6,6
+tenfold,species_equal,MAE,6,3,0,0
+tenfold,species_equal,RMSE,6,3,0,1
+tenfold,record_equal,AUC,6,6,6,6
+tenfold,record_equal,MAE,6,5,5,5
+tenfold,record_equal,RMSE,6,5,5,5

@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "v2_original_rows": 42,
+  "v2_historical_schemeA_source_discrepancy_rows": 6,
+  "v2_original_max_abs_error": 4.7961634663806763e-14,
+  "v34_model_rows": 48,
+  "v34_training_rows": 32,
+  "method_attribution_rows": 96,
+  "production_bootstrap": 2000,
+  "production_seed": 20260920,
+  "new_mcmc_fits": 0,
+  "source_results_modified": false,
+  "notes": "Counterfactual recalculations are explanatory; original configured analysis and all published results remain unchanged."
+}

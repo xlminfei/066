@@ -1,0 +1,14 @@
+{
+  "status": "COMPLETED",
+  "rows": 80,
+  "auc_rows": 32,
+  "mae_rows": 24,
+  "rmse_rows": 24,
+  "structural_null_auc_rows": 8,
+  "inferential_tests": 72,
+  "bootstrap_replicates": 50000,
+  "degenerate_nonnull_rows": 0,
+  "max_point_difference": 4.996e-16,
+  "new_fits": 0,
+  "source_results_modified": false
+}

@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "result_rows": 80,
+  "draw_distributions_checked": 80,
+  "expanded_record_checks": 240,
+  "max_expanded_error": 2.2204460492503131e-16,
+  "new_fits": 0
+}

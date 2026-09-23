@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "staged_files_verified": 179,
+  "all_staged_blobs_match_working_bytes": true,
+  "allowed_modified_existing_files": [
+    "README.md",
+    "formal_results/v3.4_20260923/README.md"
+  ],
+  "only_new_content_prefix": "formal_results/v3.4_20260923/pvalue_supplement_20260923",
+  "old_versions_modified": 0,
+  "baseline_main": "161c3fb780fd2d937f4c6823a912feedf8226a47",
+  "scientific_results_modified": false
+}

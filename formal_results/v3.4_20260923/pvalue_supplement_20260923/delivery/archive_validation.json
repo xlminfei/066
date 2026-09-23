@@ -1,0 +1,29 @@
+{
+  "archive": "archive/v3.4-pvalue-supplement-20260923.zip",
+  "bytes": 32265627,
+  "sha256": "05cad83e2ef64d76b7a2b871764076f7309001bc7f236c8fd1af730327388035",
+  "zip_root": "v3.4-pvalue-supplement-20260923/",
+  "files": 172,
+  "uncompressed_bytes": 57158981,
+  "source_analysis_files": 88,
+  "copied_dependency_files": 75,
+  "original_formal_archive_replaced": false,
+  "new_fits": 0,
+  "excluded_from_recursive_archive": [
+    "archive/",
+    "archive_manifest.json",
+    "delivery/"
+  ],
+  "created_utc": "2026-09-23T15:08:27.191078+00:00",
+  "status": "PASS",
+  "payload_files": 171,
+  "copied_files": 163,
+  "original_analysis_files": 88,
+  "formal_derived_files": 31,
+  "source_prediction_hashes": 2,
+  "local_links_checked": 41,
+  "scientific_values_changed": false,
+  "zip_members_checked": 172,
+  "zip_crc": "PASS",
+  "every_member_sha256": "PASS"
+}

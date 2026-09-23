@@ -1,0 +1,12 @@
+{
+  "status": "COMPLETED_WITH_FINDINGS",
+  "current_math_reproduced": true,
+  "current_model_comparisons_raw_significant": 25,
+  "current_model_comparisons_BH_significant": 22,
+  "current_training_comparisons_significant": 0,
+  "v2_historical_source_discrepancy_rows": 6,
+  "v1_same_definition_p_table_found": false,
+  "production_files_modified": false,
+  "new_mcmc_fits": 0,
+  "report": "P_VALUE_VERSION_AUDIT_zh.md"
+}

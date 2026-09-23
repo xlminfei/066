@@ -1,0 +1,19 @@
+"Check","Pass"
+"hand-computed record AUC",TRUE
+"hand-computed species AUC",TRUE
+"AUC duplicated species copies record_equal",TRUE
+"AUC row-order invariance record_equal",TRUE
+"AUC duplicated species copies species_equal",TRUE
+"AUC row-order invariance species_equal",TRUE
+"tied scores AUC 0.5",TRUE
+"bootstrap strata counts fixed",TRUE
+"bootstrap seeded reproducibility",TRUE
+"no undefined-fold dropping",TRUE
+"MAE equality counterexample",TRUE
+"RMSE uses sqrt global MSE not MAE",TRUE
+"MAE direct weighted identity record_equal",TRUE
+"RMSE direct weighted identity record_equal",TRUE
+"MAE direct weighted identity species_equal",TRUE
+"RMSE direct weighted identity species_equal",TRUE
+"structural Null P is 1",TRUE
+"non-null zero variance cannot imply P=0",TRUE

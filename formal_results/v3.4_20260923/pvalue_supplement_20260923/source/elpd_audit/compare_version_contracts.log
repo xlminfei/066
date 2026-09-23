@@ -1,0 +1,75 @@
+{
+  "input_checks": 6,
+  "changed_cells": 0,
+  "folds": [
+    {
+      "route": "binary",
+      "k": 5,
+      "species": 50,
+      "same_species_set": true,
+      "same_numeric_fold": 7,
+      "same_partition_up_to_labels": false,
+      "pair_agreement": 0.7012244897959183,
+      "pairs_together_in_both": 42,
+      "old_pairs_together": 225,
+      "new_pairs_together": 225
+    },
+    {
+      "route": "binary",
+      "k": 10,
+      "species": 50,
+      "same_species_set": true,
+      "same_numeric_fold": 9,
+      "same_partition_up_to_labels": false,
+      "pair_agreement": 0.8448979591836735,
+      "pairs_together_in_both": 7,
+      "old_pairs_together": 104,
+      "new_pairs_together": 100
+    },
+    {
+      "route": "joint_bb",
+      "k": 5,
+      "species": 51,
+      "same_species_set": true,
+      "same_numeric_fold": 18,
+      "same_partition_up_to_labels": false,
+      "pair_agreement": 0.7098039215686275,
+      "pairs_together_in_both": 50,
+      "old_pairs_together": 235,
+      "new_pairs_together": 235
+    },
+    {
+      "route": "joint_bb",
+      "k": 10,
+      "species": 51,
+      "same_species_set": true,
+      "same_numeric_fold": 7,
+      "same_partition_up_to_labels": false,
+      "pair_agreement": 0.8572549019607844,
+      "pairs_together_in_both": 14,
+      "old_pairs_together": 105,
+      "new_pairs_together": 105
+    }
+  ],
+  "v1_significance_columns": [
+    {
+      "archive": "v1_runs_nonrds.tar.gz",
+      "path": "./formal_20260914_26e686af86fa/results/loo_estimates_all_primary.csv",
+      "columns": [
+        "P_LOO"
+      ],
+      "examples": [
+        {
+          "P_LOO": "3.49730078824598"
+        },
+        {
+          "P_LOO": "15.9314526638199"
+        },
+        {
+          "P_LOO": "3.81963845290179"
+        }
+      ]
+    }
+  ],
+  "v1_selected_tables": 10
+}

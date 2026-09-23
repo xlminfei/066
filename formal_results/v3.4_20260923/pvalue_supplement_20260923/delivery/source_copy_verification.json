@@ -1,0 +1,826 @@
+{
+  "status": "PASS",
+  "copied_files": 163,
+  "original_analysis_files": 88,
+  "dependency_files": 75,
+  "source_bytes": 57039106,
+  "checks": [
+    {
+      "Path": "source/elpd_audit/AUDIT_FILE_MANIFEST.csv",
+      "Matches": true,
+      "Bytes": 6556
+    },
+    {
+      "Path": "source/elpd_audit/M3_joint_pvalue_reconciliation.csv",
+      "Matches": true,
+      "Bytes": 859
+    },
+    {
+      "Path": "source/elpd_audit/P_VALUE_VERSION_AUDIT_zh.md",
+      "Matches": true,
+      "Bytes": 16583
+    },
+    {
+      "Path": "source/elpd_audit/audit_summary.json",
+      "Matches": true,
+      "Bytes": 431
+    },
+    {
+      "Path": "source/elpd_audit/bootstrap_numerical_stability_audit.csv",
+      "Matches": true,
+      "Bytes": 1381
+    },
+    {
+      "Path": "source/elpd_audit/check_model_contracts.R",
+      "Matches": true,
+      "Bytes": 2996
+    },
+    {
+      "Path": "source/elpd_audit/check_model_contracts.log",
+      "Matches": true,
+      "Bytes": 115
+    },
+    {
+      "Path": "source/elpd_audit/check_model_contracts_exit.json",
+      "Matches": true,
+      "Bytes": 69
+    },
+    {
+      "Path": "source/elpd_audit/check_v2_bh.py",
+      "Matches": true,
+      "Bytes": 1032
+    },
+    {
+      "Path": "source/elpd_audit/compare_version_contracts.log",
+      "Matches": true,
+      "Bytes": 1892
+    },
+    {
+      "Path": "source/elpd_audit/compare_version_contracts.py",
+      "Matches": true,
+      "Bytes": 3973
+    },
+    {
+      "Path": "source/elpd_audit/current_pvalue_counts.json",
+      "Matches": true,
+      "Bytes": 2815
+    },
+    {
+      "Path": "source/elpd_audit/current_significance_summary.csv",
+      "Matches": true,
+      "Bytes": 77
+    },
+    {
+      "Path": "source/elpd_audit/fixed_OOF_method_weighting_counterfactuals.csv",
+      "Matches": true,
+      "Bytes": 24727
+    },
+    {
+      "Path": "source/elpd_audit/independent_P_BH_and_source_integrity.json",
+      "Matches": true,
+      "Bytes": 635
+    },
+    {
+      "Path": "source/elpd_audit/independent_pvalue_checks.log",
+      "Matches": true,
+      "Bytes": 637
+    },
+    {
+      "Path": "source/elpd_audit/independent_pvalue_checks.py",
+      "Matches": true,
+      "Bytes": 1725
+    },
+    {
+      "Path": "source/elpd_audit/inventory_pvalues.log",
+      "Matches": true,
+      "Bytes": 50333
+    },
+    {
+      "Path": "source/elpd_audit/inventory_pvalues.py",
+      "Matches": true,
+      "Bytes": 2585
+    },
+    {
+      "Path": "source/elpd_audit/model_contract_checks.json",
+      "Matches": true,
+      "Bytes": 379
+    },
+    {
+      "Path": "source/elpd_audit/paired_species_logscore_contributions.csv",
+      "Matches": true,
+      "Bytes": 170378
+    },
+    {
+      "Path": "source/elpd_audit/recomputation_status.json",
+      "Matches": true,
+      "Bytes": 497
+    },
+    {
+      "Path": "source/elpd_audit/recompute_pvalue_attribution.R",
+      "Matches": true,
+      "Bytes": 9476
+    },
+    {
+      "Path": "source/elpd_audit/recompute_pvalue_attribution.log",
+      "Matches": true,
+      "Bytes": 2404
+    },
+    {
+      "Path": "source/elpd_audit/recompute_pvalue_attribution_exit.json",
+      "Matches": true,
+      "Bytes": 69
+    },
+    {
+      "Path": "source/elpd_audit/recompute_pvalue_attribution_round1.log",
+      "Matches": true,
+      "Bytes": 99
+    },
+    {
+      "Path": "source/elpd_audit/v1_archive_inventory.json",
+      "Matches": true,
+      "Bytes": 277735
+    },
+    {
+      "Path": "source/elpd_audit/v1_evidence/v1_figures_model_descriptive/figures_descriptive/CAPTIONS_zh.md",
+      "Matches": true,
+      "Bytes": 15580
+    },
+    {
+      "Path": "source/elpd_audit/v1_evidence/v1_figures_model_descriptive/figures_model/CAPTIONS_zh.md",
+      "Matches": true,
+      "Bytes": 101237
+    },
+    {
+      "Path": "source/elpd_audit/v1_evidence/v1_figures_model_descriptive/figures_model/S06_mc_score_binary_phylo_distance_caption_zh.md",
+      "Matches": true,
+      "Bytes": 397
+    },
+    {
+      "Path": "source/elpd_audit/v1_evidence/v1_figures_model_descriptive/figures_model/S06_mc_score_binary_species_caption_zh.md",
+      "Matches": true,
+      "Bytes": 390
+    },
+    {
+      "Path": "source/elpd_audit/v1_evidence/v1_figures_model_descriptive/figures_model/S06_mc_score_joint_phylo_distance_caption_zh.md",
+      "Matches": true,
+      "Bytes": 396
+    },
+    {
+      "Path": "source/elpd_audit/v1_evidence/v1_figures_model_descriptive/figures_model/S06_mc_score_joint_species_caption_zh.md",
+      "Matches": true,
+      "Bytes": 389
+    },
+    {
+      "Path": "source/elpd_audit/v1_pvalue_search.json",
+      "Matches": true,
+      "Bytes": 5996
+    },
+    {
+      "Path": "source/elpd_audit/v1_selected/v1_derived_all_nonrds/cv_comparisons/binary_phylo_distance/cv_model_comparison_with_mc.csv",
+      "Matches": true,
+      "Bytes": 3072
+    },
+    {
+      "Path": "source/elpd_audit/v1_selected/v1_derived_all_nonrds/cv_comparisons/binary_species/cv_model_comparison_with_mc.csv",
+      "Matches": true,
+      "Bytes": 3101
+    },
+    {
+      "Path": "source/elpd_audit/v1_selected/v1_derived_all_nonrds/cv_comparisons/cv_model_comparison_all.csv",
+      "Matches": true,
+      "Bytes": 11407
+    },
+    {
+      "Path": "source/elpd_audit/v1_selected/v1_derived_all_nonrds/cv_comparisons/joint_phylo_distance/cv_model_comparison_with_mc.csv",
+      "Matches": true,
+      "Bytes": 3005
+    },
+    {
+      "Path": "source/elpd_audit/v1_selected/v1_derived_all_nonrds/cv_comparisons/joint_species/cv_model_comparison_with_mc.csv",
+      "Matches": true,
+      "Bytes": 2937
+    },
+    {
+      "Path": "source/elpd_audit/v1_selected/v1_derived_key/derived_key/binary_phylo_distance/cv_model_comparison_with_mc.csv",
+      "Matches": true,
+      "Bytes": 3072
+    },
+    {
+      "Path": "source/elpd_audit/v1_selected/v1_derived_key/derived_key/binary_species/cv_model_comparison_with_mc.csv",
+      "Matches": true,
+      "Bytes": 3101
+    },
+    {
+      "Path": "source/elpd_audit/v1_selected/v1_derived_key/derived_key/cv_model_comparison_all.csv",
+      "Matches": true,
+      "Bytes": 11407
+    },
+    {
+      "Path": "source/elpd_audit/v1_selected/v1_derived_key/derived_key/joint_phylo_distance/cv_model_comparison_with_mc.csv",
+      "Matches": true,
+      "Bytes": 3005
+    },
+    {
+      "Path": "source/elpd_audit/v1_selected/v1_derived_key/derived_key/joint_species/cv_model_comparison_with_mc.csv",
+      "Matches": true,
+      "Bytes": 2937
+    },
+    {
+      "Path": "source/elpd_audit/v2_BH_family_reconciliation.csv",
+      "Matches": true,
+      "Bytes": 4672
+    },
+    {
+      "Path": "source/elpd_audit/v2_historical_table_source_discrepancy.csv",
+      "Matches": true,
+      "Bytes": 2574
+    },
+    {
+      "Path": "source/elpd_audit/v2_original_comparisons_recomputed.csv",
+      "Matches": true,
+      "Bytes": 8300
+    },
+    {
+      "Path": "source/elpd_audit/v2_v34_design_matrix_equivalence.csv",
+      "Matches": true,
+      "Bytes": 157
+    },
+    {
+      "Path": "source/elpd_audit/v34_BH_family_diagnostic.csv",
+      "Matches": true,
+      "Bytes": 16513
+    },
+    {
+      "Path": "source/elpd_audit/v34_model_vs_null_recompute_receipt.csv",
+      "Matches": true,
+      "Bytes": 89
+    },
+    {
+      "Path": "source/elpd_audit/v34_training_method_comparisons_recompute_receipt.csv",
+      "Matches": true,
+      "Bytes": 104
+    },
+    {
+      "Path": "source/elpd_audit/version_contract_comparison.json",
+      "Matches": true,
+      "Bytes": 24984
+    },
+    {
+      "Path": "source/elpd_audit/write_pvalue_audit_report.py",
+      "Matches": true,
+      "Bytes": 19211
+    },
+    {
+      "Path": "source/additional_metrics/ADDITIONAL_METRIC_TESTS_zh.md",
+      "Matches": true,
+      "Bytes": 17855
+    },
+    {
+      "Path": "source/additional_metrics/ANALYSIS_PLAN.json",
+      "Matches": true,
+      "Bytes": 2451
+    },
+    {
+      "Path": "source/additional_metrics/FILE_MANIFEST.csv",
+      "Matches": true,
+      "Bytes": 3486
+    },
+    {
+      "Path": "source/additional_metrics/auc_fold_species_support.csv",
+      "Matches": true,
+      "Bytes": 717
+    },
+    {
+      "Path": "source/additional_metrics/auc_tests.csv",
+      "Matches": true,
+      "Bytes": 17220
+    },
+    {
+      "Path": "source/additional_metrics/bootstrap_difference_draws.rds",
+      "Matches": true,
+      "Bytes": 26045524
+    },
+    {
+      "Path": "source/additional_metrics/bootstrap_species_multiplicities.rds",
+      "Matches": true,
+      "Bytes": 3884804
+    },
+    {
+      "Path": "source/additional_metrics/bootstrap_verification.json",
+      "Matches": true,
+      "Bytes": 178
+    },
+    {
+      "Path": "source/additional_metrics/bootstrap_verification.log",
+      "Matches": true,
+      "Bytes": 95
+    },
+    {
+      "Path": "source/additional_metrics/bootstrap_verification_exit.json",
+      "Matches": true,
+      "Bytes": 77
+    },
+    {
+      "Path": "source/additional_metrics/calculate_supplement_tests.R",
+      "Matches": true,
+      "Bytes": 8821
+    },
+    {
+      "Path": "source/additional_metrics/calculation.log",
+      "Matches": true,
+      "Bytes": 216
+    },
+    {
+      "Path": "source/additional_metrics/calculation_exit.json",
+      "Matches": true,
+      "Bytes": 77
+    },
+    {
+      "Path": "source/additional_metrics/calculation_status.json",
+      "Matches": true,
+      "Bytes": 312
+    },
+    {
+      "Path": "source/additional_metrics/deterministic_checks.csv",
+      "Matches": true,
+      "Bytes": 763
+    },
+    {
+      "Path": "source/additional_metrics/deterministic_checks.log",
+      "Matches": true,
+      "Bytes": 41
+    },
+    {
+      "Path": "source/additional_metrics/expanded_record_bootstrap_checks.csv",
+      "Matches": true,
+      "Bytes": 16636
+    },
+    {
+      "Path": "source/additional_metrics/independent_validation.json",
+      "Matches": true,
+      "Bytes": 293
+    },
+    {
+      "Path": "source/additional_metrics/independent_validation.log",
+      "Matches": true,
+      "Bytes": 295
+    },
+    {
+      "Path": "source/additional_metrics/mae_tests.csv",
+      "Matches": true,
+      "Bytes": 14439
+    },
+    {
+      "Path": "source/additional_metrics/plot_generation.log",
+      "Matches": true,
+      "Bytes": 89
+    },
+    {
+      "Path": "source/additional_metrics/plot_supplement_tests.R",
+      "Matches": true,
+      "Bytes": 2524
+    },
+    {
+      "Path": "source/additional_metrics/point_estimate_reconciliation.csv",
+      "Matches": true,
+      "Bytes": 7068
+    },
+    {
+      "Path": "source/additional_metrics/primary_supplementary_tests.png",
+      "Matches": true,
+      "Bytes": 145867
+    },
+    {
+      "Path": "source/additional_metrics/primary_supplementary_tests.svg",
+      "Matches": true,
+      "Bytes": 213693
+    },
+    {
+      "Path": "source/additional_metrics/rmse_tests.csv",
+      "Matches": true,
+      "Bytes": 14452
+    },
+    {
+      "Path": "source/additional_metrics/significance_counts.csv",
+      "Matches": true,
+      "Bytes": 497
+    },
+    {
+      "Path": "source/additional_metrics/supplement_functions.R",
+      "Matches": true,
+      "Bytes": 4126
+    },
+    {
+      "Path": "source/additional_metrics/supplement_summary.json",
+      "Matches": true,
+      "Bytes": 515
+    },
+    {
+      "Path": "source/additional_metrics/supplementary_metric_tests.csv",
+      "Matches": true,
+      "Bytes": 45297
+    },
+    {
+      "Path": "source/additional_metrics/test_supplement_functions.R",
+      "Matches": true,
+      "Bytes": 3177
+    },
+    {
+      "Path": "source/additional_metrics/verify_bootstrap_results.R",
+      "Matches": true,
+      "Bytes": 3017
+    },
+    {
+      "Path": "source/additional_metrics/verify_pvalues_independently.py",
+      "Matches": true,
+      "Bytes": 1796
+    },
+    {
+      "Path": "source/additional_metrics/visual_check.json",
+      "Matches": true,
+      "Bytes": 278
+    },
+    {
+      "Path": "source/additional_metrics/write_supplement_report.py",
+      "Matches": true,
+      "Bytes": 11408
+    },
+    {
+      "Path": "context/v3.4/R/applicability.R",
+      "Matches": true,
+      "Bytes": 3597
+    },
+    {
+      "Path": "context/v3.4/R/audit_run.R",
+      "Matches": true,
+      "Bytes": 10250
+    },
+    {
+      "Path": "context/v3.4/R/bootstrap.R",
+      "Matches": true,
+      "Bytes": 1122
+    },
+    {
+      "Path": "context/v3.4/R/cache_io.R",
+      "Matches": true,
+      "Bytes": 6792
+    },
+    {
+      "Path": "context/v3.4/R/comparison.R",
+      "Matches": true,
+      "Bytes": 7114
+    },
+    {
+      "Path": "context/v3.4/R/config.R",
+      "Matches": true,
+      "Bytes": 5808
+    },
+    {
+      "Path": "context/v3.4/R/cross_validation.R",
+      "Matches": true,
+      "Bytes": 13689
+    },
+    {
+      "Path": "context/v3.4/R/data_encoding.R",
+      "Matches": true,
+      "Bytes": 14243
+    },
+    {
+      "Path": "context/v3.4/R/fitting.R",
+      "Matches": true,
+      "Bytes": 9798
+    },
+    {
+      "Path": "context/v3.4/R/metrics.R",
+      "Matches": true,
+      "Bytes": 11065
+    },
+    {
+      "Path": "context/v3.4/R/plotting.R",
+      "Matches": true,
+      "Bytes": 5861
+    },
+    {
+      "Path": "context/v3.4/R/ppc.R",
+      "Matches": true,
+      "Bytes": 2797
+    },
+    {
+      "Path": "context/v3.4/R/prediction.R",
+      "Matches": true,
+      "Bytes": 7675
+    },
+    {
+      "Path": "context/v3.4/R/prediction_audit.R",
+      "Matches": true,
+      "Bytes": 23300
+    },
+    {
+      "Path": "context/v3.4/R/provenance.R",
+      "Matches": true,
+      "Bytes": 2388
+    },
+    {
+      "Path": "context/v3.4/R/quantitative_diagnostics.R",
+      "Matches": true,
+      "Bytes": 5215
+    },
+    {
+      "Path": "context/v3.4/R/reporting.R",
+      "Matches": true,
+      "Bytes": 6602
+    },
+    {
+      "Path": "context/v3.4/R/weights.R",
+      "Matches": true,
+      "Bytes": 2244
+    },
+    {
+      "Path": "context/v3.4/R/workflow.R",
+      "Matches": true,
+      "Bytes": 10385
+    },
+    {
+      "Path": "context/v3.4/input/contract.json",
+      "Matches": true,
+      "Bytes": 735
+    },
+    {
+      "Path": "context/v3.4/input/observations.csv",
+      "Matches": true,
+      "Bytes": 15730
+    },
+    {
+      "Path": "context/v3.4/input/sites.csv",
+      "Matches": true,
+      "Bytes": 16905
+    },
+    {
+      "Path": "context/v3.4/config/analysis.json",
+      "Matches": true,
+      "Bytes": 1314
+    },
+    {
+      "Path": "context/v3.4/stan/joint_bb.stan",
+      "Matches": true,
+      "Bytes": 9477
+    },
+    {
+      "Path": "context/v3.4/scripts/ENVIRONMENT.md",
+      "Matches": true,
+      "Bytes": 923
+    },
+    {
+      "Path": "context/v3.4/scripts/build_complete_archive.ps1",
+      "Matches": true,
+      "Bytes": 5153
+    },
+    {
+      "Path": "context/v3.4/scripts/restore_environment.R",
+      "Matches": true,
+      "Bytes": 4815
+    },
+    {
+      "Path": "context/v3.4/scripts/test_environment.R",
+      "Matches": true,
+      "Bytes": 2406
+    },
+    {
+      "Path": "context/v3.4/scripts/upload_release_asset.ps1",
+      "Matches": true,
+      "Bytes": 4206
+    },
+    {
+      "Path": "context/v3.4/renv.lock",
+      "Matches": true,
+      "Bytes": 178662
+    },
+    {
+      "Path": "context/v3.4/Dockerfile",
+      "Matches": true,
+      "Bytes": 912
+    },
+    {
+      "Path": "context/v3.4/review/derived_outputs_manifest.csv",
+      "Matches": true,
+      "Bytes": 5374
+    },
+    {
+      "Path": "context/v3.4/results/calibration_bins.csv",
+      "Matches": true,
+      "Bytes": 15556
+    },
+    {
+      "Path": "context/v3.4/results/cv_fold_metrics.csv",
+      "Matches": true,
+      "Bytes": 107422
+    },
+    {
+      "Path": "context/v3.4/results/cv_metrics_summary.csv",
+      "Matches": true,
+      "Bytes": 16916
+    },
+    {
+      "Path": "context/v3.4/results/cv_record_predictions.csv",
+      "Matches": true,
+      "Bytes": 1843554
+    },
+    {
+      "Path": "context/v3.4/results/folds_binary_species_10.csv",
+      "Matches": true,
+      "Bytes": 1254
+    },
+    {
+      "Path": "context/v3.4/results/folds_binary_species_5.csv",
+      "Matches": true,
+      "Bytes": 1249
+    },
+    {
+      "Path": "context/v3.4/results/folds_joint_bb_species_10.csv",
+      "Matches": true,
+      "Bytes": 1277
+    },
+    {
+      "Path": "context/v3.4/results/folds_joint_bb_species_5.csv",
+      "Matches": true,
+      "Bytes": 1272
+    },
+    {
+      "Path": "context/v3.4/results/full_diagnostics.csv",
+      "Matches": true,
+      "Bytes": 4167
+    },
+    {
+      "Path": "context/v3.4/results/full_panel_predictions.csv",
+      "Matches": true,
+      "Bytes": 1488701
+    },
+    {
+      "Path": "context/v3.4/results/model_vs_null_by_fold.csv",
+      "Matches": true,
+      "Bytes": 97390
+    },
+    {
+      "Path": "context/v3.4/results/model_vs_null.csv",
+      "Matches": true,
+      "Bytes": 15509
+    },
+    {
+      "Path": "context/v3.4/results/quantitative_bias_summary.csv",
+      "Matches": true,
+      "Bytes": 5826
+    },
+    {
+      "Path": "context/v3.4/results/quantitative_plot_source.csv",
+      "Matches": true,
+      "Bytes": 1064875
+    },
+    {
+      "Path": "context/v3.4/results/roc_coordinates.csv",
+      "Matches": true,
+      "Bytes": 104227
+    },
+    {
+      "Path": "context/v3.4/results/training_method_comparisons_by_fold.csv",
+      "Matches": true,
+      "Bytes": 68460
+    },
+    {
+      "Path": "context/v3.4/results/training_method_comparisons.csv",
+      "Matches": true,
+      "Bytes": 10839
+    },
+    {
+      "Path": "context/v3.4/results/training_ppc_summary.csv",
+      "Matches": true,
+      "Bytes": 54067
+    },
+    {
+      "Path": "context/v3.4/results/training_weights_cv.csv",
+      "Matches": true,
+      "Bytes": 7999308
+    },
+    {
+      "Path": "context/v3.4/results/training_weights_full.csv",
+      "Matches": true,
+      "Bytes": 631324
+    },
+    {
+      "Path": "context/v3.4/results/training_weights.csv",
+      "Matches": true,
+      "Bytes": 8664659
+    },
+    {
+      "Path": "context/v3.4/figures/calibration_bins.pdf",
+      "Matches": true,
+      "Bytes": 19705
+    },
+    {
+      "Path": "context/v3.4/figures/quantitative_predicted_observed.pdf",
+      "Matches": true,
+      "Bytes": 120681
+    },
+    {
+      "Path": "context/v3.4/figures/ROC_curves.pdf",
+      "Matches": true,
+      "Bytes": 16330
+    },
+    {
+      "Path": "context/v3.4/figures/species_prediction_plot_source.csv",
+      "Matches": true,
+      "Bytes": 1516624
+    },
+    {
+      "Path": "context/v3.4/figures/species_predictions_binary_record_equal.pdf",
+      "Matches": true,
+      "Bytes": 123371
+    },
+    {
+      "Path": "context/v3.4/figures/species_predictions_binary_species_equal.pdf",
+      "Matches": true,
+      "Bytes": 123289
+    },
+    {
+      "Path": "context/v3.4/figures/species_predictions_joint_bb_record_equal.pdf",
+      "Matches": true,
+      "Bytes": 135191
+    },
+    {
+      "Path": "context/v3.4/figures/species_predictions_joint_bb_species_equal.pdf",
+      "Matches": true,
+      "Bytes": 135070
+    },
+    {
+      "Path": "context/v3.4/figures/training_ppc_summary.pdf",
+      "Matches": true,
+      "Bytes": 35983
+    },
+    {
+      "Path": "context/v3.4/reports/REPORT_v3_4.md",
+      "Matches": true,
+      "Bytes": 104700
+    },
+    {
+      "Path": "context/repository/v2/results/cv_record_scores_v2.csv",
+      "Matches": true,
+      "Bytes": 628495
+    },
+    {
+      "Path": "context/repository/v2/results/derived/paired_elpd_comparisons.csv",
+      "Matches": true,
+      "Bytes": 8343
+    },
+    {
+      "Path": "context/repository/v2/results/derived/paired_elpd_M1M2M3_vs_Null_corrections_by_fold.csv",
+      "Matches": true,
+      "Bytes": 4864
+    },
+    {
+      "Path": "context/repository/v2/src/v2_pipeline.R",
+      "Matches": true,
+      "Bytes": 64342
+    },
+    {
+      "Path": "context/repository/v2/src/paired_elpd_analysis.R",
+      "Matches": true,
+      "Bytes": 4767
+    },
+    {
+      "Path": "context/repository/v2/reports/ELPD_CORRECTION_BY_FOLD_zh.md",
+      "Matches": true,
+      "Bytes": 2363
+    },
+    {
+      "Path": "context/repository/v2/data/sites.csv",
+      "Matches": true,
+      "Bytes": 17271
+    },
+    {
+      "Path": "context/repository/v2/data/observations.csv",
+      "Matches": true,
+      "Bytes": 15730
+    },
+    {
+      "Path": "context/repository/v1/data/sites.csv",
+      "Matches": true,
+      "Bytes": 17271
+    },
+    {
+      "Path": "context/repository/v1/data/observations.csv",
+      "Matches": true,
+      "Bytes": 15730
+    },
+    {
+      "Path": "context/repository/v1/docs/06_留出验证.md",
+      "Matches": true,
+      "Bytes": 14590
+    },
+    {
+      "Path": "context/repository/v1/src/postfit_cv.R",
+      "Matches": true,
+      "Bytes": 23392
+    }
+  ],
+  "verified_utc": "2026-09-23T15:09:09.757Z",
+  "source_mutations": 0
+}

@@ -1,0 +1,5 @@
+"Model","Species","DesignColumns","NumericDesignMaxDifference","Status"
+"Null",365,0,0,"PASS"
+"M1",365,10,0,"PASS"
+"M2",365,10,0,"PASS"
+"M3",365,50,0,"PASS"

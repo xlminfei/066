@@ -1,0 +1,743 @@
+{
+  "inputs": [
+    {
+      "file": "observations.csv",
+      "version": "v1",
+      "rows": 153,
+      "columns": [
+        "RecordID",
+        "ExperimentID",
+        "Species",
+        "Type",
+        "Events",
+        "Total",
+        "Exact",
+        "Lower",
+        "Upper",
+        "SourceID"
+      ],
+      "sha256": "3c886f7f2c11012463296b350a931543542b4e1c0d128ad3c408fda9ae824d79",
+      "missing_keys": 0,
+      "extra_keys": 0,
+      "changed_cells": []
+    },
+    {
+      "file": "observations.csv",
+      "version": "v2",
+      "rows": 153,
+      "columns": [
+        "RecordID",
+        "ExperimentID",
+        "Species",
+        "Type",
+        "Events",
+        "Total",
+        "Exact",
+        "Lower",
+        "Upper",
+        "SourceID"
+      ],
+      "sha256": "3c886f7f2c11012463296b350a931543542b4e1c0d128ad3c408fda9ae824d79",
+      "missing_keys": 0,
+      "extra_keys": 0,
+      "changed_cells": []
+    },
+    {
+      "file": "observations.csv",
+      "version": "v3.4",
+      "rows": 153,
+      "columns": [
+        "RecordID",
+        "ExperimentID",
+        "Species",
+        "Type",
+        "Events",
+        "Total",
+        "Exact",
+        "Lower",
+        "Upper",
+        "SourceID"
+      ],
+      "sha256": "3c886f7f2c11012463296b350a931543542b4e1c0d128ad3c408fda9ae824d79",
+      "missing_keys": 0,
+      "extra_keys": 0,
+      "changed_cells": []
+    },
+    {
+      "file": "sites.csv",
+      "version": "v1",
+      "rows": 365,
+      "columns": [
+        "Species",
+        "Site3",
+        "Site20",
+        "Site117",
+        "Site151",
+        "Site196",
+        "Site315"
+      ],
+      "sha256": "e71ee722f51ed42cbcba53fdbf059ed996544fdd83da88eae0e7acddfce5e2e3",
+      "missing_keys": 0,
+      "extra_keys": 0,
+      "changed_cells": []
+    },
+    {
+      "file": "sites.csv",
+      "version": "v2",
+      "rows": 365,
+      "columns": [
+        "Species",
+        "Site3",
+        "Site20",
+        "Site117",
+        "Site151",
+        "Site196",
+        "Site315"
+      ],
+      "sha256": "e71ee722f51ed42cbcba53fdbf059ed996544fdd83da88eae0e7acddfce5e2e3",
+      "missing_keys": 0,
+      "extra_keys": 0,
+      "changed_cells": []
+    },
+    {
+      "file": "sites.csv",
+      "version": "v3.4",
+      "rows": 365,
+      "columns": [
+        "Species",
+        "Site3",
+        "Site20",
+        "Site117",
+        "Site151",
+        "Site196",
+        "Site315"
+      ],
+      "sha256": "0a99692b060f13d1faaa870d06ea7dca9a4f16bc289636bcc88f5d105ebdacb5",
+      "missing_keys": 0,
+      "extra_keys": 0,
+      "changed_cells": []
+    }
+  ],
+  "folds": [
+    {
+      "route": "binary",
+      "k": 5,
+      "species": 50,
+      "same_species_set": true,
+      "same_numeric_fold": 7,
+      "same_partition_up_to_labels": false,
+      "pair_agreement": 0.7012244897959183,
+      "pairs_together_in_both": 42,
+      "old_pairs_together": 225,
+      "new_pairs_together": 225
+    },
+    {
+      "route": "binary",
+      "k": 10,
+      "species": 50,
+      "same_species_set": true,
+      "same_numeric_fold": 9,
+      "same_partition_up_to_labels": false,
+      "pair_agreement": 0.8448979591836735,
+      "pairs_together_in_both": 7,
+      "old_pairs_together": 104,
+      "new_pairs_together": 100
+    },
+    {
+      "route": "joint_bb",
+      "k": 5,
+      "species": 51,
+      "same_species_set": true,
+      "same_numeric_fold": 18,
+      "same_partition_up_to_labels": false,
+      "pair_agreement": 0.7098039215686275,
+      "pairs_together_in_both": 50,
+      "old_pairs_together": 235,
+      "new_pairs_together": 235
+    },
+    {
+      "route": "joint_bb",
+      "k": 10,
+      "species": 51,
+      "same_species_set": true,
+      "same_numeric_fold": 7,
+      "same_partition_up_to_labels": false,
+      "pair_agreement": 0.8572549019607844,
+      "pairs_together_in_both": 14,
+      "old_pairs_together": 105,
+      "new_pairs_together": 105
+    }
+  ],
+  "v1_csv_significance_columns": [
+    {
+      "archive": "v1_runs_nonrds.tar.gz",
+      "path": "./formal_20260914_26e686af86fa/results/loo_estimates_all_primary.csv",
+      "columns": [
+        "P_LOO"
+      ],
+      "examples": [
+        {
+          "P_LOO": "3.49730078824598"
+        },
+        {
+          "P_LOO": "15.9314526638199"
+        },
+        {
+          "P_LOO": "3.81963845290179"
+        }
+      ]
+    }
+  ],
+  "v1_selected": [
+    {
+      "archive": "v1_derived_all_nonrds.tar.gz",
+      "path": "./cv_comparisons/cv_model_comparison_all.csv",
+      "rows": 40,
+      "columns": [
+        "Model",
+        "ELPD",
+        "ELPD_Difference",
+        "PairedSE",
+        "Outcome",
+        "CVType",
+        "FoldKey",
+        "ReferenceModel",
+        "MCFlaggedFolds",
+        "DeltaMethod_MCSE_TotalELPD",
+        "MaximumLikelihoodContribution",
+        "MinimumEffectiveContributions",
+        "AnyModelMCReview",
+        "Interpretation"
+      ],
+      "first_rows": [
+        {
+          "Model": "Phylogeny_only_P",
+          "ELPD": "-37.0938174710013",
+          "ELPD_Difference": "0",
+          "PairedSE": "0",
+          "Outcome": "binary",
+          "CVType": "species",
+          "FoldKey": "4b769111872220f6a14f2a3df54a12309a253c6bde2b738f340550fdf9b8ca8a",
+          "ReferenceModel": "Phylogeny_only_P",
+          "MCFlaggedFolds": "1",
+          "DeltaMethod_MCSE_TotalELPD": "0.178683218485572",
+          "MaximumLikelihoodContribution": "0.0398723381521513",
+          "MinimumEffectiveContributions": "78.0771784197141",
+          "AnyModelMCReview": "TRUE",
+          "Interpretation": "FINITE_DRAW_JOINT_SCORE_WITH_MC_REVIEW_NO_DEFINITIVE_RANK"
+        },
+        {
+          "Model": "M2_P",
+          "ELPD": "-37.307652743413",
+          "ELPD_Difference": "-0.213835272411725",
+          "PairedSE": "0.400110148698703",
+          "Outcome": "binary",
+          "CVType": "species",
+          "FoldKey": "4b769111872220f6a14f2a3df54a12309a253c6bde2b738f340550fdf9b8ca8a",
+          "ReferenceModel": "Phylogeny_only_P",
+          "MCFlaggedFolds": "2",
+          "DeltaMethod_MCSE_TotalELPD": "0.222985649933828",
+          "MaximumLikelihoodContribution": "0.0614337092554383",
+          "MinimumEffectiveContributions": "81.9223094567128",
+          "AnyModelMCReview": "TRUE",
+          "Interpretation": "FINITE_DRAW_JOINT_SCORE_WITH_MC_REVIEW_NO_DEFINITIVE_RANK"
+        }
+      ]
+    },
+    {
+      "archive": "v1_derived_all_nonrds.tar.gz",
+      "path": "./cv_comparisons/joint_species/cv_model_comparison_with_mc.csv",
+      "rows": 10,
+      "columns": [
+        "Model",
+        "ELPD",
+        "ELPD_Difference",
+        "PairedSE",
+        "Outcome",
+        "CVType",
+        "FoldKey",
+        "ReferenceModel",
+        "MCFlaggedFolds",
+        "DeltaMethod_MCSE_TotalELPD",
+        "MaximumLikelihoodContribution",
+        "MinimumEffectiveContributions",
+        "AnyModelMCReview",
+        "Interpretation"
+      ],
+      "first_rows": [
+        {
+          "Model": "M1_P",
+          "ELPD": "-369.026277613168",
+          "ELPD_Difference": "0",
+          "PairedSE": "0",
+          "Outcome": "joint",
+          "CVType": "species",
+          "FoldKey": "7b6f5fa034adcbd25915f29e81671e0d2b1679b33de0b15cd495f40c8d1cb5aa",
+          "ReferenceModel": "M1_P",
+          "MCFlaggedFolds": "5",
+          "DeltaMethod_MCSE_TotalELPD": "1.85660852922684",
+          "MaximumLikelihoodContribution": "0.999999438718957",
+          "MinimumEffectiveContributions": "1.00000112256272",
+          "AnyModelMCReview": "TRUE",
+          "Interpretation": "FINITE_DRAW_JOINT_SCORE_WITH_MC_REVIEW_NO_DEFINITIVE_RANK"
+        },
+        {
+          "Model": "M2_P",
+          "ELPD": "-398.170905952377",
+          "ELPD_Difference": "-29.1446283392088",
+          "PairedSE": "33.0598426552628",
+          "Outcome": "joint",
+          "CVType": "species",
+          "FoldKey": "7b6f5fa034adcbd25915f29e81671e0d2b1679b33de0b15cd495f40c8d1cb5aa",
+          "ReferenceModel": "M1_P",
+          "MCFlaggedFolds": "5",
+          "DeltaMethod_MCSE_TotalELPD": "1.66761123926085",
+          "MaximumLikelihoodContribution": "0.973082013237251",
+          "MinimumEffectiveContributions": "1.05529554388971",
+          "AnyModelMCReview": "TRUE",
+          "Interpretation": "FINITE_DRAW_JOINT_SCORE_WITH_MC_REVIEW_NO_DEFINITIVE_RANK"
+        }
+      ]
+    },
+    {
+      "archive": "v1_derived_all_nonrds.tar.gz",
+      "path": "./cv_comparisons/joint_phylo_distance/cv_model_comparison_with_mc.csv",
+      "rows": 10,
+      "columns": [
+        "Model",
+        "ELPD",
+        "ELPD_Difference",
+        "PairedSE",
+        "Outcome",
+        "CVType",
+        "FoldKey",
+        "ReferenceModel",
+        "MCFlaggedFolds",
+        "DeltaMethod_MCSE_TotalELPD",
+        "MaximumLikelihoodContribution",
+        "MinimumEffectiveContributions",
+        "AnyModelMCReview",
+        "Interpretation"
+      ],
+      "first_rows": [
+        {
+          "Model": "Site315_P",
+          "ELPD": "-494.471023976106",
+          "ELPD_Difference": "0",
+          "PairedSE": "0",
+          "Outcome": "joint",
+          "CVType": "phylo_distance",
+          "FoldKey": "fc3673933fd716c62b80ab78865fe254a480128d28a7a6af99a0848441c061d2",
+          "ReferenceModel": "Site315_P",
+          "MCFlaggedFolds": "3",
+          "DeltaMethod_MCSE_TotalELPD": "1.1041308213063",
+          "MaximumLikelihoodContribution": "0.999999998832979",
+          "MinimumEffectiveContributions": "1.00000000233404",
+          "AnyModelMCReview": "TRUE",
+          "Interpretation": "FINITE_DRAW_JOINT_SCORE_WITH_MC_REVIEW_NO_DEFINITIVE_RANK"
+        },
+        {
+          "Model": "M2_P",
+          "ELPD": "-522.134726956511",
+          "ELPD_Difference": "-27.6637029804053",
+          "PairedSE": "27.8265696905355",
+          "Outcome": "joint",
+          "CVType": "phylo_distance",
+          "FoldKey": "fc3673933fd716c62b80ab78865fe254a480128d28a7a6af99a0848441c061d2",
+          "ReferenceModel": "Site315_P",
+          "MCFlaggedFolds": "3",
+          "DeltaMethod_MCSE_TotalELPD": "1.12083086831034",
+          "MaximumLikelihoodContribution": "1",
+          "MinimumEffectiveContributions": "1",
+          "AnyModelMCReview": "TRUE",
+          "Interpretation": "FINITE_DRAW_JOINT_SCORE_WITH_MC_REVIEW_NO_DEFINITIVE_RANK"
+        }
+      ]
+    },
+    {
+      "archive": "v1_derived_all_nonrds.tar.gz",
+      "path": "./cv_comparisons/binary_species/cv_model_comparison_with_mc.csv",
+      "rows": 10,
+      "columns": [
+        "Model",
+        "ELPD",
+        "ELPD_Difference",
+        "PairedSE",
+        "Outcome",
+        "CVType",
+        "FoldKey",
+        "ReferenceModel",
+        "MCFlaggedFolds",
+        "DeltaMethod_MCSE_TotalELPD",
+        "MaximumLikelihoodContribution",
+        "MinimumEffectiveContributions",
+        "AnyModelMCReview",
+        "Interpretation"
+      ],
+      "first_rows": [
+        {
+          "Model": "Phylogeny_only_P",
+          "ELPD": "-37.0938174710013",
+          "ELPD_Difference": "0",
+          "PairedSE": "0",
+          "Outcome": "binary",
+          "CVType": "species",
+          "FoldKey": "4b769111872220f6a14f2a3df54a12309a253c6bde2b738f340550fdf9b8ca8a",
+          "ReferenceModel": "Phylogeny_only_P",
+          "MCFlaggedFolds": "1",
+          "DeltaMethod_MCSE_TotalELPD": "0.178683218485572",
+          "MaximumLikelihoodContribution": "0.0398723381521513",
+          "MinimumEffectiveContributions": "78.0771784197141",
+          "AnyModelMCReview": "TRUE",
+          "Interpretation": "FINITE_DRAW_JOINT_SCORE_WITH_MC_REVIEW_NO_DEFINITIVE_RANK"
+        },
+        {
+          "Model": "M2_P",
+          "ELPD": "-37.307652743413",
+          "ELPD_Difference": "-0.213835272411725",
+          "PairedSE": "0.400110148698703",
+          "Outcome": "binary",
+          "CVType": "species",
+          "FoldKey": "4b769111872220f6a14f2a3df54a12309a253c6bde2b738f340550fdf9b8ca8a",
+          "ReferenceModel": "Phylogeny_only_P",
+          "MCFlaggedFolds": "2",
+          "DeltaMethod_MCSE_TotalELPD": "0.222985649933828",
+          "MaximumLikelihoodContribution": "0.0614337092554383",
+          "MinimumEffectiveContributions": "81.9223094567128",
+          "AnyModelMCReview": "TRUE",
+          "Interpretation": "FINITE_DRAW_JOINT_SCORE_WITH_MC_REVIEW_NO_DEFINITIVE_RANK"
+        }
+      ]
+    },
+    {
+      "archive": "v1_derived_all_nonrds.tar.gz",
+      "path": "./cv_comparisons/binary_phylo_distance/cv_model_comparison_with_mc.csv",
+      "rows": 10,
+      "columns": [
+        "Model",
+        "ELPD",
+        "ELPD_Difference",
+        "PairedSE",
+        "Outcome",
+        "CVType",
+        "FoldKey",
+        "ReferenceModel",
+        "MCFlaggedFolds",
+        "DeltaMethod_MCSE_TotalELPD",
+        "MaximumLikelihoodContribution",
+        "MinimumEffectiveContributions",
+        "AnyModelMCReview",
+        "Interpretation"
+      ],
+      "first_rows": [
+        {
+          "Model": "Site315_P",
+          "ELPD": "-42.8483529302004",
+          "ELPD_Difference": "0",
+          "PairedSE": "0",
+          "Outcome": "binary",
+          "CVType": "phylo_distance",
+          "FoldKey": "cd7101959d19fbbaef6a1daab9fd30e0f6efdb59ee4bb88d31294b510ff5881d",
+          "ReferenceModel": "Site315_P",
+          "MCFlaggedFolds": "1",
+          "DeltaMethod_MCSE_TotalELPD": "0.5543464650085",
+          "MaximumLikelihoodContribution": "0.406618895673529",
+          "MinimumEffectiveContributions": "3.32904142660532",
+          "AnyModelMCReview": "TRUE",
+          "Interpretation": "FINITE_DRAW_JOINT_SCORE_WITH_MC_REVIEW_NO_DEFINITIVE_RANK"
+        },
+        {
+          "Model": "Phylogeny_only_P",
+          "ELPD": "-43.3377211550779",
+          "ELPD_Difference": "-0.489368224877508",
+          "PairedSE": "0.538867687900096",
+          "Outcome": "binary",
+          "CVType": "phylo_distance",
+          "FoldKey": "cd7101959d19fbbaef6a1daab9fd30e0f6efdb59ee4bb88d31294b510ff5881d",
+          "ReferenceModel": "Site315_P",
+          "MCFlaggedFolds": "1",
+          "DeltaMethod_MCSE_TotalELPD": "0.76935423377735",
+          "MaximumLikelihoodContribution": "0.752963626214951",
+          "MinimumEffectiveContributions": "1.71095862222325",
+          "AnyModelMCReview": "TRUE",
+          "Interpretation": "FINITE_DRAW_JOINT_SCORE_WITH_MC_REVIEW_NO_DEFINITIVE_RANK"
+        }
+      ]
+    },
+    {
+      "archive": "v1_derived_key.tar.gz",
+      "path": "derived_key/cv_model_comparison_all.csv",
+      "rows": 40,
+      "columns": [
+        "Model",
+        "ELPD",
+        "ELPD_Difference",
+        "PairedSE",
+        "Outcome",
+        "CVType",
+        "FoldKey",
+        "ReferenceModel",
+        "MCFlaggedFolds",
+        "DeltaMethod_MCSE_TotalELPD",
+        "MaximumLikelihoodContribution",
+        "MinimumEffectiveContributions",
+        "AnyModelMCReview",
+        "Interpretation"
+      ],
+      "first_rows": [
+        {
+          "Model": "Phylogeny_only_P",
+          "ELPD": "-37.0938174710013",
+          "ELPD_Difference": "0",
+          "PairedSE": "0",
+          "Outcome": "binary",
+          "CVType": "species",
+          "FoldKey": "4b769111872220f6a14f2a3df54a12309a253c6bde2b738f340550fdf9b8ca8a",
+          "ReferenceModel": "Phylogeny_only_P",
+          "MCFlaggedFolds": "1",
+          "DeltaMethod_MCSE_TotalELPD": "0.178683218485572",
+          "MaximumLikelihoodContribution": "0.0398723381521513",
+          "MinimumEffectiveContributions": "78.0771784197141",
+          "AnyModelMCReview": "TRUE",
+          "Interpretation": "FINITE_DRAW_JOINT_SCORE_WITH_MC_REVIEW_NO_DEFINITIVE_RANK"
+        },
+        {
+          "Model": "M2_P",
+          "ELPD": "-37.307652743413",
+          "ELPD_Difference": "-0.213835272411725",
+          "PairedSE": "0.400110148698703",
+          "Outcome": "binary",
+          "CVType": "species",
+          "FoldKey": "4b769111872220f6a14f2a3df54a12309a253c6bde2b738f340550fdf9b8ca8a",
+          "ReferenceModel": "Phylogeny_only_P",
+          "MCFlaggedFolds": "2",
+          "DeltaMethod_MCSE_TotalELPD": "0.222985649933828",
+          "MaximumLikelihoodContribution": "0.0614337092554383",
+          "MinimumEffectiveContributions": "81.9223094567128",
+          "AnyModelMCReview": "TRUE",
+          "Interpretation": "FINITE_DRAW_JOINT_SCORE_WITH_MC_REVIEW_NO_DEFINITIVE_RANK"
+        }
+      ]
+    },
+    {
+      "archive": "v1_derived_key.tar.gz",
+      "path": "derived_key/joint_species/cv_model_comparison_with_mc.csv",
+      "rows": 10,
+      "columns": [
+        "Model",
+        "ELPD",
+        "ELPD_Difference",
+        "PairedSE",
+        "Outcome",
+        "CVType",
+        "FoldKey",
+        "ReferenceModel",
+        "MCFlaggedFolds",
+        "DeltaMethod_MCSE_TotalELPD",
+        "MaximumLikelihoodContribution",
+        "MinimumEffectiveContributions",
+        "AnyModelMCReview",
+        "Interpretation"
+      ],
+      "first_rows": [
+        {
+          "Model": "M1_P",
+          "ELPD": "-369.026277613168",
+          "ELPD_Difference": "0",
+          "PairedSE": "0",
+          "Outcome": "joint",
+          "CVType": "species",
+          "FoldKey": "7b6f5fa034adcbd25915f29e81671e0d2b1679b33de0b15cd495f40c8d1cb5aa",
+          "ReferenceModel": "M1_P",
+          "MCFlaggedFolds": "5",
+          "DeltaMethod_MCSE_TotalELPD": "1.85660852922684",
+          "MaximumLikelihoodContribution": "0.999999438718957",
+          "MinimumEffectiveContributions": "1.00000112256272",
+          "AnyModelMCReview": "TRUE",
+          "Interpretation": "FINITE_DRAW_JOINT_SCORE_WITH_MC_REVIEW_NO_DEFINITIVE_RANK"
+        },
+        {
+          "Model": "M2_P",
+          "ELPD": "-398.170905952377",
+          "ELPD_Difference": "-29.1446283392088",
+          "PairedSE": "33.0598426552628",
+          "Outcome": "joint",
+          "CVType": "species",
+          "FoldKey": "7b6f5fa034adcbd25915f29e81671e0d2b1679b33de0b15cd495f40c8d1cb5aa",
+          "ReferenceModel": "M1_P",
+          "MCFlaggedFolds": "5",
+          "DeltaMethod_MCSE_TotalELPD": "1.66761123926085",
+          "MaximumLikelihoodContribution": "0.973082013237251",
+          "MinimumEffectiveContributions": "1.05529554388971",
+          "AnyModelMCReview": "TRUE",
+          "Interpretation": "FINITE_DRAW_JOINT_SCORE_WITH_MC_REVIEW_NO_DEFINITIVE_RANK"
+        }
+      ]
+    },
+    {
+      "archive": "v1_derived_key.tar.gz",
+      "path": "derived_key/joint_phylo_distance/cv_model_comparison_with_mc.csv",
+      "rows": 10,
+      "columns": [
+        "Model",
+        "ELPD",
+        "ELPD_Difference",
+        "PairedSE",
+        "Outcome",
+        "CVType",
+        "FoldKey",
+        "ReferenceModel",
+        "MCFlaggedFolds",
+        "DeltaMethod_MCSE_TotalELPD",
+        "MaximumLikelihoodContribution",
+        "MinimumEffectiveContributions",
+        "AnyModelMCReview",
+        "Interpretation"
+      ],
+      "first_rows": [
+        {
+          "Model": "Site315_P",
+          "ELPD": "-494.471023976106",
+          "ELPD_Difference": "0",
+          "PairedSE": "0",
+          "Outcome": "joint",
+          "CVType": "phylo_distance",
+          "FoldKey": "fc3673933fd716c62b80ab78865fe254a480128d28a7a6af99a0848441c061d2",
+          "ReferenceModel": "Site315_P",
+          "MCFlaggedFolds": "3",
+          "DeltaMethod_MCSE_TotalELPD": "1.1041308213063",
+          "MaximumLikelihoodContribution": "0.999999998832979",
+          "MinimumEffectiveContributions": "1.00000000233404",
+          "AnyModelMCReview": "TRUE",
+          "Interpretation": "FINITE_DRAW_JOINT_SCORE_WITH_MC_REVIEW_NO_DEFINITIVE_RANK"
+        },
+        {
+          "Model": "M2_P",
+          "ELPD": "-522.134726956511",
+          "ELPD_Difference": "-27.6637029804053",
+          "PairedSE": "27.8265696905355",
+          "Outcome": "joint",
+          "CVType": "phylo_distance",
+          "FoldKey": "fc3673933fd716c62b80ab78865fe254a480128d28a7a6af99a0848441c061d2",
+          "ReferenceModel": "Site315_P",
+          "MCFlaggedFolds": "3",
+          "DeltaMethod_MCSE_TotalELPD": "1.12083086831034",
+          "MaximumLikelihoodContribution": "1",
+          "MinimumEffectiveContributions": "1",
+          "AnyModelMCReview": "TRUE",
+          "Interpretation": "FINITE_DRAW_JOINT_SCORE_WITH_MC_REVIEW_NO_DEFINITIVE_RANK"
+        }
+      ]
+    },
+    {
+      "archive": "v1_derived_key.tar.gz",
+      "path": "derived_key/binary_species/cv_model_comparison_with_mc.csv",
+      "rows": 10,
+      "columns": [
+        "Model",
+        "ELPD",
+        "ELPD_Difference",
+        "PairedSE",
+        "Outcome",
+        "CVType",
+        "FoldKey",
+        "ReferenceModel",
+        "MCFlaggedFolds",
+        "DeltaMethod_MCSE_TotalELPD",
+        "MaximumLikelihoodContribution",
+        "MinimumEffectiveContributions",
+        "AnyModelMCReview",
+        "Interpretation"
+      ],
+      "first_rows": [
+        {
+          "Model": "Phylogeny_only_P",
+          "ELPD": "-37.0938174710013",
+          "ELPD_Difference": "0",
+          "PairedSE": "0",
+          "Outcome": "binary",
+          "CVType": "species",
+          "FoldKey": "4b769111872220f6a14f2a3df54a12309a253c6bde2b738f340550fdf9b8ca8a",
+          "ReferenceModel": "Phylogeny_only_P",
+          "MCFlaggedFolds": "1",
+          "DeltaMethod_MCSE_TotalELPD": "0.178683218485572",
+          "MaximumLikelihoodContribution": "0.0398723381521513",
+          "MinimumEffectiveContributions": "78.0771784197141",
+          "AnyModelMCReview": "TRUE",
+          "Interpretation": "FINITE_DRAW_JOINT_SCORE_WITH_MC_REVIEW_NO_DEFINITIVE_RANK"
+        },
+        {
+          "Model": "M2_P",
+          "ELPD": "-37.307652743413",
+          "ELPD_Difference": "-0.213835272411725",
+          "PairedSE": "0.400110148698703",
+          "Outcome": "binary",
+          "CVType": "species",
+          "FoldKey": "4b769111872220f6a14f2a3df54a12309a253c6bde2b738f340550fdf9b8ca8a",
+          "ReferenceModel": "Phylogeny_only_P",
+          "MCFlaggedFolds": "2",
+          "DeltaMethod_MCSE_TotalELPD": "0.222985649933828",
+          "MaximumLikelihoodContribution": "0.0614337092554383",
+          "MinimumEffectiveContributions": "81.9223094567128",
+          "AnyModelMCReview": "TRUE",
+          "Interpretation": "FINITE_DRAW_JOINT_SCORE_WITH_MC_REVIEW_NO_DEFINITIVE_RANK"
+        }
+      ]
+    },
+    {
+      "archive": "v1_derived_key.tar.gz",
+      "path": "derived_key/binary_phylo_distance/cv_model_comparison_with_mc.csv",
+      "rows": 10,
+      "columns": [
+        "Model",
+        "ELPD",
+        "ELPD_Difference",
+        "PairedSE",
+        "Outcome",
+        "CVType",
+        "FoldKey",
+        "ReferenceModel",
+        "MCFlaggedFolds",
+        "DeltaMethod_MCSE_TotalELPD",
+        "MaximumLikelihoodContribution",
+        "MinimumEffectiveContributions",
+        "AnyModelMCReview",
+        "Interpretation"
+      ],
+      "first_rows": [
+        {
+          "Model": "Site315_P",
+          "ELPD": "-42.8483529302004",
+          "ELPD_Difference": "0",
+          "PairedSE": "0",
+          "Outcome": "binary",
+          "CVType": "phylo_distance",
+          "FoldKey": "cd7101959d19fbbaef6a1daab9fd30e0f6efdb59ee4bb88d31294b510ff5881d",
+          "ReferenceModel": "Site315_P",
+          "MCFlaggedFolds": "1",
+          "DeltaMethod_MCSE_TotalELPD": "0.5543464650085",
+          "MaximumLikelihoodContribution": "0.406618895673529",
+          "MinimumEffectiveContributions": "3.32904142660532",
+          "AnyModelMCReview": "TRUE",
+          "Interpretation": "FINITE_DRAW_JOINT_SCORE_WITH_MC_REVIEW_NO_DEFINITIVE_RANK"
+        },
+        {
+          "Model": "Phylogeny_only_P",
+          "ELPD": "-43.3377211550779",
+          "ELPD_Difference": "-0.489368224877508",
+          "PairedSE": "0.538867687900096",
+          "Outcome": "binary",
+          "CVType": "phylo_distance",
+          "FoldKey": "cd7101959d19fbbaef6a1daab9fd30e0f6efdb59ee4bb88d31294b510ff5881d",
+          "ReferenceModel": "Site315_P",
+          "MCFlaggedFolds": "1",
+          "DeltaMethod_MCSE_TotalELPD": "0.76935423377735",
+          "MaximumLikelihoodContribution": "0.752963626214951",
+          "MinimumEffectiveContributions": "1.71095862222325",
+          "AnyModelMCReview": "TRUE",
+          "Interpretation": "FINITE_DRAW_JOINT_SCORE_WITH_MC_REVIEW_NO_DEFINITIVE_RANK"
+        }
+      ]
+    }
+  ]
+}

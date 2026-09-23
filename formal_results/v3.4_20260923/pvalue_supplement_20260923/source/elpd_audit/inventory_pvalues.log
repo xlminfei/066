@@ -1,0 +1,1476 @@
+CURRENT_P_COUNTS {
+  "model_vs_null.csv": [
+    {
+      "group": [
+        "binary",
+        "record_equal",
+        "fivefold"
+      ],
+      "n": 6,
+      "raw_below05": 6,
+      "BH_below05": 6
+    },
+    {
+      "group": [
+        "joint_bb",
+        "record_equal",
+        "fivefold"
+      ],
+      "n": 6,
+      "raw_below05": 1,
+      "BH_below05": 0
+    },
+    {
+      "group": [
+        "binary",
+        "record_equal",
+        "tenfold"
+      ],
+      "n": 6,
+      "raw_below05": 5,
+      "BH_below05": 4
+    },
+    {
+      "group": [
+        "joint_bb",
+        "record_equal",
+        "tenfold"
+      ],
+      "n": 6,
+      "raw_below05": 1,
+      "BH_below05": 0
+    },
+    {
+      "group": [
+        "binary",
+        "species_equal",
+        "fivefold"
+      ],
+      "n": 6,
+      "raw_below05": 6,
+      "BH_below05": 6
+    },
+    {
+      "group": [
+        "joint_bb",
+        "species_equal",
+        "fivefold"
+      ],
+      "n": 6,
+      "raw_below05": 0,
+      "BH_below05": 0
+    },
+    {
+      "group": [
+        "binary",
+        "species_equal",
+        "tenfold"
+      ],
+      "n": 6,
+      "raw_below05": 6,
+      "BH_below05": 6
+    },
+    {
+      "group": [
+        "joint_bb",
+        "species_equal",
+        "tenfold"
+      ],
+      "n": 6,
+      "raw_below05": 0,
+      "BH_below05": 0
+    }
+  ],
+  "training_method_comparisons.csv": [
+    {
+      "group": [
+        "binary",
+        "record_equal",
+        "fivefold"
+      ],
+      "n": 4,
+      "raw_below05": 0,
+      "BH_below05": 0
+    },
+    {
+      "group": [
+        "joint_bb",
+        "record_equal",
+        "fivefold"
+      ],
+      "n": 4,
+      "raw_below05": 0,
+      "BH_below05": 0
+    },
+    {
+      "group": [
+        "binary",
+        "record_equal",
+        "tenfold"
+      ],
+      "n": 4,
+      "raw_below05": 0,
+      "BH_below05": 0
+    },
+    {
+      "group": [
+        "joint_bb",
+        "record_equal",
+        "tenfold"
+      ],
+      "n": 4,
+      "raw_below05": 0,
+      "BH_below05": 0
+    },
+    {
+      "group": [
+        "binary",
+        "species_equal",
+        "fivefold"
+      ],
+      "n": 4,
+      "raw_below05": 0,
+      "BH_below05": 0
+    },
+    {
+      "group": [
+        "joint_bb",
+        "species_equal",
+        "fivefold"
+      ],
+      "n": 4,
+      "raw_below05": 0,
+      "BH_below05": 0
+    },
+    {
+      "group": [
+        "binary",
+        "species_equal",
+        "tenfold"
+      ],
+      "n": 4,
+      "raw_below05": 0,
+      "BH_below05": 0
+    },
+    {
+      "group": [
+        "joint_bb",
+        "species_equal",
+        "tenfold"
+      ],
+      "n": 4,
+      "raw_below05": 0,
+      "BH_below05": 0
+    }
+  ]
+}
+V1_ARCHIVE_FILES 1720 HIT_FILES 6
+V1_HITS [
+  {
+    "archive": "v1_figures_model_descriptive.tar.gz",
+    "path": "figures_model/CAPTIONS_zh.md",
+    "hits": [
+      {
+        "line": 598,
+        "text": "每模型每折的整折预测概率积分检查。四面板分别显示对数分数MCSE近似、最大归一化似然贡献、有效贡献数量和链间对数分数范围。有效贡献数量用log10色标，不能误称参数ESS；星号为既定描述性复核触发条件，并非显著性检验。MCSE在相对误差大时本身也可能不可靠。"
+      },
+      {
+        "line": 603,
+        "text": "每模型每折的整折预测概率积分检查。四面板分别显示对数分数MCSE近似、最大归一化似然贡献、有效贡献数量和链间对数分数范围。有效贡献数量用log10色标，不能误称参数ESS；星号为既定描述性复核触发条件，并非显著性检验。MCSE在相对误差大时本身也可能不可靠。"
+      },
+      {
+        "line": 608,
+        "text": "每模型每折的整折预测概率积分检查。四面板分别显示对数分数MCSE近似、最大归一化似然贡献、有效贡献数量和链间对数分数范围。有效贡献数量用log10色标，不能误称参数ESS；星号为既定描述性复核触发条件，并非显著性检验。MCSE在相对误差大时本身也可能不可靠。"
+      },
+      {
+        "line": 613,
+        "text": "每模型每折的整折预测概率积分检查。四面板分别显示对数分数MCSE近似、最大归一化似然贡献、有效贡献数量和链间对数分数范围。有效贡献数量用log10色标，不能误称参数ESS；星号为既定描述性复核触发条件，并非显著性检验。MCSE在相对误差大时本身也可能不可靠。"
+      }
+    ]
+  },
+  {
+    "archive": "v1_figures_model_descriptive.tar.gz",
+    "path": "figures_model/S06_mc_score_binary_phylo_distance_caption_zh.md",
+    "hits": [
+      {
+        "line": 3,
+        "text": "每模型每折的整折预测概率积分检查。四面板分别显示对数分数MCSE近似、最大归一化似然贡献、有效贡献数量和链间对数分数范围。有效贡献数量用log10色标，不能误称参数ESS；星号为既定描述性复核触发条件，并非显著性检验。MCSE在相对误差大时本身也可能不可靠。"
+      }
+    ]
+  },
+  {
+    "archive": "v1_figures_model_descriptive.tar.gz",
+    "path": "figures_model/S06_mc_score_binary_species_caption_zh.md",
+    "hits": [
+      {
+        "line": 3,
+        "text": "每模型每折的整折预测概率积分检查。四面板分别显示对数分数MCSE近似、最大归一化似然贡献、有效贡献数量和链间对数分数范围。有效贡献数量用log10色标，不能误称参数ESS；星号为既定描述性复核触发条件，并非显著性检验。MCSE在相对误差大时本身也可能不可靠。"
+      }
+    ]
+  },
+  {
+    "archive": "v1_figures_model_descriptive.tar.gz",
+    "path": "figures_model/S06_mc_score_joint_phylo_distance_caption_zh.md",
+    "hits": [
+      {
+        "line": 3,
+        "text": "每模型每折的整折预测概率积分检查。四面板分别显示对数分数MCSE近似、最大归一化似然贡献、有效贡献数量和链间对数分数范围。有效贡献数量用log10色标，不能误称参数ESS；星号为既定描述性复核触发条件，并非显著性检验。MCSE在相对误差大时本身也可能不可靠。"
+      }
+    ]
+  },
+  {
+    "archive": "v1_figures_model_descriptive.tar.gz",
+    "path": "figures_model/S06_mc_score_joint_species_caption_zh.md",
+    "hits": [
+      {
+        "line": 3,
+        "text": "每模型每折的整折预测概率积分检查。四面板分别显示对数分数MCSE近似、最大归一化似然贡献、有效贡献数量和链间对数分数范围。有效贡献数量用log10色标，不能误称参数ESS；星号为既定描述性复核触发条件，并非显著性检验。MCSE在相对误差大时本身也可能不可靠。"
+      }
+    ]
+  },
+  {
+    "archive": "v1_figures_model_descriptive.tar.gz",
+    "path": "figures_descriptive/CAPTIONS_zh.md",
+    "hits": [
+      {
+        "line": 117,
+        "text": "M1六个位点的编码频率。蓝条为全物种面板频率，棕色菱形为有比率资料物种的频率，二者以各自物种数为分母，均包含MISSING类别。每个物种在各位点恰计一次；有比率资料子集沿用固定全物种字典，不重新划分OTHER。M3的OTHER阈值为小于1%，在本次365物种面板即出现1、2、3次合并。具体数量、分母和百分比见源CSV。频率差异只描述有资料物种对面板基因型的覆盖，不给出因果解释或统计显著性。"
+      },
+      {
+        "line": 123,
+        "text": "M2六个位点的编码频率。蓝条为全物种面板频率，棕色菱形为有比率资料物种的频率，二者以各自物种数为分母，均包含MISSING类别。每个物种在各位点恰计一次；有比率资料子集沿用固定全物种字典，不重新划分OTHER。M3的OTHER阈值为小于1%，在本次365物种面板即出现1、2、3次合并。具体数量、分母和百分比见源CSV。频率差异只描述有资料物种对面板基因型的覆盖，不给出因果解释或统计显著性。"
+      },
+      {
+        "line": 129,
+        "text": "M3六个位点的编码频率。蓝条为全物种面板频率，棕色菱形为有比率资料物种的频率，二者以各自物种数为分母，均包含MISSING类别。每个物种在各位点恰计一次；有比率资料子集沿用固定全物种字典，不重新划分OTHER。M3的OTHER阈值为小于1%，在本次365物种面板即出现1、2、3次合并。具体数量、分母和百分比见源CSV。频率差异只描述有资料物种对面板基因型的覆盖，不给出因果解释或统计显著性。"
+      }
+    ]
+  }
+]
+V1_COMPARISON_CANDIDATES [
+  {
+    "archive": "v1_derived_all_nonrds.tar.gz",
+    "path": "./cv_comparisons/cv_fold_scores_all.csv",
+    "bytes": 183524
+  },
+  {
+    "archive": "v1_derived_all_nonrds.tar.gz",
+    "path": "./cv_comparisons/cv_model_comparison_all.csv",
+    "bytes": 11407
+  },
+  {
+    "archive": "v1_derived_all_nonrds.tar.gz",
+    "path": "./cv_comparisons/cv_numerical_protocols.csv",
+    "bytes": 7986
+  },
+  {
+    "archive": "v1_derived_all_nonrds.tar.gz",
+    "path": "./cv_comparisons/postfit_cv_status.json",
+    "bytes": 736
+  },
+  {
+    "archive": "v1_derived_all_nonrds.tar.gz",
+    "path": "./cv_comparisons/quantitative_metrics_all.csv",
+    "bytes": 93833
+  },
+  {
+    "archive": "v1_derived_all_nonrds.tar.gz",
+    "path": "./cv_comparisons/joint_species/cv_fold_diagnostics.csv",
+    "bytes": 12282
+  },
+  {
+    "archive": "v1_derived_all_nonrds.tar.gz",
+    "path": "./cv_comparisons/joint_species/cv_fold_scores_with_mc.csv",
+    "bytes": 47779
+  },
+  {
+    "archive": "v1_derived_all_nonrds.tar.gz",
+    "path": "./cv_comparisons/joint_species/cv_model_comparison_with_mc.csv",
+    "bytes": 2937
+  },
+  {
+    "archive": "v1_derived_all_nonrds.tar.gz",
+    "path": "./cv_comparisons/joint_species/quantitative_metrics_all_models.csv",
+    "bytes": 47003
+  },
+  {
+    "archive": "v1_derived_all_nonrds.tar.gz",
+    "path": "./cv_comparisons/joint_phylo_distance/cv_fold_diagnostics.csv",
+    "bytes": 12631
+  },
+  {
+    "archive": "v1_derived_all_nonrds.tar.gz",
+    "path": "./cv_comparisons/joint_phylo_distance/cv_fold_scores_with_mc.csv",
+    "bytes": 47065
+  },
+  {
+    "archive": "v1_derived_all_nonrds.tar.gz",
+    "path": "./cv_comparisons/joint_phylo_distance/cv_model_comparison_with_mc.csv",
+    "bytes": 3005
+  },
+  {
+    "archive": "v1_derived_all_nonrds.tar.gz",
+    "path": "./cv_comparisons/joint_phylo_distance/quantitative_metrics_all_models.csv",
+    "bytes": 47148
+  },
+  {
+    "archive": "v1_derived_all_nonrds.tar.gz",
+    "path": "./cv_comparisons/binary_species/auc_by_fold.csv",
+    "bytes": 15501
+  },
+  {
+    "archive": "v1_derived_all_nonrds.tar.gz",
+    "path": "./cv_comparisons/binary_species/auc_summary.csv",
+    "bytes": 3616
+  },
+  {
+    "archive": "v1_derived_all_nonrds.tar.gz",
+    "path": "./cv_comparisons/binary_species/brier_scores.csv",
+    "bytes": 40890
+  },
+  {
+    "archive": "v1_derived_all_nonrds.tar.gz",
+    "path": "./cv_comparisons/binary_species/calibration_bins.csv",
+    "bytes": 8231
+  },
+  {
+    "archive": "v1_derived_all_nonrds.tar.gz",
+    "path": "./cv_comparisons/binary_species/calibration_species.csv",
+    "bytes": 40814
+  },
+  {
+    "archive": "v1_derived_all_nonrds.tar.gz",
+    "path": "./cv_comparisons/binary_species/cv_fold_diagnostics.csv",
+    "bytes": 12338
+  },
+  {
+    "archive": "v1_derived_all_nonrds.tar.gz",
+    "path": "./cv_comparisons/binary_species/cv_fold_scores_with_mc.csv",
+    "bytes": 44748
+  },
+  {
+    "archive": "v1_derived_all_nonrds.tar.gz",
+    "path": "./cv_comparisons/binary_species/cv_model_comparison_with_mc.csv",
+    "bytes": 3101
+  },
+  {
+    "archive": "v1_derived_all_nonrds.tar.gz",
+    "path": "./cv_comparisons/binary_species/roc_coordinates_by_fold.csv",
+    "bytes": 119660
+  },
+  {
+    "archive": "v1_derived_all_nonrds.tar.gz",
+    "path": "./cv_comparisons/binary_species/roc_oof_experiments.csv",
+    "bytes": 604484
+  },
+  {
+    "archive": "v1_derived_all_nonrds.tar.gz",
+    "path": "./cv_comparisons/binary_phylo_distance/auc_by_fold.csv",
+    "bytes": 15644
+  },
+  {
+    "archive": "v1_derived_all_nonrds.tar.gz",
+    "path": "./cv_comparisons/binary_phylo_distance/auc_summary.csv",
+    "bytes": 3537
+  },
+  {
+    "archive": "v1_derived_all_nonrds.tar.gz",
+    "path": "./cv_comparisons/binary_phylo_distance/brier_scores.csv",
+    "bytes": 41271
+  },
+  {
+    "archive": "v1_derived_all_nonrds.tar.gz",
+    "path": "./cv_comparisons/binary_phylo_distance/calibration_bins.csv",
+    "bytes": 8115
+  },
+  {
+    "archive": "v1_derived_all_nonrds.tar.gz",
+    "path": "./cv_comparisons/binary_phylo_distance/calibration_species.csv",
+    "bytes": 44546
+  },
+  {
+    "archive": "v1_derived_all_nonrds.tar.gz",
+    "path": "./cv_comparisons/binary_phylo_distance/cv_fold_diagnostics.csv",
+    "bytes": 12684
+  },
+  {
+    "archive": "v1_derived_all_nonrds.tar.gz",
+    "path": "./cv_comparisons/binary_phylo_distance/cv_fold_scores_with_mc.csv",
+    "bytes": 45636
+  },
+  {
+    "archive": "v1_derived_all_nonrds.tar.gz",
+    "path": "./cv_comparisons/binary_phylo_distance/cv_model_comparison_with_mc.csv",
+    "bytes": 3072
+  },
+  {
+    "archive": "v1_derived_all_nonrds.tar.gz",
+    "path": "./cv_comparisons/binary_phylo_distance/roc_coordinates_by_fold.csv",
+    "bytes": 104546
+  },
+  {
+    "archive": "v1_derived_all_nonrds.tar.gz",
+    "path": "./cv_comparisons/binary_phylo_distance/roc_oof_experiments.csv",
+    "bytes": 615997
+  },
+  {
+    "archive": "v1_derived_key.tar.gz",
+    "path": "derived_key/cv_model_comparison_all.csv",
+    "bytes": 11407
+  },
+  {
+    "archive": "v1_derived_key.tar.gz",
+    "path": "derived_key/joint_species/cv_model_comparison_with_mc.csv",
+    "bytes": 2937
+  },
+  {
+    "archive": "v1_derived_key.tar.gz",
+    "path": "derived_key/joint_phylo_distance/cv_model_comparison_with_mc.csv",
+    "bytes": 3005
+  },
+  {
+    "archive": "v1_derived_key.tar.gz",
+    "path": "derived_key/binary_species/cv_model_comparison_with_mc.csv",
+    "bytes": 3101
+  },
+  {
+    "archive": "v1_derived_key.tar.gz",
+    "path": "derived_key/binary_phylo_distance/cv_model_comparison_with_mc.csv",
+    "bytes": 3072
+  },
+  {
+    "archive": "v1_figures_model_descriptive.tar.gz",
+    "path": "figures_model/F02_elpd_binary_phylo_distance_caption_zh.md",
+    "bytes": 522
+  },
+  {
+    "archive": "v1_figures_model_descriptive.tar.gz",
+    "path": "figures_model/F02_elpd_binary_phylo_distance_provenance.json",
+    "bytes": 5590
+  },
+  {
+    "archive": "v1_figures_model_descriptive.tar.gz",
+    "path": "figures_model/F02_elpd_binary_species_caption_zh.md",
+    "bytes": 515
+  },
+  {
+    "archive": "v1_figures_model_descriptive.tar.gz",
+    "path": "figures_model/F02_elpd_binary_species_provenance.json",
+    "bytes": 5415
+  },
+  {
+    "archive": "v1_figures_model_descriptive.tar.gz",
+    "path": "figures_model/F02_elpd_joint_phylo_distance_caption_zh.md",
+    "bytes": 521
+  },
+  {
+    "archive": "v1_figures_model_descriptive.tar.gz",
+    "path": "figures_model/F02_elpd_joint_phylo_distance_provenance.json",
+    "bytes": 5565
+  },
+  {
+    "archive": "v1_figures_model_descriptive.tar.gz",
+    "path": "figures_model/F02_elpd_joint_species_caption_zh.md",
+    "bytes": 514
+  },
+  {
+    "archive": "v1_figures_model_descriptive.tar.gz",
+    "path": "figures_model/F02_elpd_joint_species_provenance.json",
+    "bytes": 5390
+  },
+  {
+    "archive": "v1_figures_model_descriptive.tar.gz",
+    "path": "figures_model/S05_cv_diagnostics_binary_phylo_distance_fold1_caption_zh.md",
+    "bytes": 355
+  },
+  {
+    "archive": "v1_figures_model_descriptive.tar.gz",
+    "path": "figures_model/S05_cv_diagnostics_binary_phylo_distance_fold1_provenance.json",
+    "bytes": 1298
+  },
+  {
+    "archive": "v1_figures_model_descriptive.tar.gz",
+    "path": "figures_model/S05_cv_diagnostics_binary_phylo_distance_fold2_caption_zh.md",
+    "bytes": 355
+  },
+  {
+    "archive": "v1_figures_model_descriptive.tar.gz",
+    "path": "figures_model/S05_cv_diagnostics_binary_phylo_distance_fold2_provenance.json",
+    "bytes": 1298
+  },
+  {
+    "archive": "v1_figures_model_descriptive.tar.gz",
+    "path": "figures_model/S05_cv_diagnostics_binary_phylo_distance_fold3_caption_zh.md",
+    "bytes": 355
+  },
+  {
+    "archive": "v1_figures_model_descriptive.tar.gz",
+    "path": "figures_model/S05_cv_diagnostics_binary_phylo_distance_fold3_provenance.json",
+    "bytes": 1298
+  },
+  {
+    "archive": "v1_figures_model_descriptive.tar.gz",
+    "path": "figures_model/S05_cv_diagnostics_binary_phylo_distance_fold4_caption_zh.md",
+    "bytes": 355
+  },
+  {
+    "archive": "v1_figures_model_descriptive.tar.gz",
+    "path": "figures_model/S05_cv_diagnostics_binary_phylo_distance_fold4_provenance.json",
+    "bytes": 1298
+  },
+  {
+    "archive": "v1_figures_model_descriptive.tar.gz",
+    "path": "figures_model/S05_cv_diagnostics_binary_phylo_distance_fold5_caption_zh.md",
+    "bytes": 355
+  },
+  {
+    "archive": "v1_figures_model_descriptive.tar.gz",
+    "path": "figures_model/S05_cv_diagnostics_binary_phylo_distance_fold5_provenance.json",
+    "bytes": 1298
+  },
+  {
+    "archive": "v1_figures_model_descriptive.tar.gz",
+    "path": "figures_model/S05_cv_diagnostics_binary_species_fold1_caption_zh.md",
+    "bytes": 348
+  },
+  {
+    "archive": "v1_figures_model_descriptive.tar.gz",
+    "path": "figures_model/S05_cv_diagnostics_binary_species_fold1_provenance.json",
+    "bytes": 1263
+  },
+  {
+    "archive": "v1_figures_model_descriptive.tar.gz",
+    "path": "figures_model/S05_cv_diagnostics_binary_species_fold2_caption_zh.md",
+    "bytes": 348
+  },
+  {
+    "archive": "v1_figures_model_descriptive.tar.gz",
+    "path": "figures_model/S05_cv_diagnostics_binary_species_fold2_provenance.json",
+    "bytes": 1263
+  },
+  {
+    "archive": "v1_figures_model_descriptive.tar.gz",
+    "path": "figures_model/S05_cv_diagnostics_binary_species_fold3_caption_zh.md",
+    "bytes": 348
+  },
+  {
+    "archive": "v1_figures_model_descriptive.tar.gz",
+    "path": "figures_model/S05_cv_diagnostics_binary_species_fold3_provenance.json",
+    "bytes": 1263
+  },
+  {
+    "archive": "v1_figures_model_descriptive.tar.gz",
+    "path": "figures_model/S05_cv_diagnostics_binary_species_fold4_caption_zh.md",
+    "bytes": 348
+  },
+  {
+    "archive": "v1_figures_model_descriptive.tar.gz",
+    "path": "figures_model/S05_cv_diagnostics_binary_species_fold4_provenance.json",
+    "bytes": 1263
+  },
+  {
+    "archive": "v1_figures_model_descriptive.tar.gz",
+    "path": "figures_model/S05_cv_diagnostics_binary_species_fold5_caption_zh.md",
+    "bytes": 348
+  },
+  {
+    "archive": "v1_figures_model_descriptive.tar.gz",
+    "path": "figures_model/S05_cv_diagnostics_binary_species_fold5_provenance.json",
+    "bytes": 1263
+  },
+  {
+    "archive": "v1_figures_model_descriptive.tar.gz",
+    "path": "figures_model/S05_cv_diagnostics_joint_phylo_distance_fold1_caption_zh.md",
+    "bytes": 354
+  },
+  {
+    "archive": "v1_figures_model_descriptive.tar.gz",
+    "path": "figures_model/S05_cv_diagnostics_joint_phylo_distance_fold1_provenance.json",
+    "bytes": 1293
+  },
+  {
+    "archive": "v1_figures_model_descriptive.tar.gz",
+    "path": "figures_model/S05_cv_diagnostics_joint_phylo_distance_fold2_caption_zh.md",
+    "bytes": 354
+  },
+  {
+    "archive": "v1_figures_model_descriptive.tar.gz",
+    "path": "figures_model/S05_cv_diagnostics_joint_phylo_distance_fold2_provenance.json",
+    "bytes": 1293
+  },
+  {
+    "archive": "v1_figures_model_descriptive.tar.gz",
+    "path": "figures_model/S05_cv_diagnostics_joint_phylo_distance_fold3_caption_zh.md",
+    "bytes": 354
+  },
+  {
+    "archive": "v1_figures_model_descriptive.tar.gz",
+    "path": "figures_model/S05_cv_diagnostics_joint_phylo_distance_fold3_provenance.json",
+    "bytes": 1293
+  },
+  {
+    "archive": "v1_figures_model_descriptive.tar.gz",
+    "path": "figures_model/S05_cv_diagnostics_joint_phylo_distance_fold4_caption_zh.md",
+    "bytes": 354
+  },
+  {
+    "archive": "v1_figures_model_descriptive.tar.gz",
+    "path": "figures_model/S05_cv_diagnostics_joint_phylo_distance_fold4_provenance.json",
+    "bytes": 1293
+  },
+  {
+    "archive": "v1_figures_model_descriptive.tar.gz",
+    "path": "figures_model/S05_cv_diagnostics_joint_phylo_distance_fold5_caption_zh.md",
+    "bytes": 354
+  },
+  {
+    "archive": "v1_figures_model_descriptive.tar.gz",
+    "path": "figures_model/S05_cv_diagnostics_joint_phylo_distance_fold5_provenance.json",
+    "bytes": 1293
+  },
+  {
+    "archive": "v1_figures_model_descriptive.tar.gz",
+    "path": "figures_model/S05_cv_diagnostics_joint_species_fold1_caption_zh.md",
+    "bytes": 347
+  },
+  {
+    "archive": "v1_figures_model_descriptive.tar.gz",
+    "path": "figures_model/S05_cv_diagnostics_joint_species_fold1_provenance.json",
+    "bytes": 1258
+  },
+  {
+    "archive": "v1_figures_model_descriptive.tar.gz",
+    "path": "figures_model/S05_cv_diagnostics_joint_species_fold2_caption_zh.md",
+    "bytes": 347
+  },
+  {
+    "archive": "v1_figures_model_descriptive.tar.gz",
+    "path": "figures_model/S05_cv_diagnostics_joint_species_fold2_provenance.json",
+    "bytes": 1258
+  },
+  {
+    "archive": "v1_figures_model_descriptive.tar.gz",
+    "path": "figures_model/S05_cv_diagnostics_joint_species_fold3_caption_zh.md",
+    "bytes": 347
+  },
+  {
+    "archive": "v1_figures_model_descriptive.tar.gz",
+    "path": "figures_model/S05_cv_diagnostics_joint_species_fold3_provenance.json",
+    "bytes": 1258
+  },
+  {
+    "archive": "v1_figures_model_descriptive.tar.gz",
+    "path": "figures_model/S05_cv_diagnostics_joint_species_fold4_caption_zh.md",
+    "bytes": 347
+  },
+  {
+    "archive": "v1_figures_model_descriptive.tar.gz",
+    "path": "figures_model/S05_cv_diagnostics_joint_species_fold4_provenance.json",
+    "bytes": 1258
+  },
+  {
+    "archive": "v1_figures_model_descriptive.tar.gz",
+    "path": "figures_model/S05_cv_diagnostics_joint_species_fold5_caption_zh.md",
+    "bytes": 347
+  },
+  {
+    "archive": "v1_figures_model_descriptive.tar.gz",
+    "path": "figures_model/S05_cv_diagnostics_joint_species_fold5_provenance.json",
+    "bytes": 1258
+  },
+  {
+    "archive": "v1_figures_model_descriptive.tar.gz",
+    "path": "figures_model/S05_diagnostics_binary_primary_caption_zh.md",
+    "bytes": 339
+  },
+  {
+    "archive": "v1_figures_model_descriptive.tar.gz",
+    "path": "figures_model/S05_diagnostics_binary_primary_provenance.json",
+    "bytes": 1629
+  },
+  {
+    "archive": "v1_figures_model_descriptive.tar.gz",
+    "path": "figures_model/S05_diagnostics_binary_sensitivity_caption_zh.md",
+    "bytes": 343
+  },
+  {
+    "archive": "v1_figures_model_descriptive.tar.gz",
+    "path": "figures_model/S05_diagnostics_binary_sensitivity_provenance.json",
+    "bytes": 7099
+  },
+  {
+    "archive": "v1_figures_model_descriptive.tar.gz",
+    "path": "figures_model/S05_diagnostics_joint_primary_caption_zh.md",
+    "bytes": 338
+  },
+  {
+    "archive": "v1_figures_model_descriptive.tar.gz",
+    "path": "figures_model/S05_diagnostics_joint_primary_provenance.json",
+    "bytes": 1625
+  },
+  {
+    "archive": "v1_figures_model_descriptive.tar.gz",
+    "path": "figures_model/S05_diagnostics_joint_sensitivity_caption_zh.md",
+    "bytes": 342
+  },
+  {
+    "archive": "v1_figures_model_descriptive.tar.gz",
+    "path": "figures_model/S05_diagnostics_joint_sensitivity_provenance.json",
+    "bytes": 7096
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./job_receipts/joint__Site315_U__primary__attempt1/results/diagnostics_joint_primary.csv",
+    "bytes": 324
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./job_receipts/joint__Site315_P__primary__attempt1/results/diagnostics_joint_primary.csv",
+    "bytes": 324
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./job_receipts/joint__Phylogeny_only_P__primary__attempt1/results/diagnostics_joint_primary.csv",
+    "bytes": 331
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./job_receipts/joint__Null_U__primary__attempt1/results/diagnostics_joint_primary.csv",
+    "bytes": 321
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./job_receipts/joint__M3_U__rho_beta22__attempt1/results/diagnostics_joint_rho_beta22.csv",
+    "bytes": 324
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./job_receipts/joint__M3_U__primary__attempt1/results/diagnostics_joint_primary.csv",
+    "bytes": 320
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./job_receipts/joint__M3_U__b_sd_100__attempt1/results/diagnostics_joint_b_sd_100.csv",
+    "bytes": 322
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./job_receipts/joint__M3_U__b_sd_025__attempt1/results/diagnostics_joint_b_sd_025.csv",
+    "bytes": 321
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./job_receipts/joint__M3_P__rho_beta22__attempt1/results/diagnostics_joint_rho_beta22.csv",
+    "bytes": 323
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./job_receipts/joint__M3_P__primary__attempt1/results/diagnostics_joint_primary.csv",
+    "bytes": 321
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./job_receipts/joint__M3_P__b_sd_100__attempt1/results/diagnostics_joint_b_sd_100.csv",
+    "bytes": 321
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./job_receipts/joint__M3_P__b_sd_025__attempt1/results/diagnostics_joint_b_sd_025.csv",
+    "bytes": 322
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./job_receipts/joint__M2_U__primary__attempt1/results/diagnostics_joint_primary.csv",
+    "bytes": 318
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./job_receipts/joint__M2_P__primary__attempt1/results/diagnostics_joint_primary.csv",
+    "bytes": 319
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./job_receipts/joint__M1_U__rho_beta22__attempt1/results/diagnostics_joint_rho_beta22.csv",
+    "bytes": 322
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./job_receipts/joint__M1_U__primary__attempt1/results/diagnostics_joint_primary.csv",
+    "bytes": 319
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./job_receipts/joint__M1_U__beta_binomial__attempt1/results/diagnostics_joint_beta_binomial.csv",
+    "bytes": 324
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./job_receipts/joint__M1_P__rho_beta22__attempt1/results/diagnostics_joint_rho_beta22.csv",
+    "bytes": 322
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./job_receipts/joint__M1_P__primary__attempt1/results/diagnostics_joint_primary.csv",
+    "bytes": 319
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./job_receipts/joint__M1_P__beta_binomial__attempt1/results/diagnostics_joint_beta_binomial.csv",
+    "bytes": 325
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./job_receipts/cv__joint__Site315_U__species__attempt1/fold_diagnostics.csv",
+    "bytes": 502
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./job_receipts/cv__joint__Site315_U__phylo_distance__attempt1/fold_diagnostics.csv",
+    "bytes": 498
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./job_receipts/cv__joint__Site315_P__species__attempt1/fold_diagnostics.csv",
+    "bytes": 501
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./job_receipts/cv__joint__Site315_P__phylo_distance__attempt1/fold_diagnostics.csv",
+    "bytes": 500
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./job_receipts/cv__joint__Site315_P__phylo_distance__attempt1/likelihood_repair_diagnostics.csv",
+    "bytes": 933
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./job_receipts/cv__joint__Phylogeny_only_P__species__attempt1/fold_diagnostics.csv",
+    "bytes": 500
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./job_receipts/cv__joint__Phylogeny_only_P__phylo_distance__attempt1/fold_diagnostics.csv",
+    "bytes": 501
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./job_receipts/cv__joint__Phylogeny_only_P__phylo_distance__attempt1/likelihood_repair_diagnostics.csv",
+    "bytes": 891
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./job_receipts/cv__joint__Null_U__species__attempt1/fold_diagnostics.csv",
+    "bytes": 499
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./job_receipts/cv__joint__Null_U__phylo_distance__attempt1/fold_diagnostics.csv",
+    "bytes": 500
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./job_receipts/cv__joint__M3_U__species__attempt1/fold_diagnostics.csv",
+    "bytes": 501
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./job_receipts/cv__joint__M3_U__phylo_distance__attempt1/fold_diagnostics.csv",
+    "bytes": 501
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./job_receipts/cv__joint__M3_P__species__attempt1/fold_diagnostics.csv",
+    "bytes": 498
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./job_receipts/cv__joint__M3_P__phylo_distance__attempt1/fold_diagnostics.csv",
+    "bytes": 501
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./job_receipts/cv__joint__M3_P__phylo_distance__attempt1/likelihood_repair_diagnostics.csv",
+    "bytes": 893
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./job_receipts/cv__joint__M2_U__species__attempt1/fold_diagnostics.csv",
+    "bytes": 502
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./job_receipts/cv__joint__M2_U__phylo_distance__attempt1/fold_diagnostics.csv",
+    "bytes": 501
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./job_receipts/cv__joint__M2_P__species__attempt1/fold_diagnostics.csv",
+    "bytes": 501
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./job_receipts/cv__joint__M2_P__phylo_distance__attempt1/fold_diagnostics.csv",
+    "bytes": 498
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./job_receipts/cv__joint__M2_P__phylo_distance__attempt1/likelihood_repair_diagnostics.csv",
+    "bytes": 910
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./job_receipts/cv__joint__M1_U__species__attempt1/fold_diagnostics.csv",
+    "bytes": 498
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./job_receipts/cv__joint__M1_U__phylo_distance__attempt1/fold_diagnostics.csv",
+    "bytes": 499
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./job_receipts/cv__joint__M1_P__species__attempt1/fold_diagnostics.csv",
+    "bytes": 500
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./job_receipts/cv__joint__M1_P__phylo_distance__attempt1/fold_diagnostics.csv",
+    "bytes": 502
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./job_receipts/cv__joint__M1_P__phylo_distance__attempt1/likelihood_repair_diagnostics.csv",
+    "bytes": 932
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./job_receipts/cv__binary__Site315_U__species__attempt1/fold_diagnostics.csv",
+    "bytes": 499
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./job_receipts/cv__binary__Site315_U__phylo_distance__attempt1/fold_diagnostics.csv",
+    "bytes": 502
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./job_receipts/cv__binary__Site315_P__species__attempt1/fold_diagnostics.csv",
+    "bytes": 502
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./job_receipts/cv__binary__Site315_P__phylo_distance__attempt1/fold_diagnostics.csv",
+    "bytes": 500
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./job_receipts/cv__binary__Phylogeny_only_P__species__attempt1/fold_diagnostics.csv",
+    "bytes": 503
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./job_receipts/cv__binary__Phylogeny_only_P__phylo_distance__attempt1/fold_diagnostics.csv",
+    "bytes": 500
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./job_receipts/cv__binary__Null_U__species__attempt1/fold_diagnostics.csv",
+    "bytes": 501
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./job_receipts/cv__binary__Null_U__phylo_distance__attempt1/fold_diagnostics.csv",
+    "bytes": 501
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./job_receipts/cv__binary__M3_U__species__attempt1/fold_diagnostics.csv",
+    "bytes": 501
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./job_receipts/cv__binary__M3_U__phylo_distance__attempt1/fold_diagnostics.csv",
+    "bytes": 502
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./job_receipts/cv__binary__M3_P__species__attempt1/fold_diagnostics.csv",
+    "bytes": 500
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./job_receipts/cv__binary__M3_P__phylo_distance__attempt1/fold_diagnostics.csv",
+    "bytes": 497
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./job_receipts/cv__binary__M2_U__species__attempt1/fold_diagnostics.csv",
+    "bytes": 502
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./job_receipts/cv__binary__M2_U__phylo_distance__attempt1/fold_diagnostics.csv",
+    "bytes": 500
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./job_receipts/cv__binary__M2_P__species__attempt1/fold_diagnostics.csv",
+    "bytes": 500
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./job_receipts/cv__binary__M2_P__phylo_distance__attempt1/fold_diagnostics.csv",
+    "bytes": 501
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./job_receipts/cv__binary__M1_U__species__attempt1/fold_diagnostics.csv",
+    "bytes": 499
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./job_receipts/cv__binary__M1_U__phylo_distance__attempt1/fold_diagnostics.csv",
+    "bytes": 501
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./job_receipts/cv__binary__M1_P__species__attempt1/fold_diagnostics.csv",
+    "bytes": 501
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./job_receipts/cv__binary__M1_P__phylo_distance__attempt1/fold_diagnostics.csv",
+    "bytes": 500
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./job_receipts/binary__Site315_U__primary__attempt1/results/diagnostics_binary_primary.csv",
+    "bytes": 325
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./job_receipts/binary__Site315_P__primary__attempt1/results/diagnostics_binary_primary.csv",
+    "bytes": 325
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./job_receipts/binary__Phylogeny_only_P__primary__attempt1/results/diagnostics_binary_primary.csv",
+    "bytes": 332
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./job_receipts/binary__Null_U__primary__attempt1/results/diagnostics_binary_primary.csv",
+    "bytes": 322
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./job_receipts/binary__M3_U__primary__attempt1/results/diagnostics_binary_primary.csv",
+    "bytes": 322
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./job_receipts/binary__M3_U__b_sd_100__attempt1/results/diagnostics_binary_b_sd_100.csv",
+    "bytes": 323
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./job_receipts/binary__M3_U__b_sd_025__attempt1/results/diagnostics_binary_b_sd_025.csv",
+    "bytes": 323
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./job_receipts/binary__M3_P__primary__attempt1/results/diagnostics_binary_primary.csv",
+    "bytes": 322
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./job_receipts/binary__M3_P__b_sd_100__attempt1/results/diagnostics_binary_b_sd_100.csv",
+    "bytes": 322
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./job_receipts/binary__M3_P__b_sd_025__attempt1/results/diagnostics_binary_b_sd_025.csv",
+    "bytes": 322
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./job_receipts/binary__M2_U__primary__attempt1/results/diagnostics_binary_primary.csv",
+    "bytes": 318
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./job_receipts/binary__M2_P__primary__attempt1/results/diagnostics_binary_primary.csv",
+    "bytes": 319
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./job_receipts/binary__M1_U__primary__attempt1/results/diagnostics_binary_primary.csv",
+    "bytes": 320
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./job_receipts/binary__M1_U__beta_binomial__attempt1/results/diagnostics_binary_beta_binomial.csv",
+    "bytes": 326
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./job_receipts/binary__M1_P__primary__attempt1/results/diagnostics_binary_primary.csv",
+    "bytes": 320
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./job_receipts/binary__M1_P__beta_binomial__attempt1/results/diagnostics_binary_beta_binomial.csv",
+    "bytes": 326
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./formal_20260914_26e686af86fa/results/diagnostics_all_primary.csv",
+    "bytes": 3724
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./formal_20260914_26e686af86fa/results/diagnostics_all_sensitivity.csv",
+    "bytes": 3023
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./formal_20260914_26e686af86fa/results/diagnostics_binary_beta_binomial.csv",
+    "bytes": 509
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./formal_20260914_26e686af86fa/results/diagnostics_binary_b_sd_025.csv",
+    "bytes": 502
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./formal_20260914_26e686af86fa/results/diagnostics_binary_b_sd_100.csv",
+    "bytes": 502
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./formal_20260914_26e686af86fa/results/diagnostics_binary_primary.csv",
+    "bytes": 1938
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./formal_20260914_26e686af86fa/results/diagnostics_joint_beta_binomial.csv",
+    "bytes": 506
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./formal_20260914_26e686af86fa/results/diagnostics_joint_b_sd_025.csv",
+    "bytes": 500
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./formal_20260914_26e686af86fa/results/diagnostics_joint_b_sd_100.csv",
+    "bytes": 500
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./formal_20260914_26e686af86fa/results/diagnostics_joint_primary.csv",
+    "bytes": 1929
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./formal_20260914_26e686af86fa/results/diagnostics_joint_rho_beta22.csv",
+    "bytes": 862
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./formal_20260914_26e686af86fa/results/model_comparison_status_primary.csv",
+    "bytes": 291
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./formal_20260914_26e686af86fa/matrix_checks/joint_M3_P/parent_2da7cca31fe0d398/attempt_1/joint_M3_P_comparison.csv",
+    "bytes": 8947
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./formal_20260914_26e686af86fa/matrix_checks/joint_M3_P/parent_2da7cca31fe0d398/attempt_1/matrix_comparison_plot_data.csv",
+    "bytes": 23036
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./formal_20260914_26e686af86fa/matrix_checks/joint_M3_P/parent_2da7cca31fe0d398/attempt_1/matrix_diagnostics_chains.csv",
+    "bytes": 297
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./formal_20260914_26e686af86fa/matrix_checks/joint_M3_P/parent_2da7cca31fe0d398/attempt_1/matrix_diagnostics_parameters.csv",
+    "bytes": 60869
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./formal_20260914_26e686af86fa/matrix_checks/joint_M3_P/parent_2da7cca31fe0d398/attempt_1/matrix_diagnostics_quantities.csv",
+    "bytes": 18090
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./formal_20260914_26e686af86fa/matrix_checks/joint_M3_P/parent_2da7cca31fe0d398/attempt_1/matrix_diagnostics_status.csv",
+    "bytes": 520
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./formal_20260914_26e686af86fa/matrix_checks/joint_M3_P/parent_2da7cca31fe0d398/attempt_1/results/diagnostics_joint_primary.csv",
+    "bytes": 321
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./formal_20260914_26e686af86fa/matrix_checks/binary_M3_P/parent_f0e4f4204037870e/attempt_1/binary_M3_P_comparison.csv",
+    "bytes": 8500
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./formal_20260914_26e686af86fa/matrix_checks/binary_M3_P/parent_f0e4f4204037870e/attempt_1/matrix_comparison_plot_data.csv",
+    "bytes": 22108
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./formal_20260914_26e686af86fa/matrix_checks/binary_M3_P/parent_f0e4f4204037870e/attempt_1/matrix_diagnostics_chains.csv",
+    "bytes": 294
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./formal_20260914_26e686af86fa/matrix_checks/binary_M3_P/parent_f0e4f4204037870e/attempt_1/matrix_diagnostics_parameters.csv",
+    "bytes": 73856
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./formal_20260914_26e686af86fa/matrix_checks/binary_M3_P/parent_f0e4f4204037870e/attempt_1/matrix_diagnostics_quantities.csv",
+    "bytes": 17289
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./formal_20260914_26e686af86fa/matrix_checks/binary_M3_P/parent_f0e4f4204037870e/attempt_1/matrix_diagnostics_status.csv",
+    "bytes": 521
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./formal_20260914_26e686af86fa/matrix_checks/binary_M3_P/parent_f0e4f4204037870e/attempt_1/results/diagnostics_binary_primary.csv",
+    "bytes": 322
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./formal_20260914_26e686af86fa/cv/joint_species_7b6f5fa034ad/cv_model_comparison.csv",
+    "bytes": 636
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./formal_20260914_26e686af86fa/cv/joint_species_7b6f5fa034ad/M1_P_diagnostics.csv",
+    "bytes": 500
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./formal_20260914_26e686af86fa/cv/joint_species_7b6f5fa034ad/M1_U_diagnostics.csv",
+    "bytes": 498
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./formal_20260914_26e686af86fa/cv/joint_species_7b6f5fa034ad/M2_P_diagnostics.csv",
+    "bytes": 501
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./formal_20260914_26e686af86fa/cv/joint_species_7b6f5fa034ad/M2_U_diagnostics.csv",
+    "bytes": 502
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./formal_20260914_26e686af86fa/cv/joint_species_7b6f5fa034ad/M3_P_diagnostics.csv",
+    "bytes": 498
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./formal_20260914_26e686af86fa/cv/joint_species_7b6f5fa034ad/M3_U_diagnostics.csv",
+    "bytes": 501
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./formal_20260914_26e686af86fa/cv/joint_species_7b6f5fa034ad/Null_U_diagnostics.csv",
+    "bytes": 499
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./formal_20260914_26e686af86fa/cv/joint_species_7b6f5fa034ad/Phylogeny_only_P_diagnostics.csv",
+    "bytes": 500
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./formal_20260914_26e686af86fa/cv/joint_species_7b6f5fa034ad/Site315_P_diagnostics.csv",
+    "bytes": 501
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./formal_20260914_26e686af86fa/cv/joint_species_7b6f5fa034ad/Site315_U_diagnostics.csv",
+    "bytes": 502
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./formal_20260914_26e686af86fa/cv/joint_phylo_distance_fc3673933fd7/cv_model_comparison.csv",
+    "bytes": 634
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./formal_20260914_26e686af86fa/cv/joint_phylo_distance_fc3673933fd7/M1_P_diagnostics.csv",
+    "bytes": 502
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./formal_20260914_26e686af86fa/cv/joint_phylo_distance_fc3673933fd7/M1_U_diagnostics.csv",
+    "bytes": 499
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./formal_20260914_26e686af86fa/cv/joint_phylo_distance_fc3673933fd7/M2_P_diagnostics.csv",
+    "bytes": 498
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./formal_20260914_26e686af86fa/cv/joint_phylo_distance_fc3673933fd7/M2_U_diagnostics.csv",
+    "bytes": 501
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./formal_20260914_26e686af86fa/cv/joint_phylo_distance_fc3673933fd7/M3_P_diagnostics.csv",
+    "bytes": 501
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./formal_20260914_26e686af86fa/cv/joint_phylo_distance_fc3673933fd7/M3_U_diagnostics.csv",
+    "bytes": 501
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./formal_20260914_26e686af86fa/cv/joint_phylo_distance_fc3673933fd7/Null_U_diagnostics.csv",
+    "bytes": 500
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./formal_20260914_26e686af86fa/cv/joint_phylo_distance_fc3673933fd7/Phylogeny_only_P_diagnostics.csv",
+    "bytes": 501
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./formal_20260914_26e686af86fa/cv/joint_phylo_distance_fc3673933fd7/Site315_P_diagnostics.csv",
+    "bytes": 500
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./formal_20260914_26e686af86fa/cv/joint_phylo_distance_fc3673933fd7/Site315_U_diagnostics.csv",
+    "bytes": 498
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./formal_20260914_26e686af86fa/cv/binary_species_4b7691118722/cv_model_comparison.csv",
+    "bytes": 642
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./formal_20260914_26e686af86fa/cv/binary_species_4b7691118722/M1_P_diagnostics.csv",
+    "bytes": 501
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./formal_20260914_26e686af86fa/cv/binary_species_4b7691118722/M1_U_diagnostics.csv",
+    "bytes": 499
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./formal_20260914_26e686af86fa/cv/binary_species_4b7691118722/M2_P_diagnostics.csv",
+    "bytes": 500
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./formal_20260914_26e686af86fa/cv/binary_species_4b7691118722/M2_U_diagnostics.csv",
+    "bytes": 502
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./formal_20260914_26e686af86fa/cv/binary_species_4b7691118722/M3_P_diagnostics.csv",
+    "bytes": 500
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./formal_20260914_26e686af86fa/cv/binary_species_4b7691118722/M3_U_diagnostics.csv",
+    "bytes": 501
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./formal_20260914_26e686af86fa/cv/binary_species_4b7691118722/Null_U_diagnostics.csv",
+    "bytes": 501
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./formal_20260914_26e686af86fa/cv/binary_species_4b7691118722/Phylogeny_only_P_diagnostics.csv",
+    "bytes": 503
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./formal_20260914_26e686af86fa/cv/binary_species_4b7691118722/Site315_P_diagnostics.csv",
+    "bytes": 502
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./formal_20260914_26e686af86fa/cv/binary_species_4b7691118722/Site315_U_diagnostics.csv",
+    "bytes": 499
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./formal_20260914_26e686af86fa/cv/binary_phylo_distance_cd7101959d19/cv_model_comparison.csv",
+    "bytes": 637
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./formal_20260914_26e686af86fa/cv/binary_phylo_distance_cd7101959d19/M1_P_diagnostics.csv",
+    "bytes": 500
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./formal_20260914_26e686af86fa/cv/binary_phylo_distance_cd7101959d19/M1_U_diagnostics.csv",
+    "bytes": 501
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./formal_20260914_26e686af86fa/cv/binary_phylo_distance_cd7101959d19/M2_P_diagnostics.csv",
+    "bytes": 501
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./formal_20260914_26e686af86fa/cv/binary_phylo_distance_cd7101959d19/M2_U_diagnostics.csv",
+    "bytes": 500
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./formal_20260914_26e686af86fa/cv/binary_phylo_distance_cd7101959d19/M3_P_diagnostics.csv",
+    "bytes": 497
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./formal_20260914_26e686af86fa/cv/binary_phylo_distance_cd7101959d19/M3_U_diagnostics.csv",
+    "bytes": 502
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./formal_20260914_26e686af86fa/cv/binary_phylo_distance_cd7101959d19/Null_U_diagnostics.csv",
+    "bytes": 501
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./formal_20260914_26e686af86fa/cv/binary_phylo_distance_cd7101959d19/Phylogeny_only_P_diagnostics.csv",
+    "bytes": 500
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./formal_20260914_26e686af86fa/cv/binary_phylo_distance_cd7101959d19/Site315_P_diagnostics.csv",
+    "bytes": 500
+  },
+  {
+    "archive": "v1_runs_nonrds.tar.gz",
+    "path": "./formal_20260914_26e686af86fa/cv/binary_phylo_distance_cd7101959d19/Site315_U_diagnostics.csv",
+    "bytes": 502
+  }
+]

@@ -1,0 +1,2 @@
+Error: max(abs(old_null$BH_per_design9 - ref$BH_by_design)) < 1e-10 is not TRUE
+Execution halted

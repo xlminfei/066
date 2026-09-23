@@ -1,0 +1,15 @@
+{
+  "status": "COMPLETE_EXPLORATORY_SUPPLEMENT",
+  "rows": 80,
+  "AUC_rows": 32,
+  "MAE_rows": 24,
+  "RMSE_rows": 24,
+  "bootstrap_replicates": 50000,
+  "meaningful_tests": 72,
+  "null_auc_structural_rows": 8,
+  "new_fits": 0,
+  "primary_report": "ADDITIONAL_METRIC_TESTS_zh.md",
+  "source_results_modified": false,
+  "testing_scope": "MAE/RMSE model versus same-training Null; no pairwise training-method tests in this supplement",
+  "normal_approximation_and_stratification_limits_disclosed": true
+}

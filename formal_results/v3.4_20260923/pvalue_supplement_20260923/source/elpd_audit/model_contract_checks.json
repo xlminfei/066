@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "design_matrices": 4,
+  "shared_priors_equal": true,
+  "formal_sampling_settings_equal": true,
+  "binomial_bernoulli_parameter_likelihood_equivalent": true,
+  "likelihood_constant": 12.57868392876726,
+  "max_equivalence_error": 1.2434497875801753e-14,
+  "old_seed": 20260918,
+  "new_seed": 20260920,
+  "source_pipeline_executed": false,
+  "new_fits": 0
+}

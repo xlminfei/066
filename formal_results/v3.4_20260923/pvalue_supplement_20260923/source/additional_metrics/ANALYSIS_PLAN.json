@@ -1,0 +1,45 @@
+{
+  "purpose": "Post-hoc exploratory supplementary tests on saved formal OOF predictions; no model refits",
+  "hypotheses": {
+    "AUC": "H0: equal-fold mean within-fold weighted AUC = 0.5, two-sided normal approximation using cluster bootstrap SE",
+    "MAE": "H0: weighted MAE(model)-weighted MAE(same-training Null)=0, two-sided",
+    "RMSE": "H0: weighted RMSE(model)-weighted RMSE(same-training Null)=0, two-sided"
+  },
+  "models": [
+    "Null",
+    "M1",
+    "M2",
+    "M3"
+  ],
+  "designs": [
+    "fivefold",
+    "tenfold"
+  ],
+  "train_weightings": [
+    "record_equal",
+    "species_equal"
+  ],
+  "eval_weightings": [
+    "record_equal",
+    "species_equal"
+  ],
+  "bootstrap_replicates": 50000,
+  "seed_base": 20260923,
+  "auc_bootstrap": "Resample entire species with replacement within fixed Fold x species label-composition strata (HIGH-only, LOW-only, mixed); keep each stratum size fixed; compute each fold AUC and equal-fold mean; no invalid-fold dropping",
+  "error_bootstrap": "Paired resampling of the 48 species with count/exact observations over the complete CV design, using the same multiplicities for model and Null; recompute global weighted MAE and sqrt(global weighted MSE) in each replicate",
+  "p_formula": "2*pnorm(-abs((estimate-null)/bootstrap_SE))",
+  "confidence_intervals": "Percentile cluster bootstrap 95%; not an exact inversion of the normal-approximation P",
+  "multiplicity": {
+    "primary_supplement": "BH across 3 metrics x 3 predictor models x 2 training methods = 18 tests within each fixed Design x EvalWeighting",
+    "endpoint_context": "Also display per-endpoint BH over 3 models x 2 training methods = 6; do not select the smaller adjustment after results"
+  },
+  "null_auc": "Structurally all within-fold scores tied; AUC=0.5, P=1, excluded from multiplicity families; not evidence of high precision",
+  "zero_variance_other": "Report P as unavailable and flag; never report P=0 solely from zero bootstrap variance",
+  "inference_scope": "Conditional on saved fitted OOF predictions, original fold allocation, and (AUC) outcome strata. Does not include refitting, fold selection, or model selection uncertainty.",
+  "new_fits": 0,
+  "createdAt": "2026-09-23T14:18:15.929Z",
+  "source_hashes": {
+    "cv_record_predictions.csv": "705a6fd93416bf70e08a44ed86f5910a6c9fb0a28008de50793afff16a837b9a",
+    "cv_metrics_summary.csv": "f8af8fa8afb44cf9c68ad064f3ac4bd891c98508a6438e21659806a3465d167d"
+  }
+}

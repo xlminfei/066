@@ -1,0 +1,14 @@
+{
+  "purpose": "Publish existing ELPD explanation and supplementary AUC/MAE/RMSE analyses without numerical changes",
+  "analysis_date": "2026-09-23",
+  "source_repository_commit": "161c3fb780fd2d937f4c6823a912feedf8226a47",
+  "formal_code_commit": "c9ec1c58e173dd5209bbbe5e89b2213553fc0630",
+  "original_analysis_files": 88,
+  "dependency_files": 75,
+  "new_fits": 0,
+  "primary_formal_results_unchanged": true,
+  "formal_original_release_url": "https://github.com/xlminfei/066/releases/tag/v3.4-formal-results",
+  "publication_relative_path": "formal_results/v3.4_20260923/pvalue_supplement_20260923",
+  "archive": "archive/v3.4-pvalue-supplement-20260923.zip",
+  "interpretation": "Exploratory conditional approximate inference on saved OOF predictions; retain both BH adjustment columns"
+}

@@ -1,0 +1,7 @@
+﻿Version,Design,TrainWeighting,EvalWeighting,RawP,BH,Family
+v2,fivefold,record_equal,record_equal,0.0269383533101526,0.134946329714679,"3 models x 3 routes, per design (9)"
+v3.4,fivefold,record_equal,record_equal,0.0399927709691357,0.12138450477922,"3 models x 2 training methods, per route/design/evaluation (6)"
+v3.4,fivefold,record_equal,species_equal,0.102758689307355,0.584681193030455,"3 models x 2 training methods, per route/design/evaluation (6)"
+v2,tenfold,record_equal,record_equal,0.0248321663153567,0.048465593311588,"3 models x 3 routes, per design (9)"
+v3.4,tenfold,record_equal,record_equal,0.0470894262092931,0.154421570814211,"3 models x 2 training methods, per route/design/evaluation (6)"
+v3.4,tenfold,record_equal,species_equal,0.201700805025796,0.796093373901356,"3 models x 2 training methods, per route/design/evaluation (6)"
