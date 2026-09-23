@@ -1,0 +1,20 @@
+{
+  "status": "COMPLETE_AND_VERIFIED",
+  "payload_commit": "41159ff4ed5cb0448092beb41c47a205c6326e50",
+  "repository": "https://github.com/xlminfei/066",
+  "directory": "formal_results/v3.4_20260923/pvalue_supplement_20260923",
+  "analysis_original_files": 88,
+  "dependency_files": 75,
+  "zip_files": 172,
+  "zip_bytes": 32265627,
+  "zip_sha256": "05cad83e2ef64d76b7a2b871764076f7309001bc7f236c8fd1af730327388035",
+  "remote_git_files_verified": 180,
+  "public_archive_all_members_verified": true,
+  "public_report_readbacks": 3,
+  "source_files_preserved": true,
+  "formal_derived_outputs_unchanged": 31,
+  "old_version_trees_preserved": 8,
+  "new_mcmc_fits": 0,
+  "original_formal_archive_and_tag_unchanged": true,
+  "receipt_scope": "This status records verification of the immutable payload commit. Delivery records are committed in a follow-up commit without changing the payload."
+}

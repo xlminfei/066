@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "repository": "https://github.com/xlminfei/066",
+  "verified_payload_commit": "41159ff4ed5cb0448092beb41c47a205c6326e50",
+  "git_files_verified": 180,
+  "public_download_no_auth": true,
+  "public_archive_bytes": 32265627,
+  "public_archive_sha256": "05cad83e2ef64d76b7a2b871764076f7309001bc7f236c8fd1af730327388035",
+  "public_archive_members_verified": 172,
+  "public_markdown_readbacks": 3,
+  "formal_results_tag_unchanged": "a1e011cafce56b90e948e1dab5fdbce6a71e25de",
+  "source_analysis_files": 88,
+  "new_fits": 0,
+  "verified_utc": "2026-09-23T15:13:04.615297+00:00"
+}
