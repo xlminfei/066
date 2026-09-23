@@ -1,0 +1,271 @@
+UPLOAD_TOTAL verified=0/178 failed=0 bytes=0 active=4
+ASSET_OK v3.4-formal-archive-manifest.json (1/178)
+ASSET_OK v3.4-formal-files.csv (2/178)
+ASSET_OK restore_v3_4_formal.py (3/178)
+ASSET_OK README_v3.4-formal-results_zh.md (4/178)
+ASSET_OK archive_build_validation.json (5/178)
+ASSET_OK v3.4-formal-analysis_zh.md (6/178)
+ASSET_OK v3.4-formal-run-review_zh.md (7/178)
+ASSET_OK v3.4-formal-results-light.zip (8/178)
+ASSET_OK v3.4-formal-complete.zip.part0001 (9/178)
+UPLOAD_TOTAL verified=9/178 failed=0 bytes=81,101,684 active=4
+UPLOAD_TOTAL verified=9/178 failed=0 bytes=81,101,684 active=4
+ASSET_OK v3.4-formal-complete.zip.part0002 (10/178)
+ASSET_OK v3.4-formal-complete.zip.part0003 (11/178)
+UPLOAD_TOTAL verified=11/178 failed=0 bytes=215,319,412 active=4
+ASSET_OK v3.4-formal-complete.zip.part0004 (12/178)
+ASSET_OK v3.4-formal-complete.zip.part0005 (13/178)
+ASSET_OK v3.4-formal-complete.zip.part0006 (14/178)
+UPLOAD_TOTAL verified=14/178 failed=0 bytes=416,646,004 active=4
+ASSET_OK v3.4-formal-complete.zip.part0007 (15/178)
+ASSET_OK v3.4-formal-complete.zip.part0008 (16/178)
+UPLOAD_TOTAL verified=16/178 failed=0 bytes=550,863,732 active=4
+ASSET_OK v3.4-formal-complete.zip.part0009 (17/178)
+UPLOAD_TOTAL verified=17/178 failed=0 bytes=617,972,596 active=4
+ASSET_OK v3.4-formal-complete.zip.part0011 (18/178)
+ASSET_OK v3.4-formal-complete.zip.part0010 (19/178)
+ASSET_OK v3.4-formal-complete.zip.part0012 (20/178)
+UPLOAD_TOTAL verified=20/178 failed=0 bytes=819,299,188 active=4
+UPLOAD_TOTAL verified=20/178 failed=0 bytes=819,299,188 active=4
+ASSET_OK v3.4-formal-complete.zip.part0015 (21/178)
+ASSET_OK v3.4-formal-complete.zip.part0014 (22/178)
+ASSET_OK v3.4-formal-complete.zip.part0016 (23/178)
+UPLOAD_TOTAL verified=23/178 failed=0 bytes=1,020,625,780 active=4
+ASSET_OK v3.4-formal-complete.zip.part0013 (24/178)
+ASSET_OK v3.4-formal-complete.zip.part0017 (25/178)
+UPLOAD_TOTAL verified=25/178 failed=0 bytes=1,154,843,508 active=4
+ASSET_OK v3.4-formal-complete.zip.part0018 (26/178)
+UPLOAD_TOTAL verified=26/178 failed=0 bytes=1,221,952,372 active=4
+ASSET_OK v3.4-formal-complete.zip.part0019 (27/178)
+ASSET_OK v3.4-formal-complete.zip.part0021 (28/178)
+UPLOAD_TOTAL verified=28/178 failed=0 bytes=1,356,170,100 active=4
+ASSET_OK v3.4-formal-complete.zip.part0020 (29/178)
+ASSET_OK v3.4-formal-complete.zip.part0022 (30/178)
+UPLOAD_TOTAL verified=30/178 failed=0 bytes=1,490,387,828 active=4
+UPLOAD_TOTAL verified=30/178 failed=0 bytes=1,490,387,828 active=4
+ASSET_OK v3.4-formal-complete.zip.part0026 (31/178)
+ASSET_OK v3.4-formal-complete.zip.part0023 (32/178)
+ASSET_OK v3.4-formal-complete.zip.part0024 (33/178)
+ASSET_OK v3.4-formal-complete.zip.part0025 (34/178)
+UPLOAD_TOTAL verified=34/178 failed=0 bytes=1,758,823,284 active=4
+UPLOAD_TOTAL verified=34/178 failed=0 bytes=1,758,823,284 active=4
+ASSET_OK v3.4-formal-complete.zip.part0027 (35/178)
+ASSET_OK v3.4-formal-complete.zip.part0028 (36/178)
+ASSET_OK v3.4-formal-complete.zip.part0030 (37/178)
+UPLOAD_TOTAL verified=37/178 failed=0 bytes=1,960,149,876 active=4
+ASSET_OK v3.4-formal-complete.zip.part0029 (38/178)
+UPLOAD_TOTAL verified=38/178 failed=0 bytes=2,027,258,740 active=4
+ASSET_OK v3.4-formal-complete.zip.part0031 (39/178)
+ASSET_OK v3.4-formal-complete.zip.part0033 (40/178)
+UPLOAD_TOTAL verified=40/178 failed=0 bytes=2,161,476,468 active=4
+ASSET_OK v3.4-formal-complete.zip.part0034 (41/178)
+ASSET_OK v3.4-formal-complete.zip.part0032 (42/178)
+UPLOAD_TOTAL verified=42/178 failed=0 bytes=2,295,694,196 active=4
+ASSET_OK v3.4-formal-complete.zip.part0035 (43/178)
+ASSET_OK v3.4-formal-complete.zip.part0036 (44/178)
+UPLOAD_TOTAL verified=44/178 failed=0 bytes=2,429,911,924 active=4
+ASSET_OK v3.4-formal-complete.zip.part0037 (45/178)
+ASSET_OK v3.4-formal-complete.zip.part0038 (46/178)
+UPLOAD_TOTAL verified=46/178 failed=0 bytes=2,564,129,652 active=4
+ASSET_OK v3.4-formal-complete.zip.part0039 (47/178)
+ASSET_OK v3.4-formal-complete.zip.part0040 (48/178)
+UPLOAD_TOTAL verified=48/178 failed=0 bytes=2,698,347,380 active=4
+UPLOAD_TOTAL verified=48/178 failed=0 bytes=2,698,347,380 active=4
+ASSET_OK v3.4-formal-complete.zip.part0043 (49/178)
+ASSET_OK v3.4-formal-complete.zip.part0041 (50/178)
+ASSET_OK v3.4-formal-complete.zip.part0042 (51/178)
+ASSET_OK v3.4-formal-complete.zip.part0044 (52/178)
+UPLOAD_TOTAL verified=52/178 failed=0 bytes=2,966,782,836 active=4
+ASSET_OK v3.4-formal-complete.zip.part0045 (53/178)
+UPLOAD_TOTAL verified=53/178 failed=0 bytes=3,033,891,700 active=4
+ASSET_OK v3.4-formal-complete.zip.part0048 (54/178)
+ASSET_OK v3.4-formal-complete.zip.part0046 (55/178)
+UPLOAD_TOTAL verified=55/178 failed=0 bytes=3,168,109,428 active=4
+UPLOAD_TOTAL verified=55/178 failed=0 bytes=3,168,109,428 active=4
+ASSET_OK v3.4-formal-complete.zip.part0049 (56/178)
+ASSET_OK v3.4-formal-complete.zip.part0047 (57/178)
+ASSET_OK v3.4-formal-complete.zip.part0050 (58/178)
+ASSET_OK v3.4-formal-complete.zip.part0051 (59/178)
+UPLOAD_TOTAL verified=59/178 failed=0 bytes=3,436,544,884 active=4
+UPLOAD_TOTAL verified=59/178 failed=0 bytes=3,436,544,884 active=4
+ASSET_OK v3.4-formal-complete.zip.part0052 (60/178)
+ASSET_OK v3.4-formal-complete.zip.part0055 (61/178)
+UPLOAD_TOTAL verified=61/178 failed=0 bytes=3,570,762,612 active=4
+ASSET_OK v3.4-formal-complete.zip.part0053 (62/178)
+ASSET_OK v3.4-formal-complete.zip.part0054 (63/178)
+ASSET_OK v3.4-formal-complete.zip.part0056 (64/178)
+UPLOAD_TOTAL verified=64/178 failed=0 bytes=3,772,089,204 active=4
+ASSET_OK v3.4-formal-complete.zip.part0057 (65/178)
+UPLOAD_TOTAL verified=65/178 failed=0 bytes=3,839,198,068 active=4
+ASSET_OK v3.4-formal-complete.zip.part0059 (66/178)
+ASSET_OK v3.4-formal-complete.zip.part0060 (67/178)
+UPLOAD_TOTAL verified=67/178 failed=0 bytes=3,973,415,796 active=4
+ASSET_OK v3.4-formal-complete.zip.part0061 (68/178)
+ASSET_OK v3.4-formal-complete.zip.part0058 (69/178)
+UPLOAD_TOTAL verified=69/178 failed=0 bytes=4,107,633,524 active=4
+ASSET_OK v3.4-formal-complete.zip.part0062 (70/178)
+ASSET_OK v3.4-formal-complete.zip.part0064 (71/178)
+UPLOAD_TOTAL verified=71/178 failed=0 bytes=4,241,851,252 active=3
+ASSET_OK v3.4-formal-complete.zip.part0063 (72/178)
+UPLOAD_TOTAL verified=72/178 failed=0 bytes=4,308,960,116 active=4
+ASSET_OK v3.4-formal-complete.zip.part0065 (73/178)
+ASSET_OK v3.4-formal-complete.zip.part0066 (74/178)
+ASSET_OK v3.4-formal-complete.zip.part0067 (75/178)
+ASSET_OK v3.4-formal-complete.zip.part0068 (76/178)
+UPLOAD_TOTAL verified=76/178 failed=0 bytes=4,577,395,572 active=4
+UPLOAD_TOTAL verified=76/178 failed=0 bytes=4,577,395,572 active=4
+ASSET_OK v3.4-formal-complete.zip.part0070 (77/178)
+ASSET_OK v3.4-formal-complete.zip.part0072 (78/178)
+UPLOAD_TOTAL verified=78/178 failed=0 bytes=4,711,613,300 active=4
+UPLOAD_TOTAL verified=78/178 failed=0 bytes=4,711,613,300 active=4
+ASSET_OK v3.4-formal-complete.zip.part0071 (79/178)
+ASSET_OK v3.4-formal-complete.zip.part0073 (80/178)
+ASSET_OK v3.4-formal-complete.zip.part0069 (81/178)
+ASSET_OK v3.4-formal-complete.zip.part0074 (82/178)
+UPLOAD_TOTAL verified=82/178 failed=0 bytes=4,980,048,756 active=4
+ASSET_OK v3.4-formal-complete.zip.part0075 (83/178)
+UPLOAD_TOTAL verified=83/178 failed=0 bytes=5,047,157,620 active=4
+ASSET_OK v3.4-formal-complete.zip.part0076 (84/178)
+ASSET_OK v3.4-formal-complete.zip.part0077 (85/178)
+UPLOAD_TOTAL verified=85/178 failed=0 bytes=5,181,375,348 active=4
+ASSET_OK v3.4-formal-complete.zip.part0079 (86/178)
+ASSET_OK v3.4-formal-complete.zip.part0078 (87/178)
+ASSET_OK v3.4-formal-complete.zip.part0081 (88/178)
+UPLOAD_TOTAL verified=88/178 failed=0 bytes=5,382,701,940 active=4
+ASSET_OK v3.4-formal-complete.zip.part0080 (89/178)
+UPLOAD_TOTAL verified=89/178 failed=0 bytes=5,449,810,804 active=4
+ASSET_OK v3.4-formal-complete.zip.part0082 (90/178)
+ASSET_OK v3.4-formal-complete.zip.part0083 (91/178)
+UPLOAD_TOTAL verified=91/178 failed=0 bytes=5,584,028,532 active=4
+ASSET_OK v3.4-formal-complete.zip.part0084 (92/178)
+ASSET_OK v3.4-formal-complete.zip.part0085 (93/178)
+UPLOAD_TOTAL verified=93/178 failed=0 bytes=5,718,246,260 active=4
+ASSET_OK v3.4-formal-complete.zip.part0086 (94/178)
+ASSET_OK v3.4-formal-complete.zip.part0088 (95/178)
+UPLOAD_TOTAL verified=95/178 failed=0 bytes=5,852,463,988 active=4
+UPLOAD_TOTAL verified=95/178 failed=0 bytes=5,852,463,988 active=4
+ASSET_OK v3.4-formal-complete.zip.part0089 (96/178)
+ASSET_OK v3.4-formal-complete.zip.part0087 (97/178)
+ASSET_OK v3.4-formal-complete.zip.part0091 (98/178)
+ASSET_OK v3.4-formal-complete.zip.part0090 (99/178)
+UPLOAD_TOTAL verified=99/178 failed=0 bytes=6,120,899,444 active=4
+UPLOAD_TOTAL verified=99/178 failed=0 bytes=6,120,899,444 active=4
+ASSET_OK v3.4-formal-complete.zip.part0092 (100/178)
+ASSET_OK v3.4-formal-complete.zip.part0095 (101/178)
+ASSET_OK v3.4-formal-complete.zip.part0093 (102/178)
+UPLOAD_TOTAL verified=102/178 failed=0 bytes=6,322,226,036 active=4
+ASSET_OK v3.4-formal-complete.zip.part0094 (103/178)
+ASSET_OK v3.4-formal-complete.zip.part0096 (104/178)
+UPLOAD_TOTAL verified=104/178 failed=0 bytes=6,456,443,764 active=4
+ASSET_OK v3.4-formal-complete.zip.part0097 (105/178)
+ASSET_OK v3.4-formal-complete.zip.part0098 (106/178)
+UPLOAD_TOTAL verified=106/178 failed=0 bytes=6,590,661,492 active=3
+ASSET_OK v3.4-formal-complete.zip.part0099 (107/178)
+UPLOAD_TOTAL verified=107/178 failed=0 bytes=6,657,770,356 active=4
+ASSET_OK v3.4-formal-complete.zip.part0101 (108/178)
+ASSET_OK v3.4-formal-complete.zip.part0102 (109/178)
+UPLOAD_TOTAL verified=109/178 failed=0 bytes=6,791,988,084 active=4
+ASSET_OK v3.4-formal-complete.zip.part0100 (110/178)
+ASSET_OK v3.4-formal-complete.zip.part0103 (111/178)
+UPLOAD_TOTAL verified=111/178 failed=0 bytes=6,926,205,812 active=4
+ASSET_OK v3.4-formal-complete.zip.part0104 (112/178)
+UPLOAD_TOTAL verified=112/178 failed=0 bytes=6,993,314,676 active=4
+ASSET_OK v3.4-formal-complete.zip.part0105 (113/178)
+ASSET_OK v3.4-formal-complete.zip.part0106 (114/178)
+ASSET_OK v3.4-formal-complete.zip.part0108 (115/178)
+UPLOAD_TOTAL verified=115/178 failed=0 bytes=7,194,641,268 active=3
+ASSET_OK v3.4-formal-complete.zip.part0107 (116/178)
+UPLOAD_TOTAL verified=116/178 failed=0 bytes=7,261,750,132 active=4
+ASSET_OK v3.4-formal-complete.zip.part0110 (117/178)
+ASSET_OK v3.4-formal-complete.zip.part0109 (118/178)
+ASSET_OK v3.4-formal-complete.zip.part0111 (119/178)
+UPLOAD_TOTAL verified=119/178 failed=0 bytes=7,463,076,724 active=4
+ASSET_OK v3.4-formal-complete.zip.part0112 (120/178)
+UPLOAD_TOTAL verified=120/178 failed=0 bytes=7,530,185,588 active=4
+ASSET_OK v3.4-formal-complete.zip.part0113 (121/178)
+ASSET_OK v3.4-formal-complete.zip.part0115 (122/178)
+UPLOAD_TOTAL verified=122/178 failed=0 bytes=7,664,403,316 active=4
+ASSET_OK v3.4-formal-complete.zip.part0114 (123/178)
+ASSET_OK v3.4-formal-complete.zip.part0117 (124/178)
+ASSET_OK v3.4-formal-complete.zip.part0116 (125/178)
+UPLOAD_TOTAL verified=125/178 failed=0 bytes=7,865,729,908 active=3
+UPLOAD_TOTAL verified=125/178 failed=0 bytes=7,865,729,908 active=4
+ASSET_OK v3.4-formal-complete.zip.part0118 (126/178)
+ASSET_OK v3.4-formal-complete.zip.part0120 (127/178)
+ASSET_OK v3.4-formal-complete.zip.part0119 (128/178)
+UPLOAD_TOTAL verified=128/178 failed=0 bytes=8,067,056,500 active=4
+ASSET_OK v3.4-formal-complete.zip.part0121 (129/178)
+UPLOAD_TOTAL verified=129/178 failed=0 bytes=8,134,165,364 active=4
+ASSET_OK v3.4-formal-complete.zip.part0125 (130/178)
+ASSET_OK v3.4-formal-complete.zip.part0123 (131/178)
+UPLOAD_TOTAL verified=131/178 failed=0 bytes=8,268,383,092 active=4
+ASSET_OK v3.4-formal-complete.zip.part0124 (132/178)
+ASSET_OK v3.4-formal-complete.zip.part0122 (133/178)
+UPLOAD_TOTAL verified=133/178 failed=0 bytes=8,402,600,820 active=4
+ASSET_OK v3.4-formal-complete.zip.part0127 (134/178)
+ASSET_OK v3.4-formal-complete.zip.part0126 (135/178)
+UPLOAD_TOTAL verified=135/178 failed=0 bytes=8,536,818,548 active=4
+ASSET_OK v3.4-formal-complete.zip.part0128 (136/178)
+ASSET_OK v3.4-formal-complete.zip.part0129 (137/178)
+UPLOAD_TOTAL verified=137/178 failed=0 bytes=8,671,036,276 active=4
+ASSET_OK v3.4-formal-complete.zip.part0131 (138/178)
+UPLOAD_TOTAL verified=138/178 failed=0 bytes=8,738,145,140 active=4
+ASSET_OK v3.4-formal-complete.zip.part0133 (139/178)
+ASSET_OK v3.4-formal-complete.zip.part0130 (140/178)
+ASSET_OK v3.4-formal-complete.zip.part0132 (141/178)
+UPLOAD_TOTAL verified=141/178 failed=0 bytes=8,939,471,732 active=4
+ASSET_OK v3.4-formal-complete.zip.part0134 (142/178)
+UPLOAD_TOTAL verified=142/178 failed=0 bytes=9,006,580,596 active=4
+ASSET_OK v3.4-formal-complete.zip.part0137 (143/178)
+ASSET_OK v3.4-formal-complete.zip.part0136 (144/178)
+UPLOAD_TOTAL verified=144/178 failed=0 bytes=9,140,798,324 active=4
+ASSET_OK v3.4-formal-complete.zip.part0135 (145/178)
+ASSET_OK v3.4-formal-complete.zip.part0138 (146/178)
+UPLOAD_TOTAL verified=146/178 failed=0 bytes=9,275,016,052 active=4
+ASSET_OK v3.4-formal-complete.zip.part0139 (147/178)
+ASSET_OK v3.4-formal-complete.zip.part0140 (148/178)
+UPLOAD_TOTAL verified=148/178 failed=0 bytes=9,409,233,780 active=4
+ASSET_OK v3.4-formal-complete.zip.part0141 (149/178)
+ASSET_OK v3.4-formal-complete.zip.part0142 (150/178)
+UPLOAD_TOTAL verified=150/178 failed=0 bytes=9,543,451,508 active=4
+ASSET_OK v3.4-formal-complete.zip.part0144 (151/178)
+UPLOAD_TOTAL verified=151/178 failed=0 bytes=9,610,560,372 active=4
+ASSET_OK v3.4-formal-complete.zip.part0143 (152/178)
+ASSET_OK v3.4-formal-complete.zip.part0145 (153/178)
+ASSET_OK v3.4-formal-complete.zip.part0146 (154/178)
+UPLOAD_TOTAL verified=154/178 failed=0 bytes=9,811,886,964 active=4
+ASSET_OK v3.4-formal-complete.zip.part0147 (155/178)
+ASSET_OK v3.4-formal-complete.zip.part0149 (156/178)
+UPLOAD_TOTAL verified=156/178 failed=0 bytes=9,946,104,692 active=4
+ASSET_OK v3.4-formal-complete.zip.part0150 (157/178)
+ASSET_OK v3.4-formal-complete.zip.part0148 (158/178)
+UPLOAD_TOTAL verified=158/178 failed=0 bytes=10,080,322,420 active=4
+ASSET_OK v3.4-formal-complete.zip.part0151 (159/178)
+ASSET_OK v3.4-formal-complete.zip.part0152 (160/178)
+UPLOAD_TOTAL verified=160/178 failed=0 bytes=10,214,540,148 active=4
+ASSET_OK v3.4-formal-complete.zip.part0153 (161/178)
+UPLOAD_TOTAL verified=161/178 failed=0 bytes=10,281,649,012 active=4
+ASSET_OK v3.4-formal-complete.zip.part0154 (162/178)
+ASSET_OK v3.4-formal-complete.zip.part0155 (163/178)
+UPLOAD_TOTAL verified=163/178 failed=0 bytes=10,415,866,740 active=4
+ASSET_OK v3.4-formal-complete.zip.part0156 (164/178)
+ASSET_OK v3.4-formal-complete.zip.part0157 (165/178)
+UPLOAD_TOTAL verified=165/178 failed=0 bytes=10,550,084,468 active=4
+ASSET_OK v3.4-formal-complete.zip.part0159 (166/178)
+ASSET_OK v3.4-formal-complete.zip.part0158 (167/178)
+UPLOAD_TOTAL verified=167/178 failed=0 bytes=10,684,302,196 active=4
+ASSET_OK v3.4-formal-complete.zip.part0160 (168/178)
+UPLOAD_TOTAL verified=168/178 failed=0 bytes=10,751,411,060 active=4
+ASSET_OK v3.4-formal-complete.zip.part0161 (169/178)
+ASSET_OK v3.4-formal-complete.zip.part0162 (170/178)
+ASSET_OK v3.4-formal-complete.zip.part0163 (171/178)
+UPLOAD_TOTAL verified=171/178 failed=0 bytes=10,952,737,652 active=4
+ASSET_OK v3.4-formal-complete.zip.part0166 (172/178)
+ASSET_OK v3.4-formal-complete.zip.part0164 (173/178)
+UPLOAD_TOTAL verified=173/178 failed=0 bytes=11,086,955,380 active=4
+ASSET_OK v3.4-formal-complete.zip.part0165 (174/178)
+ASSET_OK v3.4-formal-complete.zip.part0167 (175/178)
+UPLOAD_TOTAL verified=175/178 failed=0 bytes=11,221,173,108 active=3
+ASSET_OK v3.4-formal-complete.zip.part0169 (176/178)
+ASSET_OK v3.4-formal-complete.zip.part0170 (177/178)
+ASSET_OK v3.4-formal-complete.zip.part0168 (178/178)

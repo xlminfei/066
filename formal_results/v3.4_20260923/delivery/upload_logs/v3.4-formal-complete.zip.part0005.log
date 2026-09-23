@@ -1,0 +1,3 @@
+PROGRESS v3.4-formal-complete.zip.part0005 attempt=1 local_stream_read=33.6%
+PROGRESS v3.4-formal-complete.zip.part0005 attempt=1 local_stream_read=100.0%
+{"status":"REMOTE_SHA256_AND_SIZE_VERIFIED","release_id":394531761,"asset_id":583528317,"name":"v3.4-formal-complete.zip.part0005","bytes":67108864,"sha256":"9cf6daaaeda09433d8b98b01a7884c9dea3f2fb8c18ed1353a766bc62998e467","server_digest":"sha256:9cf6daaaeda09433d8b98b01a7884c9dea3f2fb8c18ed1353a766bc62998e467","url":"https://github.com/xlminfei/066/releases/download/untagged-bc247137d3413fd65613/v3.4-formal-complete.zip.part0005","attempt":1,"started_at":"2026-09-23T10:22:16.7711082+00:00","completed_at":"2026-09-23T10:23:28.5647441+00:00","elapsed_seconds":71.7949695}

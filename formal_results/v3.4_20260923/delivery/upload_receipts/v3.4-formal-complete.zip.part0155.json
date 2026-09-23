@@ -1,0 +1,14 @@
+{
+  "status": "REMOTE_SHA256_AND_SIZE_VERIFIED",
+  "release_id": 394531761,
+  "asset_id": 583595597,
+  "name": "v3.4-formal-complete.zip.part0155",
+  "bytes": 67108864,
+  "sha256": "9e40329c63d67b0b5a4aa02c86b8bdb8e02ba588cbd3d61e68e5dc2328c0463c",
+  "server_digest": "sha256:9e40329c63d67b0b5a4aa02c86b8bdb8e02ba588cbd3d61e68e5dc2328c0463c",
+  "url": "https://github.com/xlminfei/066/releases/download/untagged-0b512f272876363dee53/v3.4-formal-complete.zip.part0155",
+  "attempt": 1,
+  "started_at": "2026-09-23T11:03:37.8885109+00:00",
+  "completed_at": "2026-09-23T11:04:40.4752525+00:00",
+  "elapsed_seconds": 62.5880843
+}

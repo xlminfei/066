@@ -1,0 +1,6 @@
+{
+  "name": "v3.4-formal-complete.zip.part0013",
+  "attempt": 1,
+  "at": "2026-09-23T10:25:13.7547680+00:00",
+  "error": "Exception calling \"GetResult\" with \"0\" argument(s): \"The SSL connection could not be established, see inner exception.\""
+}

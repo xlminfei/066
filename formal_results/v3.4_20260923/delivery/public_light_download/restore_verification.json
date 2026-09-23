@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "mode": "light",
+  "archive": {
+    "name": "v3.4-formal-results-light.zip",
+    "bytes": 13758438,
+    "sha256": "67d13b9e9e78546ee9b985e8545c407194324eb372cf01a84d479ad641c5e8aa"
+  },
+  "verified_source_files": 522,
+  "verified_native_fit_files": 0,
+  "transfers": [
+    {
+      "name": "v3.4-formal-results-light.zip",
+      "bytes": 13758438,
+      "status": "downloaded_and_verified"
+    }
+  ],
+  "offline": false,
+  "extracted_to": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\public_light_extracted",
+  "elapsed_seconds": 11.024746417999268,
+  "new_model_computations": 0
+}

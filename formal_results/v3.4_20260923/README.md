@@ -73,3 +73,16 @@ python restore_v3_4_formal.py --mode full --directory download-full --extract-to
 本地完整包读回778文件、结果浏览包读回522文件，SHA与CRC全部通过，见[归档构建验证](archive_build_validation.json)。上传、服务器SHA/大小及公开下载最终收据在delivery目录补充。
 
 首次打包发现的ZIP索引复用问题已由独立反例复现并修正，错误归档未上传；失败日志、修正脚本与回归证据保留在交付记录中。
+
+## 最终交付核验（2026-09-23）
+
+**已完整发布，181个Release附件全部核对服务器大小和SHA-256，零遗漏、零不一致。**
+
+- 本地实际合并170分卷，778个源文件逐项SHA和CRC全部通过。
+- 匿名公开下载结果浏览包，解压并核验全部522个文件；匿名下载完整包首/中/末分卷（0001、0086、0170）与恢复脚本，校验均通过。没有将抽样下载描述为重新下载全部11.36 GB。
+- 交付执行证据ZIP公开下载并读回399个文件，通过全部校验；其中包括打包、恢复、上传日志和178项主附件收据。证据ZIP自身及两个配套清单的最后上传收据保存在delivery/final_upload_receipts，避免递归打包。
+- Git网页镜像522个源文件与原件逐字节相同，旧版本目录改动0。
+
+[最终交付状态](DELIVERY_STATUS.json) · [181附件远端核验](delivery/remote_delivery_verification.json) · [公开下载记录](delivery/public_download_validation.json) · [交付证据公开读回](delivery/final_delivery_public_readback.json)
+
+[直接下载结果浏览包](https://github.com/xlminfei/066/releases/download/v3.4-formal-results/v3.4-formal-results-light.zip) · [下载完整恢复脚本](https://github.com/xlminfei/066/releases/download/v3.4-formal-results/restore_v3_4_formal.py)

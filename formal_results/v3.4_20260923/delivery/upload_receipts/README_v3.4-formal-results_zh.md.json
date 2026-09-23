@@ -1,0 +1,14 @@
+{
+  "status": "REMOTE_SHA256_AND_SIZE_VERIFIED",
+  "release_id": 394531761,
+  "asset_id": 583527733,
+  "name": "README_v3.4-formal-results_zh.md",
+  "bytes": 5350,
+  "sha256": "f03739072de9bb9154fdd018d219d99a83d47a97c205bed4e3507f3824f16f24",
+  "server_digest": "sha256:f03739072de9bb9154fdd018d219d99a83d47a97c205bed4e3507f3824f16f24",
+  "url": "https://github.com/xlminfei/066/releases/download/untagged-bc247137d3413fd65613/README_v3.4-formal-results_zh.md",
+  "attempt": 1,
+  "started_at": "2026-09-23T10:21:50.6299945+00:00",
+  "completed_at": "2026-09-23T10:21:55.5975612+00:00",
+  "elapsed_seconds": 4.9690509
+}

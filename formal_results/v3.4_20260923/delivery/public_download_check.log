@@ -1,0 +1,29 @@
+{
+  "status": "PASS",
+  "requests_authenticated": false,
+  "release_page_http": 200,
+  "public_light_archive_source_files_verified": 522,
+  "public_light_archive_sha256": "67d13b9e9e78546ee9b985e8545c407194324eb372cf01a84d479ad641c5e8aa",
+  "sampled_full_parts": [
+    {
+      "name": "v3.4-formal-complete.zip.part0001",
+      "bytes": 67108864,
+      "sha256": "83b08b1c8c7cd4fa8f261b56feecc0e1135987b3ccf261f3c497807b65ccd50d",
+      "status": "downloaded_and_verified"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0086",
+      "bytes": 67108864,
+      "sha256": "3d49ab668a5371b96008108964a7a3d014a8042d66f02e53278510c7715cbbf8",
+      "status": "downloaded_and_verified"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0170",
+      "bytes": 23099966,
+      "sha256": "1cd13e04040b872112f54f9f28ad248381fbda79c02522fe7ec0de4624469420",
+      "status": "downloaded_and_verified"
+    }
+  ],
+  "restore_script_public_sha256": "9cacf65f71b8f5d0e41c4f3afefda0c2040c79f92a44116607cb96003abde28b",
+  "full_archive_verification_boundary": "All 170 parts have server SHA256/size verification and the full archive was locally assembled/read back for 778 files. Public HTTP downloads verified the light archive and first/middle/last data parts, not a second download of every full part."
+}

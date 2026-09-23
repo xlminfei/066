@@ -1,0 +1,14 @@
+{
+  "status": "REMOTE_SHA256_AND_SIZE_VERIFIED",
+  "release_id": 394531761,
+  "asset_id": 583527726,
+  "name": "restore_v3_4_formal.py",
+  "bytes": 6036,
+  "sha256": "9cacf65f71b8f5d0e41c4f3afefda0c2040c79f92a44116607cb96003abde28b",
+  "server_digest": "sha256:9cacf65f71b8f5d0e41c4f3afefda0c2040c79f92a44116607cb96003abde28b",
+  "url": "https://github.com/xlminfei/066/releases/download/untagged-bc247137d3413fd65613/restore_v3_4_formal.py",
+  "attempt": 1,
+  "started_at": "2026-09-23T10:21:50.6151911+00:00",
+  "completed_at": "2026-09-23T10:21:55.6606671+00:00",
+  "elapsed_seconds": 5.046969
+}

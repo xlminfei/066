@@ -1,0 +1,1091 @@
+{
+  "release_id": 394531761,
+  "assets": [
+    {
+      "name": "v3.4-formal-archive-manifest.json",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-archive-manifest.json",
+      "bytes": 31220,
+      "sha256": "ac686d33dd13d8422af314fe44730d1ecac762db4e5ea9491e58e2acd4aa966a"
+    },
+    {
+      "name": "v3.4-formal-files.csv",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-files.csv",
+      "bytes": 170441,
+      "sha256": "8188c515a43cb5e9435b0acfc633e62fb2fd1989690273aba6843b1659391bb1"
+    },
+    {
+      "name": "restore_v3_4_formal.py",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\restore_v3_4_formal.py",
+      "bytes": 6036,
+      "sha256": "9cacf65f71b8f5d0e41c4f3afefda0c2040c79f92a44116607cb96003abde28b"
+    },
+    {
+      "name": "README_v3.4-formal-results_zh.md",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\README_v3.4-formal-results_zh.md",
+      "bytes": 5350,
+      "sha256": "f03739072de9bb9154fdd018d219d99a83d47a97c205bed4e3507f3824f16f24"
+    },
+    {
+      "name": "archive_build_validation.json",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\archive_build_validation.json",
+      "bytes": 677,
+      "sha256": "b58be689c54d2f323bdc709ed8ab19e2363dc1a38d83c816e248c0f90abeb33b"
+    },
+    {
+      "name": "v3.4-formal-analysis_zh.md",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-analysis_zh.md",
+      "bytes": 9939,
+      "sha256": "046fede2397fbb0a00ba1fdba7d0fad2c1ad2edadd970016ee1685987336af36"
+    },
+    {
+      "name": "v3.4-formal-run-review_zh.md",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-run-review_zh.md",
+      "bytes": 10719,
+      "sha256": "46ef61378a262d75d6741d3e386a852b42a2c0f1f1f083c71a2e7f1d8a540ee7"
+    },
+    {
+      "name": "v3.4-formal-results-light.zip",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-results-light.zip",
+      "bytes": 13758438,
+      "sha256": "67d13b9e9e78546ee9b985e8545c407194324eb372cf01a84d479ad641c5e8aa"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0001",
+      "bytes": 67108864,
+      "sha256": "83b08b1c8c7cd4fa8f261b56feecc0e1135987b3ccf261f3c497807b65ccd50d",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0001"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0002",
+      "bytes": 67108864,
+      "sha256": "73d1db8ea94ce5ea9e29a5ef7753382fd8ea7c28e08d01f2af363f90e46667c2",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0002"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0003",
+      "bytes": 67108864,
+      "sha256": "5a941261f368922da022e7072b3b03caa316bc3ed54cf3c36e2776d6668cb3d1",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0003"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0004",
+      "bytes": 67108864,
+      "sha256": "752ed1ca34bbd842ab283ec0bf0ec5271eb54348e7ef5643d1b8484de795f64f",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0004"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0005",
+      "bytes": 67108864,
+      "sha256": "9cf6daaaeda09433d8b98b01a7884c9dea3f2fb8c18ed1353a766bc62998e467",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0005"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0006",
+      "bytes": 67108864,
+      "sha256": "1b41028d11a3e65731ea178ce5a3466e8d648d3927a009d086a0038fe8f56655",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0006"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0007",
+      "bytes": 67108864,
+      "sha256": "b92b733450ac6733e08b3a5f245a9fbf3a2947c0b4ecff146a3c4b24d5613027",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0007"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0008",
+      "bytes": 67108864,
+      "sha256": "dd580ba81837fdf645caca8e344e7d289336d11adeddf266ea039a9fe0801fd5",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0008"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0009",
+      "bytes": 67108864,
+      "sha256": "89119c9573bdc71be698e9ffad8c74bda1c3621c520ed47b7491aeecad21269e",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0009"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0010",
+      "bytes": 67108864,
+      "sha256": "43ad2c755c0be5a78621ef155174e68ac76a1a9a5c265540b2fd63cd6f06a2d7",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0010"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0011",
+      "bytes": 67108864,
+      "sha256": "25803c933b164e7d48b42714beb77f18315b9aa6f827abbd412614fd6fcab3cb",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0011"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0012",
+      "bytes": 67108864,
+      "sha256": "c4b6464bc24a842e5bcaa6fe5797cda4e6b3b4216234746e1dfb819a110164d5",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0012"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0013",
+      "bytes": 67108864,
+      "sha256": "95db9def2167dfbc1bd2ddfa152a8fdf8026065d9f15cb97c9202a9e7024e23e",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0013"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0014",
+      "bytes": 67108864,
+      "sha256": "439e81aa20ba123e3af45faf1fcd856216614d592eb26ddcf239816da4a75e78",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0014"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0015",
+      "bytes": 67108864,
+      "sha256": "76a245d029e04040283765e665df328198eaf6a6e86992e6b2472447bb0ff944",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0015"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0016",
+      "bytes": 67108864,
+      "sha256": "de7056753cfe8ea83ed50157a5e2e64466227a9bc85a4f77d6fef12c917b51ea",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0016"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0017",
+      "bytes": 67108864,
+      "sha256": "a333c6d1b9cd0e51d1ff3f851875a6e00756c07e031281d5e8663c9a1a6e5619",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0017"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0018",
+      "bytes": 67108864,
+      "sha256": "82e6bf8d38359c2a256612a74257ddccce0c379931f71ccefeb3c6662f808999",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0018"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0019",
+      "bytes": 67108864,
+      "sha256": "45ad677fad0e9cd81bb3d116d8e50771580fa7133ef618b4dc237a07c1d1824c",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0019"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0020",
+      "bytes": 67108864,
+      "sha256": "30d9d14459b430cc08a743dcb22e9d7fa8fc2bfb2adf9d876832bd6feb5d8c21",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0020"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0021",
+      "bytes": 67108864,
+      "sha256": "e8220f90674f940181622609abff529a7a06da054539c4d9748c2c5d78e5885f",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0021"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0022",
+      "bytes": 67108864,
+      "sha256": "ebcb0f7806597d3447eb8de141a4f5c7b221fe6c19a271d2620a372278d2a772",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0022"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0023",
+      "bytes": 67108864,
+      "sha256": "a6eb15cbb65ea8cea0f61e0d207cee1663d07748ad18f1cd6baca5c93e813d05",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0023"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0024",
+      "bytes": 67108864,
+      "sha256": "4978378ae1b31289b042c1c91d83a02607455e9e2113bf8302bfc84f6db1350d",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0024"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0025",
+      "bytes": 67108864,
+      "sha256": "454a7d9f3d4afa443c80c3dd0ccbc6d40373c57453132d9aac461e200341fb46",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0025"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0026",
+      "bytes": 67108864,
+      "sha256": "07066aeaeca64e2e4cd31ef0538d1f9c18b749f0b0e2d48b910f7725e3b82e8d",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0026"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0027",
+      "bytes": 67108864,
+      "sha256": "ad861ffeb01c7c675db1e369f2a4b9c97a242d07d69b8b5ee79694a38d15645c",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0027"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0028",
+      "bytes": 67108864,
+      "sha256": "031759ff916e5f7cbf4ac0a7edf17f0a743820fdb28b8464addf25baeb5a22f7",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0028"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0029",
+      "bytes": 67108864,
+      "sha256": "8a3edfa32a354f2ece7bc8fead37177f441da2bfe4d1d673df746d31e455a4a3",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0029"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0030",
+      "bytes": 67108864,
+      "sha256": "9297974d922a2b235178f81be462e7af5f5a6ecf25d864ff501ebba9bac89f59",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0030"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0031",
+      "bytes": 67108864,
+      "sha256": "5f27a102046d68fd7636714af1d9129cad4b23aac20a6a7e6da11a0115575283",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0031"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0032",
+      "bytes": 67108864,
+      "sha256": "f8fb446c426ce86b9a255087c118f4df1d211fae3428bcb80d1ec21b52d37dc4",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0032"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0033",
+      "bytes": 67108864,
+      "sha256": "b475f7df4d9a8d3a3db9f090f2715eca96c675bd4c45b87bac1c25d0d8dbe697",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0033"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0034",
+      "bytes": 67108864,
+      "sha256": "f55aac6b5379e890d8b0cd0b5cfed3b42202d07d337f7f165903f18f98952336",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0034"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0035",
+      "bytes": 67108864,
+      "sha256": "fa8f2aa79a889d8014963f5a40a9452cb69c071c0c223535d4de1ade685de743",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0035"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0036",
+      "bytes": 67108864,
+      "sha256": "42dd51811019ac9dd5509e284088a57033e8ff8395b9a836e49315a8fd0cb097",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0036"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0037",
+      "bytes": 67108864,
+      "sha256": "9b2b041d94a7366a60a2d7a7e2f8b646d6ec9acb19c3111086e8e032485a35e1",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0037"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0038",
+      "bytes": 67108864,
+      "sha256": "89576e299b372a59f633e01c785c25cfb936905db3fba811efd47d8a187e403d",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0038"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0039",
+      "bytes": 67108864,
+      "sha256": "a5cd7dc9a7fbf1b354edc79f234b94b4122432caa6ac05a4f1c6a48d5b08c4b8",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0039"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0040",
+      "bytes": 67108864,
+      "sha256": "2ea54625b25373cea1e8182fb1bdb6a9406e7e91802bf7c4f729df3bfa13a4d0",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0040"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0041",
+      "bytes": 67108864,
+      "sha256": "32264af4bcfe72ee9be71875d48849104a5e6414da4c6bfcb27711379c1f153a",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0041"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0042",
+      "bytes": 67108864,
+      "sha256": "27ce658f0bf97795d7c47f0d31c266bbccac5cfba178e5628bef8e59f8bfd0d8",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0042"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0043",
+      "bytes": 67108864,
+      "sha256": "0fc598be63197b1629220fde316127f9436f95a48383e05b3db2467022683ce5",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0043"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0044",
+      "bytes": 67108864,
+      "sha256": "10f240b0d2db3c3cf4534b43a0cdd49516a4df0ae142344338e52df6c4be7a7a",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0044"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0045",
+      "bytes": 67108864,
+      "sha256": "6a05aba8fcfc1541012bdb2efe68c2deba0a1fd20950d37d3749f3e4f493e2b1",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0045"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0046",
+      "bytes": 67108864,
+      "sha256": "9ad4d349ec9172306d79c94f30dd627e2d61c60806f2fe3f09acd19646e7cd00",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0046"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0047",
+      "bytes": 67108864,
+      "sha256": "52c4f74021016c28f8f19cacfb138249233a27cbd2e8cee279060b028b5b3b77",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0047"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0048",
+      "bytes": 67108864,
+      "sha256": "7ab926815261b2774999856c7ee12e243fd975de98b98e3a90186a13736716cf",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0048"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0049",
+      "bytes": 67108864,
+      "sha256": "7bd781b344e1e30f3a3b7728f54d6b0c5c134f8f0c3c627280ab9d9dfee6e3f8",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0049"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0050",
+      "bytes": 67108864,
+      "sha256": "5f299f9d618c32eff49eb907ab220cb352dae6af5600821523079e2d0b1043a9",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0050"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0051",
+      "bytes": 67108864,
+      "sha256": "589f9f0209ef00f76df80674a82aceb3d9e70c0f0772bdce9495e59a6fe7a716",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0051"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0052",
+      "bytes": 67108864,
+      "sha256": "c58b2acf76b0465bf7ef2ae46b8990f7e2dca6f2e074ef0dfa0a006f6aa28591",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0052"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0053",
+      "bytes": 67108864,
+      "sha256": "3299dd32c388db89b4671e4f48b6f3bcbb0f59e016baca0554a096542d32391a",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0053"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0054",
+      "bytes": 67108864,
+      "sha256": "5378f0fe74ce64086dc6098b8cb5e16930afe768e94645cdce355f1edc96bce3",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0054"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0055",
+      "bytes": 67108864,
+      "sha256": "08b3392af3659f38f2db6cf3816bee49ae76380f1faa6425f4f77a5e6f659c05",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0055"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0056",
+      "bytes": 67108864,
+      "sha256": "6b73a8c89283dd37871f6adb0c7bbe3fbb34f49ac3b438c62308b67b364b6dfa",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0056"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0057",
+      "bytes": 67108864,
+      "sha256": "2770ebd38a76040967f6014b0ac3e949cb10c6fc6ed5a4d7793a68946ad58c4f",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0057"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0058",
+      "bytes": 67108864,
+      "sha256": "9590fa69e789a31631168656c71818116b73d36cddcbf0dc637671e32e988d75",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0058"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0059",
+      "bytes": 67108864,
+      "sha256": "5e3292f6aea93c4c4fe0cf3a72728a32bb4ea593efd784c52c7b82f73006f89d",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0059"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0060",
+      "bytes": 67108864,
+      "sha256": "60849f0b71adeb7bfe8836d41090ac80a76d0915889bb3b734a75ab6ee97cadc",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0060"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0061",
+      "bytes": 67108864,
+      "sha256": "e24fcde50dbb0237af927695b6061ba0384837ad9e21b3406309908fc2555830",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0061"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0062",
+      "bytes": 67108864,
+      "sha256": "d99d74f50ecbc0a388b44b089df35fb51c5e8f2c178a4d34cc65e98441767e10",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0062"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0063",
+      "bytes": 67108864,
+      "sha256": "d7558f279b5aa8b92d03d433374e79f691ba138cb30e2e3bbc310f1c9b97653f",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0063"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0064",
+      "bytes": 67108864,
+      "sha256": "750d2e4dff4b2ac71ad0fbf1d56148e3d528774e2c5c31d1226db3a4ff471eed",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0064"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0065",
+      "bytes": 67108864,
+      "sha256": "bdc04673aa69803219a9883c8b7d1cc6980d38a73c19ee8cc464ad5d238e9168",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0065"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0066",
+      "bytes": 67108864,
+      "sha256": "7867beee641df6955181561bd81e339ef1fdf640159508cc3f6d4a31a4a2ae49",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0066"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0067",
+      "bytes": 67108864,
+      "sha256": "88d7bd038b44ab94a0116f6e8837320af8ab7785b27c142994d0e4506f8b7488",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0067"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0068",
+      "bytes": 67108864,
+      "sha256": "d86611ae88cb1f912841d3d2db54176b709041829f7912fa72dbdad688fa8783",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0068"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0069",
+      "bytes": 67108864,
+      "sha256": "c31205f47089afd17b8bdac992656eb7aa9c57db36445f766cbfa430649a261e",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0069"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0070",
+      "bytes": 67108864,
+      "sha256": "10ae2f989b4fdba8724857466a1bd66c2921ccac0f8ca5dc2ca9aeb72e8f15c1",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0070"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0071",
+      "bytes": 67108864,
+      "sha256": "7e101d7d6277a03ca5955160bbe60efefa9d8192cb34847b3a51c57ee42bb662",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0071"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0072",
+      "bytes": 67108864,
+      "sha256": "f4d1bdeac6d4884cb027a8320831f47728ae352443d95d61b0590d6f51846535",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0072"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0073",
+      "bytes": 67108864,
+      "sha256": "dd754f42fe47200f6e0282991d6e5521e695eea3e86b533d782f865e72cb3473",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0073"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0074",
+      "bytes": 67108864,
+      "sha256": "46f966294cb8ad196521de13a9976b2d17d0bd9024ea4ec659975f1c971e7cc5",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0074"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0075",
+      "bytes": 67108864,
+      "sha256": "0b70a60c0401aa611af39d88f009c04d610a027b711c59ba71a5b58e81d54d26",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0075"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0076",
+      "bytes": 67108864,
+      "sha256": "3ad04bccf156feb0f65ba3ae23ec2c3a3bf180301e4b2fa18f0f91b26aac7cee",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0076"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0077",
+      "bytes": 67108864,
+      "sha256": "02924f48ccf928072e3a7aa1adb9c89ee1491a67943f7108574a91455d4ddadd",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0077"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0078",
+      "bytes": 67108864,
+      "sha256": "778b1bff12c6811d1afc0475f9c4e9c25d1c0a965c875660006eca9a1c381504",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0078"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0079",
+      "bytes": 67108864,
+      "sha256": "21b02b9233c2eac31f0659b32cdd7cdb83ac618e98688490100396866b6f2e8a",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0079"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0080",
+      "bytes": 67108864,
+      "sha256": "572d6320f5ede793e16726c31d8081eaafc3286aec28143d864778a745a4325a",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0080"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0081",
+      "bytes": 67108864,
+      "sha256": "63a512fda24463f33c1952293bd7e3269156557ff25a7b300b960d2840439044",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0081"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0082",
+      "bytes": 67108864,
+      "sha256": "c90e12fc30ef93b21d96d476872763afc5ea536a36cb9fa5691864bd566d29e4",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0082"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0083",
+      "bytes": 67108864,
+      "sha256": "82115a791114f9d95c7d9b8d18723171be8eba2b84dc08d8abff73a0d690893c",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0083"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0084",
+      "bytes": 67108864,
+      "sha256": "c5e8410735c63a30405a013c05ca76d51768a181466b7b34172cde0d6858c4b1",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0084"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0085",
+      "bytes": 67108864,
+      "sha256": "a1651570ad9367bf75b0c558e5bfd1c4c3ac097cd76b02bf3c83908dbbef2b35",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0085"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0086",
+      "bytes": 67108864,
+      "sha256": "3d49ab668a5371b96008108964a7a3d014a8042d66f02e53278510c7715cbbf8",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0086"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0087",
+      "bytes": 67108864,
+      "sha256": "b149d75c746d75d7d12587bc69cdbb69115e5b61ae09bbcecd53d6fec606cb66",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0087"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0088",
+      "bytes": 67108864,
+      "sha256": "35cbe3d4ffff6f3b87a658c9921b11c9be8bcee3401b8bf08f1d8925b6701d0a",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0088"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0089",
+      "bytes": 67108864,
+      "sha256": "de0e9bea5269b621018b4ae31c2689be3f7474cd620267eb751424bb482db5ad",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0089"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0090",
+      "bytes": 67108864,
+      "sha256": "887d72fb802b4e43cf467269587c25b1273796c2ead0ea3351a1467bd14a8175",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0090"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0091",
+      "bytes": 67108864,
+      "sha256": "4d9c8b50c0dcefe7483025a5aede1738d679830d0a6d3901a0d7bd43a7e387fd",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0091"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0092",
+      "bytes": 67108864,
+      "sha256": "ca2f7cb1f09d431c76a50c04ef7fc03e658be1347c61437d4af324d885d21cd8",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0092"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0093",
+      "bytes": 67108864,
+      "sha256": "a5291900976517e40b81d188df9d8d459fe45ae9dabc908f9ac94693f0f8313b",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0093"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0094",
+      "bytes": 67108864,
+      "sha256": "5b1c7b73bbac3ae314ed338ca88249fafe94f692923b532b83cb089b541dccd4",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0094"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0095",
+      "bytes": 67108864,
+      "sha256": "ffd4a7ff2c59b0e1c45452007d05ca2323b661558d682d337d871092b877f694",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0095"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0096",
+      "bytes": 67108864,
+      "sha256": "1023242974c8b6095c7c8fe2f359eabdb4ceb04bbc2bdfa45a3d670ec0f8b21a",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0096"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0097",
+      "bytes": 67108864,
+      "sha256": "c2450a8e4825cac825f85fe7d547f1f814ce87362933987eb2ad019ec27dc809",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0097"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0098",
+      "bytes": 67108864,
+      "sha256": "0f35da708a9bcb0e91d3a2f868136774f7bfacc2ff1c0f1ff7911174fe076f40",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0098"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0099",
+      "bytes": 67108864,
+      "sha256": "3e47d65a2e53c5072ad67799ec10aa35ff88f7b496d9a57ecdfdf5e86a78631f",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0099"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0100",
+      "bytes": 67108864,
+      "sha256": "4ad8fa6c484aa74d8f18ac05243e0f283cc7b41071f91efcf9aae278de09f77e",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0100"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0101",
+      "bytes": 67108864,
+      "sha256": "ca7b351584427c11c7d04130b13e94c125b95f65c4513681a2f25f0405043159",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0101"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0102",
+      "bytes": 67108864,
+      "sha256": "daf390f4c21aa1b0909f1bbc23e719a9dbc5da1da1f6b1d21f6d69d09fc0ebcf",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0102"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0103",
+      "bytes": 67108864,
+      "sha256": "98a4e8a03d57ccf870bced241207711704759c8f90c191b6d80000de62554cc5",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0103"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0104",
+      "bytes": 67108864,
+      "sha256": "d1b816c5b45e36deb931061932ea972b0f07cc92f0de3d3e0ded0b6a7b2d6ee6",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0104"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0105",
+      "bytes": 67108864,
+      "sha256": "a2c1cdd649d5843315eb952921048c8032d7724933c8ad796c3b47bfa4ab1489",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0105"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0106",
+      "bytes": 67108864,
+      "sha256": "92c45f7170be85bd7b70e7c34fc573beb1011778baf243d7d0fb94c578129655",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0106"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0107",
+      "bytes": 67108864,
+      "sha256": "9dfc12a2d7f68cbad9022eb10e17c0b6c7a5b37a71e4c828a2c62b655d8ec3f8",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0107"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0108",
+      "bytes": 67108864,
+      "sha256": "348773ea61b82616f0b9c6289d204a0e518dd312b216193b32cbc4a96ae41bfa",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0108"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0109",
+      "bytes": 67108864,
+      "sha256": "c36b0f4e617322196257700912c3c3f20fe116abda5bc23dce3d02c19fec6953",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0109"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0110",
+      "bytes": 67108864,
+      "sha256": "acf40fa81ffa3618eab259788c67e5caa4fcde2d5ff5f359737237813da50b20",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0110"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0111",
+      "bytes": 67108864,
+      "sha256": "a8431e1da93a9d844a1552b249e3d32471fad1f0c42e33dc7804463ed5dadf63",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0111"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0112",
+      "bytes": 67108864,
+      "sha256": "f87228927a084e5348588db7f8d995a25503e16d59591add690466532eeaa34e",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0112"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0113",
+      "bytes": 67108864,
+      "sha256": "416e228248e928f8d957f714ef66c25d038472f8954eab4f6da808be173ba974",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0113"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0114",
+      "bytes": 67108864,
+      "sha256": "cc66121eb9c7ae8b702a5d431114c27fa8f1d9a411a8cc17c6233e37d7758042",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0114"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0115",
+      "bytes": 67108864,
+      "sha256": "fb4eea70cbb22fbf5d4a1fe97e9a320c95550168d816e9d3b75c0e883dcb002d",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0115"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0116",
+      "bytes": 67108864,
+      "sha256": "992815788abe9a98abdfaf0f423627d0c3e6f316ff92b5097ed63c7a57df8086",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0116"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0117",
+      "bytes": 67108864,
+      "sha256": "52b5e999c0ba3a0fe1f5bd7f8b6d2d3f4cbfaa2ecee01e2e1bdf5433648e1296",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0117"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0118",
+      "bytes": 67108864,
+      "sha256": "f782a58f18a7180d27e4a65f3a6db96fa7a70d808af9c70bc488c14908f14a72",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0118"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0119",
+      "bytes": 67108864,
+      "sha256": "ab2dc82517261e90688146c02a552d30d5f2482470381ba888c06d7868b836f8",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0119"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0120",
+      "bytes": 67108864,
+      "sha256": "c23499e97098a9b2bc9bc1890c64fe8a65a9a612518b69c29b43c6f70b4e2e86",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0120"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0121",
+      "bytes": 67108864,
+      "sha256": "8223a888d9d358e4bde1b77cba6f83e486382ff157670b92557ca480c96a74ea",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0121"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0122",
+      "bytes": 67108864,
+      "sha256": "7fa9089ab1798c8c6a46cd09c376383ca88dd2b87b6aa4f72af716e0e005c799",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0122"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0123",
+      "bytes": 67108864,
+      "sha256": "705d39a550d8ddc8c46e7f2a51e7c54db9436d24e98580e58adb884d1ed82759",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0123"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0124",
+      "bytes": 67108864,
+      "sha256": "22226dcb2ee0549b01af3c5afed309cee5571b1bb85758b421dd31bd7da04e52",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0124"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0125",
+      "bytes": 67108864,
+      "sha256": "a882864f9b9f34546f60982f45b40813d3fac01bcf3a46d6453a4e557e6913ee",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0125"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0126",
+      "bytes": 67108864,
+      "sha256": "bc0ab6840cc618d99e0fc072f1bed40405d5d6b45390521d06c40601d23a90f2",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0126"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0127",
+      "bytes": 67108864,
+      "sha256": "d421f7c4f25bec4860de92d53c37793b2aeb90208c46143c8dba8586998eaa6d",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0127"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0128",
+      "bytes": 67108864,
+      "sha256": "2dad98539bef4edb569b9a07cebae125bfad784aee373f231bc6df98e9d44f24",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0128"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0129",
+      "bytes": 67108864,
+      "sha256": "07e97ef66abba0db0e92dc03f5b200d8cb3e12bd94f998a436a17ba0f96ebe5a",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0129"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0130",
+      "bytes": 67108864,
+      "sha256": "ee6d2fc11a2e8e9fda969dda84d5f8d6ea5c21c3f6fb98901a0451aac3a4d41a",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0130"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0131",
+      "bytes": 67108864,
+      "sha256": "a67061a13076281d33700fb8fe49ac2db9bec9fc64c3a32171f72419f2123192",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0131"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0132",
+      "bytes": 67108864,
+      "sha256": "990813bc6f264ef94fd307e90382bce12b56285bb30727e08c585ae0e4426744",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0132"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0133",
+      "bytes": 67108864,
+      "sha256": "c719ed90de5eac18a6583758e77d540e89a48fa6b12c7385715db091e9e3270c",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0133"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0134",
+      "bytes": 67108864,
+      "sha256": "597cee0c9b951f59d63f940bd924c31cd7e4078f097dc89b1e13403d3ac855de",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0134"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0135",
+      "bytes": 67108864,
+      "sha256": "cde49af298043a9fedd63001869eb41eb777ceaf6e7296bfb46e35e88051e75a",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0135"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0136",
+      "bytes": 67108864,
+      "sha256": "b99228f9648dc562b6ba9e9a4a25f134a4c015197f87809e1389a7b93f56e489",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0136"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0137",
+      "bytes": 67108864,
+      "sha256": "8baa2688a36081b48a980cff503c708ac6578991b2d2f7b7a9986dfa9edca71a",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0137"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0138",
+      "bytes": 67108864,
+      "sha256": "7d477c4ad5f1d4a579efb200cfbc6e07601ab9229a28c8346530178b54a824f6",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0138"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0139",
+      "bytes": 67108864,
+      "sha256": "784d807e519fbd13640652746eef4cc7daace59d3f5626270ab36f4bf6ff193a",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0139"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0140",
+      "bytes": 67108864,
+      "sha256": "8db4ebda6cf12724acf7475ccc55b10c26177485bd9deebfac04193b40dee9fd",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0140"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0141",
+      "bytes": 67108864,
+      "sha256": "0402208e42be9d3dd2964ba3148afd7139a19a81e0732734937995f4dd8d5f7a",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0141"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0142",
+      "bytes": 67108864,
+      "sha256": "fb23ffdce90a9991a59ee53b77a077032b034bc13db0d03aa4711e86b74ca2a6",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0142"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0143",
+      "bytes": 67108864,
+      "sha256": "e8b80caca96391db00156f0d52f402c2d88b6d0f717d868ce29cd2d13b0d3324",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0143"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0144",
+      "bytes": 67108864,
+      "sha256": "6e7adc07ba007d8023eb9e1589d1dc9a251c5ec189655eb01ef2bd793fe01f73",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0144"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0145",
+      "bytes": 67108864,
+      "sha256": "71e725ff67cd3ab352eb96136ab4105e4d3a16ea3dab61eace751145d6592c8f",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0145"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0146",
+      "bytes": 67108864,
+      "sha256": "6dbf92d6e7eafc31b57fa61b29344aa69deb56471242ba7d9f7ae8239fe6e6ba",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0146"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0147",
+      "bytes": 67108864,
+      "sha256": "200ecd569499f5580102af77057238eef551878e9e2f019b65adc353e936d3d3",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0147"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0148",
+      "bytes": 67108864,
+      "sha256": "881aa5b0143dfbb4c90a80b96bd1267dd8a90bd6bcb45c6f61589e610cdb9087",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0148"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0149",
+      "bytes": 67108864,
+      "sha256": "70df6961f319831809c95deb654c0023257c7192acd756992208a83f92b9b49c",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0149"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0150",
+      "bytes": 67108864,
+      "sha256": "ff7f5c4b1f3425f6b2a6ecd905967920035f523a18749ffee0d9ccfa543adeac",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0150"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0151",
+      "bytes": 67108864,
+      "sha256": "9f8a08b2daa96d8a10cc579d501726d33bea0f9add391174863e516280bb80ac",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0151"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0152",
+      "bytes": 67108864,
+      "sha256": "cacc3b51b9d6162513aa8b5f18e3a0ce121ab7fad363048e2dd774d96f0157ab",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0152"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0153",
+      "bytes": 67108864,
+      "sha256": "7d31304478f0b6719284ba9f652afc1877a87bdebd2275040bb261e8de0698b5",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0153"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0154",
+      "bytes": 67108864,
+      "sha256": "2a2458db5e87dd7ec80dc64a14afd1b5ce6f56231002c80324276a9ddff7ece1",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0154"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0155",
+      "bytes": 67108864,
+      "sha256": "9e40329c63d67b0b5a4aa02c86b8bdb8e02ba588cbd3d61e68e5dc2328c0463c",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0155"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0156",
+      "bytes": 67108864,
+      "sha256": "e525ecbf7e75bda136dcfafa4c3b461a1f7737b87edd2df08b6820bdda59fb32",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0156"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0157",
+      "bytes": 67108864,
+      "sha256": "cf203bf51876dc1b739472f0e661d203c95b84f3362820a60ce4a839de8093ce",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0157"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0158",
+      "bytes": 67108864,
+      "sha256": "f45df148a2bf0b79285162f182a0c1e84c23263cc3e1c87094d8a7f855378126",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0158"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0159",
+      "bytes": 67108864,
+      "sha256": "1b03f5d146082b8d585feac1b8162e2e27889cb9c8274ed5bbda4a0979614043",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0159"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0160",
+      "bytes": 67108864,
+      "sha256": "755b8a7dea3cf5ae4be2336634aba4c09b8b2e2890cc89ba9bca12f8e5146a48",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0160"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0161",
+      "bytes": 67108864,
+      "sha256": "ce0c28f394f3704d6a3371fd0f4eadd413756c281da34dd9aba48b3ea5947182",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0161"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0162",
+      "bytes": 67108864,
+      "sha256": "5f9cadfef6cb21acb5b89afc093e1c2b164e35142ad2fb39cabcb11bc5b7f54d",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0162"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0163",
+      "bytes": 67108864,
+      "sha256": "7c2fe1d655bf4edf4592ca40ec22eb0f44421dde813a0b585e02c56b857e664a",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0163"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0164",
+      "bytes": 67108864,
+      "sha256": "030db182c92531f2549d70a8949d96df0419adaa32f99bed5a1b452170d19942",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0164"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0165",
+      "bytes": 67108864,
+      "sha256": "6132cd2f9d656fca72e42769e14d55b1b889faa5f4936904b947dd2e79072e73",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0165"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0166",
+      "bytes": 67108864,
+      "sha256": "7a170d8138012e5116ff5e27e06f93808b2b950881b8cd0f109a41097417cdd1",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0166"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0167",
+      "bytes": 67108864,
+      "sha256": "364e979176a61dbbd244ff42d01b04760b17255dceedf9846bf20d0b9f50cb8f",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0167"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0168",
+      "bytes": 67108864,
+      "sha256": "0ba0f4a51086eadf1aa301855f4328c2ab14fb1392fc4b940db8acfea893d95b",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0168"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0169",
+      "bytes": 67108864,
+      "sha256": "c75e2e92d2864ab1c7bbfecb8fa7102d7778bce8829ebed50c9c9546b75d9a26",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0169"
+    },
+    {
+      "name": "v3.4-formal-complete.zip.part0170",
+      "bytes": 23099966,
+      "sha256": "1cd13e04040b872112f54f9f28ad248381fbda79c02522fe7ec0de4624469420",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-complete.zip.part0170"
+    },
+    {
+      "name": "v3.4-formal-delivery-evidence.zip",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-delivery-evidence.zip",
+      "bytes": 283195,
+      "sha256": "1085ee9278955184e056e6e596ffa153d8cf76778cebd919120cc92c8f12418b"
+    },
+    {
+      "name": "v3.4-formal-delivery-evidence.files.csv",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-delivery-evidence.files.csv",
+      "bytes": 47817,
+      "sha256": "8dae30aa15b04a28b2b771ccede306528e41b7704e43bd0284c379f9eb9b87a0"
+    },
+    {
+      "name": "v3.4-formal-delivery-evidence.build.json",
+      "path": "C:\\Users\\minfei\\Documents\\ChatGPT\\建模\\publication\\v3_4_formal_results_20260923\\assets\\v3.4-formal-delivery-evidence.build.json",
+      "bytes": 197,
+      "sha256": "93ccab308f216646289bad122ad62bc3bdfc646a66e39c77bd2c2806399a055d"
+    }
+  ]
+}

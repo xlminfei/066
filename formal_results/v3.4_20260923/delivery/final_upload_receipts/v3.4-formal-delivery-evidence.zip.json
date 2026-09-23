@@ -1,0 +1,14 @@
+{
+  "status": "REMOTE_SHA256_AND_SIZE_VERIFIED",
+  "release_id": 394531761,
+  "asset_id": 583608437,
+  "name": "v3.4-formal-delivery-evidence.zip",
+  "bytes": 283195,
+  "sha256": "1085ee9278955184e056e6e596ffa153d8cf76778cebd919120cc92c8f12418b",
+  "server_digest": "sha256:1085ee9278955184e056e6e596ffa153d8cf76778cebd919120cc92c8f12418b",
+  "url": "https://github.com/xlminfei/066/releases/download/v3.4-formal-results/v3.4-formal-delivery-evidence.zip",
+  "attempt": 1,
+  "started_at": "2026-09-23T11:11:41.3732213+00:00",
+  "completed_at": "2026-09-23T11:11:46.8812243+00:00",
+  "elapsed_seconds": 5.5093288
+}

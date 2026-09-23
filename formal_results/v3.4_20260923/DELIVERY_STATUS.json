@@ -1,0 +1,35 @@
+{
+  "status": "COMPLETE_AND_VERIFIED",
+  "source_files": 778,
+  "native_fit_files": 256,
+  "source_bytes": 11406427751,
+  "complete_archive": {
+    "name": "v3.4-formal-complete.zip",
+    "bytes": 11364497982,
+    "sha256": "98f7c9157d87b8389b7934d8eef061c92262c557cc02dd11b6dffae98fd718eb"
+  },
+  "parts": 170,
+  "light_archive": {
+    "name": "v3.4-formal-results-light.zip",
+    "bytes": 13758438,
+    "sha256": "67d13b9e9e78546ee9b985e8545c407194324eb372cf01a84d479ad641c5e8aa"
+  },
+  "release_url": "https://github.com/xlminfei/066/releases/tag/v3.4-formal-results",
+  "release_id": 394531761,
+  "total_assets": 181,
+  "server_verified_assets": 181,
+  "local_complete_restore_files_verified": 778,
+  "public_light_restore_files_verified": 522,
+  "public_full_parts_sampled": [
+    "part0001",
+    "part0086",
+    "part0170"
+  ],
+  "public_delivery_evidence_files_verified": 399,
+  "git_source_mirror_files": 522,
+  "results_snapshot_commit": "896d7d5e3f48e61c93d4f6e0fad88cd79d2afeef",
+  "original_code_commit": "c9ec1c58e173dd5209bbbe5e89b2213553fc0630",
+  "formal_status": "COMPLETE_WITH_REVIEW_FLAGS",
+  "ppc_flags": 18,
+  "scientific_results_modified": false
+}

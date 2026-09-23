@@ -1,0 +1,1 @@
+Publication execution evidence. All 778 run-source files are preserved in the complete formal archive. Failed first packaging ZIPs were not published; the failure log, source and regression counterexample are retained here. This delivery archive cannot recursively contain its own later upload receipts, which are saved in Git after upload.
