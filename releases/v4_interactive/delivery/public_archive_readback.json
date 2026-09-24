@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "anonymous_download": true,
+  "physical_part_assembly": true,
+  "zip_CRC_and_member_SHA256": "PASS",
+  "archives": [
+    {
+      "name": "v4-interactive-code.zip",
+      "bytes": 124951,
+      "sha256": "36ac2923c61b31a3f085fcb3226910b07ca243ef63a7a51be5367a24fdc3d430",
+      "members_verified": 32,
+      "parts": 0
+    },
+    {
+      "name": "v4-interactive-validation-complete.zip",
+      "bytes": 160824760,
+      "sha256": "8b58e11c664892b1b54eb0375065988056f1f7406e2c5239c07fdd0f92f753a7",
+      "members_verified": 771,
+      "parts": 5
+    }
+  ]
+}

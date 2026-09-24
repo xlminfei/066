@@ -1,0 +1,26 @@
+{
+  "status": "PASS",
+  "code_commit": "d9ae41c6065b587bc6ebec0ed6cd014d92e243d9",
+  "files": [
+    {
+      "Path": "v4/interactive_analysis.R",
+      "Bytes": 17785,
+      "SHA256": "19eef7b150c3aba9055055b8af519c785920f13a90fbfa57d73a6f86aeb192da"
+    },
+    {
+      "Path": "v4/interactive_support.R",
+      "Bytes": 11731,
+      "SHA256": "cd4507f6718bef0e43321b1a93df006d8c6a98a29112a6ebfddbf72f2e8d9976"
+    },
+    {
+      "Path": "v4/INTERACTIVE_zh.md",
+      "Bytes": 6537,
+      "SHA256": "799bb4e9b1f2dc1a90c883c8e7d971cdf902876dc6639099c3af88b59fdc9ee6"
+    },
+    {
+      "Path": "validation/v4_interactive/VALIDATION_zh.md",
+      "Bytes": 3766,
+      "SHA256": "8c0cb20d741c11a9e6c4a587f3f9c972b837dd966dda30666422728f00b5f891"
+    }
+  ]
+}

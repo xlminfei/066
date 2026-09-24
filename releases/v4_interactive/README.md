@@ -17,3 +17,11 @@ python verify_archives.py archive-manifest.json --directory downloads --download
 ~~~
 
 本次没有任何新MCMC；验证使用既有原生缓存和明确的批量替身。普通R会话不提供--file参数，实际顺序执行110个主文件表达式。145/145主代码行和97/97支持代码行均有中文注释。
+
+## 最终交付
+
+八个发布附件已核对服务器大小/SHA256。匿名实际下载代码包和全部五个分卷，合并后读回完整771文件；代码包32文件也逐项通过SHA256和CRC检查。四份公开源代码/说明原文已读回核验。
+
+[交付状态](delivery/DELIVERY_STATUS.json) · [公开下载及合并读回](delivery/public_archive_readback.json) · [独立代码包在普通R中的前80个表达式](delivery/portable_check/portable_status.json)
+
+打包后的发布/独立包检查属于交付记录，保留在delivery/，没有递归放回被核验的ZIP。

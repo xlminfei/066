@@ -1,0 +1,23 @@
+UPLOAD_START v4-interactive-code.zip 124951
+UPLOAD_START v4-interactive-validation-complete.zip.part001 33554432
+UPLOAD_VERIFIED v4-interactive-code.zip
+UPLOAD_START v4-interactive-validation-complete.zip.part002 33554432
+UPLOAD_VERIFIED v4-interactive-validation-complete.zip.part002
+UPLOAD_START v4-interactive-validation-complete.zip.part003 33554432
+UPLOAD_VERIFIED v4-interactive-validation-complete.zip.part001
+UPLOAD_START v4-interactive-validation-complete.zip.part004 33554432
+UPLOAD_VERIFIED v4-interactive-validation-complete.zip.part003
+UPLOAD_START v4-interactive-validation-complete.zip.part005 26607032
+UPLOAD_VERIFIED v4-interactive-validation-complete.zip.part004
+UPLOAD_START archive-manifest.json 194131
+UPLOAD_VERIFIED archive-manifest.json
+UPLOAD_START verify_archives.py 2127
+UPLOAD_VERIFIED verify_archives.py
+UPLOAD_VERIFIED v4-interactive-validation-complete.zip.part005
+{
+  "status": "PUBLISHED_AND_SERVER_VERIFIED",
+  "tag": "v4-interactive",
+  "commit": "d9ae41c6065b587bc6ebec0ed6cd014d92e243d9",
+  "release_id": 395876388,
+  "release_url": "https://github.com/xlminfei/066/releases/tag/v4-interactive"
+}
