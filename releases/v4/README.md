@@ -1,5 +1,7 @@
 # v4 发布与完整验证资料
 
+> v4现已增加每行中文注释的R交互入口；[最新交互式代码包与验证资料](../v4_interactive/README.md)。本页原v4标签和附件保留其发布时身份。
+
 - [独立代码目录](../../v4/README.md) · [逐项修改](../../v4/CHANGELOG_zh.md)
 - [验证报告](../../validation/v4/VALIDATION_zh.md) · [全部验证文件](../../validation/v4/)
 - [GitHub v4 Release](https://github.com/xlminfei/066/releases/tag/v4)

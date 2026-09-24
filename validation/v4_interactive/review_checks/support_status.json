@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "checks": 17,
+  "passed": 17,
+  "failed": 0,
+  "interface_sha256": {
+    "/project/v4/interactive_analysis.R": "95b2f82b3a85409198c70055b4af6400824439d1eeb2bcf8e05e3e2355a3b9eb",
+    "/project/v4/interactive_support.R": "cd4507f6718bef0e43321b1a93df006d8c6a98a29112a6ebfddbf72f2e8d9976"
+  },
+  "analysis_id": "75ac77db4f6fa772a7c6a4038b5b70ba93b8b8b103add1b38fe71f11319f2b7a",
+  "no_mcmc": true,
+  "scope": "caller scope, status and logging, failure/interrupt cleanup, reset, formula semantics, task pairing and final rejection"
+}

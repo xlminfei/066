@@ -1,0 +1,29 @@
+{
+  "version": "ratio_analysis_v4_RS_20260924",
+  "analysis_id": "75ac77db4f6fa772a7c6a4038b5b70ba93b8b8b103add1b38fe71f11319f2b7a",
+  "input_sha256": {
+    "observations.csv": "3c886f7f2c11012463296b350a931543542b4e1c0d128ad3c408fda9ae824d79",
+    "sites.csv": "0a99692b060f13d1faaa870d06ea7dca9a4f16bc289636bcc88f5d105ebdacb5",
+    "folds_binary_species_5.csv": "933f627f122e5efda378435a580b583491fad0a640814ff9e777bed7c45b8114",
+    "folds_binary_species_10.csv": "2de8e002f7b5fa6628a3269665cae29d0c6335dd2148e55e31fc3ed5cfb975aa",
+    "folds_joint_bb_species_5.csv": "7d63d8e34fd7a90174bafcfdec6a54ea1a5d6e50c486eb1102f272d1afc1ebc5",
+    "folds_joint_bb_species_10.csv": "6ab52895401b3e17adfac0753407e4140f968a00bd071d05b50abda645bb0ccf"
+  },
+  "counts": {
+    "panel_species": 365,
+    "records": 153,
+    "binary_records": 152,
+    "binary_species": 50,
+    "joint_species": 51,
+    "point_records": 145,
+    "point_species": 48
+  },
+  "planned_full_fits": 8,
+  "planned_cv_fits": 120,
+  "training": "record_equal",
+  "evaluation": "species_equal",
+  "B_ELPD": 2000,
+  "B_OTHER_METRICS": 50000,
+  "inference": "fixed OOF conditional normal approximation; ten BH families of three",
+  "prepared_at": "2026-09-24 16:08:31 UTC"
+}

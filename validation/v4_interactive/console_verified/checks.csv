@@ -1,0 +1,20 @@
+"Check","Pass"
+"Every executable line has a Chinese comment interactive_analysis.R",TRUE
+"Every executable line has a Chinese comment interactive_support.R",TRUE
+"Interactive files do not use commandArgs",TRUE
+"Saved model training data values agree",TRUE
+"Saved model blueprint agrees",TRUE
+"Saved model Stan code agrees",TRUE
+"Native replay fixture validates under v4 metadata",TRUE
+"Example uses one of the same 128 planned identities",TRUE
+"Example and automatic task have identical model identity",TRUE
+"Example and automatic task have identical cache path",TRUE
+"Same cached native posterior reused",TRUE
+"Full annotated entry evaluated from a clean session",TRUE
+"Exactly one native example was preloaded",TRUE
+"Exactly one bulk dispatch and one native-cache reuse check",TRUE
+"Final completion is gated by actual output checks",TRUE
+"No output sink remains open",TRUE
+"Example has a saved single-fold diagnostic and prediction",TRUE
+"Native example predictions reconcile",TRUE
+"Interactive results preserve all 30 tests and BH3",TRUE

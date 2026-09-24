@@ -36,3 +36,7 @@
 不再有物种平衡训练、记录等权评价、训练方式比较、每折P值表、多份JSON设置、反复生成折表、默认重开全部后验的审计、长自动报告及新物种接口。旧开发测试、失败复现、大模型对象与上传/分卷工具不放进可移动代码包。
 
 这些材料没有从历史仓库删掉；本轮新验证档案在 validation/v4。详细测试结果见该目录 VALIDATION_zh.md。v4主程序不依赖它。
+
+## 交互式逐行入口更新
+
+新增interactive_analysis.R、interactive_support.R和INTERACTIVE_zh.md；每个新代码行均有中文注释。原模型和评价模块不变。逐项理由及新测试见[交互更新记录](https://github.com/xlminfei/066/blob/main/validation/v4_interactive/CHANGE_DETAILS_zh.md)。

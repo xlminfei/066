@@ -1,0 +1,4 @@
+"Check","Pass"
+"Every executable line has a Chinese comment interactive_analysis.R",TRUE
+"Every executable line has a Chinese comment interactive_support.R",TRUE
+"Interactive files do not use commandArgs",TRUE

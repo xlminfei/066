@@ -1,0 +1,346 @@
+character(0)
+[1] "Null" "M1"   "M2"   "M3"  
+[1] "binary"   "joint_bb"
+fivefold  tenfold 
+       5       10 
+ TrainWeighting   EvalWeighting 
+ "record_equal" "species_equal" 
+$chains
+[1] 4
+
+$cores
+[1] 4
+
+$iter
+[1] 4000
+
+$warmup
+[1] 2000
+
+$adapt_delta
+[1] 0.99
+
+$max_treedepth
+[1] 12
+
+           SEED      SEED_OTHER          B_ELPD B_OTHER_METRICS 
+       20260920        20260923            2000           50000 
+[1] "/out"
+
+START prepare 2026-09-24 16:31:30 UTC 
+PREPARE_PASS: 8 full + 120 CV fits planned; no fit executed
+END prepare 
+[1] 153  13
+
+   count    exact interval 
+     105       40        8 
+[1] 51
+[1] 50
+[1] 51
+                  Species Fold
+1       Carassius_auratus    2
+2     Carassius_carassius    2
+3   Cirrhinus_molitorella    1
+4 Ctenopharyngodon_idella    5
+5             Danio_rerio    3
+6   Pygocentrus_nattereri    4
+
+ 1  2  3  4  5 
+10 10 10 10 10 
+
+ 1  2  3  4  5  6  7  8  9 10 
+ 6  5  5  5  5  5  5  5  5  5 
+
+   0    1 <NA> 
+  36  116    1 
+     RecordID            Species     Type Lower Upper
+25 XLSX_R0026 Anabas_testudineus interval   0.4     1
+PointRecords PointSpecies 
+         145           48 
+[1] "Site3"   "Site20"  "Site117" "Site196" "Site315"
+                    Species M1_Site3   M1_Site20 M1_Site117 M1_Site196
+1 Erpetoichthys_calabaricus    other K_validated    MISSING      other
+2      Polypterus_senegalus    other K_validated    MISSING      other
+3      Acipenser_oxyrinchus    other       other    MISSING      other
+4        Acipenser_ruthenus    other       other    MISSING      other
+5        Acipenser_sinensis    other       other    MISSING      other
+6                 Huso_huso    other       other    MISSING      other
+  M1_Site315 M2_Site3 M2_Site20 M2_Site117 M2_Site196 M2_Site315 M3_Site3
+1      other non_CKST      CKST    MISSING   non_CKST   non_CKST        Q
+2      other non_CKST      CKST    MISSING   non_CKST   non_CKST        Q
+3      other non_CKST  non_CKST    MISSING       CKST   non_CKST        Q
+4      other non_CKST  non_CKST    MISSING       CKST   non_CKST        Q
+5      other non_CKST  non_CKST    MISSING       CKST   non_CKST        Q
+6      other non_CKST  non_CKST    MISSING       CKST   non_CKST        Q
+  M3_Site20 M3_Site117 M3_Site196 M3_Site315
+1         K    MISSING          R          R
+2         K    MISSING          R          R
+3         R    MISSING          K          R
+4     OTHER    MISSING          K          R
+5         R    MISSING          K          R
+6     OTHER    MISSING          K          R
+$binary_Null
+[1] 365   0
+
+$binary_M1
+[1] 365  10
+
+$binary_M2
+[1] 365  10
+
+$binary_M3
+[1] 365  50
+
+$joint_bb_Null
+[1] 365   0
+
+$joint_bb_M1
+[1] 365  10
+
+$joint_bb_M2
+[1] 365  10
+
+$joint_bb_M3
+[1] 365  50
+
+
+fivefold     full  tenfold 
+      40        8       80 
+
+START example_state 2026-09-24 16:31:32 UTC 
+END example_state 
+                     FitID  Route Model TrainWeighting   Design Fold     Seed
+18 fivefold__1__binary__M1 binary    M1   record_equal fivefold    1 20260923
+ [1] "Cirrhinus_molitorella"       "Lates_calcarifer"           
+ [3] "Eleutheronema_tetradactylum" "Scophthalmus_maximus"       
+ [5] "Oreochromis_niloticus"       "Xiphophorus_maculatus"      
+ [7] "Lutjanus_erythropterus"      "Lateolabrax_japonicus"      
+ [9] "Micropterus_salmoides"       "Oplegnathus_punctatus"      
+ [1] "Carassius_auratus"         "Carassius_carassius"      
+ [3] "Ctenopharyngodon_idella"   "Danio_rerio"              
+ [5] "Pygocentrus_nattereri"     "Thunnus_orientalis"       
+ [7] "Pampus_argenteus"          "Pterapogon_kauderni"      
+ [9] "Oxyeleotris_marmorata"     "Channa_argus"             
+[11] "Trichopodus_trichopterus"  "Seriola_dumerili"         
+[13] "Paralichthys_olivaceus"    "Platichthys_stellatus"    
+[15] "Astronotus_ocellatus"      "Pterophyllum_scalare"     
+[17] "Poecilia_latipinna"        "Poecilia_reticulata"      
+[19] "Poropanchax_normani"       "Xiphophorus_hellerii"     
+[21] "Mugil_cephalus"            "Larimichthys_crocea"      
+[23] "Sciaenops_ocellatus"       "Platax_orbicularis"       
+[25] "Lethrinus_nebulosus"       "Acanthopagrus_schlegelii" 
+[27] "Pagrus_major"              "Rhabdosargus_sarba"       
+[29] "Lateolabrax_maculatus"     "Oplegnathus_fasciatus"    
+[31] "Maccullochella_peelii"     "Siniperca_chuatsi"        
+[33] "Siniperca_scherzeri"       "Cromileptes_altivelis"    
+[35] "Epinephelus_bruneus"       "Epinephelus_coioides"     
+[37] "Epinephelus_fuscoguttatus" "Epinephelus_lanceolatus"  
+[39] "Epinephelus_malabaricus"   "Plectropomus_leopardus"   
+    RecordID                      ExperimentID                 Species  Type
+1 XLSX_R0002       S025__Carassius_auratus__E1       Carassius_auratus count
+2 XLSX_R0003       S025__Carassius_auratus__E2       Carassius_auratus count
+3 XLSX_R0004       S025__Carassius_auratus__E3       Carassius_auratus count
+4 XLSX_R0005       S020__Carassius_auratus__E1       Carassius_auratus count
+5 XLSX_R0006     S020__Carassius_carassius__E1     Carassius_carassius count
+6 XLSX_R0007 S020__Ctenopharyngodon_idella__E1 Ctenopharyngodon_idella count
+  Events Total Exact Lower Upper                      SourceID High
+1      0    20    NA    NA    NA       10.1073/pnas.2523268123    0
+2      1    20    NA    NA    NA       10.1073/pnas.2523268123    0
+3      1    20    NA    NA    NA       10.1073/pnas.2523268123    0
+4      0    10    NA    NA    NA 10.1016/s0044-8486(01)00639-1    0
+5      0    10    NA    NA    NA 10.1016/s0044-8486(01)00639-1    0
+6      0    10    NA    NA    NA 10.1016/s0044-8486(01)00639-1    0
+  BinaryReason Informative
+1   classified        TRUE
+2   classified        TRUE
+3   classified        TRUE
+4   classified        TRUE
+5   classified        TRUE
+6   classified        TRUE
+     RecordID                          ExperimentID                     Species
+7  XLSX_R0008       S020__Cirrhinus_molitorella__E1       Cirrhinus_molitorella
+28 XLSX_R0029 S018__Eleutheronema_tetradactylum__E1 Eleutheronema_tetradactylum
+29 XLSX_R0030            S001__Lates_calcarifer__E1            Lates_calcarifer
+30 XLSX_R0031            S004__Lates_calcarifer__E1            Lates_calcarifer
+31 XLSX_R0032            S056__Lates_calcarifer__E1            Lates_calcarifer
+32 XLSX_R0033            S006__Lates_calcarifer__E1            Lates_calcarifer
+       Type Events Total  Exact Lower Upper                          SourceID
+7     count      0    10     NA    NA    NA     10.1016/s0044-8486(01)00639-1
+28    exact     NA    NA 1.0000    NA    NA       10.1016/j.jksus.2024.103393
+29 interval     NA    NA     NA   0.4   0.5        10.1007/s00705-021-05207-7
+30 interval     NA    NA     NA   0.8   0.9 10.1016/j.aquaculture.2019.734712
+31    exact     NA    NA 0.9000    NA    NA                 10.3390/v12060681
+32    exact     NA    NA 0.8589    NA    NA 10.1016/j.aquaculture.2020.736326
+   High                  BinaryReason Informative
+7     0                    classified        TRUE
+28    1                    classified        TRUE
+29    0 interval_upper_50_LOW_by_rule        TRUE
+30    1                    classified        TRUE
+31    1                    classified        TRUE
+32    1                    classified        TRUE
+
+START example_spec 2026-09-24 16:31:34 UTC 
+END example_spec 
+ [1] "M1_Site3_other"     "M1_Site3_MISSING"   "M1_Site20_other"   
+ [4] "M1_Site20_MISSING"  "M1_Site117_other"   "M1_Site117_MISSING"
+ [7] "M1_Site196_other"   "M1_Site196_MISSING" "M1_Site315_other"  
+[10] "M1_Site315_MISSING"
+      M1_Site3_other M1_Site3_MISSING M1_Site20_other M1_Site20_MISSING
+ [1,]              1                0               1                 0
+ [2,]              1                0               1                 0
+ [3,]              1                0               1                 0
+ [4,]              1                0               1                 0
+ [5,]              0                1               1                 0
+ [6,]              0                0               0                 0
+ [7,]              0                0               0                 0
+ [8,]              1                0               0                 0
+ [9,]              1                0               0                 0
+[10,]              1                0               0                 0
+[11,]              1                0               0                 0
+[12,]              0                0               0                 0
+[13,]              0                0               0                 0
+[14,]              0                0               0                 0
+[15,]              0                0               0                 0
+[16,]              0                0               0                 0
+[17,]              0                0               0                 0
+[18,]              0                0               0                 0
+[19,]              0                0               0                 0
+[20,]              0                0               0                 0
+[21,]              0                0               1                 0
+[22,]              0                0               0                 0
+[23,]              0                0               0                 0
+[24,]              0                0               0                 0
+[25,]              0                0               0                 0
+[26,]              1                0               0                 0
+[27,]              1                0               0                 0
+[28,]              1                0               0                 0
+[29,]              0                0               0                 0
+[30,]              0                0               0                 0
+[31,]              1                0               0                 0
+[32,]              0                0               0                 0
+[33,]              0                0               0                 0
+[34,]              0                0               0                 0
+[35,]              0                0               0                 0
+[36,]              0                0               0                 0
+[37,]              0                0               0                 0
+[38,]              0                0               0                 0
+[39,]              0                0               0                 0
+[40,]              0                0               0                 0
+      M1_Site117_other M1_Site117_MISSING M1_Site196_other M1_Site196_MISSING
+ [1,]                0                  1                1                  0
+ [2,]                0                  1                1                  0
+ [3,]                0                  1                1                  0
+ [4,]                0                  1                1                  0
+ [5,]                0                  1                1                  0
+ [6,]                0                  0                1                  0
+ [7,]                1                  0                1                  0
+ [8,]                1                  0                0                  0
+ [9,]                1                  0                1                  0
+[10,]                0                  0                1                  0
+[11,]                1                  0                1                  0
+[12,]                1                  0                1                  0
+[13,]                1                  0                1                  0
+[14,]                1                  0                1                  0
+[15,]                0                  0                1                  0
+[16,]                0                  0                1                  0
+[17,]                0                  0                1                  0
+[18,]                0                  0                1                  0
+[19,]                0                  0                1                  0
+[20,]                0                  0                1                  0
+[21,]                0                  0                1                  0
+[22,]                1                  0                1                  0
+[23,]                1                  0                1                  0
+[24,]                1                  0                1                  0
+[25,]                1                  0                1                  0
+[26,]                1                  0                1                  0
+[27,]                1                  0                1                  0
+[28,]                1                  0                1                  0
+[29,]                0                  0                1                  0
+[30,]                0                  0                1                  0
+[31,]                0                  0                1                  0
+[32,]                0                  0                0                  0
+[33,]                0                  0                1                  0
+[34,]                1                  0                1                  0
+[35,]                0                  0                1                  0
+[36,]                0                  0                1                  0
+[37,]                0                  0                1                  0
+[38,]                0                  0                1                  0
+[39,]                0                  0                1                  0
+[40,]                1                  0                1                  0
+      M1_Site315_other M1_Site315_MISSING
+ [1,]                1                  0
+ [2,]                1                  0
+ [3,]                1                  0
+ [4,]                1                  0
+ [5,]                1                  0
+ [6,]                0                  0
+ [7,]                0                  0
+ [8,]                1                  0
+ [9,]                0                  0
+[10,]                1                  0
+[11,]                1                  0
+[12,]                0                  0
+[13,]                0                  0
+[14,]                0                  0
+[15,]                0                  0
+[16,]                0                  0
+[17,]                1                  0
+[18,]                1                  0
+[19,]                1                  0
+[20,]                1                  0
+[21,]                0                  0
+[22,]                0                  0
+[23,]                0                  0
+[24,]                0                  0
+[25,]                0                  0
+[26,]                0                  0
+[27,]                0                  0
+[28,]                0                  0
+[29,]                0                  0
+[30,]                0                  0
+[31,]                0                  0
+[32,]                0                  0
+[33,]                0                  0
+[34,]                0                  0
+[35,]                0                  0
+[36,]                0                  0
+[37,]                0                  0
+[38,]                0                  0
+[39,]                0                  0
+[40,]                0                  0
+$intercept
+[1] 1.5
+
+$beta
+[1] 0.5
+
+$rho_a
+[1] 1
+
+$rho_b
+[1] 1
+
+$log_phi_mean
+[1] 2.302585
+
+$log_phi_sd
+[1] 1
+
+High | weights(TrainWeight, scale = FALSE) ~ 1 + M1_Site3_other + M1_Site3_MISSING + M1_Site20_other + M1_Site20_MISSING + M1_Site117_other + M1_Site117_MISSING + M1_Site196_other + M1_Site196_MISSING + M1_Site315_other + M1_Site315_MISSING 
+'data.frame':	132 obs. of  14 variables:
+ $ RecordID          : chr  "XLSX_R0002" "XLSX_R0003" "XLSX_R0004" "XLSX_R0005" ...
+ $ Species           : chr  "Carassius_auratus" "Carassius_auratus" "Carassius_auratus" "Carassius_auratus" ...
+ $ High              : int  0 0 0 0 0 0 0 0 0 1 ...
+ $ M1_Site3_other    : int  1 1 1 1 1 1 1 1 1 0 ...
+ $ M1_Site3_MISSING  : int  0 0 0 0 0 0 0 0 0 1 ...
+ $ M1_Site20_other   : int  1 1 1 1 1 1 1 1 1 1 ...
+ $ M1_Site20_MISSING : int  0 0 0 0 0 0 0 0 0 0 ...
+ $ M1_Site117_other  : int  0 0 0 0 0 0 0 0 0 0 ...
+ $ M1_Site117_MISSING: int  1 1 1 1 1 1 1 1 1 1 ...
+ $ M1_Site196_other  : int  1 1 1 1 1 1 1 1 1 1 ...
+ $ M1_Site196_MISSING: int  0 0 0 0 0 0 0 0 0 0 ...
+ $ M1_Site315_other  : int  1 1 1 1 1 1 1 1 1 1 ...
+ $ M1_Site315_MISSING: int  0 0 0 0 0 0 0 0 0 0 ...
+ $ TrainWeight       : num  1 1 1 1 1 1 1 1 1 1 ...
+[1] 20260923
+PORTABLE_INTERACTIVE_PRE_FIT_PASS; no MCMC

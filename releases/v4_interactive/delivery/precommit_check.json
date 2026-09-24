@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "staged_files_verified": 770,
+  "scope_checked": true,
+  "critical_core_files_unchanged": 22,
+  "old_version_tag_preserved": "v4",
+  "new_interface_tag": "v4-interactive",
+  "new_mcmc_fits": 0,
+  "code_zip_members": 32,
+  "complete_zip_members": 771
+}

@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "purpose": "isolated_code_zip_pre_fit_expression_run",
+  "expressions": 80,
+  "supplied_file_argument": false,
+  "fit_calls": 0,
+  "analysis_id": "75ac77db4f6fa772a7c6a4038b5b70ba93b8b8b103add1b38fe71f11319f2b7a",
+  "code_dependencies": "only extracted v4 package; no old repository or native fit mount"
+}

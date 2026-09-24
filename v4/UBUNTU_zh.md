@@ -1,5 +1,7 @@
 # Ubuntu 手动复核
 
+如需在R/RStudio控制台逐行查看和执行，请使用[interactive_analysis.R](interactive_analysis.R)及[交互说明](INTERACTIVE_zh.md)。下面的Rscript命令仍用于整阶段自动运行。
+
 只复制 v4 目录，或下载 v4-code.zip 解压。不需要带入旧版本目录、历史测试、11GB旧拟合归档或本次验证目录。
 
 ## 环境

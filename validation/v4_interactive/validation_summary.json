@@ -1,0 +1,16 @@
+{
+  "status": "PASS_INTERACTIVE_ENTRY_NO_NEW_MCMC",
+  "baseline": "7ce962e17ea3ba24f1830d489179883caacbbbd0",
+  "core_files_unchanged": 22,
+  "main_code_lines_with_Chinese_comments": 145,
+  "support_code_lines_with_Chinese_comments": 97,
+  "complete_expressions": 110,
+  "ordinary_R_without_file_arg": true,
+  "support_checks": 17,
+  "binary_example_max_error": 4.440892098500626e-15,
+  "joint_example_max_error": 4.884981308350689e-15,
+  "test_numeric_max_error": 4.884981308350689e-15,
+  "new_mcmc_fits": 0,
+  "validation_bulk_fit_mode": "explicit stand-ins plus one native cache per replay",
+  "analysis_id": "75ac77db4f6fa772a7c6a4038b5b70ba93b8b8b103add1b38fe71f11319f2b7a"
+}

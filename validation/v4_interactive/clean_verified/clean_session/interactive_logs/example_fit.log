@@ -1,0 +1,10 @@
+
+START example_fit 2026-09-24 16:13:10 UTC 
+CACHE_VALID binary M1 
+  Status  MaxRhat MinBulkESS MinTailESS Divergences TreeDepthHits MinEBFMI
+1   PASS 1.002092   4016.776   5360.779           0             0 1.001009
+  ParametersChecked
+1                12
+                                                      DiagnosticScope
+1 sampled_parameters_and_lp; deterministic_outputs_checked_separately
+END example_fit 

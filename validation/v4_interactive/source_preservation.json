@@ -1,0 +1,140 @@
+{
+  "status": "PASS",
+  "baseline": "7ce962e17ea3ba24f1830d489179883caacbbbd0",
+  "critical_files": 22,
+  "all_bytes_unchanged": true,
+  "files": [
+    {
+      "Path": "v4/settings.R",
+      "Bytes": 1663,
+      "SHA256": "7759a4c11033a139c1b9301bca622b3264107ba776fe84b831924c377533da5b",
+      "Unchanged": true
+    },
+    {
+      "Path": "v4/run_all.R",
+      "Bytes": 229,
+      "SHA256": "d0082f0956f5b451d604dd5cea819f5e754de23180514770c51907a774530025",
+      "Unchanged": true
+    },
+    {
+      "Path": "v4/01_prepare.R",
+      "Bytes": 3968,
+      "SHA256": "9742f7bb5e6306926113215d5c0ccd39b33b28ae6e304598b82d3a43f717b69c",
+      "Unchanged": true
+    },
+    {
+      "Path": "v4/02_fit.R",
+      "Bytes": 4273,
+      "SHA256": "cc79be2b7ef7e249e391e8e16eed60f5b9ddedaecb9f8d075fdabfa4ccfbe074",
+      "Unchanged": true
+    },
+    {
+      "Path": "v4/03_evaluate.R",
+      "Bytes": 1093,
+      "SHA256": "7c879143ed6fc0d6f5e118a593f66c5c52a65a5588f5d3c67774a860727d15ba",
+      "Unchanged": true
+    },
+    {
+      "Path": "v4/04_plot.R",
+      "Bytes": 4223,
+      "SHA256": "538c0e83a1c61c4a54edfedd1d9d5547c29a76fcfc8cccf23591550182e4b803",
+      "Unchanged": true
+    },
+    {
+      "Path": "v4/stan/joint_bb.stan",
+      "Bytes": 9477,
+      "SHA256": "db491633fcadbd940c2e78280660a47cd037f46795c9dce2258f9381c4571430",
+      "Unchanged": true
+    },
+    {
+      "Path": "v4/renv.lock",
+      "Bytes": 178662,
+      "SHA256": "77ce8ad056d4c0cc816e33e9815afdc44fd7a2728257fb64b6c61c90b19b4de2",
+      "Unchanged": true
+    },
+    {
+      "Path": "v4/Dockerfile",
+      "Bytes": 877,
+      "SHA256": "fae06f893d0ff580a70315a865804267b6f2b4e8a72a03cec5ad255c87740872",
+      "Unchanged": true
+    },
+    {
+      "Path": "v4/environment/restore.R",
+      "Bytes": 4811,
+      "SHA256": "36c204e19972bc849f030b363dafe27183e9da5ef847ca5bf76978d8eb8b81d2",
+      "Unchanged": true
+    },
+    {
+      "Path": "v4/R/checks.R",
+      "Bytes": 11249,
+      "SHA256": "bf127daa48eee031f20208b700c4e1b40ddef8d0e2191719f18363a022087aa0",
+      "Unchanged": true
+    },
+    {
+      "Path": "v4/R/data_encoding.R",
+      "Bytes": 11928,
+      "SHA256": "a8ce34fec5f55c6461296fad1a95302d341d5ad0f556f790f39fbb3840ff313a",
+      "Unchanged": true
+    },
+    {
+      "Path": "v4/R/load.R",
+      "Bytes": 5922,
+      "SHA256": "ee2a03fc3be412b75f74a98892d4997e899adcff493b3c8f4a379f7893770aa1",
+      "Unchanged": true
+    },
+    {
+      "Path": "v4/R/metric_functions.R",
+      "Bytes": 29717,
+      "SHA256": "297052cc583f3cf8b4ef61b605fa5bafbd163f7c750998c891af9702384088c6",
+      "Unchanged": true
+    },
+    {
+      "Path": "v4/R/model_functions.R",
+      "Bytes": 20109,
+      "SHA256": "cf8c078d6be29d0870520ffe8b80c9d928c7ae2303b40b39ef642c07c01c5ae1",
+      "Unchanged": true
+    },
+    {
+      "Path": "v4/R/plot_functions.R",
+      "Bytes": 7897,
+      "SHA256": "b92ad2731d29d1e20cc4b932d90aa198facfe877908c67f67813cd474bfb8a20",
+      "Unchanged": true
+    },
+    {
+      "Path": "v4/data/folds_binary_species_10.csv",
+      "Bytes": 1254,
+      "SHA256": "2de8e002f7b5fa6628a3269665cae29d0c6335dd2148e55e31fc3ed5cfb975aa",
+      "Unchanged": true
+    },
+    {
+      "Path": "v4/data/folds_binary_species_5.csv",
+      "Bytes": 1249,
+      "SHA256": "933f627f122e5efda378435a580b583491fad0a640814ff9e777bed7c45b8114",
+      "Unchanged": true
+    },
+    {
+      "Path": "v4/data/folds_joint_bb_species_10.csv",
+      "Bytes": 1277,
+      "SHA256": "6ab52895401b3e17adfac0753407e4140f968a00bd071d05b50abda645bb0ccf",
+      "Unchanged": true
+    },
+    {
+      "Path": "v4/data/folds_joint_bb_species_5.csv",
+      "Bytes": 1272,
+      "SHA256": "7d63d8e34fd7a90174bafcfdec6a54ea1a5d6e50c486eb1102f272d1afc1ebc5",
+      "Unchanged": true
+    },
+    {
+      "Path": "v4/data/observations.csv",
+      "Bytes": 15730,
+      "SHA256": "3c886f7f2c11012463296b350a931543542b4e1c0d128ad3c408fda9ae824d79",
+      "Unchanged": true
+    },
+    {
+      "Path": "v4/data/sites.csv",
+      "Bytes": 16905,
+      "SHA256": "0a99692b060f13d1faaa870d06ea7dca9a4f16bc289636bcc88f5d105ebdacb5",
+      "Unchanged": true
+    }
+  ]
+}

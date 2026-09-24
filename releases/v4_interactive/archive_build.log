@@ -1,0 +1,53 @@
+{
+  "status": "BUILT_AND_ALL_MEMBERS_VERIFIED",
+  "tag": "v4-interactive",
+  "baseline": "7ce962e17ea3ba24f1830d489179883caacbbbd0",
+  "new_mcmc_fits": 0,
+  "archives": [
+    {
+      "name": "v4-interactive-code.zip",
+      "bytes": 124951,
+      "sha256": "36ac2923c61b31a3f085fcb3226910b07ca243ef63a7a51be5367a24fdc3d430",
+      "files": 32,
+      "url": "https://github.com/xlminfei/066/releases/download/v4-interactive/v4-interactive-code.zip"
+    },
+    {
+      "name": "v4-interactive-validation-complete.zip",
+      "bytes": 160824760,
+      "sha256": "8b58e11c664892b1b54eb0375065988056f1f7406e2c5239c07fdd0f92f753a7",
+      "files": 771,
+      "parts": [
+        {
+          "name": "v4-interactive-validation-complete.zip.part001",
+          "bytes": 33554432,
+          "sha256": "7d5e6244d6d03cf4f52b0a484cca3dfbd274e30bd8b319fc73ed54ae4a16291f",
+          "url": "https://github.com/xlminfei/066/releases/download/v4-interactive/v4-interactive-validation-complete.zip.part001"
+        },
+        {
+          "name": "v4-interactive-validation-complete.zip.part002",
+          "bytes": 33554432,
+          "sha256": "ae9bfaecd5120279e47d56cc6b7e27958a76869dd1c1ed5877a0c00d8046c7ee",
+          "url": "https://github.com/xlminfei/066/releases/download/v4-interactive/v4-interactive-validation-complete.zip.part002"
+        },
+        {
+          "name": "v4-interactive-validation-complete.zip.part003",
+          "bytes": 33554432,
+          "sha256": "b1ff20a015bc7e966385a1c7f799002ab42921551bc7fa00ddaf1acd15049fb8",
+          "url": "https://github.com/xlminfei/066/releases/download/v4-interactive/v4-interactive-validation-complete.zip.part003"
+        },
+        {
+          "name": "v4-interactive-validation-complete.zip.part004",
+          "bytes": 33554432,
+          "sha256": "1b014c571f5d6f8b1e590fb5a9004a1a76ac608592d5880883bcc7b69c271275",
+          "url": "https://github.com/xlminfei/066/releases/download/v4-interactive/v4-interactive-validation-complete.zip.part004"
+        },
+        {
+          "name": "v4-interactive-validation-complete.zip.part005",
+          "bytes": 26607032,
+          "sha256": "5e7a90843c8e98fb078db551268ead109cccbcad8764162f404696008ad3b582",
+          "url": "https://github.com/xlminfei/066/releases/download/v4-interactive/v4-interactive-validation-complete.zip.part005"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "purpose": "clean_R_expression_replay_native_cache_and_bulk_stand_ins",
+  "expressions": 109,
+  "checks": 19,
+  "new_mcmc_fits": 0,
+  "old_native_fit_replayed": 1,
+  "bulk_stand_in_files": 127,
+  "bulk_dispatch_calls": 1,
+  "native_reuse_checks": 1,
+  "maximum_example_prediction_error": 4.4408920985006262e-16,
+  "maximum_test_numeric_error": 4.8849813083506888e-15,
+  "expected_formal_task_count": 128,
+  "final_status": "COMPLETE_WITH_REVIEW_FLAGS",
+  "analysis_id": "75ac77db4f6fa772a7c6a4038b5b70ba93b8b8b103add1b38fe71f11319f2b7a"
+}

@@ -1,0 +1,57 @@
+
+START prepare 2026-09-24 16:21:57 UTC 
+PREPARE_PASS: 8 full + 120 CV fits planned; no fit executed
+END prepare 
+
+START scope 2026-09-24 16:21:59 UTC 
+REVIEW_STDOUT
+MESSAGE: REVIEW_MESSAGE
+
+REVIEW_MESSAGE
+WARNING: REVIEW_WARNING
+Warning in eval(expression, envir = caller) : REVIEW_WARNING
+END scope 
+PASS caller_scope_and_running_before_evaluation  
+PASS stdout_messages_warnings_logged  
+
+START scope 2026-09-24 16:21:59 UTC 
+REVIEW_SECOND_ATTEMPT
+END scope 
+PASS repeated_step_appends_log  
+
+START failure 2026-09-24 16:21:59 UTC 
+FAILED: REVIEW_EXPECTED_FAILURE 
+PASS error_status_and_short_circuit  
+
+START interrupt_test 2026-09-24 16:21:59 UTC 
+INTERRUPTED: 已保存的缓存和输出保留。
+PASS interrupt_status_and_cleanup  
+PASS existing_sink_preserved  
+PASS no_sink_or_connection_leak  
+PASS settings_restore_before_state_reuse  
+PASS valid_example_spec_accepted  
+PASS weight_formula_has_same_code_but_different_target  
+PASS changed_weight_formula_rejected_before_fit  
+PASS mismatched_example_fold_rejected  
+
+START final_check 2026-09-24 16:22:10 UTC 
+WARNING: cannot open file '/tmp/RtmpjuOmSH/interactive_review_1553c405e/fit_diagnostics.csv': No such file or directory
+FAILED: cannot open the connection 
+PASS finish_without_fit_inventory_rejected  
+Warning message:
+In file(file, "rt") :
+  cannot open file '/tmp/RtmpjuOmSH/interactive_review_1553c405e/fit_diagnostics.csv': No such file or directory
+PASS all_nonblank_code_lines_have_chinese_comments  
+
+START prepare 2026-09-24 16:22:12 UTC 
+FAILED: 核心代码或设置在加载后发生变化；请重启R并使用新输出目录。 
+PASS core_edit_before_prepare_rejected_before_execution  
+
+START fixture 2026-09-24 16:22:12 UTC 
+FAILED: 交互工具在加载后被修改；请重新开始会话。 
+PASS support_edit_after_begin_rejected_before_execution  
+
+START fixture 2026-09-24 16:22:12 UTC 
+FAILED: 逐行主文件在会话中被修改；请重新开始会话。 
+PASS main_file_edit_after_begin_rejected_before_execution  
+INTERACTIVE_SUPPORT_REVIEW_PASS: 17 checks; no MCMC

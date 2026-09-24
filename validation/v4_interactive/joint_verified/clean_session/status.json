@@ -1,0 +1,12 @@
+{
+  "version": "ratio_analysis_v4_RS_20260924",
+  "interface": "interactive_R",
+  "stage": "final_check",
+  "status": "COMPLETE_WITH_REVIEW_FLAGS",
+  "at": "2026-09-24 16:17:43 UTC",
+  "message": {},
+  "interface_sha256": {
+    "interactive_analysis.R": "19eef7b150c3aba9055055b8af519c785920f13a90fbfa57d73a6f86aeb192da",
+    "interactive_support.R": "cd4507f6718bef0e43321b1a93df006d8c6a98a29112a6ebfddbf72f2e8d9976"
+  }
+}

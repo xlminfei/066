@@ -1,0 +1,2 @@
+"FitID","Route","Model","TrainWeighting","Design","Fold","Seed","Status","MaxRhat","MinBulkESS","MinTailESS","Divergences","TreeDepthHits","MinEBFMI","ParametersChecked","DiagnosticScope"
+"fivefold__1__binary__M1","binary","M1","record_equal","fivefold",1,20260923,"PASS",1.00209184823153,4016.77557571835,5360.77866813328,0,0,1.0010086702653,12,"sampled_parameters_and_lp; deterministic_outputs_checked_separately"

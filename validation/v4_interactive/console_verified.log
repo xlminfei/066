@@ -1,0 +1,1393 @@
+character(0)
+[1] "Null" "M1"   "M2"   "M3"  
+[1] "binary"   "joint_bb"
+fivefold  tenfold 
+       5       10 
+ TrainWeighting   EvalWeighting 
+ "record_equal" "species_equal" 
+$chains
+[1] 4
+
+$cores
+[1] 4
+
+$iter
+[1] 4000
+
+$warmup
+[1] 2000
+
+$adapt_delta
+[1] 0.99
+
+$max_treedepth
+[1] 12
+
+           SEED      SEED_OTHER          B_ELPD B_OTHER_METRICS 
+       20260920        20260923            2000           50000 
+[1] "/project/validation/v4_interactive/console_verified/clean_session"
+
+START prepare 2026-09-24 16:18:04 UTC 
+PREPARE_PASS: 8 full + 120 CV fits planned; no fit executed
+END prepare 
+[1] 153  13
+
+   count    exact interval 
+     105       40        8 
+[1] 51
+[1] 50
+[1] 51
+                  Species Fold
+1       Carassius_auratus    2
+2     Carassius_carassius    2
+3   Cirrhinus_molitorella    1
+4 Ctenopharyngodon_idella    5
+5             Danio_rerio    3
+6   Pygocentrus_nattereri    4
+
+ 1  2  3  4  5 
+10 10 10 10 10 
+
+ 1  2  3  4  5  6  7  8  9 10 
+ 6  5  5  5  5  5  5  5  5  5 
+
+   0    1 <NA> 
+  36  116    1 
+     RecordID            Species     Type Lower Upper
+25 XLSX_R0026 Anabas_testudineus interval   0.4     1
+PointRecords PointSpecies 
+         145           48 
+[1] "Site3"   "Site20"  "Site117" "Site196" "Site315"
+                    Species M1_Site3   M1_Site20 M1_Site117 M1_Site196
+1 Erpetoichthys_calabaricus    other K_validated    MISSING      other
+2      Polypterus_senegalus    other K_validated    MISSING      other
+3      Acipenser_oxyrinchus    other       other    MISSING      other
+4        Acipenser_ruthenus    other       other    MISSING      other
+5        Acipenser_sinensis    other       other    MISSING      other
+6                 Huso_huso    other       other    MISSING      other
+  M1_Site315 M2_Site3 M2_Site20 M2_Site117 M2_Site196 M2_Site315 M3_Site3
+1      other non_CKST      CKST    MISSING   non_CKST   non_CKST        Q
+2      other non_CKST      CKST    MISSING   non_CKST   non_CKST        Q
+3      other non_CKST  non_CKST    MISSING       CKST   non_CKST        Q
+4      other non_CKST  non_CKST    MISSING       CKST   non_CKST        Q
+5      other non_CKST  non_CKST    MISSING       CKST   non_CKST        Q
+6      other non_CKST  non_CKST    MISSING       CKST   non_CKST        Q
+  M3_Site20 M3_Site117 M3_Site196 M3_Site315
+1         K    MISSING          R          R
+2         K    MISSING          R          R
+3         R    MISSING          K          R
+4     OTHER    MISSING          K          R
+5         R    MISSING          K          R
+6     OTHER    MISSING          K          R
+$binary_Null
+[1] 365   0
+
+$binary_M1
+[1] 365  10
+
+$binary_M2
+[1] 365  10
+
+$binary_M3
+[1] 365  50
+
+$joint_bb_Null
+[1] 365   0
+
+$joint_bb_M1
+[1] 365  10
+
+$joint_bb_M2
+[1] 365  10
+
+$joint_bb_M3
+[1] 365  50
+
+
+fivefold     full  tenfold 
+      40        8       80 
+
+START example_state 2026-09-24 16:18:06 UTC 
+END example_state 
+                     FitID  Route Model TrainWeighting   Design Fold     Seed
+18 fivefold__1__binary__M1 binary    M1   record_equal fivefold    1 20260923
+ [1] "Cirrhinus_molitorella"       "Lates_calcarifer"           
+ [3] "Eleutheronema_tetradactylum" "Scophthalmus_maximus"       
+ [5] "Oreochromis_niloticus"       "Xiphophorus_maculatus"      
+ [7] "Lutjanus_erythropterus"      "Lateolabrax_japonicus"      
+ [9] "Micropterus_salmoides"       "Oplegnathus_punctatus"      
+ [1] "Carassius_auratus"         "Carassius_carassius"      
+ [3] "Ctenopharyngodon_idella"   "Danio_rerio"              
+ [5] "Pygocentrus_nattereri"     "Thunnus_orientalis"       
+ [7] "Pampus_argenteus"          "Pterapogon_kauderni"      
+ [9] "Oxyeleotris_marmorata"     "Channa_argus"             
+[11] "Trichopodus_trichopterus"  "Seriola_dumerili"         
+[13] "Paralichthys_olivaceus"    "Platichthys_stellatus"    
+[15] "Astronotus_ocellatus"      "Pterophyllum_scalare"     
+[17] "Poecilia_latipinna"        "Poecilia_reticulata"      
+[19] "Poropanchax_normani"       "Xiphophorus_hellerii"     
+[21] "Mugil_cephalus"            "Larimichthys_crocea"      
+[23] "Sciaenops_ocellatus"       "Platax_orbicularis"       
+[25] "Lethrinus_nebulosus"       "Acanthopagrus_schlegelii" 
+[27] "Pagrus_major"              "Rhabdosargus_sarba"       
+[29] "Lateolabrax_maculatus"     "Oplegnathus_fasciatus"    
+[31] "Maccullochella_peelii"     "Siniperca_chuatsi"        
+[33] "Siniperca_scherzeri"       "Cromileptes_altivelis"    
+[35] "Epinephelus_bruneus"       "Epinephelus_coioides"     
+[37] "Epinephelus_fuscoguttatus" "Epinephelus_lanceolatus"  
+[39] "Epinephelus_malabaricus"   "Plectropomus_leopardus"   
+    RecordID                      ExperimentID                 Species  Type
+1 XLSX_R0002       S025__Carassius_auratus__E1       Carassius_auratus count
+2 XLSX_R0003       S025__Carassius_auratus__E2       Carassius_auratus count
+3 XLSX_R0004       S025__Carassius_auratus__E3       Carassius_auratus count
+4 XLSX_R0005       S020__Carassius_auratus__E1       Carassius_auratus count
+5 XLSX_R0006     S020__Carassius_carassius__E1     Carassius_carassius count
+6 XLSX_R0007 S020__Ctenopharyngodon_idella__E1 Ctenopharyngodon_idella count
+  Events Total Exact Lower Upper                      SourceID High
+1      0    20    NA    NA    NA       10.1073/pnas.2523268123    0
+2      1    20    NA    NA    NA       10.1073/pnas.2523268123    0
+3      1    20    NA    NA    NA       10.1073/pnas.2523268123    0
+4      0    10    NA    NA    NA 10.1016/s0044-8486(01)00639-1    0
+5      0    10    NA    NA    NA 10.1016/s0044-8486(01)00639-1    0
+6      0    10    NA    NA    NA 10.1016/s0044-8486(01)00639-1    0
+  BinaryReason Informative
+1   classified        TRUE
+2   classified        TRUE
+3   classified        TRUE
+4   classified        TRUE
+5   classified        TRUE
+6   classified        TRUE
+     RecordID                          ExperimentID                     Species
+7  XLSX_R0008       S020__Cirrhinus_molitorella__E1       Cirrhinus_molitorella
+28 XLSX_R0029 S018__Eleutheronema_tetradactylum__E1 Eleutheronema_tetradactylum
+29 XLSX_R0030            S001__Lates_calcarifer__E1            Lates_calcarifer
+30 XLSX_R0031            S004__Lates_calcarifer__E1            Lates_calcarifer
+31 XLSX_R0032            S056__Lates_calcarifer__E1            Lates_calcarifer
+32 XLSX_R0033            S006__Lates_calcarifer__E1            Lates_calcarifer
+       Type Events Total  Exact Lower Upper                          SourceID
+7     count      0    10     NA    NA    NA     10.1016/s0044-8486(01)00639-1
+28    exact     NA    NA 1.0000    NA    NA       10.1016/j.jksus.2024.103393
+29 interval     NA    NA     NA   0.4   0.5        10.1007/s00705-021-05207-7
+30 interval     NA    NA     NA   0.8   0.9 10.1016/j.aquaculture.2019.734712
+31    exact     NA    NA 0.9000    NA    NA                 10.3390/v12060681
+32    exact     NA    NA 0.8589    NA    NA 10.1016/j.aquaculture.2020.736326
+   High                  BinaryReason Informative
+7     0                    classified        TRUE
+28    1                    classified        TRUE
+29    0 interval_upper_50_LOW_by_rule        TRUE
+30    1                    classified        TRUE
+31    1                    classified        TRUE
+32    1                    classified        TRUE
+
+START example_spec 2026-09-24 16:18:08 UTC 
+END example_spec 
+ [1] "M1_Site3_other"     "M1_Site3_MISSING"   "M1_Site20_other"   
+ [4] "M1_Site20_MISSING"  "M1_Site117_other"   "M1_Site117_MISSING"
+ [7] "M1_Site196_other"   "M1_Site196_MISSING" "M1_Site315_other"  
+[10] "M1_Site315_MISSING"
+      M1_Site3_other M1_Site3_MISSING M1_Site20_other M1_Site20_MISSING
+ [1,]              1                0               1                 0
+ [2,]              1                0               1                 0
+ [3,]              1                0               1                 0
+ [4,]              1                0               1                 0
+ [5,]              0                1               1                 0
+ [6,]              0                0               0                 0
+ [7,]              0                0               0                 0
+ [8,]              1                0               0                 0
+ [9,]              1                0               0                 0
+[10,]              1                0               0                 0
+[11,]              1                0               0                 0
+[12,]              0                0               0                 0
+[13,]              0                0               0                 0
+[14,]              0                0               0                 0
+[15,]              0                0               0                 0
+[16,]              0                0               0                 0
+[17,]              0                0               0                 0
+[18,]              0                0               0                 0
+[19,]              0                0               0                 0
+[20,]              0                0               0                 0
+[21,]              0                0               1                 0
+[22,]              0                0               0                 0
+[23,]              0                0               0                 0
+[24,]              0                0               0                 0
+[25,]              0                0               0                 0
+[26,]              1                0               0                 0
+[27,]              1                0               0                 0
+[28,]              1                0               0                 0
+[29,]              0                0               0                 0
+[30,]              0                0               0                 0
+[31,]              1                0               0                 0
+[32,]              0                0               0                 0
+[33,]              0                0               0                 0
+[34,]              0                0               0                 0
+[35,]              0                0               0                 0
+[36,]              0                0               0                 0
+[37,]              0                0               0                 0
+[38,]              0                0               0                 0
+[39,]              0                0               0                 0
+[40,]              0                0               0                 0
+      M1_Site117_other M1_Site117_MISSING M1_Site196_other M1_Site196_MISSING
+ [1,]                0                  1                1                  0
+ [2,]                0                  1                1                  0
+ [3,]                0                  1                1                  0
+ [4,]                0                  1                1                  0
+ [5,]                0                  1                1                  0
+ [6,]                0                  0                1                  0
+ [7,]                1                  0                1                  0
+ [8,]                1                  0                0                  0
+ [9,]                1                  0                1                  0
+[10,]                0                  0                1                  0
+[11,]                1                  0                1                  0
+[12,]                1                  0                1                  0
+[13,]                1                  0                1                  0
+[14,]                1                  0                1                  0
+[15,]                0                  0                1                  0
+[16,]                0                  0                1                  0
+[17,]                0                  0                1                  0
+[18,]                0                  0                1                  0
+[19,]                0                  0                1                  0
+[20,]                0                  0                1                  0
+[21,]                0                  0                1                  0
+[22,]                1                  0                1                  0
+[23,]                1                  0                1                  0
+[24,]                1                  0                1                  0
+[25,]                1                  0                1                  0
+[26,]                1                  0                1                  0
+[27,]                1                  0                1                  0
+[28,]                1                  0                1                  0
+[29,]                0                  0                1                  0
+[30,]                0                  0                1                  0
+[31,]                0                  0                1                  0
+[32,]                0                  0                0                  0
+[33,]                0                  0                1                  0
+[34,]                1                  0                1                  0
+[35,]                0                  0                1                  0
+[36,]                0                  0                1                  0
+[37,]                0                  0                1                  0
+[38,]                0                  0                1                  0
+[39,]                0                  0                1                  0
+[40,]                1                  0                1                  0
+      M1_Site315_other M1_Site315_MISSING
+ [1,]                1                  0
+ [2,]                1                  0
+ [3,]                1                  0
+ [4,]                1                  0
+ [5,]                1                  0
+ [6,]                0                  0
+ [7,]                0                  0
+ [8,]                1                  0
+ [9,]                0                  0
+[10,]                1                  0
+[11,]                1                  0
+[12,]                0                  0
+[13,]                0                  0
+[14,]                0                  0
+[15,]                0                  0
+[16,]                0                  0
+[17,]                1                  0
+[18,]                1                  0
+[19,]                1                  0
+[20,]                1                  0
+[21,]                0                  0
+[22,]                0                  0
+[23,]                0                  0
+[24,]                0                  0
+[25,]                0                  0
+[26,]                0                  0
+[27,]                0                  0
+[28,]                0                  0
+[29,]                0                  0
+[30,]                0                  0
+[31,]                0                  0
+[32,]                0                  0
+[33,]                0                  0
+[34,]                0                  0
+[35,]                0                  0
+[36,]                0                  0
+[37,]                0                  0
+[38,]                0                  0
+[39,]                0                  0
+[40,]                0                  0
+$intercept
+[1] 1.5
+
+$beta
+[1] 0.5
+
+$rho_a
+[1] 1
+
+$rho_b
+[1] 1
+
+$log_phi_mean
+[1] 2.302585
+
+$log_phi_sd
+[1] 1
+
+High | weights(TrainWeight, scale = FALSE) ~ 1 + M1_Site3_other + M1_Site3_MISSING + M1_Site20_other + M1_Site20_MISSING + M1_Site117_other + M1_Site117_MISSING + M1_Site196_other + M1_Site196_MISSING + M1_Site315_other + M1_Site315_MISSING 
+'data.frame':	132 obs. of  14 variables:
+ $ RecordID          : chr  "XLSX_R0002" "XLSX_R0003" "XLSX_R0004" "XLSX_R0005" ...
+ $ Species           : chr  "Carassius_auratus" "Carassius_auratus" "Carassius_auratus" "Carassius_auratus" ...
+ $ High              : int  0 0 0 0 0 0 0 0 0 1 ...
+ $ M1_Site3_other    : int  1 1 1 1 1 1 1 1 1 0 ...
+ $ M1_Site3_MISSING  : int  0 0 0 0 0 0 0 0 0 1 ...
+ $ M1_Site20_other   : int  1 1 1 1 1 1 1 1 1 1 ...
+ $ M1_Site20_MISSING : int  0 0 0 0 0 0 0 0 0 0 ...
+ $ M1_Site117_other  : int  0 0 0 0 0 0 0 0 0 0 ...
+ $ M1_Site117_MISSING: int  1 1 1 1 1 1 1 1 1 1 ...
+ $ M1_Site196_other  : int  1 1 1 1 1 1 1 1 1 1 ...
+ $ M1_Site196_MISSING: int  0 0 0 0 0 0 0 0 0 0 ...
+ $ M1_Site315_other  : int  1 1 1 1 1 1 1 1 1 1 ...
+ $ M1_Site315_MISSING: int  0 0 0 0 0 0 0 0 0 0 ...
+ $ TrainWeight       : num  1 1 1 1 1 1 1 1 1 1 ...
+[1] 20260923
+
+START example_fit 2026-09-24 16:18:14 UTC 
+CACHE_VALID binary M1 
+  Status  MaxRhat MinBulkESS MinTailESS Divergences TreeDepthHits MinEBFMI
+1   PASS 1.002092   4016.776   5360.779           0             0 1.001009
+  ParametersChecked
+1                12
+                                                      DiagnosticScope
+1 sampled_parameters_and_lp; deterministic_outputs_checked_separately
+END example_fit 
+  Status  MaxRhat MinBulkESS MinTailESS Divergences TreeDepthHits MinEBFMI
+1   PASS 1.002092   4016.776   5360.779           0             0 1.001009
+  ParametersChecked
+1                12
+                                                      DiagnosticScope
+1 sampled_parameters_and_lp; deterministic_outputs_checked_separately
+
+START example_predictions 2026-09-24 16:18:18 UTC 
+END example_predictions 
+    RecordID                          ExperimentID
+1 XLSX_R0008       S020__Cirrhinus_molitorella__E1
+2 XLSX_R0029 S018__Eleutheronema_tetradactylum__E1
+3 XLSX_R0030            S001__Lates_calcarifer__E1
+4 XLSX_R0031            S004__Lates_calcarifer__E1
+5 XLSX_R0032            S056__Lates_calcarifer__E1
+6 XLSX_R0033            S006__Lates_calcarifer__E1
+                           SourceID                     Species     Type
+1     10.1016/s0044-8486(01)00639-1       Cirrhinus_molitorella    count
+2       10.1016/j.jksus.2024.103393 Eleutheronema_tetradactylum    exact
+3        10.1007/s00705-021-05207-7            Lates_calcarifer interval
+4 10.1016/j.aquaculture.2019.734712            Lates_calcarifer interval
+5                 10.3390/v12060681            Lates_calcarifer    exact
+6 10.1016/j.aquaculture.2020.736326            Lates_calcarifer    exact
+  ObservedHigh ObservedPoint PredictedPrHigh PredictedPoint PredictedPI_lower
+1            0            NA       0.2529753             NA                NA
+2            1            NA       0.7186494             NA                NA
+3            0            NA       0.7672419             NA                NA
+4            1            NA       0.7672419             NA                NA
+5            1            NA       0.7672419             NA                NA
+6            1            NA       0.7672419             NA                NA
+  PredictedPI_upper PIWidth IntervalCovered IntervalOverlap PIObservationModel
+1                NA      NA              NA              NA     not_applicable
+2                NA      NA              NA              NA     not_applicable
+3                NA      NA              NA              NA     not_applicable
+4                NA      NA              NA              NA     not_applicable
+5                NA      NA              NA              NA     not_applicable
+6                NA      NA              NA              NA     not_applicable
+  LogPredictiveDensityRaw OriginalRow  Route Model   Design Fold TrainWeighting
+1              -0.2916570           7 binary    M1 fivefold    1   record_equal
+2              -0.3303817          28 binary    M1 fivefold    1   record_equal
+3              -1.4577556          29 binary    M1 fivefold    1   record_equal
+4              -0.2649531          30 binary    M1 fivefold    1   record_equal
+5              -0.2649531          31 binary    M1 fivefold    1   record_equal
+6              -0.2649531          32 binary    M1 fivefold    1   record_equal
+                                                            FitKey
+1 97839bafd2d8d4451b0fd7e1a629e23022bf4737eb47ffd43a4d252158c698e2
+2 97839bafd2d8d4451b0fd7e1a629e23022bf4737eb47ffd43a4d252158c698e2
+3 97839bafd2d8d4451b0fd7e1a629e23022bf4737eb47ffd43a4d252158c698e2
+4 97839bafd2d8d4451b0fd7e1a629e23022bf4737eb47ffd43a4d252158c698e2
+5 97839bafd2d8d4451b0fd7e1a629e23022bf4737eb47ffd43a4d252158c698e2
+6 97839bafd2d8d4451b0fd7e1a629e23022bf4737eb47ffd43a4d252158c698e2
+                                 RunPurpose
+1 interactive_example_of_one_formal_CV_task
+2 interactive_example_of_one_formal_CV_task
+3 interactive_example_of_one_formal_CV_task
+4 interactive_example_of_one_formal_CV_task
+5 interactive_example_of_one_formal_CV_task
+6 interactive_example_of_one_formal_CV_task
+   Route EvalWeighting RecordsUsed SpeciesUsed LogScoreRecordsUsed
+1 binary species_equal          20          10                  20
+  LogScoreSpeciesUsed PointSpeciesUsed PISpeciesUsed WeightSum      ELPD
+1                  10                0             0        20 -8.473361
+  MeanLogScore       AUC     Brier MAE RMSE Bias PointRecords PICoverage
+1   -0.4236681 0.8570451 0.1294393  NA   NA   NA            0         NA
+  MeanPIWidth PIRecords                       Aggregation
+1          NA         0 species_equal_on_metric_valid_set
+
+START fit 2026-09-24 16:18:18 UTC 
+CACHE_VALID binary M1 
+TEST_BULK_STAND_IN: 127 stand-in files + 1 saved native cache; no MCMC
+END fit 
+          
+           PASS
+  fivefold   40
+  full        8
+  tenfold    80
+
+START evaluate 2026-09-24 16:18:27 UTC 
+END evaluate 
+      Design Model TrainWeighting Fold    Route EvalWeighting RecordsUsed
+1   fivefold  Null   record_equal    1   binary species_equal          20
+2   fivefold  Null   record_equal    2   binary species_equal          24
+3   fivefold  Null   record_equal    3   binary species_equal          26
+4   fivefold  Null   record_equal    4   binary species_equal          60
+5   fivefold  Null   record_equal    5   binary species_equal          22
+6   fivefold    M1   record_equal    1   binary species_equal          20
+7   fivefold    M1   record_equal    2   binary species_equal          24
+8   fivefold    M1   record_equal    3   binary species_equal          26
+9   fivefold    M1   record_equal    4   binary species_equal          60
+10  fivefold    M1   record_equal    5   binary species_equal          22
+11  fivefold    M2   record_equal    1   binary species_equal          20
+12  fivefold    M2   record_equal    2   binary species_equal          24
+13  fivefold    M2   record_equal    3   binary species_equal          26
+14  fivefold    M2   record_equal    4   binary species_equal          60
+15  fivefold    M2   record_equal    5   binary species_equal          22
+16  fivefold    M3   record_equal    1   binary species_equal          20
+17  fivefold    M3   record_equal    2   binary species_equal          24
+18  fivefold    M3   record_equal    3   binary species_equal          26
+19  fivefold    M3   record_equal    4   binary species_equal          60
+20  fivefold    M3   record_equal    5   binary species_equal          22
+21  fivefold  Null   record_equal    1 joint_bb species_equal          17
+22  fivefold  Null   record_equal    2 joint_bb species_equal          45
+23  fivefold  Null   record_equal    3 joint_bb species_equal          23
+24  fivefold  Null   record_equal    4 joint_bb species_equal          40
+25  fivefold  Null   record_equal    5 joint_bb species_equal          28
+26  fivefold    M1   record_equal    1 joint_bb species_equal          17
+27  fivefold    M1   record_equal    2 joint_bb species_equal          45
+28  fivefold    M1   record_equal    3 joint_bb species_equal          23
+29  fivefold    M1   record_equal    4 joint_bb species_equal          40
+30  fivefold    M1   record_equal    5 joint_bb species_equal          28
+31  fivefold    M2   record_equal    1 joint_bb species_equal          17
+32  fivefold    M2   record_equal    2 joint_bb species_equal          45
+33  fivefold    M2   record_equal    3 joint_bb species_equal          23
+34  fivefold    M2   record_equal    4 joint_bb species_equal          40
+35  fivefold    M2   record_equal    5 joint_bb species_equal          28
+36  fivefold    M3   record_equal    1 joint_bb species_equal          17
+37  fivefold    M3   record_equal    2 joint_bb species_equal          45
+38  fivefold    M3   record_equal    3 joint_bb species_equal          23
+39  fivefold    M3   record_equal    4 joint_bb species_equal          40
+40  fivefold    M3   record_equal    5 joint_bb species_equal          28
+41   tenfold  Null   record_equal    1   binary species_equal          10
+42   tenfold  Null   record_equal    2   binary species_equal          10
+43   tenfold  Null   record_equal    3   binary species_equal           9
+44   tenfold  Null   record_equal    4   binary species_equal          21
+45   tenfold  Null   record_equal    5   binary species_equal          16
+46   tenfold  Null   record_equal    6   binary species_equal          31
+47   tenfold  Null   record_equal    7   binary species_equal          12
+48   tenfold  Null   record_equal    8   binary species_equal          19
+49   tenfold  Null   record_equal    9   binary species_equal          15
+50   tenfold  Null   record_equal   10   binary species_equal           9
+51   tenfold    M1   record_equal    1   binary species_equal          10
+52   tenfold    M1   record_equal    2   binary species_equal          10
+53   tenfold    M1   record_equal    3   binary species_equal           9
+54   tenfold    M1   record_equal    4   binary species_equal          21
+55   tenfold    M1   record_equal    5   binary species_equal          16
+56   tenfold    M1   record_equal    6   binary species_equal          31
+57   tenfold    M1   record_equal    7   binary species_equal          12
+58   tenfold    M1   record_equal    8   binary species_equal          19
+59   tenfold    M1   record_equal    9   binary species_equal          15
+60   tenfold    M1   record_equal   10   binary species_equal           9
+61   tenfold    M2   record_equal    1   binary species_equal          10
+62   tenfold    M2   record_equal    2   binary species_equal          10
+63   tenfold    M2   record_equal    3   binary species_equal           9
+64   tenfold    M2   record_equal    4   binary species_equal          21
+65   tenfold    M2   record_equal    5   binary species_equal          16
+66   tenfold    M2   record_equal    6   binary species_equal          31
+67   tenfold    M2   record_equal    7   binary species_equal          12
+68   tenfold    M2   record_equal    8   binary species_equal          19
+69   tenfold    M2   record_equal    9   binary species_equal          15
+70   tenfold    M2   record_equal   10   binary species_equal           9
+71   tenfold    M3   record_equal    1   binary species_equal          10
+72   tenfold    M3   record_equal    2   binary species_equal          10
+73   tenfold    M3   record_equal    3   binary species_equal           9
+74   tenfold    M3   record_equal    4   binary species_equal          21
+75   tenfold    M3   record_equal    5   binary species_equal          16
+76   tenfold    M3   record_equal    6   binary species_equal          31
+77   tenfold    M3   record_equal    7   binary species_equal          12
+78   tenfold    M3   record_equal    8   binary species_equal          19
+79   tenfold    M3   record_equal    9   binary species_equal          15
+80   tenfold    M3   record_equal   10   binary species_equal           9
+81   tenfold  Null   record_equal    1 joint_bb species_equal          15
+82   tenfold  Null   record_equal    2 joint_bb species_equal          21
+83   tenfold  Null   record_equal    3 joint_bb species_equal           7
+84   tenfold  Null   record_equal    4 joint_bb species_equal          34
+85   tenfold  Null   record_equal    5 joint_bb species_equal          13
+86   tenfold  Null   record_equal    6 joint_bb species_equal          19
+87   tenfold  Null   record_equal    7 joint_bb species_equal          15
+88   tenfold  Null   record_equal    8 joint_bb species_equal          14
+89   tenfold  Null   record_equal    9 joint_bb species_equal           8
+90   tenfold  Null   record_equal   10 joint_bb species_equal           7
+91   tenfold    M1   record_equal    1 joint_bb species_equal          15
+92   tenfold    M1   record_equal    2 joint_bb species_equal          21
+93   tenfold    M1   record_equal    3 joint_bb species_equal           7
+94   tenfold    M1   record_equal    4 joint_bb species_equal          34
+95   tenfold    M1   record_equal    5 joint_bb species_equal          13
+96   tenfold    M1   record_equal    6 joint_bb species_equal          19
+97   tenfold    M1   record_equal    7 joint_bb species_equal          15
+98   tenfold    M1   record_equal    8 joint_bb species_equal          14
+99   tenfold    M1   record_equal    9 joint_bb species_equal           8
+100  tenfold    M1   record_equal   10 joint_bb species_equal           7
+101  tenfold    M2   record_equal    1 joint_bb species_equal          15
+102  tenfold    M2   record_equal    2 joint_bb species_equal          21
+103  tenfold    M2   record_equal    3 joint_bb species_equal           7
+104  tenfold    M2   record_equal    4 joint_bb species_equal          34
+105  tenfold    M2   record_equal    5 joint_bb species_equal          13
+106  tenfold    M2   record_equal    6 joint_bb species_equal          19
+107  tenfold    M2   record_equal    7 joint_bb species_equal          15
+108  tenfold    M2   record_equal    8 joint_bb species_equal          14
+109  tenfold    M2   record_equal    9 joint_bb species_equal           8
+110  tenfold    M2   record_equal   10 joint_bb species_equal           7
+111  tenfold    M3   record_equal    1 joint_bb species_equal          15
+112  tenfold    M3   record_equal    2 joint_bb species_equal          21
+113  tenfold    M3   record_equal    3 joint_bb species_equal           7
+114  tenfold    M3   record_equal    4 joint_bb species_equal          34
+115  tenfold    M3   record_equal    5 joint_bb species_equal          13
+116  tenfold    M3   record_equal    6 joint_bb species_equal          19
+117  tenfold    M3   record_equal    7 joint_bb species_equal          15
+118  tenfold    M3   record_equal    8 joint_bb species_equal          14
+119  tenfold    M3   record_equal    9 joint_bb species_equal           8
+120  tenfold    M3   record_equal   10 joint_bb species_equal           7
+    SpeciesUsed LogScoreRecordsUsed LogScoreSpeciesUsed PointSpeciesUsed
+1            10                  20                  10                0
+2            10                  24                  10                0
+3            10                  26                  10                0
+4            10                  60                  10                0
+5            10                  22                  10                0
+6            10                  20                  10                0
+7            10                  24                  10                0
+8            10                  26                  10                0
+9            10                  60                  10                0
+10           10                  22                  10                0
+11           10                  20                  10                0
+12           10                  24                  10                0
+13           10                  26                  10                0
+14           10                  60                  10                0
+15           10                  22                  10                0
+16           10                  20                  10                0
+17           10                  24                  10                0
+18           10                  26                  10                0
+19           10                  60                  10                0
+20           10                  22                  10                0
+21           11                  17                  11                9
+22           10                  45                  10               10
+23           10                  23                  10               10
+24           10                  40                  10                9
+25           10                  28                  10               10
+26           11                  17                  11                9
+27           10                  45                  10               10
+28           10                  23                  10               10
+29           10                  40                  10                9
+30           10                  28                  10               10
+31           11                  17                  11                9
+32           10                  45                  10               10
+33           10                  23                  10               10
+34           10                  40                  10                9
+35           10                  28                  10               10
+36           11                  17                  11                9
+37           10                  45                  10               10
+38           10                  23                  10               10
+39           10                  40                  10                9
+40           10                  28                  10               10
+41            5                  10                   5                0
+42            5                  10                   5                0
+43            5                   9                   5                0
+44            5                  21                   5                0
+45            5                  16                   5                0
+46            5                  31                   5                0
+47            5                  12                   5                0
+48            5                  19                   5                0
+49            5                  15                   5                0
+50            5                   9                   5                0
+51            5                  10                   5                0
+52            5                  10                   5                0
+53            5                   9                   5                0
+54            5                  21                   5                0
+55            5                  16                   5                0
+56            5                  31                   5                0
+57            5                  12                   5                0
+58            5                  19                   5                0
+59            5                  15                   5                0
+60            5                   9                   5                0
+61            5                  10                   5                0
+62            5                  10                   5                0
+63            5                   9                   5                0
+64            5                  21                   5                0
+65            5                  16                   5                0
+66            5                  31                   5                0
+67            5                  12                   5                0
+68            5                  19                   5                0
+69            5                  15                   5                0
+70            5                   9                   5                0
+71            5                  10                   5                0
+72            5                  10                   5                0
+73            5                   9                   5                0
+74            5                  21                   5                0
+75            5                  16                   5                0
+76            5                  31                   5                0
+77            5                  12                   5                0
+78            5                  19                   5                0
+79            5                  15                   5                0
+80            5                   9                   5                0
+81            6                  15                   6                6
+82            5                  21                   5                5
+83            5                   7                   5                5
+84            5                  34                   5                4
+85            5                  13                   5                5
+86            5                  19                   5                5
+87            5                  15                   5                4
+88            5                  14                   5                5
+89            5                   8                   5                5
+90            5                   7                   5                4
+91            6                  15                   6                6
+92            5                  21                   5                5
+93            5                   7                   5                5
+94            5                  34                   5                4
+95            5                  13                   5                5
+96            5                  19                   5                5
+97            5                  15                   5                4
+98            5                  14                   5                5
+99            5                   8                   5                5
+100           5                   7                   5                4
+101           6                  15                   6                6
+102           5                  21                   5                5
+103           5                   7                   5                5
+104           5                  34                   5                4
+105           5                  13                   5                5
+106           5                  19                   5                5
+107           5                  15                   5                4
+108           5                  14                   5                5
+109           5                   8                   5                5
+110           5                   7                   5                4
+111           6                  15                   6                6
+112           5                  21                   5                5
+113           5                   7                   5                5
+114           5                  34                   5                4
+115           5                  13                   5                5
+116           5                  19                   5                5
+117           5                  15                   5                4
+118           5                  14                   5                5
+119           5                   8                   5                5
+120           5                   7                   5                4
+    PISpeciesUsed WeightSum       ELPD MeanLogScore       AUC      Brier
+1               0        20 -12.026507   -0.6013254 0.5000000 0.20504112
+2               0        24 -22.363434   -0.9318097 0.5000000 0.34488981
+3               0        26 -15.408972   -0.5926528 0.5000000 0.20104448
+4               0        60 -32.979215   -0.5496536 0.5000000 0.18053205
+5               0        22 -12.599104   -0.5726866 0.5000000 0.19210523
+6               0        20  -8.473361   -0.4236681 0.8570451 0.12943926
+7               0        24 -16.064537   -0.6693557 0.7800000 0.23364061
+8               0        26 -11.383354   -0.4378213 0.9326019 0.13751723
+9               0        60 -31.581798   -0.5263633 0.5433655 0.17265733
+10              0        22  -9.806668   -0.4457577 0.8240304 0.14103178
+11              0        20  -8.254322   -0.4127161 0.8837209 0.12357443
+12              0        24 -15.064202   -0.6276751 0.8200000 0.21907824
+13              0        26 -12.825370   -0.4932835 0.6442006 0.15700338
+14              0        60 -33.909825   -0.5651638 0.4766494 0.18696543
+15              0        22  -9.671251   -0.4396023 0.7848858 0.13451193
+16              0        20  -9.173286   -0.4586643 0.7934337 0.14586674
+17              0        24 -16.486139   -0.6869224 0.7800000 0.24128292
+18              0        26 -12.916724   -0.4967971 0.7946708 0.15865974
+19              0        60 -29.710055   -0.4951676 0.7902150 0.16117633
+20              0        22  -9.276525   -0.4216602 0.8457775 0.12934673
+21              9        17 -20.016115   -1.1774185        NA         NA
+22             10        45 -68.723610   -1.5271913        NA         NA
+23             10        23 -24.146420   -1.0498444        NA         NA
+24              9        40 -55.789629   -1.3947407        NA         NA
+25             10        28 -39.867107   -1.4238253        NA         NA
+26              9        17 -17.852658   -1.0501564        NA         NA
+27             10        45 -79.127498   -1.7583888        NA         NA
+28             10        23 -24.563664   -1.0679854        NA         NA
+29              9        40 -54.892996   -1.3723249        NA         NA
+30             10        28 -30.762820   -1.0986721        NA         NA
+31              9        17 -16.867580   -0.9922106        NA         NA
+32             10        45 -75.374202   -1.6749823        NA         NA
+33             10        23 -21.322119   -0.9270486        NA         NA
+34              9        40 -54.768352   -1.3692088        NA         NA
+35             10        28 -30.231129   -1.0796832        NA         NA
+36              9        17 -17.484473   -1.0284984        NA         NA
+37             10        45 -68.015177   -1.5114484        NA         NA
+38             10        23 -22.710247   -0.9874020        NA         NA
+39              9        40 -56.274092   -1.4068523        NA         NA
+40             10        28 -29.064776   -1.0380277        NA         NA
+41              0        10  -5.074425   -0.5074425 0.5000000 0.16251425
+42              0        10  -5.851443   -0.5851443 0.5000000 0.19744769
+43              0         9  -7.185706   -0.7984117 0.5000000 0.29350971
+44              0        21  -8.020296   -0.3819189 0.5000000 0.10392179
+45              0        16  -5.209564   -0.3255977 0.5000000 0.07874785
+46              0        31 -29.754281   -0.9598155 0.5000000 0.36731741
+47              0        12  -6.095797   -0.5079831 0.5000000 0.16271759
+48              0        19 -11.804558   -0.6212925 0.5000000 0.21398198
+49              0        15 -10.346732   -0.6897821 0.5000000 0.24382739
+50              0         9  -9.212915   -1.0236572 0.5000000 0.38975845
+51              0        10  -4.286391   -0.4286391 0.7500000 0.13969421
+52              0        10  -6.133415   -0.6133415 0.6704545 0.22062666
+53              0         9  -2.793246   -0.3103607 0.9646465 0.07802932
+54              0        21  -6.643520   -0.3163581 0.6071429 0.08192389
+55              0        16  -6.050894   -0.3781809 0.7045455 0.11229107
+56              0        31 -35.029025   -1.1299685 0.3333333 0.39627945
+57              0        12  -2.719613   -0.2266344 1.0000000 0.04291146
+58              0        19  -6.967210   -0.3666953 0.9285714 0.10356975
+59              0        15  -8.470613   -0.5647075 0.8956044 0.19881791
+60              0         9  -5.982094   -0.6646771 0.8333333 0.23071183
+61              0        10  -3.966167   -0.3966167 1.0000000 0.11811258
+62              0        10  -6.274173   -0.6274173 0.6022727 0.22574500
+63              0         9  -2.955142   -0.3283491 0.9646465 0.08382582
+64              0        21  -7.095637   -0.3378875 0.6071429 0.08900412
+65              0        16  -5.235917   -0.3272448 0.7045455 0.08636445
+66              0        31 -34.818051   -1.1231629 0.3333333 0.39041296
+67              0        12  -2.787207   -0.2322673 1.0000000 0.04366307
+68              0        19  -7.955073   -0.4186881 0.8333333 0.12417074
+69              0        15  -8.358090   -0.5572060 0.8516484 0.19165033
+70              0         9  -6.926108   -0.7695675 0.5833333 0.27194215
+71              0        10  -4.489924   -0.4489924 1.0000000 0.14085906
+72              0        10  -5.844505   -0.5844505 0.6022727 0.20448330
+73              0         9  -2.650628   -0.2945142 0.9646465 0.07331146
+74              0        21  -7.015313   -0.3340625 0.3928571 0.08838473
+75              0        16  -5.420058   -0.3387536 0.7045455 0.09259688
+76              0        31 -31.226543   -1.0073078 0.5000000 0.37212716
+77              0        12  -3.838031   -0.3198359 1.0000000 0.08342746
+78              0        19  -7.907566   -0.4161877 0.8809524 0.12375726
+79              0        15  -9.663737   -0.6442491 0.6758242 0.22111745
+80              0         9  -6.194538   -0.6882820 0.8333333 0.24592057
+81              6        15 -21.826484   -1.4550989        NA         NA
+82              5        21 -22.288854   -1.0613740        NA         NA
+83              5         7 -12.193855   -1.7419793        NA         NA
+84              4        34 -60.174884   -1.7698495        NA         NA
+85              5        13 -13.046145   -1.0035496        NA         NA
+86              5        19 -41.300191   -2.1736943        NA         NA
+87              4        15 -27.729746   -1.8486498        NA         NA
+88              5        14 -23.080061   -1.6485758        NA         NA
+89              5         8  -3.296201   -0.4120252        NA         NA
+90              4         7  -2.036533   -0.2909333        NA         NA
+91              6        15 -19.319191   -1.2879461        NA         NA
+92              5        21 -20.696648   -0.9855547        NA         NA
+93              5         7 -13.763005   -1.9661435        NA         NA
+94              4        34 -60.523618   -1.7801064        NA         NA
+95              5        13 -10.105244   -0.7773264        NA         NA
+96              5        19 -38.806478   -2.0424462        NA         NA
+97              4        15 -26.448212   -1.7632141        NA         NA
+98              5        14 -21.136317   -1.5097369        NA         NA
+99              5         8  -4.997566   -0.6246957        NA         NA
+100             4         7  -2.852838   -0.4075483        NA         NA
+101             6        15 -18.946423   -1.2630948        NA         NA
+102             5        21 -20.202986   -0.9620469        NA         NA
+103             5         7 -13.301830   -1.9002614        NA         NA
+104             4        34 -59.498418   -1.7499535        NA         NA
+105             5        13  -9.626544   -0.7405034        NA         NA
+106             5        19 -38.585531   -2.0308174        NA         NA
+107             4        15 -26.139439   -1.7426293        NA         NA
+108             5        14 -19.935040   -1.4239314        NA         NA
+109             5         8  -4.564360   -0.5705450        NA         NA
+110             4         7  -2.313767   -0.3305382        NA         NA
+111             6        15 -18.621168   -1.2414112        NA         NA
+112             5        21 -20.332964   -0.9682364        NA         NA
+113             5         7 -12.136334   -1.7337621        NA         NA
+114             4        34 -56.942092   -1.6747674        NA         NA
+115             5        13  -8.805682   -0.6773601        NA         NA
+116             5        19 -41.302528   -2.1738173        NA         NA
+117             4        15 -25.589102   -1.7059402        NA         NA
+118             5        14 -19.535045   -1.3953604        NA         NA
+119             5         8  -3.465261   -0.4331576        NA         NA
+120             4         7  -3.168416   -0.4526309        NA         NA
+          MAE      RMSE          Bias PointRecords PICoverage MeanPIWidth
+1          NA        NA            NA            0         NA          NA
+2          NA        NA            NA            0         NA          NA
+3          NA        NA            NA            0         NA          NA
+4          NA        NA            NA            0         NA          NA
+5          NA        NA            NA            0         NA          NA
+6          NA        NA            NA            0         NA          NA
+7          NA        NA            NA            0         NA          NA
+8          NA        NA            NA            0         NA          NA
+9          NA        NA            NA            0         NA          NA
+10         NA        NA            NA            0         NA          NA
+11         NA        NA            NA            0         NA          NA
+12         NA        NA            NA            0         NA          NA
+13         NA        NA            NA            0         NA          NA
+14         NA        NA            NA            0         NA          NA
+15         NA        NA            NA            0         NA          NA
+16         NA        NA            NA            0         NA          NA
+17         NA        NA            NA            0         NA          NA
+18         NA        NA            NA            0         NA          NA
+19         NA        NA            NA            0         NA          NA
+20         NA        NA            NA            0         NA          NA
+21  0.2936067 0.3827162  0.1170512232           13  1.0000000   0.8855592
+22  0.3306546 0.3840326 -0.0209290186           45  1.0000000   0.9212139
+23  0.3628968 0.4581275  0.2792920092           23  0.9000000   0.8393762
+24  0.3809862 0.4381968  0.1317388003           36  0.8611111   0.9072171
+25  0.3140421 0.3849208  0.0806580169           28  0.9000000   0.8489510
+26  0.2557761 0.3074822  0.0492434415           13  1.0000000   0.8660216
+27  0.3399908 0.3879957 -0.0805031854           45  1.0000000   0.9311805
+28  0.3617288 0.4179385  0.1464786965           23  1.0000000   0.8684303
+29  0.3589945 0.4096381  0.1168424972           36  0.8888889   0.9087346
+30  0.2321711 0.2779777  0.0536746623           28  1.0000000   0.8405890
+31  0.2427539 0.2858894  0.0256234769           13  1.0000000   0.8677888
+32  0.3196607 0.3650362 -0.0767571701           45  1.0000000   0.9266035
+33  0.3461393 0.4045570  0.1744792554           23  1.0000000   0.8640544
+34  0.3516078 0.4131546  0.1428652800           36  0.8888889   0.8856392
+35  0.2314329 0.2777437  0.0497601306           28  1.0000000   0.8380510
+36  0.2196370 0.2564713  0.0188482168           13  1.0000000   0.8656622
+37  0.2985505 0.3369998 -0.0762556021           45  1.0000000   0.9295410
+38  0.3355402 0.3913976  0.1572576123           23  1.0000000   0.8904115
+39  0.3668757 0.4186127  0.1139410465           36  0.8888889   0.9153849
+40  0.2233228 0.2742290  0.0387148267           28  1.0000000   0.8338115
+41         NA        NA            NA            0         NA          NA
+42         NA        NA            NA            0         NA          NA
+43         NA        NA            NA            0         NA          NA
+44         NA        NA            NA            0         NA          NA
+45         NA        NA            NA            0         NA          NA
+46         NA        NA            NA            0         NA          NA
+47         NA        NA            NA            0         NA          NA
+48         NA        NA            NA            0         NA          NA
+49         NA        NA            NA            0         NA          NA
+50         NA        NA            NA            0         NA          NA
+51         NA        NA            NA            0         NA          NA
+52         NA        NA            NA            0         NA          NA
+53         NA        NA            NA            0         NA          NA
+54         NA        NA            NA            0         NA          NA
+55         NA        NA            NA            0         NA          NA
+56         NA        NA            NA            0         NA          NA
+57         NA        NA            NA            0         NA          NA
+58         NA        NA            NA            0         NA          NA
+59         NA        NA            NA            0         NA          NA
+60         NA        NA            NA            0         NA          NA
+61         NA        NA            NA            0         NA          NA
+62         NA        NA            NA            0         NA          NA
+63         NA        NA            NA            0         NA          NA
+64         NA        NA            NA            0         NA          NA
+65         NA        NA            NA            0         NA          NA
+66         NA        NA            NA            0         NA          NA
+67         NA        NA            NA            0         NA          NA
+68         NA        NA            NA            0         NA          NA
+69         NA        NA            NA            0         NA          NA
+70         NA        NA            NA            0         NA          NA
+71         NA        NA            NA            0         NA          NA
+72         NA        NA            NA            0         NA          NA
+73         NA        NA            NA            0         NA          NA
+74         NA        NA            NA            0         NA          NA
+75         NA        NA            NA            0         NA          NA
+76         NA        NA            NA            0         NA          NA
+77         NA        NA            NA            0         NA          NA
+78         NA        NA            NA            0         NA          NA
+79         NA        NA            NA            0         NA          NA
+80         NA        NA            NA            0         NA          NA
+81  0.4594283 0.5296075  0.3572376816           15  1.0000000   0.9018938
+82  0.3465950 0.4141599  0.1687279118           18  1.0000000   0.8767621
+83  0.5124001 0.5728992  0.3987002968            7  1.0000000   0.9136677
+84  0.3451829 0.3856873 -0.0330249487           31  1.0000000   0.8722236
+85  0.3093013 0.3393412  0.0266169857           13  0.8000000   0.8881236
+86  0.2556955 0.2679978 -0.2252172602           19  1.0000000   0.8947617
+87  0.1211968 0.1649822 -0.0277429073           14  1.0000000   0.8941583
+88  0.4953845 0.5570837  0.3671151012           14  0.7500000   0.8444995
+89  0.2945317 0.3763694  0.0073415986            8  1.0000000   0.8927452
+90  0.1332191 0.1641251  0.0078763894            6  1.0000000   0.8007313
+91  0.3962622 0.4536659  0.3118931943           15  1.0000000   0.8828984
+92  0.3123620 0.3509149  0.1148738813           18  0.8000000   0.8514372
+93  0.4593837 0.4891285  0.2146137575            7  1.0000000   0.9659069
+94  0.3432369 0.3924614 -0.0100462689           31  1.0000000   0.8614049
+95  0.3015960 0.3419918 -0.0323954511           13  1.0000000   0.9194466
+96  0.2037109 0.2181521 -0.1671447767           19  1.0000000   0.8649001
+97  0.1180747 0.1545580  0.0024483530           14  1.0000000   0.8816505
+98  0.4662852 0.5384572  0.3785518056           14  0.7500000   0.8469640
+99  0.3256651 0.3562290 -0.1547524706            8  1.0000000   0.9169136
+100 0.1484767 0.1709365  0.0396324174            6  1.0000000   0.7518288
+101 0.3865613 0.4442637  0.3021859589           15  1.0000000   0.8815091
+102 0.2969691 0.3302787  0.1005418481           18  0.8000000   0.8468735
+103 0.4489115 0.4830906  0.2235867425            7  1.0000000   0.9538494
+104 0.3327269 0.3858617 -0.0012738271           31  1.0000000   0.8505095
+105 0.2909177 0.3280583 -0.0314135771           13  1.0000000   0.9219362
+106 0.2013299 0.2131934 -0.1649381601           19  1.0000000   0.8525455
+107 0.1123780 0.1531943  0.0028806897           14  1.0000000   0.8817257
+108 0.4524180 0.5210705  0.3593986387           14  0.7500000   0.8495745
+109 0.3081186 0.3379685 -0.1639666713            8  1.0000000   0.9121949
+110 0.1472873 0.1692755  0.0229727753            6  1.0000000   0.7597324
+111 0.3573148 0.4198747  0.2609729262           15  1.0000000   0.8966839
+112 0.2902968 0.3192871  0.0720107941           18  0.8000000   0.8600022
+113 0.4267932 0.4642782  0.1815589284            7  1.0000000   0.9840255
+114 0.3068717 0.3559716 -0.0004451905           31  1.0000000   0.8450870
+115 0.2617634 0.2918440  0.0016447999           13  1.0000000   0.9198120
+116 0.2433790 0.2663353 -0.1860322266           19  1.0000000   0.8953037
+117 0.1081430 0.1575356 -0.0028255986           14  1.0000000   0.8841366
+118 0.4396643 0.5033750  0.3364474441           14  1.0000000   0.8599736
+119 0.2740856 0.3180940 -0.1714499059            8  1.0000000   0.8913471
+120 0.1542913 0.1822627  0.0351166788            6  1.0000000   0.7701928
+    PIRecords                       Aggregation
+1           0 species_equal_on_metric_valid_set
+2           0 species_equal_on_metric_valid_set
+3           0 species_equal_on_metric_valid_set
+4           0 species_equal_on_metric_valid_set
+5           0 species_equal_on_metric_valid_set
+6           0 species_equal_on_metric_valid_set
+7           0 species_equal_on_metric_valid_set
+8           0 species_equal_on_metric_valid_set
+9           0 species_equal_on_metric_valid_set
+10          0 species_equal_on_metric_valid_set
+11          0 species_equal_on_metric_valid_set
+12          0 species_equal_on_metric_valid_set
+13          0 species_equal_on_metric_valid_set
+14          0 species_equal_on_metric_valid_set
+15          0 species_equal_on_metric_valid_set
+16          0 species_equal_on_metric_valid_set
+17          0 species_equal_on_metric_valid_set
+18          0 species_equal_on_metric_valid_set
+19          0 species_equal_on_metric_valid_set
+20          0 species_equal_on_metric_valid_set
+21         13 species_equal_on_metric_valid_set
+22         45 species_equal_on_metric_valid_set
+23         23 species_equal_on_metric_valid_set
+24         36 species_equal_on_metric_valid_set
+25         28 species_equal_on_metric_valid_set
+26         13 species_equal_on_metric_valid_set
+27         45 species_equal_on_metric_valid_set
+28         23 species_equal_on_metric_valid_set
+29         36 species_equal_on_metric_valid_set
+30         28 species_equal_on_metric_valid_set
+31         13 species_equal_on_metric_valid_set
+32         45 species_equal_on_metric_valid_set
+33         23 species_equal_on_metric_valid_set
+34         36 species_equal_on_metric_valid_set
+35         28 species_equal_on_metric_valid_set
+36         13 species_equal_on_metric_valid_set
+37         45 species_equal_on_metric_valid_set
+38         23 species_equal_on_metric_valid_set
+39         36 species_equal_on_metric_valid_set
+40         28 species_equal_on_metric_valid_set
+41          0 species_equal_on_metric_valid_set
+42          0 species_equal_on_metric_valid_set
+43          0 species_equal_on_metric_valid_set
+44          0 species_equal_on_metric_valid_set
+45          0 species_equal_on_metric_valid_set
+46          0 species_equal_on_metric_valid_set
+47          0 species_equal_on_metric_valid_set
+48          0 species_equal_on_metric_valid_set
+49          0 species_equal_on_metric_valid_set
+50          0 species_equal_on_metric_valid_set
+51          0 species_equal_on_metric_valid_set
+52          0 species_equal_on_metric_valid_set
+53          0 species_equal_on_metric_valid_set
+54          0 species_equal_on_metric_valid_set
+55          0 species_equal_on_metric_valid_set
+56          0 species_equal_on_metric_valid_set
+57          0 species_equal_on_metric_valid_set
+58          0 species_equal_on_metric_valid_set
+59          0 species_equal_on_metric_valid_set
+60          0 species_equal_on_metric_valid_set
+61          0 species_equal_on_metric_valid_set
+62          0 species_equal_on_metric_valid_set
+63          0 species_equal_on_metric_valid_set
+64          0 species_equal_on_metric_valid_set
+65          0 species_equal_on_metric_valid_set
+66          0 species_equal_on_metric_valid_set
+67          0 species_equal_on_metric_valid_set
+68          0 species_equal_on_metric_valid_set
+69          0 species_equal_on_metric_valid_set
+70          0 species_equal_on_metric_valid_set
+71          0 species_equal_on_metric_valid_set
+72          0 species_equal_on_metric_valid_set
+73          0 species_equal_on_metric_valid_set
+74          0 species_equal_on_metric_valid_set
+75          0 species_equal_on_metric_valid_set
+76          0 species_equal_on_metric_valid_set
+77          0 species_equal_on_metric_valid_set
+78          0 species_equal_on_metric_valid_set
+79          0 species_equal_on_metric_valid_set
+80          0 species_equal_on_metric_valid_set
+81         15 species_equal_on_metric_valid_set
+82         18 species_equal_on_metric_valid_set
+83          7 species_equal_on_metric_valid_set
+84         31 species_equal_on_metric_valid_set
+85         13 species_equal_on_metric_valid_set
+86         19 species_equal_on_metric_valid_set
+87         14 species_equal_on_metric_valid_set
+88         14 species_equal_on_metric_valid_set
+89          8 species_equal_on_metric_valid_set
+90          6 species_equal_on_metric_valid_set
+91         15 species_equal_on_metric_valid_set
+92         18 species_equal_on_metric_valid_set
+93          7 species_equal_on_metric_valid_set
+94         31 species_equal_on_metric_valid_set
+95         13 species_equal_on_metric_valid_set
+96         19 species_equal_on_metric_valid_set
+97         14 species_equal_on_metric_valid_set
+98         14 species_equal_on_metric_valid_set
+99          8 species_equal_on_metric_valid_set
+100         6 species_equal_on_metric_valid_set
+101        15 species_equal_on_metric_valid_set
+102        18 species_equal_on_metric_valid_set
+103         7 species_equal_on_metric_valid_set
+104        31 species_equal_on_metric_valid_set
+105        13 species_equal_on_metric_valid_set
+106        19 species_equal_on_metric_valid_set
+107        14 species_equal_on_metric_valid_set
+108        14 species_equal_on_metric_valid_set
+109         8 species_equal_on_metric_valid_set
+110         6 species_equal_on_metric_valid_set
+111        15 species_equal_on_metric_valid_set
+112        18 species_equal_on_metric_valid_set
+113         7 species_equal_on_metric_valid_set
+114        31 species_equal_on_metric_valid_set
+115        13 species_equal_on_metric_valid_set
+116        19 species_equal_on_metric_valid_set
+117        14 species_equal_on_metric_valid_set
+118        14 species_equal_on_metric_valid_set
+119         8 species_equal_on_metric_valid_set
+120         6 species_equal_on_metric_valid_set
+     Design Model TrainWeighting FoldCount    Route EvalWeighting RecordsUsed
+1  fivefold  Null   record_equal         5   binary species_equal         152
+2  fivefold    M1   record_equal         5   binary species_equal         152
+3  fivefold    M2   record_equal         5   binary species_equal         152
+4  fivefold    M3   record_equal         5   binary species_equal         152
+5  fivefold  Null   record_equal         5 joint_bb species_equal         153
+6  fivefold    M1   record_equal         5 joint_bb species_equal         153
+7  fivefold    M2   record_equal         5 joint_bb species_equal         153
+8  fivefold    M3   record_equal         5 joint_bb species_equal         153
+9   tenfold  Null   record_equal        10   binary species_equal         152
+10  tenfold    M1   record_equal        10   binary species_equal         152
+11  tenfold    M2   record_equal        10   binary species_equal         152
+12  tenfold    M3   record_equal        10   binary species_equal         152
+13  tenfold  Null   record_equal        10 joint_bb species_equal         153
+14  tenfold    M1   record_equal        10 joint_bb species_equal         153
+15  tenfold    M2   record_equal        10 joint_bb species_equal         153
+16  tenfold    M3   record_equal        10 joint_bb species_equal         153
+   SpeciesUsed LogScoreRecordsUsed LogScoreSpeciesUsed PointSpeciesUsed
+1           50                 152                  50                0
+2           50                 152                  50                0
+3           50                 152                  50                0
+4           50                 152                  50                0
+5           51                 153                  51               48
+6           51                 153                  51               48
+7           51                 153                  51               48
+8           51                 153                  51               48
+9           50                 152                  50                0
+10          50                 152                  50                0
+11          50                 152                  50                0
+12          50                 152                  50                0
+13          51                 153                  51               48
+14          51                 153                  51               48
+15          51                 153                  51               48
+16          51                 153                  51               48
+   PISpeciesUsed WeightSum       ELPD MeanLogScore       AUC     Brier
+1              0       152  -98.74309   -0.6496256 0.5000000 0.2247225
+2              0       152  -76.09017   -0.5005932 0.7874086 0.1628572
+3              0       152  -77.16860   -0.5076881 0.7218914 0.1642267
+4              0       152  -77.80003   -0.5118423 0.8008194 0.1672665
+5             48       153 -200.72286   -1.3119141        NA        NA
+6             48       153 -193.57630   -1.2652046        NA        NA
+7             48       153 -184.27063   -1.2043832        NA        NA
+8             48       153 -182.25236   -1.1911919        NA        NA
+9              0       152  -97.29589   -0.6401046 0.5000000 0.2213744
+10             0       152  -75.99336   -0.4999563 0.7687632 0.1604856
+11             0       152  -77.79979   -0.5118407 0.7480256 0.1624891
+12             0       152  -77.16486   -0.5076636 0.7554432 0.1645985
+13            48       153 -205.45124   -1.3428186        NA        NA
+14            48       153 -201.03461   -1.3139517        NA        NA
+15            48       153 -194.50410   -1.2712687        NA        NA
+16            48       153 -190.57089   -1.2455613        NA        NA
+         MAE      RMSE       Bias PointRecords PICoverage MeanPIWidth PIRecords
+1         NA        NA         NA            0         NA          NA         0
+2         NA        NA         NA            0         NA          NA         0
+3         NA        NA         NA            0         NA          NA         0
+4         NA        NA         NA            0         NA          NA         0
+5  0.3364015 0.4108338 0.11727751          145  0.9322917   0.8798000       145
+6  0.3098300 0.3647484 0.05606823          145  0.9791667   0.8828084       145
+7  0.2983663 0.3539203 0.06231710          145  0.9791667   0.8764154       145
+8  0.2885990 0.3412218 0.04983899          145  0.9791667   0.8868138       145
+9         NA        NA         NA            0         NA          NA         0
+10        NA        NA         NA            0         NA          NA         0
+11        NA        NA         NA            0         NA          NA         0
+12        NA        NA         NA            0         NA          NA         0
+13 0.3380105 0.4130202 0.11767257          145  0.9531250   0.8798461       145
+14 0.3158696 0.3758953 0.07850481          145  0.9531250   0.8771827       145
+15 0.3058804 0.3649950 0.07348913          145  0.9531250   0.8737874       145
+16 0.2937713 0.3517119 0.05966917          145  0.9791667   0.8839602       145
+                                                                       Aggregation
+1  full_design_records; AUC_is_unweighted_fold_mean; PooledAUC_is_descriptive_only
+2  full_design_records; AUC_is_unweighted_fold_mean; PooledAUC_is_descriptive_only
+3  full_design_records; AUC_is_unweighted_fold_mean; PooledAUC_is_descriptive_only
+4  full_design_records; AUC_is_unweighted_fold_mean; PooledAUC_is_descriptive_only
+5                                                     full_design_metric_valid_set
+6                                                     full_design_metric_valid_set
+7                                                     full_design_metric_valid_set
+8                                                     full_design_metric_valid_set
+9  full_design_records; AUC_is_unweighted_fold_mean; PooledAUC_is_descriptive_only
+10 full_design_records; AUC_is_unweighted_fold_mean; PooledAUC_is_descriptive_only
+11 full_design_records; AUC_is_unweighted_fold_mean; PooledAUC_is_descriptive_only
+12 full_design_records; AUC_is_unweighted_fold_mean; PooledAUC_is_descriptive_only
+13                                                    full_design_metric_valid_set
+14                                                    full_design_metric_valid_set
+15                                                    full_design_metric_valid_set
+16                                                    full_design_metric_valid_set
+   PooledAUC FoldMeanAUC
+1  0.3926545   0.5000000
+2  0.7799884   0.7874086
+3  0.7242473   0.7218914
+4  0.7588596   0.8008194
+5         NA          NA
+6         NA          NA
+7         NA          NA
+8         NA          NA
+9  0.3143709   0.5000000
+10 0.7672902   0.7687632
+11 0.6979084   0.7480256
+12 0.7513716   0.7554432
+13        NA          NA
+14        NA          NA
+15        NA          NA
+16        NA          NA
+      Route       Metric   Design Model  Difference  SE_approx     P_approx
+1    binary MeanLogScore fivefold    M1  0.14903240 0.05698092 8.910240e-03
+2    binary MeanLogScore fivefold    M2  0.14193747 0.05541139 1.042148e-02
+3    binary MeanLogScore fivefold    M3  0.13778328 0.05205197 8.120140e-03
+4  joint_bb MeanLogScore fivefold    M1  0.04670956 0.09222250 6.125143e-01
+5  joint_bb MeanLogScore fivefold    M2  0.10753089 0.08295617 1.948937e-01
+6  joint_bb MeanLogScore fivefold    M3  0.12072222 0.07398899 1.027587e-01
+7    binary          AUC fivefold    M1  0.28740859 0.06059337 2.103325e-06
+8    binary          AUC fivefold    M2  0.22189135 0.07556178 3.318795e-03
+9    binary          AUC fivefold    M3  0.30081939 0.04904964 8.626009e-10
+10 joint_bb          MAE fivefold    M1 -0.02657145 0.01899446 1.618413e-01
+11 joint_bb          MAE fivefold    M2 -0.03803516 0.01862735 4.116165e-02
+12 joint_bb          MAE fivefold    M3 -0.04780253 0.02069114 2.087214e-02
+13 joint_bb         RMSE fivefold    M1 -0.04608545 0.02242562 3.987557e-02
+14 joint_bb         RMSE fivefold    M2 -0.05691356 0.02215597 1.020608e-02
+15 joint_bb         RMSE fivefold    M3 -0.06961200 0.02420357 4.026162e-03
+16   binary MeanLogScore  tenfold    M1  0.14014826 0.06236931 2.463550e-02
+17   binary MeanLogScore  tenfold    M2  0.12826386 0.06119960 3.609744e-02
+18   binary MeanLogScore  tenfold    M3  0.13244099 0.05642417 1.891313e-02
+19 joint_bb MeanLogScore  tenfold    M1  0.02886685 0.08558455 7.358980e-01
+20 joint_bb MeanLogScore  tenfold    M2  0.07154992 0.08592817 4.050302e-01
+21 joint_bb MeanLogScore  tenfold    M3  0.09725723 0.07617736 2.017008e-01
+22   binary          AUC  tenfold    M1  0.26876318 0.05202990 2.397302e-07
+23   binary          AUC  tenfold    M2  0.24802559 0.04950857 5.450070e-07
+24   binary          AUC  tenfold    M3  0.25544317 0.04791448 9.754939e-08
+25 joint_bb          MAE  tenfold    M1 -0.02214093 0.01853208 2.321905e-01
+26 joint_bb          MAE  tenfold    M2 -0.03213012 0.01957452 1.007090e-01
+27 joint_bb          MAE  tenfold    M3 -0.04423920 0.02157244 4.029345e-02
+28 joint_bb         RMSE  tenfold    M1 -0.03712493 0.02135019 8.205992e-02
+29 joint_bb         RMSE  tenfold    M2 -0.04802520 0.02290779 3.604166e-02
+30 joint_bb         RMSE  tenfold    M3 -0.06130835 0.02507147 1.447143e-02
+          P_BH3
+1  1.042148e-02
+2  1.042148e-02
+3  1.042148e-02
+4  6.125143e-01
+5  2.923406e-01
+6  2.923406e-01
+7  3.154987e-06
+8  3.318795e-03
+9  2.587803e-09
+10 1.618413e-01
+11 6.174247e-02
+12 6.174247e-02
+13 3.987557e-02
+14 1.530911e-02
+15 1.207848e-02
+16 3.609744e-02
+17 3.609744e-02
+18 3.609744e-02
+19 7.358980e-01
+20 6.075452e-01
+21 6.051024e-01
+22 3.595953e-07
+23 5.450070e-07
+24 2.926482e-07
+25 2.321905e-01
+26 1.510635e-01
+27 1.208803e-01
+28 8.205992e-02
+29 5.406249e-02
+30 4.341429e-02
+
+           binary|AUC|fivefold|record_equal|species_equal 
+                                                        3 
+            binary|AUC|tenfold|record_equal|species_equal 
+                                                        3 
+  binary|MeanLogScore|fivefold|record_equal|species_equal 
+                                                        3 
+   binary|MeanLogScore|tenfold|record_equal|species_equal 
+                                                        3 
+         joint_bb|MAE|fivefold|record_equal|species_equal 
+                                                        3 
+          joint_bb|MAE|tenfold|record_equal|species_equal 
+                                                        3 
+joint_bb|MeanLogScore|fivefold|record_equal|species_equal 
+                                                        3 
+ joint_bb|MeanLogScore|tenfold|record_equal|species_equal 
+                                                        3 
+        joint_bb|RMSE|fivefold|record_equal|species_equal 
+                                                        3 
+         joint_bb|RMSE|tenfold|record_equal|species_equal 
+                                                        3 
+     Design Fold Species Records HighOnly LowOnly Mixed HighBearingSpecies
+1  fivefold    1      10      20        5       2     3                  8
+2  fivefold    2      10      24        5       5     0                  5
+3  fivefold    3      10      26        6       2     2                  8
+4  fivefold    4      10      60        7       2     1                  8
+5  fivefold    5      10      22        6       2     2                  8
+6   tenfold    1       5      10        4       1     0                  4
+7   tenfold    2       5      10        3       1     1                  4
+8   tenfold    3       5       9        2       2     1                  3
+9   tenfold    4       5      21        4       0     1                  5
+10  tenfold    5       5      16        4       0     1                  5
+11  tenfold    6       5      31        2       3     0                  2
+12  tenfold    7       5      12        4       1     0                  4
+13  tenfold    8       5      19        2       1     2                  4
+14  tenfold    9       5      15        2       1     2                  4
+15  tenfold   10       5       9        2       3     0                  2
+   LowBearingSpecies SingletonOutcomeStrata     Seed
+1                  5                      0 20261933
+2                  5                      0 20261943
+3                  4                      0 20261953
+4                  3                      1 20261963
+5                  4                      0 20261973
+6                  1                      1 20262933
+7                  2                      2 20262943
+8                  3                      1 20262953
+9                  1                      1 20262963
+10                 1                      1 20262973
+11                 3                      0 20262983
+12                 1                      1 20262993
+13                 3                      1 20263003
+14                 3                      1 20263013
+15                 3                      0 20263023
+                    Species  Route Model TrainWeighting     Point
+1 Erpetoichthys_calabaricus binary  Null   record_equal 0.7600947
+2      Polypterus_senegalus binary  Null   record_equal 0.7600947
+3      Acipenser_oxyrinchus binary  Null   record_equal 0.7600947
+4        Acipenser_ruthenus binary  Null   record_equal 0.7600947
+5        Acipenser_sinensis binary  Null   record_equal 0.7600947
+6                 Huso_huso binary  Null   record_equal 0.7600947
+  PosteriorMedian CrI_lower CrI_upper PI_lower PI_upper HasResponseData
+1       0.7613418 0.6877267 0.8222152       NA       NA           FALSE
+2       0.7613418 0.6877267 0.8222152       NA       NA           FALSE
+3       0.7613418 0.6877267 0.8222152       NA       NA           FALSE
+4       0.7613418 0.6877267 0.8222152       NA       NA           FALSE
+5       0.7613418 0.6877267 0.8222152       NA       NA           FALSE
+6       0.7613418 0.6877267 0.8222152       NA       NA           FALSE
+  AnyMissingPredictorSite UnseenEncodedCategory AnyMissingInputSite
+1                   FALSE                 FALSE                TRUE
+2                   FALSE                 FALSE                TRUE
+3                   FALSE                 FALSE                TRUE
+4                   FALSE                 FALSE                TRUE
+5                   FALSE                 FALSE                TRUE
+6                   FALSE                 FALSE                TRUE
+  UnseenRawResidue CombinationSeenInTraining FixedEffectEstimable
+1            FALSE                      TRUE                 TRUE
+2            FALSE                      TRUE                 TRUE
+3            FALSE                      TRUE                 TRUE
+4            FALSE                      TRUE                 TRUE
+5            FALSE                      TRUE                 TRUE
+6            FALSE                      TRUE                 TRUE
+  Site151OutsideTrainingDomain   ApplicabilityStatus WarningCodes
+1                        FALSE unlabelled_projection             
+2                        FALSE unlabelled_projection             
+3                        FALSE unlabelled_projection             
+4                        FALSE unlabelled_projection             
+5                        FALSE unlabelled_projection             
+6                        FALSE unlabelled_projection             
+  PredictionTarget
+1          Pr_HIGH
+2          Pr_HIGH
+3          Pr_HIGH
+4          Pr_HIGH
+5          Pr_HIGH
+6          Pr_HIGH
+      Route Model TrainWeighting EvalWeighting    Subset    Statistic Records
+17 joint_bb  Null   record_equal species_equal     count         Mean     105
+18 joint_bb  Null   record_equal species_equal     count           SD     105
+19 joint_bb  Null   record_equal species_equal     count ZeroFraction     105
+20 joint_bb  Null   record_equal species_equal     count  OneFraction     105
+25 joint_bb  Null   record_equal species_equal all_point         Mean     145
+26 joint_bb  Null   record_equal species_equal all_point           SD     145
+27 joint_bb  Null   record_equal species_equal all_point ZeroFraction     145
+29 joint_bb    M1   record_equal species_equal     count         Mean     105
+38 joint_bb    M1   record_equal species_equal all_point           SD     145
+41 joint_bb    M2   record_equal species_equal     count         Mean     105
+50 joint_bb    M2   record_equal species_equal all_point           SD     145
+53 joint_bb    M3   record_equal species_equal     count         Mean     105
+62 joint_bb    M3   record_equal species_equal all_point           SD     145
+   Species  Observed PPC_Lower95 PPC_Median PPC_Upper95          Status
+17      29 0.5422316  0.61406607 0.73293901   0.8353577 REVIEW_REQUIRED
+18      29 0.4488058  0.31928980 0.39573470   0.4486487 REVIEW_REQUIRED
+19      29 0.2844828  0.05633639 0.14223018   0.2602933 REVIEW_REQUIRED
+20      29 0.4006568  0.44311091 0.58670324   0.7258861 REVIEW_REQUIRED
+25      48 0.6144792  0.64649804 0.73261811   0.8085670 REVIEW_REQUIRED
+26      48 0.3891603  0.27425235 0.32763270   0.3698493 REVIEW_REQUIRED
+27      48 0.1666667  0.03235042 0.08112031   0.1474034 REVIEW_REQUIRED
+29      29 0.5422316  0.55100888 0.66892261   0.7851424 REVIEW_REQUIRED
+38      48 0.3891603  0.29919308 0.34865292   0.3868716 REVIEW_REQUIRED
+41      29 0.5422316  0.55026684 0.66539524   0.7773874 REVIEW_REQUIRED
+50      48 0.3891603  0.30071666 0.34941815   0.3860347 REVIEW_REQUIRED
+53      29 0.5422316  0.54478608 0.65356962   0.7575684 REVIEW_REQUIRED
+62      48 0.3891603  0.30777131 0.35115236   0.3845544 REVIEW_REQUIRED
+                                                             Scope
+17 training_only_same_records_types_weights; intervals_not_imputed
+18 training_only_same_records_types_weights; intervals_not_imputed
+19 training_only_same_records_types_weights; intervals_not_imputed
+20 training_only_same_records_types_weights; intervals_not_imputed
+25 training_only_same_records_types_weights; intervals_not_imputed
+26 training_only_same_records_types_weights; intervals_not_imputed
+27 training_only_same_records_types_weights; intervals_not_imputed
+29 training_only_same_records_types_weights; intervals_not_imputed
+38 training_only_same_records_types_weights; intervals_not_imputed
+41 training_only_same_records_types_weights; intervals_not_imputed
+50 training_only_same_records_types_weights; intervals_not_imputed
+53 training_only_same_records_types_weights; intervals_not_imputed
+62 training_only_same_records_types_weights; intervals_not_imputed
+
+START plot 2026-09-24 16:18:37 UTC 
+END plot 
+[1] "/project/validation/v4_interactive/console_verified/clean_session/figures/calibration.pdf"                              
+[2] "/project/validation/v4_interactive/console_verified/clean_session/figures/cv_metrics.pdf"                               
+[3] "/project/validation/v4_interactive/console_verified/clean_session/figures/hypothesis_tests.pdf"                         
+[4] "/project/validation/v4_interactive/console_verified/clean_session/figures/quantitative_predicted_observed.pdf"          
+[5] "/project/validation/v4_interactive/console_verified/clean_session/figures/ROC_curves.pdf"                               
+[6] "/project/validation/v4_interactive/console_verified/clean_session/figures/species_prediction_plot_source.csv"           
+[7] "/project/validation/v4_interactive/console_verified/clean_session/figures/species_predictions_binary_record_equal.pdf"  
+[8] "/project/validation/v4_interactive/console_verified/clean_session/figures/species_predictions_joint_bb_record_equal.pdf"
+
+START final_check 2026-09-24 16:18:41 UTC 
+END final_check 
+$status
+[1] "COMPLETE_WITH_REVIEW_FLAGS"
+
+$ppc_review_rows
+[1] 13
+
+$status
+[1] "COMPLETE_WITH_REVIEW_FLAGS"
+
+$ppc_review_rows
+[1] 13
+
+$version
+[1] "ratio_analysis_v4_RS_20260924"
+
+$interface
+[1] "interactive_R"
+
+$stage
+[1] "final_check"
+
+$status
+[1] "COMPLETE_WITH_REVIEW_FLAGS"
+
+$at
+[1] "2026-09-24 16:18:47 UTC"
+
+$message
+named list()
+
+$interface_sha256
+$interface_sha256$interactive_analysis.R
+[1] "19eef7b150c3aba9055055b8af519c785920f13a90fbfa57d73a6f86aeb192da"
+
+$interface_sha256$interactive_support.R
+[1] "cd4507f6718bef0e43321b1a93df006d8c6a98a29112a6ebfddbf72f2e8d9976"
+
+
+INTERACTIVE_CLEAN_SESSION_PASS; no new MCMC
