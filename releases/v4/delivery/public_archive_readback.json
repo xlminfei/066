@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "anonymous_public_download": true,
+  "archives": [
+    {
+      "name": "v4-code.zip",
+      "bytes": 107989,
+      "sha256": "08d87c4af9d37a8bcb2dcb884f654e7528d78ac47b118effb0f72fecfae97bac",
+      "all_members_checked": 29,
+      "url": "https://github.com/xlminfei/066/releases/download/v4/v4-code.zip"
+    },
+    {
+      "name": "v4-validation-complete.zip",
+      "bytes": 81098746,
+      "sha256": "1bcb8e03d9c6bd49a429448bbcf91868de84378231d461b939194202717b4117",
+      "all_members_checked": 384,
+      "url": "https://github.com/xlminfei/066/releases/download/v4/v4-validation-complete.zip"
+    }
+  ],
+  "verification_log": "public_download.log",
+  "zip_member_SHA256_and_CRC": "PASS",
+  "note": "Canonical public /download/v4/ URLs verified. Asset URLs in the initial upload receipt were returned while the release was still a draft."
+}

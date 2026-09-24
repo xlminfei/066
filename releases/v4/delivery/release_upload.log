@@ -1,0 +1,15 @@
+UPLOAD_START v4-code.zip 107989
+UPLOAD_VERIFIED v4-code.zip
+UPLOAD_START v4-validation-complete.zip 81098746
+UPLOAD_VERIFIED v4-validation-complete.zip
+UPLOAD_START archive-manifest.json 86276
+UPLOAD_VERIFIED archive-manifest.json
+UPLOAD_START verify_archives.py 1568
+UPLOAD_VERIFIED verify_archives.py
+{
+  "status": "PUBLISHED_ASSETS_VERIFIED",
+  "tag": "v4",
+  "commit": "bedbe1bfa775424b1d9281c6d752f545809eaf57",
+  "release_id": 395790299,
+  "release_url": "https://github.com/xlminfei/066/releases/tag/v4"
+}

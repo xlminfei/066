@@ -1,0 +1,18 @@
+{
+  "status": "COMPLETE_AND_VERIFIED",
+  "version": "v4",
+  "code_commit": "bedbe1bfa775424b1d9281c6d752f545809eaf57",
+  "tag": "v4",
+  "release_url": "https://github.com/xlminfei/066/releases/tag/v4",
+  "release_id": 395790299,
+  "server_verified_assets": 4,
+  "publicly_downloaded_and_fully_verified_archives": 2,
+  "code_archive_files": 29,
+  "complete_archive_files": 384,
+  "independent_code_prepare": "PASS",
+  "real_synthetic_fits": 2,
+  "new_formal_research_fits": 0,
+  "old_versions_and_formal_results_changed": false,
+  "scientific_scope": "record_equal training x species_equal evaluation; 30 tests in ten BH3 families",
+  "validation": "122 core checks; 47 final guard checks; 436 metric reconciliations; 24 native replays; 128 stand-in orchestration; 7 PDFs / 30 pages"
+}

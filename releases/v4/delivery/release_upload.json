@@ -1,0 +1,41 @@
+{
+  "status": "PUBLISHED_ASSETS_VERIFIED",
+  "tag": "v4",
+  "commit": "bedbe1bfa775424b1d9281c6d752f545809eaf57",
+  "release_id": 395790299,
+  "release_url": "https://github.com/xlminfei/066/releases/tag/v4",
+  "assets": [
+    {
+      "id": 586174068,
+      "name": "v4-code.zip",
+      "size": 107989,
+      "state": "uploaded",
+      "digest": "sha256:08d87c4af9d37a8bcb2dcb884f654e7528d78ac47b118effb0f72fecfae97bac",
+      "browser_download_url": "https://github.com/xlminfei/066/releases/download/untagged-1c880731f7e6ab5b3e54/v4-code.zip"
+    },
+    {
+      "id": 586174133,
+      "name": "v4-validation-complete.zip",
+      "size": 81098746,
+      "state": "uploaded",
+      "digest": "sha256:1bcb8e03d9c6bd49a429448bbcf91868de84378231d461b939194202717b4117",
+      "browser_download_url": "https://github.com/xlminfei/066/releases/download/untagged-1c880731f7e6ab5b3e54/v4-validation-complete.zip"
+    },
+    {
+      "id": 586174967,
+      "name": "archive-manifest.json",
+      "size": 86276,
+      "state": "uploaded",
+      "digest": "sha256:6aab45bb8d17a498cbc8aa3789ca2c8539408fdc3a67f9da1a1fc55c38972583",
+      "browser_download_url": "https://github.com/xlminfei/066/releases/download/untagged-1c880731f7e6ab5b3e54/archive-manifest.json"
+    },
+    {
+      "id": 586175040,
+      "name": "verify_archives.py",
+      "size": 1568,
+      "state": "uploaded",
+      "digest": "sha256:2c9f0c43c585e8ac4add7f2c10d1eacdcf8b0666988e4b78b9a1a0db3a5ef99f",
+      "browser_download_url": "https://github.com/xlminfei/066/releases/download/untagged-1c880731f7e6ab5b3e54/verify_archives.py"
+    }
+  ]
+}

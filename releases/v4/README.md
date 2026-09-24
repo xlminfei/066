@@ -23,3 +23,11 @@ python verify_archives.py archive-manifest.json --directory downloads --download
 ~~~
 
 不加--download可核验已有本地包。程序只下载/校验，不执行任何模型。ZIP全文读回和CRC检查已完成；上传收据和公开下载检查另保存在本目录delivery/，避免递归归档。
+
+## 最终交付核验
+
+已发布v4，四个附件大小及服务器SHA256全部通过。匿名下载了完整代码ZIP和完整验证ZIP，分别读回29/384文件，每个成员SHA256和CRC均一致；单独解压代码后，在未挂载旧仓库的环境中准备入口通过。
+
+[最终交付状态](delivery/DELIVERY_STATUS.json) · [公开ZIP全量读回](delivery/public_archive_readback.json) · [公开说明读回](delivery/public_document_readback.json)
+
+便携代码的下载入口是v4-code.zip；GitHub自动生成的Source code ZIP包含整个历史仓库。

@@ -1,0 +1,26 @@
+{
+  "status": "PASS",
+  "commit": "bedbe1bfa775424b1d9281c6d752f545809eaf57",
+  "files": [
+    {
+      "Path": "v4/README.md",
+      "Bytes": 4282,
+      "SHA256": "3d5ffeffb7bc2ec0539dc17d623094c82d53f88c0f7d82411ab2bfe349852d89"
+    },
+    {
+      "Path": "v4/CHANGELOG_zh.md",
+      "Bytes": 4676,
+      "SHA256": "381b4c394d5054e659e11841fd8163fe155f5a266f9e9603825a8503b682e8de"
+    },
+    {
+      "Path": "validation/v4/VALIDATION_zh.md",
+      "Bytes": 4523,
+      "SHA256": "8e18a30bff9fbc98f8b644c702eeffa21cc7ab4fea6f9ccdcd2df9d759f3dca7"
+    },
+    {
+      "Path": "releases/v4/archive-manifest.json",
+      "Bytes": 86276,
+      "SHA256": "6aab45bb8d17a498cbc8aa3789ca2c8539408fdc3a67f9da1a1fc55c38972583"
+    }
+  ]
+}
