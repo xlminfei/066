@@ -10,3 +10,6 @@
 /v3.4/** -text
 
 /formal_results/** -text
+
+/v4/** -text
+/validation/v4/** -text

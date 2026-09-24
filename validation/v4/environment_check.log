@@ -1,0 +1,4 @@
+Untracing function "install.packages" in package "utils"
+All locked package versions already match; no restoration required.
+ENVIRONMENT_VERIFIED: R 4.6.1; 79 locked packages; complete Depends/Imports/LinkingTo closure.
+RUNTIME_LIBRARY=/usr/local/lib/R/site-library

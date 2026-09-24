@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "analysis_id": "75ac77db4f6fa772a7c6a4038b5b70ba93b8b8b103add1b38fe71f11319f2b7a",
+  "checks": 47,
+  "passed": 47,
+  "failed": 0,
+  "scope": "deterministic resume, schema, receipt and completion rejection checks; no compilation or MCMC",
+  "positive_full_completion_tested": false,
+  "R": "4.6.1"
+}

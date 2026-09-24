@@ -1,5 +1,7 @@
 # STING 跨物种响应比率模型：版本化代码与验证资料
 
+> **v4 单组合发表代码**：[四步运行与说明](v4/README.md)、[逐项修改](v4/CHANGELOG_zh.md)、[验证证据](validation/v4/VALIDATION_zh.md)、[轻量代码及完整验证下载](releases/v4/README.md)。仅记录等权训练×物种等权评价；分类/定量两路线、Null/M1/M2/M3、冻结五折/十折；30项检验按每组3项BH。代码、原生后验复算和两次真实合成拟合通过；新128项研究拟合尚未启动。
+
 > **v3.4 P 值补充资料（2026-09-23）**：[ELPD 解释与 AUC/MAE/RMSE 检验完整包](formal_results/v3.4_20260923/pvalue_supplement_20260923/README.md)。计算代码、50,000 次 bootstrap 原生中间对象、全部结果与条件近似推断说明已归档；没有新模型拟合。
 
 > **v3.4正式运行已完成（2026-09-23）**：[全部运行结果与下载](formal_results/v3.4_20260923/README.md)、[中文指标解读与新增图件](formal_results/v3.4_20260923/ANALYSIS_zh.md)、[诊断与图件复核](formal_results/v3.4_20260923/RUN_REVIEW_zh.md)。256项拟合诊断和最终审计通过；保留18项PPC提示。全部原生拟合对象、日志、中间文件及结果以独立Release完整提供。下面各代码版本的“未运行”说明保留其发布时历史状态。

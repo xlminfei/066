@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "tests": 30,
+  "BH_families": 10,
+  "models_per_family": 3,
+  "normal_P_max_error": 1.4988010832439613e-15,
+  "BH3_max_error": 1.1102230246251565e-15,
+  "original_formal_outputs_unchanged": 31,
+  "new_fits": 0
+}

@@ -1,0 +1,111 @@
+  request       key      data blueprint      code   species     route     model 
+     TRUE      TRUE     FALSE      TRUE      TRUE      TRUE      TRUE      TRUE 
+       tw 
+     TRUE 
+[1] TRUE
+[1] TRUE
+CACHE_ERROR: Fit cache identity mismatch 
+$chains
+[1] 4
+
+$cores
+[1] 4
+
+$iter
+[1] 4000
+
+$warmup
+[1] 2000
+
+$adapt_delta
+[1] 0.99
+
+$max_treedepth
+[1] 12
+
+$chains
+[1] 4
+
+$cores
+[1] 4
+
+$iter
+[1] 4000
+
+$warmup
+[1] 2000
+
+$adapt_delta
+[1] 0.99
+
+$max_treedepth
+[1] 12
+
+$seed
+[1] 20260920
+
+$iter
+[1] 4000
+
+$warmup
+[1] 2000
+
+$control
+$control$adapt_delta
+[1] 0.99
+
+$control$max_treedepth
+[1] 12
+
+
+$seed
+[1] 20260920
+
+$iter
+[1] 4000
+
+$warmup
+[1] 2000
+
+$control
+$control$adapt_delta
+[1] 0.99
+
+$control$max_treedepth
+[1] 12
+
+
+$seed
+[1] 20260920
+
+$iter
+[1] 4000
+
+$warmup
+[1] 2000
+
+$control
+$control$adapt_delta
+[1] 0.99
+
+$control$max_treedepth
+[1] 12
+
+
+$seed
+[1] 20260920
+
+$iter
+[1] 4000
+
+$warmup
+[1] 2000
+
+$control
+$control$adapt_delta
+[1] 0.99
+
+$control$max_treedepth
+[1] 12
+
+

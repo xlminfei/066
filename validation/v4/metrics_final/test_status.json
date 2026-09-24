@@ -1,0 +1,43 @@
+{
+  "status": "PASS",
+  "started_utc": "2026-09-24 14:23:27 UTC",
+  "B_ELPD": 2000,
+  "B_OTHER_METRICS": 50000,
+  "SEED": 20260920,
+  "SEED_OTHER": 20260923,
+  "fitted_models_run": 0,
+  "output_preserved": true,
+  "evidence_rows": 2440,
+  "output_rows": {
+    "cv_fold_metrics": 120,
+    "cv_metrics_summary": 16,
+    "hypothesis_tests": 30,
+    "auc_fold_species_support": 15
+  },
+  "hypothesis_families": 10,
+  "bootstrap_draw_vectors": 30,
+  "bootstrap_multiplicity_groups": 8,
+  "auc_error_multiplicities_identical": true,
+  "auc_error_draw_vectors_reconciled": 18,
+  "log_score_seed_index_sequences_identical": 4,
+  "max_abs_p_difference": 5.440092820663267e-15,
+  "max_abs_ci_difference": 1.5543122344752192e-15,
+  "reconciliation_rows": 436,
+  "all_source_hashes_unchanged": true,
+  "source_hashes_checked": 27,
+  "R_version": "R version 4.6.1 (2026-06-24)",
+  "RNG_kind": ["Mersenne-Twister", "Inversion", "Rejection"],
+  "production_output_sha256": {
+    "cv_fold_metrics.csv": "0a19d425e22a0d610847e19810da7c110dda7c4de6849606812b8534704dd047",
+    "cv_metrics_summary.csv": "0e0a8481dde628fe8395b5e049e386d45e7cdde81489b439c8f71c64026afb7e",
+    "hypothesis_tests.csv": "b5d8d4127bfdc37243971724ec0739df265c782deb7824fdd7b8f80090d52040",
+    "roc_coordinates.csv": "f6326909df05dc928dd8ad1db71bb162122a548039f16aee23c9effea1f74689",
+    "calibration_bins.csv": "db356216681a81b65beb91b0e773692adc404daa96e528a3011a18abba26de55",
+    "quantitative_plot_source.csv": "59c5b85fb097302a7754029f3da741b900cbc24a8cc13ec7bcb95d098ad7c71c",
+    "quantitative_bias_summary.csv": "0f21f6b2f63e7508c28111976c355d7fefb92cc59281d3c24f9ffa320fb6ce71",
+    "auc_fold_species_support.csv": "2a582e1b4adfbbb1a81023fdb2c24cb2635375c5eb8cf6b8aa9c4e6d8bc13092",
+    "bootstrap_draws.rds": "2dc122eb83ed482fdf88fc74f82744b72a452a327de0ba8635bb61d2d8152480",
+    "bootstrap_multiplicities.rds": "ad4a91096bb83cf9a745416c393c7d0361d58add166efdb35fa6decc6c3fdd91"
+  },
+  "finished_utc": "2026-09-24 14:23:47 UTC"
+}

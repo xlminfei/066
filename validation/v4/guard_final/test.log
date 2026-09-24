@@ -1,0 +1,49 @@
+PREPARE_PASS: 8 full + 120 CV fits planned; no fit executed
+PASS fresh_prepared_load | accepted 
+PASS tampered_observation_rejected | Prepared state differs from frozen inputs: observations 
+PASS tampered_encoding_rejected | Prepared state differs from frozen inputs: encoded 
+PASS mutated_fold_map_remains_structurally_valid | accepted 
+PASS nonfrozen_valid_fold_map_rejected | Prepared state differs from frozen inputs: fold_tables 
+PASS restored_prepared_load | accepted 
+PASS valid_prediction_schema | accepted 
+PASS missing_prediction_Point_rejected | Invalid prediction keys or missing columns 
+PASS missing_prediction_PosteriorMedian_rejected | Invalid prediction keys or missing columns 
+PASS missing_prediction_CrI_lower_rejected | Invalid prediction keys or missing columns 
+PASS missing_prediction_CrI_upper_rejected | Invalid prediction keys or missing columns 
+PASS missing_prediction_PI_lower_rejected | Invalid prediction keys or missing columns 
+PASS missing_prediction_PI_upper_rejected | Invalid prediction keys or missing columns 
+PASS prediction_keys_only_rejected | Invalid prediction keys or missing columns 
+PASS unknown_prediction_model_rejected | Invalid prediction grid 
+PASS fit_canonical_receipt | accepted 
+PASS fit_empty_file_set_rejected | Stage file set is incomplete 
+PASS fit_incomplete_file_set_rejected | Stage file set is incomplete 
+PASS fit_duplicate_file_set_rejected | Stage file set is incomplete 
+PASS fit_empty_stored_receipt_rejected | Invalid/incomplete stage receipt 
+PASS fit_incomplete_stored_receipt_rejected | Invalid/incomplete stage receipt 
+PASS fit_changed_output_rejected | Stage outputs changed: fit 
+PASS fit_missing_output_rejected | The file does not exist: /tmp/RtmpMYUBZc/v4_publication_guards_13bc6aa02/receipt_fit/fit_diagnostics.csv 
+PASS evaluate_canonical_receipt | accepted 
+PASS evaluate_empty_file_set_rejected | Stage file set is incomplete 
+PASS evaluate_incomplete_file_set_rejected | Stage file set is incomplete 
+PASS evaluate_duplicate_file_set_rejected | Stage file set is incomplete 
+PASS evaluate_empty_stored_receipt_rejected | Invalid/incomplete stage receipt 
+PASS evaluate_incomplete_stored_receipt_rejected | Invalid/incomplete stage receipt 
+PASS evaluate_changed_output_rejected | Stage outputs changed: evaluate 
+PASS evaluate_missing_output_rejected | The file does not exist: /tmp/RtmpMYUBZc/v4_publication_guards_13bc6aa02/receipt_evaluate/cv_fold_metrics.csv 
+PASS plot_canonical_receipt | accepted 
+PASS plot_empty_file_set_rejected | Stage file set is incomplete 
+PASS plot_incomplete_file_set_rejected | Stage file set is incomplete 
+PASS plot_duplicate_file_set_rejected | Stage file set is incomplete 
+PASS plot_empty_stored_receipt_rejected | Invalid/incomplete stage receipt 
+PASS plot_incomplete_stored_receipt_rejected | Invalid/incomplete stage receipt 
+PASS plot_changed_output_rejected | Stage outputs changed: plot 
+PASS plot_missing_output_rejected | The file does not exist: /tmp/RtmpMYUBZc/v4_publication_guards_13bc6aa02/receipt_plot/figures/ROC_curves.pdf 
+PASS complete_metric_identity_grid | accepted 
+PASS duplicate_metric_identity_rejected | Output grid mismatch 
+PASS wrong_metric_identity_rejected | Output grid mismatch 
+PASS count_only_metric_table_rejected | Metric table lacks required, uniquely named columns: Design, Route, Model, TrainWeighting, EvalWeighting 
+PASS former_false_complete_fixture_rejected | Metric table lacks required, uniquely named columns: FitID, Route, Model, Design, Fold, Seed, TrainWeighting, FitKey, Status, MaxRhat, MinBulkESS, MinTailESS, Divergences, TreeDepthHits, MinEBFMI 
+PASS missing_128_fit_files_rejected | Missing or changed fit file: /tmp/RtmpMYUBZc/v4_publication_guards_13bc6aa02/false_complete/fits/full__all__binary__Null.rds 
+PASS no_fit_file_created | accepted 
+PASS frozen_input_files_unchanged | accepted 
+PUBLICATION_GUARDS_PASS: 47 checks; no compilation or MCMC

@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "checks": 122,
+  "fit_specs": 24,
+  "native_objects": 24,
+  "full_panel_rows": 2920,
+  "maximum_posterior_error": 5.3290705182007514e-15,
+  "new_mcmc_fits": 0
+}

@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "checked_staged_files": 393,
+  "only_intended_paths": true,
+  "old_version_changes": 0,
+  "source_archive_readback_verified": true,
+  "code_zip_files": 29,
+  "complete_zip_files": 384,
+  "format_policy": "Preserve frozen CRLF and inherited end-of-file blank line; no bytes changed for formatting"
+}

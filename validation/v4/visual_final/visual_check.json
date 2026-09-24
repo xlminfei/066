@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "pdf_files": 7,
+  "pages": 30,
+  "all_pages_rendered": true,
+  "all_pages_reviewed_by_contact_sheets": true,
+  "detail_reviewed": [
+    "figure_02-2.png",
+    "figure_03-1.png"
+  ],
+  "unchanged_rendered_pages": 24,
+  "changed_pages_reviewed": [
+    "figure_02-1.png",
+    "figure_02-2.png",
+    "figure_02-3.png",
+    "figure_02-4.png",
+    "figure_03-1.png",
+    "figure_03-2.png"
+  ],
+  "renderer_warnings": "Poppler reports unavailable Symbol and ArialUnicode display fonts; ASCII labels/numerals rendered and visually checked without missing glyphs.",
+  "corrected": "Right-edge metric annotation space and per-panel BH caption",
+  "new_research_fits": 0
+}

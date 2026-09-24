@@ -1,0 +1,5 @@
+"Route","Model","TrainWeighting","EvalWeighting","Subset","Statistic","Records","Species","Observed","PPC_Lower95","PPC_Median","PPC_Upper95","Status","Scope"
+"binary","M1","record_equal","species_equal","classified","Mean",28,8,0.489583333333333,0.229166666666667,0.46875,0.708333333333333,"OK","training_only_same_records_types_weights; intervals_not_imputed"
+"binary","M1","record_equal","species_equal","classified","SD",28,8,0.499891481279243,0.413398642353842,0.491132301421928,0.5,"OK","training_only_same_records_types_weights; intervals_not_imputed"
+"binary","M1","record_equal","species_equal","classified","ZeroFraction",28,8,0.510416666666667,0.291666666666667,0.53125,0.770833333333333,"OK","training_only_same_records_types_weights; intervals_not_imputed"
+"binary","M1","record_equal","species_equal","classified","OneFraction",28,8,0.489583333333333,0.229166666666667,0.46875,0.708333333333333,"OK","training_only_same_records_types_weights; intervals_not_imputed"

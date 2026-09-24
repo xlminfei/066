@@ -1,0 +1,4 @@
+Error: unexpected symbol in:
+"write.csv(do.call(rbind(replays),file.path(out,"posterior_replay_checks.csv"),row.names=FALSE)
+write_json_atomic"
+Execution halted

@@ -1,0 +1,8 @@
+METRIC_BOUNDARIES_PASS: species weights, interval exclusions, RMSE, calibration, invalid inputs, NA/zero-SE, BH3
+SAVED_OOF_METRICS_PASS: 120 fold metrics, 16 summaries, full-weight calibration, point/PI species support
+RAW_TEST_MAX_ABS_DIFFERENCE: P=5.44e-15 CI=1.55e-15
+SAVED_OOF_INFERENCE_PASS: all 30 original raw P/CI/SE/differences retained; ten independent BH3 families
+BOOTSTRAP_ORDER_PASS: AUC/error multiplicities identical, 18 draw vectors reconciled, four log-score seeds/index matrices preserved
+NO_POINT_BOUNDARY_PASS: all 12 error tests retained as flagged NA; 30 total tests; no fitted model run
+PERSISTENT_EVIDENCE_SAVED: /repo/validation/v4/metrics_final 
+V4_METRICS_PASS

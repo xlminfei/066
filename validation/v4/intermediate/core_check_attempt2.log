@@ -1,0 +1,3 @@
+Error in ok(paste("native cache valid", r), !fails(validate_fit_cache(current,  : 
+  native cache valid joint_bb
+Execution halted

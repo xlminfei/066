@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "purpose": "ORCHESTRATION_WITH_STAND_INS_AND_SAVED_PREDICTIONS",
+  "scheduled_tasks": 128,
+  "new_mcmc_fits": 0,
+  "OOF_rows": 2440,
+  "panel_rows": 2920,
+  "fold_metric_rows": 120,
+  "summary_rows": 16,
+  "hypothesis_rows": 30,
+  "production_bootstrap_sizes": [2000, 50000]
+}

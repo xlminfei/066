@@ -1,0 +1,5 @@
+{
+  "status": "PASS",
+  "parsed_current_R_files": 19,
+  "files": ["/project/v4/01_prepare.R", "/project/v4/02_fit.R", "/project/v4/03_evaluate.R", "/project/v4/04_plot.R", "/project/v4/environment/restore.R", "/project/v4/R/checks.R", "/project/v4/R/data_encoding.R", "/project/v4/R/load.R", "/project/v4/R/metric_functions.R", "/project/v4/R/model_functions.R", "/project/v4/R/plot_functions.R", "/project/v4/run_all.R", "/project/v4/settings.R", "/project/validation/v4/test_core.R", "/project/validation/v4/test_final_plots.R", "/project/validation/v4/test_metrics.R", "/project/validation/v4/test_orchestration.R", "/project/validation/v4/test_publication_guards.R", "/project/validation/v4/test_synthetic_fits.R"]
+}

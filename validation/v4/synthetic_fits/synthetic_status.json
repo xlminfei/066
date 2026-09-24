@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "purpose": "SYNTHETIC_INTERFACE_TEST_ONLY",
+  "new_synthetic_fits": 2,
+  "real_research_fits": 0,
+  "sampling": {
+    "chains": 4,
+    "cores": 4,
+    "iter": 2000,
+    "warmup": 1000,
+    "adapt_delta": 0.98999999999999999,
+    "max_treedepth": 12
+  },
+  "diagnostic_thresholds_changed": false,
+  "cached_reuse_checked": true,
+  "stale_cache_rejected": true,
+  "records_per_fit": 48,
+  "held_out_records": {
+    "binary": 14,
+    "joint_bb": 16
+  }
+}

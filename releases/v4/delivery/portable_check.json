@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "code_zip_bytes": 107989,
+  "code_zip_files": 29,
+  "isolated_mounts": "Only extracted v4 code and an empty output directory; no repository or old version mounted",
+  "input_counts": {
+    "panel_species": 365,
+    "records": 153,
+    "binary_records": 152,
+    "binary_species": 50,
+    "joint_species": 51,
+    "point_records": 145,
+    "point_species": 48
+  },
+  "analysis_id": "75ac77db4f6fa772a7c6a4038b5b70ba93b8b8b103add1b38fe71f11319f2b7a",
+  "planned_fits": 128,
+  "new_fits": 0
+}

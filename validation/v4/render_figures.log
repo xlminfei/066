@@ -1,0 +1,49 @@
+{
+  "status": "RENDERED_FOR_VISUAL_REVIEW",
+  "pdf_files": 7,
+  "pages": 30,
+  "files": [
+    {
+      "file": "calibration.pdf",
+      "pages": 2,
+      "rendered": 2,
+      "stderr": "Syntax Error: No display font for 'Symbol'\nSyntax Error: No display font for 'ArialUnicode'\n"
+    },
+    {
+      "file": "cv_metrics.pdf",
+      "pages": 4,
+      "rendered": 4,
+      "stderr": "Syntax Error: No display font for 'Symbol'\nSyntax Error: No display font for 'ArialUnicode'\n"
+    },
+    {
+      "file": "hypothesis_tests.pdf",
+      "pages": 2,
+      "rendered": 2,
+      "stderr": "Syntax Error: No display font for 'Symbol'\nSyntax Error: No display font for 'ArialUnicode'\n"
+    },
+    {
+      "file": "quantitative_predicted_observed.pdf",
+      "pages": 2,
+      "rendered": 2,
+      "stderr": "Syntax Error: No display font for 'Symbol'\nSyntax Error: No display font for 'ArialUnicode'\n"
+    },
+    {
+      "file": "ROC_curves.pdf",
+      "pages": 2,
+      "rendered": 2,
+      "stderr": "Syntax Error: No display font for 'Symbol'\nSyntax Error: No display font for 'ArialUnicode'\n"
+    },
+    {
+      "file": "species_predictions_binary_record_equal.pdf",
+      "pages": 9,
+      "rendered": 9,
+      "stderr": "Syntax Error: No display font for 'Symbol'\nSyntax Error: No display font for 'ArialUnicode'\n"
+    },
+    {
+      "file": "species_predictions_joint_bb_record_equal.pdf",
+      "pages": 9,
+      "rendered": 9,
+      "stderr": "Syntax Error: No display font for 'Symbol'\nSyntax Error: No display font for 'ArialUnicode'\n"
+    }
+  ]
+}

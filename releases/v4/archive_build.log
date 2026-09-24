@@ -1,0 +1,28 @@
+{
+  "status": "BUILT_AND_READBACK_VERIFIED",
+  "tag": "v4",
+  "source_baseline": "4e0fdbb08562f1a8905734b2f0eb831697281388",
+  "code_files": 29,
+  "validation_files": 355,
+  "code_bytes": 355170,
+  "new_research_fits": 0,
+  "real_synthetic_fits": 2,
+  "archives": [
+    {
+      "name": "v4-code.zip",
+      "bytes": 107989,
+      "sha256": "08d87c4af9d37a8bcb2dcb884f654e7528d78ac47b118effb0f72fecfae97bac",
+      "files": 29,
+      "uncompressed_bytes": 357670,
+      "url": "https://github.com/xlminfei/066/releases/download/v4/v4-code.zip"
+    },
+    {
+      "name": "v4-validation-complete.zip",
+      "bytes": 81098746,
+      "sha256": "1bcb8e03d9c6bd49a429448bbcf91868de84378231d461b939194202717b4117",
+      "files": 384,
+      "uncompressed_bytes": 87623840,
+      "url": "https://github.com/xlminfei/066/releases/download/v4/v4-validation-complete.zip"
+    }
+  ]
+}

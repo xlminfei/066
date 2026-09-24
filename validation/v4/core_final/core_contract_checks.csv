@@ -1,0 +1,118 @@
+"Check","Pass"
+"128 tasks, 8 full and 120 CV",TRUE
+"fixed RS only",TRUE
+"formal sampler unchanged",TRUE
+"effective bootstrap sizes unchanged",TRUE
+"Stan source byte-identical",TRUE
+"count 0/20 remains legal",TRUE
+"count 30/30 remains legal",TRUE
+"exact 1 remains legal",TRUE
+"duplicate record rejected",TRUE
+"invalid count rejected",TRUE
+"exact zero retains original model boundary",TRUE
+"NA fold cannot disappear in sort",TRUE
+"noninteger fold rejected",TRUE
+"missing CV design rejected",TRUE
+"duplicate species/fold rejected",TRUE
+"identical full design binary Null",TRUE
+"identical full design joint_bb Null",TRUE
+"identical full design binary M1",TRUE
+"identical full design joint_bb M1",TRUE
+"identical full design binary M2",TRUE
+"identical full design joint_bb M2",TRUE
+"identical full design binary M3",TRUE
+"identical full design joint_bb M3",TRUE
+"Site151 excluded Null",TRUE
+"Site151 excluded M1",TRUE
+"Site151 excluded M2",TRUE
+"Site151 excluded M3",TRUE
+"fit specification equivalence binary Null full",TRUE
+"changed cache identity rejected binary Null full",TRUE
+"fit specification equivalence binary Null fivefold",TRUE
+"changed cache identity rejected binary Null fivefold",TRUE
+"fit specification equivalence binary Null tenfold",TRUE
+"changed cache identity rejected binary Null tenfold",TRUE
+"fit specification equivalence binary M1 full",TRUE
+"changed cache identity rejected binary M1 full",TRUE
+"fit specification equivalence binary M1 fivefold",TRUE
+"changed cache identity rejected binary M1 fivefold",TRUE
+"fit specification equivalence binary M1 tenfold",TRUE
+"changed cache identity rejected binary M1 tenfold",TRUE
+"fit specification equivalence binary M2 full",TRUE
+"changed cache identity rejected binary M2 full",TRUE
+"fit specification equivalence binary M2 fivefold",TRUE
+"changed cache identity rejected binary M2 fivefold",TRUE
+"fit specification equivalence binary M2 tenfold",TRUE
+"changed cache identity rejected binary M2 tenfold",TRUE
+"fit specification equivalence binary M3 full",TRUE
+"changed cache identity rejected binary M3 full",TRUE
+"fit specification equivalence binary M3 fivefold",TRUE
+"changed cache identity rejected binary M3 fivefold",TRUE
+"fit specification equivalence binary M3 tenfold",TRUE
+"changed cache identity rejected binary M3 tenfold",TRUE
+"fit specification equivalence joint_bb Null full",TRUE
+"changed cache identity rejected joint_bb Null full",TRUE
+"fit specification equivalence joint_bb Null fivefold",TRUE
+"changed cache identity rejected joint_bb Null fivefold",TRUE
+"fit specification equivalence joint_bb Null tenfold",TRUE
+"changed cache identity rejected joint_bb Null tenfold",TRUE
+"fit specification equivalence joint_bb M1 full",TRUE
+"changed cache identity rejected joint_bb M1 full",TRUE
+"fit specification equivalence joint_bb M1 fivefold",TRUE
+"changed cache identity rejected joint_bb M1 fivefold",TRUE
+"fit specification equivalence joint_bb M1 tenfold",TRUE
+"changed cache identity rejected joint_bb M1 tenfold",TRUE
+"fit specification equivalence joint_bb M2 full",TRUE
+"changed cache identity rejected joint_bb M2 full",TRUE
+"fit specification equivalence joint_bb M2 fivefold",TRUE
+"changed cache identity rejected joint_bb M2 fivefold",TRUE
+"fit specification equivalence joint_bb M2 tenfold",TRUE
+"changed cache identity rejected joint_bb M2 tenfold",TRUE
+"fit specification equivalence joint_bb M3 full",TRUE
+"changed cache identity rejected joint_bb M3 full",TRUE
+"fit specification equivalence joint_bb M3 fivefold",TRUE
+"changed cache identity rejected joint_bb M3 fivefold",TRUE
+"fit specification equivalence joint_bb M3 tenfold",TRUE
+"changed cache identity rejected joint_bb M3 tenfold",TRUE
+"binary templates separated by model and design columns",TRUE
+"applicability flags binary Null",TRUE
+"PPC numeric and flags binary Null",TRUE
+"native posterior replay binary Null full",TRUE
+"native posterior replay binary Null fivefold",TRUE
+"native posterior replay binary Null tenfold",TRUE
+"applicability flags binary M1",TRUE
+"PPC numeric and flags binary M1",TRUE
+"native posterior replay binary M1 full",TRUE
+"native posterior replay binary M1 fivefold",TRUE
+"native posterior replay binary M1 tenfold",TRUE
+"applicability flags binary M2",TRUE
+"PPC numeric and flags binary M2",TRUE
+"native posterior replay binary M2 full",TRUE
+"native posterior replay binary M2 fivefold",TRUE
+"native posterior replay binary M2 tenfold",TRUE
+"applicability flags binary M3",TRUE
+"PPC numeric and flags binary M3",TRUE
+"native posterior replay binary M3 full",TRUE
+"native cache valid binary",TRUE
+"tampered native cache rejected binary",TRUE
+"native posterior replay binary M3 fivefold",TRUE
+"native posterior replay binary M3 tenfold",TRUE
+"applicability flags joint_bb Null",TRUE
+"PPC numeric and flags joint_bb Null",TRUE
+"native posterior replay joint_bb Null full",TRUE
+"native posterior replay joint_bb Null fivefold",TRUE
+"native posterior replay joint_bb Null tenfold",TRUE
+"applicability flags joint_bb M1",TRUE
+"PPC numeric and flags joint_bb M1",TRUE
+"native posterior replay joint_bb M1 full",TRUE
+"native posterior replay joint_bb M1 fivefold",TRUE
+"native posterior replay joint_bb M1 tenfold",TRUE
+"applicability flags joint_bb M2",TRUE
+"PPC numeric and flags joint_bb M2",TRUE
+"native posterior replay joint_bb M2 full",TRUE
+"native posterior replay joint_bb M2 fivefold",TRUE
+"native posterior replay joint_bb M2 tenfold",TRUE
+"applicability flags joint_bb M3",TRUE
+"PPC numeric and flags joint_bb M3",TRUE
+"native posterior replay joint_bb M3 full",TRUE
+"native cache valid joint_bb",FALSE

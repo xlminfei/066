@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "purpose": "plot_only_replay_of_saved_predictions",
+  "new_fits": 0,
+  "source_tables_unchanged": true,
+  "files": {
+    "roc_coordinates.csv": "f6326909df05dc928dd8ad1db71bb162122a548039f16aee23c9effea1f74689",
+    "calibration_bins.csv": "db356216681a81b65beb91b0e773692adc404daa96e528a3011a18abba26de55",
+    "cv_metrics_summary.csv": "0e0a8481dde628fe8395b5e049e386d45e7cdde81489b439c8f71c64026afb7e",
+    "hypothesis_tests.csv": "b5d8d4127bfdc37243971724ec0739df265c782deb7824fdd7b8f80090d52040",
+    "quantitative_plot_source.csv": "438bc1dad9c1c537cdc785ca92c30f64622a5f53fc25c3c0bed989129da947ac",
+    "quantitative_bias_summary.csv": "0f21f6b2f63e7508c28111976c355d7fefb92cc59281d3c24f9ffa320fb6ce71",
+    "full_panel_predictions.csv": "2842193045e409fc8a86ec34aedd80fc3b95d8bd394bb7f8e2671edc7052b6f7"
+  },
+  "analysis_id": "75ac77db4f6fa772a7c6a4038b5b70ba93b8b8b103add1b38fe71f11319f2b7a"
+}

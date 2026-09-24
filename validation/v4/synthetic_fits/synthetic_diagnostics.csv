@@ -1,0 +1,3 @@
+"Route","Purpose","Status","MaxRhat","MinBulkESS","MinTailESS","Divergences","TreeDepthHits","MinEBFMI","ParametersChecked","DiagnosticScope"
+"binary","SYNTHETIC_INTERFACE_TEST","PASS",1.00257367043487,1784.6142951742,2294.04529708169,0,0,0.925125408730267,12,"sampled_parameters_and_lp; deterministic_outputs_checked_separately"
+"joint_bb","SYNTHETIC_INTERFACE_TEST","PASS",1.00395352773248,1902.86772565928,2469.76037283111,0,0,0.900966956148428,15,"sampled_parameters_and_lp; deterministic_outputs_checked_separately"
